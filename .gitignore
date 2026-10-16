@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+# A lab directory is data: keep it in its own place (or its own repository), not in the code.
+/lab/

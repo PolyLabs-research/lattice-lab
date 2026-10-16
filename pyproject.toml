@@ -1,0 +1,48 @@
+[project]
+name = "lattice-lab"
+version = "0.1.0"
+description = "A law-discovery loop over LatticeLife experiments and Kepler fits: pre-registered predictions, held-out tests, an append-only ledger."
+readme = "README.md"
+# LatticeLife's own bound: its locked pygame and moderngl ship wheels for 3.12 and 3.13 only.
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "latticelife",
+    "kepler",
+    "numpy>=1.26",
+    "scipy>=1.10",
+]
+
+[project.scripts]
+lattice-lab = "lattice_lab.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+# Both libraries are pinned to git commits until each makes releases. A result's ledger entry
+# records the commits actually installed, so moving a pin never changes what an old result
+# means. To work against local checkouts instead, after `uv sync` run
+# `uv pip install -e ../gameoflife_advanced -e ../kepler` (the ledger then records their commits
+# and whether the working tree was dirty).
+[tool.uv.sources]
+latticelife = { git = "https://github.com/PolyLabs-research/gameoflife_advanced", rev = "25c2e18029a1bb5469fe48c033ca8b6ab5f8196c" }
+kepler = { git = "https://github.com/tripptytrip/kepler", rev = "0a6e67328b53fc352a76af1cba9a6a2a339d35ce" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lattice_lab"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
