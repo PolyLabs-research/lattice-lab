@@ -1,0 +1,26 @@
+# Pass marks for `lattice-lab selfcheck`.
+#
+# The self-check generates synthetic observations from every law in the growth library, with
+# the sizes, seed spreads and censoring of real settling-time runs, and runs the discovery loop
+# on them. It passes only if the loop names the true law often enough and a wrong law rarely
+# enough, and if, on thin data, it answers "inconclusive" rather than wrong.
+#
+# Committed on 2026-10-16, before the self-check was first run. Never edit these to make a run
+# pass: a failing self-check means the loop needs work, not these numbers. A change for a
+# reason of principle (a new law, a new design) is its own commit, saying why, made before the
+# run it applies to.
+
+[selfcheck]
+replicates = 20        # synthetic questions per law
+seeds = 20             # seeds per torus size, as a real question uses
+spread = 0.35          # log-normal spread of one seed's settling time (B2/S34 at L = 16: ~0.35)
+# The share of questions naming the true law, averaged over the laws.
+min_correct_rate = 0.5
+# For every law, the largest share of questions that may name a wrong law.
+max_wrong_rate = 0.05
+
+[selfcheck.thin]
+# Thin data: few seeds and a wide spread. Wrong answers must stay rare; inconclusive is fine.
+seeds = 4
+spread = 0.6
+max_wrong_rate = 0.10
