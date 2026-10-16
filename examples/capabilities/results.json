@@ -1,0 +1,1179 @@
+{
+ "censored": {
+  "source": "examples/lab-b2s34 (B2/S34, hexagon)",
+  "seeds_with_exact_times": 200,
+  "rows": 200,
+  "cap": 155.2,
+  "censored_share": 0.12,
+  "censored_share_at_largest": 0.6,
+  "laws": {
+   "logarithmic": {
+    "all_exact": {
+     "a": [
+      39.758156,
+      2.606964
+     ],
+     "b": [
+      -35.503029,
+      7.241747
+     ]
+    },
+    "capped_censored": {
+     "a": [
+      42.173898,
+      2.863248
+     ],
+     "b": [
+      -41.450732,
+      7.805223
+     ]
+    },
+    "capped_dropped": {
+     "a": [
+      36.892293,
+      2.626375
+     ],
+     "b": [
+      -30.509118,
+      7.169298
+     ]
+    }
+   },
+   "power": {
+    "all_exact": {
+     "a": [
+      21.94129,
+      1.955491
+     ],
+     "b": [
+      0.423978,
+      0.02614
+     ]
+    },
+    "capped_censored": {
+     "a": [
+      20.062695,
+      1.936823
+     ],
+     "b": [
+      0.45679,
+      0.028943
+     ]
+    },
+    "capped_dropped": {
+     "a": [
+      21.289917,
+      1.985445
+     ],
+     "b": [
+      0.422108,
+      0.028645
+     ]
+    }
+   }
+  },
+  "ranking_capped": [
+   {
+    "law": "logarithmic",
+    "delta_bic": 0.0,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "power",
+    "delta_bic": 0.098414,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "linear",
+    "delta_bic": 15.921974,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "exponential",
+    "delta_bic": 33.204684,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "exponential_area",
+    "delta_bic": 64.680123,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "constant",
+    "delta_bic": 166.014435,
+    "eligible": true,
+    "reason": ""
+   }
+  ],
+  "ranking_all_exact": [
+   {
+    "law": "logarithmic",
+    "delta_bic": 0.0,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "power",
+    "delta_bic": 4.371985,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "linear",
+    "delta_bic": 26.613517,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "exponential",
+    "delta_bic": 45.334776,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "exponential_area",
+    "delta_bic": 79.496738,
+    "eligible": true,
+    "reason": ""
+   },
+   {
+    "law": "constant",
+    "delta_bic": 166.986843,
+    "eligible": true,
+    "reason": ""
+   }
+  ]
+ },
+ "kepler": "0.1.0",
+ "integer": {
+  "glider": {
+   "rule": "B3/S23",
+   "n": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "period": [
+    24,
+    28,
+    32,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    68,
+    72,
+    76,
+    80,
+    84,
+    88,
+    92,
+    96
+   ],
+   "laws": [
+    {
+     "form": "number theory",
+     "expression": "4*n",
+     "unknowns": 1,
+     "determined_by": 1,
+     "confirmed_by": 18,
+     "bits": 4.321928
+    }
+   ]
+  },
+  "xor": {
+   "rule": "B1357/S1357",
+   "n": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ],
+   "period": [
+    1,
+    1,
+    3,
+    2,
+    7,
+    1,
+    7,
+    6,
+    31,
+    4,
+    63,
+    14,
+    15,
+    1,
+    15,
+    14,
+    511,
+    12,
+    63,
+    62,
+    2047,
+    8,
+    1023,
+    126,
+    511,
+    28,
+    16383,
+    30
+   ],
+   "powers_of_two": {
+    "4": 1,
+    "8": 1,
+    "16": 1
+   },
+   "laws": [
+    {
+     "form": "number theory",
+     "expression": "2^v(n)*(2^sord(n) - 1)",
+     "unknowns": 1,
+     "determined_by": 1,
+     "confirmed_by": 24,
+     "bits": 5.0
+    }
+   ],
+   "held_out": {
+    "31": {
+     "predicted": 31,
+     "measured": 31
+    },
+    "33": {
+     "predicted": 31,
+     "measured": 31
+    },
+    "34": {
+     "predicted": 30,
+     "measured": 30
+    },
+    "35": {
+     "predicted": 4095,
+     "measured": 4095
+    }
+   }
+  }
+ },
+ "invariants": {
+  "B3/S23 square": {
+   "all": {
+    "sizes": [
+     12,
+     13,
+     16,
+     17
+    ],
+    "runs": 12,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "even": {
+    "sizes": [
+     12,
+     16
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "odd": {
+    "sizes": [
+     13,
+     17
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   }
+  },
+  "B36/S23 square": {
+   "all": {
+    "sizes": [
+     12,
+     13,
+     16,
+     17
+    ],
+    "runs": 12,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "even": {
+    "sizes": [
+     12,
+     16
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "odd": {
+    "sizes": [
+     13,
+     17
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   }
+  },
+  "B2/S34 hexagon": {
+   "all": {
+    "sizes": [
+     12,
+     14,
+     16,
+     18
+    ],
+    "runs": 12,
+    "rank": 13,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "live_1 + live_3 + live_5 = 0 (mod 2)"
+    ]
+   }
+  },
+  "B1357/S1357 square": {
+   "all": {
+    "sizes": [
+     12,
+     13,
+     16,
+     17
+    ],
+    "runs": 12,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "births = 0 (mod 2)",
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "even": {
+    "sizes": [
+     12,
+     16
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "births = 0 (mod 2)",
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   },
+   "odd": {
+    "sizes": [
+     13,
+     17
+    ],
+    "runs": 6,
+    "rank": 17,
+    "exact": 4,
+    "known_identities_found": true,
+    "beyond_bookkeeping": 0,
+    "mod_2": [
+     "births = 0 (mod 2)",
+     "live_1 + live_3 + live_5 + live_7 = 0 (mod 2)"
+    ]
+   }
+  }
+ },
+ "survival": {
+  "rule": "B3/S23",
+  "shape": "square",
+  "steps": 1000,
+  "seeds": 30,
+  "per_size": {
+   "16": {
+    "survived": {
+     "0.02": 0,
+     "0.04": 3,
+     "0.06": 8,
+     "0.08": 17,
+     "0.1": 21,
+     "0.12": 24,
+     "0.15": 26,
+     "0.2": 26,
+     "0.25": 23,
+     "0.3": 27,
+     "0.4": 24,
+     "0.5": 28,
+     "0.6": 28,
+     "0.65": 29,
+     "0.7": 16,
+     "0.72": 10,
+     "0.74": 10,
+     "0.76": 8,
+     "0.78": 6,
+     "0.8": 3,
+     "0.82": 0,
+     "0.85": 0,
+     "0.9": 0
+    },
+    "ranking": [
+     {
+      "law": "window",
+      "delta_bic": 0.0,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "logistic_p",
+      "delta_bic": 282.670524,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "constant",
+      "delta_bic": 318.755325,
+      "eligible": true,
+      "reason": ""
+     }
+    ],
+    "best": "window",
+    "constants": {
+     "k1": [
+      10.373643,
+      1.392493
+     ],
+     "x1": [
+      0.099957,
+      0.012412
+     ],
+     "k2": [
+      29.192521,
+      3.363104
+     ],
+     "x2": [
+      0.713737,
+      0.005951
+     ]
+    }
+   },
+   "32": {
+    "survived": {
+     "0.02": 1,
+     "0.04": 10,
+     "0.06": 25,
+     "0.08": 28,
+     "0.1": 30,
+     "0.12": 30,
+     "0.15": 30,
+     "0.2": 30,
+     "0.25": 30,
+     "0.3": 30,
+     "0.4": 30,
+     "0.5": 30,
+     "0.6": 30,
+     "0.65": 30,
+     "0.7": 30,
+     "0.72": 28,
+     "0.74": 23,
+     "0.76": 24,
+     "0.78": 13,
+     "0.8": 14,
+     "0.82": 4,
+     "0.85": 3,
+     "0.9": 0
+    },
+    "ranking": [
+     {
+      "law": "window",
+      "delta_bic": 0.0,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "constant",
+      "delta_bic": 483.33983,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "logistic_p",
+      "delta_bic": 489.876529,
+      "eligible": false,
+      "reason": "ill-conditioned fit (cancelling terms or unidentifiable constants)"
+     }
+    ],
+    "best": "window",
+    "constants": {
+     "k1": [
+      105.47101,
+      16.642299
+     ],
+     "x1": [
+      0.04717,
+      0.002541
+     ],
+     "k2": [
+      40.316312,
+      4.595793
+     ],
+     "x2": [
+      0.784294,
+      0.004299
+     ]
+    }
+   },
+   "64": {
+    "survived": {
+     "0.02": 4,
+     "0.04": 25,
+     "0.06": 30,
+     "0.08": 30,
+     "0.1": 30,
+     "0.12": 30,
+     "0.15": 30,
+     "0.2": 30,
+     "0.25": 30,
+     "0.3": 30,
+     "0.4": 30,
+     "0.5": 30,
+     "0.6": 30,
+     "0.65": 30,
+     "0.7": 30,
+     "0.72": 30,
+     "0.74": 30,
+     "0.76": 30,
+     "0.78": 28,
+     "0.8": 24,
+     "0.82": 20,
+     "0.85": 11,
+     "0.9": 1
+    },
+    "ranking": [
+     {
+      "law": "window",
+      "delta_bic": 0.0,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "constant",
+      "delta_bic": 355.540646,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "logistic_p",
+      "delta_bic": 362.077353,
+      "eligible": false,
+      "reason": "ill-conditioned fit (cancelling terms or unidentifiable constants)"
+     }
+    ],
+    "best": "window",
+    "constants": {
+     "k1": [
+      180.250105,
+      34.094194
+     ],
+     "x1": [
+      0.030643,
+      0.002037
+     ],
+     "k2": [
+      50.275224,
+      6.729926
+     ],
+     "x2": [
+      0.835132,
+      0.004665
+     ]
+    }
+   }
+  },
+  "edges": {
+   "rising": {
+    "ranking": [
+     {
+      "law": "fss_logistic",
+      "delta_bic": 0.0,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "sharpening",
+      "delta_bic": 40.143535,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "crossover",
+      "delta_bic": 221.299377,
+      "eligible": true,
+      "reason": ""
+     }
+    ],
+    "best": "fss_logistic",
+    "constants": {
+     "r": [
+      0.024294,
+      0.005755
+     ],
+     "a": [
+      9.177252,
+      12.079015
+     ],
+     "b": [
+      1.742013,
+      0.484413
+     ],
+     "w": [
+      0.142315,
+      0.075934
+     ],
+     "s": [
+      1.777865,
+      0.160256
+     ]
+    },
+    "deviance_per_dof": 2.436803,
+    "threshold_matches": [
+     {
+      "expression": "(1/9)/pi",
+      "z": 1.92,
+      "p_chance": 0.6787,
+      "named": false
+     },
+     {
+      "expression": "(1/10)/pi",
+      "z": 1.31,
+      "p_chance": 0.7757,
+      "named": false
+     },
+     {
+      "expression": "(1/20)*log(2)",
+      "z": 1.8,
+      "p_chance": 0.7757,
+      "named": false
+     }
+    ],
+    "design": {
+     "rival": "sharpening",
+     "truth": "fss_logistic",
+     "n": 30,
+     "space": "linear",
+     "expected_delta_chi2": 52.417694,
+     "expected_delta_bic": 38.812905,
+     "margin": 6.0,
+     "seed_factor": 0.331933,
+     "sufficient": true,
+     "p_decisive": null,
+     "p_wrong": null,
+     "simulations": 0,
+     "delta_bic_quantiles": []
+    }
+   },
+   "falling": {
+    "ranking": [
+     {
+      "law": "fss_logistic",
+      "delta_bic": 0.0,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "sharpening",
+      "delta_bic": 225.538025,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "law": "crossover",
+      "delta_bic": 282.497336,
+      "eligible": true,
+      "reason": ""
+     }
+    ],
+    "best": "fss_logistic",
+    "constants": {
+     "r": [
+      0.934248,
+      0.071829
+     ],
+     "a": [
+      -1.137045,
+      0.543335
+     ],
+     "b": [
+      0.58522,
+      0.28082
+     ],
+     "w": [
+      -6.36433,
+      2.717691
+     ],
+     "s": [
+      0.509635,
+      0.124978
+     ]
+    },
+    "deviance_per_dof": 1.131638,
+    "threshold_matches": [
+     {
+      "expression": "1",
+      "z": 0.92,
+      "p_chance": 0.205,
+      "named": false
+     },
+     {
+      "expression": "sqrt(2/3)",
+      "z": -1.64,
+      "p_chance": 1.0,
+      "named": false
+     },
+     {
+      "expression": "4/5",
+      "z": -1.87,
+      "p_chance": 1.0,
+      "named": false
+     }
+    ],
+    "design": {
+     "rival": "sharpening",
+     "truth": "fss_logistic",
+     "n": 36,
+     "space": "linear",
+     "expected_delta_chi2": 238.30338,
+     "expected_delta_bic": 224.333947,
+     "margin": 6.0,
+     "seed_factor": 0.060217,
+     "sufficient": true,
+     "p_decisive": null,
+     "p_wrong": null,
+     "simulations": 0,
+     "delta_bic_quantiles": []
+    }
+   }
+  }
+ },
+ "joint": {
+  "rule": "B2/S34",
+  "shape": "hexagon",
+  "censored": 0,
+  "rows": 420,
+  "laws": {
+   "logarithmic": {
+    "verdict": "shared: a, b; per group: nothing (likelihood-ratio p = 0.451 against sharing nothing)",
+    "patterns": [
+     {
+      "shared": [
+       "a",
+       "b"
+      ],
+      "n_constants": 2,
+      "bic": 4052.068296,
+      "delta_bic": 0.0,
+      "lr_stat": 3.67692,
+      "lr_dof": 4,
+      "p_value": 0.451492,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [
+       "a"
+      ],
+      "n_constants": 4,
+      "bic": 4061.148961,
+      "delta_bic": 9.080665,
+      "lr_stat": 0.677076,
+      "lr_dof": 2,
+      "p_value": 0.712812,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [
+       "b"
+      ],
+      "n_constants": 4,
+      "bic": 4061.876718,
+      "delta_bic": 9.808422,
+      "lr_stat": 1.404833,
+      "lr_dof": 2,
+      "p_value": 0.495387,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [],
+      "n_constants": 6,
+      "bic": 4072.552395,
+      "delta_bic": 20.484099,
+      "lr_stat": 0.0,
+      "lr_dof": 0,
+      "p_value": 1.0,
+      "eligible": true,
+      "reason": ""
+     }
+    ],
+    "constants": {
+     "a": [
+      39.396184,
+      2.000573
+     ],
+     "b": [
+      -37.082425,
+      5.490667
+     ]
+    },
+    "bic": 4052.068296,
+    "shared_matches": {
+     "a": [
+      {
+       "expression": "36",
+       "z": -1.7,
+       "p_chance": 0.3436,
+       "named": false
+      },
+      {
+       "expression": "37",
+       "z": -1.2,
+       "p_chance": 0.3605,
+       "named": false
+      },
+      {
+       "expression": "38",
+       "z": -0.7,
+       "p_chance": 0.3774,
+       "named": false
+      }
+     ],
+     "b": [
+      {
+       "expression": "-27",
+       "z": 1.84,
+       "p_chance": 0.3495,
+       "named": false
+      },
+      {
+       "expression": "-28",
+       "z": 1.65,
+       "p_chance": 0.3675,
+       "named": false
+      },
+      {
+       "expression": "-29",
+       "z": 1.47,
+       "p_chance": 0.3854,
+       "named": false
+      }
+     ]
+    }
+   },
+   "power": {
+    "verdict": "shared: a, b; per group: nothing (likelihood-ratio p = 0.491 against sharing nothing)",
+    "patterns": [
+     {
+      "shared": [
+       "a",
+       "b"
+      ],
+      "n_constants": 2,
+      "bic": 4053.704485,
+      "delta_bic": 0.0,
+      "lr_stat": 3.412117,
+      "lr_dof": 4,
+      "p_value": 0.491366,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [
+       "b"
+      ],
+      "n_constants": 4,
+      "bic": 4063.936097,
+      "delta_bic": 10.231612,
+      "lr_stat": 1.563219,
+      "lr_dof": 2,
+      "p_value": 0.457669,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [
+       "a"
+      ],
+      "n_constants": 4,
+      "bic": 4064.644616,
+      "delta_bic": 10.940131,
+      "lr_stat": 2.271738,
+      "lr_dof": 2,
+      "p_value": 0.321143,
+      "eligible": true,
+      "reason": ""
+     },
+     {
+      "shared": [],
+      "n_constants": 6,
+      "bic": 4074.453387,
+      "delta_bic": 20.748902,
+      "lr_stat": 0.0,
+      "lr_dof": 0,
+      "p_value": 1.0,
+      "eligible": true,
+      "reason": ""
+     }
+    ],
+    "constants": {
+     "a": [
+      17.239106,
+      1.403509
+     ],
+     "b": [
+      0.496516,
+      0.025284
+     ]
+    },
+    "bic": 4053.704485,
+    "shared_matches": {
+     "a": [
+      {
+       "expression": "15",
+       "z": -1.6,
+       "p_chance": 0.3553,
+       "named": false
+      },
+      {
+       "expression": "16",
+       "z": -0.88,
+       "p_chance": 0.394,
+       "named": false
+      },
+      {
+       "expression": "17",
+       "z": -0.17,
+       "p_chance": 0.4326,
+       "named": false
+      }
+     ],
+     "b": [
+      {
+       "expression": "1/2",
+       "z": 0.14,
+       "p_chance": 0.1943,
+       "named": false
+      },
+      {
+       "expression": "sqrt(1/5)",
+       "z": -1.95,
+       "p_chance": 0.7425,
+       "named": false
+      },
+      {
+       "expression": "sqrt(2/7)",
+       "z": 1.5,
+       "p_chance": 0.9559,
+       "named": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "time": {
+  "density": {
+   "rule": "B2/S34",
+   "shape": "hexagon",
+   "L": 64,
+   "replicates": 20,
+   "shares": {
+    "constant": 0.0,
+    "relaxation": 0.0,
+    "stretched_exponential": 1.0,
+    "algebraic_relaxation": 0.0
+   },
+   "best": "stretched_exponential",
+   "constants": {
+    "c": [
+     0.020146,
+     0.000624
+    ],
+    "a": [
+     0.479727,
+     0.000605
+    ],
+    "tau": [
+     15.238288,
+     0.783173
+    ],
+    "beta": [
+     0.680709,
+     0.015117
+    ]
+   },
+   "naive_stderr": {
+    "c": 0.00024,
+    "a": 0.0004,
+    "tau": 0.274039,
+    "beta": 0.008523
+   },
+   "beta_matches": [
+    {
+     "expression": "sqrt(1/2)",
+     "z": 1.75,
+     "p_chance": 0.2004,
+     "named": false
+    },
+    {
+     "expression": "2/3",
+     "z": -0.93,
+     "p_chance": 0.2992,
+     "named": false
+    },
+    {
+     "expression": "log(2)",
+     "z": 0.82,
+     "p_chance": 0.7022,
+     "named": false
+    }
+   ]
+  },
+  "damage": {
+   "rule": "B2/S34",
+   "shape": "hexagon",
+   "L": 48,
+   "replicates": 20,
+   "shares": {
+    "constant": 0.0,
+    "relaxation": 0.0,
+    "stretched_exponential": 1.0,
+    "algebraic_relaxation": 0.0
+   },
+   "best": "stretched_exponential",
+   "constants": {
+    "c": [
+     0.042398,
+     0.001564
+    ],
+    "a": [
+     -0.041285,
+     0.001503
+    ],
+    "tau": [
+     8.504508,
+     0.234806
+    ],
+    "beta": [
+     2.531395,
+     0.090638
+    ]
+   },
+   "naive_stderr": {
+    "c": 0.000837,
+    "a": 0.001223,
+    "tau": 0.978313,
+    "beta": 0.709146
+   },
+   "beta_matches": [
+    {
+     "expression": "5/2",
+     "z": -0.35,
+     "p_chance": 0.628,
+     "named": false
+    },
+    {
+     "expression": "sqrt(6)",
+     "z": -0.9,
+     "p_chance": 0.628,
+     "named": false
+    },
+    {
+     "expression": "sqrt(7)",
+     "z": 1.26,
+     "p_chance": 0.7597,
+     "named": false
+    }
+   ]
+  }
+ }
+}

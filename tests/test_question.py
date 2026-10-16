@@ -32,6 +32,7 @@ def test_from_toml(tmp_path):
         ({"fit_sizes": [8, 9, 10, 12]}, "even width"),
         ({"heldout_pool": [8]}, "both fitted and held out"),
         ({"laws": ["cubic"]}, "unknown laws"),
+        ({"laws": ["power", "fss_logistic"]}, "several variables"),
         ({"rule": "B9/S9x"}, "rule"),
         ({"shape": "triangle", "fit_sizes": [8, 10, 12, 16]}, "triangle_mode"),
         ({"fit_sizes": [8, 10]}, "min_points"),

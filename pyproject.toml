@@ -27,8 +27,8 @@ dev = [
 # `uv pip install -e ../gameoflife_advanced -e ../kepler` (the ledger then records their commits
 # and whether the working tree was dirty).
 [tool.uv.sources]
-latticelife = { git = "https://github.com/PolyLabs-research/gameoflife_advanced", rev = "25c2e18029a1bb5469fe48c033ca8b6ab5f8196c" }
-kepler = { git = "https://github.com/tripptytrip/kepler", rev = "3d0e1b4f19dbeec94cf611792194988b8ddbf521" }
+latticelife = { git = "https://github.com/PolyLabs-research/gameoflife_advanced", rev = "f52883f389bf11fd2d666e45125f0f1fd664dca3" }
+kepler = { git = "https://github.com/tripptytrip/kepler", rev = "d4c437cf664fda6f4c07a68753e1c14a65ffaa0c" }
 
 [build-system]
 requires = ["hatchling"]

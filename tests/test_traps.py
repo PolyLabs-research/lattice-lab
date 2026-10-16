@@ -21,9 +21,12 @@ Q = Question(
 def test_trap_1_a_zero_starting_constant_must_not_vanish():
     # SymPy drops Float(0.0) + x to x. Every law the loop fits keeps all its constants, even
     # when its data-driven starting guess is exactly zero.
+    sizes = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0]
     for law in LAWS.values():
+        # Laws of several variables (survival over density and size) take x as a dict.
+        x = sizes if law.variables == ("x",) else {v: sizes for v in law.variables}
         for y in ([0.0] * 6, [5.0] * 6, [1.0, 2.0, 3.0, 4.0, 5.0, 6.0]):
-            skeleton = law.skeleton([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], y)
+            skeleton = law.skeleton(x, y)
             assert len(parametrize(sympy.sympify(skeleton))[1]) == len(law.params), skeleton
 
 

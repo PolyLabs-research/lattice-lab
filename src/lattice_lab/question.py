@@ -101,6 +101,11 @@ class Question:
         unknown = [law for law in self.laws if law not in LAWS]
         if unknown:
             out.append(f"unknown laws {unknown}; known: {', '.join(LAWS)}")
+        several = [law for law in self.laws if law in LAWS and LAWS[law].variables != ("x",)]
+        if several:
+            out.append(
+                f"laws {several} take several variables; a question asks about one (torus size)"
+            )
         if not self.laws:
             out.append("laws is empty")
         if not 0 < self.alpha < 1:

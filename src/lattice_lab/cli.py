@@ -185,7 +185,8 @@ def cmd_selfcheck(args) -> int:
 
 def cmd_laws(args) -> int:
     for law in LAWS.values():
-        print(f"{law.name:18s} {law.formula:28s} {law.description}")
+        variables = "" if law.variables == ("x",) else f" [in {', '.join(law.variables)}]"
+        print(f"{law.name:22s} {law.formula:28s} {law.description}{variables}")
     return 0
 
 
