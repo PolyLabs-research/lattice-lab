@@ -61,3 +61,22 @@ The margin on wrong answers is thin: on the independent streams the worst law (a
 with exponent 0.35, the hardest to tell from a logarithm) was named wrongly 2 times in 80.
 Laws that are easy to tell apart (constant, the exponentials) are named 90-100% of the time;
 the logarithm, linear and power laws mostly come out inconclusive rather than wrong.
+
+## Run 3, 2026-10-16: PASSED
+
+After Kepler's model comparison became likelihood-based (with absolute errors, BIC = chi-square +
+k ln n, with one shared overdispersion factor), and a median's error floor was corrected to the
+rounding error of a half-generation step (0.5 / sqrt(12), not 0.5). Marks unchanged.
+
+| Check | Value | Pass mark | |
+| --- | --- | --- | --- |
+| mean_correct_rate | 0.517 | >= 0.5 | pass |
+| max_wrong_rate | 0.000 | <= 0.05 | pass |
+| thin_max_wrong_rate | 0.000 | <= 0.1 | pass |
+
+No wrong answers on normal or thin data (run 2: 5% and 5%). The old BIC, n ln(RSS/n), made
+small residual differences look decisive whenever a law fitted closely; the known-error form
+does not, so the loop now names fewer laws and none wrongly. Power and linear laws (exponent 0.35;
+slope 2.5 over L = 8..128) come out inconclusive almost every time: Kepler's `separation` puts
+the expected BIC difference for this design at about 2, against a margin of 6, so that is the
+honest answer for these sizes and seeds, and each report now says so before the run.

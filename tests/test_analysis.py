@@ -45,12 +45,13 @@ def test_standard_error_has_a_floor():
     assert standard_error(flat, "log") == pytest.approx(0.01)
     assert standard_error(flat, "linear") == pytest.approx(0.6)
     one = obs(8, 1.0, rel=0.0)
-    assert standard_error(one, "log") == pytest.approx(0.5)  # half a generation in one
+    # A rounding error half a generation wide, on a median of one generation.
+    assert standard_error(one, "log") == pytest.approx(0.5 / math.sqrt(12))
     assert standard_error(obs(8, 60.0, rel=0.1), "log") == pytest.approx(0.1, rel=1e-4)
 
 
-def _predictions(f=power, sizes=SIZES, labels=(48, 64)):
-    fit_obs = [obs(L, f(L)) for L in sizes]
+def _predictions(f=power, sizes=SIZES, labels=(48, 64), rel=0.08):
+    fit_obs = [obs(L, f(L), rel) for L in sizes]
     return fit_obs, predictions_for(Q, fit_laws(Q.laws, fit_obs, "log"), list(labels))
 
 
@@ -78,8 +79,9 @@ def test_the_joint_test_uses_the_prediction_covariance():
 
 
 def test_decide_names_the_law_that_passes_decisively():
-    fit_obs, predictions = _predictions()
-    held = [obs(48, power(48)), obs(64, power(64))]
+    # 2% per size: precise enough to separate the laws (at 8% they are not, in expectation).
+    fit_obs, predictions = _predictions(rel=0.02)
+    held = [obs(48, power(48), 0.02), obs(64, power(64), 0.02)]
     decision = decide(Q, fit_obs, held, predictions, "log")
     assert decision["verdict"] == "found" and decision["law"] == "power"
     assert "power" in decision["survivors"] and decision["combined_ranking"]["best"] == "power"
@@ -108,8 +110,8 @@ def test_fragility_flags_a_verdict_carried_by_the_smallest_sizes():
 
 
 def test_fragility_agrees_on_clean_data():
-    fit_obs, predictions = _predictions()
-    held = [obs(48, power(48)), obs(64, power(64))]
+    fit_obs, predictions = _predictions(rel=0.02)
+    held = [obs(48, power(48), 0.02), obs(64, power(64), 0.02)]
     decision = decide(Q, fit_obs, held, predictions, "log")
     variants = fragility(Q, fit_obs, held, decision, "log")
     assert len(variants) == 2 + len(SIZES) and all(v["agrees"] for v in variants)
@@ -144,3 +146,18 @@ def test_planner_with_one_contender_prefers_the_longest_extrapolation():
     plan = plan_heldout(q, ranking, fit_obs, [40, 48, 64], "log", 1e30)
     assert plan["contenders"] == ["exponential"] and plan["chosen"] == [40, 48, 64]
     assert np.argmax([c["score"] for c in plan["candidates"]]) == 2
+
+
+def test_the_plan_says_whether_the_sizes_can_decide():
+    # The prototype's case: a power law with exponent 0.35 against a logarithm, 8% per size.
+    fit_obs = [obs(L, 27.0 * L**0.35) for L in SIZES]
+    ranking = rank(fit_laws(("power", "logarithmic"), fit_obs, "log"))
+    plan = plan_heldout(Q, ranking, fit_obs, [64, 96, 128], "log", 1e15)
+    design = plan["design"]
+    assert set(design["pair"]) == {"power", "logarithmic"}
+    assert design["n_sizes"] == len(SIZES) + len(plan["chosen"])
+    assert not design["sufficient"] and design["expected_delta_bic"] < 6
+    assert design["seed_factor"] > 1
+    # A single contender leaves nothing to separate.
+    one = rank(fit_laws(("power",), fit_obs, "log"))
+    assert plan_heldout(Q, one, fit_obs, [64], "log", 1e15)["design"] is None

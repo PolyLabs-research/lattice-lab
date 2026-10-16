@@ -60,7 +60,10 @@ from lattice_lab.question import Question, size_of
 Z95 = 1.959963984540054
 MEDIAN_EFFICIENCY = 1.2533  # sd of a median of n normal draws, in units of sd / sqrt(n)
 MIN_LOG_SE = 0.01  # a 1% floor on any one median's relative error
-MIN_LINEAR_SE = 0.5
+# A median of whole numbers moves in steps of half a generation; a rounding error that wide has
+# a standard deviation of 0.5 / sqrt(12). That, not half a generation itself, is the floor.
+QUANTUM_SE = 0.5 / math.sqrt(12)
+MIN_LINEAR_SE = QUANTUM_SE
 
 
 def choose_space(question: Question, observations: Sequence[Observation]) -> str:
@@ -97,7 +100,7 @@ def standard_error(o: Observation, space: str, pooled: float | None = None) -> f
         else:
             low, high = max(o.low, LOG_FLOOR), max(o.high, LOG_FLOOR)
             se = (math.log(high) - math.log(low)) / (2 * Z95)
-        return max(se, MIN_LOG_SE, LOG_FLOOR / y)
+        return max(se, MIN_LOG_SE, QUANTUM_SE / y)
     if o.spread is not None and o.y:
         # A spread of log t is a relative spread of t: pool it as one.
         relative = [o.spread / abs(o.y)] + ([pooled] if pooled is not None else [])

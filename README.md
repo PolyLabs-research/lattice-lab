@@ -85,11 +85,12 @@ records and [the report](examples/lab-b2s34/reports/settling-time-hexagon-B2S34-
 
 Its answer is not the prototype's. Fitted on L = 8 to 32 and tested at 64, 96 and 128, the
 verdict is **found: logarithmic**, T(L) = 37.6 log L − 36.3 (± 2.7 and ± 8.3, all sizes). A
-power law also passed its held-out test (p = 0.09), but on all ten sizes its best fit
-(exponent 0.40) is 8.9 BIC points worse. The verdict holds with the smallest sizes dropped and
-with each size left out. The prototype reported T ≈ 27·L^0.35. The self-check shows this pair is
-the hardest to tell apart (a power law with exponent 0.35 was misnamed 2 times in 80 on
-independent streams), so treat this as one answer to replicate, not a settled fact.
+power law also passed its held-out test (p = 0.09), but on all ten sizes it is 8.4 BIC points
+worse. The verdict holds with the smallest sizes dropped and with each size left out. The
+prototype reported T ≈ 27·L^0.35. Before the run, the plan said these sizes and seeds could
+not be expected to separate the two (an expected BIC difference of 3.9 against a margin of 6;
+about 1.5× the seeds would), so the margin seen is more than the design promised: treat this
+as one answer to replicate with more seeds or larger tori, not a settled fact.
 
 ## Trusting the answers
 

@@ -199,6 +199,30 @@ def _round(ledger: Ledger, entries: list[dict], verdict: dict) -> list[str]:
             f"{', '.join(plan['body']['contenders'])} disagree most for the budget.",
             "",
         ]
+    design = plan["body"].get("design") if plan else None
+    if design:
+        a, b = design["pair"]
+        expected = _fmt(design["expected_delta_bic"], 2)
+        if design["sufficient"]:
+            lines += [
+                f"Can these sizes decide between {a} and {b}? Yes, in expectation: a BIC "
+                f"difference of {expected} over all {design['n_sizes']} sizes, against a "
+                f"margin of {_fmt(design['margin'])}.",
+                "",
+            ]
+        else:
+            more = (
+                f"about {_fmt(design['seed_factor'], 2)}x the seeds would reach it"
+                if design.get("seed_factor")
+                else "no number of seeds at these sizes would"
+            )
+            lines += [
+                f"Can these sizes decide between {a} and {b}? Not in expectation: a BIC "
+                f"difference of {expected} over all {design['n_sizes']} sizes, against a "
+                f"margin of {_fmt(design['margin'])}; {more}. The round can still reject "
+                "laws, but is unlikely to name one.",
+                "",
+            ]
     predictions = [ledger.get(h) for h in cites.get("predictions", [])]
     run = ledger.get(cites["run_started"]) if cites.get("run_started") else None
     if predictions and run:

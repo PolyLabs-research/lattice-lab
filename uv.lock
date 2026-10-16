@@ -23,7 +23,7 @@ wheels = [
 [[package]]
 name = "kepler"
 version = "0.1.0"
-source = { git = "https://github.com/tripptytrip/kepler?rev=0a6e67328b53fc352a76af1cba9a6a2a339d35ce#0a6e67328b53fc352a76af1cba9a6a2a339d35ce" }
+source = { git = "https://github.com/tripptytrip/kepler?rev=3d0e1b4f19dbeec94cf611792194988b8ddbf521#3d0e1b4f19dbeec94cf611792194988b8ddbf521" }
 dependencies = [
     { name = "numpy" },
     { name = "scipy" },
@@ -49,7 +49,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kepler", git = "https://github.com/tripptytrip/kepler?rev=0a6e67328b53fc352a76af1cba9a6a2a339d35ce" },
+    { name = "kepler", git = "https://github.com/tripptytrip/kepler?rev=3d0e1b4f19dbeec94cf611792194988b8ddbf521" },
     { name = "latticelife", git = "https://github.com/PolyLabs-research/gameoflife_advanced?rev=25c2e18029a1bb5469fe48c033ca8b6ab5f8196c" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "scipy", specifier = ">=1.10" },
