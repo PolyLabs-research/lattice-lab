@@ -92,6 +92,18 @@ not be expected to separate the two (an expected BIC difference of 3.9 against a
 about 1.5× the seeds would), so the margin seen is more than the design promised: treat this
 as one answer to replicate with more seeds or larger tori, not a settled fact.
 
+## Beyond settling time: what else Kepler finds in LatticeLife data
+
+[docs/capabilities.md](docs/capabilities.md) runs each of Kepler's newer tools on real
+LatticeLife simulations (`uv run python examples/capabilities/run.py`): survival windows and how
+their edges move with torus size (binomial likelihood, one fit over density and size), times that
+are only bounds (a censored likelihood), whether a law depends on the starting density (shared
+constants), relaxation and damage over time with seed-to-seed error bars, distributions of object
+sizes, exact formulas for periods (the XOR rule's period on an n x n torus, predicted for unseen
+n), conserved quantities (with a parity of births found from data and then proved), and whether
+a fitted constant is a known number. The loop itself still asks about settling time; those
+studies are ready to become question types.
+
 ## Trusting the answers
 
 - **Self-check.** `selfcheck` runs the loop on synthetic data from every law, with the sizes,

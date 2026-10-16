@@ -1175,5 +1175,266 @@
     }
    ]
   }
+ },
+ "distributions": {
+  "rule": "B3/S23",
+  "L": 64,
+  "soups": 120,
+  "objects": 2756,
+  "distinct": 136,
+  "unidentified": 15,
+  "populations": {
+   "xmin": 13.0,
+   "n_tail": 31,
+   "fits": {
+    "power_law": {
+     "params": {
+      "alpha": 5.982541
+     },
+     "stderr": {
+      "alpha": 0.900742
+     },
+     "loglik": -66.027263,
+     "aic": 134.054527,
+     "ks": 0.059673
+    },
+    "truncated_power_law": {
+     "params": {
+      "alpha": 3.547738,
+      "lambda": 0.12976
+     },
+     "stderr": {
+      "alpha": 5.874504,
+      "lambda": 0.317816
+     },
+     "loglik": -65.916937,
+     "aic": 135.833873,
+     "ks": 0.067919
+    },
+    "exponential": {
+     "params": {
+      "lambda": 0.32405
+     },
+     "stderr": {
+      "lambda": 0.058456
+     },
+     "loglik": -66.067889,
+     "aic": 134.135777,
+     "ks": 0.087947
+    },
+    "lognormal": {
+     "params": {
+      "mu": 1.091458,
+      "sigma": 0.603128
+     },
+     "stderr": {
+      "mu": 4.137247,
+      "sigma": 0.696039
+     },
+     "loglik": -65.914599,
+     "aic": 135.829199,
+     "ks": 0.068409
+    }
+   },
+   "vuong_power_vs_lognormal": {
+    "a": "power_law",
+    "b": "lognormal",
+    "loglik_ratio": -0.112664,
+    "statistic": -0.319739,
+    "p": 0.749166,
+    "nested": false,
+    "favoured": null
+   },
+   "vuong_exponential_vs_lognormal": {
+    "a": "exponential",
+    "b": "lognormal",
+    "loglik_ratio": -0.153289,
+    "statistic": -0.368816,
+    "p": 0.712265,
+    "nested": false,
+    "favoured": null
+   },
+   "cutoff_test": {
+    "a": "power_law",
+    "b": "truncated_power_law",
+    "loglik_ratio": -0.110327,
+    "statistic": 0.220653,
+    "p": 0.319271,
+    "nested": true,
+    "favoured": "power_law"
+   },
+   "best_by_aic": "power_law",
+   "goodness_of_fit_p": 0.63,
+   "histogram": {
+    "3": 442,
+    "4": 1006,
+    "5": 179,
+    "6": 669,
+    "7": 190,
+    "8": 55,
+    "9": 47,
+    "10": 18,
+    "11": 8,
+    "12": 111,
+    "13": 8,
+    "14": 7,
+    "15": 7,
+    "16": 1,
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "25": 1,
+    "28": 1
+   },
+   "alpha_matches": [
+    {
+     "expression": "5",
+     "z": -1.09,
+     "p_chance": 0.4246,
+     "named": false
+    },
+    {
+     "expression": "6",
+     "z": 0.02,
+     "p_chance": 0.536,
+     "named": false
+    },
+    {
+     "expression": "7",
+     "z": 1.13,
+     "p_chance": 0.6475,
+     "named": false
+    }
+   ]
+  },
+  "abundances": {
+   "xmin": 2.0,
+   "n_tail": 37,
+   "fits": {
+    "power_law": {
+     "params": {
+      "alpha": 1.45126
+     },
+     "stderr": {
+      "alpha": 0.074423
+     },
+     "loglik": -164.732988,
+     "aic": 331.465977,
+     "ks": 0.134524
+    },
+    "truncated_power_law": {
+     "params": {
+      "alpha": 1.257829,
+      "lambda": 0.001117
+     },
+     "stderr": {
+      "alpha": 0.129481,
+      "lambda": 0.001038
+     },
+     "loglik": -162.444089,
+     "aic": 328.888178,
+     "ks": 0.096269
+    },
+    "exponential": {
+     "params": {
+      "lambda": 0.014223
+     },
+     "stderr": {
+      "lambda": 0.002338
+     },
+     "loglik": -194.357934,
+     "aic": 390.715868,
+     "ks": 0.395714
+    },
+    "lognormal": {
+     "params": {
+      "mu": -0.228574,
+      "sigma": 3.075812
+     },
+     "stderr": {
+      "mu": 2.867224,
+      "sigma": 1.106026
+     },
+     "loglik": -163.325431,
+     "aic": 330.650861,
+     "ks": 0.114992
+    }
+   },
+   "vuong_power_vs_lognormal": {
+    "a": "power_law",
+    "b": "lognormal",
+    "loglik_ratio": -1.407558,
+    "statistic": -1.02834,
+    "p": 0.30379,
+    "nested": false,
+    "favoured": null
+   },
+   "vuong_exponential_vs_lognormal": {
+    "a": "exponential",
+    "b": "lognormal",
+    "loglik_ratio": -31.032504,
+    "statistic": -2.960266,
+    "p": 0.003074,
+    "nested": false,
+    "favoured": "lognormal"
+   },
+   "cutoff_test": {
+    "a": "power_law",
+    "b": "truncated_power_law",
+    "loglik_ratio": -2.288899,
+    "statistic": 4.577799,
+    "p": 0.016194,
+    "nested": true,
+    "favoured": "truncated_power_law"
+   },
+   "best_by_aic": "truncated_power_law",
+   "goodness_of_fit_p": 0.1,
+   "histogram": {
+    "1": 99,
+    "2": 9,
+    "3": 3,
+    "5": 3,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "12": 1,
+    "22": 1,
+    "26": 1,
+    "34": 1,
+    "40": 1,
+    "41": 3,
+    "42": 1,
+    "43": 1,
+    "46": 1,
+    "51": 1,
+    "55": 1,
+    "91": 1,
+    "284": 1,
+    "298": 1,
+    "442": 1,
+    "972": 1
+   },
+   "alpha_matches": [
+    {
+     "expression": "sqrt(2)",
+     "z": -0.5,
+     "p_chance": 0.4915,
+     "named": false
+    },
+    {
+     "expression": "3/2",
+     "z": 0.65,
+     "p_chance": 0.6239,
+     "named": false
+    },
+    {
+     "expression": "4/3",
+     "z": -1.58,
+     "p_chance": 0.9071,
+     "named": false
+    }
+   ]
+  }
  }
 }

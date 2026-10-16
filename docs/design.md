@@ -100,7 +100,14 @@ question.toml
 | 1 | Kepler's classical core as an installable library with fit, rank, predict; every existing test passing first | done |
 | 2 | LatticeLife observables, `no_repeat_before`, rectangular tori, `damage` command, cost hints, stable interface | done |
 | 3 | lattice-lab: settling time against torus size, end to end, with ledger, reports, verify and self-check | done |
-| 4 | Survival against density (logistic, critical density x0 with error) and how it shifts with size (`shifted_power`) | next: both laws and the `survival` observable exist |
-| 5 | Damage spreading and relaxation over time as quantities | the `damage` command and `damage_spread`, `density_series` observables exist |
-| 6 | The same rule across lattices (position paper Claim 1) | open |
+| 4 | Survival against density (logistic, critical density x0 with error) and how it shifts with size (`shifted_power`) | tools done and shown on real data ([capabilities](capabilities.md)): binomial likelihood, `window`, one fit over density and size (`FSS_LAWS`), binomial designs; the loop does not ask it yet |
+| 5 | Damage spreading and relaxation over time as quantities | tools done and shown: `TIME_LAWS`, seed-to-seed error bars (`fit_replicates`), `damage_curves`; not in the loop yet |
+| 6 | The same rule across lattices (position paper Claim 1) | tools done (`fit_groups`, `compare_sharing`), shown across densities; across lattices open |
 | 7 | More proposers: a language model through Kepler's `fit_skeleton`, Kepler's specialist models | open |
+
+Kepler also gained, each with known-answer tests and a run on real data in
+[capabilities](capabilities.md): a censored likelihood for times some of which are only bounds
+(LatticeLife's `event_times`), distribution fitting (`kepler.distributions`), matching constants to
+known numbers with a chance-match probability (`identify`), exact integer laws
+(`find_integer_laws`), and conserved quantities (`find_invariants`, LatticeLife's
+`count_series`).
