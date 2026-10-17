@@ -1,5 +1,5 @@
 """
-Do the square and hexagon rules' polynomials split into one-dimensional factors? (Not registered.)
+Do the rules' polynomials split into one-dimensional factors? (Not registered.)
 
     uv run python examples/linear-atlas/factor.py
 
@@ -8,16 +8,20 @@ is one-dimensional when it is a polynomial g(u) in a single monomial u = x^a y^b
 1D linear rule along the lattice direction (a, b). The hexagon's parity rule, for instance, is
 (1 + x)(1 + y)(1 + x/y) / x: a pass of rule 60 along each of its three directions.
 
-sympy cannot factor polynomials of two variables over GF(2), so this searches. For each
-primitive direction (a, b) with |a|, |b| <= 2, a unimodular change of variables makes u = x^a y^b
-a coordinate X, with Y the other. Then g(X) divides f exactly when f is zero in
-GF(2)[Y^+-1][X] / g(X). Here g runs over the irreducible polynomials of degree 1 to 3, and every
-factor found is divided out. A rule "splits" when what is left is a monomial. Writes
-factors.json.
+sympy cannot factor polynomials of two variables over GF(2), so `split` decides it directly. A
+factor's Newton polygon is a Minkowski summand of f's (Ostrowski), and a one-dimensional
+factor's is a segment of direction (a, b) and length deg g. So (a, b) is the direction of an edge
+of f's Newton polygon and deg g is at most that edge's lattice length: finitely many candidates,
+all tried. For each, a unimodular change of variables makes u = x^a y^b a coordinate X, and
+g(X) divides f exactly when long division in X leaves nothing. Every factor found is divided
+out, and the polygon recomputed, until none is left. A rule "splits" when what is left is a
+monomial. On the triangle the same is asked of s, where the rule's 2 x 2 matrix squares to s I.
+Writes factors.json.
 """
 
 from __future__ import annotations
 
+import functools
 import json
 import math
 from pathlib import Path
@@ -26,15 +30,69 @@ import engine
 from lattices import Matrix, _tau
 
 HERE = Path(__file__).resolve().parent
-IRREDUCIBLE = {"1+u": (0, 1), "1+u+u^2": (0, 1, 2), "1+u+u^3": (0, 1, 3), "1+u^2+u^3": (0, 2, 3)}
-DIRECTIONS = sorted(
-    {
-        (a, b) if (a, b) > (0, 0) else (-a, -b)
-        for a in range(-2, 3)
-        for b in range(-2, 3)
-        if (a, b) != (0, 0) and math.gcd(a, b) == 1
-    }
-)
+
+
+@functools.cache
+def irreducible(degree: int) -> tuple[tuple[int, ...], ...]:
+    """The irreducible polynomials over GF(2) of this degree with a constant term, as exponents."""
+    found = []
+    for mask in range(1 << degree, 1 << (degree + 1)):
+        if mask & 1 and not any(
+            _mod(mask, sum(1 << e for e in g)) == 0
+            for k in range(1, degree // 2 + 1)
+            for g in irreducible(k)
+        ):
+            found.append(tuple(e for e in range(degree + 1) if mask >> e & 1))
+    return tuple(found)
+
+
+def _mod(a: int, b: int) -> int:
+    while a and a.bit_length() >= b.bit_length():
+        a ^= b << (a.bit_length() - b.bit_length())
+    return a
+
+
+def _name(g: tuple[int, ...]) -> str:
+    return "+".join("1" if e == 0 else "u" if e == 1 else f"u^{e}" for e in g)
+
+
+def _hull(points: set) -> list[tuple[int, int]]:
+    """The vertices of the convex hull, in order, without collinear points."""
+    pts = sorted(points)
+    if len(pts) <= 2:
+        return pts
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+    lower, upper = [], []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+
+def edges(f: set) -> dict[tuple[int, int], int]:
+    """The Newton polygon's edge directions (primitive, sign-normalised), each with its longest
+    lattice length."""
+    v = _hull(f)
+    pairs = [(v[0], v[1])] if len(v) == 2 else []
+    if len(v) > 2:
+        pairs = list(zip(v, v[1:] + v[:1], strict=True))
+    out: dict[tuple[int, int], int] = {}
+    for (x1, y1), (x2, y2) in pairs:
+        dx, dy = x2 - x1, y2 - y1
+        g = math.gcd(dx, dy)
+        a, b = dx // g, dy // g
+        if (a, b) < (0, 0):
+            a, b = -a, -b
+        out[(a, b)] = max(out.get((a, b), 0), g)
+    return out
 
 
 def polynomial(lattice: str, shells: tuple[str, ...]) -> set[tuple[int, int]]:
@@ -48,12 +106,18 @@ def polynomial(lattice: str, shells: tuple[str, ...]) -> set[tuple[int, int]]:
 
 
 def _basis(a: int, b: int) -> tuple[int, int]:
-    """(c, d) with a d - b c = 1."""
-    for c in range(-3, 4):
-        for d in range(-3, 4):
-            if a * d - b * c == 1:
-                return c, d
-    raise ValueError((a, b))
+    """(c, d) with a d - b c = 1, for primitive (a, b)."""
+    g, s, t = _egcd(a, b)
+    assert g == 1, (a, b)
+    return -t, s
+
+
+def _egcd(a: int, b: int) -> tuple[int, int, int]:
+    """(g, s, t) with a s + b t = g = gcd(a, b) > 0."""
+    if b == 0:
+        return (abs(a), 1 if a >= 0 else -1, 0)
+    g, s, t = _egcd(b, a % b)
+    return g, t, s - (a // b) * t
 
 
 def _to_xy(terms, a, b, c, d):
@@ -97,27 +161,30 @@ def _times(f: set, g: set) -> set:
 
 
 def split(f: set) -> dict:
-    """Divide out every one-dimensional factor found, until none is left."""
+    """Divide out every one-dimensional factor, until none is left (see the module docstring)."""
     original, factors = f, []
-    changed = True
-    while changed and len(f) > 1:
-        changed = False
-        for a, b in DIRECTIONS:
+    while len(f) > 1:
+        found = None
+        for (a, b), length in sorted(edges(f).items()):
             c, d = _basis(a, b)
-            for gname, g in IRREDUCIBLE.items():
-                q = _divide(_to_xy(f, a, b, c, d), g)
-                if q is not None and q:
-                    f = _from_xy(q, a, b, c, d)
-                    factors.append({"direction": [a, b], "factor": gname})
-                    changed = True
+            for degree in range(1, length + 1):
+                for g in irreducible(degree):
+                    q = _divide(_to_xy(f, a, b, c, d), g)
+                    if q:
+                        found = (a, b, g, _from_xy(q, a, b, c, d))
+                        break
+                if found:
                     break
-            if changed:
+            if found:
                 break
+        if not found:
+            break
+        a, b, g, f = found
+        factors.append({"direction": [a, b], "factor": _name(g), "g": list(g)})
     product = f
     for factor in factors:
         a, b = factor["direction"]
-        g = {(e * a, e * b) for e in IRREDUCIBLE[factor["factor"]]}
-        product = _times(product, g)
+        product = _times(product, {(e * a, e * b) for e in factor["g"]})
     assert product == original  # the factors multiply back
     return {
         "terms": len(original),

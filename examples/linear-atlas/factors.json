@@ -8,14 +8,22 @@
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -63,28 +71,44 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -132,28 +156,44 @@
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -241,14 +281,24 @@
       0,
       1
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     }
    ],
    "left": [
@@ -268,14 +318,22 @@
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -395,14 +453,24 @@
       1,
       -1
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     }
    ],
    "left": [
@@ -538,21 +606,33 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -608,21 +688,33 @@
       1,
       -2
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       2,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -678,42 +770,66 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -885,21 +1001,33 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -1059,21 +1187,36 @@
       0,
       1
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     },
     {
      "direction": [
       1,
       -1
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u+u^2"
+     "factor": "1+u+u^2",
+     "g": [
+      0,
+      1,
+      2
+     ]
     }
    ],
    "left": [
@@ -1295,21 +1438,33 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -1367,42 +1522,66 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -1423,42 +1602,66 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
@@ -1743,21 +1946,33 @@
       0,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       0
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     },
     {
      "direction": [
       1,
       1
      ],
-     "factor": "1+u"
+     "factor": "1+u",
+     "g": [
+      0,
+      1
+     ]
     }
    ],
    "left": [
