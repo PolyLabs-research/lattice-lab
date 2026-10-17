@@ -118,5 +118,45 @@
     199
    ]
   }
+ },
+ "dilation": {
+  "written": "2026-10-17T23:19:48+00:00",
+  "why": "After the first failure outside the cubes (square C4+self at n = 141: 2^23 - 1, not the full bound 2^46 - 1), while the run was in progress. C4 + self is (N4 + self)(x^3, y^3). When 3 divides n, x -> x^3 maps the n-torus's group ring onto that of the n/3-torus, and F2[Z_n^2] is a free module of rank 9 over that image, so C4 + self has N4 + self's period on the n/3 torus; the pattern puts that at the full bound of n/3. When 3 does not divide n, x -> x^3 is an automorphism and nothing changes. The only rules of the six shells in x^3, y^3 are C4 and C4 + self; C4 has no registered prediction. Not registered.",
+  "rule": "square C4+self",
+  "expected failures": [
+   15,
+   21,
+   27,
+   39,
+   45,
+   51,
+   111,
+   141
+  ],
+  "expected period there": {
+   "111": "262143",
+   "141": "8388607",
+   "15": "3",
+   "21": "7",
+   "27": "7",
+   "39": "63",
+   "45": "15",
+   "51": "15"
+  },
+  "multiples of 3 where the n/3 bound equals the n bound (no failure expected)": [
+   33,
+   57
+  ],
+  "already computed when written": [
+   121,
+   141,
+   143,
+   169,
+   181,
+   193,
+   197,
+   199,
+   203
+  ]
  }
 }
