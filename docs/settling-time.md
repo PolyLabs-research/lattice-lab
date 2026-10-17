@@ -109,13 +109,21 @@ would give.
   interquartile range implies (17), because of a few seeds that run much longer (433 at 1024,
   against a median of 210).
 
-One refinement would explain the first two. If the local times' tail is exponential with a
+One refinement seemed to explain the first two. If the local times' tail is exponential with a
 power-law prefactor, about t^k e^(-t/tau), the largest of N of them has location
-tau ln N + k tau ln ln N. Its slope in ln L then exceeds 2 tau by k tau / ln L, which fades as L
-grows. With tau = 12.7 from the spread, k of about 3 fits the slope over 192 to 1024, and
-predicts about 36 over 8 to 128 (37.6 was fitted). A local tail like that is what a few
-independent stages in series would give. Testing it needs tori of 2048 and beyond, where it
-predicts the slope keeps falling towards 2 tau = 25.
+tau ln N + k tau ln ln N. Its slope in ln L exceeds 2 tau by a term that fades as L grows.
+
+**Correction (made before round 2 was registered).** That reasoning was half wrong. It took the
+spread to be 1.5725 tau, using the tail's asymptotic scale. But the largest of N times with any
+smooth tail has spread and slope both set by the tail's hazard rate at the location b_N:
+spread = 1.5725 / h(b_N) and slope = 2 / h(b_N). Their ratio is Gumbel's 0.786 whatever the
+prefactor; worked out exactly, it is 0.785 to 0.786 for k from 0 to 5, at every L from 256 to
+4096. So a fading correction can explain a falling slope, but it cannot explain a narrow spread.
+No model in which settling is the largest of independent, identically distributed local times
+can explain a ratio of 0.64. Fitted properly to all quantiles at 64 to 1024, the model prefers
+k = 0 (tau = 14.5 +- 3.0), but k = 3 is within its errors, and every k fits poorly (chi-square
+about 90 on 42 degrees of freedom). That misfit is the same tension: the medians grow faster
+than the spread allows. Round 2, below, tests the assumption itself.
 
 ## Study B: the same question on every lattice
 
@@ -201,9 +209,10 @@ The registered tests confirm consistency with Gumbel. Naming the class from the 
 would need error bars five to ten times smaller: about 25 to 100 times the seeds.
 
 **B2/S34 against the rest (after the fact).** Study A's ratio, 0.64 +- 0.04 over 192 to 1024,
-is 2.5 standard errors below the eight rules' 0.765. Either B2/S34's local times have a heavier
-prefactor than the others' (the refinement above), or the eight rules' sizes, 128 to 512, are
-still short of where theirs falls too. Measuring the eight on tori of 1024 and 2048 would tell.
+is 2.5 standard errors below the eight rules' 0.765. A heavier tail prefactor cannot lower the
+ratio (see the correction above). So either B2/S34's local times are not independent and
+identically distributed on large tori, or the eight rules' sizes, 128 to 512, are still short
+of where theirs falls too. Measuring the eight on tori of 1024 and 2048 would tell.
 
 ## What this does and does not establish
 
