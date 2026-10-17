@@ -17,4 +17,5 @@ uv run lattice-lab verify --lab examples/xor-periods
 git log --format='%h %ad %s' --date=iso -- examples/xor-periods/ledger.jsonl
 ```
 
-The write-up is in [docs/xor-periods.md](../../docs/xor-periods.md) once the run is judged.
+Result: the law was confirmed at all 45 sizes, and the rival refuted at n = 74 (524286 against
+174762). The write-up is [docs/xor-periods.md](../../docs/xor-periods.md).

@@ -164,9 +164,11 @@ where 2^v(n) is the largest power of 2 dividing n and sord(n) is the suborder of
 part of n: the least j with 2^j = +-1 modulo it. It was determined by one point and confirmed by
 24. Then, before running them, it predicted the periods at n = 31, 33, 34 and 35: 31, 31, 30 and
 4095. The simulator gave 31, 31, 30 and 4095. This is the structure Martin, Odlyzko and Wolfram
-proved for the one-dimensional rule 90 (1984); here it holds for a two-dimensional rule on n x n
-tori over every size tried. That is evidence, not a proof, and a longest period over three soups
-is a lower bound on the torus's longest period.
+proved for the one-dimensional rule 90 (1984), and the odd sizes up to 23 had already been
+published, as a conjecture, by J. McLaughlin: a rediscovery. What was not known is what happens
+where rule 90 falls short of the formula (first at n = 37): a later, pre-registered test found
+this rule does not, at n = 37 and 74, and confirmed the law at 45 sizes from 36 to 100. See
+[the XOR period test](xor-periods.md).
 
 ## 7. Conserved quantities
 

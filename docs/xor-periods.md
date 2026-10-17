@@ -1,6 +1,8 @@
 # The XOR rule's period on n x n tori: a pre-registered test
 
-**Status: registered 2026-10-17T11:14:10Z; runs in progress. Results follow when judged.**
+**Status: judged. The law was confirmed at all 45 registered sizes; the rival (the 2D rule has rule
+90's period) was refuted at the one size where they differ, n = 74. Registered
+2026-10-17T11:14:10Z (pushed in `6097179`), run from 11:14:31Z, judged 11:32:26Z.**
 
 ## The law
 
@@ -95,12 +97,67 @@ after it started.
 
 ## Results
 
-Pending: the runs started after the registration was pushed; the verdict is written to the
-ledger when they finish.
+180 runs (45 sizes x three soups and one control), in `examples/xor-periods/records.jsonl`; the
+verdict is ledger entry 6.
+
+| | Registered prediction | Outcome |
+| --- | --- | --- |
+| The law, at 45 sizes | longest soup period = 2^v(n)(2^sord(n) - 1) | **confirmed at 45 of 45**; every soup at every size gave exactly the predicted period |
+| The rival, at n = 74 | 174762 (rule 90's period) | **refuted**: all three soups gave 524286, the law's value |
+| The rival, at the other 44 sizes | rule 90's period (equal to the law's there) | not refuted, as expected: there the two agree |
+| The control, at 45 sizes | the axis-constant start's period divides rule 90's | **passed at 45 of 45**, and equal to it at every size; at n = 74, 174762 |
+| Transients, odd n | at most 1 | **held** at every odd size |
+
+The decisive size:
+
+| n = 74 | Period | Transient |
+| --- | --- | --- |
+| soup, seed 1 | 524286 | 1 |
+| soup, seed 2 | 524286 | 1 |
+| soup, seed 3 | 524286 | 1 |
+| constant along one axis (evolves as rule 90) | 174762 | 1 |
+
+On the same 74 x 74 torus, the configurations that behave as rule 90 cycle with rule 90's period,
+and every random soup cycles three times longer. With n = 37 before it, this is the second size at
+which this rule does not share rule 90's shortfall. On n x n tori its period equals the bound
+2^v(n)(2^sord(n) - 1) at every size measured, 75 of them (25 from 3 to 30, the held-out 31, 33,
+34 and 35 of the first study, 37, and the 45 here), including the two where rule 90's period
+is a third of it.
+
+Not registered, so only an observation: on even tori the transients reach powers of 2 (2 at
+n = 36, 8 at 40 and 48, 16 at 80 and 96), no larger than 2^v(n).
 
 ## What this does and does not establish
 
-To be written with the results.
+- **It is evidence, not a proof.** The bound argument above proves that, for odd n, the period
+  divides 2^sord(n) - 1 and is a multiple of rule 90's. That the rule always attains the bound
+  (unlike rule 90) is what the measurements support at every size tried, and what remains to be
+  proved. The even sizes rest on the measurements alone here.
+- **The longest period over three soups is a lower bound** on the torus's longest period. Here it
+  met the upper bound exactly at every size, so for odd n it is the longest period.
+- **Large periods were not reached.** Sizes such as 47, 49, 53 and 61 have predicted periods of
+  2 million to 10^9 generations, beyond a simulation budget; rule 90's next shortfall, n = 95
+  (2^36 - 1 against 2.3 x 10^10), is far beyond it. Deciding those needs the period computed
+  algebraically (the order of the update matrix over GF(2)), not simulated.
+- **Novelty is as far as the search went.** The odd sizes to 23 were published by McLaughlin.
+  Nothing found covers this rule at the sizes where rule 90 falls short, and the closest proved
+  result, Vadali and Turner's for the four-neighbour analogue, goes the other way (2D equals 1D).
+  The specialist literature on 2D linear automata (Kawahara et al. 1992 among it) was not read in
+  full and should be before this is claimed as new.
+- **Who did what.** Kepler's search found the law from data and predicted unseen sizes; the
+  argument that told where to test (rule 90's shortfalls) and why the law holds at most odd sizes
+  is reasoning added afterwards, not output of the tools.
+
+## Checking it
+
+```bash
+uv run lattice-lab verify --lab examples/xor-periods   # chain, and predictions before the run
+git log --format='%h %ad %s' --date=iso -- examples/xor-periods
+uv run python examples/xor-periods/study.py preregister   # refuses: already registered
+```
+
+Every record holds its rule, torus, seed, start and cap, and no timings, so any one can be rerun
+with `study.py`'s `measure` and compared byte for byte.
 
 ## Sources
 
