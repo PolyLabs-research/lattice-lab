@@ -158,9 +158,18 @@ them into those families without exception among the 32.
   and inherit its shortfalls.
 - **Rules that do not factor** reach the full bound.
 
-This is a conjecture for the next round. It includes rule-150 analogues of Vadali and Turner's
-theorem and of the hexagon theorem. On the hexagon and triangle, which family a rule belongs to
-rests on just two decisive sizes, n = 74 and 148.
+This includes rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem.
+
+**Round 2 registered the pattern** (`examples/linear-atlas-2`) and made 5,048 exact checks.
+- **The atlas laws:** all 34 held at all 624 new sizes, which were chosen where the two families
+  part, up to n = 400.
+- **New rules:** for 112 square rules nobody had computed, plus the four without a law, the
+  pattern predicted each period at odd n from the factorisation alone. **106 of the 113
+  predictions held, and 7 failed, so the pattern as registered is refuted.**
+- **Three of the failed rules** are confined without splitting: two are perfect cubes and one is a
+  rule in x^3, y^3. After the first failure of each kind, the sizes and periods where they must
+  fail were committed before those sizes were computed. All 55 came out as written.
+- **The other four** fail at one small size each (n = 13 or 37) and are unexplained.
 
 Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
@@ -178,6 +187,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `settling-time-local` | B2/S34's local settling times on 256 and 1024 tori: round 2 (registered) |
 | `kepler-rediscovery` | Kepler's search, with 1D linear-rule periods, replayed on the period data (registered) |
 | `linear-atlas` | 42 shell-built linear rules: exact engine, discovery, Kepler's laws judged at 1,930 new pairs (registered), factorisation analysis |
+| `linear-atlas-2` | the factorisation pattern registered: the 34 laws at 624 decisive pairs, and 116 square rules predicted from their factorisation (registered); the cubes and dilation found afterwards |
 
 ## Settling times: a replication and a universality test
 

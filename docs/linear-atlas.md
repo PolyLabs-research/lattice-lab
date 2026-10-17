@@ -1,26 +1,39 @@
 # A blind atlas: periods of 42 linear rules on three lattices
 
-**Status: judged, one registered round, plus analysis afterwards.** The test asked Kepler for
-period laws for every rule built from symmetric neighbour shells on the square, hexagonal and
-triangular lattices: 42 rules, 38 of which nobody here had studied. Each was fitted on tori up to
-60. Every law Kepler proposed was registered with its value at each new size before any new size
-was computed. The new sizes were then checked exactly: 1,930 (rule, size) pairs up to n = 160.
-**For all 34 rules that got a law, a registered law was the exact period at every test size. No
-rule had all its laws refuted.** Kepler's top-ranked law was the one that held for 19 rules; for
-the other 15, a tied rival registered alongside it held instead. On the hexagon and triangle the
-two parted at only two sizes, n = 74 and 148. Eight rules got no law.
+**Status: judged, two registered rounds.**
 
-**Afterwards, not registered:** the laws fall into two families, and the polynomials sort the
-rules into those same two families without exception.
-- A rule whose polynomial splits into passes of 1D rules along lattice directions has that 1D
-  rule's period. On the triangle the test is whether its matrix's square splits. These rules
-  inherit rule 90's (or rule 150's) shortfalls.
-- Every rule that does not split reaches the full bound 2^v(n) (2^sord(n) - 1), times 2 for
-  most hexagon and triangle rules. It escapes the shortfalls.
+**Round 1** asked Kepler for period laws for every rule built from symmetric neighbour shells on
+the square, hexagonal and triangular lattices: 42 rules, 38 of which nobody here had studied.
+- Each law was fitted on tori up to 60, and every law Kepler proposed was registered with its
+  value at each new size before any new size was computed.
+- The new sizes were checked exactly: 1,930 (rule, size) pairs up to n = 160.
+- **For all 34 rules that got a law, a registered law was the exact period at every test size.
+  No rule had all its laws refuted.**
+- Kepler's top-ranked law held for 19 rules; for the other 15, a tied rival registered alongside
+  it held instead. Eight rules got no law.
 
-This holds for all 32 rules with a non-constant law. It is a conjecture for a next round, and
-one half of it is easy to prove for some of the rules. All eight no-law rules are quadratics in
-their lattice's nearest-neighbour rule.
+Afterwards, a pattern was noticed: the polynomials sort the laws into two families.
+- A rule whose polynomial splits into passes of 1D rules along lattice directions has a 1D
+  rule's period, shortfalls included. On the triangle, the test is whether its matrix's square
+  splits.
+- A rule that does not split reaches the full bound.
+
+**Round 2** registered that pattern ([below](#round-2-the-pattern-registered)) and made 5,048
+exact checks:
+- **A.** All 34 round-1 laws held at all 624 new sizes, chosen where the families part, up to
+  n = 400. This includes odd parts 197 and 199, where rule 90 falls short by factors of 3 and 7.
+- **B.** The pattern predicted the periods of 116 square rules from their factorisation alone,
+  112 of them never computed before. **106 of the 113 predictions held, and 7 failed, so the
+  pattern as registered is refuted.**
+
+What the failures show, analysed afterwards:
+- **Three of the failed rules break it the same way.** They are confined without splitting:
+  two are perfect cubes, (N4 + self)^3 and N4^3, and one is a rule in x^3, y^3. After the first
+  failure of each kind, the sizes and periods where these three must fail were committed before
+  those sizes were computed. They failed at exactly those 55 sizes, with those periods, and
+  nowhere else.
+- **The other four** each fail at one small size (n = 13 or 37) and hold everywhere else. They
+  are not explained.
 
 ## The rules
 
@@ -241,6 +254,125 @@ H1 or E), as matrices on the 12 and 16 tori. Each of the eight is one:
   has period lcm(P(N4), P(1 + N4)) at 44 of the 53 discovery sizes, and less at the other 9 (8,
   10, 12, 16, 20, 24, 32, 40, 48).
 
+## Round 2: the pattern, registered
+
+`examples/linear-atlas-2` (`atlas2.py`, `study.py`). Registered in `25425b2` and pushed at
+2026-10-17T22:04:24Z, before any of these sizes or rules was computed. The run went from 22:04:37Z
+to 23:22:52Z. Before registration, two things were done:
+- `factor.py`'s search was made complete. It now tries every factor the Newton polygon allows,
+  and gives the same classification for all 42 atlas rules.
+- A faster exact check (`atlas2.Exact`: the proper-divisor tests share a product tree) was
+  validated against round 1's. They agreed, reason for reason, on 225 round-1 values, including
+  all 104 from records with a failed check.
+
+Three (rule, size) pairs were computed while timing the engine, and their outcomes were seen
+(all full bound). The registration records them, and the two among the test sizes (n = 394) are
+excluded.
+
+**Part A: the 34 atlas rules with a law.** Each was registered with the law its factorisation
+picks from those Kepler proposed. In every case that was a round-1 survivor. The test sizes are
+where rule 90's or rule 150's period differs from the full bound:
+- **square:** the 28 such sizes from 141 to 303;
+- **hexagon and triangle:** the 15 such even sizes, 190, 192, 202, 206, 208, 222, 242, 244, 268,
+  282, 286, 296, 380, 394 and 398.
+
+This covers the next rule-90 shortfalls, odd parts 95, 101, 111, 141, 197 and 199. At 199 the
+shortfall is a factor of 7, not 3. **All 34 held at all 624 pairs:**
+- 11 rules that split shared rule 90's or rule 150's shortfalls;
+- 21 rules that do not split reached the full bound;
+- 2 constants held.
+
+**Part B: the pattern alone, on rules never computed.** The square gets three more shells: K8
+(the eight cells at distance sqrt 5), B4 (four at 2 sqrt 2) and C4 (four at 3). That gives 112 new
+rules, and the four atlas square rules without a law are added. At odd n each period is predicted
+from the factorisation:
+
+| Call | Prediction | Rules | Held |
+| --- | --- | --- | --- |
+| does not split completely | the full bound 2^sord(n) - 1 | 106 | **100** |
+| splits, factors 1 + u only | P90(n) | 5 | **4** |
+| splits, factors 1 + u + u^2 only | P150(n) | 1 (A4+B4+self, = (N4+D4+self)^2) | **1** |
+| splits, one other factor | that symmetric 1D rule's period | 1 (N4+D4+A4+K8+B4+self, a five-cell rule along each axis) | **1** |
+| factors of more than one kind | none: computed | 3 (C4, N4+A4+K8, D4+K8+B4) | - |
+
+The test sizes are every odd n from 13 to 61 for the new rules, plus the 14 odd sizes from 63 to
+203 where rule 90's or rule 150's period differs from the full bound. That is 4,307 checks, plus
+117 periods computed for the three rules without a call. The rule was checked first against
+round 1's discovery data: the 14 atlas square rules at every odd n from 9 to 59. It held at all of
+them, including the four with no law, whose irregularity is only at even n. In the round, the
+four atlas rules held at all 14 new sizes.
+
+**Seven predictions failed:** 59 checks, all on the square.
+
+| Rule | Failed at | What it is (found afterwards) |
+| --- | --- | --- |
+| N4+K8+C4 | 22 of 39 sizes | N4^3 |
+| A4+K8+C4+self | 25 of 39 | (N4 + self)^3 |
+| C4+self | 8 of 39 | (N4 + self)(x^3, y^3) |
+| A4+C4, A4+C4+self | n = 13 only (period 7, not 63) | not explained |
+| A4+K8+B4+C4+self | n = 13 only (21, not 63) | not explained |
+| A4+K8+B4+self | n = 37 only (87381, rule 90's period, not 262143) | not explained |
+
+### Two mechanisms the pattern missed
+
+**Perfect cubes.** The first failure was A4+K8+C4+self at n = 197, at a third of the full bound.
+Writing a = x + 1/x and b = y + 1/y, the shells are:
+- N4 = a + b and A4 = a^2 + b^2;
+- K8 = ab(a + b) and C4 = a^3 + a + b^3 + b.
+
+So A4+K8+C4+self = (1 + a + b)^3 = (N4 + self)^3. Likewise N4+K8+C4 = N4^3; these are the only
+two cubes among the 126 rules of the six shells.
+
+At odd n, M is diagonalisable and its period is the lcm of its eigenvalues' orders. A cube's
+eigenvalues are cubes, and ord(x^3) = ord(x) / gcd(ord(x), 3), so the period of g^3 is p /
+gcd(p, 3), where p is g's period. Splitting into 1D passes is one way to confine every eigenvalue
+to a proper subgroup. Being a cube is another, and the pattern did not see it, because a cube of
+a rule that does not split does not split either.
+
+**Dilation.** C4+self failed at n = 141, with 2^23 - 1 against the predicted 2^46 - 1. It is
+(N4 + self)(x^3, y^3). When 3 divides n, x -> x^3 maps the n-torus's group ring onto the
+n/3-torus's, and the whole ring is a free module of rank 9 over that image. So the rule has N4 +
+self's period on the n/3 torus. At 141 that is the full bound of 47, 2^23 - 1. C4 alone,
+which had no prediction, shows the same thing: it has P90(n), or P90(n/3) when 3 divides n, at
+all 39 sizes.
+
+**Both were written down before the evidence.** The sizes and periods where these three rules
+must fail were committed in `cube-expectation.json`:
+- for the cubes, at 22:57:09Z (`977f81d`), when only n = 197 and 199 had been computed for them;
+- for the dilation, at 23:20:00Z (`cca8923`), before 30 of its 39 sizes. That included the
+  multiples of 3 where it must fail and two, 33 and 57, where the smaller torus has the same
+  bound, so it must not.
+
+`analyse.py` checks every size of the three rules against these: **all 117 match**. That is 55
+failures with the stated periods, and 62 sizes where the registered prediction held as expected.
+This was not registered: it was written during the run, after a first failure of each kind.
+
+**The four accidents** are at the smallest test size and at 37, with period 7, 21 and 87381:
+- a period of 7 at n = 13 means every eigenvalue lies in F(8), inside F(64);
+- 87381 at 37 means every eigenvalue is a cube in F(2^18), as rule 90's are there.
+
+Each rule reaches the full bound at every other size tested, including 95, 101, 111, 141, 197,
+199 and 203, where rule 90 falls short. So these look like coincidences of particular small fields
+rather than structure, but that is not shown. One candidate cause is that a rule can split on the
+n-torus even though it does not split on the plane, since exponents only matter modulo n. A
+search over the torus's changes of coordinates was too slow to finish here.
+
+### What round 2 says about the pattern
+
+As registered, the pattern is refuted. What survives is a sharper statement, found afterwards:
+
+> A shell rule's period at odd n reaches the full bound unless something confines its eigenvalues:
+> splitting into 1D passes, being a perfect odd power, being a dilation by a divisor of n, or
+> (four times in 4,307 checks) something not yet identified at a small size.
+
+- **It accounts for every failure of round 2** except those four accidents, and is consistent
+  with every law of round 1 at its odd part.
+- **Every mechanism in it is a theorem.** The open part is the claim that nothing else confines
+  the eigenvalues.
+- **The first two mechanisms are standard algebra.** The new part is the observation, across 154
+  rules, that they are nearly the only ones. It is a conjecture, and the accidents show it is not
+  yet exact.
+
 ## What this does and does not establish
 
 - **Registered:** Kepler's period laws for 30 blind rules, each held exactly at every test size
@@ -252,11 +384,9 @@ H1 or E), as matrices on the 12 and 16 tori. Each of the eight is one:
   apart on the hexagon and triangle (as in the
   [rediscovery test](parity-lattices.md#kepler-with-a-wider-vocabulary)). The method works
   because tied rivals are registered and the test includes the sizes where they part.
-- **Thin where it decides.** The family of each hexagon and triangle rule rests on n = 74 and
-  148 alone, both with odd part 37. A next round should go where the families part again:
-  - even n with odd part 95, 101, 111, 141, 197, 199, ... on the hexagon and triangle (n = 190,
-    202, 222, ...);
-  - the square's next shortfalls (n = 141, 148, ...).
+- **Thin where it decided, in round 1.** The family of each hexagon and triangle rule rested on
+  n = 74 and 148 alone, both with odd part 37. Round 2 went where the families part again: 624
+  pairs up to n = 400, at odd parts 95, 101, 111, 141, 197 and 199. All 34 laws held.
 - **Proved or known:** N4 (Vadali and Turner), D4 and N4+D4+self (the tensor argument above),
   H1 (the hexagon theorem) and H3 = H1^2. The other laws are conjectures, confirmed exactly at
   every size tested.
@@ -264,7 +394,8 @@ H1 or E), as matrices on the 12 and 16 tori. Each of the eight is one:
   - the periods of the 2D rule-150 analogues (square D4+A4+self, hexagon H2+H3+self);
   - the full-bound family on all three lattices, including the Lights Out rule N4+self on the
     torus;
-  - the splitting pattern.
+  - the splitting pattern, and its round-2 refinement: confinement by splitting, odd powers or
+    dilation, and almost nothing else.
 
   One search found Vadali and Turner, and a project listing the sigma game's period on m x n
   grids as an aim, with no results. The other found OEIS entries for 2D rule 150 grown from one
@@ -273,7 +404,16 @@ H1 or E), as matrices on the 12 and 16 tori. Each of the eight is one:
 - **Who did what.** Kepler proposed every registered law from data, including the
   rule-150 laws: P150 was in its vocabulary, but no one had pointed it at these rules. The
   factorisation pattern, the quadratic relations and the short proofs were reasoning added
-  afterwards. The pattern is the next thing to register.
+  afterwards.
+- **Round 2: the pattern, registered.**
+  - It was registered with every prediction stated in advance. It predicted 100 of 106
+    full-bound periods for rules nobody had computed, and was refuted by 7 of 113 predictions.
+  - The refutation was informative: it showed two mechanisms the pattern had missed. After the
+    first failure of each, it was written down exactly where they would fail, before those
+    sizes were computed, and that was confirmed.
+  - The four remaining failures are open.
+  - A round 3 should register the refined statement on new rules, preferably on the hexagon and
+    triangle too, with the small sizes kept in.
 
 ## Reproducing
 
@@ -281,6 +421,8 @@ H1 or E), as matrices on the 12 and 16 tori. Each of the eight is one:
     uv run python examples/linear-atlas/discover.py --workers 4
     uv run lattice-lab verify --lab examples/linear-atlas
     uv run python examples/linear-atlas/factor.py
+    uv run lattice-lab verify --lab examples/linear-atlas-2
+    uv run python examples/linear-atlas-2/analyse.py
 
 `study.py run` will not run twice on one ledger, since a run must follow a bare registration.
 Any record can be rechecked on its own with `engine.Torus(lattice, shells, n).check(value)`.
