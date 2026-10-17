@@ -142,6 +142,26 @@ What is new, as far as a web search went:
   lattice, predicting all 98 hexagon periods at 202 to 400. That shows capability in hindsight;
   it is not a fresh discovery.
 
+**A blind atlas** ([write-up](docs/linear-atlas.md), `examples/linear-atlas`). Kepler then
+proposed laws for all 42 rules built from symmetric neighbour shells on the three lattices, 38
+of them unstudied. The laws came from tori up to 60. Every law, tied rivals included, was
+registered at each new size before any was computed. On exact checks at 1,930 (rule, size) pairs
+up to n = 160:
+- **all 34 rules that got a law kept one at every size**;
+- no rule had every law refuted;
+- Kepler's first choice held for 19 rules, and a registered rival for the other 15;
+- 8 rules got no law, and each is a quadratic in its lattice's nearest-neighbour rule.
+
+Afterwards, not registered: the laws split into two families, and the rules' polynomials sort
+them into those families without exception among the 32.
+- **Rules that factor into passes of 1D rules along lattice directions** have that rule's period
+  and inherit its shortfalls.
+- **Rules that do not factor** reach the full bound.
+
+This is a conjecture for the next round. It includes rule-150 analogues of Vadali and Turner's
+theorem and of the hexagon theorem. On the hexagon and triangle, which family a rule belongs to
+rests on just two decisive sizes, n = 74 and 148.
+
 Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
 
@@ -157,6 +177,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `settling-universality` | eight random rules on four lattice types: settling-time laws and their fluctuations (registered) |
 | `settling-time-local` | B2/S34's local settling times on 256 and 1024 tori: round 2 (registered) |
 | `kepler-rediscovery` | Kepler's search, with 1D linear-rule periods, replayed on the period data (registered) |
+| `linear-atlas` | 42 shell-built linear rules: exact engine, discovery, Kepler's laws judged at 1,930 new pairs (registered), factorisation analysis |
 
 ## Settling times: a replication and a universality test
 

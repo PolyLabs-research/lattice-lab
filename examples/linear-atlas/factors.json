@@ -1,0 +1,1992 @@
+{
+ "one-dimensional factors": {
+  "square N4": {
+   "terms": 4,
+   "factors": [
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "square N4+self": {
+   "terms": 5,
+   "factors": [],
+   "left": [
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "square D4": {
+   "terms": 4,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -1,
+     -1
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "square D4+self": {
+   "terms": 5,
+   "factors": [],
+   "left": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "square A4": {
+   "terms": 4,
+   "factors": [
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": null
+  },
+  "square A4+self": {
+   "terms": 5,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "square N4+D4": {
+   "terms": 8,
+   "factors": [],
+   "left": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "square N4+D4+self": {
+   "terms": 9,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u+u^2"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u+u^2"
+    }
+   ],
+   "left": [
+    [
+     -1,
+     -1
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "square N4+A4": {
+   "terms": 8,
+   "factors": [
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "square N4+A4+self": {
+   "terms": 9,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "square D4+A4": {
+   "terms": 8,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "square D4+A4+self": {
+   "terms": 9,
+   "factors": [
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u+u^2"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u+u^2"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "square N4+D4+A4": {
+   "terms": 12,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "square N4+D4+A4+self": {
+   "terms": 13,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H1": {
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "hexagon H1+self": {
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H2": {
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      1,
+      -2
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      2,
+      -1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     1
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "hexagon H2+self": {
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     1
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H3": {
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "hexagon H3+self": {
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H1+H2": {
+   "terms": 12,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     1
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H1+H2+self": {
+   "terms": 13,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     1
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H1+H3": {
+   "terms": 12,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "hexagon H1+H3+self": {
+   "terms": 13,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "hexagon H2+H3": {
+   "terms": 12,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H2+H3+self": {
+   "terms": 13,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u+u^2"
+    },
+    {
+     "direction": [
+      1,
+      -1
+     ],
+     "factor": "1+u+u^2"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u+u^2"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "hexagon H1+H2+H3": {
+   "terms": 18,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "hexagon H1+H2+H3+self": {
+   "terms": 19,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E": {
+   "square of the matrix": "s I",
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E+self": {
+   "square of the matrix": "s I",
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -1,
+     -1
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "triangle VO": {
+   "square of the matrix": "s I",
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle VO+self": {
+   "square of the matrix": "s I",
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     -2
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "triangle VS": {
+   "square of the matrix": "s I",
+   "terms": 6,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     -2
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "a 1D rule's period"
+  },
+  "triangle VS+self": {
+   "square of the matrix": "s I",
+   "terms": 7,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E+VO": {
+   "square of the matrix": "s I",
+   "terms": 18,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E+VO+self": {
+   "square of the matrix": "s I",
+   "terms": 19,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E+VS": {
+   "square of the matrix": "s I",
+   "terms": 13,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "triangle E+VS+self": {
+   "square of the matrix": "s I",
+   "terms": 12,
+   "factors": [
+    {
+     "direction": [
+      0,
+      1
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      0
+     ],
+     "factor": "1+u"
+    },
+    {
+     "direction": [
+      1,
+      1
+     ],
+     "factor": "1+u"
+    }
+   ],
+   "left": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "splits": false,
+   "registered law that held": null
+  },
+  "triangle VO+VS": {
+   "square of the matrix": "s I",
+   "terms": 1,
+   "factors": [],
+   "left": [
+    [
+     0,
+     0
+    ]
+   ],
+   "splits": true,
+   "registered law that held": "constant"
+  },
+  "triangle VO+VS+self": {
+   "square of the matrix": "s I",
+   "terms": 0,
+   "factors": [],
+   "left": [],
+   "splits": false,
+   "registered law that held": "constant"
+  },
+  "triangle E+VO+VS": {
+   "square of the matrix": "s I",
+   "terms": 12,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  },
+  "triangle E+VO+VS+self": {
+   "square of the matrix": "s I",
+   "terms": 13,
+   "factors": [],
+   "left": [
+    [
+     -2,
+     -1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "splits": false,
+   "registered law that held": "the full bound"
+  }
+ },
+ "quadratics": {
+  "square A4": {
+   "rule": "square A4",
+   "is": "N4^2",
+   "period is the root's halved when even": true
+  },
+  "square A4+self": {
+   "rule": "square A4+self",
+   "is": "(1+N4)^2",
+   "period is the root's halved when even": true
+  },
+  "square N4+A4": {
+   "rule": "square N4+A4",
+   "is": "N4(1+N4)"
+  },
+  "square N4+A4+self": {
+   "rule": "square N4+A4+self",
+   "is": "1+N4+N4^2"
+  },
+  "hexagon H3": {
+   "rule": "hexagon H3",
+   "is": "H1^2",
+   "period is the root's halved when even": true
+  },
+  "hexagon H3+self": {
+   "rule": "hexagon H3+self",
+   "is": "(1+H1)^2",
+   "period is the root's halved when even": true
+  },
+  "hexagon H1+H3": {
+   "rule": "hexagon H1+H3",
+   "is": "H1(1+H1)"
+  },
+  "hexagon H1+H3+self": {
+   "rule": "hexagon H1+H3+self",
+   "is": "1+H1+H1^2"
+  },
+  "triangle VS": {
+   "rule": "triangle VS",
+   "is": "(1+E)^2",
+   "period is the root's halved when even": true
+  },
+  "triangle VS+self": {
+   "rule": "triangle VS+self",
+   "is": "E^2",
+   "period is the root's halved when even": true
+  },
+  "triangle E+VS": {
+   "rule": "triangle E+VS",
+   "is": "1+E+E^2"
+  },
+  "triangle E+VS+self": {
+   "rule": "triangle E+VS+self",
+   "is": "E(1+E)"
+  }
+ }
+}
