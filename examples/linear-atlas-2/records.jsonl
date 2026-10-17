@@ -1,0 +1,11 @@
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"362185885779494114713343772964","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"181092942889747057356671886482","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"1267650600228229401496703205374","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"181092942889747057356671886482","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":398,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"1267650600228229401496703205374","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO","VS"]}
