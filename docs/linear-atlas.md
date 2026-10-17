@@ -170,8 +170,12 @@ the method, not a discovery.
 
 A rule on the square or hexagon is a Laurent polynomial f(x, y) over GF(2). Call a factor
 one-dimensional if it is a polynomial g(u) in a single monomial u = x^a y^b, which is one pass of a
-1D linear rule along the direction (a, b). `factor.py` searches every primitive direction with
-|a|, |b| <= 2 and every irreducible g of degree 1 to 3. It divides out each factor it finds and
+1D linear rule along the direction (a, b). `factor.py` decides whether f has one. A factor's
+Newton polygon is a Minkowski summand of f's (Ostrowski). A one-dimensional factor's polygon is a
+segment along (a, b) of length deg g. So (a, b) must be the direction of an edge of f's polygon,
+and deg g can be at most that edge's lattice length. That leaves finitely many candidates, and
+all are tried. (The first version tried a fixed list of small directions and degrees; the
+complete search gives the same answer for all 42 rules.) It divides out each factor it finds and
 checks that the factors multiply back to f. A rule splits when only a monomial is left. On the
 triangle, M^2 = s I for a polynomial s on the translation lattice for all 14 rules, and the test
 is whether s splits. Output: `factors.json`.
