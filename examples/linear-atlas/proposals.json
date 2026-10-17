@@ -1,0 +1,1137 @@
+{
+ "square N4": {
+  "lattice": "square",
+  "shells": [
+   "N4"
+  ],
+  "subset": "all n",
+  "points": 53,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 52,
+    "bits": 3.0
+   }
+  ]
+ },
+ "square N4+self": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "self"
+  ],
+  "subset": "n not a power of 2",
+  "points": 50,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 49,
+    "bits": 5.0
+   }
+  ]
+ },
+ "square D4": {
+  "lattice": "square",
+  "shells": [
+   "D4"
+  ],
+  "subset": "all n",
+  "points": 53,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 52,
+    "bits": 3.0
+   }
+  ]
+ },
+ "square D4+self": {
+  "lattice": "square",
+  "shells": [
+   "D4",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 47,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 46,
+    "bits": 5.0
+   }
+  ]
+ },
+ "square A4": {
+  "lattice": "square",
+  "shells": [
+   "A4"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "square A4+self": {
+  "lattice": "square",
+  "shells": [
+   "A4",
+   "self"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "square N4+D4": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "D4"
+  ],
+  "subset": "n not a power of 2",
+  "points": 50,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 49,
+    "bits": 5.0
+   }
+  ]
+ },
+ "square N4+D4+self": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "D4",
+   "self"
+  ],
+  "subset": "all n",
+  "points": 53,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P150(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 52,
+    "bits": 3.0
+   }
+  ]
+ },
+ "square N4+A4": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "A4"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "square N4+A4+self": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "A4",
+   "self"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "square D4+A4": {
+  "lattice": "square",
+  "shells": [
+   "D4",
+   "A4"
+  ],
+  "subset": "n not a power of 2",
+  "points": 50,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 49,
+    "bits": 5.0
+   }
+  ]
+ },
+ "square D4+A4+self": {
+  "lattice": "square",
+  "shells": [
+   "D4",
+   "A4",
+   "self"
+  ],
+  "subset": "all n",
+  "points": 53,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P150(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 52,
+    "bits": 3.0
+   }
+  ]
+ },
+ "square N4+D4+A4": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "D4",
+   "A4"
+  ],
+  "subset": "n not a power of 2",
+  "points": 50,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 49,
+    "bits": 5.0
+   }
+  ]
+ },
+ "square N4+D4+A4+self": {
+  "lattice": "square",
+  "shells": [
+   "N4",
+   "D4",
+   "A4",
+   "self"
+  ],
+  "subset": "n not a power of 2",
+  "points": 50,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 49,
+    "bits": 5.0
+   }
+  ]
+ },
+ "hexagon H1": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H1+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "self"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H2": {
+  "lattice": "hexagon",
+  "shells": [
+   "H2"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H2+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H2",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H3": {
+  "lattice": "hexagon",
+  "shells": [
+   "H3"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   }
+  ]
+ },
+ "hexagon H3+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H3",
+   "self"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   }
+  ]
+ },
+ "hexagon H1+H2": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H2"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H1+H2+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H2",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H1+H3": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H3"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "hexagon H1+H3+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H3",
+   "self"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "hexagon H2+H3": {
+  "lattice": "hexagon",
+  "shells": [
+   "H2",
+   "H3"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H2+H3+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H2",
+   "H3",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P150(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P150(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H1+H2+H3": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H2",
+   "H3"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "hexagon H1+H2+H3+self": {
+  "lattice": "hexagon",
+  "shells": [
+   "H1",
+   "H2",
+   "H3",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle E": {
+  "lattice": "triangle",
+  "shells": [
+   "E"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle E+self": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle VO": {
+  "lattice": "triangle",
+  "shells": [
+   "VO"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   }
+  ]
+ },
+ "triangle VO+self": {
+  "lattice": "triangle",
+  "shells": [
+   "VO",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   }
+  ]
+ },
+ "triangle VS": {
+  "lattice": "triangle",
+  "shells": [
+   "VS"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.0
+   }
+  ]
+ },
+ "triangle VS+self": {
+  "lattice": "triangle",
+  "shells": [
+   "VS",
+   "self"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   },
+   {
+    "form": "number theory",
+    "expression": "2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.0
+   }
+  ]
+ },
+ "triangle E+VO": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VO"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle E+VO+self": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VO",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle E+VS": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VS"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "triangle E+VS+self": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VS",
+   "self"
+  ],
+  "subset": null,
+  "laws": []
+ },
+ "triangle VO+VS": {
+  "lattice": "triangle",
+  "shells": [
+   "VO",
+   "VS"
+  ],
+  "subset": "all n",
+  "points": 27,
+  "laws": [
+   {
+    "form": "polynomial",
+    "expression": "2",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 1.584962500721156
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "gcd(n, 2)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 2.0
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "2*gcd(n, 31)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 6.539158811108031
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "2*gcd(n, 37)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 6.794415866350106
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "2*gcd(n, 41)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 6.94251450533924
+   }
+  ]
+ },
+ "triangle VO+VS+self": {
+  "lattice": "triangle",
+  "shells": [
+   "VO",
+   "VS",
+   "self"
+  ],
+  "subset": "all n",
+  "points": 27,
+  "laws": [
+   {
+    "form": "polynomial",
+    "expression": "1",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 1.0
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "1/2*gcd(n, 2)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 3.0
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "gcd(n, 31)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 5.954196310386875
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "gcd(n, 37)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 6.20945336562895
+   },
+   {
+    "form": "gcd/lcm",
+    "expression": "gcd(n, 41)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 26,
+    "bits": 6.357552004618084
+   }
+  ]
+ },
+ "triangle E+VO+VS": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VO",
+   "VS"
+  ],
+  "subset": "n not a power of 2",
+  "points": 24,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 23,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle E+VO+VS+self": {
+  "lattice": "triangle",
+  "shells": [
+   "E",
+   "VO",
+   "VS",
+   "self"
+  ],
+  "subset": "odd part at least 5",
+  "points": 21,
+  "laws": [
+   {
+    "form": "number theory",
+    "expression": "2*P90(n)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 3.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   },
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*P90(odd(n))",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ }
+}

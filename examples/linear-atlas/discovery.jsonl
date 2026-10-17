@@ -1,0 +1,1498 @@
+{"lattice": "square", "shells": ["N4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["N4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["N4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["N4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4"], "n": 37, "period": 87381}
+{"lattice": "square", "shells": ["N4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["N4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "self"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "self"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4", "self"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["N4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "self"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "self"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "self"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["N4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "self"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "self"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "self"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "self"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "self"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["D4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["D4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["D4"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["D4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["D4"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["D4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["D4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["D4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["D4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["D4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["D4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["D4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["D4"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["D4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["D4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["D4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["D4"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["D4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["D4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["D4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["D4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["D4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["D4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["D4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["D4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["D4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["D4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["D4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["D4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["D4"], "n": 37, "period": 87381}
+{"lattice": "square", "shells": ["D4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["D4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["D4"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["D4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["D4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["D4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["D4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["D4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["D4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["D4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["D4"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["D4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["D4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["D4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["D4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["D4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["D4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["D4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["D4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["D4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["D4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["D4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["D4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["D4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["D4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["D4", "self"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["D4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["D4", "self"], "n": 12, "period": 2}
+{"lattice": "square", "shells": ["D4", "self"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["D4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["D4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["D4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["D4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["D4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["D4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["D4", "self"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["D4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["D4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["D4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["D4", "self"], "n": 24, "period": 4}
+{"lattice": "square", "shells": ["D4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["D4", "self"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["D4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["D4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["D4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["D4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["D4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["D4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["D4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["D4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["D4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["D4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["D4", "self"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["D4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["D4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["D4", "self"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["D4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["D4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["D4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["D4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["D4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["D4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["D4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["D4", "self"], "n": 48, "period": 8}
+{"lattice": "square", "shells": ["D4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["D4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["D4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["D4", "self"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["D4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["D4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["D4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["D4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["D4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["D4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["D4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["D4", "self"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["A4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["A4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["A4"], "n": 10, "period": 3}
+{"lattice": "square", "shells": ["A4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["A4"], "n": 12, "period": 2}
+{"lattice": "square", "shells": ["A4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["A4"], "n": 14, "period": 7}
+{"lattice": "square", "shells": ["A4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["A4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["A4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["A4"], "n": 18, "period": 7}
+{"lattice": "square", "shells": ["A4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["A4"], "n": 20, "period": 6}
+{"lattice": "square", "shells": ["A4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["A4"], "n": 22, "period": 31}
+{"lattice": "square", "shells": ["A4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["A4"], "n": 24, "period": 4}
+{"lattice": "square", "shells": ["A4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["A4"], "n": 26, "period": 63}
+{"lattice": "square", "shells": ["A4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["A4"], "n": 28, "period": 14}
+{"lattice": "square", "shells": ["A4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["A4"], "n": 30, "period": 15}
+{"lattice": "square", "shells": ["A4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["A4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["A4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["A4"], "n": 34, "period": 15}
+{"lattice": "square", "shells": ["A4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["A4"], "n": 36, "period": 14}
+{"lattice": "square", "shells": ["A4"], "n": 37, "period": 87381}
+{"lattice": "square", "shells": ["A4"], "n": 38, "period": 511}
+{"lattice": "square", "shells": ["A4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["A4"], "n": 40, "period": 12}
+{"lattice": "square", "shells": ["A4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["A4"], "n": 42, "period": 63}
+{"lattice": "square", "shells": ["A4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["A4"], "n": 44, "period": 62}
+{"lattice": "square", "shells": ["A4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["A4"], "n": 46, "period": 2047}
+{"lattice": "square", "shells": ["A4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["A4"], "n": 48, "period": 8}
+{"lattice": "square", "shells": ["A4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["A4"], "n": 50, "period": 1023}
+{"lattice": "square", "shells": ["A4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["A4"], "n": 52, "period": 126}
+{"lattice": "square", "shells": ["A4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["A4"], "n": 54, "period": 511}
+{"lattice": "square", "shells": ["A4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["A4"], "n": 56, "period": 28}
+{"lattice": "square", "shells": ["A4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["A4"], "n": 58, "period": 16383}
+{"lattice": "square", "shells": ["A4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["A4"], "n": 60, "period": 30}
+{"lattice": "square", "shells": ["A4", "self"], "n": 8, "period": 2}
+{"lattice": "square", "shells": ["A4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["A4", "self"], "n": 10, "period": 3}
+{"lattice": "square", "shells": ["A4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["A4", "self"], "n": 12, "period": 2}
+{"lattice": "square", "shells": ["A4", "self"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["A4", "self"], "n": 14, "period": 7}
+{"lattice": "square", "shells": ["A4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["A4", "self"], "n": 16, "period": 4}
+{"lattice": "square", "shells": ["A4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["A4", "self"], "n": 18, "period": 7}
+{"lattice": "square", "shells": ["A4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["A4", "self"], "n": 20, "period": 6}
+{"lattice": "square", "shells": ["A4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["A4", "self"], "n": 22, "period": 31}
+{"lattice": "square", "shells": ["A4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["A4", "self"], "n": 24, "period": 4}
+{"lattice": "square", "shells": ["A4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["A4", "self"], "n": 26, "period": 63}
+{"lattice": "square", "shells": ["A4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["A4", "self"], "n": 28, "period": 14}
+{"lattice": "square", "shells": ["A4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["A4", "self"], "n": 30, "period": 15}
+{"lattice": "square", "shells": ["A4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["A4", "self"], "n": 32, "period": 8}
+{"lattice": "square", "shells": ["A4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["A4", "self"], "n": 34, "period": 15}
+{"lattice": "square", "shells": ["A4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["A4", "self"], "n": 36, "period": 14}
+{"lattice": "square", "shells": ["A4", "self"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["A4", "self"], "n": 38, "period": 511}
+{"lattice": "square", "shells": ["A4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["A4", "self"], "n": 40, "period": 12}
+{"lattice": "square", "shells": ["A4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["A4", "self"], "n": 42, "period": 63}
+{"lattice": "square", "shells": ["A4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["A4", "self"], "n": 44, "period": 62}
+{"lattice": "square", "shells": ["A4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["A4", "self"], "n": 46, "period": 2047}
+{"lattice": "square", "shells": ["A4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["A4", "self"], "n": 48, "period": 8}
+{"lattice": "square", "shells": ["A4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["A4", "self"], "n": 50, "period": 1023}
+{"lattice": "square", "shells": ["A4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["A4", "self"], "n": 52, "period": 126}
+{"lattice": "square", "shells": ["A4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["A4", "self"], "n": 54, "period": 511}
+{"lattice": "square", "shells": ["A4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["A4", "self"], "n": 56, "period": 28}
+{"lattice": "square", "shells": ["A4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["A4", "self"], "n": 58, "period": 16383}
+{"lattice": "square", "shells": ["A4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["A4", "self"], "n": 60, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "D4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 12, "period": 2}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 13, "period": 21}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 24, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 26, "period": 42}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 37, "period": 29127}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 48, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 52, "period": 84}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "D4", "self"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 10, "period": 2}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 12, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 20, "period": 4}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 24, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 40, "period": 8}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 48, "period": 1}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "A4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 10, "period": 2}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 20, "period": 4}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 40, "period": 8}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "A4", "self"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["D4", "A4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 12, "period": 2}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 13, "period": 21}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 24, "period": 4}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 26, "period": 42}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 37, "period": 29127}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 48, "period": 8}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 52, "period": 84}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["D4", "A4", "self"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 8, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 16, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 32, "period": 1}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "D4", "A4"], "n": 60, "period": 60}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 8, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 9, "period": 7}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 10, "period": 6}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 11, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 12, "period": 4}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 13, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 14, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 15, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 16, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 17, "period": 15}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 18, "period": 14}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 19, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 20, "period": 12}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 21, "period": 63}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 22, "period": 62}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 23, "period": 2047}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 24, "period": 8}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 25, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 26, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 27, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 28, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 29, "period": 16383}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 30, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 31, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 32, "period": 16}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 33, "period": 31}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 34, "period": 30}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 35, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 36, "period": 28}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 37, "period": 262143}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 38, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 39, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 40, "period": 24}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 41, "period": 1023}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 42, "period": 126}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 43, "period": 127}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 44, "period": 124}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 45, "period": 4095}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 46, "period": 4094}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 47, "period": 8388607}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 48, "period": 16}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 49, "period": 2097151}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 50, "period": 2046}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 51, "period": 255}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 52, "period": 252}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 53, "period": 67108863}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 54, "period": 1022}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 55, "period": 1048575}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 56, "period": 56}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 57, "period": 511}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 58, "period": 32766}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 59, "period": 536870911}
+{"lattice": "square", "shells": ["N4", "D4", "A4", "self"], "n": 60, "period": 60}
+{"lattice": "hexagon", "shells": ["H1"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H1"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1"], "n": 12, "period": 4}
+{"lattice": "hexagon", "shells": ["H1"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H1"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1"], "n": 24, "period": 8}
+{"lattice": "hexagon", "shells": ["H1"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H1"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1"], "n": 48, "period": 16}
+{"lattice": "hexagon", "shells": ["H1"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 12, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 24, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 48, "period": 32}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "self"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H2"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H2"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H2"], "n": 12, "period": 4}
+{"lattice": "hexagon", "shells": ["H2"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H2"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H2"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H2"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H2"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H2"], "n": 24, "period": 8}
+{"lattice": "hexagon", "shells": ["H2"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H2"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H2"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H2"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H2"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H2"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H2"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H2"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H2"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H2"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H2"], "n": 48, "period": 16}
+{"lattice": "hexagon", "shells": ["H2"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H2"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H2"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H2"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H2"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 12, "period": 2}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 24, "period": 4}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 48, "period": 8}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H2", "self"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H3"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H3"], "n": 10, "period": 6}
+{"lattice": "hexagon", "shells": ["H3"], "n": 12, "period": 2}
+{"lattice": "hexagon", "shells": ["H3"], "n": 14, "period": 14}
+{"lattice": "hexagon", "shells": ["H3"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H3"], "n": 18, "period": 14}
+{"lattice": "hexagon", "shells": ["H3"], "n": 20, "period": 12}
+{"lattice": "hexagon", "shells": ["H3"], "n": 22, "period": 62}
+{"lattice": "hexagon", "shells": ["H3"], "n": 24, "period": 4}
+{"lattice": "hexagon", "shells": ["H3"], "n": 26, "period": 126}
+{"lattice": "hexagon", "shells": ["H3"], "n": 28, "period": 28}
+{"lattice": "hexagon", "shells": ["H3"], "n": 30, "period": 30}
+{"lattice": "hexagon", "shells": ["H3"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H3"], "n": 34, "period": 30}
+{"lattice": "hexagon", "shells": ["H3"], "n": 36, "period": 28}
+{"lattice": "hexagon", "shells": ["H3"], "n": 38, "period": 1022}
+{"lattice": "hexagon", "shells": ["H3"], "n": 40, "period": 24}
+{"lattice": "hexagon", "shells": ["H3"], "n": 42, "period": 126}
+{"lattice": "hexagon", "shells": ["H3"], "n": 44, "period": 124}
+{"lattice": "hexagon", "shells": ["H3"], "n": 46, "period": 4094}
+{"lattice": "hexagon", "shells": ["H3"], "n": 48, "period": 8}
+{"lattice": "hexagon", "shells": ["H3"], "n": 50, "period": 2046}
+{"lattice": "hexagon", "shells": ["H3"], "n": 52, "period": 252}
+{"lattice": "hexagon", "shells": ["H3"], "n": 54, "period": 1022}
+{"lattice": "hexagon", "shells": ["H3"], "n": 56, "period": 56}
+{"lattice": "hexagon", "shells": ["H3"], "n": 58, "period": 32766}
+{"lattice": "hexagon", "shells": ["H3"], "n": 60, "period": 60}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 8, "period": 2}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 10, "period": 6}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 12, "period": 4}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 14, "period": 14}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 16, "period": 4}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 18, "period": 14}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 20, "period": 12}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 22, "period": 62}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 24, "period": 8}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 26, "period": 126}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 28, "period": 28}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 30, "period": 30}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 32, "period": 8}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 34, "period": 30}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 36, "period": 28}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 38, "period": 1022}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 40, "period": 24}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 42, "period": 126}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 44, "period": 124}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 46, "period": 4094}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 48, "period": 16}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 50, "period": 2046}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 52, "period": 252}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 54, "period": 1022}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 56, "period": 56}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 58, "period": 32766}
+{"lattice": "hexagon", "shells": ["H3", "self"], "n": 60, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 12, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 24, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 48, "period": 32}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H2"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 12, "period": 2}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 24, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 48, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H2", "self"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 10, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 12, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 20, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 24, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 40, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 48, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H3"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 10, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 12, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 20, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 24, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 40, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 48, "period": 32}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H3", "self"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 12, "period": 4}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 24, "period": 8}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 48, "period": 16}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H2", "H3"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 12, "period": 2}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 24, "period": 4}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 26, "period": 84}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 48, "period": 8}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 52, "period": 168}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H2", "H3", "self"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 8, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 12, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 16, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 24, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 32, "period": 1}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 48, "period": 32}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3"], "n": 60, "period": 120}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 8, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 10, "period": 12}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 12, "period": 4}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 14, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 16, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 18, "period": 28}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 20, "period": 24}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 22, "period": 124}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 24, "period": 8}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 26, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 28, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 30, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 32, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 34, "period": 60}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 36, "period": 56}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 38, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 40, "period": 48}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 42, "period": 252}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 44, "period": 248}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 46, "period": 8188}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 48, "period": 16}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 50, "period": 4092}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 52, "period": 504}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 54, "period": 2044}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 56, "period": 112}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 58, "period": 65532}
+{"lattice": "hexagon", "shells": ["H1", "H2", "H3", "self"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E"], "n": 8, "period": 8}
+{"lattice": "triangle", "shells": ["E"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E"], "n": 12, "period": 8}
+{"lattice": "triangle", "shells": ["E"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E"], "n": 16, "period": 16}
+{"lattice": "triangle", "shells": ["E"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E"], "n": 24, "period": 16}
+{"lattice": "triangle", "shells": ["E"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E"], "n": 32, "period": 32}
+{"lattice": "triangle", "shells": ["E"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E"], "n": 48, "period": 32}
+{"lattice": "triangle", "shells": ["E"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 12, "period": 4}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 24, "period": 8}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 48, "period": 16}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "self"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["VO"], "n": 8, "period": 4}
+{"lattice": "triangle", "shells": ["VO"], "n": 10, "period": 6}
+{"lattice": "triangle", "shells": ["VO"], "n": 12, "period": 4}
+{"lattice": "triangle", "shells": ["VO"], "n": 14, "period": 14}
+{"lattice": "triangle", "shells": ["VO"], "n": 16, "period": 8}
+{"lattice": "triangle", "shells": ["VO"], "n": 18, "period": 14}
+{"lattice": "triangle", "shells": ["VO"], "n": 20, "period": 12}
+{"lattice": "triangle", "shells": ["VO"], "n": 22, "period": 62}
+{"lattice": "triangle", "shells": ["VO"], "n": 24, "period": 8}
+{"lattice": "triangle", "shells": ["VO"], "n": 26, "period": 126}
+{"lattice": "triangle", "shells": ["VO"], "n": 28, "period": 28}
+{"lattice": "triangle", "shells": ["VO"], "n": 30, "period": 30}
+{"lattice": "triangle", "shells": ["VO"], "n": 32, "period": 16}
+{"lattice": "triangle", "shells": ["VO"], "n": 34, "period": 30}
+{"lattice": "triangle", "shells": ["VO"], "n": 36, "period": 28}
+{"lattice": "triangle", "shells": ["VO"], "n": 38, "period": 1022}
+{"lattice": "triangle", "shells": ["VO"], "n": 40, "period": 24}
+{"lattice": "triangle", "shells": ["VO"], "n": 42, "period": 126}
+{"lattice": "triangle", "shells": ["VO"], "n": 44, "period": 124}
+{"lattice": "triangle", "shells": ["VO"], "n": 46, "period": 4094}
+{"lattice": "triangle", "shells": ["VO"], "n": 48, "period": 16}
+{"lattice": "triangle", "shells": ["VO"], "n": 50, "period": 2046}
+{"lattice": "triangle", "shells": ["VO"], "n": 52, "period": 252}
+{"lattice": "triangle", "shells": ["VO"], "n": 54, "period": 1022}
+{"lattice": "triangle", "shells": ["VO"], "n": 56, "period": 56}
+{"lattice": "triangle", "shells": ["VO"], "n": 58, "period": 32766}
+{"lattice": "triangle", "shells": ["VO"], "n": 60, "period": 60}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 10, "period": 6}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 12, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 14, "period": 14}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 18, "period": 14}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 20, "period": 12}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 22, "period": 62}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 24, "period": 4}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 26, "period": 126}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 28, "period": 28}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 30, "period": 30}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 34, "period": 30}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 36, "period": 28}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 38, "period": 1022}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 40, "period": 24}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 42, "period": 126}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 44, "period": 124}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 46, "period": 4094}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 48, "period": 8}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 50, "period": 2046}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 52, "period": 252}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 54, "period": 1022}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 56, "period": 56}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 58, "period": 32766}
+{"lattice": "triangle", "shells": ["VO", "self"], "n": 60, "period": 60}
+{"lattice": "triangle", "shells": ["VS"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["VS"], "n": 10, "period": 6}
+{"lattice": "triangle", "shells": ["VS"], "n": 12, "period": 2}
+{"lattice": "triangle", "shells": ["VS"], "n": 14, "period": 14}
+{"lattice": "triangle", "shells": ["VS"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["VS"], "n": 18, "period": 14}
+{"lattice": "triangle", "shells": ["VS"], "n": 20, "period": 12}
+{"lattice": "triangle", "shells": ["VS"], "n": 22, "period": 62}
+{"lattice": "triangle", "shells": ["VS"], "n": 24, "period": 4}
+{"lattice": "triangle", "shells": ["VS"], "n": 26, "period": 126}
+{"lattice": "triangle", "shells": ["VS"], "n": 28, "period": 28}
+{"lattice": "triangle", "shells": ["VS"], "n": 30, "period": 30}
+{"lattice": "triangle", "shells": ["VS"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["VS"], "n": 34, "period": 30}
+{"lattice": "triangle", "shells": ["VS"], "n": 36, "period": 28}
+{"lattice": "triangle", "shells": ["VS"], "n": 38, "period": 1022}
+{"lattice": "triangle", "shells": ["VS"], "n": 40, "period": 24}
+{"lattice": "triangle", "shells": ["VS"], "n": 42, "period": 126}
+{"lattice": "triangle", "shells": ["VS"], "n": 44, "period": 124}
+{"lattice": "triangle", "shells": ["VS"], "n": 46, "period": 4094}
+{"lattice": "triangle", "shells": ["VS"], "n": 48, "period": 8}
+{"lattice": "triangle", "shells": ["VS"], "n": 50, "period": 2046}
+{"lattice": "triangle", "shells": ["VS"], "n": 52, "period": 252}
+{"lattice": "triangle", "shells": ["VS"], "n": 54, "period": 1022}
+{"lattice": "triangle", "shells": ["VS"], "n": 56, "period": 56}
+{"lattice": "triangle", "shells": ["VS"], "n": 58, "period": 32766}
+{"lattice": "triangle", "shells": ["VS"], "n": 60, "period": 60}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 8, "period": 4}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 10, "period": 6}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 12, "period": 4}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 14, "period": 14}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 16, "period": 8}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 18, "period": 14}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 20, "period": 12}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 22, "period": 62}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 24, "period": 8}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 26, "period": 126}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 28, "period": 28}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 30, "period": 30}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 32, "period": 16}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 34, "period": 30}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 36, "period": 28}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 38, "period": 1022}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 40, "period": 24}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 42, "period": 126}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 44, "period": 124}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 46, "period": 4094}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 48, "period": 16}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 50, "period": 2046}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 52, "period": 252}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 54, "period": 1022}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 56, "period": 56}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 58, "period": 32766}
+{"lattice": "triangle", "shells": ["VS", "self"], "n": 60, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 12, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 24, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 48, "period": 32}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VO"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 8, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 12, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 16, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 24, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 32, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 48, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VO", "self"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 8, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 10, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 12, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 16, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 20, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 24, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 32, "period": 32}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 40, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 48, "period": 32}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VS"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 10, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 12, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 20, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 24, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 40, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 48, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VS", "self"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 8, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 10, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 12, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 14, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 16, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 18, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 20, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 22, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 24, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 26, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 28, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 30, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 32, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 34, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 36, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 38, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 40, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 42, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 44, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 46, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 48, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 50, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 52, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 54, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 56, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 58, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS"], "n": 60, "period": 2}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 10, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 12, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 14, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 18, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 20, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 22, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 24, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 26, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 28, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 30, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 34, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 36, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 38, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 40, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 42, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 44, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 46, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 48, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 50, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 52, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 54, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 56, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 58, "period": 1}
+{"lattice": "triangle", "shells": ["VO", "VS", "self"], "n": 60, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 8, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 12, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 16, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 24, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 32, "period": 1}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 48, "period": 32}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VO", "VS"], "n": 60, "period": 120}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 8, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 10, "period": 12}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 12, "period": 2}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 14, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 16, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 18, "period": 28}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 20, "period": 24}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 22, "period": 124}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 24, "period": 4}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 26, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 28, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 30, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 32, "period": 16}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 34, "period": 60}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 36, "period": 56}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 38, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 40, "period": 48}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 42, "period": 252}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 44, "period": 248}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 46, "period": 8188}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 48, "period": 8}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 50, "period": 4092}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 52, "period": 504}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 54, "period": 2044}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 56, "period": 112}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 58, "period": 65532}
+{"lattice": "triangle", "shells": ["E", "VO", "VS", "self"], "n": 60, "period": 120}

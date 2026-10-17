@@ -1,0 +1,1548 @@
+{
+ "latticelife": [
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 4,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 5,
+   "simulated": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 6,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 7,
+   "simulated": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 8,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 9,
+   "simulated": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 10,
+   "simulated": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 11,
+   "simulated": 31,
+   "exact": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 12,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 13,
+   "simulated": 63,
+   "exact": 63,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "latticelife": "B1357/S1357",
+   "n": 14,
+   "simulated": 14,
+   "exact": 14,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 4,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 5,
+   "simulated": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 6,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 7,
+   "simulated": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 8,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 9,
+   "simulated": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 10,
+   "simulated": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 11,
+   "simulated": 31,
+   "exact": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 12,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 13,
+   "simulated": 21,
+   "exact": 21,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "latticelife": "B1357/S02468",
+   "n": 14,
+   "simulated": 14,
+   "exact": 14,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 6,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 8,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 12,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "latticelife": "B135/S135",
+   "n": 16,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 6,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 8,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 12,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "latticelife": "B135/S0246",
+   "n": 16,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 6,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 8,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 12,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "latticelife": "B13/S13",
+   "n": 16,
+   "simulated": 16,
+   "exact": 16,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 6,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 8,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 12,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "latticelife": "B13/S02",
+   "n": 16,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 6,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 8,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 12,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "latticelife": "B1,3,5,7,9,11/S1,3,5,7,9,11",
+   "n": 16,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 6,
+   "simulated": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 8,
+   "simulated": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 10,
+   "simulated": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 12,
+   "simulated": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 14,
+   "simulated": 28,
+   "exact": 28,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "latticelife": "B1,3,5,7,9,11/S0,2,4,6,8,10,12",
+   "n": 16,
+   "simulated": 8,
+   "exact": 8,
+   "agree": true
+  }
+ ],
+ "direct": [
+  {
+   "rule": "square N4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square D4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square D4",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square D4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square D4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square D4+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square D4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square A4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square A4",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square A4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square A4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square A4",
+   "n": 10,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square A4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square A4+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square A4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square A4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square A4+self",
+   "n": 10,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4",
+   "n": 5,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4",
+   "n": 10,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+self",
+   "n": 5,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+self",
+   "n": 10,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+self",
+   "n": 5,
+   "direct": 3,
+   "exact": 3,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+self",
+   "n": 8,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3+self",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H3+self",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H3+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "n": 8,
+   "direct": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+self",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+self",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS",
+   "n": 8,
+   "direct": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS+self",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VS+self",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS",
+   "n": 6,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS",
+   "n": 8,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS",
+   "n": 10,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+self",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+self",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "n": 6,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "n": 6,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+VS+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  }
+ ]
+}
