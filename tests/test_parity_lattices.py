@@ -105,3 +105,25 @@ def test_the_hexagon_odd_period_is_rule_90s_at_every_size_computed():
     for row in hexagon:
         m = lattices.odd_part(row["n"])
         assert lattices.odd_part(row["period"]) == (algebra.rule90_period(m) if m > 1 else 1)
+
+
+def test_round_2_ledger_is_intact_and_the_verdict_holds():
+    ledger = Ledger(ROUND_2 / "ledger.jsonl")
+    assert ledger.verify() == [] and check_order(ledger, ROUND_2) == []
+    assert [e["kind"] for e in ledger.entries] == ["question"] + ["prediction"] * 4 + [
+        "run_started",
+        "observations",
+        "verdict",
+    ]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["hexagon_law"] == {"confirmed": 100, "refuted": 0, "refuted_at": []}
+    assert verdict["triangle_law"] == {"confirmed": 14, "refuted": 0, "refuted_at": []}
+    shortfalls = [202, 222, 282, 296, 380, 394, 398]
+    assert verdict["rival_refuted_at"] == [f"hexagon {n}" for n in shortfalls]
+    assert verdict["hexagon_transient_refuted_at"] == [] and verdict["errors"] == []
+    rival = ledger.entries[2]["body"]["predictions"]["hexagon"]
+    for n in shortfalls:
+        hexagon = verdict["outcomes"][f"hexagon {n}"]["period"]
+        assert rival[str(n)] == (7 if n == 398 else 3) * hexagon
+        for lattice in ("triangle-edge", "triangle-edge+vertex"):
+            assert verdict["outcomes"][f"{lattice} {n}"]["period"] == rival[str(n)]

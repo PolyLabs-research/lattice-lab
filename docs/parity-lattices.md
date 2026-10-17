@@ -6,7 +6,9 @@ triangular ones and was **refuted on the hexagon at n = 74, 148 and 190**, each 
 factor of 3. The refutations fell where the 1D rule 90 falls short of its bound, and this led to
 a **proof that the hexagonal rule's odd period is rule 90's**: two hexagon generations are exactly
 three passes of rule 90, one along each lattice direction. **Round 2** registered the corrected
-law at every even n from 202 to 400; it is being computed now.
+law at every even n from 202 to 400. **It was confirmed at all 100. Round 1's law, the rival,
+was refuted at all seven sizes where the two differ. At those seven sizes both triangular rules
+attained the full bound, as predicted.**
 
 ## The rules
 
@@ -173,7 +175,34 @@ at 2026-10-17T14:17:39Z, before any of these sizes was computed:
 - the triangles at those seven sizes, where round 1's law predicts no shortfall;
 - the hexagon transients.
 
-Results: pending; the computation is running.
+| | Outcome |
+| --- | --- |
+| hexagon, corrected law: 100 sizes | **confirmed at 100** |
+| hexagon, round 1's law (the rival), at the seven sizes where it differs | **refuted at all seven** |
+| triangles, round 1's law, at those seven sizes: 14 predictions | **confirmed at 14** |
+| hexagon transients: 100 sizes | **confirmed at 100** |
+
+At every size where rule 90 falls short, the hexagon falls short with it, by the same factor. The
+two triangular rules do not fall short:
+
+| n | odd part | hexagon (exact) | both triangles (exact) | ratio |
+| --- | --- | --- | --- | --- |
+| 202 | 101 | 1501199875790164 | 4503599627370492 | 3 |
+| 222 | 111 | 91625968980 | 274877906940 | 3 |
+| 282 | 141 | 93824992236884 | 281474976710652 | 3 |
+| 296 | 37 | 1398096 | 4194288 | 3 |
+| 380 | 95 | 183251937960 | 549755813880 | 3 |
+| 394 | 197 | 422550200076076467165567735124 | 4 (2^98 - 1) | 3 |
+| 398 | 199 | 362185885779494114713343772964 | 4 (2^99 - 1) | 7 |
+
+Here 4 (2^98 - 1) = 1267650600228229401496703205372 and
+4 (2^99 - 1) = 2535301200456458802993406410748. The longest period computed is the latter, about
+2.5 x 10^30 generations, on both 398 x 398 triangular tori. The hexagon at 256 dies after
+128 generations, as registered.
+
+Across both rounds the corrected law holds at all 198 hexagon sizes from 6 to 400. Of the
+three parts of the law, only the odd factor is proved. The factor 2 * 2^v(n) and the two small
+families are observed at every size, including the 100 registered in advance here.
 
 ## Not registered: the triangles' transients
 
