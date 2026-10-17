@@ -47,3 +47,48 @@ def test_jitter_removes_the_rounding_bias_of_a_narrow_sample():
     jittered = extremes.fluctuations(times, bootstrap=50, jitter=True)[64]["kelly_skewness"]
     assert abs(jittered - extremes.GUMBEL_KELLY) < 0.02
     assert abs(jittered - extremes.GUMBEL_KELLY) < abs(plain - extremes.GUMBEL_KELLY)
+
+
+def _tail_sample(rng, tau, k, t_min, n):
+    from scipy import optimize
+
+    def log_s(x):
+        return k * math.log(x / tau) - x / tau
+
+    out = []
+    for u in rng.random(n):
+        target = log_s(t_min) + math.log(u)
+        x = optimize.brentq(lambda x, g=target: log_s(x) - g, t_min, t_min + 400 * tau)
+        out.append(math.floor(x))
+    return np.array(out)
+
+
+@pytest.mark.parametrize(("tau", "k"), [(14.5, 0.0), (12.7, 2.85)])
+def test_fit_tail_recovers_a_known_tail(tau, k):
+    rng = np.random.default_rng(7)
+    groups = [_tail_sample(rng, tau, k, 120.0, 150) for _ in range(20)]
+    fit = extremes.fit_tail(groups, 120.0, bootstrap=60)
+    assert fit["n"] == 3000
+    assert abs(fit["k"] - k) < 3 * fit["k_se"] + 0.05
+    assert abs(fit["tau"] - tau) < 3 * fit["tau_se"] + 0.05
+    eff, eff_se = extremes.tail_tau_eff(fit, 200.0)
+    assert abs(eff - 1 / (1 / tau - k / 200.0)) < 3 * eff_se + 0.05
+
+
+def test_the_prefactor_model_keeps_the_gumbel_ratio():
+    """Spread over slope stays 0.786 whatever k: the reason a prefactor cannot narrow the spread."""
+    for k in (0.0, 3.0):
+        q = [extremes.prefactor_quantile(p, 1024, 12.0, k, -3.0) for p in (0.25, 0.5, 0.75)]
+        h = 1e-3
+        slope = (
+            extremes.prefactor_quantile(0.5, 1024 * math.exp(h), 12.0, k, -3.0)
+            - extremes.prefactor_quantile(0.5, 1024 * math.exp(-h), 12.0, k, -3.0)
+        ) / (2 * h)
+        assert (q[2] - q[0]) / slope == pytest.approx(extremes.gumbel_iqr_per_slope(2), abs=0.002)
+
+
+def test_mean_excess_of_an_exponential_tail():
+    rng = np.random.default_rng(2)
+    groups = [100 + rng.exponential(10.0, 500) for _ in range(10)]
+    value, error, count = extremes.mean_excess(groups, 100.0)
+    assert count == 5000 and abs(value - 10.0) < 3 * error
