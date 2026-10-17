@@ -1,2 +1,4 @@
 {"candidate":"law","dies":false,"lattice":"triangle-edge","n":394,"period":1267650600228229401496703205372,"transient":0}
 {"candidate":"law","dies":false,"lattice":"triangle-edge+vertex","n":394,"period":1267650600228229401496703205372,"transient":1}
+{"candidate":"law","dies":false,"lattice":"triangle-edge","n":380,"period":549755813880,"transient":0}
+{"candidate":"law","dies":false,"lattice":"triangle-edge+vertex","n":380,"period":549755813880,"transient":2}
