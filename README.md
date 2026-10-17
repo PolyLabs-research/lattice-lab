@@ -150,6 +150,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `parity-lattices-proof` | triangles: the odd-part machine check up to 999, with the hexagon as control |
 | `settling-time-replication` | B2/S34 settling times on hexagon tori up to 1024 (registered) |
 | `settling-universality` | eight random rules on four lattice types: settling-time laws and their fluctuations (registered) |
+| `settling-time-local` | B2/S34's local settling times on 256 and 1024 tori: round 2 (registered) |
 
 ## Settling times: a replication and a universality test
 
@@ -169,6 +170,11 @@ pushed.
   Both match the Gumbel values for the largest of about L^2 independent times: 0.177 +- 0.023
   against 0.2215, and 0.765 +- 0.029 against 0.786. This is extreme-value universality, not
   a critical point's. At these error bars, Kepler's identify cannot yet name the class blind.
+- **Round 2** (`examples/settling-time-local`) tested a post-hoc idea for Study A's miss, on
+  B2/S34's local settling times (when each block of the torus settles; a new LatticeLife
+  instrument). They are the same on every torus size but not independent: late regions cluster.
+  The miss itself was a low draw. With all the data, B2/S34's ratio is 0.765 +- 0.042, the same
+  as the eight rules'.
 
 ## Trusting the answers
 

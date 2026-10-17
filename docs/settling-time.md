@@ -1,12 +1,16 @@
 # How long a soup takes to settle: a replication and a universality test
 
-**Status: judged, two registered studies.** Study A: B2/S34 on hexagon tori up to 1024. The log law
-**replicated** and the power law was **rejected**. Of the two registered mechanisms, the
-heavy-tailed one was rejected outright. The light-tailed one (Gumbel) matched the fluctuations'
-shape and their constancy, but not their size. Study B: eight random rules on all four lattice
-types, registered before Study A's verdict existed. The log law held and the power law failed for
-**all eight**. Across them, the fluctuations share **one shape** and **one ratio of spread to
-growth**, and both equal the Gumbel values for the largest of about L^2 independent times.
+**Status: judged, three registered studies.** Study A: B2/S34 on hexagon tori up to 1024. The
+log law **replicated** and the power law was **rejected**. Of the two registered mechanisms, the
+heavy-tailed one was rejected outright; the light-tailed one (Gumbel) matched the fluctuations'
+shape and constancy, but seemed to miss their size. Study B: eight random rules on all four
+lattice types, registered before Study A's verdict existed. The log law held and the power law
+failed for **all eight**. Across them, the fluctuations share **one shape** and **one ratio of
+spread to growth**, both equal to the Gumbel values for the largest of about L^2 independent
+times. **Round 2** tested a post-hoc idea for Study A's miss on B2/S34's local settling times.
+Those times are the same on every torus size, but they are **not independent**: late regions
+cluster. And the miss itself did not replicate. With all the data, B2/S34's ratio is
+0.765 +- 0.042, the eight rules' value and Gumbel's.
 
 The parity-rule studies ([XOR](xor-periods.md), [other lattices](parity-lattices.md)) were about
 linear rules, which can be solved exactly. These two studies are about rules with no such theory.
@@ -96,7 +100,7 @@ would give.
 | 768 | 197.0 | 16.3 +- 2.2 | 0.32 +- 0.16 | 23.9 |
 | 1024 | 210.0 | 20.5 +- 2.7 | 0.12 +- 0.12 | 32.3 |
 
-**After the verdict (not registered).** Three observations, for a later registered test:
+**After the verdict (not registered).** Three observations, for a later registered test (round 2, below, follows them up):
 
 - *The spread per unit slope.* Over the new sizes alone, the median's slope in ln L is
   31.4 +- 1.3, and the interquartile range over that slope is 0.64 +- 0.04, against Gumbel's
@@ -212,7 +216,88 @@ would need error bars five to ten times smaller: about 25 to 100 times the seeds
 is 2.5 standard errors below the eight rules' 0.765. A heavier tail prefactor cannot lower the
 ratio (see the correction above). So either B2/S34's local times are not independent and
 identically distributed on large tori, or the eight rules' sizes, 128 to 512, are still short
-of where theirs falls too. Measuring the eight on tori of 1024 and 2048 would tell.
+of where theirs falls too. Measuring the eight on tori of 1024 and 2048 would tell. (Round 2 found the first explanation
+unnecessary: with fresh soups, B2/S34's ratio is the eight rules'.)
+
+## Round 2: what the local settling times say
+
+Study A's miss on the spread prompted an idea after the verdict: a tail prefactor that fades as
+L grows. Worked through exactly, it could explain a falling slope but not a narrow spread (the
+correction above). Round 2 tests the assumptions behind every extreme-value account on the local
+times themselves.
+
+**The instrument.** LatticeLife's local transients (`experiments.local`, LatticeLife 256450b)
+give the generation at which each b x b block of a torus enters the soup's final cycle. The
+soup is run twice: once to find its transient T and period P, and once more comparing every
+state with the one P generations earlier. The largest block's time is T, and every run checks
+that. Its tests cover all three lattices.
+
+**The registration.** `examples/settling-time-local`, registered and pushed in `525b0f5` at
+2026-10-17T19:21:40Z, before any B2/S34 local transient was computed. It ran fresh soups
+(seeds 101 to 160 on tori of 1024, 101 to 420 on 256) with blocks of 8 x 8 and 16 x 16. Every
+prediction was fixed from Study A's data:
+
+| claim | prediction | decision rule (all at 1%) |
+| --- | --- | --- |
+| plain extreme values | the local tail's prefactor k = 0 | k within 2.576 errors of 0 |
+| fading correction | the hazard rises along the tail, k > 0 | k more than 2.326 errors above 0 |
+| the tail accounts for the spread | 1 / hazard at t = 210 is 12.7 +- 0.7 (IQR / 1.5725) | two-sided |
+| the tail accounts for the slope | 1 / hazard at t = 210 is 15.7 +- 0.6 (slope / 2) | two-sided |
+| stationarity | the tail is the same at 256 and 1024 | mean excess equal |
+| independence | the largest of 16384 independent blocks reproduces Study A's median (210) and spread (20.5) at 1024 | both two-sided |
+
+A synthetic check before registration, on blocks drawn with k = 0 and k = 2.85, gave the right
+answer on both k claims. It also showed 20 soups at 1024 were too few, so the study used 60.
+
+**The result** (380 soups in 19 minutes on four cores; the tail is the top 1% of the 8 x 8
+blocks at 1024, above t = 144: 10345 blocks at 1024 and 3272 at 256):
+
+| claim | measured | outcome |
+| --- | --- | --- |
+| plain extreme values | k = 4.2 +- 3.1 | consistent |
+| fading correction | k is 1.3 errors above 0 | not shown (registered as rejected); 2.85 is as consistent as 0 |
+| the tail accounts for the spread | 1 / hazard(210) = 13.5 +- 1.0 | consistent |
+| the tail accounts for the slope | the same | consistent |
+| stationarity | mean excess 14.4 +- 0.3 at 1024, 14.1 +- 0.5 at 256 | **consistent** |
+| independence | reconstructed median 222.2 +- 3.3 against 210.0 +- 1.4 (z = 3.4); spread 21.0 against 20.5 | **rejected** |
+
+Two outcomes are decisive:
+
+- **Local times do not depend on the torus.** The local tail is the same on a 256 torus as on a
+  1024 one. Nothing reaches a region from far away to delay it on a larger torus.
+- **They are not independent.** Of the blocks in the top 1%, 96% (256) and 97% (1024) have a
+  neighbouring block in the top 1%, against 4% if they were independent. A late region spans
+  several 8 x 8 blocks, so 16384 blocks are far fewer independent chances. Treating them as
+  independent puts the median 12 generations too late. The clustering is the same at both
+  sizes, so it moves the location by a constant and leaves the ratio of spread to slope at
+  Gumbel's.
+
+The other two pairs are undecided, and for the same reason. Because late blocks come in clumps,
+the tail is worth far fewer independent samples than its 10345 blocks: k's error came out at
+3.1, against the 0.9 a synthetic check with independent blocks gave. Whether the tail has a
+prefactor, and whether it tracks the spread or the slope, needs several times more soups.
+
+**After the verdict (not registered): the miss does not replicate.** The same runs give fresh
+global settling times: 320 soups at 256 and 60 at 1024, all different from Study A's.
+
+| | Study A (seeds 1-100) | fresh (round 2) |
+| --- | --- | --- |
+| median at 256 | 160.5 | 165.0 +- 1.1 |
+| interquartile range at 256 | 16.5 | 25.0 +- 1.5 |
+| slope of the median, 256 to 1024 | 35.7 | 28.5 +- 1.5 |
+| spread / slope | 0.64 +- 0.04 (192 to 1024) | 0.87 +- 0.07 |
+
+The bootstrap errors are right: random 100-soup subsets of the fresh 256 sample vary in their
+interquartile range as much as the bootstrap says (2.8 against 2.9). So Study A's 256 sample was
+a low draw, about 2.6 standard errors below. Pooling every global measurement (Study A and round
+2, 192 to 1024) gives a slope of 29.7 +- 1.2 and an interquartile range of 22.7 +- 0.9. **The
+ratio is 0.765 +- 0.042.** That is Gumbel's 0.786 (z = -0.5), and it is exactly the value the
+eight random rules share.
+
+So the post-hoc idea fails, and is not needed. There is no narrow spread to explain. The
+"falling slope" is the example lab's smallest tori (8 to 32), which are not yet in the regime
+where the largest of many local times applies. From 64 up, the plain model's slope (29) matches
+the pooled data (29.7). B2/S34 belongs with the eight.
 
 ## What this does and does not establish
 
@@ -230,20 +315,29 @@ of where theirs falls too. Measuring the eight on tori of 1024 and 2048 would te
   stronger test than the curve alone. It separated the two laws a second way (the power law's
   mechanism fails on spread and shape), and it found something the curve could not: the
   light-tailed extreme-value picture gets the shape and the constancy right but not the size.
+- **Local settling times (round 2):** the same on tori of 256 and 1024, and not independent:
+  late regions span several 8 x 8 blocks. That moves the location but not the ratio of spread
+  to slope.
 - **What is not settled.**
   - Per rule, the Gumbel spread predicted from small tori is too large for seven of the eight
-    rules, and significantly so for two (B2/S34, triangle-edge B123/S012).
+    rules, and significantly so for two (B2/S34, triangle-edge B123/S012). The cause is the
+    small tori's steeper slope, not the spread.
   - The shared shape sits two standard errors below Gumbel's.
-  - B2/S34's ratio is low.
+  - The local tail's prefactor k, and so any fading correction, is undetermined
+    (4.2 +- 3.1), because late blocks clump.
   - Kepler's identify cannot name the class at these error bars.
-- **What is post hoc.** The falling slope, B2/S34's ratio and far tail, and the refinement were
-  seen after the verdicts. They are hypotheses for a next registered round, not results.
+- **What is post hoc, and what it came to.** Study A's narrow spread and the fading correction
+  were post hoc. Round 2 tested the correction's assumptions as registered predictions. Its
+  fresh soups then showed that the narrow spread was a low draw. Pooled, B2/S34's ratio is
+  Gumbel's (0.765 +- 0.042). The correction also contained an error, corrected before round 2
+  was registered: a prefactor cannot narrow the spread relative to the slope.
 - **Novelty, as far as a web search went.** Life soups' lifespans are known to have roughly
   exponential tails (Johnston 2009, on 20 x 20 tori). Their growth with grid size has been
   studied qualitatively (an ECAL 2005 paper; an APS 2023 abstract). Nothing found ties settling
   times to extreme-value statistics, or tests the amplitude that ties a log law to its
   fluctuations.
 - **Who did what.** Kepler's ranking (through the loop) found the log law in the first place.
-  The mechanisms, the decision rules and the refinement are reasoning added here. The quantile
+  The mechanisms, the decision rules, the refinement and its correction are reasoning added
+  here. The local-transient instrument is LatticeLife's (`experiments.local`). The quantile
   tests and the Gumbel constants are now library code (`lattice_lab.extremes`, Kepler's KNOWN),
   so later studies can reuse them.
