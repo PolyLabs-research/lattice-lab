@@ -1,0 +1,499 @@
+{"N": 3, "s": 1, "complete": true, "primes": 0, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 5, "s": 2, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 7, "s": 3, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 9, "s": 3, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 11, "s": 5, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 13, "s": 6, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 15, "s": 4, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 17, "s": 4, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 19, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 21, "s": 6, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 23, "s": 11, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 25, "s": 10, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 27, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 29, "s": 14, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 31, "s": 5, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 33, "s": 5, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 35, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 37, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.0}
+{"N": 39, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 41, "s": 10, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 43, "s": 7, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 45, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 47, "s": 23, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 49, "s": 21, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 51, "s": 8, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 53, "s": 26, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 55, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 57, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 59, "s": 29, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 61, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 63, "s": 6, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 65, "s": 6, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 67, "s": 33, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 69, "s": 22, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 71, "s": 35, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 73, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 75, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 77, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 79, "s": 39, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 81, "s": 27, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 83, "s": 41, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 85, "s": 8, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 87, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 89, "s": 11, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 91, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 93, "s": 10, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 95, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.0}
+{"N": 97, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 99, "s": 15, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 101, "s": 50, "complete": true, "primes": 7, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.0}
+{"N": 103, "s": 51, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 105, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 107, "s": 53, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 109, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 111, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.0}
+{"N": 113, "s": 14, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 115, "s": 44, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 117, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 119, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 121, "s": 55, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 123, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 125, "s": 50, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 127, "s": 7, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 129, "s": 7, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 131, "s": 65, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 133, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 135, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 137, "s": 34, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 139, "s": 69, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 141, "s": 46, "complete": true, "primes": 4, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.0}
+{"N": 143, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 145, "s": 14, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 147, "s": 42, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 149, "s": 74, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 151, "s": 15, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 153, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 155, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 157, "s": 26, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 159, "s": 52, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 161, "s": 33, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 163, "s": 81, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 165, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 167, "s": 83, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 169, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 171, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 173, "s": 86, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 175, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 177, "s": 29, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 179, "s": 89, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 181, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 183, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 185, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 187, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 189, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 191, "s": 95, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 193, "s": 48, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 195, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 197, "s": 98, "complete": true, "primes": 5, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.0}
+{"N": 199, "s": 99, "complete": true, "primes": 8, "rule90_obstructed_by": [7], "fixed_by": {"7": [1, 5]}, "unresolved": [], "seconds": 0.0}
+{"N": 201, "s": 33, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 203, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [3, 5, 7], "fixed_by": {"3": [1, 5], "5": [1, 6], "7": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 205, "s": 10, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 207, "s": 66, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 209, "s": 45, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 211, "s": 105, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 213, "s": 70, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 215, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 217, "s": 15, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 219, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 221, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 223, "s": 37, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 225, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 227, "s": 113, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 229, "s": 38, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 231, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 233, "s": 29, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 235, "s": 92, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 237, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 239, "s": 119, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 241, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 243, "s": 81, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 245, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 247, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 249, "s": 41, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 251, "s": 25, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 253, "s": 110, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 255, "s": 8, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 257, "s": 8, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 259, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 261, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 263, "s": 131, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 265, "s": 26, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 267, "s": 22, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 269, "s": 134, "complete": true, "primes": 5, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.1}
+{"N": 271, "s": 135, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 273, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 275, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 277, "s": 46, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 279, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 281, "s": 35, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 283, "s": 47, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 285, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 287, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 289, "s": 68, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 291, "s": 48, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 293, "s": 146, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 295, "s": 116, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 297, "s": 45, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 299, "s": 132, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 301, "s": 42, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 303, "s": 100, "complete": true, "primes": 12, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.1}
+{"N": 305, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 307, "s": 51, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 309, "s": 102, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 311, "s": 155, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 313, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 315, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 317, "s": 158, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 319, "s": 140, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 321, "s": 53, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 323, "s": 72, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 325, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 327, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 329, "s": 69, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 331, "s": 15, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 333, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 335, "s": 132, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 337, "s": 21, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 339, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 341, "s": 10, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 343, "s": 147, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 345, "s": 44, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 347, "s": 173, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.9}
+{"N": 349, "s": 174, "complete": true, "primes": 10, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 351, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 353, "s": 44, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 355, "s": 140, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 357, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 359, "s": 179, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 361, "s": 171, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 363, "s": 55, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 365, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 367, "s": 183, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 369, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 371, "s": 156, "complete": true, "primes": 16, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.1}
+{"N": 373, "s": 186, "complete": true, "primes": 7, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 375, "s": 100, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 377, "s": 42, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 379, "s": 189, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 381, "s": 14, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 383, "s": 191, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 2.9}
+{"N": 385, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 387, "s": 21, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 389, "s": 194, "complete": true, "primes": 7, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 391, "s": 88, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 393, "s": 65, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 395, "s": 156, "complete": true, "primes": 16, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.2}
+{"N": 397, "s": 22, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 399, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 401, "s": 100, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 403, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 405, "s": 108, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 407, "s": 180, "complete": true, "primes": 21, "rule90_obstructed_by": [3, 13], "fixed_by": {"3": [1, 5], "13": [1, 5]}, "unresolved": [], "seconds": 0.3}
+{"N": 409, "s": 102, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 411, "s": 68, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 413, "s": 174, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 415, "s": 164, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 417, "s": 69, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 419, "s": 209, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 4.0}
+{"N": 421, "s": 210, "complete": true, "primes": 20, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 423, "s": 138, "complete": true, "primes": 8, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 425, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 427, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 429, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 431, "s": 43, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 433, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 435, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 437, "s": 198, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 439, "s": 73, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 441, "s": 42, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 443, "s": 221, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 445, "s": 44, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 447, "s": 148, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 449, "s": 112, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 451, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 453, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 455, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 457, "s": 38, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 459, "s": 72, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 461, "s": 230, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 463, "s": 231, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 465, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 467, "s": 233, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 469, "s": 66, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 471, "s": 52, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 473, "s": 35, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 475, "s": 180, "complete": true, "primes": 21, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.3}
+{"N": 477, "s": 156, "complete": true, "primes": 16, "rule90_obstructed_by": [13], "fixed_by": {"13": [1, 5]}, "unresolved": [], "seconds": 0.2}
+{"N": 479, "s": 239, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 481, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 483, "s": 66, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 485, "s": 48, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 487, "s": 243, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 2.2}
+{"N": 489, "s": 81, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 491, "s": 245, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 493, "s": 56, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 495, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 497, "s": 105, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 499, "s": 83, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 501, "s": 166, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 503, "s": 251, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 7.1}
+{"N": 505, "s": 50, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 507, "s": 156, "complete": true, "primes": 16, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 509, "s": 254, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 511, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 513, "s": 9, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 515, "s": 204, "complete": true, "primes": 19, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 517, "s": 230, "complete": true, "primes": 12, "rule90_obstructed_by": [11], "fixed_by": {"11": [1, 5]}, "unresolved": [], "seconds": 0.6}
+{"N": 519, "s": 172, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 521, "s": 130, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 523, "s": 261, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 525, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 527, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 529, "s": 253, "complete": false, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.2}
+{"N": 531, "s": 87, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 533, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 535, "s": 212, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 537, "s": 89, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 539, "s": 210, "complete": true, "primes": 20, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 541, "s": 270, "complete": true, "primes": 19, "rule90_obstructed_by": [7], "fixed_by": {"7": [1, 5]}, "unresolved": [], "seconds": 0.6}
+{"N": 543, "s": 180, "complete": true, "primes": 21, "rule90_obstructed_by": [5], "fixed_by": {"5": [1, 5]}, "unresolved": [], "seconds": 0.4}
+{"N": 545, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 547, "s": 273, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 1.3}
+{"N": 549, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 551, "s": 252, "complete": true, "primes": 21, "rule90_obstructed_by": [29], "fixed_by": {"29": [1, 5]}, "unresolved": [], "seconds": 0.8}
+{"N": 553, "s": 39, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 555, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 557, "s": 278, "complete": true, "primes": 5, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.4}
+{"N": 559, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 561, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 563, "s": 281, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 565, "s": 14, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 567, "s": 54, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 569, "s": 142, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 571, "s": 57, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 573, "s": 190, "complete": true, "primes": 10, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.3}
+{"N": 575, "s": 220, "complete": true, "primes": 17, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 577, "s": 72, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 579, "s": 96, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 581, "s": 246, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 583, "s": 260, "complete": true, "primes": 18, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 585, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 587, "s": 293, "complete": false, "primes": 0, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.1}
+{"N": 589, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 591, "s": 196, "complete": true, "primes": 11, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.5}
+{"N": 593, "s": 74, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 595, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 597, "s": 198, "complete": true, "primes": 15, "rule90_obstructed_by": [7], "fixed_by": {"7": [1, 5]}, "unresolved": [], "seconds": 0.3}
+{"N": 599, "s": 299, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 5.5}
+{"N": 601, "s": 25, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 603, "s": 33, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 605, "s": 220, "complete": true, "primes": 17, "rule90_obstructed_by": [397], "fixed_by": {"397": [1, 5]}, "unresolved": [], "seconds": 0.6}
+{"N": 607, "s": 303, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 609, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 611, "s": 276, "complete": true, "primes": 16, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 613, "s": 306, "complete": true, "primes": 17, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 615, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 617, "s": 77, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 619, "s": 309, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 23.5}
+{"N": 621, "s": 198, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 623, "s": 33, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 625, "s": 250, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.6}
+{"N": 627, "s": 45, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 629, "s": 72, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 631, "s": 45, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 633, "s": 105, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 635, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 637, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 639, "s": 210, "complete": true, "primes": 20, "rule90_obstructed_by": [7], "fixed_by": {"7": [1, 5]}, "unresolved": [], "seconds": 0.3}
+{"N": 641, "s": 32, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 643, "s": 107, "complete": true, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 645, "s": 28, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 647, "s": 323, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 46.1}
+{"N": 649, "s": 145, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 651, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 653, "s": 326, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 1.3}
+{"N": 655, "s": 260, "complete": true, "primes": 18, "rule90_obstructed_by": [5, 41], "fixed_by": {"5": [1, 5], "41": [1, 5]}, "unresolved": [], "seconds": 0.6}
+{"N": 657, "s": 18, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 659, "s": 329, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 661, "s": 330, "complete": true, "primes": 20, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 663, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 665, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 667, "s": 308, "complete": true, "primes": 19, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.7}
+{"N": 669, "s": 74, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 671, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 673, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 675, "s": 180, "complete": true, "primes": 21, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 677, "s": 338, "complete": true, "primes": 8, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 8.7}
+{"N": 679, "s": 48, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 681, "s": 113, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 683, "s": 11, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 685, "s": 34, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 687, "s": 76, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 689, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 691, "s": 115, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 693, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 695, "s": 276, "complete": true, "primes": 16, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.4}
+{"N": 697, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 699, "s": 58, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 701, "s": 350, "complete": true, "primes": 20, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.0}
+{"N": 703, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 705, "s": 92, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 707, "s": 300, "complete": true, "primes": 25, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.7}
+{"N": 709, "s": 354, "complete": true, "primes": 13, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.0}
+{"N": 711, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 713, "s": 55, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 715, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 717, "s": 238, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.7}
+{"N": 719, "s": 359, "complete": false, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.2}
+{"N": 721, "s": 51, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 723, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 725, "s": 70, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 727, "s": 121, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 729, "s": 243, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 2.3}
+{"N": 731, "s": 56, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 733, "s": 122, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 735, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 737, "s": 165, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 739, "s": 123, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 741, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 743, "s": 371, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 49.2}
+{"N": 745, "s": 74, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 747, "s": 123, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 749, "s": 318, "complete": true, "primes": 13, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 751, "s": 375, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.7}
+{"N": 753, "s": 25, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 755, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 757, "s": 378, "complete": true, "primes": 19, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.0}
+{"N": 759, "s": 110, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 761, "s": 190, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 763, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 765, "s": 24, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 767, "s": 348, "complete": true, "primes": 18, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.6}
+{"N": 769, "s": 192, "complete": true, "primes": 15, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.4}
+{"N": 771, "s": 16, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 773, "s": 386, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 43.4}
+{"N": 775, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 777, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 779, "s": 180, "complete": true, "primes": 21, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 781, "s": 70, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 783, "s": 252, "complete": true, "primes": 21, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.7}
+{"N": 785, "s": 26, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 787, "s": 393, "complete": true, "primes": 7, "rule90_obstructed_by": [7], "fixed_by": {"7": [1, 8]}, "unresolved": [], "seconds": 1.0}
+{"N": 789, "s": 262, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 791, "s": 84, "complete": true, "primes": 12, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.1}
+{"N": 793, "s": 30, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 795, "s": 52, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 797, "s": 398, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.7}
+{"N": 799, "s": 184, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 801, "s": 66, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 803, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 805, "s": 132, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 807, "s": 268, "complete": true, "primes": 11, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 0.7}
+{"N": 809, "s": 202, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 811, "s": 135, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 813, "s": 270, "complete": true, "primes": 19, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 0.6}
+{"N": 815, "s": 324, "complete": true, "primes": 22, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.8}
+{"N": 817, "s": 63, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 819, "s": 12, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 821, "s": 410, "complete": true, "primes": 11, "rule90_obstructed_by": [11], "fixed_by": {"11": [1, 5]}, "unresolved": [], "seconds": 0.8}
+{"N": 823, "s": 411, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 13.9}
+{"N": 825, "s": 20, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 827, "s": 413, "complete": false, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.1}
+{"N": 829, "s": 414, "complete": true, "primes": 15, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.5}
+{"N": 831, "s": 92, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 833, "s": 168, "complete": true, "primes": 17, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 835, "s": 332, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 1.4}
+{"N": 837, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 839, "s": 419, "complete": false, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.1}
+{"N": 841, "s": 406, "complete": true, "primes": 14, "rule90_obstructed_by": [233], "fixed_by": {"233": [1, 5]}, "unresolved": [], "seconds": 1.0}
+{"N": 843, "s": 35, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 845, "s": 78, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 847, "s": 330, "complete": true, "primes": 20, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 849, "s": 47, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 851, "s": 396, "complete": true, "primes": 27, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.7}
+{"N": 853, "s": 426, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.6}
+{"N": 855, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 857, "s": 214, "complete": true, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 859, "s": 429, "complete": false, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.3}
+{"N": 861, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 863, "s": 431, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 27.3}
+{"N": 865, "s": 86, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 867, "s": 136, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 869, "s": 390, "complete": true, "primes": 18, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 871, "s": 132, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 873, "s": 48, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 875, "s": 300, "complete": true, "primes": 25, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.5}
+{"N": 877, "s": 438, "complete": true, "primes": 12, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 10.9}
+{"N": 879, "s": 292, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.6}
+{"N": 881, "s": 55, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 883, "s": 441, "complete": false, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.3}
+{"N": 885, "s": 116, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 887, "s": 443, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 3.4}
+{"N": 889, "s": 21, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 891, "s": 135, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 893, "s": 414, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 1.3}
+{"N": 895, "s": 356, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 4.5}
+{"N": 897, "s": 132, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 899, "s": 140, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 901, "s": 104, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 903, "s": 42, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 905, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 907, "s": 453, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.9}
+{"N": 909, "s": 300, "complete": true, "primes": 25, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 6]}, "unresolved": [], "seconds": 1.0}
+{"N": 911, "s": 91, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 913, "s": 205, "complete": true, "primes": 6, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 915, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 917, "s": 390, "complete": true, "primes": 18, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.4}
+{"N": 919, "s": 153, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 921, "s": 51, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 923, "s": 420, "complete": true, "primes": 34, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 1.1}
+{"N": 925, "s": 90, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 927, "s": 102, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 929, "s": 232, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 931, "s": 126, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 933, "s": 310, "complete": true, "primes": 13, "rule90_obstructed_by": [3], "fixed_by": {"3": [1, 5]}, "unresolved": [], "seconds": 1.2}
+{"N": 935, "s": 40, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 937, "s": 117, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 939, "s": 156, "complete": true, "primes": 16, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 941, "s": 470, "complete": true, "primes": 14, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 23.1}
+{"N": 943, "s": 220, "complete": true, "primes": 17, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.5}
+{"N": 945, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 947, "s": 473, "complete": false, "primes": 4, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.3}
+{"N": 949, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 951, "s": 316, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 31.4}
+{"N": 953, "s": 34, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 955, "s": 380, "complete": true, "primes": 19, "rule90_obstructed_by": [5], "fixed_by": {"5": [1, 5]}, "unresolved": [], "seconds": 2.4}
+{"N": 957, "s": 140, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 959, "s": 204, "complete": true, "primes": 19, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 961, "s": 155, "complete": true, "primes": 7, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 963, "s": 159, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 965, "s": 96, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 967, "s": 483, "complete": true, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 23.2}
+{"N": 969, "s": 72, "complete": true, "primes": 12, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 971, "s": 97, "complete": true, "primes": 2, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 973, "s": 138, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 975, "s": 60, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 977, "s": 244, "complete": true, "primes": 9, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.3}
+{"N": 979, "s": 110, "complete": true, "primes": 11, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 981, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 983, "s": 491, "complete": false, "primes": 1, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.1}
+{"N": 985, "s": 98, "complete": true, "primes": 5, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 987, "s": 138, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 989, "s": 154, "complete": true, "primes": 10, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.2}
+{"N": 991, "s": 495, "complete": false, "primes": 15, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 60.7}
+{"N": 993, "s": 15, "complete": true, "primes": 3, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}
+{"N": 995, "s": 396, "complete": true, "primes": 27, "rule90_obstructed_by": [3, 5, 7], "fixed_by": {"3": [1, 5], "5": [1, 6], "7": [1, 5]}, "unresolved": [], "seconds": 1.9}
+{"N": 997, "s": 166, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.1}
+{"N": 999, "s": 36, "complete": true, "primes": 8, "rule90_obstructed_by": [], "fixed_by": {}, "unresolved": [], "seconds": 0.0}

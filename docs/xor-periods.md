@@ -172,6 +172,13 @@ is a power of 2 die, as predicted (period 1), after exactly n/2 generations from
 
 ## What this does and does not establish
 
+**Update: a partial proof.** [The proof write-up](xor-periods-proof.md) proves the upper bound and
+the transients for every n, proves that even sizes reduce to odd ones (P(2^k N) = 2^k P(N)), and
+reduces the rest to one statement about odd N: that the rule's eigenvalues generate the
+multiplicative group of F(2^sord(N)). That statement is proved where rule 90 meets its own bound,
+and checked by machine for every odd N up to 999 (completely for 489 of the 499); so the law is a
+theorem for every n whose odd part is among those 489. The bullets below predate it.
+
 - **Every n up to 200, exactly; beyond that, unproved.** Round 2's periods are exact, not
   estimates, at every size from 3 to 200. For all n, the bound argument above proves that for odd
   n the period divides 2^sord(n) - 1 and is a multiple of rule 90's; that the rule always attains
