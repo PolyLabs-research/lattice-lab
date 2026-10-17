@@ -145,6 +145,9 @@ def cmd_verify(args) -> int:
             )
         if not args.rerun or not q["body"].get("records_file"):
             continue
+        if "spec" not in q["body"]:  # a study's records may come from several rules
+            warnings.append(f"question {q['seq']}: no loop spec, so its records were not rerun")
+            continue
         lines = record_lines(args.lab / q["body"]["records_file"])
         if not lines:
             continue

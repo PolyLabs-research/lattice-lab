@@ -86,3 +86,13 @@ def test_laws_and_a_reduced_selfcheck(tmp_path, capsys):
         "exponential",
         "exponential_area",
     }
+
+
+def test_verify_checks_a_study_without_a_loop_spec(capsys):
+    """A registered study's question has a records file but no single loop spec: verify checks
+    its chain and order, and says the records were not rerun instead of failing."""
+    lab = Path(__file__).resolve().parent.parent / "examples" / "settling-universality"
+    assert cli.main(["verify", "--lab", str(lab), "--rerun", "2"]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["problems"] == [] and out["reruns"]["checked"] == 0
+    assert any("not rerun" in w for w in out["warnings"])

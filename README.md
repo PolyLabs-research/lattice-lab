@@ -90,7 +90,9 @@ worse. The verdict holds with the smallest sizes dropped and with each size left
 prototype reported T ≈ 27·L^0.35. Before the run, the plan said these sizes and seeds could
 not be expected to separate the two (an expected BIC difference of 3.9 against a margin of 6;
 about 1.5× the seeds would), so the margin seen is more than the design promised: treat this
-as one answer to replicate with more seeds or larger tori, not a settled fact.
+as one answer to replicate with more seeds or larger tori, not a settled fact. It has since been
+replicated, in a registered study on tori up to 1024 with 100 seeds each, where the power law was
+rejected ([docs/settling-time.md](docs/settling-time.md)).
 
 ## Beyond settling time: what else Kepler finds in LatticeLife data
 
@@ -135,7 +137,7 @@ What is new, as far as a web search went:
 - **Who did what.** Kepler found each law from data. The registered tests showed where the
   hexagon's was wrong, and the corrected law and the proofs were reasoning added afterwards.
 
-Each study is a directory under `examples/`. The four with ledgers check with
+Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
 
 | Directory | What it holds |
@@ -146,6 +148,27 @@ Each study is a directory under `examples/`. The four with ledgers check with
 | `parity-lattices` | hexagon and triangles: discovery, the exact engine, round 1 (210 predictions) |
 | `parity-lattices-hexagon` | round 2: the corrected hexagon law at 100 sizes, the triangles at 7 |
 | `parity-lattices-proof` | triangles: the odd-part machine check up to 999, with the hexagon as control |
+| `settling-time-replication` | B2/S34 settling times on hexagon tori up to 1024 (registered) |
+| `settling-universality` | eight random rules on four lattice types: settling-time laws and their fluctuations (registered) |
+
+## Settling times: a replication and a universality test
+
+[docs/settling-time.md](docs/settling-time.md) takes the loop's own B2/S34 answer to rules with no
+exact theory. It uses two registered studies, both built on `lattice_lab.study`: a harness that
+writes a study's predictions to the ledger and refuses to run it until they are committed and
+pushed.
+
+- **Replication** (`examples/settling-time-replication`). On hexagon tori up to 1024, B2/S34's
+  median settling time stays logarithmic in the size, and the power law is rejected. Two
+  extreme-value mechanisms predicted the fluctuations from each law's constants. The heavy-tailed
+  one failed outright. The light-tailed one (Gumbel) got the shape and constancy right but the
+  size wrong.
+- **Universality** (`examples/settling-universality`). Eight rules were drawn at random on the
+  square, hexagon and both triangular lattices. For all eight, the log law held and the power law
+  failed. The fluctuations share one shape and one ratio of spread to growth on every lattice.
+  Both match the Gumbel values for the largest of about L^2 independent times: 0.177 +- 0.023
+  against 0.2215, and 0.765 +- 0.029 against 0.786. This is extreme-value universality, not
+  a critical point's. At these error bars, Kepler's identify cannot yet name the class blind.
 
 ## Trusting the answers
 
