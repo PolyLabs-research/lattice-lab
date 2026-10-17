@@ -1,0 +1,84 @@
+{"lattice": "hexagon", "n": 6, "starts": {"cell": {"period": 2, "transient": 4}}, "period": 2, "transient": 4}
+{"lattice": "hexagon", "n": 8, "starts": {"cell": {"period": 1, "transient": 4}}, "period": 1, "transient": 4}
+{"lattice": "hexagon", "n": 10, "starts": {"cell": {"period": 12, "transient": 4}}, "period": 12, "transient": 4}
+{"lattice": "hexagon", "n": 12, "starts": {"cell": {"period": 4, "transient": 8}}, "period": 4, "transient": 8}
+{"lattice": "hexagon", "n": 14, "starts": {"cell": {"period": 28, "transient": 4}}, "period": 28, "transient": 4}
+{"lattice": "hexagon", "n": 16, "starts": {"cell": {"period": 1, "transient": 8}}, "period": 1, "transient": 8}
+{"lattice": "hexagon", "n": 18, "starts": {"cell": {"period": 28, "transient": 4}}, "period": 28, "transient": 4}
+{"lattice": "hexagon", "n": 20, "starts": {"cell": {"period": 24, "transient": 8}}, "period": 24, "transient": 8}
+{"lattice": "hexagon", "n": 22, "starts": {"cell": {"period": 124, "transient": 4}}, "period": 124, "transient": 4}
+{"lattice": "hexagon", "n": 24, "starts": {"cell": {"period": 8, "transient": 16}}, "period": 8, "transient": 16}
+{"lattice": "hexagon", "n": 26, "starts": {"cell": {"period": 252, "transient": 4}}, "period": 252, "transient": 4}
+{"lattice": "hexagon", "n": 28, "starts": {"cell": {"period": 56, "transient": 8}}, "period": 56, "transient": 8}
+{"lattice": "hexagon", "n": 30, "starts": {"cell": {"period": 60, "transient": 4}}, "period": 60, "transient": 4}
+{"lattice": "hexagon", "n": 32, "starts": {"cell": {"period": 1, "transient": 16}}, "period": 1, "transient": 16}
+{"lattice": "hexagon", "n": 34, "starts": {"cell": {"period": 60, "transient": 4}}, "period": 60, "transient": 4}
+{"lattice": "hexagon", "n": 36, "starts": {"cell": {"period": 56, "transient": 8}}, "period": 56, "transient": 8}
+{"lattice": "hexagon", "n": 38, "starts": {"cell": {"period": 2044, "transient": 4}}, "period": 2044, "transient": 4}
+{"lattice": "hexagon", "n": 40, "starts": {"cell": {"period": 48, "transient": 16}}, "period": 48, "transient": 16}
+{"lattice": "hexagon", "n": 42, "starts": {"cell": {"period": 252, "transient": 4}}, "period": 252, "transient": 4}
+{"lattice": "hexagon", "n": 44, "starts": {"cell": {"period": 248, "transient": 8}}, "period": 248, "transient": 8}
+{"lattice": "hexagon", "n": 46, "starts": {"cell": {"period": 8188, "transient": 4}}, "period": 8188, "transient": 4}
+{"lattice": "hexagon", "n": 48, "starts": {"cell": {"period": 16, "transient": 32}}, "period": 16, "transient": 32}
+{"lattice": "hexagon", "n": 50, "starts": {"cell": {"period": 4092, "transient": 4}}, "period": 4092, "transient": 4}
+{"lattice": "hexagon", "n": 52, "starts": {"cell": {"period": 504, "transient": 8}}, "period": 504, "transient": 8}
+{"lattice": "hexagon", "n": 54, "starts": {"cell": {"period": 2044, "transient": 4}}, "period": 2044, "transient": 4}
+{"lattice": "hexagon", "n": 56, "starts": {"cell": {"period": 112, "transient": 16}}, "period": 112, "transient": 16}
+{"lattice": "hexagon", "n": 58, "starts": {"cell": {"period": 65532, "transient": 4}}, "period": 65532, "transient": 4}
+{"lattice": "hexagon", "n": 60, "starts": {"cell": {"period": 120, "transient": 8}}, "period": 120, "transient": 8}
+{"lattice": "triangle-edge", "n": 6, "starts": {"up": {"period": 4, "transient": 2}, "down": {"period": 4, "transient": 2}}, "period": 4, "transient": 2}
+{"lattice": "triangle-edge", "n": 8, "starts": {"up": {"period": 8, "transient": 0}, "down": {"period": 8, "transient": 0}}, "period": 8, "transient": 0}
+{"lattice": "triangle-edge", "n": 10, "starts": {"up": {"period": 12, "transient": 0}, "down": {"period": 12, "transient": 0}}, "period": 12, "transient": 0}
+{"lattice": "triangle-edge", "n": 12, "starts": {"up": {"period": 8, "transient": 4}, "down": {"period": 8, "transient": 4}}, "period": 8, "transient": 4}
+{"lattice": "triangle-edge", "n": 14, "starts": {"up": {"period": 28, "transient": 4}, "down": {"period": 28, "transient": 4}}, "period": 28, "transient": 4}
+{"lattice": "triangle-edge", "n": 16, "starts": {"up": {"period": 16, "transient": 0}, "down": {"period": 16, "transient": 0}}, "period": 16, "transient": 0}
+{"lattice": "triangle-edge", "n": 18, "starts": {"up": {"period": 28, "transient": 2}, "down": {"period": 28, "transient": 2}}, "period": 28, "transient": 2}
+{"lattice": "triangle-edge", "n": 20, "starts": {"up": {"period": 24, "transient": 0}, "down": {"period": 24, "transient": 0}}, "period": 24, "transient": 0}
+{"lattice": "triangle-edge", "n": 22, "starts": {"up": {"period": 124, "transient": 0}, "down": {"period": 124, "transient": 0}}, "period": 124, "transient": 0}
+{"lattice": "triangle-edge", "n": 24, "starts": {"up": {"period": 16, "transient": 8}, "down": {"period": 16, "transient": 8}}, "period": 16, "transient": 8}
+{"lattice": "triangle-edge", "n": 26, "starts": {"up": {"period": 252, "transient": 0}, "down": {"period": 252, "transient": 0}}, "period": 252, "transient": 0}
+{"lattice": "triangle-edge", "n": 28, "starts": {"up": {"period": 56, "transient": 8}, "down": {"period": 56, "transient": 8}}, "period": 56, "transient": 8}
+{"lattice": "triangle-edge", "n": 30, "starts": {"up": {"period": 60, "transient": 4}, "down": {"period": 60, "transient": 4}}, "period": 60, "transient": 4}
+{"lattice": "triangle-edge", "n": 32, "starts": {"up": {"period": 32, "transient": 0}, "down": {"period": 32, "transient": 0}}, "period": 32, "transient": 0}
+{"lattice": "triangle-edge", "n": 34, "starts": {"up": {"period": 60, "transient": 0}, "down": {"period": 60, "transient": 0}}, "period": 60, "transient": 0}
+{"lattice": "triangle-edge", "n": 36, "starts": {"up": {"period": 56, "transient": 4}, "down": {"period": 56, "transient": 4}}, "period": 56, "transient": 4}
+{"lattice": "triangle-edge", "n": 38, "starts": {"up": {"period": 2044, "transient": 0}, "down": {"period": 2044, "transient": 0}}, "period": 2044, "transient": 0}
+{"lattice": "triangle-edge", "n": 40, "starts": {"up": {"period": 48, "transient": 0}, "down": {"period": 48, "transient": 0}}, "period": 48, "transient": 0}
+{"lattice": "triangle-edge", "n": 42, "starts": {"up": {"period": 252, "transient": 4}, "down": {"period": 252, "transient": 4}}, "period": 252, "transient": 4}
+{"lattice": "triangle-edge", "n": 44, "starts": {"up": {"period": 248, "transient": 0}, "down": {"period": 248, "transient": 0}}, "period": 248, "transient": 0}
+{"lattice": "triangle-edge", "n": 46, "starts": {"up": {"period": 8188, "transient": 0}, "down": {"period": 8188, "transient": 0}}, "period": 8188, "transient": 0}
+{"lattice": "triangle-edge", "n": 48, "starts": {"up": {"period": 32, "transient": 16}, "down": {"period": 32, "transient": 16}}, "period": 32, "transient": 16}
+{"lattice": "triangle-edge", "n": 50, "starts": {"up": {"period": 4092, "transient": 0}, "down": {"period": 4092, "transient": 0}}, "period": 4092, "transient": 0}
+{"lattice": "triangle-edge", "n": 52, "starts": {"up": {"period": 504, "transient": 0}, "down": {"period": 504, "transient": 0}}, "period": 504, "transient": 0}
+{"lattice": "triangle-edge", "n": 54, "starts": {"up": {"period": 2044, "transient": 2}, "down": {"period": 2044, "transient": 2}}, "period": 2044, "transient": 2}
+{"lattice": "triangle-edge", "n": 56, "starts": {"up": {"period": 112, "transient": 16}, "down": {"period": 112, "transient": 16}}, "period": 112, "transient": 16}
+{"lattice": "triangle-edge", "n": 58, "starts": {"up": {"period": 65532, "transient": 0}, "down": {"period": 65532, "transient": 0}}, "period": 65532, "transient": 0}
+{"lattice": "triangle-edge", "n": 60, "starts": {"up": {"period": 120, "transient": 8}, "down": {"period": 120, "transient": 8}}, "period": 120, "transient": 8}
+{"lattice": "triangle-edge+vertex", "n": 6, "starts": {"up": {"period": 4, "transient": 1}, "down": {"period": 4, "transient": 1}}, "period": 4, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 8, "starts": {"up": {"period": 1, "transient": 4}, "down": {"period": 1, "transient": 4}}, "period": 1, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 10, "starts": {"up": {"period": 12, "transient": 1}, "down": {"period": 12, "transient": 1}}, "period": 12, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 12, "starts": {"up": {"period": 8, "transient": 2}, "down": {"period": 8, "transient": 2}}, "period": 8, "transient": 2}
+{"lattice": "triangle-edge+vertex", "n": 14, "starts": {"up": {"period": 28, "transient": 4}, "down": {"period": 28, "transient": 4}}, "period": 28, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 16, "starts": {"up": {"period": 1, "transient": 8}, "down": {"period": 1, "transient": 8}}, "period": 1, "transient": 8}
+{"lattice": "triangle-edge+vertex", "n": 18, "starts": {"up": {"period": 28, "transient": 1}, "down": {"period": 28, "transient": 1}}, "period": 28, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 20, "starts": {"up": {"period": 24, "transient": 2}, "down": {"period": 24, "transient": 2}}, "period": 24, "transient": 2}
+{"lattice": "triangle-edge+vertex", "n": 22, "starts": {"up": {"period": 124, "transient": 1}, "down": {"period": 124, "transient": 1}}, "period": 124, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 24, "starts": {"up": {"period": 16, "transient": 4}, "down": {"period": 16, "transient": 4}}, "period": 16, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 26, "starts": {"up": {"period": 252, "transient": 1}, "down": {"period": 252, "transient": 1}}, "period": 252, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 28, "starts": {"up": {"period": 56, "transient": 8}, "down": {"period": 56, "transient": 8}}, "period": 56, "transient": 8}
+{"lattice": "triangle-edge+vertex", "n": 30, "starts": {"up": {"period": 60, "transient": 4}, "down": {"period": 60, "transient": 4}}, "period": 60, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 32, "starts": {"up": {"period": 1, "transient": 16}, "down": {"period": 1, "transient": 16}}, "period": 1, "transient": 16}
+{"lattice": "triangle-edge+vertex", "n": 34, "starts": {"up": {"period": 60, "transient": 1}, "down": {"period": 60, "transient": 1}}, "period": 60, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 36, "starts": {"up": {"period": 56, "transient": 2}, "down": {"period": 56, "transient": 2}}, "period": 56, "transient": 2}
+{"lattice": "triangle-edge+vertex", "n": 38, "starts": {"up": {"period": 2044, "transient": 1}, "down": {"period": 2044, "transient": 1}}, "period": 2044, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 40, "starts": {"up": {"period": 48, "transient": 4}, "down": {"period": 48, "transient": 4}}, "period": 48, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 42, "starts": {"up": {"period": 252, "transient": 4}, "down": {"period": 252, "transient": 4}}, "period": 252, "transient": 4}
+{"lattice": "triangle-edge+vertex", "n": 44, "starts": {"up": {"period": 248, "transient": 2}, "down": {"period": 248, "transient": 2}}, "period": 248, "transient": 2}
+{"lattice": "triangle-edge+vertex", "n": 46, "starts": {"up": {"period": 8188, "transient": 1}, "down": {"period": 8188, "transient": 1}}, "period": 8188, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 48, "starts": {"up": {"period": 32, "transient": 8}, "down": {"period": 32, "transient": 8}}, "period": 32, "transient": 8}
+{"lattice": "triangle-edge+vertex", "n": 50, "starts": {"up": {"period": 4092, "transient": 1}, "down": {"period": 4092, "transient": 1}}, "period": 4092, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 52, "starts": {"up": {"period": 504, "transient": 2}, "down": {"period": 504, "transient": 2}}, "period": 504, "transient": 2}
+{"lattice": "triangle-edge+vertex", "n": 54, "starts": {"up": {"period": 2044, "transient": 1}, "down": {"period": 2044, "transient": 1}}, "period": 2044, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 56, "starts": {"up": {"period": 112, "transient": 16}, "down": {"period": 112, "transient": 16}}, "period": 112, "transient": 16}
+{"lattice": "triangle-edge+vertex", "n": 58, "starts": {"up": {"period": 65532, "transient": 1}, "down": {"period": 65532, "transient": 1}}, "period": 65532, "transient": 1}
+{"lattice": "triangle-edge+vertex", "n": 60, "starts": {"up": {"period": 120, "transient": 8}, "down": {"period": 120, "transient": 8}}, "period": 120, "transient": 8}

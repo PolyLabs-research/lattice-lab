@@ -1,0 +1,62 @@
+{
+ "hexagon": {
+  "all even n": [],
+  "n not a power of 2": [],
+  "odd part at least 5": [
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle-edge": {
+  "all even n": [],
+  "n not a power of 2": [
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 24,
+    "bits": 5.584962500721156
+   }
+  ],
+  "odd part at least 5": [
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ },
+ "triangle-edge+vertex": {
+  "all even n": [],
+  "n not a power of 2": [
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 24,
+    "bits": 5.584962500721156
+   }
+  ],
+  "odd part at least 5": [
+   {
+    "form": "number theory",
+    "expression": "2*2^v(n)*(2^sord(n) - 1)",
+    "unknowns": 1,
+    "determined_by": 1,
+    "confirmed_by": 20,
+    "bits": 5.584962500721156
+   }
+  ]
+ }
+}
