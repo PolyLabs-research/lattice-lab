@@ -8,7 +8,9 @@ a **proof that the hexagonal rule's odd period is rule 90's**: two hexagon gener
 three passes of rule 90, one along each lattice direction. **Round 2** registered the corrected
 law at every even n from 202 to 400. **It was confirmed at all 100. Round 1's law, the rival,
 was refuted at all seven sizes where the two differ. At those seven sizes both triangular rules
-attained the full bound, as predicted.**
+attained the full bound, as predicted.** **Since then the factor 2 * 2^v(n) has been proved on all
+three lattices**, so the hexagon's whole law is now a theorem. On the triangles only the odd part
+reaching 2^sord(m) - 1 is still open ([the proof](#the-factor-2--2vn-proved)).
 
 ## The rules
 
@@ -152,7 +154,8 @@ R(1) = 1.
   bound. Among odd m up to 999, rule 90 falls short at least 50 times (37, 95, 101, 111, 141,
   197, 199, 203, ...; `examples/xor-periods-proof/results.jsonl`). The shortfall is usually a
   factor of 3, but 7 at m = 199.
-- What stays observed, not proved: the 2-part, 2 * 2^v(n), with its families at m = 1 and m = 3.
+- The 2-part, 2 * 2^v(n), and its families at m = 1 and m = 3 are proved
+  [below](#the-factor-2--2vn-proved), so the hexagon's whole law is a theorem.
 
 How the lattices compare, at their odd part:
 
@@ -204,6 +207,129 @@ Across both rounds the corrected law holds at all 198 hexagon sizes from 6 to 40
 three parts of the law, only the odd factor is proved. The factor 2 * 2^v(n) and the two small
 families are observed at every size, including the 100 registered in advance here.
 
+## The factor 2 * 2^v(n), proved
+
+The factor that every law shares is now proved on all three lattices. With the odd part above, the
+hexagon's law is a theorem for every even n. For the triangles everything is proved except that
+the odd part reaches 2^sord(m) - 1: the proof shows only that it divides it.
+
+**The tool: Frobenius moves the steps.** In characteristic 2,
+(sum of a_g g)^(2^k) = sum of a_g^(2^k) (2^k g), so the rule raised to the power 2^k is the rule
+with every step multiplied by 2^k. On a torus whose 2-part T_2 has exponent 2^e, the power
+2^(e-1) or 2^(e-2) sends every step into a small subgroup (of order 2, 4 or 8). There the
+period's 2-part can be read off by hand.
+
+**The tori as groups** (both maps are checked in the tests):
+
+- *Hexagon.* (q, r) -> (q + 2r mod 2n, r mod n/2) is an isomorphism T = Z/2n x Z/(n/2). So
+  T_2 = Z/2^(v+1) x Z/2^(v-1) and T_odd = (Z/m)^2.
+- *Triangle.* For the up cells, (x, y) -> (x - y mod n, y mod n/2) gives T = Z/n x Z/(n/2), so
+  T_2 = Z/2^v x Z/2^(v-1) and T_odd = (Z/m)^2.
+
+**Two facts used throughout.**
+
+1. As in the theorem's proof, F2[T] is a product of local rings F_chi[T_2], and in each one an
+   element is lambda_chi plus a nilpotent. If lambda_chi = 0 that component dies; otherwise its
+   order is ord(lambda_chi) times the order of a unit 1 + nilpotent, a power of 2.
+2. If x has eventual period P, then x^k has period P / gcd(P, k).
+
+### The hexagon
+
+1. *Where the steps go.* Let y = sigma^(2^(v-1)). Each step s becomes 2^(v-1) s, whose 2-part
+   lies in 2^(v-1) T_2 = Z/4 = <g>:
+   - +-(1, 0) goes to g^(+-1);
+   - +-(0, 1) goes to g^2;
+   - +-(1, -1) goes to g^(-+1).
+2. *One component.* Write a = chi(1, 0)^(2^(v-1)) and b = chi(0, 1)^(2^(v-1)); they range over
+   all pairs of m-th roots of unity. With g = 1 + h, so that h^4 = 0, the component is
+
+       y_chi = (a + b/a) g + (b + 1/b) g^2 + (1/a + a/b) g^3
+             = lambda + (c(a) + c(a/b)) h + (c(b) + 1/a + a/b) h^2 + (1/a + a/b) h^3,
+
+   with lambda = sigma(a, b).
+3. *Reading off the order.* If lambda != 0, write y_chi = lambda (1 + e). Then
+   (1 + e)^2 = 1 + e^2, and e^2 keeps only the square of e's h-coefficient, times h^2. So the
+   2-part of the order is:
+   - 4 if the h-coefficient c(a) + c(a/b) is nonzero;
+   - 2 if it is zero but e is not;
+   - 1 if e = 0.
+4. *Which pairs give which.*
+   - c(a) + c(a/b) = 0 exactly when b = 1 or b = a^2.
+   - By the lemma, lambda^2 = c(a) c(b) c(a/b), so lambda != 0 exactly when a != 1, b != 1 and
+     a != b.
+5. *The three cases.*
+   - **m >= 5.** a = zeta, b = zeta^3 (zeta a primitive m-th root) satisfy both conditions, so a
+     component of 2-part 4 exists, and 4 is the most possible. y's period has 2-part 4, so by
+     fact 2 sigma's has 2^(v-1) * 4 = **2 * 2^v(n)**.
+   - **m = 3.** lambda != 0 forces b = a^2, so the h-coefficient vanishes in every unit
+     component. At (a, b) = (omega, omega^2), lambda = 1 and the h^2 coefficient is
+     c(omega)^2 = 1. So y's 2-part is exactly 2, and sigma's is **2^v(n)**.
+   - **m = 1.** The only character gives lambda = 6 = 0, so sigma is nilpotent: **the torus
+     dies**.
+
+So P(n) = 2 * 2^v(n) * R(m) for m >= 5, 2^v(n) for m = 3, and 1 (dies) for m = 1. This is
+exactly the law registered in round 2, now proved for every even n.
+
+### The triangles
+
+1. *Both rules square to a scalar.* Let a1, a2, a3 be the translations from an up cell to its
+   three edge neighbours, A = a1 + a2 + a3 and P = a1 a2 a3, and let A-bar invert every
+   translation. Write Q for the sum of the three a_i^2 / (a_j a_k), so that Q + Q-bar = S'
+   below. In char 2, A^3 / P = S + Q.
+   - The edge rule is [[0, A], [A-bar, 0]]. Its square is (A A-bar) I = (1 + S) I, where S is
+     the sum of the six nearest translations, +-(1, 0), +-(0, 1), +-(1, 1).
+   - The edge+vertex rule adds, on the diagonal, the six same-orientation cells (S). Off the
+     diagonal it adds the three cells across a vertex, P / a_i^2. Squaring it gives (S + S') I,
+     where S' is the sum of the six next-nearest translations, +-(1, 2), +-(2, 1), +-(1, -1).
+
+   So **two generations of the edge rule are 1 + the six nearest neighbours, and two of the
+   edge+vertex rule are the twelve nearest and next-nearest**, on each orientation separately.
+   The tests check both identities on tori from 6 to 64.
+2. *Reduce to F.* Let F be that scalar. By fact 2, P(F) = P(M)/gcd(P(M), 2). So P(M) = 2 P(F)
+   whenever P(F) is even.
+3. *Upper bound.* T_2 has exponent 2^v, so F^(2^v) lies in the semisimple F2[T_odd]. P(F)'s
+   2-part is therefore at most 2^v.
+4. *Where the steps go.* Take y = F^(2^(v-1)). Every step (p, q) lands in
+   2^(v-1) T_2 = {1, z}: on z if p - q is odd, which is +-(1, 0), +-(0, 1), +-(1, 2) and
+   +-(2, 1); on 1 for +-(1, 1) and +-(1, -1). Write alpha = chi(1, 0)^(2^(v-1)) and
+   beta = chi(0, 1)^(2^(v-1)), which range over all pairs of m-th roots of unity, and
+   w = 1 + z, so that w^2 = 0:
+   - edge: y_chi = lambda + w (c(alpha) + c(beta)), with
+     lambda = 1 + c(alpha) + c(beta) + c(alpha beta);
+   - edge+vertex: y_chi = lambda + w B, with B = c(alpha) + c(beta) + c(alpha beta^2) +
+     c(alpha^2 beta) and lambda = c(alpha) c(beta) + B.
+5. *Lower bound.* When lambda != 0 and the w-coefficient is nonzero, (lambda + w B)^2 =
+   lambda^2, so the component has order 2 ord(lambda). Take beta = 1 and alpha != 1, possible
+   for m >= 3:
+   - edge: lambda = 1 and the w-coefficient is c(alpha) != 0;
+   - edge+vertex: lambda and the w-coefficient are both c(alpha)^2 != 0.
+
+   So y's period is even, P(F) has 2-part exactly 2^v, and **P(M) = 2 P(F) has 2-part
+   2 * 2^v(n)**.
+6. *The odd part.* It is P(F)'s, the lcm of the orders of lambda. lambda is unchanged when alpha
+   and beta are inverted, so it lies in F(2^sord(m)), and the odd part divides 2^sord(m) - 1.
+7. *m = 1.*
+   - **Edge+vertex:** lambda = 12 = 0, and **the torus dies**.
+   - **Edge:** lambda = 1 with w-coefficient 0, so F^(2^(v-1)) = 1. One level down,
+     F^(2^(v-2)) = 1 + (g + g^3)(1 + k) != 1, in the group ring of
+     2^(v-2) T_2 = Z/4 x Z/2 = <g> x <k> (v >= 2). So F has order
+     2^(v-1), and **the period is 2^v = n**.
+
+So on both triangular lattices, P(n) = 2 * 2^v(n) * L(m) for odd parts m >= 3. L(m) is the lcm of
+the orders of lambda over pairs of m-th roots of unity, and divides 2^sord(m) - 1. At powers of 2
+the edge rule has period n and the edge+vertex rule dies. What is left open is L(m) =
+2^sord(m) - 1. It held at every odd part computed, including all seven where rule 90 falls short.
+It is the same kind of statement as the open core of the square XOR law, and could be machine
+checked odd part by odd part in the same way.
+
+**Transients, bounded.** The same tool bounds every transient by 2 * 2^v(n) on all three
+lattices, though it does not give their exact values.
+
+- On the hexagon, a nilpotent component x satisfies x^(2^(v+1)) = aug(x)^(2^(v+1)) = 0.
+- On the triangles, M^(2^(v+1)) = F^(2^v), which vanishes on F's nilpotent components.
+
+The hexagon reaches the bound at every m >= 3 computed.
+
 ## Not registered: the triangles' transients
 
 The triangles' transients were not predicted. One pattern was noticed afterwards. On the edge
@@ -219,12 +345,15 @@ is proved or registered.
 
 ## What this does and does not establish
 
-- **Proved, for every even n:** two hexagon generations are three passes of rule 90. The
-  hexagon's odd period is rule 90's period on the odd-part cycle.
+- **Proved, for every even n:**
+  - two hexagon generations are three passes of rule 90;
+  - the hexagon's whole law: 2 * 2^v(n) * R(m), 2^v(n) at m = 3, death at m = 1;
+  - on the triangles, the factor 2 * 2^v(n) and both power-of-2 families, with the odd part
+    dividing 2^sord(m) - 1;
+  - every transient at most 2 * 2^v(n).
 - **Observed, not proved:**
-  - the factor 2 * 2^v(n) on all three lattices;
-  - the triangles' periods: in every size computed, the full 2^sord(m) - 1 at the odd part;
-  - every transient law.
+  - the triangles' odd part: the full 2^sord(m) - 1 at every size computed;
+  - the exact transients (the bound is proved).
 
   These rest on the computations: exact at every size listed, but finite.
 - **Two methods, one answer.** Simulation and the exact engine agree at all 84 pairs where both

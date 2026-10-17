@@ -104,8 +104,8 @@ sizes, exact formulas for periods (the XOR rule's period on an n x n torus; a
 every n up to 200 exactly, and found the rule never shares 1D rule 90's shortfalls; a
 [partial proof](docs/xor-periods-proof.md) reduces it to odd sizes and settles every odd part up to
 999 but ten; on the hexagonal and triangular lattices a [second registered test](docs/parity-lattices.md)
-refuted Kepler's law on the hexagon at three of 210 sizes, which led to a proof that two hexagon
-generations are three passes of rule 90), conserved quantities (with a parity of births found from data and then proved), and whether
+refuted Kepler's law on the hexagon at three of 210 sizes, which led to a proof of the hexagon's
+whole law, built on the fact that two hexagon generations are three passes of rule 90), conserved quantities (with a parity of births found from data and then proved), and whether
 a fitted constant is a known number. The loop itself still asks about settling time; those
 studies are ready to become question types.
 

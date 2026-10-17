@@ -127,3 +127,72 @@ def test_round_2_ledger_is_intact_and_the_verdict_holds():
         assert rival[str(n)] == (7 if n == 398 else 3) * hexagon
         for lattice in ("triangle-edge", "triangle-edge+vertex"):
             assert verdict["outcomes"][f"{lattice} {n}"]["period"] == rival[str(n)]
+
+
+def _sum(ring, steps):
+    x = ring.zero()
+    for i, j in steps:
+        x = (x + ring.monomial(i, j)) % 2
+    return x
+
+
+NEAREST = ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1))
+NEXT_NEAREST = ((1, 2), (-1, -2), (2, 1), (-2, -1), (1, -1), (-1, 1))
+
+
+@pytest.mark.parametrize("n", [6, 8, 12, 18, 30, 64])
+def test_both_triangle_rules_square_to_scalars(n):
+    """Two edge generations are 1 + the six nearest neighbours; two edge+vertex generations are
+    the twelve nearest and next-nearest (on each orientation separately)."""
+    ring, edge = lattices.triangle(n, "edge")
+    _, both = lattices.triangle(n, "edge+vertex")
+    zero = ring.zero()
+    f_edge = (ring.monomial(0, 0) + _sum(ring, NEAREST)) % 2
+    f_both = _sum(ring, NEAREST + NEXT_NEAREST)
+    assert edge * edge == lattices.Matrix(ring, [[f_edge, zero], [zero, f_edge]])
+    assert both * both == lattices.Matrix(ring, [[f_both, zero], [zero, f_both]])
+
+
+def test_the_tori_as_groups_and_where_the_steps_go():
+    for n in range(6, 41, 2):
+        h = n // 2
+        # hexagon: (q, r) -> (q + 2r mod 2n, r mod n/2) kills Lambda and has n^2 elements
+        assert all(((q + 2 * r) % (2 * n), r % h) == (0, 0) for q, r in ((n, -h), (0, n)))
+        # triangle: (x, y) -> (x - y mod n, y mod n/2) kills Lambda and has n^2 / 2 elements
+        assert all(((x - y) % n, y % h) == (0, 0) for x, y in ((h, -h), (h, h)))
+    # times 2^(v-1), a hexagon step lands on g^((q + 2r) mod 4) in Z/4
+    assert {s: (s[0] + 2 * s[1]) % 4 for s in lattices.AXIAL_STEPS} == {
+        (1, 0): 1,
+        (-1, 0): 3,
+        (0, 1): 2,
+        (0, -1): 2,
+        (1, -1): 3,
+        (-1, 1): 1,
+    }
+    # and a triangle translation on z exactly when x - y is odd
+    assert [(x - y) % 2 for x, y in NEAREST] == [1, 1, 1, 1, 0, 0]
+    assert [(x - y) % 2 for x, y in NEXT_NEAREST] == [1, 1, 1, 1, 0, 0]
+
+
+def test_the_proved_laws_hold_at_every_size_computed():
+    rows = (
+        _rows(ROUND_1 / "discovery.jsonl")
+        + _rows(ROUND_1 / "records.jsonl")
+        + _rows(ROUND_2 / "records.jsonl")
+    )
+    seen = Counter()
+    for row in rows:
+        n, period, lattice = row["n"], row["period"], row["lattice"]
+        m = lattices.odd_part(n)
+        two_v = n // m
+        seen[lattice] += 1
+        if lattice == "hexagon":
+            expected = 1 if m == 1 else two_v if m == 3 else 2 * two_v * algebra.rule90_period(m)
+            assert period == expected
+        elif m == 1:
+            assert period == (n if lattice == "triangle-edge" else 1)
+        else:
+            odd = lattices.odd_part(period)
+            assert period == 2 * two_v * odd
+            assert (2 ** lattices.suborder(m) - 1) % odd == 0
+    assert seen == {"hexagon": 198, "triangle-edge": 105, "triangle-edge+vertex": 105}

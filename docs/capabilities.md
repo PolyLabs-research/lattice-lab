@@ -172,7 +172,8 @@ periods computed by algebra then confirmed it at every n up to 200, including al
 rule 90 falls short. See [the XOR period test](xor-periods.md). On the hexagonal and triangular
 lattices the same search found one law for all three parity rules. A registered test refuted it on
 the hexagon at three sizes, all of them sizes where rule 90 falls short, and that led to a proof
-that the hexagon's period is rule 90's: [parity rules on other lattices](parity-lattices.md).
+that the hexagon's period is rule 90's, times a factor 2 * 2^v(n) that is also proved:
+[parity rules on other lattices](parity-lattices.md).
 
 ## 7. Conserved quantities
 
