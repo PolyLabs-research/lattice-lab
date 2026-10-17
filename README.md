@@ -95,20 +95,57 @@ as one answer to replicate with more seeds or larger tori, not a settled fact.
 ## Beyond settling time: what else Kepler finds in LatticeLife data
 
 [docs/capabilities.md](docs/capabilities.md) runs each of Kepler's newer tools on real
-LatticeLife simulations (`uv run python examples/capabilities/run.py`): survival windows and how
-their edges move with torus size (binomial likelihood, one fit over density and size), times that
-are only bounds (a censored likelihood), whether a law depends on the starting density (shared
-constants), relaxation and damage over time with seed-to-seed error bars, distributions of object
-sizes, exact formulas for periods (the XOR rule's period on an n x n torus; a
-[pre-registered test](docs/xor-periods.md) confirmed it at 45 unseen sizes by simulation and at
-every n up to 200 exactly, and found the rule never shares 1D rule 90's shortfalls; a
-[partial proof](docs/xor-periods-proof.md) reduces it to odd sizes and settles every odd part up to
-999 but ten; on the hexagonal and triangular lattices a [second registered test](docs/parity-lattices.md)
-refuted Kepler's law on the hexagon at three of 210 sizes, which led to a proof of the hexagon's
-whole law, built on the fact that two hexagon generations are three passes of rule 90, and with a
-machine check up to odd part 999, of the triangles' laws for all but ten of those odd parts), conserved quantities (with a parity of births found from data and then proved), and whether
-a fitted constant is a known number. The loop itself still asks about settling time; those
-studies are ready to become question types.
+LatticeLife simulations (`uv run python examples/capabilities/run.py`):
+
+- survival windows and how their edges move with torus size (a binomial likelihood, one fit over
+  density and size);
+- times that are only bounds (a censored likelihood);
+- whether a law depends on the starting density (shared constants);
+- relaxation and damage over time, with seed-to-seed error bars;
+- distributions of object sizes;
+- exact formulas for periods (the studies below);
+- conserved quantities (a parity of births, found from data and then proved);
+- whether a fitted constant is a known number.
+
+The loop itself still asks only about settling time; these studies are ready to become question
+types.
+
+## Periods of the parity rules
+
+The parity rule sets each cell to the parity of its live neighbours. It is linear over GF(2), so
+its period on an n x n torus can be both measured and proved. Write n = 2^v(n) m with m odd, and
+sord(m) for the least j with 2^j = +-1 modulo m. In each study Kepler found the law from
+simulations, the law's predictions were registered in a ledger before the sizes were computed,
+and the proofs came afterwards.
+
+| Rule | Law | Tested in advance | Proved |
+| --- | --- | --- | --- |
+| B1357/S1357, square ([write-up](docs/xor-periods.md)) | 2^v(n) (2^sord(m) - 1) | confirmed at 45 sizes by simulation and at all 198 from 3 to 200 exactly; the rival (rule 90's period) refuted at all ten sizes where it differs | reduced to odd sizes; settled by machine for every odd part up to 999 except ten ([proof](docs/xor-periods-proof.md)) |
+| B135/S135, hexagon ([write-up](docs/parity-lattices.md)) | first 2 * 2^v(n) (2^sord(m) - 1); corrected to 2 * 2^v(n) R(m), R(m) = rule 90's period on m cells | first law refuted at 3 of 70 sizes (74, 148, 190, by a factor of 3); corrected law confirmed at all 100 sizes from 202 to 400 | **the whole law, for every even n**; the key step is that two hexagon generations are three passes of rule 90 |
+| B13/S13 and B1,3,...,11/S1,3,...,11, triangle ([write-up](docs/parity-lattices.md)) | 2 * 2^v(n) (2^sord(m) - 1) | confirmed at all 154 sizes registered | the factor 2 * 2^v(n) for every even n; the odd part checked by machine for every odd part up to 999 except ten |
+
+What is new, as far as a web search went:
+
+- **Known before.** The square rule's odd sizes up to 23 were published by McLaughlin, and the
+  structure of these laws is Martin, Odlyzko and Wolfram's for rule 90 (1984). Vadali and Turner
+  (2025) proved the four-neighbour square rule has rule 90's cycle lengths.
+- **Not found in the literature:** the square eight-neighbour rule escapes rule 90's shortfalls,
+  the hexagonal rule shares them exactly, and the triangular rules escape them. The identity
+  behind the hexagon result is elementary, and a specialist may know it.
+- **Who did what.** Kepler found each law from data. The registered tests showed where the
+  hexagon's was wrong, and the corrected law and the proofs were reasoning added afterwards.
+
+Each study is a directory under `examples/`. The four with ledgers check with
+`uv run lattice-lab verify --lab <dir>`.
+
+| Directory | What it holds |
+| --- | --- |
+| `xor-periods` | square rule, round 1: simulations of 45 registered sizes |
+| `xor-periods-algebra` | square rule, round 2: exact periods for n = 3..200 |
+| `xor-periods-proof` | square rule: the odd-size machine check up to 999 |
+| `parity-lattices` | hexagon and triangles: discovery, the exact engine, round 1 (210 predictions) |
+| `parity-lattices-hexagon` | round 2: the corrected hexagon law at 100 sizes, the triangles at 7 |
+| `parity-lattices-proof` | triangles: the odd-part machine check up to 999, with the hexagon as control |
 
 ## Trusting the answers
 
