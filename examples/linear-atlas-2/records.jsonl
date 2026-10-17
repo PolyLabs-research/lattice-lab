@@ -9,3 +9,62 @@
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO"]}
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO","self"]}
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO","VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"422550200076076467165567735124","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":398,"predicted":"2535301200456458802993406410748","shells":["E","VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"1267650600228229401496703205372","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"211275100038038233582783867562","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"633825300114114700748351602686","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"211275100038038233582783867562","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":394,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"633825300114114700748351602686","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"549755813880","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"183251937960","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"274877906940","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"91625968980","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"1267650600228229401496703205372","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"1267650600228229401496703205372","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"91625968980","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":394,"predicted":"1267650600228229401496703205372","shells":["E","VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"274877906940","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":380,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"549755813880","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"549755813880","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"549755813880","shells":["E","VO","VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":380,"predicted":"549755813880","shells":["E","VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"2305843009213693950","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"2305843009213693950","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"2305843009213693950","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":286,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"2305843009213693950","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E","VO","VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"93824992236884","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":286,"predicted":"4611686018427387900","shells":["E","VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"281474976710652","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"140737488355326","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"46912496118442","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"46912496118442","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":282,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"140737488355326","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"281474976710652","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"281474976710652","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"281474976710652","shells":["E","VO","VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"144115188075855868","shells":["E"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":282,"predicted":"281474976710652","shells":["E","VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"144115188075855868","shells":["E","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"72057594037927934","shells":["VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"72057594037927934","shells":["VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"72057594037927934","shells":["VS"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"2","shells":["VO","VS"]}
+{"check":{"is_period":true,"reason":"the torus dies: period 1"},"lattice":"triangle","n":242,"predicted":"1","shells":["VO","VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"72057594037927934","shells":["VS","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"144115188075855868","shells":["E","VO"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"144115188075855868","shells":["E","VO","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","n":242,"predicted":"144115188075855868","shells":["E","VO","VS"]}
