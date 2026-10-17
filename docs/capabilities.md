@@ -169,7 +169,10 @@ published, as a conjecture, by J. McLaughlin: a rediscovery. What was not known 
 where rule 90 falls short of the formula (first at n = 37): a later, pre-registered test found
 this rule does not, at n = 37 and 74, and confirmed the law at 45 sizes from 36 to 100; exact
 periods computed by algebra then confirmed it at every n up to 200, including all ten sizes where
-rule 90 falls short. See [the XOR period test](xor-periods.md).
+rule 90 falls short. See [the XOR period test](xor-periods.md). On the hexagonal and triangular
+lattices the same search found one law for all three parity rules. A registered test refuted it on
+the hexagon at three sizes, all of them sizes where rule 90 falls short, and that led to a proof
+that the hexagon's period is rule 90's: [parity rules on other lattices](parity-lattices.md).
 
 ## 7. Conserved quantities
 
