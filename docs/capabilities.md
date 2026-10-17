@@ -175,6 +175,12 @@ the hexagon at three sizes, all of them sizes where rule 90 falls short, and tha
 that the hexagon's period is rule 90's, times a factor 2 * 2^v(n) that is also proved:
 [parity rules on other lattices](parity-lattices.md).
 
+The numbers above are from the Kepler pinned when this page was written. Kepler 0af9b28 adds
+the periods of the 1D linear rules (60, 90, 150) to the search. On these same 25 periods it now
+names P90(n), rule 90's own period, first, with 2^v(n) (2^sord(n) - 1) as a rival that parts
+from it at n = 37. The registered test at 37 and 74 is what decides between them. See
+[Kepler with a wider vocabulary](parity-lattices.md#kepler-with-a-wider-vocabulary).
+
 ## 7. Conserved quantities
 
 `count_series` records, at every generation, the live cells, cumulative births and deaths, and

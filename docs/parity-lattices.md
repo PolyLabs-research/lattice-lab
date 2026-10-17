@@ -12,7 +12,12 @@ attained the full bound, as predicted.** **Since then the factor 2 * 2^v(n) has 
 three lattices**, so the hexagon's whole law is now a theorem ([the proof](#the-factor-2--2vn-proved)).
 On the triangles the one remaining step, that the odd part reaches 2^sord(m) - 1, has been
 [checked by machine](#the-triangles-odd-part-checked-by-machine) for every odd part up to 999. It
-holds wherever the check is complete, which is 489 of the 499.
+holds wherever the check is complete, which is 489 of the 499. **Since then Kepler finds the
+corrected law itself.** With the 1D linear rules' periods in its vocabulary, a registered replay
+confirmed all 8 expectations. On the discovery data Kepler lists both laws and names n = 74 as
+the size that decides. On the data up to 200 it keeps exactly the right law on each lattice,
+and its hexagon law predicts all 98 periods measured at 202 to 400
+([below](#kepler-with-a-wider-vocabulary)).
 
 ## The rules
 
@@ -377,6 +382,44 @@ So the triangle laws are proved for every even n whose odd part is 1 or one of t
 up to 999 where the check is complete: 2 * 2^v(n) * (2^sord(m) - 1), plus the power-of-2 families.
 The scan took about 17 CPU-minutes.
 
+## Kepler with a wider vocabulary
+
+The corrected hexagon law came from reasoning, because Kepler's integer-law search had no feature
+for another automaton's period. Kepler 0af9b28 adds the periods of every elementary rule linear
+over GF(2), not rule 90 alone: rules 60, 90 and 150, on a ring of n cells and of odd(n) cells. They
+are computed exactly (the eventual period of the rule's polynomial in GF(2)[z]/(z^m - 1)) and
+checked against direct simulation on every ring up to 40 cells. Rule 90's period on n cells is
+2^v(n) times its period on the odd part, so the hexagon's corrected law is simply **2 P90(n)**,
+twice rule 90's period on a ring of n cells, for odd parts of at least 5.
+
+`examples/kepler-rediscovery` replays the history with that vocabulary. It was registered and
+pushed in `65425fa` at 2026-10-17T21:05:18Z, before the extended search had run on any of these
+data. It uses the same data subsets `discover.py` searched, and no new simulation.
+
+| dataset | discovery data (n <= 60; the square, n <= 30) | data up to 200 |
+| --- | --- | --- |
+| hexagon (odd part >= 5) | lists `2*P90(n)`, the formula and `2*2^v(n)*P90(odd(n))`; they part first at **74** | **`2*P90(n)` alone**; it predicts all 98 periods measured at 202 to 400 |
+| triangle, edge | lists `2*P90(n)` and the formula; they part first at **74** | the formula alone |
+| triangle, edge+vertex | the same; **74** | the formula alone |
+| square, B1357/S1357 | lists `P90(n)` and the formula; they part first at **37** | the formula alone |
+
+**All 8 registered expectations were confirmed.** Given the vocabulary, Kepler would have done
+three things this study did by hand. On the discovery data it offers both hypotheses. It names
+the one experiment, n = 74, that decides between them on all three lattices. And once that size is
+measured, it keeps the rule-90 law on the hexagon and the formula on the triangles and the square.
+
+Two cautions.
+
+- **Simplicity does not pick the truth here.** On the small data the rule-90 law is simpler
+  (one feature against two), so Kepler ranks it first on every lattice. That is wrong for three
+  of the four. What makes the search useful is that it lists both laws and says where they part,
+  not its first choice.
+- **This is a capability shown in hindsight, not a discovery.** The vocabulary was widened
+  knowing that rule 90 mattered. It was widened to a principled family (every linear elementary
+  rule) rather than to rule 90 alone, but the choice was informed. The test shows the search
+  can now represent, rank and decide between such laws. Whether it finds one nobody expected is
+  for a study whose answer is not known.
+
 ## Not registered: the triangles' transients
 
 The triangles' transients were not predicted. One pattern was noticed afterwards. On the edge
@@ -418,5 +461,8 @@ is proved or registered.
 - **Who did what.** Kepler found round 1's law from data. Its registered predictions were
   refuted at three sizes, and those refutations showed exactly where it was wrong. Matching them
   to rule 90's shortfalls, and the lemma and proof, were reasoning added afterwards, not output
-  of the tools. Kepler's integer-law vocabulary has no term for another automaton's period, so it
-  could not have proposed the corrected law.
+  of the tools. Kepler's integer-law vocabulary had no term for another automaton's period, so it
+  could not have proposed the corrected law. With one added (Kepler 0af9b28, rules 60, 90 and
+  150), a registered replay shows it lists the corrected law on the discovery data, names the
+  size that decides, and keeps it once that size is measured. That shows the search can do
+  this, in hindsight; it is not an independent discovery.

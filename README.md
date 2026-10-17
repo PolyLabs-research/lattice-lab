@@ -136,6 +136,11 @@ What is new, as far as a web search went:
   behind the hexagon result is elementary, and a specialist may know it.
 - **Who did what.** Kepler found each law from data. The registered tests showed where the
   hexagon's was wrong, and the corrected law and the proofs were reasoning added afterwards.
+  Since then Kepler's vocabulary includes the periods of the 1D linear rules. A registered replay
+  (`examples/kepler-rediscovery`) shows it now lists the corrected law on the discovery data,
+  names n = 74 as the size that decides, and on data up to 200 keeps the right law on every
+  lattice, predicting all 98 hexagon periods at 202 to 400. That shows capability in hindsight;
+  it is not a fresh discovery.
 
 Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
@@ -151,6 +156,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `settling-time-replication` | B2/S34 settling times on hexagon tori up to 1024 (registered) |
 | `settling-universality` | eight random rules on four lattice types: settling-time laws and their fluctuations (registered) |
 | `settling-time-local` | B2/S34's local settling times on 256 and 1024 tori: round 2 (registered) |
+| `kepler-rediscovery` | Kepler's search, with 1D linear-rule periods, replayed on the period data (registered) |
 
 ## Settling times: a replication and a universality test
 
