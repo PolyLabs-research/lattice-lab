@@ -28,7 +28,7 @@ dev = [
 # and whether the working tree was dirty).
 [tool.uv.sources]
 latticelife = { git = "https://github.com/PolyLabs-research/gameoflife_advanced", rev = "256450b5bf82862ce66d26b8a6a12a3ff04146f6" }
-kepler = { git = "https://github.com/tripptytrip/kepler", rev = "25a1a540c4f7ee7ba54ba3730b7ed96c5aa9e4aa" }
+kepler = { git = "https://github.com/tripptytrip/kepler", rev = "0af9b28c5586376219ec17b8620e9dbc726701d8" }
 
 [build-system]
 requires = ["hatchling"]
