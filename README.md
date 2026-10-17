@@ -105,7 +105,8 @@ every n up to 200 exactly, and found the rule never shares 1D rule 90's shortfal
 [partial proof](docs/xor-periods-proof.md) reduces it to odd sizes and settles every odd part up to
 999 but ten; on the hexagonal and triangular lattices a [second registered test](docs/parity-lattices.md)
 refuted Kepler's law on the hexagon at three of 210 sizes, which led to a proof of the hexagon's
-whole law, built on the fact that two hexagon generations are three passes of rule 90), conserved quantities (with a parity of births found from data and then proved), and whether
+whole law, built on the fact that two hexagon generations are three passes of rule 90, and with a
+machine check up to odd part 999, of the triangles' laws for all but ten of those odd parts), conserved quantities (with a parity of births found from data and then proved), and whether
 a fitted constant is a known number. The loop itself still asks about settling time; those
 studies are ready to become question types.
 

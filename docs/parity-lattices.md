@@ -9,8 +9,10 @@ three passes of rule 90, one along each lattice direction. **Round 2** registere
 law at every even n from 202 to 400. **It was confirmed at all 100. Round 1's law, the rival,
 was refuted at all seven sizes where the two differ. At those seven sizes both triangular rules
 attained the full bound, as predicted.** **Since then the factor 2 * 2^v(n) has been proved on all
-three lattices**, so the hexagon's whole law is now a theorem. On the triangles only the odd part
-reaching 2^sord(m) - 1 is still open ([the proof](#the-factor-2--2vn-proved)).
+three lattices**, so the hexagon's whole law is now a theorem ([the proof](#the-factor-2--2vn-proved)).
+On the triangles the one remaining step, that the odd part reaches 2^sord(m) - 1, has been
+[checked by machine](#the-triangles-odd-part-checked-by-machine) for every odd part up to 999. It
+holds wherever the check is complete, which is 489 of the 499.
 
 ## The rules
 
@@ -317,10 +319,10 @@ exactly the law registered in round 2, now proved for every even n.
 
 So on both triangular lattices, P(n) = 2 * 2^v(n) * L(m) for odd parts m >= 3. L(m) is the lcm of
 the orders of lambda over pairs of m-th roots of unity, and divides 2^sord(m) - 1. At powers of 2
-the edge rule has period n and the edge+vertex rule dies. What is left open is L(m) =
+the edge rule has period n and the edge+vertex rule dies. What is left is L(m) =
 2^sord(m) - 1. It held at every odd part computed, including all seven where rule 90 falls short.
-It is the same kind of statement as the open core of the square XOR law, and could be machine
-checked odd part by odd part in the same way.
+It is the same kind of statement as the open core of the square XOR law, and
+[the next section](#the-triangles-odd-part-checked-by-machine) checks it by machine up to 999.
 
 **Transients, bounded.** The same tool bounds every transient by 2 * 2^v(n) on all three
 lattices, though it does not give their exact values.
@@ -329,6 +331,51 @@ lattices, though it does not give their exact values.
 - On the triangles, M^(2^(v+1)) = F^(2^v), which vanishes on F's nilpotent components.
 
 The hexagon reaches the bound at every m >= 3 computed.
+
+## The triangles' odd part, checked by machine
+
+On each triangular lattice the law now needs one statement for each odd part m: the eigenvalues
+lambda(alpha, beta) of the rule's square, over all pairs of m-th roots of unity, generate the whole
+of F(2^s)^*, where s = sord(m). That fails exactly when, for some prime r of 2^s - 1, every
+eigenvalue is an r-th power.
+
+`examples/parity-lattices-proof/check_triangles.py` decides it, using the method of the square
+XOR rule's [odd-N check](xor-periods-proof.md):
+
+- In GF(2)[z]/(z^m - 1), the element lambda(z^p, z^q) carries every eigenvalue on the line
+  (p, q) as one of its components.
+- A component is a nonzero non-r-th power exactly when the element's (Q/r)-th power differs from
+  its Q-th power, where Q = 2^s - 1.
+- The checker tries one line per class of primitive vectors up to scaling by units. Those classes
+  cover every pair of roots, so a prime left unresolved would be a counterexample.
+
+**The control.** The checker was first run on the hexagon, whose eigenvalues are proved to
+generate exactly rule 90's group. At every odd m up to 199 it left the hexagon unresolved exactly
+at rule 90's seven shortfalls (37, 95, 101, 111, 141, 197, 199), and nowhere else. So it does find
+counterexamples when they exist. It also agrees with the exact periods at all 54 odd parts that
+the engine computed on the triangles.
+
+**Result, for every odd m from 3 to 999** (`examples/parity-lattices-proof/results.jsonl`):
+
+| | edge | edge+vertex |
+| --- | --- | --- |
+| primes left unresolved | **none** | **none** |
+| odd parts where the 1D first line falls short | 87 (rule 150's shortfalls: 13, 37, 61, 67, ...) | 50 (rule 90's: 37, 95, 101, ...) |
+| lines that made up the shortfall | (1, 2) at 60, (1, 5) at 42, (1, 6) at 16, then (1, 7), (1, 8), (1, 9) | (1, 3) at 41, (1, 5) at 9, (1, 6) at 4, (1, 7) at 2 |
+
+Each rule contains a 1D rule as a single line. On (1, 1) the edge eigenvalue is
+(1 + c(alpha))^2, which is rule 150. On (1, 0) the edge+vertex eigenvalue is c(alpha)^2, which is
+rule 90. At every odd part where that 1D rule falls short, another line of the 2D rule makes up
+the missing factor, as the square XOR rule does and the hexagon cannot.
+
+At ten odd parts (529, 587, 719, 827, 839, 859, 883, 947, 983, 991) the prime factors of
+2^sord(m) - 1 could not all be found within the time limit, so only primes below 10^6 were
+checked there. These are the same ten as in the square XOR check, since the limit depends only on
+sord(m).
+
+So the triangle laws are proved for every even n whose odd part is 1 or one of the 489 odd parts
+up to 999 where the check is complete: 2 * 2^v(n) * (2^sord(m) - 1), plus the power-of-2 families.
+The scan took about 17 CPU-minutes.
 
 ## Not registered: the triangles' transients
 
@@ -351,9 +398,11 @@ is proved or registered.
   - on the triangles, the factor 2 * 2^v(n) and both power-of-2 families, with the odd part
     dividing 2^sord(m) - 1;
   - every transient at most 2 * 2^v(n).
-- **Observed, not proved:**
-  - the triangles' odd part: the full 2^sord(m) - 1 at every size computed;
-  - the exact transients (the bound is proved).
+- **Checked by machine:** the triangles' odd part is the full 2^sord(m) - 1 for every odd part
+  m up to 999. The check is complete at 489 of the 499; at the other ten, only the primes below
+  10^6 of 2^sord(m) - 1 were checked. So both triangle laws are theorems for every even n whose
+  odd part is among those 489. Beyond 999, and at those ten, the law is unproved.
+- **Observed, not proved:** the exact transients (the bound is proved).
 
   These rest on the computations: exact at every size listed, but finite.
 - **Two methods, one answer.** Simulation and the exact engine agree at all 84 pairs where both
