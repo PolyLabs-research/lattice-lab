@@ -617,3 +617,25 @@
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["K8","B4","C4","self"]}
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","K8"]}
 {"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","K8","self"]}
+{"check":{"is_period":false,"reason":"M already repeats after predicted / 3"},"lattice":"square","n":203,"period":6447604371278022265099605,"predicted":"19342813113834066795298815","shells":["A4","K8","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","B4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","B4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","A4","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","K8","B4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","K8","B4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","K8","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"184217267750800636145703","shells":["N4","D4","B4","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","K8","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","D4","B4","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","K8","B4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","K8","B4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","K8","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","B4","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","K8","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","A4","B4","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","K8","B4","C4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["D4","A4","K8","B4"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["N4","K8","B4","C4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["D4","A4","K8","B4","self"]}
+{"check":{"is_period":true,"reason":"repeats, and at no proper divisor"},"lattice":"square","n":203,"predicted":"19342813113834066795298815","shells":["D4","A4","K8","C4"]}
