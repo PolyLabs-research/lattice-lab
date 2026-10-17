@@ -100,8 +100,8 @@ their edges move with torus size (binomial likelihood, one fit over density and 
 are only bounds (a censored likelihood), whether a law depends on the starting density (shared
 constants), relaxation and damage over time with seed-to-seed error bars, distributions of object
 sizes, exact formulas for periods (the XOR rule's period on an n x n torus; a
-[pre-registered test](docs/xor-periods.md) confirmed it at 45 unseen sizes and found the rule
-does not share 1D rule 90's shortfall at n = 74), conserved quantities (with a parity of births found from data and then proved), and whether
+[pre-registered test](docs/xor-periods.md) confirmed it at 45 unseen sizes by simulation and at
+every n up to 200 exactly, and found the rule never shares 1D rule 90's shortfalls), conserved quantities (with a parity of births found from data and then proved), and whether
 a fitted constant is a known number. The loop itself still asks about settling time; those
 studies are ready to become question types.
 

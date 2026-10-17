@@ -1,8 +1,8 @@
 # The XOR rule's period on n x n tori: a pre-registered test
 
-**Status: judged. The law was confirmed at all 45 registered sizes; the rival (the 2D rule has rule
-90's period) was refuted at the one size where they differ, n = 74. Registered
-2026-10-17T11:14:10Z (pushed in `6097179`), run from 11:14:31Z, judged 11:32:26Z.**
+**Status: judged, two rounds. Round 1 (simulation): the law confirmed at all 45 registered sizes
+and the rival refuted at n = 74. Round 2 (exact algebra): the law confirmed at all 198 sizes from
+3 to 200, 120 of them new, and the rival refuted at all ten sizes where the two differ.**
 
 ## The law
 
@@ -127,31 +127,75 @@ is a third of it.
 Not registered, so only an observation: on even tori the transients reach powers of 2 (2 at
 n = 36, 8 at 40 and 48, 16 at 80 and 96), no larger than 2^v(n).
 
+## Round 2: exact periods by algebra
+
+Simulation stops where periods run to millions of generations: 47 (8 x 10^6), 49, 53, 61 and
+beyond, including rule 90's next shortfall at n = 95 (a period of 6.9 x 10^10). But the rule is
+linear, so the state at generation t from a single live cell is tau^t in the ring
+GF(2)[x,y]/(x^n - 1, y^n - 1), and because that ring is commutative, the single cell has the
+torus's longest period and transient. The period is then an order: check tau^(t0 + P) = tau^t0
+for the predicted P, and divide out each prime factor of P while that still holds. That takes the
+prime factors of 2^sord(n) - 1 and a few hundred ring multiplications (exact cyclic convolutions,
+by FFT with a rounding check), not P generations
+([algebra.py](../examples/xor-periods-algebra/algebra.py)).
+
+Before it was trusted, the method reproduced the simulated period at all 74 sizes simulated in
+round 1 and before it, and rule 90's published 87381 at n = 37. Then, in
+`examples/xor-periods-algebra/ledger.jsonl`, written at 2026-10-17T12:38:07Z and pushed in
+`d2eb97a` before the computation ran on any new size: the law's period at every n from 3 to 200
+(1 for a power of 2), the transient bound (at most 1 for odd n, at most 2^v(n) for even n), and
+the rival's prediction, rule 90's period, which differs from the law at ten of these sizes.
+
+| | Outcome |
+| --- | --- |
+| The law, n = 3..200 | **confirmed at 198 of 198** (120 never simulated) |
+| The rival, at the ten sizes where it differs | **refuted at all ten** |
+| Transients | within their bounds at every size; exactly 1 at every odd n |
+
+At every size where rule 90 falls short of 2^v(n)(2^sord(n) - 1), the 2D rule does not:
+
+| n | 2D period (exact) | rule 90's period | ratio |
+| --- | --- | --- | --- |
+| 37 | 262143 | 87381 | 3 |
+| 74 | 524286 | 174762 | 3 |
+| 95 | 68719476735 | 22906492245 | 3 |
+| 101 | 1125899906842623 | 375299968947541 | 3 |
+| 111 | 68719476735 | 22906492245 | 3 |
+| 141 | 70368744177663 | 23456248059221 | 3 |
+| 148 | 1048572 | 349524 | 3 |
+| 190 | 137438953470 | 45812984490 | 3 |
+| 197 | 2^98 - 1 = 316912650057057350374175801343 | a third of it | 3 |
+| 199 | 2^99 - 1 = 633825300114114700748351602687 | a seventh of it | 7 |
+
+The longest period computed is at n = 199: 2^99 - 1, about 6 x 10^29 generations. Tori whose side
+is a power of 2 die, as predicted (period 1), after exactly n/2 generations from a single cell.
+
 ## What this does and does not establish
 
-- **It is evidence, not a proof.** The bound argument above proves that, for odd n, the period
-  divides 2^sord(n) - 1 and is a multiple of rule 90's. That the rule always attains the bound
-  (unlike rule 90) is what the measurements support at every size tried, and what remains to be
-  proved. The even sizes rest on the measurements alone here.
-- **The longest period over three soups is a lower bound** on the torus's longest period. Here it
-  met the upper bound exactly at every size, so for odd n it is the longest period.
-- **Large periods were not reached.** Sizes such as 47, 49, 53 and 61 have predicted periods of
-  2 million to 10^9 generations, beyond a simulation budget; rule 90's next shortfall, n = 95
-  (2^36 - 1 against 2.3 x 10^10), is far beyond it. Deciding those needs the period computed
-  algebraically (the order of the update matrix over GF(2)), not simulated.
+- **Every n up to 200, exactly; beyond that, unproved.** Round 2's periods are exact, not
+  estimates, at every size from 3 to 200. For all n, the bound argument above proves that for odd
+  n the period divides 2^sord(n) - 1 and is a multiple of rule 90's; that the rule always attains
+  the bound, unlike rule 90, holds at every size computed and remains to be proved. Even sizes
+  rest on the computations alone.
+- **The two methods agree.** Simulation (the longest period over three soups, a lower bound) and
+  the exact computation give the same period at all 74 sizes where both exist, so the algebra
+  describes LatticeLife's own dynamics, not an idealisation of them.
+- **Beyond 200, factoring becomes the limit:** the method needs the prime factors of
+  2^sord(n) - 1, which are known (Cunningham tables) far beyond what sympy factors quickly.
 - **Novelty is as far as the search went.** The odd sizes to 23 were published by McLaughlin.
   Nothing found covers this rule at the sizes where rule 90 falls short, and the closest proved
   result, Vadali and Turner's for the four-neighbour analogue, goes the other way (2D equals 1D).
   The specialist literature on 2D linear automata (Kawahara et al. 1992 among it) was not read in
   full and should be before this is claimed as new.
 - **Who did what.** Kepler's search found the law from data and predicted unseen sizes; the
-  argument that told where to test (rule 90's shortfalls) and why the law holds at most odd sizes
-  is reasoning added afterwards, not output of the tools.
+  argument that told where to test (rule 90's shortfalls), why the law holds at most odd sizes,
+  and how to compute periods exactly is reasoning added afterwards, not output of the tools.
 
 ## Checking it
 
 ```bash
 uv run lattice-lab verify --lab examples/xor-periods   # chain, and predictions before the run
+uv run lattice-lab verify --lab examples/xor-periods-algebra
 git log --format='%h %ad %s' --date=iso -- examples/xor-periods
 uv run python examples/xor-periods/study.py preregister   # refuses: already registered
 ```

@@ -13,3 +13,7 @@ the rival), written and pushed before the computation ran on any new size.
 uv run python examples/xor-periods-algebra/study.py run     # refuses until the registration is committed
 uv run lattice-lab verify --lab examples/xor-periods-algebra
 ```
+
+Result: the law was confirmed at all 198 sizes (120 new), and the rival refuted at all ten sizes
+where it differs (37, 74, 95, 101, 111, 141, 148, 190, 197, 199). See
+[docs/xor-periods.md](../../docs/xor-periods.md#round-2-exact-periods-by-algebra).
