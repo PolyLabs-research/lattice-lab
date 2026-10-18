@@ -44,3 +44,9 @@ None of this is in the sandbox.
   (`ledger.jsonl`).
 - **The sandbox** is commit `877d01a60cb5` (`base.txt`), pushed as `pilot-sandbox-vot13` and as the agent's
   branch `pilot-vot13-submission`, with 25 protected files (`manifest.json`).
+- **The judge, round 0**, on the base: library unchanged; the theorem depends on `sorryAx`; and
+  the law is not computable, since `#eval` refuses a definition that is `sorry`
+  (`judgements/round-0.json`). A first round 0 showed two judge bugs, both fixed before the
+  launch: the law was evaluated before Pilot.lean was built, and Lean's line-wrapped list output
+  was not parsed. The law path was then checked offline with the orchestrator's own law in place
+  of the `sorry`: computable in 5.5 s, including at v = 100000, and 31 of 31 data rows agree.

@@ -204,7 +204,8 @@ def law_eval(proj: Path, points: list[tuple[int, int]]) -> dict:
     )
     (proj / "LawEval.lean").write_text(source)
     out = run(["lake", "env", "lean", "LawEval.lean"], proj, 600)
-    lists = re.findall(r"^\[([\d, ]*)\]$", out["output"], re.M)
+    # Lean wraps a long list across lines.
+    lists = re.findall(r"^\[([\d,\s]*)\]", out["output"], re.M)
     values = [int(x) for x in lists[0].split(",")] if lists and lists[0].strip() else None
     ok = (
         out["returncode"] == 0
@@ -271,6 +272,7 @@ def main() -> None:
     proj = project(tree)
     registered = json.loads((HERE / "ledger.jsonl").read_text().splitlines()[0])["body"]["sizes"]
     points = sorted({split(r["n"]) for r in data_rows()} | {split(n) for n in registered})
+    lean = lean_check(proj)  # builds Pilot, which the law's #eval needs
     law = law_eval(proj, points)
     result = {
         "round": round_no,
@@ -278,7 +280,7 @@ def main() -> None:
         "base": base,
         "head": head,
         "library": library_check(base, head),
-        "lean": lean_check(proj),
+        "lean": lean,
         "law": law,
         "law_vs_engine": law_compare(law["values"]) if law["computable"] else None,
         "proposal": proposal_run(tree),
