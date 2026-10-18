@@ -120,6 +120,11 @@ repeat with period dividing P(N)),
 At the pair alpha = beta, alpha != 1 (it exists because N > 1), tau^ = c_alpha^2 != 0 and
 c^ c'^ = c_alpha^2 != 0, so this is not zero. The period is therefore 2^k P(N). []
 
+*Formally* ([proofs.md](proofs.md#every-size-latticeproofstorilean)), the upper bound and the odd
+part hold for every rule: P(2^v m) = 2^a P(m) with a <= v (`period_eq_two_pow_mul`). The lower
+bound reduces to the single size 2m (`period_eq_two_pow_mul_of_double`); the computation at 2m is
+not formalised.
+
 So the law holds for every n exactly when it holds for every odd n. This is the two-dimensional
 counterpart of Martin, Odlyzko and Wolfram's P(2N) = 2 P(N) for rule 90.
 

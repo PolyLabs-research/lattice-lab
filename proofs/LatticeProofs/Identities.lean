@@ -67,6 +67,10 @@ def triUdE (x xi y yi : R) : R :=
 def triDuE (x xi y yi : R) : R :=
   xi*yi + yi + 1
 
+/-- The edge rule's s, where its matrix squares to s I. -/
+def triSE (x xi y yi : R) : R :=
+  xi*yi + xi + yi + 1 + y + x + x*y
+
 /-- The triangle rule VO + T13's up-from-down entry (no same-orientation part). -/
 def triUdVOT13 (x xi y yi : R) : R :=
   yi*xi^2 + xi^2 + xi + x*yi + x + x*y^2 + x*y^3 + x^2 + x^2*y^3
@@ -75,17 +79,33 @@ def triUdVOT13 (x xi y yi : R) : R :=
 def triDuVOT13 (x xi y yi : R) : R :=
   xi^2*yi^3 + xi^2 + xi*yi^3 + xi*yi^2 + xi + xi*y + x + x^2 + y*x^2
 
-/-- The triangle shell VS, same orientation: a scalar on the translation lattice. -/
-def triVS (x xi y yi : R) : R :=
-  xi*yi + xi + yi + y + x + x*y
-
-/-- The edge rule's s, where its matrix squares to s I. -/
-def triSE (x xi y yi : R) : R :=
-  xi*yi + xi + yi + 1 + y + x + x*y
-
 /-- VO + T13's s, where its matrix squares to s I. -/
 def triSVOT13 (x xi y yi : R) : R :=
   xi^4*yi^4 + xi^4*yi^3 + yi*xi^4 + xi^4 + xi^3*yi^4 + xi^3*yi^3 + xi^3*yi^2 + yi*xi^3 + xi^3 + y*xi^3 + xi^2*yi^3 + xi^2*yi^2 + xi^2 + y*xi^2 + xi*yi^4 + xi*yi^3 + xi*yi + xi + xi*y^2 + xi*y^3 + yi^4 + yi^3 + yi^2 + yi + 1 + y + y^2 + y^3 + y^4 + x*yi^3 + x*yi^2 + x + x*y + x*y^3 + x*y^4 + yi*x^2 + x^2 + x^2*y^2 + x^2*y^3 + yi*x^3 + x^3 + y*x^3 + x^3*y^2 + x^3*y^3 + x^3*y^4 + x^4 + y*x^4 + x^4*y^3 + x^4*y^4
+
+/-- The triangle rule E + VO + VS's up-from-up entry (LatticeLife's other rule). -/
+def triUuEVOVS (x xi y yi : R) : R :=
+  xi*yi + xi + yi + y + x + x*y
+
+/-- The triangle rule E + VO + VS's up-from-down entry. -/
+def triUdEVOVS (x xi y yi : R) : R :=
+  xi + 1 + y + x + x*y + x*y^2
+
+/-- The triangle rule E + VO + VS's down-from-up entry. -/
+def triDuEVOVS (x xi y yi : R) : R :=
+  xi*yi^2 + xi*yi + xi + yi + 1 + x
+
+/-- The triangle rule E + VO + VS's down-from-down entry. -/
+def triDdEVOVS (x xi y yi : R) : R :=
+  xi*yi + xi + yi + y + x + x*y
+
+/-- E + VO + VS's s, where its matrix squares to s I. -/
+def triSEVOVS (x xi y yi : R) : R :=
+  yi*xi^2 + xi*yi^2 + xi*yi + xi + xi*y + yi + y + x*yi + x + x*y + x*y^2 + y*x^2
+
+/-- The triangle shell VS, same orientation: a scalar on the translation lattice. -/
+def triVS (x xi y yi : R) : R :=
+  xi*yi + xi + yi + y + x + x*y
 
 /-- Two steps of the hexagon's parity rule are three passes of rule 90, one along each lattice direction: H1^2 = (x + 1/x)(y + 1/y)(x/y + y/x). This is the identity behind the hexagon theorem (docs/parity-lattices.md). -/
 theorem hexagon_two_steps (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
@@ -177,6 +197,34 @@ theorem triangle_VOT13_s (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (h
       (triSVOT13 x xi y yi) := by
   unfold triDuVOT13 triSVOT13 triUdVOT13
   linear_combination (4 + y^2 + y^4 + yi^2 + yi^4 + 2*x + 2*xi + 2*y + 2*yi + 3*y^3 + 3*yi^3 + x*y^3 + x*y^4 + x*yi^2 + x*yi^3 + xi*y^2 + xi*y^3 + xi*yi^3 + xi*yi^4 + y^2*yi^2 + y^2*yi^3 + y^3*yi^2 + 2*x*xi + 2*x*y + 2*xi*yi + 2*y*yi + 2*y^3*yi^3 + x*xi*y + x*xi*yi + x*xi*y^3 + x*xi*yi^3 + x*y^3*yi^2 + x*y^3*yi^3 + xi*y^2*yi^3 + xi*y^3*yi^3 + x*xi*y*yi + x*xi*y^3*yi^3) * hx + (5 + x + xi + y + yi + x^3 + xi^3 + x*y + xi*yi + y*yi^2 + yi*y^2 + 2*y^2*yi^2 + 3*y*yi + x*y*yi + x*yi*y^2 + x*y^2*yi^2 + xi*y*yi + xi*y*yi^2 + xi*y^2*yi^2) * hy + (4 + x + xi + y + yi + x^3 + xi^3 + y^3 + yi^3 + x*y + xi*yi + x^3*y^3 + xi^3*yi^3) * h2
+
+/-- E + VO + VS's matrix [[uu, ud], [du, dd]] squares to s I: the up-from-up entry. -/
+theorem triangle_EVOVS_s_up (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
+    (triUuEVOVS x xi y yi)^2 + (triDuEVOVS x xi y yi)*(triUdEVOVS x xi y yi) =
+      (triSEVOVS x xi y yi) := by
+  unfold triDuEVOVS triSEVOVS triUdEVOVS triUuEVOVS
+  linear_combination (4 + y^2 + yi^2 + 3*y + 3*yi + y*yi^2 + yi*y^2 + y^2*yi^2 + 3*y*yi) * hx + (7 + y + yi + 3*x + 3*xi + x*y + xi*yi + y*yi) * hy + (6 + x^2 + xi^2 + y^2 + yi^2 + 2*x + 2*xi + 2*y + 2*yi + x*yi + x*y^2 + xi*y + xi*yi^2 + y*x^2 + yi*xi^2 + x^2*y^2 + xi^2*yi^2 + 2*x*y + 2*xi*yi) * h2
+
+/-- E + VO + VS's matrix squared: the up-from-down entry is 0. -/
+theorem triangle_EVOVS_s_ud (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
+    (triDdEVOVS x xi y yi)*(triUdEVOVS x xi y yi) + (triUdEVOVS x xi y yi)*(triUuEVOVS x xi y yi) =
+      0 := by
+  unfold triDdEVOVS triUdEVOVS triUuEVOVS
+  linear_combination (4 + 2*yi + 2*y^2 + 4*y + 2*y*yi + 2*yi*y^2) * hx + (4 + 2*x + 2*xi + 2*y + 2*x*y) * hy + (4 + x^2 + xi^2 + 2*x + 2*xi + 2*yi + 2*y^2 + 4*y + x*yi + x*y^3 + yi*xi^2 + x^2*y^3 + 2*x*y^2 + 2*xi*y + 2*xi*yi + 2*y*x^2 + 2*x^2*y^2 + 4*x*y) * h2
+
+/-- E + VO + VS's matrix squared: the down-from-up entry is 0. -/
+theorem triangle_EVOVS_s_du (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
+    (triDdEVOVS x xi y yi)*(triDuEVOVS x xi y yi) + (triDuEVOVS x xi y yi)*(triUuEVOVS x xi y yi) =
+      0 := by
+  unfold triDdEVOVS triDuEVOVS triUuEVOVS
+  linear_combination (4 + 2*y + 2*yi^2 + 4*yi + 2*y*yi + 2*y*yi^2) * hx + (4 + 2*x + 2*xi + 2*yi + 2*xi*yi) * hy + (4 + x^2 + xi^2 + 2*x + 2*xi + 2*y + 2*yi^2 + 4*yi + xi*y + xi*yi^3 + y*x^2 + xi^2*yi^3 + 2*x*y + 2*x*yi + 2*xi*yi^2 + 2*yi*xi^2 + 2*xi^2*yi^2 + 4*xi*yi) * h2
+
+/-- E + VO + VS's matrix squared: the down-from-down entry is s. -/
+theorem triangle_EVOVS_s_down (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
+    (triDdEVOVS x xi y yi)^2 + (triDuEVOVS x xi y yi)*(triUdEVOVS x xi y yi) =
+      (triSEVOVS x xi y yi) := by
+  unfold triDdEVOVS triDuEVOVS triSEVOVS triUdEVOVS
+  linear_combination (4 + y^2 + yi^2 + 3*y + 3*yi + y*yi^2 + yi*y^2 + y^2*yi^2 + 3*y*yi) * hx + (7 + y + yi + 3*x + 3*xi + x*y + xi*yi + y*yi) * hy + (6 + x^2 + xi^2 + y^2 + yi^2 + 2*x + 2*xi + 2*y + 2*yi + x*yi + x*y^2 + xi*y + xi*yi^2 + y*x^2 + yi*xi^2 + x^2*y^2 + xi^2*yi^2 + 2*x*y + 2*xi*yi) * h2
 
 /-- VO + T13 squares to s I with s = s_E(x, y) s_E(x^3, y^3), s_E = ud_E du_E: the twisted power of round 3. -/
 theorem triangle_VOT13_twisted (h2 : (2 : R) = 0) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :

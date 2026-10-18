@@ -1,26 +1,37 @@
 /-
-Round 2's mechanisms as theorems about periods (docs/proofs.md).
+The atlas's mechanisms as theorems about periods (docs/proofs.md).
 
-Through the bridge (`Bridge.lean`), the eigenvalue identities become statements about the rules'
-periods on the m x m torus, for every odd m. The field is the algebraic closure of GF(2), which
-has a primitive m-th root of unity for every odd m. The rules are the atlas's own neighbourhoods
-(`Rules.lean`, generated).
+The rules are the atlas's own neighbourhoods (`Rules.lean`, generated). Two routes lead from the
+identities of `Identities.lean` to periods:
+
+* through the group ring (`GroupRing.lean`), at every torus size: an identity between Laurent
+  polynomials is an identity between rules on every torus;
+* through the bridge (`Bridge.lean`), at odd sizes, where the rules' eigenvalues decide the
+  period. Only the twisted power needs it, because it holds at the characters, not as a polynomial
+  identity.
+
+Round 2's square rules, on the square torus of every side n:
 
 * `period_sqN4K8C4`: the cube. N4 + K8 + C4 has the period of N4 divided by gcd(period, 3).
-* `period_sqA4K8C4self`: the cube again. A4 + K8 + C4 + self has the period of N4 + self divided
-  by gcd(period, 3).
+* `period_sqA4K8C4self`: the cube again, for A4 + K8 + C4 + self and N4 + self.
 * `period_sqC4self`: the dilation. C4 + self has the period of N4 + self on the torus of side
-  m / gcd(m, 3).
+  n / gcd(n, 3).
 
-Round 3's triangle rules, on the triangular torus of odd side m (`Triangle.lean`):
+Round 3's triangle rules, on every triangular torus (`Triangle.lean`):
 
-* `triPeriod_triE`, `triPeriod_triVOT13`: each has twice the period of its s, the square-torus
+* `gtriPeriod_triE`, `gtriPeriod_triVOT13`: each has exactly twice the period of its s, the plane
   rule its matrix squares to.
-* `triPeriod_triE_dvd`: the edge rule's period divides 2 (2^r - 1) when 2^r = +-1 mod m.
-* `triPeriod_twisted`: the twisted power. If 3 = +-2^k mod m and the edge rule has period 2P,
-  then VO + T13 has period 2 (P / gcd(P, 1 + 2^k)).
+* `gtriPeriod_triEVOVS`: the general 2 x 2 case. E + VO + VS has P / gcd(P, 2) = P(s).
+* `triPeriod_twisted`: the twisted power on the rhombic torus of odd side m. If 3 = +-2^k mod m and
+  the edge rule has period 2P, then VO + T13 has period 2 (P / gcd(P, 1 + 2^k)).
+* `atlasTriPeriod_twisted`: the same on the atlas's own triangular torus of side n = 2^v m, for the
+  odd parts of the periods: those are what the atlas registered.
+
+And the hexagon (`hexPeriod_eq_two_pow_mul`): on the atlas's hexagonal torus of side n = 2^v m, a
+rule's period is 2^a times its period on the square torus of side m, with a <= v + 1.
 -/
 import LatticeProofs.Rules
+import LatticeProofs.Tori
 
 namespace LatticeProofs
 
@@ -48,80 +59,87 @@ theorem period_eq_of_lam_eq_pow (hζ : IsPrimitiveRoot ζ m) {D D₀ : Finset (�
   rw [← isPeriod_iff_period_dvd, ← isPeriod_iff_period_dvd,
     isPeriod_iff_of_lam_eq_pow hζ hn h]
 
-/-- Every eigenvalue of N4 + K8 + C4 is the cube of N4's. -/
-theorem lam_sqN4K8C4 (hζ : ζ ^ m = 1) (j k : ℕ) :
-    lam m ζ sqN4K8C4Offsets j k = lam m ζ sqN4Offsets j k ^ 3 := by
-  rw [lam_eq_ev hζ, lam_eq_ev hζ, ev_sqN4K8C4, ev_sqN4]
-  exact sqN4K8C4_value _ _ _ _ (mul_inv_cancel₀ (inv_pow_ne_zero hζ j))
-    (mul_inv_cancel₀ (inv_pow_ne_zero hζ k))
-
-/-- Every eigenvalue of A4 + K8 + C4 + self is the cube of N4 + self's. -/
-theorem lam_sqA4K8C4self (hζ : ζ ^ m = 1) (j k : ℕ) :
-    lam m ζ sqA4K8C4selfOffsets j k = lam m ζ sqN4selfOffsets j k ^ 3 := by
-  rw [lam_eq_ev hζ, lam_eq_ev hζ, ev_sqA4K8C4self, ev_sqN4self,
-    square_A4K8C4self_cube two_eq_zero_of_charTwo _ _ _ _
-      (mul_inv_cancel₀ (inv_pow_ne_zero hζ j)) (mul_inv_cancel₀ (inv_pow_ne_zero hζ k))]
-  unfold sqN4 sqN4self
-  ring
-
-/-- Every eigenvalue of C4 + self on the m-torus is an eigenvalue of N4 + self at zeta^3. -/
-theorem lam_sqC4self (hζ : ζ ^ m = 1) {m' : ℕ} [NeZero m'] (hζ' : (ζ ^ 3) ^ m' = 1) (j k : ℕ) :
-    lam m ζ sqC4selfOffsets j k = lam m' (ζ ^ 3) sqN4selfOffsets j k := by
-  rw [lam_eq_ev hζ, lam_eq_ev hζ', ev_sqC4self, ev_sqN4self,
-    square_C4self_dilation two_eq_zero_of_charTwo _ _ _ _
-      (mul_inv_cancel₀ (inv_pow_ne_zero hζ j)) (mul_inv_cancel₀ (inv_pow_ne_zero hζ k))]
-  simp only [inv_pow, ← pow_mul, mul_comm j 3, mul_comm k 3]
-  unfold sqN4 sqN4self
-  ring
-
 end Mechanisms
 
-/-- **The cube, end to end.** On the m x m torus with m odd, the period of N4 + K8 + C4 is the
-period of N4 divided by gcd(period, 3). -/
-theorem period_sqN4K8C4 {m : ℕ} [NeZero m] (hm : Odd m) :
-    period m sqN4K8C4Offsets = period m sqN4Offsets / Nat.gcd (period m sqN4Offsets) 3 := by
-  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
-  exact period_eq_of_lam_eq_pow hζ (by norm_num) (lam_sqN4K8C4 hζ.pow_eq_one)
+/-! ### The identities, in the group ring -/
 
-/-- **The cube, end to end (round 2's first failure).** On the m x m torus with m odd, the period
-of A4 + K8 + C4 + self is the period of N4 + self divided by gcd(period, 3). -/
-theorem period_sqA4K8C4self {m : ℕ} [NeZero m] (hm : Odd m) :
-    period m sqA4K8C4selfOffsets =
-      period m sqN4selfOffsets / Nat.gcd (period m sqN4selfOffsets) 3 := by
-  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
-  exact period_eq_of_lam_eq_pow hζ (by norm_num) (lam_sqA4K8C4self hζ.pow_eq_one)
+section Laurent
 
-/-- **The dilation, end to end.** On the m x m torus with m odd, C4 + self has the period of
-N4 + self on the torus of side m' = m / gcd(m, 3): the same torus when 3 does not divide m, and
-the torus a third the size when it does. -/
-theorem period_sqC4self {m m' : ℕ} [NeZero m] [NeZero m'] (hm : Odd m)
-    (hm' : m' = m / Nat.gcd m 3) :
-    period m sqC4selfOffsets = period m' sqN4selfOffsets := by
-  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
-  have hζ' : IsPrimitiveRoot (ζ ^ 3) m' := by
-    have h := IsPrimitiveRoot.orderOf (ζ ^ 3)
-    rwa [orderOf_pow' ζ (by norm_num : (3 : ℕ) ≠ 0), ← hζ.eq_orderOf, ← hm'] at h
-  have hle : m' ≤ m := hm' ▸ Nat.div_le_self m _
-  have hpos : 0 < m' := Nat.pos_of_ne_zero (NeZero.ne m')
-  -- The eigenvalues at (j, k) depend only on j and k mod m'.
-  have hmod : ∀ (D : Finset (ℤ × ℤ)) (j k : ℕ),
-      lam m' (ζ ^ 3) D j k = lam m' (ζ ^ 3) D (j % m') (k % m') := by
-    intro D j k
-    rw [lam_eq_ev hζ'.pow_eq_one, lam_eq_ev hζ'.pow_eq_one,
-      pow_eq_pow_of_cast_eq hζ'.pow_eq_one (ZMod.natCast_mod j m').symm,
-      pow_eq_pow_of_cast_eq hζ'.pow_eq_one (ZMod.natCast_mod k m').symm]
-  have key : ∀ p, IsPeriod m sqC4selfOffsets p ↔ IsPeriod m' sqN4selfOffsets p := by
-    intro p
-    simp only [isPeriod_iff hζ, isPeriod_iff hζ', lam_sqC4self hζ.pow_eq_one hζ'.pow_eq_one]
-    constructor
-    · intro h j hj k hk
-      exact h j (lt_of_lt_of_le hj hle) k (lt_of_lt_of_le hk hle)
-    · intro h j _ k _
-      rw [hmod]
-      exact h _ (Nat.mod_lt j hpos) _ (Nat.mod_lt k hpos)
-  exact Nat.dvd_antisymm
-    ((isPeriod_iff_period_dvd _ _ _).1 ((key _).2 ((isPeriod_iff_period_dvd _ _ _).2 dvd_rfl)))
-    ((isPeriod_iff_period_dvd _ _ _).1 ((key _).1 ((isPeriod_iff_period_dvd _ _ _).2 dvd_rfl)))
+theorem lxi_mul_lx : lxi * lx = 1 := by rw [mul_comm]; exact lx_mul_lxi
+
+theorem lyi_mul_ly : lyi * ly = 1 := by rw [mul_comm]; exact ly_mul_lyi
+
+theorem grp_sqN4K8C4_eq : grp sqN4K8C4Offsets = grp sqN4Offsets ^ 3 := by
+  rw [grp_sqN4K8C4, grp_sqN4]
+  exact square_N4K8C4_cube laurent_two _ _ _ _ lx_mul_lxi ly_mul_lyi
+
+theorem grp_sqA4K8C4self_eq : grp sqA4K8C4selfOffsets = grp sqN4selfOffsets ^ 3 := by
+  rw [grp_sqA4K8C4self, grp_sqN4self,
+    square_A4K8C4self_cube laurent_two _ _ _ _ lx_mul_lxi ly_mul_lyi]
+  unfold sqN4 sqN4self
+  ring
+
+/-- C4 + self is N4 + self with every translation tripled. -/
+theorem sqC4selfOffsets_eq : sqC4selfOffsets = sqN4selfOffsets.image (fun d => (3 : ℕ) • d) := by
+  decide
+
+theorem grp_triE : grp triUdEOffsets * grp triDuEOffsets = grp triSEOffsets := by
+  rw [grp_triUdE, grp_triDuE, grp_triSE]
+  linear_combination triangle_E_s laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+theorem grp_triVOT13 : grp triUdVOT13Offsets * grp triDuVOT13Offsets = grp triSVOT13Offsets := by
+  rw [grp_triUdVOT13, grp_triDuVOT13, grp_triSVOT13]
+  linear_combination triangle_VOT13_s laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+theorem grp_triEVOVS_up :
+    grp triEVOVS.uu * grp triEVOVS.uu + grp triEVOVS.ud * grp triEVOVS.du = grp triSEVOVSOffsets := by
+  simp only [triEVOVS]
+  rw [grp_triUuEVOVS, grp_triUdEVOVS, grp_triDuEVOVS, grp_triSEVOVS]
+  linear_combination triangle_EVOVS_s_up laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+theorem grp_triEVOVS_ud :
+    grp triEVOVS.uu * grp triEVOVS.ud + grp triEVOVS.ud * grp triEVOVS.dd = 0 := by
+  simp only [triEVOVS]
+  rw [grp_triUuEVOVS, grp_triUdEVOVS, grp_triDdEVOVS]
+  linear_combination triangle_EVOVS_s_ud laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+theorem grp_triEVOVS_du :
+    grp triEVOVS.du * grp triEVOVS.uu + grp triEVOVS.dd * grp triEVOVS.du = 0 := by
+  simp only [triEVOVS]
+  rw [grp_triUuEVOVS, grp_triDuEVOVS, grp_triDdEVOVS]
+  linear_combination triangle_EVOVS_s_du laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+theorem grp_triEVOVS_down :
+    grp triEVOVS.du * grp triEVOVS.ud + grp triEVOVS.dd * grp triEVOVS.dd =
+      grp triSEVOVSOffsets := by
+  simp only [triEVOVS]
+  rw [grp_triUdEVOVS, grp_triDuEVOVS, grp_triDdEVOVS, grp_triSEVOVS]
+  linear_combination triangle_EVOVS_s_down laurent_two _ _ _ _ lxi_mul_lx lyi_mul_ly
+
+end Laurent
+
+/-! ### Round 2, on the square torus of every side -/
+
+/-- **The cube.** On the square torus of every side n, N4 + K8 + C4 has the period of N4 divided
+by gcd(period, 3). -/
+theorem period_sqN4K8C4 {n : ℕ} [NeZero n] :
+    period n sqN4K8C4Offsets = period n sqN4Offsets / Nat.gcd (period n sqN4Offsets) 3 :=
+  gperiod_eq_of_grp_eq_pow (offsetHom n) (by norm_num) grp_sqN4K8C4_eq
+
+/-- **The cube (round 2's first failure).** On the square torus of every side n,
+A4 + K8 + C4 + self has the period of N4 + self divided by gcd(period, 3). -/
+theorem period_sqA4K8C4self {n : ℕ} [NeZero n] :
+    period n sqA4K8C4selfOffsets =
+      period n sqN4selfOffsets / Nat.gcd (period n sqN4selfOffsets) 3 :=
+  gperiod_eq_of_grp_eq_pow (offsetHom n) (by norm_num) grp_sqA4K8C4self_eq
+
+/-- **The dilation.** On the square torus of every side n, C4 + self has the period of N4 + self
+on the torus of side n' = n / gcd(n, 3): the same torus when 3 does not divide n, and the torus
+a third the size when it does. -/
+theorem period_sqC4self {n n' : ℕ} [NeZero n] [NeZero n'] (hn' : n' = n / Nat.gcd n 3) :
+    period n sqC4selfOffsets = period n' sqN4selfOffsets := by
+  rw [sqC4selfOffsets_eq]
+  exact period_image_smul (by norm_num) hn' sqN4selfOffsets
 
 section TriangleMechanisms
 
@@ -179,30 +197,50 @@ theorem card_ud_du {R : TriRule} (huu : R.uu = ∅) (hdd : R.dd = ∅) {a b : �
       (R.dd.card : ZMod 2) = 0 := by
   simp [huu, hdd, hud, hdu, ha, hb]
 
-/-- **The edge rule on the triangular torus.** For odd m, its period is twice its s's. -/
-theorem triPeriod_triE {m : ℕ} [NeZero m] (hm : Odd m) :
-    triPeriod m triE = 2 * period m triSEOffsets := by
-  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
+/-! ### Round 3, on every triangular torus -/
+
+section EveryTriangularTorus
+
+variable {G : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G] (ω : ℤ × ℤ →+ G)
+
+/-- **The edge rule.** On every triangular torus its period is exactly twice its s's. -/
+theorem gtriPeriod_triE : gtriPeriod ω triE = 2 * gperiod ω triSEOffsets := by
   obtain ⟨huu, hud, hdu, hdd⟩ := card_ud_du (R := triE) rfl rfl triUdEOffsets_card
     triDuEOffsets_card (by decide) (by decide)
-  exact triPeriod_eq_two_mul hm (triStep_triStep hζ rfl rfl (lam_triE hζ.pow_eq_one))
-    huu hud hdu hdd
+  exact gtriPeriod_eq_two_mul ω (gtriStep_twice_of_cross ω rfl rfl grp_triE) huu hud hdu hdd
 
-/-- **VO + T13 on the triangular torus.** For odd m, its period is twice its s's. -/
-theorem triPeriod_triVOT13 {m : ℕ} [NeZero m] (hm : Odd m) :
-    triPeriod m triVOT13 = 2 * period m triSVOT13Offsets := by
-  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
+/-- **VO + T13.** On every triangular torus its period is exactly twice its s's. -/
+theorem gtriPeriod_triVOT13 : gtriPeriod ω triVOT13 = 2 * gperiod ω triSVOT13Offsets := by
   obtain ⟨huu, hud, hdu, hdd⟩ := card_ud_du (R := triVOT13) rfl rfl triUdVOT13Offsets_card
     triDuVOT13Offsets_card (by decide) (by decide)
-  exact triPeriod_eq_two_mul hm (triStep_triStep hζ rfl rfl (lam_triVOT13 hζ.pow_eq_one))
-    huu hud hdu hdd
+  exact gtriPeriod_eq_two_mul ω (gtriStep_twice_of_cross ω rfl rfl grp_triVOT13) huu hud hdu hdd
+
+omit [Fintype G] [DecidableEq G] in
+/-- **The general 2 x 2 case: E + VO + VS** (LatticeLife's B1,3,...,11/S1,3,...,11). Its matrix has
+all four entries, and squares to s I. On every triangular torus its period P satisfies
+P / gcd(P, 2) = P(s). -/
+theorem gtriPeriod_triEVOVS [Finite G] :
+    gtriPeriod ω triEVOVS / Nat.gcd (gtriPeriod ω triEVOVS) 2 = gperiod ω triSEVOVSOffsets :=
+  gtriPeriod_div_two ω (gtriStep_twice ω grp_triEVOVS_up grp_triEVOVS_ud grp_triEVOVS_du
+    grp_triEVOVS_down)
+
+end EveryTriangularTorus
+
+/-- The edge rule on the rhombic torus of every side m. -/
+theorem triPeriod_triE {m : ℕ} [NeZero m] : triPeriod m triE = 2 * period m triSEOffsets :=
+  gtriPeriod_triE (offsetHom m)
+
+/-- VO + T13 on the rhombic torus of every side m. -/
+theorem triPeriod_triVOT13 {m : ℕ} [NeZero m] :
+    triPeriod m triVOT13 = 2 * period m triSVOT13Offsets :=
+  gtriPeriod_triVOT13 (offsetHom m)
 
 /-- **The edge rule's bound.** For odd m with 2^r = +-1 mod m, the edge rule's period on the
 triangular torus divides 2 (2^r - 1). -/
 theorem triPeriod_triE_dvd {m : ℕ} [NeZero m] (hm : Odd m) {r : ℕ}
     (hr : (2 : ZMod m) ^ r = 1 ∨ (2 : ZMod m) ^ r = -1) :
     triPeriod m triE ∣ 2 * (2 ^ r - 1) := by
-  rw [triPeriod_triE hm]
+  rw [triPeriod_triE]
   refine Nat.mul_dvd_mul_left 2 ?_
   rcases hr with hr | hr
   · exact period_dvd_two_pow_sub_one hm _ hr
@@ -231,6 +269,56 @@ theorem period_triSVOT13 {m : ℕ} [NeZero m] (hm : Odd m) {k : ℕ}
 theorem triPeriod_twisted {m : ℕ} [NeZero m] (hm : Odd m) {k : ℕ}
     (h : (3 : ZMod m) = 2 ^ k ∨ (3 : ZMod m) = -2 ^ k) :
     ∃ P, triPeriod m triE = 2 * P ∧ triPeriod m triVOT13 = 2 * (P / Nat.gcd P (1 + 2 ^ k)) :=
-  ⟨period m triSEOffsets, triPeriod_triE hm, by rw [triPeriod_triVOT13 hm, period_triSVOT13 hm h]⟩
+  ⟨period m triSEOffsets, triPeriod_triE, by rw [triPeriod_triVOT13, period_triSVOT13 hm h]⟩
+
+/-! ### The atlas's own tori -/
+
+/-- **The edge rule on the atlas's triangular torus** of side n = 2^v m, with m odd and v >= 1. Its
+period is 2^(a+1) P(s_E, m) for some a <= v, so its odd part is P(s_E, m). -/
+theorem atlasTriPeriod_triE {n v m : ℕ} [NeZero n] [NeZero (n / 2)] [NeZero m] (hm : Odd m)
+    (hv : 1 ≤ v) (hn : n = 2 ^ v * m) :
+    ∃ a ≤ v, atlasTriPeriod n triE = 2 ^ (a + 1) * period m triSEOffsets := by
+  obtain ⟨a, ha, h⟩ := eq_two_pow_mul_of_div_gcd (triPeriod_div_gcd hm hv hn triSEOffsets)
+  exact ⟨a, ha, by rw [atlasTriPeriod, gtriPeriod_triE, h, pow_succ]; ring⟩
+
+/-- **VO + T13 on the atlas's triangular torus** of side n = 2^v m: its period is
+2^(a+1) P(s, m) for some a <= v. -/
+theorem atlasTriPeriod_triVOT13 {n v m : ℕ} [NeZero n] [NeZero (n / 2)] [NeZero m] (hm : Odd m)
+    (hv : 1 ≤ v) (hn : n = 2 ^ v * m) :
+    ∃ a ≤ v, atlasTriPeriod n triVOT13 = 2 ^ (a + 1) * period m triSVOT13Offsets := by
+  obtain ⟨a, ha, h⟩ := eq_two_pow_mul_of_div_gcd (triPeriod_div_gcd hm hv hn triSVOT13Offsets)
+  exact ⟨a, ha, by rw [atlasTriPeriod, gtriPeriod_triVOT13, h, pow_succ]; ring⟩
+
+/-- **E + VO + VS on the atlas's triangular torus** of side n = 2^v m: its period is
+2^a P(s, m) for some a <= v + 1, so its odd part is P(s, m). -/
+theorem atlasTriPeriod_triEVOVS {n v m : ℕ} [NeZero n] [NeZero (n / 2)] [NeZero m] (hm : Odd m)
+    (hv : 1 ≤ v) (hn : n = 2 ^ v * m) :
+    ∃ a ≤ v + 1, atlasTriPeriod n triEVOVS = 2 ^ a * period m triSEVOVSOffsets := by
+  obtain ⟨a, ha, h⟩ := eq_two_pow_mul_of_div_gcd (triPeriod_div_gcd hm hv hn triSEVOVSOffsets)
+  have h2 : atlasTriPeriod n triEVOVS / Nat.gcd (atlasTriPeriod n triEVOVS) (2 ^ 1) =
+      gperiod (triHom n) triSEVOVSOffsets := by
+    rw [pow_one]; exact gtriPeriod_triEVOVS (triHom n)
+  obtain ⟨b, hb, h'⟩ := eq_two_pow_mul_of_div_gcd h2
+  exact ⟨b + a, by omega, by rw [h', h, pow_add, mul_assoc]⟩
+
+/-- **The twisted power on the atlas's own torus (round 3).** On the triangular torus of side
+n = 2^v m with m odd, v >= 1 and 3 = +-2^k mod m: the edge rule's period has odd part some P, and
+VO + T13's has odd part P / gcd(P, 1 + 2^k). These odd parts are what round 3 registered. -/
+theorem atlasTriPeriod_twisted {n v m k : ℕ} [NeZero n] [NeZero (n / 2)] [NeZero m] (hm : Odd m)
+    (hv : 1 ≤ v) (hn : n = 2 ^ v * m) (h : (3 : ZMod m) = 2 ^ k ∨ (3 : ZMod m) = -2 ^ k) :
+    ∃ P, Odd P ∧ (∃ a ≤ v, atlasTriPeriod n triE = 2 ^ (a + 1) * P) ∧
+      ∃ b ≤ v, atlasTriPeriod n triVOT13 = 2 ^ (b + 1) * (P / Nat.gcd P (1 + 2 ^ k)) := by
+  refine ⟨period m triSEOffsets, period_odd hm _, atlasTriPeriod_triE hm hv hn, ?_⟩
+  obtain ⟨b, hb, e⟩ := atlasTriPeriod_triVOT13 hm hv hn
+  exact ⟨b, hb, by rw [e, period_triSVOT13 hm h]⟩
+
+/-- **The hexagon's odd part and 2-part bound.** On the atlas's hexagonal torus of side n = 2^v m,
+with m odd and v >= 1, a rule's period is 2^a P(m) for some a <= v + 1. Here P(m) is its period
+on the square torus of side m, in axial coordinates. For H1 (B135/S135) the law
+2 * 2^v(n) * R(m) has a = v + 1; this gives a <= v + 1 and the odd part. -/
+theorem hexPeriod_eq_two_pow_mul {n v m : ℕ} [NeZero (2 * n)] [NeZero (n / 2)] [NeZero m]
+    (hm : Odd m) (hv : 1 ≤ v) (hn : n = 2 ^ v * m) (D : Finset (ℤ × ℤ)) :
+    ∃ a ≤ v + 1, hexPeriod n D = 2 ^ a * period m D :=
+  eq_two_pow_mul_of_div_gcd (hexPeriod_div_gcd hm hv hn D)
 
 end LatticeProofs

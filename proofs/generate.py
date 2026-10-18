@@ -80,16 +80,32 @@ SQUARE = {
     "sqC4self": ("C4", "self"),
     "sqA4C4": ("A4", "C4"),
 }
-P = {"hexH1": laurent(atlas3.polynomial("hexagon", ("H1",)))}
-P |= {name: laurent(atlas3.polynomial("square", shells)) for name, shells in SQUARE.items()}
-_, udE, duE, _ = atlas3._triangle_entries(("E",))
-_, udVT, duVT, _ = atlas3._triangle_entries(("VO", "T13"))
-uuVS, _, _, _ = atlas3._triangle_entries(("VS",))
-P["triUdE"], P["triDuE"] = laurent(udE), laurent(duE)
-P["triUdVOT13"], P["triDuVOT13"] = laurent(udVT), laurent(duVT)
-P["triVS"] = laurent(uuVS)
-P["triSE"] = laurent(atlas3.polynomial("triangle", ("E",)))
-P["triSVOT13"] = laurent(atlas3.polynomial("triangle", ("VO", "T13")))
+# The plane rules (square and hexagon), by name: lattice and shells.
+PLANE = {"hexH1": ("hexagon", ("H1",))} | {name: ("square", sh) for name, sh in SQUARE.items()}
+P = {name: laurent(atlas3.polynomial(lattice, sh)) for name, (lattice, sh) in PLANE.items()}
+
+# The triangle rules, by name: shells, and the names of the four entries of their matrix
+# [[uu, ud], [du, dd]] (None where the entry is 0) and of their s, where the matrix squares to s I.
+TRIANGLE = {
+    "triE": (("E",), None, "triUdE", "triDuE", None, "triSE"),
+    "triVOT13": (("VO", "T13"), None, "triUdVOT13", "triDuVOT13", None, "triSVOT13"),
+    "triEVOVS": (
+        ("E", "VO", "VS"),
+        "triUuEVOVS",
+        "triUdEVOVS",
+        "triDuEVOVS",
+        "triDdEVOVS",
+        "triSEVOVS",
+    ),
+}
+for _shells, *_names, _s in TRIANGLE.values():
+    for _name, _terms in zip(_names, atlas3._triangle_entries(_shells), strict=True):
+        if _name is None:
+            assert not _terms
+        else:
+            P[_name] = laurent(_terms)
+    P[_s] = laurent(atlas3.polynomial("triangle", _shells))
+P["triVS"] = laurent(atlas3._triangle_entries(("VS",))[0])
 
 DOCS = {
     "hexH1": "The hexagon's parity rule H1 (B135/S135): the six nearest cells, axial coordinates.",
@@ -110,6 +126,11 @@ DOCS = {
     "triVS": "The triangle shell VS, same orientation: a scalar on the translation lattice.",
     "triSE": "The edge rule's s, where its matrix squares to s I.",
     "triSVOT13": "VO + T13's s, where its matrix squares to s I.",
+    "triUuEVOVS": "The triangle rule E + VO + VS's up-from-up entry (LatticeLife's other rule).",
+    "triUdEVOVS": "The triangle rule E + VO + VS's up-from-down entry.",
+    "triDuEVOVS": "The triangle rule E + VO + VS's down-from-up entry.",
+    "triDdEVOVS": "The triangle rule E + VO + VS's down-from-down entry.",
+    "triSEVOVS": "E + VO + VS's s, where its matrix squares to s I.",
 }
 
 a, b = X + XI, Y + YI  # rule 90 along each axis
@@ -201,6 +222,32 @@ IDENTITIES = [
         sp.Symbol("triSVOT13"),
     ),
     (
+        "triangle_EVOVS_s_up",
+        "E + VO + VS's matrix [[uu, ud], [du, dd]] squares to s I: the up-from-up entry.",
+        sp.Symbol("triUuEVOVS") ** 2 + sp.Symbol("triUdEVOVS") * sp.Symbol("triDuEVOVS"),
+        sp.Symbol("triSEVOVS"),
+    ),
+    (
+        "triangle_EVOVS_s_ud",
+        "E + VO + VS's matrix squared: the up-from-down entry is 0.",
+        sp.Symbol("triUuEVOVS") * sp.Symbol("triUdEVOVS")
+        + sp.Symbol("triUdEVOVS") * sp.Symbol("triDdEVOVS"),
+        sp.Integer(0),
+    ),
+    (
+        "triangle_EVOVS_s_du",
+        "E + VO + VS's matrix squared: the down-from-up entry is 0.",
+        sp.Symbol("triDuEVOVS") * sp.Symbol("triUuEVOVS")
+        + sp.Symbol("triDdEVOVS") * sp.Symbol("triDuEVOVS"),
+        sp.Integer(0),
+    ),
+    (
+        "triangle_EVOVS_s_down",
+        "E + VO + VS's matrix squared: the down-from-down entry is s.",
+        sp.Symbol("triDuEVOVS") * sp.Symbol("triUdEVOVS") + sp.Symbol("triDdEVOVS") ** 2,
+        sp.Symbol("triSEVOVS"),
+    ),
+    (
         "triangle_VOT13_twisted",
         "VO + T13 squares to s I with s = s_E(x, y) s_E(x^3, y^3), s_E = ud_E du_E: the twisted "
         "power of round 3.",
@@ -282,20 +329,14 @@ def render() -> str:
 
 # --- the neighbourhoods, for the theorems about periods -----------------------------------------
 
-# The square rules whose periods Periods.lean states, by name in P.
-RULES = ["sqN4", "sqN4self", "sqN4K8C4", "sqA4K8C4self", "sqC4self"]
-
-# The triangle rules, with the names in P of their ud and du entries and of their s. Neither has a
-# same-orientation part (uu = dd = 0).
-TRIANGLE = {
-    "triE": (("E",), "triUdE", "triDuE", "triSE"),
-    "triVOT13": (("VO", "T13"), "triUdVOT13", "triDuVOT13", "triSVOT13"),
-}
+# The plane rules whose periods Periods.lean states, by name in P.
+RULES = ["sqN4", "sqN4self", "sqN4K8C4", "sqA4K8C4self", "sqC4self", "hexH1"]
 
 
 def offsets(name: str) -> list[tuple[int, int]]:
-    """A square rule's neighbourhood: the exponents of its polynomial, which are its offsets."""
-    return sorted(atlas3.polynomial("square", SQUARE[name]))
+    """A plane rule's neighbourhood: the exponents of its polynomial, which are its offsets."""
+    lattice, shells = PLANE[name]
+    return sorted(atlas3.polynomial(lattice, shells))
 
 
 def translations(terms) -> list[tuple[int, int]]:
@@ -305,16 +346,14 @@ def translations(terms) -> list[tuple[int, int]]:
 
 
 def triangle_parts(name: str) -> dict[str, list[tuple[int, int]]]:
-    """A triangle rule's ud and du neighbourhoods, and its s's, as translations."""
-    shells, ud, du, s = TRIANGLE[name]
-    uu_terms, ud_terms, du_terms, dd_terms = atlas3._triangle_entries(shells)
-    if uu_terms or dd_terms:
-        raise ValueError(f"{name} has a same-orientation part")
-    return {
-        ud: translations(ud_terms),
-        du: translations(du_terms),
-        s: translations(atlas3.polynomial("triangle", shells)),
+    """A triangle rule's nonzero entries, and its s, as translations, by name in P."""
+    shells, *names, s = TRIANGLE[name]
+    parts = {
+        part: translations(terms)
+        for part, terms in zip(names, atlas3._triangle_entries(shells), strict=True)
+        if part is not None
     }
+    return parts | {s: translations(atlas3.polynomial("triangle", shells))}
 
 
 def _neighbourhood(name: str, cells: list[tuple[int, int]], doc: str) -> list[str]:
@@ -335,65 +374,78 @@ def _wrap(cells: list[str], width: int = 96) -> list[str]:
     return rows + [row]
 
 
+_GRP_SIMP = "lx, lxi, ly, lyi, single_pow, single_mul_single, single_origin"
+
+
+def _lemmas(name: str, cells: list[tuple[int, int]], reflected: bool) -> list[str]:
+    """`ev` and `grp` lemmas for a neighbourhood whose polynomial is P[name], read directly or
+    (for a triangle rule's translations) reflected."""
+    ev_args, grp_args = ("x⁻¹ y⁻¹", "lxi lx lyi ly") if reflected else ("x y", "lx lxi ly lyi")
+    lines = [
+        f"theorem ev_{name} {{K : Type*}} [Field K] (x y : K) :",
+        f"    ev {name}Offsets {ev_args} = {name} x x⁻¹ y y⁻¹ := by",
+        f"  simp [ev, {name}Offsets, {name}]",
+        "  ring",
+        "",
+        f"theorem grp_{name} : grp {name}Offsets = {name} {grp_args} := by",
+        f"  simp [grp, {name}Offsets, {name},",
+        f"    {_GRP_SIMP}]",
+        "  ring",
+        "",
+    ]
+    if cells == translations(cells):
+        lines += [
+            f"theorem {name}Offsets_symm : ∀ d ∈ {name}Offsets, -d ∈ {name}Offsets := by",
+            "  decide",
+            "",
+        ]
+    return lines
+
+
 def render_rules() -> str:
     lines = [
         "/-",
         "Generated by proofs/generate.py from the atlas code; do not edit by hand.",
         "",
         "The neighbourhoods of the atlas rules that Periods.lean is about, as the translations",
-        "each cell reads. In a field, a neighbourhood's Laurent polynomial `ev` is the polynomial",
-        "of `Identities.lean`.",
+        "each cell reads, with their Laurent polynomials: `ev` in a field and `grp` in the group",
+        "ring are the polynomials of `Identities.lean`.",
         "",
-        "* Square rules are symmetric, so their translations are their polynomials' exponents.",
-        "* A triangle rule's ud and du entries, and its s, read the negated exponents (the cell",
-        "  at g reads g - e, as in the atlas's engine). So `ev` at 1/x, 1/y is the polynomial at",
-        "  x, y.",
+        "* Plane rules are symmetric, so their translations are their polynomials' exponents.",
+        "* A triangle rule's entries, and its s, read the negated exponents (the cell at g reads",
+        "  g - e, as in the atlas's engine). So `ev` at 1/x, 1/y, and `grp`, are the polynomial",
+        "  with x and 1/x exchanged.",
         "-/",
         "import LatticeProofs.Triangle",
         "",
+        "-- The simp sets below are shared by every rule; not every rule uses every lemma.",
+        "set_option linter.unusedSimpArgs false",
+        "",
         "namespace LatticeProofs",
+        "",
+        "open AddMonoidAlgebra",
         "",
     ]
     for name in RULES:
         cells = offsets(name)
         assert cells == translations(cells), name  # symmetric
         lines += _neighbourhood(name, cells, f"The neighbourhood of {name}.")
-        lines += [
-            f"theorem ev_{name} {{K : Type*}} [Field K] (x y : K) :",
-            f"    ev {name}Offsets x y = {name} x x⁻¹ y y⁻¹ := by",
-            f"  simp [ev, {name}Offsets, {name}]",
-            "  ring",
-            "",
-            f"theorem {name}Offsets_symm : ∀ d ∈ {name}Offsets, -d ∈ {name}Offsets := by",
-            "  decide",
-            "",
-        ]
-    for rule, (shells, ud, du, s) in TRIANGLE.items():
-        parts = triangle_parts(rule)
-        for part, cells in parts.items():
+        lines += _lemmas(name, cells, reflected=False)
+    for rule, (shells, *entries, s) in TRIANGLE.items():
+        for part, cells in triangle_parts(rule).items():
             lines += _neighbourhood(part, cells, f"The translations of `{part}`.")
-            lines += [
-                f"theorem ev_{part} {{K : Type*}} [Field K] (x y : K) :",
-                f"    ev {part}Offsets x⁻¹ y⁻¹ = {part} x x⁻¹ y y⁻¹ := by",
-                f"  simp [ev, {part}Offsets, {part}]",
-                "  ring",
-                "",
-            ]
+            lines += _lemmas(part, cells, reflected=True)
             if part != s:
                 lines += [
                     f"theorem {part}Offsets_card : {part}Offsets.card = {len(cells)} := by",
                     "  decide",
                     "",
                 ]
-            elif cells == translations(cells):
-                lines += [
-                    f"theorem {part}Offsets_symm : ∀ d ∈ {part}Offsets, -d ∈ {part}Offsets := by",
-                    "  decide",
-                    "",
-                ]
+        fields = ", ".join("∅" if e is None else f"{e}Offsets" for e in entries)
         lines += [
-            f"/-- The triangle rule {'+'.join(shells)}: no same-orientation part. -/",
-            f"def {rule} : TriRule := ⟨∅, {ud}Offsets, {du}Offsets, ∅⟩",
+            f"/-- The triangle rule {' + '.join(shells)}. -/",
+            f"def {rule} : TriRule :=",
+            f"  ⟨{fields}⟩",
             "",
         ]
     lines += ["end LatticeProofs", ""]
@@ -406,7 +458,7 @@ def main() -> None:
     print(f"wrote {out} ({len(IDENTITIES)} identities)")
     rules = HERE / "LatticeProofs" / "Rules.lean"
     rules.write_text(render_rules())
-    print(f"wrote {rules} ({len(RULES)} square and {len(TRIANGLE)} triangle rules)")
+    print(f"wrote {rules} ({len(RULES)} plane and {len(TRIANGLE)} triangle rules)")
 
 
 if __name__ == "__main__":

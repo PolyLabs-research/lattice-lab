@@ -7,11 +7,16 @@ the pipeline. It covers:
 - the eigenvalue lemmas that turn those identities into statements about eigenvalues;
 - **the bridge**: a linear rule's period on an odd torus is the lcm of the multiplicative orders
   of its nonzero eigenvalues;
-- through the bridge, **round 2's three mechanisms as theorems about periods**, for every odd
-  size, stated for the atlas's own rules;
+- **the group ring**: every rule acts on every torus through F2[Z²]. So each identity is an
+  identity between rules on tori of every size;
+- **the even-size reduction**: a torus's period has the period of its odd quotient as its odd
+  part, and a bounded 2-part. This covers the square torus and the atlas's own triangular and
+  hexagonal tori;
+- **round 2's three mechanisms as theorems about periods at every size**, for the atlas's own rules;
 - **the bound**: on an odd torus the period divides 2^ord(m) − 1, and for a symmetric rule
   2^sord(m) − 1;
-- **the triangular torus**, with **round 3's twisted power as a theorem about periods**.
+- **triangular tori**, including rules with all four matrix entries, and **round 3's twisted
+  power on the atlas's own torus**.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -43,6 +48,7 @@ live, so each identity holds at every eigenvalue at once.
 | `square_A4C4_separable` | A4 + C4 = q(x + 1/x) + q(y + 1/y), q(t) = t³ + t² + t | round 2's accident at n = 13 |
 | `triangle_E_square` | ud_E du_E = 1 + VS | the edge rule squares to (1 + VS) I |
 | `triangle_E_s`, `triangle_VOT13_s` | ud du = s, for E and for VO + T13 | the rules' s, as their neighbourhoods |
+| `triangle_EVOVS_s_up`, `_ud`, `_du`, `_down` | [[uu, ud], [du, dd]]² = s I for E + VO + VS | the general 2 × 2 case |
 | `triangle_VOT13_twisted` | ud du (VO + T13) = s_E(x, y) s_E(x³, y³) | round 3's twisted power |
 
 Each proof is `linear_combination q1 * hx + q2 * hy + Q * h2`. The generator finds the
@@ -114,84 +120,139 @@ or λ^(2^r − 1) = 1 (`lam_pow_two_pow`). For a symmetric neighbourhood the sam
 That is the atlas's full bound, 2^ord(m) − 1, or 2^sord(m) − 1 for a symmetric rule, as a theorem.
 Whether a rule *reaches* it is the conjecture.
 
-### The triangular torus (`LatticeProofs/Triangle.lean`)
+### The group ring (`LatticeProofs/GroupRing.lean`)
 
-The triangular lattice has two cells per unit cell, an up and a down triangle. Its translations
-form Z² in the atlas's τ coordinates. The triangular torus of side m is the quotient by mZ²:
-m² unit cells and 2m² cells.
+The bridge needs a primitive m-th root of unity, so it works only at odd sizes. The group ring
+works at every size.
 
-- **Rules.** A `TriRule` is four neighbourhoods: the translations an up cell reads among up cells
-  (uu) and among down cells (ud), and those a down cell reads (du, dd). `triStep` is one step and
-  `triPeriod` the period.
-- **Relation to the atlas's torus.** The atlas's torus of side n = 2m has translation group
-  Z²/Λ, with Λ = ⟨(m, −m), (m, m)⟩ ⊂ mZ² of index 2 in mZ². So its odd quotient is this torus,
-  and the odd part of a rule's period there is the odd part of its period here. That reduction is
-  the unformalised one below.
+- **Tori.** A torus is any finite abelian group G with a homomorphism ω from the lattice's
+  translations Z² to it. `gstep ω D` makes every cell v the sum mod 2 of the cells v + ω(d), and
+  `gperiod ω D` is the period. The square torus of side n is G = (Z/n)² with reduction mod n
+  (`offsetHom`), and `step n D` is `gstep (offsetHom n) D`.
+- **Rules as polynomials.** `Laurent` is F2[Z²], the Laurent polynomials over GF(2). A
+  neighbourhood is the polynomial `grp D`, the sum of its translations. `act ω` is the algebra
+  homomorphism by which F2[Z²] acts on the configurations of (G, ω) by translations, and `act_grp`
+  says `grp D` acts as one step of D.
 
 | Theorem | Statement |
 | --- | --- |
-| `triStep_triStep` | for a rule with uu = dd = ∅ whose cross eigenvalues multiply to those of a square-torus rule S, two steps are one step of S on each layer |
+| `gstep_eq_iterate` | if grp D = (grp E)^k, a step of D is k steps of E, on every torus |
+| `gperiod_eq_of_grp_eq_pow` | then P(D) = P(E) / gcd(P(E), k) |
+| `gstep_iterate_two_pow` | Frobenius: 2^k steps of D are one step of 2^k D |
+| `eventualPeriod_iterate` | f^[k] has period P / gcd(P, k), for any map of a finite set |
+| `isEventualPeriod_restrict_iff` | **the restriction lemma**: let μ : G′ → G be injective with μ(ω′(d)) = ω(N d); then N D on G has exactly the periods of D on G′ |
+
+The restriction lemma reads a configuration of G along each coset r + μ(G′). There N D acts as D
+acts on G′, and the cosets cover G.
+
+### The triangular torus (`LatticeProofs/Triangle.lean`)
+
+The triangular lattice has two cells per unit cell, an up and a down triangle. Its translations
+form Z² in the atlas's τ coordinates. A triangular torus is a torus (G, ω) of those translations,
+with two layers of cells over it.
+
+- **Rules.** A `TriRule` is four neighbourhoods: the translations an up cell reads among up cells
+  (uu) and among down cells (ud), and those a down cell reads (du, dd). `gtriStep ω R` is one
+  step and `gtriPeriod ω R` the period.
+- **Two tori.** The rhombic torus of side m is G = (Z/m)² (`triStep`, `triPeriod`). The atlas's
+  torus of side n is G = Z/n × Z/(n/2) (`Tori.lean`, `atlasTriPeriod`).
+
+| Theorem | Statement |
+| --- | --- |
+| `gtriStep_twice` | if [[uu, ud], [du, dd]]² = S I as Laurent polynomials, two steps of the rule are one step of the plane rule S on each layer, on every torus |
+| `gtriStep_twice_of_cross` | the case uu = dd = ∅, where the matrix squares to (ud du) I |
+| `gtriPeriod_div_two` | then the period P has P / gcd(P, 2) = P(S) |
 | `even_of_isEventualPeriod` | if the rule swaps the parities of the layers' live-cell counts, every period is even |
-| `triPeriod_eq_two_mul` | together, on a torus of odd side, the period is exactly 2 P(S) |
+| `gtriPeriod_eq_two_mul` | then the period is exactly 2 P(S) |
 
 The parity argument starts from a single live up cell: its up layer has an odd count exactly at
-even times. The torus can need a transient of two steps, not one. Where s = 0 at a character,
-the 2 × 2 eigenvalue matrix can be nilpotent of index 2.
+even times. Such tori can need a transient of two steps, not one: where s = 0 at a character, the
+2 × 2 eigenvalue matrix can be nilpotent of index 2.
+
+### Every size (`LatticeProofs/Tori.lean`)
+
+The atlas's reduction from even sizes to odd parts, formally. Frobenius moves the steps: 2^k
+steps of a rule are one step of the rule with every translation multiplied by 2^k. On a torus
+whose 2-part has exponent 2^k, those translations stay inside the cosets of the odd part, where
+the restriction lemma applies.
+
+| Theorem | Torus | Statement |
+| --- | --- | --- |
+| `period_div_gcd_two_pow` | square, n = 2^k m′ | P(n) / gcd(P(n), 2^k) = P(m′) |
+| `period_eq_two_pow_mul` | square, n = 2^v m | P(n) = 2^a P(m) for some a ≤ v |
+| `period_eq_two_pow_mul_of_double` | square | if P(2m) = 2 P(m), then P(2^v m) = 2^v P(m) for every v ≥ 1 |
+| `period_image_smul` | square, side n | the rule N D has the period of D on the torus of side n / gcd(n, N) |
+| `triPeriod_div_gcd` | the atlas's triangular, n = 2^v m, m odd | a plane rule's period P has P / gcd(P, 2^v) = P(m) |
+| `hexPeriod_div_gcd` | the atlas's hexagonal, n = 2^v m, m odd | P / gcd(P, 2^(v+1)) = P(m) |
+
+The atlas's tori are modelled by their translation groups, with the maps of
+[parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved):
+
+- the triangular torus of side n is Z/n × Z/(n/2), via (x, y) ↦ (x − y mod n, y mod n/2);
+- the hexagonal torus is Z/2n × Z/(n/2), via (q, r) ↦ (q + 2r mod 2n, r mod n/2).
+
+`tests/test_proofs.py` checks that these models have the atlas engine's exact periods: the
+triangle for E, VO + T13 and E + VO + VS, and the hexagon for H1, at n = 6, 10, 12 and 14.
+Outside the test the check also covered 8, 16 and 18.
 
 ### Theorems about periods (`LatticeProofs/Periods.lean`)
 
-The rules are the atlas's own neighbourhoods. `proofs/generate.py` writes them as sets of offsets
-into `LatticeProofs/Rules.lean`, from `atlas3.polynomial`, and proves that each set's Laurent
-polynomial is the polynomial in `Identities.lean`. The field is the algebraic closure of GF(2),
-which has a primitive m-th root of unity for every odd m (`exists_primitiveRoot`). For every odd
-m, on the m × m torus:
+The rules are the atlas's own neighbourhoods. `proofs/generate.py` writes them as sets of
+translations into `LatticeProofs/Rules.lean`, from `atlas3.polynomial` and
+`atlas3._triangle_entries`. For each set it proves the Laurent polynomial is the polynomial in
+`Identities.lean`, both in a field (`ev_…`) and in the group ring (`grp_…`). They follow the
+atlas's engine exactly: a cell at g reads g − e for each exponent e of its polynomial, so a
+triangle entry's translations are its negated exponents.
+
+Round 2, on the square torus of **every** side n:
 
 | Theorem | Statement | Round 2 |
 | --- | --- | --- |
 | `period_sqN4K8C4` | P(N4 + K8 + C4) = P(N4) / gcd(P(N4), 3) | the cube |
 | `period_sqA4K8C4self` | P(A4 + K8 + C4 + self) = P(N4 + self) / gcd(P(N4 + self), 3) | the first failure, a cube |
-| `period_sqC4self` | P(C4 + self, m) = P(N4 + self, m / gcd(m, 3)) | the dilation |
+| `period_sqC4self` | P(C4 + self, n) = P(N4 + self, n / gcd(n, 3)) | the dilation |
 
-So the mechanisms that broke round 2's registered pattern are now theorems at every odd size, not
-just explanations of the sizes tested. Two general results carry them:
+The cubes come straight from the identities through the group ring, and the dilation from the
+restriction lemma. They need neither the bridge nor oddness.
 
-- `period_eq_of_lam_eq_pow`: if every eigenvalue of one rule is the n-th power of another's, its
-  period is the other's divided by gcd(period, n);
-- `eq_div_gcd_of_dvd_iff`: the number theory behind that step.
+Round 3's triangle rules. E is the edge rule (LatticeLife's B13/S13), s_E = 1 + VS its s,
+VO + T13 round 3's twisted power, and E + VO + VS LatticeLife's other triangle rule:
 
-Round 3's triangle rules, on the triangular torus of every odd side m. Here E is the edge rule
-(LatticeLife's B13/S13), s_E = 1 + VS is its s, and VO + T13 is round 3's twisted power:
-
-| Theorem | Statement | Round 3 |
+| Theorem | Torus | Statement |
 | --- | --- | --- |
-| `triPeriod_triE` | P(E) = 2 P(s_E) | the edge rule squares to s_E I |
-| `triPeriod_triVOT13` | P(VO + T13) = 2 P(s), s = s_E(x, y) s_E(x³, y³) | |
-| `triPeriod_triE_dvd` | if 2^r ≡ ±1 (mod m), P(E) divides 2 (2^r − 1) | the triangle law's bound |
-| `period_triSVOT13` | if 3 ≡ ±2^k (mod m), P(s) = P(s_E) / gcd(P(s_E), 1 + 2^k) | |
-| `triPeriod_twisted` | **if 3 ≡ ±2^k (mod m) and P(E) = 2P, then P(VO + T13) = 2 (P / gcd(P, 1 + 2^k))** | the twisted power |
+| `gtriPeriod_triE`, `gtriPeriod_triVOT13` | every triangular torus | P(R) = 2 P(s_R) |
+| `gtriPeriod_triEVOVS` | every triangular torus | P / gcd(P, 2) = P(s), the general 2 × 2 case |
+| `triPeriod_triE_dvd` | rhombic, odd m | if 2^r ≡ ±1 (mod m), P(E) divides 2 (2^r − 1) |
+| `period_triSVOT13` | square, odd m | if 3 ≡ ±2^k (mod m), P(s) = P(s_E) / gcd(P(s_E), 1 + 2^k) |
+| `triPeriod_twisted` | rhombic, odd m | if 3 ≡ ±2^k and P(E) = 2P, then P(VO + T13) = 2 (P / gcd(P, 1 + 2^k)) |
+| `atlasTriPeriod_triE`, `_triVOT13` | the atlas's, n = 2^v m | P(R) = 2^(a+1) P(s_R, m) for some a ≤ v |
+| `atlasTriPeriod_triEVOVS` | the atlas's, n = 2^v m | P = 2^a P(s, m) for some a ≤ v + 1 |
+| `atlasTriPeriod_twisted` | the atlas's, n = 2^v m | **if 3 ≡ ±2^k (mod m): E's period has odd part some P, and VO + T13's has odd part P / gcd(P, 1 + 2^k)** |
 
-`triPeriod_twisted` is the mechanism round 3 found, now a theorem at every odd size, both signs
-included; m = 35 needs the minus sign. When k is odd, 3 divides 1 + 2^k
-(`three_dvd_one_add_two_pow`). Up to 141, the theorem lowers the period at 12 odd sizes: 5, 25,
-29, 35, 53, 55, 77, 95, 97, 101, 115 and 125, each time by a factor of 3. Round 3 tested seven of
-them, 25, 29, 35, 53, 55, 95 and 101, and those are exactly its seven VO + T13 failures.
+`atlasTriPeriod_twisted` is round 3's mechanism, proved on the atlas's own tori and for the
+quantities round 3 registered: the odd parts of the periods at n = 2m. It covers both signs; m = 35
+needs the minus sign. When k is odd, 3 divides 1 + 2^k (`three_dvd_one_add_two_pow`). Up to 141,
+the theorem lowers the period at 12 odd sizes, each time by a factor of 3: 5, 25, 29, 35, 53, 55,
+77, 95, 97, 101, 115 and 125. Round 3 tested seven of them, 25, 29, 35, 53, 55, 95 and 101, and
+those are exactly its seven VO + T13 failures. The twisted power alone still goes through the
+bridge, because it holds at the characters (3 ≡ ±2^k), not as a polynomial identity.
 
-The generated neighbourhoods follow the atlas's engine exactly. A cell at g reads g − e for each
-exponent e of its polynomial, so a triangle entry's translations are its negated exponents.
+The hexagon (`hexPeriod_eq_two_pow_mul`): on the atlas's hexagonal torus of side n = 2^v m, a
+rule's period is 2^a P(m) for some a ≤ v + 1. Here P(m) is its period on the square torus of side
+m, in axial coordinates. For H1 this is the hexagon law 2 · 2^v(n) · R(m) with its 2-part bounded
+by the law's own 2 · 2^v. The odd part is that of a rule on (Z/m)².
 
 ## What is not
 
-- **Even sizes.** The bridge is for odd m: only there is m a unit in a field of characteristic
-  2, so that the transform can be inverted. At even sizes the rule is not semisimple. The atlas
-  uses the standard reduction: the odd part of the period on a torus is the odd part of the period
-  on its odd quotient. For the square that quotient is the torus of side odd(n). For the triangle
-  at n = 2m it is the triangular torus of side m above. The reduction is not formalised, so the
-  theorems speak about odd sides only. For the triangle, that is the triangular torus of side m,
-  not the atlas's n × n torus itself.
-- **Triangle rules with a same-orientation part.** `triStep_triStep` assumes uu = dd = ∅, which
-  covers E and VO + T13. Rules such as E + VS + self would need the general 2 × 2 case.
-- **The hexagon theorem as a whole.** That is the period law 2 · 2^v(n) · R(m), including the
-  2-part. `hexagon_two_steps` is its key step.
+- **Exact 2-parts.** The reduction bounds the 2-part and, on the square, reduces it to the size
+  2m. The exact values need the analysis of nilpotent parts in
+  [xor-periods-proof.md](xor-periods-proof.md#4-even-sizes-reduce-to-odd-ones) and
+  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved), which is not formalised.
+  Those values are 2^v for B1357/S1357 (m > 1), 2 · 2^v for the hexagon (m ≥ 5), and 2 · 2^v for
+  the triangles (m ≥ 3).
+- **The hexagon's R(m).** Formally, the odd part is H1's period on (Z/m)². That this equals rule
+  90's period on the m-cycle (step 5 of the hexagon theorem's proof) is not formalised; there are
+  no one-dimensional tori here yet.
 - **The rule-150 analogues.** D4 + A4 + self has period P150(n), and H2 + H3 + self has
   2 P150(n). The identities above show these rules split along diagonals and lattice directions.
   That their periods are then exactly rule 150's is research-level, like Vadali and Turner's
@@ -212,7 +273,7 @@ blocked. GitHub release downloads and git clones work. So the build:
    and can be stopped once the manifest is written;
 4. builds the imported part of mathlib from source. The identities and eigenvalue lemmas need
    1,317 jobs, which took 14.5 minutes on 4 cores. The bridge and the periods add 1,528 more,
-   mostly for the algebraic closure, which took 36 minutes. In all that is 2,845 jobs and about
+   mostly for the algebraic closure, which took 36 minutes. In all that is about 2,850 jobs and
    50 minutes.
 
 The proofs themselves then build in about 20 seconds. Where the cache hosts are allowed,
@@ -224,6 +285,8 @@ mean what the atlas means.
 
 - The three square theorems are checked with `eigen.py` at every odd size up to 61. The exact
   matrix engine agrees at 3, 5, 9, 15, 21 and 27.
-- On the triangular torus, the period 2 P(s) of E and of VO + T13 is checked with the exact engine
-  at every odd side up to 13; outside the test, up to 31.
+- On the rhombic triangular torus, the period 2 P(s) of E and of VO + T13 is checked with the
+  exact engine at every odd side up to 13; outside the test, up to 31.
+- The atlas's triangular and hexagonal tori, as modelled in `Tori.lean`, are checked against the
+  atlas's engine at n = 6, 10, 12 and 14, and their periods against the reduction theorems' form.
 - The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.

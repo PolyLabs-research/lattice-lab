@@ -220,6 +220,10 @@ The factor that every law shares is now proved on all three lattices. With the o
 hexagon's law is a theorem for every even n. For the triangles everything is proved except that
 the odd part reaches 2^sord(m) - 1: the proof shows only that it divides it.
 
+*Formally* ([proofs.md](proofs.md#every-size-latticeproofstorilean)), the tool and both torus maps
+below are in Lean, so the odd parts and the bounds on the 2-parts are theorems on these tori
+(`triPeriod_div_gcd`, `hexPeriod_div_gcd`). The reading-off of the exact 2-parts is not.
+
 **The tool: Frobenius moves the steps.** In characteristic 2,
 (sum of a_g g)^(2^k) = sum of a_g^(2^k) (2^k g), so the rule raised to the power 2^k is the rule
 with every step multiplied by 2^k. On a torus whose 2-part T_2 has exponent 2^e, the power

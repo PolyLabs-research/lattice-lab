@@ -110,3 +110,83 @@ def test_the_triangle_theorems_agree_with_the_atlas():
         pe = s_period(("E",), m)
         assert s_period(("VO", "T13"), m) == pe // math.gcd(pe, 1 + 2**k), m
     assert twisted > 20
+
+
+def test_the_atlas_tori_of_tori_lean_are_the_atlas_engines():
+    """Tori.lean models the atlas's triangular torus of side n as Z/n x Z/(n/2), with
+    (x, y) -> (x - y mod n, y mod n/2), and its hexagonal torus as Z/2n x Z/(n/2), with
+    (q, r) -> (q + 2r mod 2n, r mod n/2). Each rule reads the negated exponents of its entries.
+    These models must have the atlas engine's exact periods, and those periods must have the form
+    the reduction theorems state."""
+    _generator()
+    import atlas3
+    import eigen
+    import numpy as np
+    from lattices import AXIAL_STEPS
+
+    def eventual_period(step):
+        seen, power = {}, np.eye(step.shape[0], dtype=np.int64)
+        for t in range(2000):
+            key = np.packbits(power.astype(np.uint8)).tobytes()
+            if key in seen:
+                return t - seen[key]
+            seen[key] = t
+            power = (power @ step) % 2
+        raise AssertionError("no repeat")
+
+    def atlas_period(lattice, shells, n):
+        _, step = atlas3.build(lattice, shells, n)
+        seen, power = {}, step.identity()
+        for t in range(2000):
+            key = b"".join(np.asarray(x, dtype=np.uint8).tobytes() for r in power.e for x in r)
+            if key in seen:
+                return t - seen[key]
+            seen[key] = t
+            power = power * step
+        raise AssertionError("no repeat")
+
+    def model(group, omega, entries):
+        cells = [(layer, g) for layer in range(len(entries)) for g in group]
+        index = {c: i for i, c in enumerate(cells)}
+        step = np.zeros((len(cells), len(cells)), dtype=np.int64)
+        for layer, v in cells:
+            for src, ds in enumerate(entries[layer]):
+                for d in ds:
+                    step[index[(src, omega(v, d))], index[(layer, v)]] += 1
+        return step % 2
+
+    def triangle(shells, n):
+        group = [(a, b) for a in range(n) for b in range(n // 2)]
+        uu, ud, du, dd = ([(-i, -j) for i, j in e] for e in atlas3._triangle_entries(shells))
+        return model(
+            group,
+            lambda v, d: ((v[0] + d[0] - d[1]) % n, (v[1] + d[1]) % (n // 2)),
+            [[uu, ud], [du, dd]],
+        )
+
+    def hexagon(n):
+        group = [(a, b) for a in range(2 * n) for b in range(n // 2)]
+        return model(
+            group,
+            lambda v, d: ((v[0] + d[0] + 2 * d[1]) % (2 * n), (v[1] + d[1]) % (n // 2)),
+            [[list(AXIAL_STEPS)]],
+        )
+
+    def two_power(p, q):
+        """a with p = 2^a q, or None."""
+        a = 0
+        while p % 2 == 0 and p != q:
+            p, a = p // 2, a + 1
+        return a if p == q else None
+
+    for n in [6, 10, 12, 14]:
+        v, m = (n & -n).bit_length() - 1, n // (n & -n)
+        for shells, extra in [(("E",), 1), (("VO", "T13"), 1), (("E", "VO", "VS"), 0)]:
+            p = atlas_period("triangle", shells, n)
+            assert eventual_period(triangle(shells, n)) == p, (shells, n)
+            a = two_power(p, eigen.odd_part(atlas3.polynomial("triangle", shells), m))
+            assert a is not None and extra <= a <= v + 1, (shells, n, p)
+        p = atlas_period("hexagon", ("H1",), n)
+        assert eventual_period(hexagon(n)) == p, n
+        a = two_power(p, eigen.odd_part(atlas3.polynomial("hexagon", ("H1",)), m))
+        assert a is not None and a <= v + 1, n
