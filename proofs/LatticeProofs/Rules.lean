@@ -53,6 +53,23 @@ theorem grp_sqN4self : grp sqN4selfOffsets = sqN4self lx lxi ly lyi := by
 theorem sqN4selfOffsets_symm : ∀ d ∈ sqN4selfOffsets, -d ∈ sqN4selfOffsets := by
   decide
 
+/-- The neighbourhood of sqN4D4. -/
+def sqN4D4Offsets : Finset (ℤ × ℤ) :=
+  {(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)}
+
+theorem ev_sqN4D4 {K : Type*} [Field K] (x y : K) :
+    ev sqN4D4Offsets x y = sqN4D4 x x⁻¹ y y⁻¹ := by
+  simp [ev, sqN4D4Offsets, sqN4D4]
+  ring
+
+theorem grp_sqN4D4 : grp sqN4D4Offsets = sqN4D4 lx lxi ly lyi := by
+  simp [grp, sqN4D4Offsets, sqN4D4,
+    lx, lxi, ly, lyi, single_pow, single_mul_single, single_origin]
+  ring
+
+theorem sqN4D4Offsets_symm : ∀ d ∈ sqN4D4Offsets, -d ∈ sqN4D4Offsets := by
+  decide
+
 /-- The neighbourhood of sqN4K8C4. -/
 def sqN4K8C4Offsets : Finset (ℤ × ℤ) :=
   {(-3, 0), (-2, -1), (-2, 1), (-1, -2), (-1, 0), (-1, 2), (0, -3), (0, -1), (0, 1), (0, 3),

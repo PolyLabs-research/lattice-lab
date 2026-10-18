@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 126 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 127 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -32,7 +32,7 @@ default branch and no pull request is open; merging is a decision for you.
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 126 tests
+uv sync && uv run pytest              # 127 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -56,7 +56,7 @@ before the runs that tested them.
 
 | Finding | Status | Write-up |
 | --- | --- | --- |
-| Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; proved for odd parts up to 999 except ten | [xor-periods.md](xor-periods.md), [xor-periods-proof.md](xor-periods-proof.md) |
+| Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; the 2-part, P(2^v m) = 2^v P(m), **proved in Lean** for every m > 1; the odd part checked by machine up to 999 except ten | [xor-periods.md](xor-periods.md), [xor-periods-proof.md](xor-periods-proof.md), [proofs.md](proofs.md) |
 | Hexagon parity rule B135/S135: period 2 * 2^v(n) R(m) | first law refuted at 3 of 70 sizes; the corrected law was confirmed at 100 and **proved for every even n** | [parity-lattices.md](parity-lattices.md) |
 | Triangle parity rules: 2 * 2^v(n) (2^sord(m) - 1) | confirmed at 154 sizes; the 2-part is proved; the odd part is checked by machine to 999 except ten | [parity-lattices.md](parity-lattices.md) |
 | Kepler finds the hexagon law itself, given 1D rule periods in its vocabulary | registered replay, 8 of 8 | [parity-lattices.md](parity-lattices.md#kepler-with-a-wider-vocabulary) |
@@ -127,12 +127,14 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      general 2 x 2 case (E+VO+VS) has P / gcd(P, 2) = P(s);
    - **round 3's twisted power on the atlas's own torus**: if 3 = +-2^k mod m, then at n = 2^v m
      the odd part of VO+T13's period is P / gcd(P, 1 + 2^k), where P is the odd part of E's.
-     Among round 3's tested sizes, this lowers the period exactly at its seven VO+T13 failures.
+     Among round 3's tested sizes, this lowers the period exactly at its seven VO+T13 failures;
+   - **the XOR law's 2-part** (`TwoPart.lean`): P(2^v m) = 2^v P(m) for B1357/S1357 and N4, for
+     every odd m > 1. A Jordan block of rule 90 along y forces even periods at 2m. So the XOR law
+     at every size is exactly the law at its odd parts.
 
    They rest on Lean's standard axioms only. Next:
-   - the exact 2-parts, which need the nilpotent analysis of parity-lattices.md:
-     - 2^v for the square XOR rule, via `period_eq_two_pow_mul_of_double` once P(2m) = 2 P(m);
-     - 2 * 2^v for the hexagon and the triangles;
+   - the exact 2-parts on the hexagon and the triangles (2 * 2^v), with Jordan blocks of the same
+     kind;
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
    - then, as research:
    - the rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square

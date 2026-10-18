@@ -71,6 +71,7 @@ def certificate(lhs: sp.Expr, rhs: sp.Expr) -> tuple[sp.Expr, sp.Expr, sp.Expr]:
 SQUARE = {
     "sqN4": ("N4",),
     "sqN4self": ("N4", "self"),
+    "sqN4D4": ("N4", "D4"),
     "sqD4": ("D4",),
     "sqK8": ("K8",),
     "sqN4D4self": ("N4", "D4", "self"),
@@ -111,6 +112,7 @@ DOCS = {
     "hexH1": "The hexagon's parity rule H1 (B135/S135): the six nearest cells, axial coordinates.",
     "sqN4": "The square's four nearest cells (the sigma automaton).",
     "sqN4self": "The square's four nearest cells and the cell itself (the sigma-plus automaton).",
+    "sqN4D4": "The square's eight-neighbour parity rule B1357/S1357 (the XOR law's rule).",
     "sqD4": "The square's four diagonal cells.",
     "sqK8": "The square's eight cells at distance sqrt 5 (knight moves).",
     "sqN4D4self": "The square's nine-cell parity rule with the cell itself (B1357/S02468).",
@@ -330,7 +332,7 @@ def render() -> str:
 # --- the neighbourhoods, for the theorems about periods -----------------------------------------
 
 # The plane rules whose periods Periods.lean states, by name in P.
-RULES = ["sqN4", "sqN4self", "sqN4K8C4", "sqA4K8C4self", "sqC4self", "hexH1"]
+RULES = ["sqN4", "sqN4self", "sqN4D4", "sqN4K8C4", "sqA4K8C4self", "sqC4self", "hexH1"]
 
 
 def offsets(name: str) -> list[tuple[int, int]]:

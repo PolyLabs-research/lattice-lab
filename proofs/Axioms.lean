@@ -35,3 +35,8 @@ import LatticeProofs
 #print axioms LatticeProofs.atlasTriPeriod_twisted
 #print axioms LatticeProofs.atlasTriPeriod_triEVOVS
 #print axioms LatticeProofs.hexPeriod_eq_two_pow_mul
+#print axioms LatticeProofs.even_of_jordan
+#print axioms LatticeProofs.period_two_mul_of_proj
+#print axioms LatticeProofs.period_sqN4D4
+#print axioms LatticeProofs.period_sqN4
+#print axioms LatticeProofs.period_sqN4D4_dvd

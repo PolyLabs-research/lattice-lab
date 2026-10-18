@@ -27,6 +27,10 @@ def sqN4 (x xi y yi : R) : R :=
 def sqN4self (x xi y yi : R) : R :=
   xi + yi + 1 + y + x
 
+/-- The square's eight-neighbour parity rule B1357/S1357 (the XOR law's rule). -/
+def sqN4D4 (x xi y yi : R) : R :=
+  xi*yi + xi + xi*y + yi + y + x*yi + x + x*y
+
 /-- The square's four diagonal cells. -/
 def sqD4 (x xi y yi : R) : R :=
   xi*yi + xi*y + x*yi + x*y

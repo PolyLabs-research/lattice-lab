@@ -6,3 +6,4 @@ import LatticeProofs.Triangle
 import LatticeProofs.Tori
 import LatticeProofs.Rules
 import LatticeProofs.Periods
+import LatticeProofs.TwoPart

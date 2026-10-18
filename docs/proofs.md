@@ -16,7 +16,9 @@ the pipeline. It covers:
 - **the bound**: on an odd torus the period divides 2^ord(m) − 1, and for a symmetric rule
   2^sord(m) − 1;
 - **triangular tori**, including rules with all four matrix entries, and **round 3's twisted
-  power on the atlas's own torus**.
+  power on the atlas's own torus**;
+- **the XOR law's 2-part**: for B1357/S1357, P(2^v m) = 2^v P(m) at every n whose odd part m is
+  greater than 1. So the XOR law holds at every size exactly when it holds at the odd sizes.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -242,14 +244,43 @@ rule's period is 2^a P(m) for some a ≤ v + 1. Here P(m) is its period on the s
 m, in axial coordinates. For H1 this is the hexagon law 2 · 2^v(n) · R(m) with its 2-part bounded
 by the law's own 2 · 2^v. The odd part is that of a rule on (Z/m)².
 
+### The XOR law's 2-part (`LatticeProofs/TwoPart.lean`)
+
+`period_eq_two_pow_mul_of_double` reduces the 2-part at every even size to the single size 2m.
+This file settles that size for the XOR rule, and for N4, with a Jordan block rather than the
+local-ring analysis of [xor-periods-proof.md](xor-periods-proof.md#4-even-sizes-reduce-to-odd-ones).
+
+- **Functionals.** A weight ψ on cells gives the linear functional `pair ψ` on configurations.
+  One step of the rule turns it into the functional of the adjoint weight `adj ψ` (`pair_gstep`).
+- **A Jordan block forces even periods** (`even_of_jordan`). Suppose adj ψ₁ = λψ₁ and
+  adj ψ₂ = λψ₂ + μψ₁, with λ and μ nonzero, and some configuration pairs to nonzero with ψ₁. Along
+  its orbit the second functional picks up t·λ^(t−1)·μ, and t is only periodic mod 2. So every
+  period is even.
+- **The XOR rule acts as rule 90 along y** on weights that depend only on y. The x-neighbours
+  come in pairs that cancel (`sqN4D4_proj`; `sqN4_proj` for N4).
+- **On the 2m-cycle, rule 90 has such a block.** Take ζ a primitive m-th root of unity. The
+  weights ζ^y and ζ^y·[y even] have λ = μ = ζ + 1/ζ, which is nonzero for odd m > 1. A single live
+  cell pairs to 1 with the first.
+
+| Theorem | Statement |
+| --- | --- |
+| `period_two_mul_of_proj` | for odd m > 1, P(2m) = 2 P(m) for every rule that acts as rule 90 along y |
+| `period_sqN4D4` | **the XOR law's 2-part**: P(2^v m) = 2^v P(m) for B1357/S1357, with m odd > 1 and v ≥ 1 |
+| `period_sqN4` | the same for N4 |
+| `period_sqN4D4_dvd` | with the bound, P(n) divides 2^v (2^s − 1) whenever 2^s ≡ ±1 (mod m) |
+
+So the XOR law P(n) = 2^v(n) (2^sord(m) − 1) holds at every n with m > 1 exactly when it holds at
+the odd part m. At the odd parts it is the open core, checked by machine up to 999 except ten.
+
 ## What is not
 
-- **Exact 2-parts.** The reduction bounds the 2-part and, on the square, reduces it to the size
-  2m. The exact values need the analysis of nilpotent parts in
-  [xor-periods-proof.md](xor-periods-proof.md#4-even-sizes-reduce-to-odd-ones) and
-  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved), which is not formalised.
-  Those values are 2^v for B1357/S1357 (m > 1), 2 · 2^v for the hexagon (m ≥ 5), and 2 · 2^v for
-  the triangles (m ≥ 3).
+- **The exact 2-parts on the hexagon and the triangles.** For the square XOR rule it is proved
+  (`period_sqN4D4`). The hexagon (2 · 2^v at m ≥ 5) and the triangles (2 · 2^v at m ≥ 3) need
+  their own blocks. The reduction already bounds them by exactly those values. The hand proofs in
+  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved) read the blocks off in
+  subgroups of order 4 and 2.
+- **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
+  That is not formalised.
 - **The hexagon's R(m).** Formally, the odd part is H1's period on (Z/m)². That this equals rule
   90's period on the m-cycle (step 5 of the hexagon theorem's proof) is not formalised; there are
   no one-dimensional tori here yet.
@@ -290,3 +321,5 @@ mean what the atlas means.
 - The atlas's triangular and hexagonal tori, as modelled in `Tori.lean`, are checked against the
   atlas's engine at n = 6, 10, 12 and 14, and their periods against the reduction theorems' form.
 - The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.
+- The XOR law's 2-part is checked with the exact engine for B1357/S1357 and N4 at
+  m = 3, 5, 7, 9 and 11, with v = 1 and 2.

@@ -190,3 +190,28 @@ def test_the_atlas_tori_of_tori_lean_are_the_atlas_engines():
         assert eventual_period(hexagon(n)) == p, n
         a = two_power(p, eigen.odd_part(atlas3.polynomial("hexagon", ("H1",)), m))
         assert a is not None and a <= v + 1, n
+
+
+def test_the_xor_law_two_part_agrees_with_the_atlas():
+    """TwoPart.lean: for n = 2^v m with m odd, m > 1 and v >= 1, the XOR rule B1357/S1357 and N4
+    have period exactly 2^v P(m) on the square torus of side n."""
+    _generator()
+    import atlas3
+    import numpy as np
+
+    def period(shells, n):
+        _, step = atlas3.build("square", shells, n)
+        seen, power = {}, step.identity()
+        for t in range(5000):
+            key = np.asarray(power.e[0][0], dtype=np.uint8).tobytes()
+            if key in seen:
+                return t - seen[key]
+            seen[key] = t
+            power = power * step
+        raise AssertionError("no repeat")
+
+    for shells in [("N4", "D4"), ("N4",)]:
+        for m in [3, 5, 7, 9, 11]:
+            base = period(shells, m)
+            for v in [1, 2]:
+                assert period(shells, 2**v * m) == 2**v * base, (shells, m, v)

@@ -26,7 +26,7 @@ reasoning after the fact went beyond the tools, the write-up says so.
 
 | Finding | Status | Write-up | Studies |
 | --- | --- | --- | --- |
-| Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; proved for odd parts up to 999 except ten | [xor-periods.md](docs/xor-periods.md), [proof](docs/xor-periods-proof.md) | `xor-periods*` |
+| Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; the 2-part proved in Lean at every size (odd part > 1); the odd part settled by machine up to 999 except ten | [xor-periods.md](docs/xor-periods.md), [proof](docs/xor-periods-proof.md), [proofs.md](docs/proofs.md) | `xor-periods*` |
 | Hexagon parity rule B135/S135: period 2 * 2^v(n) R(m), R = rule 90's period | the first law was refuted at 3 of 70 sizes; the corrected law was confirmed at 100 and **proved for every even n** | [parity-lattices.md](docs/parity-lattices.md) | `parity-lattices*` |
 | Triangle parity rules: period 2 * 2^v(n) (2^sord(m) - 1) | confirmed at 154 sizes; the factor 2 * 2^v(n) is proved; the odd part is checked by machine for odd parts up to 999 except ten | [parity-lattices.md](docs/parity-lattices.md) | `parity-lattices*` |
 | Kepler, given rule periods in its vocabulary, finds the hexagon law itself | confirmed in a registered replay (8 of 8 expectations) | [parity-lattices.md](docs/parity-lattices.md#kepler-with-a-wider-vocabulary) | `kepler-rediscovery` |
@@ -36,7 +36,7 @@ reasoning after the fact went beyond the tools, the write-up says so.
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated on tori up to 1024, where the power law is rejected | [settling-time.md](docs/settling-time.md) | `lab-b2s34`, `settling-time-replication` |
 | Settling-time fluctuations are universal, with extreme-value (Gumbel) shape and ratio | eight random rules on four lattice types; a first apparent miss for B2/S34 was a low draw | [settling-time.md](docs/settling-time.md) | `settling-universality`, `settling-time-local` |
 | Cumulative births under B1357/S1357 are always even | found in the data, then proved | [capabilities.md](docs/capabilities.md) | `capabilities` |
-| The atlas's mechanisms, formally | **proved in Lean** (mathlib, standard axioms only): the 18 identities behind them; the bridge, that a rule's period on an odd torus is the lcm of its nonzero eigenvalues' orders; the reduction from even sizes to odd parts on the square and the atlas's own triangular and hexagonal tori; round 2's cube and dilation at every size; round 3's twisted power on the atlas's own triangular torus; and the full bound, that the period divides 2^sord(m) - 1 | [proofs.md](docs/proofs.md) | `proofs/` |
+| The atlas's mechanisms, formally | **proved in Lean** (mathlib, standard axioms only): the 18 identities behind them; the bridge, that a rule's period on an odd torus is the lcm of its nonzero eigenvalues' orders; the reduction from even sizes to odd parts on the square and the atlas's own triangular and hexagonal tori; round 2's cube and dilation at every size; round 3's twisted power on the atlas's own triangular torus; the XOR law's 2-part at every size; and the full bound, that the period divides 2^sord(m) - 1 | [proofs.md](docs/proofs.md) | `proofs/` |
 
 ## Install
 
