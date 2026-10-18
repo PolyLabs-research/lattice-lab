@@ -1,0 +1,972 @@
+{
+ "shells": [
+  {
+   "rule": "square L8",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square L8",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square L8",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square L8",
+   "n": 10,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square M8",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square M8",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square M8",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square M8",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square E4",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square E4",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square E4",
+   "n": 9,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square E4",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square L8+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square L8+self",
+   "n": 8,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square L8+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square L8+self",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+M8",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+M8",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+M8",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square N4+M8",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "square D4+E4+self",
+   "n": 7,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+E4+self",
+   "n": 8,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "square D4+E4+self",
+   "n": 9,
+   "direct": 7,
+   "exact": 7,
+   "agree": true
+  },
+  {
+   "rule": "square D4+E4+self",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H5",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H5",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H5",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H13",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H13",
+   "n": 10,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H13",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4+self",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4+self",
+   "n": 12,
+   "direct": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H13",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H13",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H13",
+   "n": 12,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 12,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T9",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T9",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle T9",
+   "n": 12,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle T13",
+   "n": 8,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T13",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle T13",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7+self",
+   "n": 8,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7+self",
+   "n": 10,
+   "direct": 12,
+   "exact": 12,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7+self",
+   "n": 12,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T13",
+   "n": 8,
+   "direct": 8,
+   "exact": 8,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T13",
+   "n": 10,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T13",
+   "n": 12,
+   "direct": 4,
+   "exact": 4,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T9+self",
+   "n": 8,
+   "direct": 2,
+   "exact": 2,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T9+self",
+   "n": 10,
+   "direct": 6,
+   "exact": 6,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T9+self",
+   "n": 12,
+   "direct": 1,
+   "exact": 1,
+   "agree": true
+  }
+ ],
+ "odd parts": [
+  {
+   "rule": "square L8",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square L8",
+   "n": 12,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square L8",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+C4+L8",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+C4+L8",
+   "n": 12,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+C4+L8",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square A4+K8+L8+M8+E4+self",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square A4+K8+L8+M8+E4+self",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square A4+K8+L8+M8+E4+self",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+C4+M8+E4",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+C4+M8+E4",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square D4+A4+C4+M8+E4",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square D4+K8+C4+E4+self",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square D4+K8+C4+E4+self",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square D4+K8+C4+E4+self",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+B4+C4+L8",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+B4+C4+L8",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+A4+K8+B4+C4+L8",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+B4+C4+L8+E4",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+B4+C4+L8+E4",
+   "n": 12,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+B4+C4+L8+E4",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+K8+L8+M8+E4",
+   "n": 11,
+   "period": 31,
+   "odd part": 31,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+K8+L8+M8+E4",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "square N4+D4+A4+K8+L8+M8+E4",
+   "n": 15,
+   "period": 15,
+   "odd part": 15,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 12,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H4",
+   "n": 20,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H5+self",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H4+H13+self",
+   "n": 12,
+   "period": 8,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H4+H13+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H4+H13+self",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+H4+H5",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+H4+H5",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H3+H4+H5",
+   "n": 20,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+self",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+self",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+H4+H13",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+H4+H13",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H2+H3+H4+H13",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+H13+self",
+   "n": 12,
+   "period": 2,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+H13+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "hexagon H1+H2+H4+H5+H13+self",
+   "n": 20,
+   "period": 12,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 12,
+   "period": 1,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle T7",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+T9+self",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+T9+self",
+   "n": 18,
+   "period": 14,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+T9+self",
+   "n": 20,
+   "period": 12,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T7+T13+self",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T7+T13+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+T7+T13+self",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T7+T9",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T7+T9",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle VS+T7+T9",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+self",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+self",
+   "n": 20,
+   "period": 24,
+   "odd part": 3,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+T7+T13",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+T7+T13",
+   "n": 18,
+   "period": 14,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle VO+VS+T7+T13",
+   "n": 20,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+T13+self",
+   "n": 12,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+T13+self",
+   "n": 18,
+   "period": 28,
+   "odd part": 7,
+   "agree": true
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+T13+self",
+   "n": 20,
+   "period": 4,
+   "odd part": 1,
+   "agree": true
+  }
+ ],
+ "old data": {
+  "agree": 7746,
+  "disagree": [
+   {
+    "rule": "square A4+K8+B4+self",
+    "n": 37,
+    "m": 37,
+    "predicted": 262143,
+    "odd part": 87381,
+    "why": "full bound",
+    "source": "round 2"
+   },
+   {
+    "rule": "square A4+C4+self",
+    "n": 13,
+    "m": 13,
+    "predicted": 63,
+    "odd part": 7,
+    "why": "full bound",
+    "source": "round 2"
+   },
+   {
+    "rule": "square A4+C4",
+    "n": 13,
+    "m": 13,
+    "predicted": 63,
+    "odd part": 7,
+    "why": "full bound",
+    "source": "round 2"
+   },
+   {
+    "rule": "square A4+K8+B4+C4+self",
+    "n": 13,
+    "m": 13,
+    "predicted": 63,
+    "odd part": 21,
+    "why": "full bound",
+    "source": "round 2"
+   }
+  ],
+  "no prediction": 78
+ }
+}
