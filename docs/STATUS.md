@@ -67,7 +67,7 @@ before the runs that tested them.
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated to L = 1024; power law rejected | [settling-time.md](settling-time.md) |
 | Settling-time fluctuations: one shape and ratio across lattices (Gumbel values) | eight random rules on four lattice types; B2/S34's early miss was a low draw | [settling-time.md](settling-time.md) |
 | Cumulative births under B1357/S1357 are always even | found in data, then proved | [capabilities.md](capabilities.md) |
-| An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts | two pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15 and 40 of 40. The second ran in its own container, with its whole transcript audited. Adaptation of a known technique, not discovery | [llm-pilot.md](llm-pilot.md) |
+| An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
 
@@ -138,7 +138,10 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
    - **the triangle laws' 2-part** (`TriTwoPart.lean`, by the second pilot's agent): both
      triangle parity rules have period exactly 2^(v+1) P(m) on the atlas's triangular torus, for
      odd m >= 3. So each triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) - 1, the
-     open odd-part statement.
+     open odd-part statement;
+   - **VO + T13's law** (`VOT13Law.lean`, found from data and proved by the third pilot's agent):
+     period 2^(v+1) P(m) for m >= 3, and 2^(v-1) at n = 2^v, on the atlas's triangular torus at
+     every even n >= 4. The m = 1 case uses finite checks by kernel `decide` on two small tori.
 
    They rest on Lean's standard axioms only. Next:
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
@@ -148,12 +151,17 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot` and
-   `examples/llm-pilot-triangle`). Two pilots have worked: fresh agents proved the hexagon and
-   triangle laws' 2-parts from a card, judged by Lean. The second ran in its own cloud session,
-   whose container cloned only an orphan sandbox branch, and its transcript was audited. Next:
-   - a pilot where the agent must find the statement as well, from data;
-   - then an open question, such as m = 37 (item 1).
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Three pilots
+   have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, and in the
+   third found VO + T13's law from data and proved it, judged by Lean. The last two ran in their
+   own cloud sessions, whose containers cloned only an orphan sandbox branch, and their
+   transcripts were audited. Next:
+   - an open question, such as m = 37 (item 1), where the orchestrator does not know the answer;
+   - a law that is not one division away in the data, such as a rule round 3 left unexplained.
+
+   Each pilot leaves two branches (`pilot-sandbox-*`, `pilot-*-submission`) that this session's
+   git proxy would not delete; each pilot's `branches.bundle` holds everything on them, so they
+   can be deleted on GitHub.
 5. **A specialist's view.**
    - The literature search was brief, and specialists in linear cellular automata may know parts
      of this.

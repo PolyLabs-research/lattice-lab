@@ -40,9 +40,9 @@ def library_files(root: Path) -> list[Path]:
     files = [root / "lakefile.toml", root / "lean-toolchain", root / "lake-manifest.json"]
     files += [root / "LatticeProofs.lean", root / "Axioms.lean", root / "check.sh"]
     files += sorted((root / "LatticeProofs").glob("*.lean"))
-    # HexTwoPart.lean is the pilot's own answer, and TriTwoPart.lean the second pilot's, both
-    # added to the library afterwards.
-    later = ("Pilot.lean", "HexTwoPart.lean", "TriTwoPart.lean")
+    # HexTwoPart.lean is the pilot's own answer, and TriTwoPart.lean and VOT13Law.lean the later
+    # pilots', all added to the library afterwards.
+    later = ("Pilot.lean", "HexTwoPart.lean", "TriTwoPart.lean", "VOT13Law.lean")
     return [f.relative_to(root) for f in files if f.name not in later]
 
 

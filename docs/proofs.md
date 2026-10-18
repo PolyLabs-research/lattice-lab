@@ -24,7 +24,10 @@ the pipeline. It covers:
   [llm-pilot.md](llm-pilot.md);
 - **the triangle laws' 2-part**: for both triangle parity rules, P(2^v m) = 2^(v+1) P(m) on the
   atlas's triangular torus at every m ≥ 3. The second pilot's agent proved this. So each
-  triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) − 1, the open odd-part statement.
+  triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) − 1, the open odd-part statement;
+- **VO + T13's law**: P(2^v m) = 2^(v+1) P(m) for m ≥ 3, and P(2^v) = 2^(v−1), on the atlas's
+  triangular torus at every even n ≥ 4. The third pilot's agent found this law from data and
+  proved it.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -327,6 +330,31 @@ This is the hand proof's route (steps 4 and 5 of the triangles in
 the same coefficients. For the edge+vertex rule it also settles the factor 2, which
 `gtriPeriod_triEVOVS` gives only as P / gcd(P, 2) = P(s).
 
+### VO + T13's law (`LatticeProofs/VOT13Law.lean`, by the third pilot's agent)
+
+This file is the third LLM pilot's proof, verbatim ([llm-pilot.md](llm-pilot.md)). The agent was
+given a question and data, not the statement. It found the law, defined it as `vot13TwoExp`, and
+proved it.
+
+- **m ≥ 3** follows `TriTwoPart.lean`: on Z/2m × Z/m the same weights give a Jordan block with
+  λ = 1 and μ = (ζ + 1/ζ)³ (`triSub_even_triSVOT13`), from the twisted factorisation
+  s = s_E(x, y) s_E(x³, y³) (`triangle_VOT13_twisted`).
+- **m = 1** needs another argument, since there is no nontrivial character. A rule is the
+  identity on a torus if its translations land an odd number of times on 0 and an even number of
+  times elsewhere (`gstep_eq_self_of_fibers`). Kernel `decide` checks that s is the identity on
+  Z/4 × Z/2 (`gstep_triSub_two`), that 2s is the identity on Z/8 × Z/4
+  (`gstep_triSub_four_twice`), and that s is not (`gstep_triSub_four_ne`). With the restriction
+  lemma these give a period of 2^(v−1) and rule out 2^(v−2) (`atlasTriPeriod_triVOT13_two_pow`).
+
+| Theorem | Statement |
+| --- | --- |
+| `atlasTriPeriod_triVOT13_exact` | for m odd ≥ 3, VO + T13 has period exactly 2^(v+1) P(s, m) |
+| `atlasTriPeriod_triVOT13_two_pow` | at n = 2^v, v ≥ 2, it has period exactly 2^(v−1) |
+| `atlasTriPeriod_triVOT13_law` | **VO + T13's law**: for every even n = 2^v m ≥ 4, period 2^(vot13TwoExp v m) P(s, m), with `vot13TwoExp v m = if m = 1 then v - 1 else v + 1` |
+
+At m = 1 the edge rule's period is 2^v and the edge+vertex rule dies, so VO + T13 matches
+neither; no hand proof covered this case.
+
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.
@@ -370,8 +398,9 @@ mean what the atlas means.
 - The atlas's triangular and hexagonal tori, as modelled in `Tori.lean`, are checked against the
   atlas's engine at n = 6, 10, 12 and 14, and their periods against the reduction theorems' form.
   H1's 2-part is checked to be exactly 2^(v+1) at the sizes with m ≥ 5, and so are the two
-  triangle parity rules'. The pilots' registered studies checked the hexagon law at 15 further
-  sizes up to 1024, and both triangle laws at 20 further sizes up to 1024.
+  triangle parity rules' and VO + T13's; VO + T13's period n/2 at n = 4, 8 and 16 is checked
+  too. The pilots' registered studies checked the hexagon law at 15 further sizes up to 1024,
+  both triangle laws at 20, and VO + T13's law at 20, all up to 1024.
 - The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.
 - The XOR law's 2-part is checked with the exact engine for B1357/S1357 and N4 at
   m = 3, 5, 7, 9 and 11, with v = 1 and 2.

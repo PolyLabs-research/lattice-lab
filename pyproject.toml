@@ -40,7 +40,11 @@ packages = ["src/lattice_lab"]
 [tool.ruff]
 line-length = 100
 # The LLM pilots' submissions are kept verbatim, as the agents wrote them.
-extend-exclude = ["examples/llm-pilot/submission", "examples/llm-pilot-triangle/submission"]
+extend-exclude = [
+    "examples/llm-pilot/submission",
+    "examples/llm-pilot-triangle/submission",
+    "examples/llm-pilot-vot13/submission",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

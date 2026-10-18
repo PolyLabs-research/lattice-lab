@@ -1,29 +1,32 @@
-# The LLM-central pilots: the hexagon and triangle laws' 2-parts
+# The LLM-central pilots: three period laws, proved by agents
 
-**Result: in both pilots so far, a fresh agent, given only a problem card and the Lean library,
-proved its theorems on the first attempt.** The judge accepted each proof, not the agent's own
-report:
+**Result: in all three pilots so far, a fresh agent, given only a problem card and the Lean
+library, proved its theorem on the first attempt. In the third it also found the law itself,
+from data.** The judge accepted each proof, not the agent's own report:
 
 - the proof builds against the real library;
 - the statements match pinned copies;
 - the axioms are only Lean's standard three.
 
-Each law's registered predictions, at sizes nobody had computed, all held. Both proofs are now in
-the library, verbatim: `HexTwoPart.lean` and `TriTwoPart.lean`.
+The registered predictions, at sizes nobody had computed, all held. In pilot 3 the agent's own
+law also held at all 20 held-out sizes, which it never saw. All three proofs are now in the
+library, verbatim: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean`.
 
-| | Pilot 1: the hexagon law | Pilot 2: the triangle laws |
-| --- | --- | --- |
-| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` |
-| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox |
-| Isolation | by instruction only | a separate container, and the whole transcript audited |
-| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 of them waiting for its own mathlib build), 40 calls |
-| Judge | passed in round 1 | passed in round 1 |
-| The agent's own checks | 56 of 56 | 54 of 54 |
-| Registered test | 15 of 15 sizes | 40 of 40 predictions |
-| Route, against the hand proof | a different one | the same one |
+| | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law |
+| --- | --- | --- | --- |
+| Given | the statement | the statements | a question and data |
+| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` |
+| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 |
+| Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 |
+| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls |
+| Judge | passed in round 1 | passed in round 1 | passed in round 1 |
+| The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 |
+| Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 |
+| Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 |
 
     examples/llm-pilot/                 pilot 1: card, tools, sandbox, judge, study, log, submission
     examples/llm-pilot-triangle/        pilot 2: the same, plus setup.sh, audit.py, transcript/
+    examples/llm-pilot-vot13/           pilot 3: the same, plus data/, exact.py, transcript.py
 
 ## Why pilots
 
@@ -33,6 +36,69 @@ answer is known but which the agent could not look up. That makes it possible to
 loop's mechanics rather than the problem. The exact 2-parts of the parity laws were such
 problems: each had a hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
 and the library had the odd parts and the upper bounds, but not the exact 2-parts.
+
+## Pilot 3: find VO + T13's law
+
+**The problem.** VO + T13 is the triangle rule of round 3's twisted power. The library knew its
+period on the atlas's triangular torus is 2^(a+1) P(s, m) for some a ≤ v, and nothing more about
+a. The first two pilots gave the agent the statement. This one gave it a question and data:
+find the exact power of 2 at every even n ≥ 4, as a formula in v and m; define it as
+`vot13TwoExp`; and prove the pinned theorem
+
+    atlasTriPeriod n triVOT13 = 2 ^ vot13TwoExp v m * period m triSVOT13Offsets
+
+for m odd, v ≥ 1 and n = 2^v m ≥ 4, with the agent's own definition in it.
+
+**What the agent had.** The card, the library (now with pilots 1 and 2's proofs), the tools, and
+`data/vot13_periods.csv`: the exact period at every even n from 4 to 64. Nothing said that the
+answer depends on m.
+
+**What the orchestrator knew, and the agent did not.** At sizes all computed before, the exponent
+is v + 1 for m ≥ 3, like the other triangle rules, and the period is 2^(v−1) at m = 1. The edge
+rule has 2^v there and the edge+vertex rule dies, so VO + T13 matches neither, and no hand proof
+covered the case. This law was registered at 20 held-out sizes from 408 to 1024 before the launch,
+and held at all 20. The study recorded each exact period there, to judge the agent's law against.
+
+**The judge's new checks.** The agent's law had to be a formula: `#eval` computed it at every
+point of the data and of the held-out sizes, and at v = 100000, or the round failed. The law was
+then compared with the data and with the held-out periods. The agent was told the held-out
+comparison existed but never its result.
+
+**What happened** (`examples/llm-pilot-vot13/log.md`):
+
+1. **The law, from data, in three minutes.** The agent divided the odd part, computed with the
+   tools, out of every row of the data. The quotient was always a power of 2, with exponent v + 1
+   at m ≥ 3 and v − 1 at m = 1. It defined
+   `vot13TwoExp v m = if m = 1 then v - 1 else v + 1`, the orchestrator's law.
+2. **The proof, before Lean existed.** Eight minutes after launch it had written the whole proof,
+   m = 1 included. It then waited 41 minutes for its mathlib build. On the first compile one
+   `linear_combination` coefficient was wrong; it fixed that and pushed its report 53 minutes after
+   launch.
+3. **The judge passed it in round 1** (`judgements/round-1.json`). The law computed in 5.5 s and
+   agreed with all 31 data rows and **all 20 held-out sizes**. All ten theorems in the file rest
+   on the standard axioms. The audit found no step across the boundary.
+
+**The mechanism** (`VOT13Law.lean`):
+
+- **m ≥ 3** follows `TriTwoPart.lean`. On the sub-torus Z/2m × Z/m the same weights give a Jordan
+  block with λ = 1 and μ = (ζ + 1/ζ)³. The agent derived μ from the twisted factorisation
+  s = s_E(x, y) s_E(x³, y³) (`triangle_VOT13_twisted`), with λ multiplying and μ following the
+  product rule.
+- **m = 1 is new.** There is no nontrivial character, so no Jordan block. The agent proved a
+  general fibre lemma, `gstep_eq_self_of_fibers`: a rule is the identity on a torus if its
+  translations land an odd number of times on 0 and an even number of times on every other cell.
+  It then proved three finite facts by kernel `decide` (49 translations, on tori of 8 and 32
+  cells):
+  1. s is the identity on Z/4 × Z/2, so by the restriction lemma 2^(v−1) is a period;
+  2. 2s is the identity on Z/8 × Z/4, so s is an involution there;
+  3. s is not the identity on Z/8 × Z/4: from one live cell at 0, the cell (6, 0) becomes live.
+     So 2^(v−2) is not a period when v ≥ 3.
+
+  At v = 2 the layer-parity argument makes the period even. So at m = 1 the period is exactly
+  2^(v−1) = n/2.
+
+This is the first pilot in which the agent was not given the statement, and its m = 1 case had
+no proof of any kind before.
 
 ## Pilot 2: the triangle laws
 
@@ -211,32 +277,39 @@ verify` finds no problems):
 
 ## What the pilots show, and what they do not
 
-**They show that the loop's mechanics work end to end, twice, and now with real isolation.** A
-precise card, a sandbox and an automatic judge were enough. Acceptance was decided by Lean, the
-pinned statements and the axioms, not by the model's description of its work. In pilot 1 the
-agent carried a technique from the library, the Jordan block of the XOR law's proof, to a new
-setting. That needed a new idea, the intermediate sub-torus that keeps a Z/2 factor. In pilot 2,
-the agent ran in a container that held nothing it could look the answer up in, and its whole
-transcript shows it did not try.
+**They show that the loop's mechanics work end to end, three times, with real isolation in the
+last two.** A precise card, a sandbox and an automatic judge were enough. Acceptance was decided
+by Lean, the pinned statements and the axioms, not by the model's description of its work.
 
-**They do not show discovery, or reliability.**
-- Each statement was given, known to be true, and proved by hand elsewhere.
-- Each library held a closely analogous worked example, and the card named its lemmas. Pilot 2's
-  was pilot 1's own proof, and the agent said it copied its structure. So pilot 2 is the easier
-  test: it shows the adaptation is dependable when the analogy is close, not that the agent can
-  find a new idea.
-- Two runs, each on a different problem, and each passed first time. That says little about the
-  failure rate.
+- In pilot 1 the agent carried a technique from the library, the Jordan block of the XOR law's
+  proof, to a new setting. That needed a new idea, the intermediate sub-torus that keeps a Z/2
+  factor.
+- In pilot 2 the agent ran in a container that held nothing it could look the answer up in, and
+  its whole transcript shows it did not try.
+- In pilot 3 the agent found an unstated law from data, and it held at sizes it never saw. It
+  then proved a case for which no proof existed, with an argument of its own: the fibre lemma and
+  three finite checks, where the library's Jordan-block technique gives nothing.
+
+**They do not show discovery of anything hard, or reliability.**
+- Pilot 3's law was easy to read off the data: one division per row. The orchestrator had found
+  the same law beforehand, so the answer was known, if not to the agent.
+- The m = 1 case is small. Its proof reduces to finite computations on tori of 8 and 32 cells.
+- Each library held closely analogous worked examples, and the agents said they followed them.
+- Three runs, each on a different problem, each passed first time. That says little about the
+  failure rate, or about where the approach stops working.
 
 ## Next
 
-- **A pilot where the agent must find the statement too:** give it the data, not the law. For
-  example the hexagon at m = 3, or VO + T13, a triangle rule whose exact 2-part the library does
-  not state.
 - **An open question:** the m = 37 lead of [STATUS.md](STATUS.md), where nobody knows the answer.
+  Unlike pilot 3, the orchestrator would not know the answer either.
+- **A harder law from data:** a rule whose period law the atlas has not settled, so that the
+  law is not one division away. The rules round 3 left unexplained are candidates.
 - **Harness:**
   - the agent's branch name: the session was asked to push to `pilot-triangle-submission` and
     did, but its record first named the source branch, so the watcher and the judge accept
     either;
+  - the pilot branches cannot be deleted from the orchestrator's session (its git proxy refuses
+    ref deletion), so each pilot leaves two branches behind. `branches.bundle` in each pilot's
+    directory holds everything they had;
   - the transcript audit's path check reads `sed` patterns and URLs as paths. Its flags need a
     person, which is fine at this scale.
