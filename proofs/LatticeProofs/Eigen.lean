@@ -38,12 +38,9 @@ theorem three_dvd_one_add_two_pow {k : ℕ} (hk : Odd k) : 3 ∣ 1 + 2 ^ k := by
   obtain ⟨j, rfl⟩ := hk
   exact three_dvd_one_add_two_pow_odd j
 
-section CharTwo
+section Inverses
 
-variable {R : Type*} [CommRing R] [CharP R 2]
-
-theorem two_eq_zero_of_charTwo : (2 : R) = 0 := by
-  exact_mod_cast CharP.cast_eq_zero R 2
+variable {R : Type*} [CommRing R]
 
 /-- If x^a = x^b and x has inverse xi, then xi^a = xi^b. -/
 theorem inv_pow_eq {x xi : R} (hx : x * xi = 1) {a b : ℕ} (h : x ^ a = x ^ b) :
@@ -56,6 +53,15 @@ theorem inv_pow_eq {x xi : R} (hx : x * xi = 1) {a b : ℕ} (h : x ^ a = x ^ b) 
 
 theorem pow_mul_inv_pow {x xi : R} (hx : x * xi = 1) (d : ℕ) : x ^ d * xi ^ d = 1 := by
   rw [← mul_pow, hx, one_pow]
+
+end Inverses
+
+section CharTwo
+
+variable {R : Type*} [CommRing R] [CharP R 2]
+
+theorem two_eq_zero_of_charTwo : (2 : R) = 0 := by
+  exact_mod_cast CharP.cast_eq_zero R 2
 
 /-- The cube mechanism: every eigenvalue of N4 + K8 + C4 is the cube of N4's. -/
 theorem sqN4K8C4_value (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1) :
@@ -87,8 +93,8 @@ theorem triVOT13_value (k : ℕ) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi 
   have hE3 := triangle_E_square h2 (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)
     (pow_mul_inv_pow hx 3) (pow_mul_inv_pow hy 3)
   calc triDuVOT13 x xi y yi * triUdVOT13 x xi y yi
-      = (triUdE x xi y yi * triDuE x xi y yi) *
-          (triUdE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3) * triDuE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)) := by
+      = (triDuE x xi y yi * triUdE x xi y yi) *
+          (triDuE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3) * triUdE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)) := by
         rw [triangle_VOT13_twisted h2 x xi y yi hx hy]; ring
     _ = (1 + triVS x xi y yi) * (1 + triVS (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)) := by
         rw [hE, hE3]

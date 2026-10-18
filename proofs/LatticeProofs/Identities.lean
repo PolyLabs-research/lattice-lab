@@ -8,6 +8,9 @@ Lean's `ring` rechecks.
 import Mathlib.Algebra.CharP.Lemmas
 import Mathlib.Tactic.LinearCombination
 
+-- Some polynomials do not use every one of x, xi, y, yi.
+set_option linter.unusedVariables false
+
 namespace LatticeProofs
 
 variable {R : Type*} [CommRing R]

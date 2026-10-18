@@ -106,8 +106,18 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
    new rules, with `eigen.py` as the checker. Judge sizes below about 30 by the predicted chance of
    a coincidence, not by exactness.
-3. **Proofs.**
-   - The rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square
+3. **Proofs.** `proofs/` (Lean 4, mathlib v4.35.0; [proofs.md](proofs.md)) now formalises:
+   - the 12 identities behind the mechanisms, generated from the atlas code;
+   - the order lemma;
+   - the cube and twisted-power mechanisms at the eigenvalue level.
+
+   They rest on Lean's standard axioms only. Next:
+   - the bridge, period = lcm of eigenvalue orders, which needs the Fourier decomposition of
+     F2[(Z/m)^2];
+   - the dilation lemma;
+   - the hexagon theorem's 2-part;
+   - then, as research:
+   - the rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square
      D4+A4+self has period P150(n), and hexagon H2+H3+self has 2 P150(n). Both are confirmed but
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic

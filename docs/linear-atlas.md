@@ -550,6 +550,13 @@ has one. That points to structure at 37 that is not yet found.
 - **Proved or known:** N4 (Vadali and Turner), D4 and N4+D4+self (the tensor argument above),
   H1 (the hexagon theorem) and H3 = H1^2. The other laws are conjectures, confirmed exactly at
   every size tested.
+- **Formalised in Lean** ([proofs.md](proofs.md)):
+  - the identities behind every mechanism here: the hexagon's two steps, the splits, the cubes,
+    the dilation, the separable accident, the triangle's E^2 and round 3's twisted power;
+  - the order lemma;
+  - the cube and twisted-power mechanisms at the eigenvalue level.
+
+  The step from eigenvalue orders to periods is standard but not yet formalised.
 - **New, as far as two brief web searches went:**
   - the periods of the 2D rule-150 analogues (square D4+A4+self, hexagon H2+H3+self);
   - the full-bound family on all three lattices, including the Lights Out rule N4+self on the
