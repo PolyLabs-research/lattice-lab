@@ -126,5 +126,61 @@
    121,
    141
   ]
+ },
+ "version 3": {
+  "written": "2026-10-18T11:58:21+00:00",
+  "why": "Version 2 was wrong too: at untested sizes computed with eigen.py, VO+T13 falls short at 77 and 97 but not at 65, 85 or 91. A full factorisation over GF(2) (Kronecker substitution and recombination) gives s(VO+T13) = s_E(x, y) * s_E(x^3, y^3): the edge rule's s times its dilation by 3. Its eigenvalue at a character chi is s_E(chi) s_E(chi^3). When 3 = +-2^k mod m, chi^3 is a Frobenius twist of chi (s_E is symmetric), so the eigenvalue is lambda^(1 + 2^k), and the odd part is q / gcd(q, 1 + 2^k) if some lambda has full order. When 3 divides m or 3 is not +-2^k, nothing is predicted beyond q. This reproduces all 9 sizes computed so far (101, 103, 121, 141 in the run; 65, 77, 85, 91, 97 untested). Not registered.",
+  "expected odd part": {
+   "9": "7",
+   "11": "31",
+   "13": "63",
+   "15": "15",
+   "17": "15",
+   "19": "511",
+   "21": "63",
+   "23": "2047",
+   "25": "341",
+   "27": "511",
+   "29": "5461",
+   "31": "31",
+   "33": "31",
+   "35": "1365",
+   "37": "262143",
+   "39": "4095",
+   "41": "1023",
+   "43": "127",
+   "45": "4095",
+   "47": "8388607",
+   "49": "2097151",
+   "51": "255",
+   "53": "22369621",
+   "55": "349525",
+   "57": "511",
+   "59": "536870911",
+   "61": "1073741823",
+   "67": "8589934591",
+   "95": "22906492245",
+   "101": "375299968947541",
+   "103": "2251799813685247",
+   "111": "68719476735",
+   "121": "36028797018963967",
+   "141": "70368744177663"
+  },
+  "expected failures": [
+   25,
+   29,
+   35,
+   53,
+   55,
+   95,
+   101
+  ],
+  "already computed when written": [
+   101,
+   103,
+   111,
+   121,
+   141
+  ]
  }
 }
