@@ -115,3 +115,11 @@ was most likely typed in the Claude app. It says nothing about the problem.
   n = 6, 10, 12 and 14.
 - Both sandbox builders now leave out the proofs added after their pilots, so each rebuild
   reproduces what its agent saw.
+
+## Afterwards
+
+- `branches.bundle` holds both pilot branches with their complete history: the base `9d5a274`
+  and the agent's four commits up to `92c36f3`. `git clone branches.bundle` restores them.
+- The agent's session was archived. The two remote branches were to be deleted, but this
+  session's git proxy refuses ref deletion; they can be deleted on GitHub, since the bundle holds
+  everything they had.
