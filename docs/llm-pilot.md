@@ -1,32 +1,115 @@
-# The LLM-central pilot: the hexagon law's 2-part
+# The LLM-central pilots: the hexagon and triangle laws' 2-parts
 
-**Result: a fresh agent, given only a problem card and the Lean library, found the mechanism and
-proved the theorem on its first attempt.** It took 15 minutes, 35 tool calls and about 204,000
-tokens. The judge passed it, not the agent's own report:
+**Result: in both pilots so far, a fresh agent, given only a problem card and the Lean library,
+proved its theorems on the first attempt.** The judge accepted each proof, not the agent's own
+report:
 
 - the proof builds against the real library;
-- the statement matches a pinned copy;
+- the statements match pinned copies;
 - the axioms are only Lean's standard three.
 
-The registered test, which predicted the period at 15 hexagon sizes nobody had computed, held at
-all 15. The proof is now in the library as `proofs/LatticeProofs/HexTwoPart.lean`, verbatim.
+Each law's registered predictions, at sizes nobody had computed, all held. Both proofs are now in
+the library, verbatim: `HexTwoPart.lean` and `TriTwoPart.lean`.
 
-    examples/llm-pilot/        the card, tools, sandbox builder, judge, registered study, log
-    examples/llm-pilot/submission/   the agent's proof, proposal, checks, scratch files, report
+| | Pilot 1: the hexagon law | Pilot 2: the triangle laws |
+| --- | --- | --- |
+| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` |
+| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox |
+| Isolation | by instruction only | a separate container, and the whole transcript audited |
+| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 of them waiting for its own mathlib build), 40 calls |
+| Judge | passed in round 1 | passed in round 1 |
+| The agent's own checks | 56 of 56 | 54 of 54 |
+| Registered test | 15 of 15 sizes | 40 of 40 predictions |
+| Route, against the hand proof | a different one | the same one |
 
-## Why a pilot
+    examples/llm-pilot/                 pilot 1: card, tools, sandbox, judge, study, log, submission
+    examples/llm-pilot-triangle/        pilot 2: the same, plus setup.sh, audit.py, transcript/
+
+## Why pilots
 
 The goal set earlier was a loop with the LLM at its centre: it proposes mechanisms, and machines
 check them. Before aiming that loop at open questions, it needed a test on a problem whose
 answer is known but which the agent could not look up. That makes it possible to judge the
-loop's mechanics rather than the problem.
+loop's mechanics rather than the problem. The exact 2-parts of the parity laws were such
+problems: each had a hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
+and the library had the odd parts and the upper bounds, but not the exact 2-parts.
 
-The problem: the hexagon law says that H1 (B135/S135) has period 2 · 2^v · R(m) on the atlas's
-hexagonal torus of side n = 2^v m, for odd m ≥ 5. The library had proved the odd part and the
-upper bound on the 2-part (`hexPeriod_eq_two_pow_mul`). The exact 2-part, 2^(v+1), had a hand
-proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved) and no formal one.
+## Pilot 2: the triangle laws
 
-## Design
+**The problem.** The triangle law says that both triangle parity rules, the edge rule B13/S13
+(`triE`) and the edge+vertex rule B1,3,...,11/S1,3,...,11 (`triEVOVS`), have period
+2 · 2^v · L(m) on the atlas's triangular torus of side n = 2^v m, for odd m ≥ 3. The library had
+the odd part and bounds on the 2-part. The targets are the exact 2-parts, for both rules.
+
+**What changed from pilot 1.** Both of pilot 1's harness faults were fixed first:
+
+- **The Python environment.** Pilot 1's `python` was a symlink to the venv's interpreter, and
+  through a symlink Python does not find its venv: `import sympy` fails. A wrapper that runs the
+  interpreter by its venv path works. Pilot 2's sandbox makes its own venv (`setup.sh`) and uses
+  such a wrapper, and pilot 1's `sandbox.py` now writes one too.
+- **Isolation.** The agent ran in **its own cloud session**. Its container cloned only
+  `pilot-sandbox-triangle`, an orphan branch of this repository with one commit and no parent,
+  at depth 1. That branch holds the card, the tools, the Lean library and `setup.sh`, and no
+  docs/ or examples/. Neither the hand proofs nor the orchestrator's transcript were on its disk.
+  Reaching them would have taken a deliberate step, such as fetching another branch, adding a
+  repository, or reading another session. The rules forbade these steps, and the agent's whole
+  transcript, read from the server and not from anything the agent wrote, was audited for them
+  (`audit.py`). The user chose this layout; a separate repository was the alternative, but the
+  GitHub integration could not create one.
+- **Setup in a fresh container.** `setup.sh` installs elan and Lean from GitHub and builds mathlib
+  from source; it was tested in an empty home directory first.
+- **The judge** diffs the agent's branch against the base commit, and also checks the manifest,
+  so the agent may change only `Pilot.lean` and add its deliverables.
+
+**What happened.** The agent started its mathlib build, read the library, and wrote its numerical
+check. By 20:33 UTC, five minutes in and before any Lean was available, it had written the whole
+proof except four explicit eigenvalue sums. It then waited 31 minutes for its build. On the first
+compile the skeleton built, with only the four sums open; it closed them in two minutes, and
+pushed its report 41 minutes after launch. The judge passed it in round 1, so no feedback was ever
+sent (`judgements/round-1.json`). The full record is `examples/llm-pilot-triangle/log.md`.
+
+**The mechanism**, in the agent's words and lemmas (`TriTwoPart.lean`):
+
+1. Two steps of either rule are one step of its square's plane rule s on each layer. 2^(v−1)
+   steps of s are one step of 2^(v−1) s. Multiplication by 2^(v−1) embeds the torus
+   G′ = Z/2m × Z/m, with (x, y) ↦ (x − y, y), onto 2^(v−1) G (`triSubMul_injective`). So 2^v p
+   is a period of the rule exactly when p is a period of s on G′
+   (`isEventualPeriod_atlasTri_iff`).
+2. On G′, with ζ a primitive m-th root of unity, the weights ζ^a ζ^b and ζ^a ζ^b [a even] form a
+   Jordan block (`triSub_even`):
+   - for the edge rule, λ = 1 and μ = ζ + 1/ζ;
+   - for the edge+vertex rule, λ = μ = ζ² + 1/ζ².
+
+   Both are nonzero once ζ² ≠ 1, that is m ≥ 3, and `even_of_jordan` makes every period on G′
+   even.
+3. P(m) is odd, so with the library's bounds the 2-part is exactly 2^(v+1).
+
+This is **the hand proof's route**: the same level 2^(v−1), the same character (α = ζ, β = 1 in
+the hand proof's notation), and the same λ and w-coefficients. The agent says it copied
+`HexTwoPart.lean`'s structure. For the edge+vertex rule this also gives the factor 2, which the
+library had only as P / gcd(P, 2) = P(s).
+
+**The registered test** predicted both rules' periods at 20 sizes from 408 to 1024, above every
+size computed for them before. All 40 predictions held (`ledger.jsonl`, `records.jsonl`;
+`lattice-lab verify` finds no problems). The run finished at 20:47 UTC, before the agent had
+reported.
+
+**The audit** (`transcript/audit.json`) found no MCP tools, no web access, no subagents, no
+fetch or listing of other refs, and no mention of the write-ups. It raised seven flags. One is
+real but harmless: the agent read the output file of its own background command, in its own
+container's /tmp, which the card's "stay in this checkout" forbids. The other six are false
+positives (`sed` patterns and commit-trailer URLs). The session received one input that the
+orchestrator did not send, "continue once the build finishes" at 20:35 UTC
+(`transcript/inputs.md`); it has no recorded origin, was most likely typed in the Claude app, and
+says nothing about the problem.
+
+## Pilot 1: the hexagon law
+
+The hexagon law says that H1 (B135/S135) has period 2 · 2^v · R(m) on the atlas's hexagonal
+torus of side n = 2^v m, for odd m ≥ 5. The library had proved the odd part and the upper bound
+on the 2-part (`hexPeriod_eq_two_pow_mul`). The target was the exact 2-part, 2^(v+1).
+
+### Design
 
 Every piece below was committed and pushed (`c2d58ac`) before the agent started.
 
@@ -49,11 +132,11 @@ Every piece below was committed and pushed (`c2d58ac`) before the agent started.
   - the repository's own pinned statement elaborates against it, and `#print axioms` shows only
     `propext`, `Classical.choice` and `Quot.sound`.
 
-## What happened
+### What happened
 
 The agent was launched at 19:14 UTC, reported at 19:29, and the judge passed it at 19:30
-(`judgements/round-1.json`). One round, so no judge output was ever sent back. The full log is
-`examples/llm-pilot/log.md`.
+(`judgements/round-1.json`). One round, so no judge output was ever sent back. It took 35 tool
+calls and about 204,000 tokens. The full log is `examples/llm-pilot/log.md`.
 
 **The mechanism it found:**
 
@@ -113,40 +196,47 @@ verify` finds no problems):
 | 512 | 1 | 9 | 1 (dies, beyond the theorem) | yes |
 | 1024 | 1 | 10 | 1 (dies, beyond the theorem) | yes |
 
-## Issues
+### Issues
 
 - **The agent wrote to /tmp.** It put five scratch files in the session scratchpad, against the
   card, and said so in its report. That directory also holds the orchestrator's older scratch
   files. None of them contains the mechanism.
 - **The harness had a bug.** The sandbox's `python` was a symlink to the venv's interpreter, and
   through a symlink it does not activate the venv. So sympy was missing, although the card said
-  it was there. The agent reimplemented the cyclotomic factorisation it needed.
+  it was there. The agent reimplemented the cyclotomic factorisation it needed. Fixed for
+  pilot 2.
 - **Isolation was by instruction only.** The agent ran in the same container and could have read
   the hand proof. Its account is that it did not, and the different route is consistent with
-  that, but the pilot cannot prove it.
+  that, but the pilot cannot prove it. Fixed for pilot 2.
 
-## What the pilot shows, and what it does not
+## What the pilots show, and what they do not
 
-**It shows that the loop's mechanics work end to end.** A precise card, a sandbox and an
-automatic judge were enough. Acceptance was decided by Lean, the pinned statement and the axioms,
-not by the model's description of its work. An agent took a technique from the library, the
-Jordan block of the XOR law's proof, and carried it to a new setting. That needed a new idea:
-the intermediate sub-torus that keeps a Z/2 factor. It also needed the right character, the two
-factorisations, and the reason for m ≥ 5. It wrote a correct proof without any feedback.
+**They show that the loop's mechanics work end to end, twice, and now with real isolation.** A
+precise card, a sandbox and an automatic judge were enough. Acceptance was decided by Lean, the
+pinned statements and the axioms, not by the model's description of its work. In pilot 1 the
+agent carried a technique from the library, the Jordan block of the XOR law's proof, to a new
+setting. That needed a new idea, the intermediate sub-torus that keeps a Z/2 factor. In pilot 2,
+the agent ran in a container that held nothing it could look the answer up in, and its whole
+transcript shows it did not try.
 
-**It does not show discovery, or reliability.**
-- The statement was given, known to be true, and proved by hand elsewhere.
-- The library held a closely analogous worked example, and the card named its lemmas. So this
-  tests adaptation, not discovery.
-- It is one run.
-- Isolation was not enforced.
+**They do not show discovery, or reliability.**
+- Each statement was given, known to be true, and proved by hand elsewhere.
+- Each library held a closely analogous worked example, and the card named its lemmas. Pilot 2's
+  was pilot 1's own proof, and the agent said it copied its structure. So pilot 2 is the easier
+  test: it shows the adaptation is dependable when the analogy is close, not that the agent can
+  find a new idea.
+- Two runs, each on a different problem, and each passed first time. That says little about the
+  failure rate.
 
 ## Next
 
-- **More runs at this level:** the triangles' exact 2-part, and E + VO + VS. That would show
-  whether this was luck.
 - **A pilot where the agent must find the statement too:** give it the data, not the law. For
-  example the hexagon at m = 3, or a triangle rule the library has no law for.
+  example the hexagon at m = 3, or VO + T13, a triangle rule whose exact 2-part the library does
+  not state.
 - **An open question:** the m = 37 lead of [STATUS.md](STATUS.md), where nobody knows the answer.
-- **Harness fixes:** a real environment in the sandbox, and enforced isolation, for example a
-  separate container.
+- **Harness:**
+  - the agent's branch name: the session was asked to push to `pilot-triangle-submission` and
+    did, but its record first named the source branch, so the watcher and the judge accept
+    either;
+  - the transcript audit's path check reads `sed` patterns and URLs as paths. Its flags need a
+    person, which is fine at this scale.

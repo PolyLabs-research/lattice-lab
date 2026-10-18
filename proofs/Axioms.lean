@@ -1,5 +1,6 @@
 import LatticeProofs
 import LatticeProofs.HexTwoPart
+import LatticeProofs.TriTwoPart
 
 -- `lake env lean Axioms.lean`: the axioms each result rests on. Lean's standard three
 -- (propext, Classical.choice, Quot.sound) and nothing else; no sorryAx.
@@ -42,3 +43,5 @@ import LatticeProofs.HexTwoPart
 #print axioms LatticeProofs.period_sqN4
 #print axioms LatticeProofs.period_sqN4D4_dvd
 #print axioms LatticeProofs.hexPeriod_hexH1_exact
+#print axioms LatticeProofs.atlasTriPeriod_triE_exact
+#print axioms LatticeProofs.atlasTriPeriod_triEVOVS_exact

@@ -20,7 +20,11 @@ the pipeline. It covers:
 - **the XOR law's 2-part**: for B1357/S1357, P(2^v m) = 2^v P(m) at every n whose odd part m is
   greater than 1. So the XOR law holds at every size exactly when it holds at the odd sizes;
 - **the hexagon law's 2-part**: for H1, P(2^v m) = 2^(v+1) P(m) on the atlas's hexagonal torus at
-  every m ≥ 5. An LLM agent found and proved this in the pilot of [llm-pilot.md](llm-pilot.md).
+  every m ≥ 5. An LLM agent found and proved this in the first pilot of
+  [llm-pilot.md](llm-pilot.md);
+- **the triangle laws' 2-part**: for both triangle parity rules, P(2^v m) = 2^(v+1) P(m) on the
+  atlas's triangular torus at every m ≥ 3. The second pilot's agent proved this. So each
+  triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) − 1, the open odd-part statement.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -297,13 +301,33 @@ At m = 3 the 2-part is only 2^v: every character with λ ≠ 0 there has μ = 0.
 route from the hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
 which goes to 2^(v−1) steps and reads the factor 4 off a Z/4 subgroup.
 
-## What is not
+### The triangle laws' 2-part (`LatticeProofs/TriTwoPart.lean`, by the second pilot's agent)
 
-- **The exact 2-parts on the triangles.** For the square XOR rule and the hexagon they are proved
-  (`period_sqN4D4`, `hexPeriod_hexH1_exact`). The triangles (2 · 2^v at m ≥ 3) need their own
-  blocks. The reduction already bounds them by exactly that value. The hand proof in
-  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved) reads the block off in a
-  subgroup of order 2.
+This file is the second LLM pilot's proof, verbatim ([llm-pilot.md](llm-pilot.md)). The agent
+ran in its own container, which held the library but not the write-ups. It follows
+`HexTwoPart.lean`'s structure, one level lower.
+
+- **Two steps, Frobenius, restriction.** Two steps of either rule are one step of its square's
+  plane rule s on each layer (`gtriStep_twice`). 2^(v−1) steps of s are one step of 2^(v−1) s,
+  and multiplication by 2^(v−1) embeds G′ = Z/2m × Z/m, with (x, y) ↦ (x − y, y), onto
+  2^(v−1) G (`triSubMul_injective`). So 2^v p is a period of the rule on G exactly when p is a
+  period of s on G′ (`isEventualPeriod_atlasTri_iff`).
+- **A Jordan block on G′** (`triSub_even`). The weights ζ^a ζ^b and ζ^a ζ^b [a even] give
+  λ = 1 and μ = ζ + 1/ζ for the edge rule, and λ = μ = ζ² + 1/ζ² for the edge+vertex rule; both
+  are nonzero once m ≥ 3 (`one_add_sq_ne_zero`). P(m) is odd, so every bound but 2^(v+1) is
+  ruled out (`atlasTriPeriod_exact_of_even`).
+
+| Theorem | Statement |
+| --- | --- |
+| `atlasTriPeriod_triE_exact` | **the edge rule's 2-part**: on the atlas's triangular torus of side 2^v m, m odd ≥ 3, B13/S13 has period exactly 2^(v+1) P(s_E, m) |
+| `atlasTriPeriod_triEVOVS_exact` | **the edge+vertex rule's 2-part**: the same for B1,3,...,11/S1,3,...,11, with P(s_EVOVS, m) |
+
+This is the hand proof's route (steps 4 and 5 of the triangles in
+[parity-lattices.md](parity-lattices.md#the-triangles)): the same level, the same character and
+the same coefficients. For the edge+vertex rule it also settles the factor 2, which
+`gtriPeriod_triEVOVS` gives only as P / gcd(P, 2) = P(s).
+
+## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.
 - **The hexagon's R(m).** Formally, the odd part is H1's period on (Z/m)². That this equals rule
@@ -345,8 +369,9 @@ mean what the atlas means.
   exact engine at every odd side up to 13; outside the test, up to 31.
 - The atlas's triangular and hexagonal tori, as modelled in `Tori.lean`, are checked against the
   atlas's engine at n = 6, 10, 12 and 14, and their periods against the reduction theorems' form.
-  H1's 2-part is checked to be exactly 2^(v+1) at the sizes with m ≥ 5. The pilot's registered
-  study checked the hexagon law at 15 further sizes up to 1024.
+  H1's 2-part is checked to be exactly 2^(v+1) at the sizes with m ≥ 5, and so are the two
+  triangle parity rules'. The pilots' registered studies checked the hexagon law at 15 further
+  sizes up to 1024, and both triangle laws at 20 further sizes up to 1024.
 - The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.
 - The XOR law's 2-part is checked with the exact engine for B1357/S1357 and N4 at
   m = 3, 5, 7, 9 and 11, with v = 1 and 2.

@@ -58,7 +58,7 @@ before the runs that tested them.
 | --- | --- | --- |
 | Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; the 2-part, P(2^v m) = 2^v P(m), **proved in Lean** for every m > 1; the odd part checked by machine up to 999 except ten | [xor-periods.md](xor-periods.md), [xor-periods-proof.md](xor-periods-proof.md), [proofs.md](proofs.md) |
 | Hexagon parity rule B135/S135: period 2 * 2^v(n) R(m) | first law refuted at 3 of 70 sizes; the corrected law was confirmed at 100 and **proved for every even n**; the 2-part also **proved in Lean**, by an LLM agent | [parity-lattices.md](parity-lattices.md), [llm-pilot.md](llm-pilot.md) |
-| Triangle parity rules: 2 * 2^v(n) (2^sord(m) - 1) | confirmed at 154 sizes; the 2-part is proved; the odd part is checked by machine to 999 except ten | [parity-lattices.md](parity-lattices.md) |
+| Triangle parity rules: 2 * 2^v(n) (2^sord(m) - 1) | confirmed at 154 sizes; the 2-part is proved, and also **in Lean**, by an LLM agent; the odd part is checked by machine to 999 except ten | [parity-lattices.md](parity-lattices.md), [llm-pilot.md](llm-pilot.md) |
 | Kepler finds the hexagon law itself, given 1D rule periods in its vocabulary | registered replay, 8 of 8 | [parity-lattices.md](parity-lattices.md#kepler-with-a-wider-vocabulary) |
 | Atlas, round 1: Kepler's laws for 42 shell-built linear rules (38 unstudied) | blind; all 34 rules with a law kept a registered one at 1,930 new pairs | [linear-atlas.md](linear-atlas.md) |
 | Atlas, round 2: the factorisation pattern | the 34 laws held at 624 harder pairs; the pattern was refuted on 116 new rules (7 of 113 failed); the failures showed cubes and dilations | [linear-atlas.md](linear-atlas.md#round-2-the-pattern-registered) |
@@ -67,7 +67,7 @@ before the runs that tested them.
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated to L = 1024; power law rejected | [settling-time.md](settling-time.md) |
 | Settling-time fluctuations: one shape and ratio across lattices (Gumbel values) | eight random rules on four lattice types; B2/S34's early miss was a low draw | [settling-time.md](settling-time.md) |
 | Cumulative births under B1357/S1357 are always even | found in data, then proved | [capabilities.md](capabilities.md) |
-| An LLM agent, given a problem card and the Lean library, proves the hexagon law's 2-part | first attempt, no feedback; accepted by the judge (Lean, pinned statement, standard axioms); registered test 15 of 15. Adaptation of a known technique, not discovery | [llm-pilot.md](llm-pilot.md) |
+| An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts | two pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15 and 40 of 40. The second ran in its own container, with its whole transcript audited. Adaptation of a known technique, not discovery | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
 
@@ -134,11 +134,13 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      at every size is exactly the law at its odd parts;
    - **the hexagon law's 2-part** (`HexTwoPart.lean`, by the LLM pilot's agent): H1 has period
      exactly 2^(v+1) P(m) on the atlas's hexagonal torus of side 2^v m, for odd m >= 5, through a
-     Jordan block on Z/2m x Z/m.
+     Jordan block on Z/2m x Z/m;
+   - **the triangle laws' 2-part** (`TriTwoPart.lean`, by the second pilot's agent): both
+     triangle parity rules have period exactly 2^(v+1) P(m) on the atlas's triangular torus, for
+     odd m >= 3. So each triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) - 1, the
+     open odd-part statement.
 
    They rest on Lean's standard axioms only. Next:
-   - the triangles' exact 2-part (2 * 2^v), with a Jordan block of the same kind; this is the
-     natural second pilot (item 4);
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
    - then, as research:
    - the rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square
@@ -146,13 +148,12 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot`). The first
-   pilot worked: a fresh agent proved the hexagon law's 2-part from a card, judged by Lean. Next:
-   - more runs at that level (the triangles' 2-part) to see whether it was luck;
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot` and
+   `examples/llm-pilot-triangle`). Two pilots have worked: fresh agents proved the hexagon and
+   triangle laws' 2-parts from a card, judged by Lean. The second ran in its own cloud session,
+   whose container cloned only an orphan sandbox branch, and its transcript was audited. Next:
    - a pilot where the agent must find the statement as well, from data;
-   - then an open question, such as m = 37 (item 1);
-   - harness fixes: a working venv in the sandbox (`python` there is a symlink and does not see
-     sympy), and isolation enforced by a separate container, not by instruction.
+   - then an open question, such as m = 37 (item 1).
 5. **A specialist's view.**
    - The literature search was brief, and specialists in linear cellular automata may know parts
      of this.

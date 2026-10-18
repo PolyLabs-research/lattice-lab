@@ -1,0 +1,55 @@
+[OK] embedding G'(m=3) -> G(n=6) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=3) -> G(n=12) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=3) -> G(n=24) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=5) -> G(n=10) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=5) -> G(n=20) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=5) -> G(n=40) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=7) -> G(n=14) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=7) -> G(n=28) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=7) -> G(n=56) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=9) -> G(n=18) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=9) -> G(n=36) by 2^(v-1): injective=True, compatible=True
+[OK] embedding G'(m=9) -> G(n=72) by 2^(v-1): injective=True, compatible=True
+[OK] m=3: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=3: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=5: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=5: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=7: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=7: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=9: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=9: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=11: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=11: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=13: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=13: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=15: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=15: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=21: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=21: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}
+[OK] m=3: period of s_E on G' = 2 (even), on square m = 1 (odd), ratio 2.0
+[OK] m=3: period of s_EVOVS on G' = 2 (even), on square m = 1 (odd), ratio 2.0
+[OK] m=5: period of s_E on G' = 6 (even), on square m = 3 (odd), ratio 2.0
+[OK] m=5: period of s_EVOVS on G' = 6 (even), on square m = 3 (odd), ratio 2.0
+[OK] m=7: period of s_E on G' = 14 (even), on square m = 7 (odd), ratio 2.0
+[OK] m=7: period of s_EVOVS on G' = 14 (even), on square m = 7 (odd), ratio 2.0
+[OK] m=9: period of s_E on G' = 14 (even), on square m = 7 (odd), ratio 2.0
+[OK] m=9: period of s_EVOVS on G' = 14 (even), on square m = 7 (odd), ratio 2.0
+[OK] m=11: period of s_E on G' = 62 (even), on square m = 31 (odd), ratio 2.0
+[OK] m=11: period of s_EVOVS on G' = 62 (even), on square m = 31 (odd), ratio 2.0
+[OK] n=6 (m=3, v=1) triE: period 4 = 2^2 * 1? 
+[OK] n=6 (m=3, v=1) triEVOVS: period 4 = 2^2 * 1? 
+[OK] n=12 (m=3, v=2) triE: period 8 = 2^3 * 1? 
+[OK] n=12 (m=3, v=2) triEVOVS: period 8 = 2^3 * 1? 
+[OK] n=24 (m=3, v=3) triE: period 16 = 2^4 * 1? 
+[OK] n=24 (m=3, v=3) triEVOVS: period 16 = 2^4 * 1? 
+[OK] n=10 (m=5, v=1) triE: period 12 = 2^2 * 3? 
+[OK] n=10 (m=5, v=1) triEVOVS: period 12 = 2^2 * 3? 
+[OK] n=20 (m=5, v=2) triE: period 24 = 2^3 * 3? 
+[OK] n=20 (m=5, v=2) triEVOVS: period 24 = 2^3 * 3? 
+[OK] n=14 (m=7, v=1) triE: period 28 = 2^2 * 7? 
+[OK] n=14 (m=7, v=1) triEVOVS: period 28 = 2^2 * 7? 
+[OK] n=28 (m=7, v=2) triE: period 56 = 2^3 * 7? 
+[OK] n=28 (m=7, v=2) triEVOVS: period 56 = 2^3 * 7? 
+[OK] n=18 (m=9, v=1) triE: period 28 = 2^2 * 7? 
+[OK] n=18 (m=9, v=1) triEVOVS: period 28 = 2^2 * 7? 
+ALL OK

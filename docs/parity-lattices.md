@@ -222,7 +222,10 @@ the odd part reaches 2^sord(m) - 1: the proof shows only that it divides it.
 
 *Formally* ([proofs.md](proofs.md#every-size-latticeproofstorilean)), the tool and both torus maps
 below are in Lean, so the odd parts and the bounds on the 2-parts are theorems on these tori
-(`triPeriod_div_gcd`, `hexPeriod_div_gcd`). The reading-off of the exact 2-parts is not.
+(`triPeriod_div_gcd`, `hexPeriod_div_gcd`). The exact 2-parts are in Lean too, proved by the LLM
+pilots' agents ([llm-pilot.md](llm-pilot.md)): `hexPeriod_hexH1_exact` for the hexagon, by a
+different route from the one below, and `atlasTriPeriod_triE_exact` and
+`atlasTriPeriod_triEVOVS_exact` for the triangles, by the same route as steps 4 and 5 below.
 
 **The tool: Frobenius moves the steps.** In characteristic 2,
 (sum of a_g g)^(2^k) = sum of a_g^(2^k) (2^k g), so the rule raised to the power 2^k is the rule

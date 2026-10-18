@@ -1,0 +1,72 @@
+{
+ "round": 1,
+ "branch": "pilot-triangle-submission",
+ "base": "9d5a274d351fce17722fb83347cf2701f3c2b0a1",
+ "head": "92c36f306a87eaa648751e590a37815851be1711",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "M",
+    "proofs/LatticeProofs/Pilot.lean"
+   ],
+   [
+    "A",
+    "proposal.md"
+   ],
+   [
+    "A",
+    "proposal.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ],
+   [
+    "A",
+    "scratch/T.lean"
+   ],
+   [
+    "A",
+    "scratch/scratch_proposal_out.txt"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "lean": {
+  "ok": true,
+  "forbidden_words": [
+   "sorry"
+  ],
+  "axioms": {
+   "atlasTriPeriod_triE_exact": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "atlasTriPeriod_triEVOVS_exact": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ]
+  },
+  "build": {
+   "returncode": 0,
+   "seconds": 32.8,
+   "output": "\u26a0 [1171/1221] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1380] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2850] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2850] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u2714 [2850/2850] Built LatticeProofs.Pilot (20s)\nBuild completed successfully (2850 jobs).\n"
+  },
+  "check": {
+   "returncode": 0,
+   "seconds": 5.4,
+   "output": "'LatticeProofs.atlasTriPeriod_triE_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LatticeProofs.atlasTriPeriod_triEVOVS_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "proposal": {
+  "present": true,
+  "returncode": 0,
+  "seconds": 104.3,
+  "output": "[OK] embedding G'(m=3) -> G(n=6) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=3) -> G(n=12) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=3) -> G(n=24) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=5) -> G(n=10) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=5) -> G(n=20) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=5) -> G(n=40) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=7) -> G(n=14) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=7) -> G(n=28) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=7) -> G(n=56) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=9) -> G(n=18) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=9) -> G(n=36) by 2^(v-1): injective=True, compatible=True\n[OK] embedding G'(m=9) -> G(n=72) by 2^(v-1): injective=True, compatible=True\n[OK] m=3: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=3: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=5: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=5: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=7: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=7: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=9: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=9: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=11: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=11: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=13: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=13: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=15: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=15: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=21: Jordan block for s_E on G' (lam=1, mu=z+1/z): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=21: Jordan block for s_EVOVS on G' (lam=mu=z^2+1/z^2): {'ok': True, 'eigen_fails_at': [], 'block_fails_at': [], 'lam_nonzero': True, 'mu_nonzero': True, 'psi1_nonzero': True}\n[OK] m=3: period of s_E on G' = 2 (even), on square m = 1 (odd), ratio 2.0\n[OK] m=3: period of s_EVOVS on G' = 2 (even), on square m = 1 (odd), ratio 2.0\n[OK] m=5: period of s_E on G' = 6 (even), on square m = 3 (odd), ratio 2.0\n[OK] m=5: period of s_EVOVS on G' = 6 (even), on square m = 3 (odd), ratio 2.0\n[OK] m=7: period of s_E on G' = 14 (even), on square m = 7 (odd), ratio 2.0\n[OK] m=7: period of s_EVOVS on G' = 14 (even), on square m = 7 (odd), ratio 2.0\n[OK] m=9: period of s_E on G' = 14 (even), on square m = 7 (odd), ratio 2.0\n[OK] m=9: period of s_EVOVS on G' = 14 (even), on square m = 7 (odd), ratio 2.0\n[OK] m=11: period of s_E on G' = 62 (even), on square m = 31 (odd), ratio 2.0\n[OK] m=11: period of s_EVOVS on G' = 62 (even), on square m = 31 (odd), ratio 2.0\n[OK] n=6 (m=3, v=1) triE: period 4 = 2^2 * 1? \n[OK] n=6 (m=3, v=1) triEVOVS: period 4 = 2^2 * 1? \n[OK] n=12 (m=3, v=2) triE: period 8 = 2^3 * 1? \n[OK] n=12 (m=3, v=2) triEVOVS: period 8 = 2^3 * 1? \n[OK] n=24 (m=3, v=3) triE: period 16 = 2^4 * 1? \n[OK] n=24 (m=3, v=3) triEVOVS: period 16 = 2^4 * 1? \n[OK] n=10 (m=5, v=1) triE: period 12 = 2^2 * 3? \n[OK] n=10 (m=5, v=1) triEVOVS: period 12 = 2^2 * 3? \n[OK] n=20 (m=5, v=2) triE: period 24 = 2^3 * 3? \n[OK] n=20 (m=5, v=2) triEVOVS: period 24 = 2^3 * 3? \n[OK] n=14 (m=7, v=1) triE: period 28 = 2^2 * 7? \n[OK] n=14 (m=7, v=1) triEVOVS: period 28 = 2^2 * 7? \n[OK] n=28 (m=7, v=2) triE: period 56 = 2^3 * 7? \n[OK] n=28 (m=7, v=2) triEVOVS: period 56 = 2^3 * 7? \n[OK] n=18 (m=9, v=1) triE: period 28 = 2^2 * 7? \n[OK] n=18 (m=9, v=1) triEVOVS: period 28 = 2^2 * 7? \nALL OK\n"
+ },
+ "passed": true
+}
