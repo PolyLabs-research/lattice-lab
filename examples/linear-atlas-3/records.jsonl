@@ -193,3 +193,15 @@
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T7","T9","self"]}
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T7","T9"]}
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T7","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T7","T13","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T9","T13","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","VS","T9","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","T7","T9","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["E","T7","T9","T13","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T7","T9"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T7","T9","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T7","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T7","T13","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"17600780175361","shells":["VO","T7","T9","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T9","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":121,"n":242,"predicted":"36028797018963967","shells":["VO","VS","T9","T13","self"]}
