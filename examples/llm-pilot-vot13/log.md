@@ -50,3 +50,10 @@ None of this is in the sandbox.
   launch: the law was evaluated before Pilot.lean was built, and Lean's line-wrapped list output
   was not parsed. The law path was then checked offline with the orchestrator's own law in place
   of the `sorry`: computable in 5.5 s, including at v = 100000, and 31 of 31 data rows agree.
+
+## Launch
+
+- **22:05:13 UTC.** The agent's session, `session_01HapH3CyxfZQENtrC6XEp12`, was created from
+  `pilot-sandbox-vot13` at depth 1, in its own container, with the prompt in `prompt.md`,
+  verbatim, and asked to push to `pilot-vot13-submission`.
+- The registered study's run started at the same time, in the orchestrator's container.
