@@ -7,7 +7,7 @@ that tests it, in an append-only, hash-chained ledger.
 
 - [LatticeLife](https://github.com/PolyLabs-research/gameoflife_advanced) runs the experiments
   and says what their numbers mean, including when a number is only a bound.
-- [Kepler](https://github.com/tripptytrip/kepler) fits, ranks and predicts closed-form laws
+- [Kepler](https://github.com/PolyLabs-research/kepler) fits, ranks and predicts closed-form laws
   with error bars.
 - lattice-lab owns what belongs to neither: the questions, the candidate laws, choosing the next
   experiment, pre-registered predictions, verdicts, and the record of every result.
@@ -29,7 +29,7 @@ reasoning after the fact went beyond the tools, the write-up says so.
 | Kepler, given rule periods in its vocabulary, finds the hexagon law itself | confirmed in a registered replay (8 of 8 expectations) | [parity-lattices.md](docs/parity-lattices.md#kepler-with-a-wider-vocabulary) | `kepler-rediscovery` |
 | Periods of 42 linear rules built from neighbour shells, 38 never studied | blind: all 34 rules that got a law kept a registered one at 1,930 new pairs, and again at 624 harder pairs up to n = 400 | [linear-atlas.md](docs/linear-atlas.md) | `linear-atlas`, `linear-atlas-2` |
 | A rule that factors into 1D passes has a 1D period; any other reaches the full bound | registered on 116 new rules and **refuted** (7 of 113 predictions failed). Three failed rules were cubes or a dilation, mechanisms then predicted exactly; two of the other four failures are explained (eigenvalues in F(8) at n = 13) | [linear-atlas.md](docs/linear-atlas.md#round-2-the-pattern-registered) | `linear-atlas-2` |
-| The refined statement: the full bound unless splitting, an odd power or a dilation confines the eigenvalues | **registered and running**: 11,358 predictions for 344 new rules on all three lattices | [linear-atlas.md](docs/linear-atlas.md) (to follow) | `linear-atlas-3` |
+| The refined statement: the full bound unless splitting, an odd power or a dilation confines the eigenvalues | registered on 344 new rules and **refuted**: 43 of 11,358 predictions failed (0.4%). Every dilation and power held; a third mechanism, a twisted power, showed up and its expectation, written first, matched all 34 sizes; the rest are small-field coincidences, and one case at m = 37 is open | [linear-atlas.md](docs/linear-atlas.md#round-3-the-refined-statement-registered) | `linear-atlas-3` |
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated on tori up to 1024, where the power law is rejected | [settling-time.md](docs/settling-time.md) | `lab-b2s34`, `settling-time-replication` |
 | Settling-time fluctuations are universal, with extreme-value (Gumbel) shape and ratio | eight random rules on four lattice types; a first apparent miss for B2/S34 was a low draw | [settling-time.md](docs/settling-time.md) | `settling-universality`, `settling-time-local` |
 | Cumulative births under B1357/S1357 are always even | found in the data, then proved | [capabilities.md](docs/capabilities.md) | `capabilities` |
@@ -193,16 +193,22 @@ This includes rule-150 analogues of Vadali and Turner's theorem and of the hexag
   into the subfield F(8) (`examples/linear-atlas-2/subfield.py`). The n = 37 one, with 172
   eigenvalues all cubes, is structure not yet found.
 
-**Round 3 is registered and running** (`examples/linear-atlas-3`, `223e56f`). The refined
-statement is written as a fixed procedure, `atlas3.predict`: dilation, odd prime power, a
-complete 1D split, and otherwise the full bound. It predicts the odd part of each period from the
-polynomial alone, for 344 new rules on all three lattices with nine new shells. That is 11,358
-predictions at odd parts from 9 to 141, small sizes included. Two hypotheses are judged:
-- strict: no failure;
-- accidents: failures only at m <= 61, and at most 1%.
-
-Before registration, the procedure reproduced 7,746 of the 7,750 earlier data points. The four it
-missed are round 2's accidents.
+**Round 3** (`examples/linear-atlas-3`, registered in `223e56f`) wrote the refined statement as a
+fixed procedure, `atlas3.predict`: dilation, odd prime power, a complete 1D split, and otherwise
+the full bound. It predicts the odd part of each period from the polynomial alone. It was
+registered for 344 new rules on all three lattices, with nine new shells, at odd parts from 9 to
+141, small sizes included: 11,358 predictions. Before registration it reproduced 7,746 of the
+7,750 earlier data points. The run was stopped at a two-hour limit and finished by the harness's
+new `resume` step; an independent eigenvalue computation agrees with all 11,662 records.
+- **43 predictions failed (0.4%)**, so both registered hypotheses are refuted: strict, and
+  "failures only at m <= 61, at most 1%".
+- **Every dilation (1,017) and perfect-power (272) prediction held**, and 164 of 165 splits.
+- **Seven failures are one rule, triangle VO+T13.** Its polynomial is the edge rule's times its
+  own dilation by 3, which is a disguised power wherever 3 = +-2^k modulo m. An expectation built
+  on that was written during the run, before 29 of its 34 sizes, and matched all 34.
+- **The other 36 are at m = 13, 15, 21, 25 and 37.** There the rules have only 3 to 9 distinct
+  eigenvalues, all inside a subfield or the cube subgroup; that is chance in small fields. The
+  m = 37 case is not chance, and neither is round 2's one at 37. Both are open.
 
 Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
@@ -221,7 +227,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `kepler-rediscovery` | Kepler's search, with 1D linear-rule periods, replayed on the period data (registered) |
 | `linear-atlas` | 42 shell-built linear rules: exact engine, discovery, Kepler's laws judged at 1,930 new pairs (registered), factorisation analysis |
 | `linear-atlas-2` | the factorisation pattern registered: the 34 laws at 624 decisive pairs, and 116 square rules predicted from their factorisation (registered); the cubes and dilation found afterwards |
-| `linear-atlas-3` | the refined statement registered: 11,358 predictions of odd parts for 344 new rules on all three lattices (running) |
+| `linear-atlas-3` | the refined statement registered: 11,358 predictions of odd parts for 344 new rules on all three lattices (registered; resumed once); the eigenvalue cross-check and the failure analysis |
 
 ## Settling times: a replication and a universality test
 

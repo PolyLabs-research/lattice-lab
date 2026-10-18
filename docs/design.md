@@ -20,8 +20,8 @@ lattice-lab or the other, and each stays useful on its own.
 | Package | Owns | Python | Pinned by lattice-lab to |
 | --- | --- | --- | --- |
 | LatticeLife (`PolyLabs-research/gameoflife_advanced`) | Running experiments; turning records into observations with uncertainty; saying when a number is only a bound | 3.12-3.13 | a git commit |
-| Kepler (`tripptytrip/kepler`) | Fitting a named law with error bars; ranking by BIC; predicting with a band and a covariance | 3.10+ | a git commit |
-| lattice-lab (`tripptytrip/lattice-lab`) | Questions, candidate laws, choosing the next experiment, pre-registered predictions, verdicts, the ledger | 3.12-3.13 (LatticeLife's bound) | - |
+| Kepler (`PolyLabs-research/kepler`) | Fitting a named law with error bars; ranking by BIC; predicting with a band and a covariance | 3.10+ | a git commit |
+| lattice-lab (`PolyLabs-research/lattice-lab`) | Questions, candidate laws, choosing the next experiment, pre-registered predictions, verdicts, the ledger | 3.12-3.13 (LatticeLife's bound) | - |
 
 ### Data flow
 
