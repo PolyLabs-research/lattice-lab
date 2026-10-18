@@ -1,0 +1,34 @@
+{
+ "round": 0,
+ "library": {
+  "ok": true,
+  "changed": [],
+  "unexpected_files": []
+ },
+ "lean": {
+  "ok": false,
+  "forbidden_words": [
+   "sorry"
+  ],
+  "axioms": [
+   "Classical.choice",
+   "Quot.sound",
+   "propext",
+   "sorryAx"
+  ],
+  "build": {
+   "returncode": 0,
+   "seconds": 9.8,
+   "output": "\u26a0 [1171/1277] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1460] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2849] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2849] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2849/2849] Built LatticeProofs.Pilot (4.5s)\nwarning: LatticeProofs/Pilot.lean:11:8: declaration uses `sorry`\nBuild completed successfully (2849 jobs).\n"
+  },
+  "check": {
+   "returncode": 0,
+   "seconds": 5.4,
+   "output": "'LatticeProofs.hexPeriod_hexH1_exact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "proposal": {
+  "present": false
+ },
+ "passed": false
+}
