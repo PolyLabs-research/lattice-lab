@@ -409,3 +409,9 @@
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","VS","T13"]}
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","VS","T13","self"]}
 {"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T7","T9"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T7","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T7","T9","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T7","T13","self"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T9","T13"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VS","T7","T9"]}
+{"check":{"is_odd_part":true,"reason":"repeats, and at no proper divisor"},"lattice":"triangle","m":101,"n":202,"predicted":"1125899906842623","shells":["E","VO","T9","T13","self"]}
