@@ -1,0 +1,11 @@
+You are the proposer and prover in a pilot of an LLM-central research loop. This repository checkout is your sandbox, and your brief is CARD.md at its root. Read it first and follow it, including its rules.
+
+First, start the setup in the background: `./setup.sh > setup.log 2>&1`. It builds mathlib from source and takes half an hour to an hour. Use the time to read the card, the data and the library, and to explore with the tools.
+
+In short: the triangle rule VO + T13 has a period on the atlas's triangular torus of side n = 2^v m (m odd) of the form 2^a times a known odd part, and nobody has stated a. Find the exact power of 2 from the data and your own computations, as a formula in v and m that holds at every even n ≥ 4; define it as `vot13TwoExp` in `proofs/LatticeProofs/Pilot.lean`; and prove the theorem `atlasTriPeriod_triVOT13_law` there. If you cannot prove all of it, prove what you can and say what is missing.
+
+The boundary (also in the card): work only inside this checkout, and put scratch files under `scratch/` in it, not in /tmp or a session scratchpad. Do not fetch, list or read any other branch, tag or commit of this repository, or any other repository; do not use add_repo or list_repos. Do not list, read or message other Claude sessions, and do not start subagents. No web search or web fetch, and no network beyond what setup.sh does. The pilot measures what you can find and prove from the card, the data and the library alone, and this session's full transcript will be audited for these steps afterwards, so please keep to the boundary even if a shortcut seems available.
+
+An independent judge will check your work once `report.md` appears on your branch. It rebuilds Pilot.lean against the real library, checks the theorem against a pinned copy, requires its axioms to be only propext, Classical.choice and Quot.sound, and evaluates your formula with `#eval`, including at sizes you have not seen.
+
+Commit and push your work to your branch as you go. Take the time you need. When you finish, or if you conclude you cannot go further, write `report.md` (your law, the mechanism, how you checked it, what you tried, what failed, and anything you are unsure of), commit and push it, and then reply with the same report.
