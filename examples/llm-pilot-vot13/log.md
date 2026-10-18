@@ -57,3 +57,6 @@ None of this is in the sandbox.
   `pilot-sandbox-vot13` at depth 1, in its own container, with the prompt in `prompt.md`,
   verbatim, and asked to push to `pilot-vot13-submission`.
 - The registered study's run started at the same time, in the orchestrator's container.
+- **22:35:03 UTC: the orchestrator's registered law held at all 20 held-out sizes**, including
+  m = 1 at n = 512 and 1024 (periods 256 and 512). The records hold each exact period, for
+  judging the agent's law; `lattice-lab verify` finds no problems.
