@@ -1,0 +1,881 @@
+{
+ "VO+T13 expectations": {
+  "version 1": {
+   "written": "2026-10-18T11:49:36+00:00",
+   "sizes": 34,
+   "match": 22,
+   "sizes computed after it was written": 30,
+   "of those, match": 19,
+   "mismatches": [
+    13,
+    15,
+    17,
+    21,
+    37,
+    39,
+    41,
+    45,
+    51,
+    61,
+    111,
+    141
+   ]
+  },
+  "version 2": {
+   "written": "2026-10-18T11:50:15+00:00",
+   "sizes": 34,
+   "match": 29,
+   "sizes computed after it was written": 30,
+   "of those, match": 25,
+   "mismatches": [
+    13,
+    17,
+    37,
+    41,
+    61
+   ]
+  },
+  "version 3": {
+   "written": "2026-10-18T11:58:21+00:00",
+   "sizes": 34,
+   "match": 34,
+   "sizes computed after it was written": 29,
+   "of those, match": 29,
+   "mismatches": []
+  },
+  "s(VO+T13) = s_E(x, y) s_E(x^3, y^3)": true
+ },
+ "failures": [
+  {
+   "rule": "square B4+E4+self",
+   "m": 13,
+   "predicted / odd part": 9,
+   "terms": 9,
+   "factors (terms each)": [
+    9
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 7,
+   "full bound / odd part": 9,
+   "all in a proper subfield": "F(2^3)"
+  },
+  {
+   "rule": "square B4+M8+E4+self",
+   "m": 13,
+   "predicted / odd part": 9,
+   "terms": 17,
+   "factors (terms each)": [
+    17
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 7,
+   "full bound / odd part": 9,
+   "all in a proper subfield": "F(2^3)"
+  },
+  {
+   "rule": "square D4+A4+L8+M8+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 25,
+   "factors (terms each)": [
+    5,
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 5,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H4+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 13,
+   "factors (terms each)": [
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H13",
+   "m": 13,
+   "predicted / odd part": 21,
+   "terms": 12,
+   "factors (terms each)": [
+    2,
+    2,
+    3,
+    16
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 21,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H13",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 12,
+   "factors (terms each)": [
+    2,
+    2,
+    3,
+    16
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H13+self",
+   "m": 13,
+   "predicted / odd part": 21,
+   "terms": 13,
+   "factors (terms each)": [
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 21,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H13+self",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 13,
+   "factors (terms each)": [
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H2+H4+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H4+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H5",
+   "m": 13,
+   "predicted / odd part": 9,
+   "terms": 12,
+   "factors (terms each)": [
+    2,
+    2,
+    10
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 7,
+   "full bound / odd part": 9,
+   "all in a proper subfield": "F(2^3)"
+  },
+  {
+   "rule": "hexagon H3+H5+self",
+   "m": 13,
+   "predicted / odd part": 9,
+   "terms": 13,
+   "factors (terms each)": [
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 7,
+   "full bound / odd part": 9,
+   "all in a proper subfield": "F(2^3)"
+  },
+  {
+   "rule": "hexagon H4+H5+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H4+H13",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 24,
+   "factors (terms each)": [
+    2,
+    2,
+    2,
+    2,
+    12
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H4+H13+self",
+   "m": 21,
+   "predicted / odd part": 3,
+   "terms": 25,
+   "factors (terms each)": [
+    25
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 7,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H5+H13",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 18,
+   "factors (terms each)": [
+    2,
+    2,
+    26
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H5+H13+self",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "hexagon H1+H3+H13",
+   "m": 25,
+   "predicted / odd part": 3,
+   "terms": 24,
+   "factors (terms each)": [
+    2,
+    2,
+    3,
+    12
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 6,
+   "odd part": 341,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H4+H5",
+   "m": 25,
+   "predicted / odd part": 3,
+   "terms": 24,
+   "factors (terms each)": [
+    2,
+    2,
+    14
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 341,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H4+H13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 31,
+   "factors (terms each)": [
+    31
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H5+H13",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 24,
+   "factors (terms each)": [
+    2,
+    2,
+    26
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H5+H13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 25,
+   "factors (terms each)": [
+    25
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H4+H5+H13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 31,
+   "factors (terms each)": [
+    31
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H2+H3+H4+H13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 37,
+   "factors (terms each)": [
+    3,
+    3,
+    21
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H2+H3+H5+H13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 31,
+   "factors (terms each)": [
+    3,
+    3,
+    21
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "hexagon H3+H4+H5+H13",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 36,
+   "factors (terms each)": [
+    2,
+    2,
+    5,
+    14
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle T13",
+   "m": 13,
+   "predicted / odd part": 21,
+   "terms": 30,
+   "factors (terms each)": [
+    2,
+    2,
+    2,
+    2,
+    22
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 21,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "triangle T13",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 30,
+   "factors (terms each)": [
+    2,
+    2,
+    2,
+    2,
+    22
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "triangle T13+self",
+   "m": 13,
+   "predicted / odd part": 21,
+   "terms": 31,
+   "factors (terms each)": [
+    31
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 21,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "triangle T13+self",
+   "m": 15,
+   "predicted / odd part": 5,
+   "terms": 31,
+   "factors (terms each)": [
+    31
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 3,
+   "full bound / odd part": 5,
+   "all in a proper subfield": "F(2^2)"
+  },
+  {
+   "rule": "triangle E+T7+self",
+   "m": 25,
+   "predicted / odd part": 3,
+   "terms": 24,
+   "factors (terms each)": [
+    2,
+    2,
+    14
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 341,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle E+T9",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 13,
+   "factors (terms each)": [
+    13
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 101,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 18,
+   "odd part": 375299968947541,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 25,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 341,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 29,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 6,
+   "odd part": 5461,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 35,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 9,
+   "odd part": 1365,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 53,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 10,
+   "odd part": 22369621,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 55,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 13,
+   "odd part": 349525,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+T13",
+   "m": 95,
+   "predicted / odd part": 3,
+   "terms": 49,
+   "factors (terms each)": [
+    3,
+    3,
+    7
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 23,
+   "odd part": 22906492245,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle E+VS+T7",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 4,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VO+VS+T13+self",
+   "m": 13,
+   "predicted / odd part": 3,
+   "terms": 42,
+   "factors (terms each)": [
+    2,
+    2,
+    3,
+    3,
+    16
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 3,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle VS+T9+T13+self",
+   "m": 37,
+   "predicted / odd part": 3,
+   "terms": 43,
+   "factors (terms each)": [
+    43
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 9,
+   "odd part": 87381,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  },
+  {
+   "rule": "triangle E+VO+T7+T9+self",
+   "m": 21,
+   "predicted / odd part": 3,
+   "terms": 19,
+   "factors (terms each)": [
+    19
+   ],
+   "dilation pairs": [],
+   "distinct eigenvalues up to Frobenius": 5,
+   "odd part": 21,
+   "full bound / odd part": 3,
+   "all in a proper subfield": null
+  }
+ ],
+ "failure rate by m (VO+T13 apart)": {
+  "9": {
+   "failed": 0,
+   "predictions": 317,
+   "sord": 3
+  },
+  "11": {
+   "failed": 0,
+   "predictions": 328,
+   "sord": 5
+  },
+  "13": {
+   "failed": 24,
+   "predictions": 335,
+   "sord": 6
+  },
+  "15": {
+   "failed": 6,
+   "predictions": 328,
+   "sord": 4
+  },
+  "17": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 4
+  },
+  "19": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 9
+  },
+  "21": {
+   "failed": 2,
+   "predictions": 335,
+   "sord": 6
+  },
+  "23": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 11
+  },
+  "25": {
+   "failed": 3,
+   "predictions": 335,
+   "sord": 10
+  },
+  "27": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 9
+  },
+  "29": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 14
+  },
+  "31": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 5
+  },
+  "33": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 5
+  },
+  "35": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 12
+  },
+  "37": {
+   "failed": 1,
+   "predictions": 335,
+   "sord": 18
+  },
+  "39": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 12
+  },
+  "41": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 10
+  },
+  "43": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 7
+  },
+  "45": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 12
+  },
+  "47": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 23
+  },
+  "49": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 21
+  },
+  "51": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 8
+  },
+  "53": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 26
+  },
+  "55": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 20
+  },
+  "57": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 9
+  },
+  "59": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 29
+  },
+  "61": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 30
+  },
+  "67": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 33
+  },
+  "95": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 36
+  },
+  "101": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 50
+  },
+  "103": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 51
+  },
+  "111": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 36
+  },
+  "121": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 55
+  },
+  "141": {
+   "failed": 0,
+   "predictions": 335,
+   "sord": 46
+  }
+ }
+}
