@@ -347,15 +347,29 @@ must fail were committed in `cube-expectation.json`:
 failures with the stated periods, and 62 sizes where the registered prediction held as expected.
 This was not registered: it was written during the run, after a first failure of each kind.
 
-**The four accidents** are at the smallest test size and at 37, with period 7, 21 and 87381:
-- a period of 7 at n = 13 means every eigenvalue lies in F(8), inside F(64);
-- 87381 at 37 means every eigenvalue is a cube in F(2^18), as rule 90's are there.
-
+**The four accidents** are at the smallest test size and at 37, with period 7, 21 and 87381.
 Each rule reaches the full bound at every other size tested, including 95, 101, 111, 141, 197,
-199 and 203, where rule 90 falls short. So these look like coincidences of particular small fields
-rather than structure, but that is not shown. One candidate cause is that a rule can split on the
-n-torus even though it does not split on the plane, since exponents only matter modulo n. A
-search over the torus's changes of coordinates was too slow to finish here.
+199 and 203, where rule 90 falls short.
+
+Afterwards, `subfield.py` computed every eigenvalue directly in F(2^ord). That is a separate
+calculation from the engine's, and it reproduces all four periods. Every shell rule is a
+polynomial in a = x + 1/x and b = y + 1/y, so its eigenvalues are values at rule 90's
+eigenvalues t_j = zeta^j + zeta^-j.
+
+- **A4+C4 and A4+C4+self at n = 13 are explained.** Both are additively separable: q(a) + q(b)
+  and 1 + q(a) + q(b), with q(t) = t^3 + t^2 + t. At n = 13 the t_j lie in F(64), and q sends
+  every one of them into the subfield F(8). So every eigenvalue lies in F(8), and the period
+  divides 7. The t_j form a single Galois orbit, so this is one coincidence, not many. A value
+  that lands in a proper subfield of F(64) has odds of roughly 1 in 6, and the odds shrink
+  exponentially as the field grows. That is a reason for accidents of this kind to occur at
+  small sizes only.
+- **A4+K8+B4+C4+self at 13** has only 14 distinct eigenvalues. All are cubes in F(64) (orders 1,
+  7, 21), which is plausible by chance with so few.
+- **A4+K8+B4+self at 37 is not chance.** All 172 distinct eigenvalues are cubes in F(2^18), as
+  rule 90's are there, so there is structure. One candidate cause is that the rule splits on the
+  37-torus but not on the plane, since exponents only matter modulo n. A search for a product of
+  rule-90 values along linear forms (up to four factors, coefficients up to 3) found none, and a
+  full search over the torus's changes of coordinates was too slow. It is open.
 
 ### What round 2 says about the pattern
 

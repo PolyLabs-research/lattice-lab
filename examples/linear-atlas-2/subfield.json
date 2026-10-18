@@ -1,0 +1,44 @@
+{
+ "A4+C4 at 13": {
+  "field": "F(2^12)",
+  "distinct eigenvalues": 7,
+  "orders": [
+   7
+  ],
+  "period": 7
+ },
+ "A4+C4+self at 13": {
+  "field": "F(2^12)",
+  "distinct eigenvalues": 7,
+  "orders": [
+   1,
+   7
+  ],
+  "period": 7
+ },
+ "A4+K8+B4+C4+self at 13": {
+  "field": "F(2^12)",
+  "distinct eigenvalues": 14,
+  "orders": [
+   1,
+   7,
+   21
+  ],
+  "period": 21
+ },
+ "q(t_j) in F(8), j = 1..12": true,
+ "A4+K8+B4+self at 37": {
+  "field": "F(2^36)",
+  "distinct eigenvalues": 172,
+  "orders": [
+   1,
+   399,
+   511,
+   9709,
+   12483,
+   29127,
+   87381
+  ],
+  "period": 87381
+ }
+}
