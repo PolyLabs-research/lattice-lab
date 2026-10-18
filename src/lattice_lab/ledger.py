@@ -12,6 +12,7 @@ Kinds, in the order a question writes them:
 
     question       the question as asked, the code that answered it (provenance), the files
     run_started    a batch of experiments is about to run; where the records file ended then
+    run_resumed    an interrupted batch continues: where the records file ends now, and who
     observations   what a batch measured: rows, and the offset and hash of every record used
     plan           a round's fits, ranking and the held-out sizes chosen, with why
     prediction     one law's predictions at the held-out sizes, written before they are run
@@ -35,7 +36,7 @@ from typing import Any
 import numpy as np
 
 GENESIS = "0" * 64
-KINDS = ("question", "run_started", "observations", "plan", "prediction", "verdict")
+KINDS = ("question", "run_started", "run_resumed", "observations", "plan", "prediction", "verdict")
 
 
 class LedgerError(Exception):

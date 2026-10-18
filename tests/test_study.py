@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 from lattice_lab.ledger import Ledger, check_order
-from lattice_lab.study import Study, StudyError, append_records, register, run
+from lattice_lab.study import Study, StudyError, append_records, register, resume, run
 
 
 def _git(path: Path, *args: str) -> None:
@@ -79,3 +79,47 @@ def test_the_order_check_catches_a_changed_record(tmp_path):
     lines[0] = json.dumps({"x": 3, "y": 7})
     records.write_text("\n".join(lines) + "\n")
     assert check_order(Ledger(tmp_path / "ledger.jsonl"), tmp_path)
+
+
+def test_an_interrupted_run_resumes_without_repeating_work(tmp_path):
+    _git(tmp_path, "init", "-q")
+    calls = []
+
+    def execute(path: Path, workers: int) -> None:
+        done = (
+            {json.loads(line)["x"] for line in path.read_text().splitlines()}
+            if path.exists()
+            else set()
+        )
+        for x in (3, 4):
+            if x in done:
+                continue
+            calls.append(x)
+            append_records(path, [{"x": x, "y": 2 * x}])
+            if len(calls) == 1:
+                raise KeyboardInterrupt  # the process is stopped after one record
+
+    study = _study(tmp_path)
+    study.execute = execute
+    register(study)
+    _git(tmp_path, "add", "ledger.jsonl")
+    _git(tmp_path, "commit", "-q", "-m", "register")
+    with pytest.raises(KeyboardInterrupt):
+        run(study)
+    with pytest.raises(StudyError, match="registration"):
+        run(study)
+    verdict = resume(study)
+    assert calls == [3, 4]
+    assert verdict["outcomes"] == {"3": "confirmed", "4": "refuted"}
+    ledger = Ledger(tmp_path / "ledger.jsonl")
+    assert [e["kind"] for e in ledger.entries] == [
+        "question",
+        "prediction",
+        "run_started",
+        "run_resumed",
+        "observations",
+        "verdict",
+    ]
+    assert ledger.verify() == [] and check_order(ledger, tmp_path) == []
+    with pytest.raises(StudyError, match="no observations"):
+        resume(study)

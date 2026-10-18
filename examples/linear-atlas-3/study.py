@@ -142,6 +142,12 @@ def execute(path: Path, workers: int) -> None:
     for p in predictions():
         tasks += [(p["lattice"], p["shells"], int(m), v) for m, v in p["predictions"].items()]
         tasks += [(p["lattice"], p["shells"], m, None) for m in p["computed at"]]
+    if path.exists():  # a resumed run skips what is already recorded
+        done = {
+            (r["lattice"], tuple(r["shells"]), r["m"])
+            for r in map(json.loads, path.read_text().splitlines())
+        }
+        tasks = [t for t in tasks if (t[0], tuple(t[1]), t[2]) not in done]
     tasks.sort(key=_cost, reverse=True)  # the slowest first
     with Pool(workers) as pool:
         for record in pool.imap_unordered(_job, tasks):

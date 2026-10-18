@@ -22,6 +22,9 @@ and `register` and `run` do the rest:
                       (when the branch tracks a remote) pushed; then appends run_started (where
                       the records file ends), runs `execute`, appends observations (every record
                       written since, by offset and hash) and the verdict, citing all of them.
+    resume(study)     finishes a run that stopped before its observations (a killed process, a
+                      time limit): appends run_resumed, runs `execute` again, which must skip the
+                      work already recorded, then observations and the verdict as run does.
 
 `lattice-lab verify --lab DIR` checks a study's ledger like any other: the chain, and that every
 prediction precedes the run and every record used follows its start. If the question body holds
@@ -123,6 +126,43 @@ def run(study: Study, workers: int = 1, require_pushed: bool = True) -> dict:
         },
     )
     study.execute(path, workers)
+    return _finish(study, ledger, question, predictions, started)
+
+
+def resume(study: Study, workers: int = 1) -> dict:
+    """Finish a run that stopped before its observations: a killed process, a time limit.
+
+    The registration and run_started stay as they are. A run_resumed entry records where the
+    records file ends now and the provenance of the resumed process. study.execute runs again and
+    must skip the work already recorded; then observations (every record since run_started) and
+    the verdict follow, as in run, citing the original run_started."""
+    ledger = Ledger(study.ledger_path)
+    kinds = [e["kind"] for e in ledger.entries]
+    starts = [i for i, k in enumerate(kinds) if k == "run_started"]
+    if (
+        len(starts) != 1
+        or kinds[: starts[0]] != ["question"] + ["prediction"] * (starts[0] - 1)
+        or any(k != "run_resumed" for k in kinds[starts[0] + 1 :])
+    ):
+        raise StudyError(f"expected a registration and a run with no observations, found {kinds}")
+    question, started = ledger.entries[0], ledger.entries[starts[0]]
+    predictions = ledger.entries[1 : starts[0]]
+    path = study.records_path
+    ledger.append(
+        "run_resumed",
+        {
+            "question": question["hash"],
+            "run_started": started["hash"],
+            "records_offset": path.stat().st_size if path.exists() else 0,
+            "provenance": provenance(),
+        },
+    )
+    study.execute(path, workers)
+    return _finish(study, ledger, question, predictions, started)
+
+
+def _finish(study: Study, ledger: Ledger, question: dict, predictions: list, started: dict) -> dict:
+    path = study.records_path
     refs, rows = [], []
     for offset, digest, line in record_lines(path):
         if offset >= started["body"]["records_offset"]:
@@ -156,9 +196,9 @@ def append_records(path: Path, records) -> None:
 
 
 def main(study: Study, argv: list[str] | None = None) -> None:
-    """`python study.py register|run [--workers N]` for a study script."""
+    """`python study.py register|run|resume [--workers N]` for a study script."""
     parser = argparse.ArgumentParser(description=(study.question().get("title") or "a study"))
-    parser.add_argument("step", choices=("register", "run"))
+    parser.add_argument("step", choices=("register", "run", "resume"))
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args(argv)
     try:
@@ -166,6 +206,7 @@ def main(study: Study, argv: list[str] | None = None) -> None:
             entries = register(study)
             print(json.dumps({"registered": len(entries), "ledger": str(study.ledger_path)}))
         else:
-            print(json.dumps(run(study, args.workers), indent=1)[:4000])
+            step = run if args.step == "run" else resume
+            print(json.dumps(step(study, args.workers), indent=1)[:4000])
     except StudyError as exc:
         sys.exit(f"study: {exc}")
