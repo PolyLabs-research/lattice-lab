@@ -17,6 +17,9 @@ architecture, the loop step by step, and the milestones.
 
 ## Findings so far
 
+**Picking this up?** [docs/STATUS.md](docs/STATUS.md) says where things stand: the three
+repositories, how to resume, what is established, and what is open.
+
 Every finding below was tested by predictions written to a ledger, committed and pushed before the
 runs that test them. `uv run lattice-lab verify --lab examples/<study>` checks the order. Where
 reasoning after the fact went beyond the tools, the write-up says so.
