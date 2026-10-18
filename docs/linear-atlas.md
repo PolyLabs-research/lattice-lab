@@ -1,6 +1,6 @@
 # A blind atlas: periods of 42 linear rules on three lattices
 
-**Status: judged, two registered rounds.**
+**Status: judged, three registered rounds.**
 
 **Round 1** asked Kepler for period laws for every rule built from symmetric neighbour shells on
 the square, hexagonal and triangular lattices: 42 rules, 38 of which nobody here had studied.
@@ -32,8 +32,25 @@ What the failures show, analysed afterwards:
   failure of each kind, the sizes and periods where these three must fail were committed before
   those sizes were computed. They failed at exactly those 55 sizes, with those periods, and
   nowhere else.
-- **The other four** each fail at one small size (n = 13 or 37) and hold everywhere else. They
-  are not explained.
+- **The other four** each fail at one small size (n = 13 or 37) and hold everywhere else. Two are
+  explained since: at n = 13 their eigenvalues all lie in F(8). The n = 37 one is open.
+
+**Round 3** ([below](#round-3-the-refined-statement-registered)) registered the refined statement
+as a fixed procedure. The procedure predicts the odd part of a period from the polynomial alone:
+dilation, odd prime power, a one-dimensional split, otherwise the full bound. It was applied to
+344 rules nobody had computed, on all three lattices, at odd parts from 9 to 141, making 11,358
+predictions.
+- **43 failed (0.4%)**, so both registered hypotheses are refuted: the strict one, and one that
+  allowed failures only at m <= 61.
+- **Every prediction made by a mechanism held:** 1,017 dilations, 272 perfect powers, and 164
+  of 165 one-dimensional splits.
+- **Seven failures are one rule, triangle VO+T13.** Its s is the edge rule's s times its own
+  dilation by 3. Where 3 = +-2^k modulo m, that is a power, lambda^(1 + 2^k), in disguise. An
+  expectation built on this was written during the run, before 29 of the rule's 34 sizes were
+  computed, and it matched all 34.
+- **The other 36 failures** are at m = 13, 15, 21, 25 and 37. Each rule has only 3 to 9 distinct
+  eigenvalues there, and all of them land in a subfield or in the cube subgroup. Above m = 37,
+  only VO+T13 failed, across 6,365 predictions.
 
 ## The rules
 
@@ -387,6 +404,135 @@ As registered, the pattern is refuted. What survives is a sharper statement, fou
   rules, that they are nearly the only ones. It is a conjecture, and the accidents show it is not
   yet exact.
 
+## Round 3: the refined statement, registered
+
+`examples/linear-atlas-3`: `atlas3.py`, `validate.py`, `study.py`, `eigen.py`, `failures.py`.
+
+**What was registered** (`223e56f`, pushed at 2026-10-18T10:51:54Z, before any test pair was
+computed). The refined statement is a procedure, `atlas3.predict(f, m)`. It gives the odd part of
+the period at odd part m, from the rule's polynomial f; on the triangle, f is s, where M^2 = s I.
+It takes these steps in order:
+1. no prediction if f wraps modulo m;
+2. a monomial's order;
+3. a dilation f = h(x^p, y^p): h at m/p if p divides m, else h at m;
+4. an odd prime power g^k: q / gcd(q, k);
+5. a complete split into one kind of 1D factor: that 1D rule's period;
+6. a split into mixed factors: no prediction;
+7. otherwise the full bound, 2^sord(m) - 1.
+
+The odd part of the period at n is the period at the odd part m, because F2[T] modulo its radical
+is F2[(Z/m)^2]. So each m is tested once: n = m on the square, and n = 2m on the hexagon and
+triangle.
+
+| | New shells | Rules |
+| --- | --- | --- |
+| square | L8 (distance sqrt 10), M8 (sqrt 13), E4 (3 sqrt 2, = D4 in x^3, y^3) | 120: all 20 whose call is not the full bound, and a seeded sample of 100 of the other 876 |
+| hexagon | H4 (norm 7, 12 cells), H5 (norm 9, = H1 in x^3, y^3), H13 (norm 13, 12 cells) | all 112 |
+| triangle | T7, T9, T13: the next shells by distance from a cell's centroid | all 112 |
+
+The sizes were the 34 odd parts from 9 to 61, plus those from 63 to 141 where rule 90's or rule
+150's period departs from the full bound. Small sizes were kept in on purpose.
+
+Two hypotheses were registered:
+- **strict:** every prediction holds;
+- **accidents:** failures only at m <= 61, and at most 1% of the predictions.
+
+Before registration, `validate.py` checked three things:
+- the new shells against direct simulation: 60 of 60 agree;
+- the odd-part check (`atlas3.OddExact`, the matrix powered by the bound's 2-part) against the
+  odd part of the full period: 72 of 72;
+- the procedure against every earlier data point at odd part 9 or more: 7,746 of 7,750 agree,
+  the four being round 2's accidents.
+
+The (rule, m) pairs that validation computed were excluded from the test.
+
+**The run** started at 10:52:05Z. It was stopped at the session's two-hour limit for a
+background command, after 5,797 records. `lattice_lab.study.resume`, added for this, finished it.
+It writes a `run_resumed` entry, runs only the work not yet recorded, and then appends the
+observations and verdict citing the original `run_started`. The verdict was appended at
+12:56:50Z. `lattice-lab verify` passes, and `eigen.py` independently recomputes every one of the
+11,662 records from the eigenvalues in F(2^ord). All agree.
+
+**Results.**
+
+| Step | square | hexagon | triangle |
+| --- | --- | --- | --- |
+| dilation | 135 of 135 | 68 of 68 | 814 of 814 (by 2: s is often a square) |
+| perfect power (cubes) | 136 of 136 | 68 of 68 | 68 of 68 |
+| one-dimensional split | 99 of 99 | 66 of 67 | - |
+| full bound | 3,385 of 3,388 | 3,575 of 3,597 | 2,901 of 2,918 |
+
+**43 of the 11,358 predictions failed, so both hypotheses are refuted.** The accidents
+hypothesis failed because VO+T13 fails at m = 95 and 101. The 43 fall into three groups.
+
+### A third mechanism: VO+T13, a twisted power
+
+VO+T13 failed at m = 101 first, with a third of the full bound. A full factorisation over GF(2)
+(Kronecker substitution, then recombining the factors in two variables) gives
+
+    s(VO+T13) = s_E(x, y) * s_E(x^3, y^3),
+
+the edge rule's s times its own dilation by 3. `failures.py` checks the identity directly.
+
+Its eigenvalue at a character chi is s_E(chi) s_E(chi^3). When 3 = +-2^k modulo m, chi^3 is a
+Frobenius conjugate of chi; s_E is symmetric, so +- does not matter. The eigenvalue is then
+lambda^(1 + 2^k), with lambda = s_E(chi), and the odd part is q / gcd(q, 1 + 2^k). When k is odd,
+3 divides 1 + 2^k, and every eigenvalue is a cube. This contains the cube as a special case,
+g g(x^2, y^2) = g^3, and generalises it: a polynomial times its own dilation is a power, whenever
+the dilation acts as a Frobenius on the torus.
+
+The expectation was written in three versions during the run (`expectation.json`), each before
+the sizes it was judged on:
+
+| Version | Written | Basis | Matches, of 34 sizes | After it was written |
+| --- | --- | --- | --- | --- |
+| 1 | 11:49:36Z | "a cube": a third of q wherever 3 divides q | 22 | 19 of 30 |
+| 2 | 11:50:15Z | the same, where 3 does not divide m | 29 | 25 of 30 |
+| 3 | 11:58:21Z | the factorisation and the Frobenius argument | **34** | **29 of 29** |
+
+Version 1 was wrong as soon as it was written, because m = 141 had already held. Version 3
+predicts failures at exactly 25, 29, 35, 53, 55, 95 and 101, each by a factor of 3, and those are
+the seven at which VO+T13 failed. A scan at sizes outside the test found no other triangle rule
+that falls short there.
+
+### Small fields: 35 failures at m = 13, 15, 21 and 25
+
+| m | 13 | 15 | 21 | 25 | 37 | every other m |
+| --- | --- | --- | --- | --- | --- | --- |
+| sord(m) | 6 | 4 | 6 | 10 | 18 | - |
+| failures (VO+T13 apart) | 24 | 6 | 2 | 3 | 1 | 0 |
+| predictions | 335 | 328 | 335 | 335 | 335 | 9,690 |
+
+For every one of these rules, `failures.py` counts only 3 to 7 distinct eigenvalues up to
+Frobenius. All of them lie in a proper subfield (F(4), F(8)) or in the subgroup of cubes. With
+so few values in so small a field, that is likely by chance. Each value is a cube about one time
+in three, so a rule with 3 values falls short about 1 time in 27, and there are hundreds of rules.
+The chance falls quickly as m grows. Many of these rules do not factor at all, so no mechanism
+of the procedure applies. They are coincidences of small fields.
+
+### Open: m = 37
+
+Triangle VS+T9+T13+self fails at m = 37 with 87381, rule 90's own period there. Its s is
+irreducible, and its 9 distinct eigenvalues are all cubes in F(2^18), odds of about 1 in 20,000.
+Round 2's square A4+K8+B4+self did the same at 37, with 172 distinct eigenvalues, all cubes. Two
+unrelated irreducible rules land on rule 90's shortfall at exactly the first size where rule 90
+has one. That points to structure at 37 that is not yet found.
+
+### What round 3 says
+
+- **The mechanisms held almost without exception.** Every dilation and power prediction held at
+  every size, and 164 of 165 split predictions held; the one failure is at m = 13.
+- **The full bound held 9,861 times in 9,903.** Above m = 37, the only failures in 6,365
+  predictions are VO+T13's. They came from a third mechanism, found during the run, which then
+  predicted every size of that rule.
+- **The statement now has four parts:** splitting, powers, dilations, and twisted powers g(x)
+  g(x^d) where d acts as a Frobenius. Small fields add coincidences on top. The open case is 37.
+- **A round 4 could:**
+  - register the twisted-power step on new rules;
+  - judge small sizes by the predicted chance of a coincidence, not by exactness;
+  - use `eigen.py` as the checker. It is thousands of times faster than the matrix powers, and
+    it agreed with them on all 11,662 round-3 records.
+
 ## What this does and does not establish
 
 - **Registered:** Kepler's period laws for 30 blind rules, each held exactly at every test size
@@ -419,15 +565,19 @@ As registered, the pattern is refuted. What survives is a sharper statement, fou
   rule-150 laws: P150 was in its vocabulary, but no one had pointed it at these rules. The
   factorisation pattern, the quadratic relations and the short proofs were reasoning added
   afterwards.
+- **Round 3: the refined statement, registered** on 344 new rules.
+  - 11,315 of 11,358 predictions held. Every dilation and power held, and all but one split.
+  - It was refuted by small-field coincidences at m <= 25 and one case at 37.
+  - The failures also exposed a third mechanism, the twisted power. Its expectation, written
+    before 29 of its 34 sizes were computed, matched all 34.
 - **Round 2: the pattern, registered.**
   - It was registered with every prediction stated in advance. It predicted 100 of 106
     full-bound periods for rules nobody had computed, and was refuted by 7 of 113 predictions.
   - The refutation was informative: it showed two mechanisms the pattern had missed. After the
     first failure of each, it was written down exactly where they would fail, before those
     sizes were computed, and that was confirmed.
-  - The four remaining failures are open.
-  - A round 3 should register the refined statement on new rules, preferably on the hexagon and
-    triangle too, with the small sizes kept in.
+  - Of the four remaining failures, two have since been explained (F(8) at n = 13). The n = 37
+    one is open, and round 3 found a second like it.
 
 ## Reproducing
 
@@ -437,6 +587,12 @@ As registered, the pattern is refuted. What survives is a sharper statement, fou
     uv run python examples/linear-atlas/factor.py
     uv run lattice-lab verify --lab examples/linear-atlas-2
     uv run python examples/linear-atlas-2/analyse.py
+    uv run python examples/linear-atlas-3/validate.py
+    uv run lattice-lab verify --lab examples/linear-atlas-3
+    uv run python examples/linear-atlas-3/eigen.py --workers 4
+    uv run python examples/linear-atlas-3/failures.py
 
-`study.py run` will not run twice on one ledger, since a run must follow a bare registration.
-Any record can be rechecked on its own with `engine.Torus(lattice, shells, n).check(value)`.
+`study.py run` will not run twice on one ledger, since a run must follow a bare registration;
+`study.py resume` finishes a run that was interrupted. Any record can be rechecked on its own,
+with `engine.Torus(lattice, shells, n).check(value)` in rounds 1 and 2, and with
+`atlas3.OddExact` or `eigen.odd_part` in round 3.
