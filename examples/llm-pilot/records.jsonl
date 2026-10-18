@@ -1,0 +1,15 @@
+{"is_period":true,"m":103,"n":412,"predicted":18014398509481976,"reason":"repeats, and at no proper divisor","scope":"theorem","v":2}
+{"is_period":true,"m":209,"n":418,"predicted":140737488355324,"reason":"repeats, and at no proper divisor","scope":"theorem","v":1}
+{"is_period":true,"m":53,"n":424,"predicted":1073741808,"reason":"repeats, and at no proper divisor","scope":"theorem","v":3}
+{"is_period":true,"m":27,"n":432,"predicted":16352,"reason":"repeats, and at no proper divisor","scope":"theorem","v":4}
+{"is_period":true,"m":15,"n":480,"predicted":960,"reason":"repeats, and at no proper divisor","scope":"theorem","v":5}
+{"is_period":true,"m":1,"n":512,"predicted":1,"reason":"the torus dies: period 1","scope":"beyond","v":9}
+{"is_period":true,"m":17,"n":544,"predicted":960,"reason":"repeats, and at no proper divisor","scope":"theorem","v":5}
+{"is_period":true,"m":9,"n":576,"predicted":896,"reason":"repeats, and at no proper divisor","scope":"theorem","v":6}
+{"is_period":true,"m":19,"n":608,"predicted":32704,"reason":"repeats, and at no proper divisor","scope":"theorem","v":5}
+{"is_period":true,"m":11,"n":704,"predicted":3968,"reason":"repeats, and at no proper divisor","scope":"theorem","v":6}
+{"is_period":true,"m":3,"n":768,"predicted":256,"reason":"repeats, and at no proper divisor","scope":"beyond","v":8}
+{"is_period":true,"m":25,"n":800,"predicted":65472,"reason":"repeats, and at no proper divisor","scope":"theorem","v":5}
+{"is_period":true,"m":13,"n":832,"predicted":8064,"reason":"repeats, and at no proper divisor","scope":"theorem","v":6}
+{"is_period":true,"m":7,"n":896,"predicted":1792,"reason":"repeats, and at no proper divisor","scope":"theorem","v":7}
+{"is_period":true,"m":1,"n":1024,"predicted":1,"reason":"the torus dies: period 1","scope":"beyond","v":10}
