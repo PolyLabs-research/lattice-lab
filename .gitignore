@@ -5,3 +5,6 @@ __pycache__/
 .ruff_cache/
 # A lab directory is data: keep it in its own place (or its own repository), not in the code.
 /lab/
+
+# Lean build output
+/proofs/.lake/
