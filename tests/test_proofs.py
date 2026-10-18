@@ -117,7 +117,7 @@ def test_the_atlas_tori_of_tori_lean_are_the_atlas_engines():
     (x, y) -> (x - y mod n, y mod n/2), and its hexagonal torus as Z/2n x Z/(n/2), with
     (q, r) -> (q + 2r mod 2n, r mod n/2). Each rule reads the negated exponents of its entries.
     These models must have the atlas engine's exact periods, and those periods must have the form
-    the reduction theorems state."""
+    the reduction theorems state, with H1's exact 2-part from HexTwoPart.lean."""
     _generator()
     import atlas3
     import eigen
@@ -190,6 +190,8 @@ def test_the_atlas_tori_of_tori_lean_are_the_atlas_engines():
         assert eventual_period(hexagon(n)) == p, n
         a = two_power(p, eigen.odd_part(atlas3.polynomial("hexagon", ("H1",)), m))
         assert a is not None and a <= v + 1, n
+        # HexTwoPart.lean: the 2-part is exactly 2^(v+1) once m >= 5.
+        assert m < 5 or a == v + 1, n
 
 
 def test_the_xor_law_two_part_agrees_with_the_atlas():

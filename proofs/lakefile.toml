@@ -8,3 +8,6 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "LatticeProofs"
+# HexTwoPart is the pilot's proof (examples/llm-pilot), kept verbatim. It imports the root
+# module, so it is a root of its own rather than imported by it.
+roots = ["LatticeProofs", "LatticeProofs.HexTwoPart"]

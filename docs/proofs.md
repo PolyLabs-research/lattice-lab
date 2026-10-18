@@ -18,7 +18,9 @@ the pipeline. It covers:
 - **triangular tori**, including rules with all four matrix entries, and **round 3's twisted
   power on the atlas's own torus**;
 - **the XOR law's 2-part**: for B1357/S1357, P(2^v m) = 2^v P(m) at every n whose odd part m is
-  greater than 1. So the XOR law holds at every size exactly when it holds at the odd sizes.
+  greater than 1. So the XOR law holds at every size exactly when it holds at the odd sizes;
+- **the hexagon law's 2-part**: for H1, P(2^v m) = 2^(v+1) P(m) on the atlas's hexagonal torus at
+  every m ≥ 5. An LLM agent found and proved this in the pilot of [llm-pilot.md](llm-pilot.md).
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -272,13 +274,36 @@ local-ring analysis of [xor-periods-proof.md](xor-periods-proof.md#4-even-sizes-
 So the XOR law P(n) = 2^v(n) (2^sord(m) − 1) holds at every n with m > 1 exactly when it holds at
 the odd part m. At the odd parts it is the open core, checked by machine up to 999 except ten.
 
+### The hexagon law's 2-part (`LatticeProofs/HexTwoPart.lean`, by the pilot agent)
+
+This file is the LLM pilot's proof, verbatim ([llm-pilot.md](llm-pilot.md)). It completes the
+hexagon law's 2-part: `hexPeriod_eq_two_pow_mul` bounds it by 2^(v+1), and this file shows the
+bound is attained.
+
+- **Stop one Frobenius step early.** 2^v steps of H1 are one step of 2^v H1. Multiplication by
+  2^v embeds the torus G′ = Z/2m × Z/m, with (q, r) ↦ (q + 2r, r), onto 2^v G
+  (`hexSubMul_injective`). So by the restriction lemma, P divides 2^v p exactly when p is a period
+  of H1 on G′. G′ ≅ Z/2 × (Z/m)² keeps the Z/2 factor that the reduction to (Z/m)² loses.
+- **A Jordan block on G′** (`hexSub_even`). With ζ a primitive m-th root of unity, the weights
+  ζ^a ζ^b and ζ^a ζ^b [a even] form a block with λ = ζ^±1 + ζ^±2 + ζ^±3 and μ = ζ^±1 + ζ^±2. In
+  characteristic 2, ζ³λ = (1 + ζ)(1 + ζ²)(1 + ζ³) and ζ²μ = (1 + ζ)(1 + ζ³), so both are nonzero
+  once m ≥ 5. `even_of_jordan` makes every period on G′ even, and P(m) is odd.
+
+| Theorem | Statement |
+| --- | --- |
+| `hexPeriod_hexH1_exact` | **the hexagon law's 2-part**: on the atlas's hexagonal torus of side 2^v m, m odd ≥ 5, H1 has period exactly 2^(v+1) P(m) |
+
+At m = 3 the 2-part is only 2^v: every character with λ ≠ 0 there has μ = 0. This is a different
+route from the hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
+which goes to 2^(v−1) steps and reads the factor 4 off a Z/4 subgroup.
+
 ## What is not
 
-- **The exact 2-parts on the hexagon and the triangles.** For the square XOR rule it is proved
-  (`period_sqN4D4`). The hexagon (2 · 2^v at m ≥ 5) and the triangles (2 · 2^v at m ≥ 3) need
-  their own blocks. The reduction already bounds them by exactly those values. The hand proofs in
-  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved) read the blocks off in
-  subgroups of order 4 and 2.
+- **The exact 2-parts on the triangles.** For the square XOR rule and the hexagon they are proved
+  (`period_sqN4D4`, `hexPeriod_hexH1_exact`). The triangles (2 · 2^v at m ≥ 3) need their own
+  blocks. The reduction already bounds them by exactly that value. The hand proof in
+  [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved) reads the block off in a
+  subgroup of order 2.
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.
 - **The hexagon's R(m).** Formally, the odd part is H1's period on (Z/m)². That this equals rule
@@ -320,6 +345,8 @@ mean what the atlas means.
   exact engine at every odd side up to 13; outside the test, up to 31.
 - The atlas's triangular and hexagonal tori, as modelled in `Tori.lean`, are checked against the
   atlas's engine at n = 6, 10, 12 and 14, and their periods against the reduction theorems' form.
+  H1's 2-part is checked to be exactly 2^(v+1) at the sizes with m ≥ 5. The pilot's registered
+  study checked the hexagon law at 15 further sizes up to 1024.
 - The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.
 - The XOR law's 2-part is checked with the exact engine for B1357/S1357 and N4 at
   m = 3, 5, 7, 9 and 11, with v = 1 and 2.
