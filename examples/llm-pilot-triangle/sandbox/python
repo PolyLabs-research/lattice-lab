@@ -1,0 +1,4 @@
+#!/bin/sh
+# The sandbox's interpreter: the venv that setup.sh makes. Calling the venv's python by its real
+# path (not through a symlink) is what makes the venv active.
+exec "$(dirname "$(readlink -f "$0")")/.venv/bin/python" "$@"

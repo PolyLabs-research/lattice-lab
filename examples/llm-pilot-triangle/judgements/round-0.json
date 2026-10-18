@@ -1,0 +1,45 @@
+{
+ "round": 0,
+ "base": "9d5a274d351fce17722fb83347cf2701f3c2b0a1",
+ "head": "9d5a274d351fce17722fb83347cf2701f3c2b0a1",
+ "library": {
+  "ok": true,
+  "touched": [],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "lean": {
+  "ok": false,
+  "forbidden_words": [
+   "sorry"
+  ],
+  "axioms": {
+   "atlasTriPeriod_triE_exact": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext",
+    "sorryAx"
+   ],
+   "atlasTriPeriod_triEVOVS_exact": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext",
+    "sorryAx"
+   ]
+  },
+  "build": {
+   "returncode": 0,
+   "seconds": 9.3,
+   "output": "\u26a0 [1171/1403] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1403] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2850] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2850] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2850/2850] Built LatticeProofs.Pilot (3.0s)\nwarning: LatticeProofs/Pilot.lean:12:8: declaration uses `sorry`\nwarning: LatticeProofs/Pilot.lean:18:8: declaration uses `sorry`\nBuild completed successfully (2850 jobs).\n"
+  },
+  "check": {
+   "returncode": 0,
+   "seconds": 4.2,
+   "output": "'LatticeProofs.atlasTriPeriod_triE_exact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'LatticeProofs.atlasTriPeriod_triEVOVS_exact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "proposal": {
+  "present": false
+ },
+ "passed": false
+}

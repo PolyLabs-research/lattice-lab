@@ -11,7 +11,7 @@ The sandbox (/home/user/pilot-sandbox) holds:
   `sorry`) and PilotCheck.lean (the pinned statement). It does not include generate.py, which
   needs the atlas code. Its .lake/build is a copy, and .lake/packages (mathlib) is a link to the
   built one;
-- python, a link to an interpreter with numpy and sympy;
+- python, a wrapper that runs the repository's venv interpreter, with numpy and sympy;
 - manifest.json, the sha256 of every library file copied, for the judge.
 
 docs/ and examples/ are left out: docs/ holds the hand proof of the hexagon law's 2-part.
@@ -65,7 +65,11 @@ def build(force: bool) -> dict:
     lake.mkdir()
     (lake / "packages").symlink_to(PROOFS / ".lake" / "packages")
     shutil.copytree(PROOFS / ".lake" / "build", lake / "build", symlinks=True)
-    (SANDBOX / "python").symlink_to(REPO / ".venv" / "bin" / "python")
+    # A wrapper, not a symlink: through a symlink the interpreter does not find the venv, so the
+    # first pilot ran without sympy (log.md). Called by its venv path, it does.
+    venv_python = REPO / ".venv" / "bin" / "python"
+    (SANDBOX / "python").write_text(f'#!/bin/sh\nexec "{venv_python}" "$@"\n')
+    (SANDBOX / "python").chmod(0o755)
     (SANDBOX / "manifest.json").write_text(json.dumps(manifest, indent=1, sort_keys=True) + "\n")
     return manifest
 
