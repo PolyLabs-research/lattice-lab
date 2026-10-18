@@ -44,3 +44,14 @@ The first pilot's two harness faults are fixed:
   `proofs/LatticeProofs/Pilot.lean`.
 - **The judge, round 0**, on the base itself: library unchanged, both statements build, and the
   run fails only because both theorems depend on `sorryAx` (`judgements/round-0.json`).
+
+## Launch
+
+- **20:28:23 UTC.** The agent's session, `session_01GVScbB1SJ9jeHcJncfbzxC`, was created from
+  `pilot-sandbox-triangle` at depth 1, in the same cloud environment as the orchestrator but its
+  own container, with the prompt in `prompt.md`, verbatim. It inherited the orchestrator's
+  permission mode (auto). The session was asked to push to `pilot-triangle-submission`, but its
+  record names `pilot-sandbox-triangle` as its branch, so the watcher and the judge accept
+  either; the judge always diffs against the base commit itself.
+- The registered study's run started at the same time, in the orchestrator's container, which
+  the agent cannot see.

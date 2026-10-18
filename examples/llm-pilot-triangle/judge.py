@@ -1,10 +1,10 @@
 """
 Judge the triangle pilot's proofs, independently of the agent's own report.
 
-    uv run python examples/llm-pilot-triangle/judge.py <round>
+    uv run python examples/llm-pilot-triangle/judge.py <round> [<branch>]
 
-The agent pushes to `pilot-triangle-submission`, a branch grown from the sandbox's base commit
-(base.txt).
+The agent pushes to a branch grown from the sandbox's base commit (base.txt): by default
+`pilot-triangle-submission`, but its session may push to `pilot-sandbox-triangle` instead.
 
 1. **Library unchanged.** Against the base commit, the branch changes only Pilot.lean, files
    under proofs/LatticeProofs/Pilot/, the deliverables (proposal.md, proposal.py, report.md) and
@@ -55,11 +55,11 @@ def git(*args: str) -> str:
     ).stdout
 
 
-def fetch() -> str:
+def fetch(branch: str) -> str:
     url = subprocess.run(
         ["git", "remote", "get-url", "origin"], cwd=REPO, check=True, capture_output=True, text=True
     ).stdout.strip()
-    git("fetch", "-q", url, f"refs/heads/{BRANCH}")
+    git("fetch", "-q", url, f"refs/heads/{branch}")
     return git("rev-parse", "FETCH_HEAD").strip()
 
 
@@ -163,14 +163,18 @@ def proposal_run(tree: Path) -> dict:
 
 def main() -> None:
     round_no = int(sys.argv[1])
+    branch = sys.argv[2] if len(sys.argv) > 2 else BRANCH
     base = (HERE / "base.txt").read_text().strip()
-    head = fetch()
+    head = fetch(branch)
+    if git("merge-base", base, head).strip() != base:
+        raise SystemExit(f"{branch} does not grow from the base commit {base[:12]}")
     if WORK.exists():
         shutil.rmtree(WORK)
     WORK.mkdir(parents=True)
     tree = checkout(head)
     result = {
         "round": round_no,
+        "branch": branch,
         "base": base,
         "head": head,
         "library": library_check(base, head),
