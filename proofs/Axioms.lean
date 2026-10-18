@@ -10,3 +10,9 @@ import LatticeProofs
 #print axioms LatticeProofs.triVOT13_value
 #print axioms LatticeProofs.triVOT13_order
 #print axioms LatticeProofs.three_dvd_one_add_two_pow
+#print axioms LatticeProofs.isPeriod_iff
+#print axioms LatticeProofs.period_eq_eigenLcm
+#print axioms LatticeProofs.isPeriod_iff_period_dvd
+#print axioms LatticeProofs.period_sqN4K8C4
+#print axioms LatticeProofs.period_sqA4K8C4self
+#print axioms LatticeProofs.period_sqC4self

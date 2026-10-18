@@ -23,6 +23,10 @@ def hexH1 (x xi y yi : R) : R :=
 def sqN4 (x xi y yi : R) : R :=
   xi + yi + y + x
 
+/-- The square's four nearest cells and the cell itself (the sigma-plus automaton). -/
+def sqN4self (x xi y yi : R) : R :=
+  xi + yi + 1 + y + x
+
 /-- The square's four diagonal cells. -/
 def sqD4 (x xi y yi : R) : R :=
   xi*yi + xi*y + x*yi + x*y

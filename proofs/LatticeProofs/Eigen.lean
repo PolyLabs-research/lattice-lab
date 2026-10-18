@@ -6,9 +6,9 @@ eigenvalue at a character is the rule's Laurent polynomial evaluated at x = zeta
 for zeta a primitive n-th root of unity in a field of characteristic 2. Its period on the torus
 is the lcm of the multiplicative orders of its nonzero eigenvalues.
 
-That bridge, from periods to eigenvalue orders, is not formalised here. What follows is
-everything downstream of it, for any commutative ring of characteristic 2 and any x, y with
-inverses xi, yi:
+That bridge, from periods to eigenvalue orders, is `Bridge.lean`, and `Periods.lean` combines the
+two. What follows is the eigenvalue side, for any commutative ring of characteristic 2 and any
+x, y with inverses xi, yi:
 
 * raising to the k-th power divides an order by gcd(order, k) (`orderOf_pow_div`);
 * the cube mechanism: N4 + K8 + C4 has the eigenvalues of N4 cubed (`sqN4K8C4_value`);
