@@ -55,3 +55,6 @@ The first pilot's two harness faults are fixed:
   either; the judge always diffs against the base commit itself.
 - The registered study's run started at the same time, in the orchestrator's container, which
   the agent cannot see.
+- **20:47:22 UTC: the registered test held at all 40 predictions**, both rules at all 20 sizes
+  (`records.jsonl`, the verdict in `ledger.jsonl`); `lattice-lab verify` finds no problems. This
+  was before the agent had reported anything.
