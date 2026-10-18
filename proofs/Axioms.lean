@@ -16,3 +16,10 @@ import LatticeProofs
 #print axioms LatticeProofs.period_sqN4K8C4
 #print axioms LatticeProofs.period_sqA4K8C4self
 #print axioms LatticeProofs.period_sqC4self
+#print axioms LatticeProofs.isEventualPeriod_iff_dvd
+#print axioms LatticeProofs.period_dvd_two_pow_sub_one_of_symm
+#print axioms LatticeProofs.period_odd
+#print axioms LatticeProofs.triPeriod_eq_two_mul
+#print axioms LatticeProofs.triPeriod_triE
+#print axioms LatticeProofs.triPeriod_triE_dvd
+#print axioms LatticeProofs.triPeriod_twisted

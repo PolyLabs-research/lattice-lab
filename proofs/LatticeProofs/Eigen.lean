@@ -54,6 +54,21 @@ theorem inv_pow_eq {x xi : R} (hx : x * xi = 1) {a b : ℕ} (h : x ^ a = x ^ b) 
 theorem pow_mul_inv_pow {x xi : R} (hx : x * xi = 1) (d : ℕ) : x ^ d * xi ^ d = 1 := by
   rw [← mul_pow, hx, one_pow]
 
+/-- If x^a = xi^b and x has inverse xi, then xi^a = x^b. -/
+theorem inv_pow_eq_swap {x xi : R} (hx : x * xi = 1) {a b : ℕ} (h : x ^ a = xi ^ b) :
+    xi ^ a = x ^ b := by
+  have ha := pow_mul_inv_pow hx a
+  have hb := pow_mul_inv_pow hx b
+  calc xi ^ a = xi ^ a * (x ^ b * xi ^ b) := by rw [hb, mul_one]
+    _ = x ^ b * (xi ^ a * xi ^ b) := by ring
+    _ = x ^ b * (xi ^ a * x ^ a) := by rw [h]
+    _ = x ^ b := by rw [mul_comm (xi ^ a), ha, mul_one]
+
+/-- The shell VS is symmetric under x, y -> 1/x, 1/y. -/
+theorem triVS_symm (x xi y yi : R) : triVS xi x yi y = triVS x xi y yi := by
+  unfold triVS
+  ring
+
 end Inverses
 
 section CharTwo
@@ -100,6 +115,27 @@ theorem triVOT13_value (k : ℕ) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi 
         rw [hE, hE3]
     _ = (1 + triVS x xi y yi) * (1 + triVS x xi y yi) ^ 2 ^ k := by
         rw [h3x, h3y, inv_pow_eq hx h3x, inv_pow_eq hy h3y, sE_frobenius]
+    _ = (1 + triVS x xi y yi) ^ (1 + 2 ^ k) := by ring
+
+/-- The twisted power with the other sign. Wherever x^3 = xi^(2^k) and y^3 = yi^(2^k), as at a
+character of an m-torus with 3 = -2^k mod m, the eigenvalue of VO + T13 is again the edge rule's
+raised to 1 + 2^k, because s_E is symmetric. -/
+theorem triVOT13_value_neg (k : ℕ) (x xi y yi : R) (hx : x * xi = 1) (hy : y * yi = 1)
+    (h3x : x ^ 3 = xi ^ 2 ^ k) (h3y : y ^ 3 = yi ^ 2 ^ k) :
+    triDuVOT13 x xi y yi * triUdVOT13 x xi y yi = (1 + triVS x xi y yi) ^ (1 + 2 ^ k) := by
+  have h2 : (2 : R) = 0 := two_eq_zero_of_charTwo
+  have hE := triangle_E_square h2 x xi y yi hx hy
+  have hE3 := triangle_E_square h2 (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)
+    (pow_mul_inv_pow hx 3) (pow_mul_inv_pow hy 3)
+  calc triDuVOT13 x xi y yi * triUdVOT13 x xi y yi
+      = (triDuE x xi y yi * triUdE x xi y yi) *
+          (triDuE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3) * triUdE (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)) := by
+        rw [triangle_VOT13_twisted h2 x xi y yi hx hy]; ring
+    _ = (1 + triVS x xi y yi) * (1 + triVS (x ^ 3) (xi ^ 3) (y ^ 3) (yi ^ 3)) := by
+        rw [hE, hE3]
+    _ = (1 + triVS x xi y yi) * (1 + triVS x xi y yi) ^ 2 ^ k := by
+        rw [h3x, h3y, inv_pow_eq_swap hx h3x, inv_pow_eq_swap hy h3y, sE_frobenius,
+          triVS_symm (x ^ 2 ^ k)]
     _ = (1 + triVS x xi y yi) ^ (1 + 2 ^ k) := by ring
 
 /-- So its order is the edge rule's divided by gcd(order, 1 + 2^k); for odd k, 3 divides

@@ -13,15 +13,80 @@ lam_{j,k} = sum over d in D of chi_{j,k}(-d).
 * `period_eq_eigenLcm`: the period is the lcm of the multiplicative orders of the nonzero
   eigenvalues, and `isPeriod_iff_period_dvd`: every period is a multiple of it.
 * `lam_eq_ev`: lam_{j,k} is the rule's Laurent polynomial at x = zeta^-j, y = zeta^-k.
+* `exists_primitiveRoot`: for odd m, the algebraic closure of GF(2) is such a field.
+* `period_dvd_two_pow_sub_one`, `period_dvd_two_pow_sub_one_of_symm`: the bound. The period
+  divides 2^r - 1 when 2^r = 1 mod m, and for a symmetric rule also when 2^r = -1 mod m.
+* `period_odd`: on an odd torus the period is odd.
+
+`IsEventualPeriod` and `isEventualPeriod_iff_dvd` hold for any map of a finite set: its eventual
+periods are the multiples of the least one.
 -/
 import LatticeProofs.Eigen
 import Mathlib.Algebra.Field.GeomSum
 import Mathlib.Data.ZMod.Basic
+import Mathlib.FieldTheory.Finite.Basic
+import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed
 import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
 
 namespace LatticeProofs
 
 open Finset
+
+section Eventual
+
+variable {α : Type*} (f : α → α)
+
+/-- p is an eventual period of f: from some time t on, f^[t + p] = f^[t]. -/
+def IsEventualPeriod (p : ℕ) : Prop := ∃ t, f^[t + p] = f^[t]
+
+/-- The least positive eventual period. -/
+noncomputable def eventualPeriod : ℕ := sInf {p | 0 < p ∧ IsEventualPeriod f p}
+
+/-- On a finite set, some positive p is an eventual period. -/
+theorem exists_isEventualPeriod [Finite α] : ∃ p, 0 < p ∧ IsEventualPeriod f p := by
+  obtain ⟨a, b, hab, h⟩ := Finite.exists_ne_map_eq_of_infinite fun n : ℕ => f^[n]
+  rcases Nat.lt_or_gt_of_ne hab with hlt | hlt
+  · exact ⟨b - a, by omega, a, by rw [Nat.add_sub_of_le hlt.le]; exact h.symm⟩
+  · exact ⟨a - b, by omega, b, by rw [Nat.add_sub_of_le hlt.le]; exact h⟩
+
+theorem eventualPeriod_spec [Finite α] :
+    0 < eventualPeriod f ∧ IsEventualPeriod f (eventualPeriod f) :=
+  Nat.sInf_mem (exists_isEventualPeriod f)
+
+variable {f}
+
+/-- A period from time t is a period from every later time, and so is each of its multiples. -/
+theorem iterate_add_mul_eq {t p : ℕ} (h : f^[t + p] = f^[t]) (s q : ℕ) :
+    f^[t + s + q * p] = f^[t + s] := by
+  induction q with
+  | zero => simp
+  | succ q ih =>
+    rw [show t + s + (q + 1) * p = (s + q * p) + (t + p) by ring, Function.iterate_add, h,
+      ← Function.iterate_add, show s + q * p + t = t + s + q * p by ring, ih]
+
+/-- On a finite set, the eventual periods are exactly the multiples of the least one. -/
+theorem isEventualPeriod_iff_dvd [Finite α] {p : ℕ} :
+    IsEventualPeriod f p ↔ eventualPeriod f ∣ p := by
+  obtain ⟨hP, t', ht'⟩ := eventualPeriod_spec f
+  set P := eventualPeriod f
+  constructor
+  · rintro ⟨t, ht⟩
+    obtain ⟨q, r, hrP, hpq⟩ : ∃ q r, r < P ∧ r + P * q = p :=
+      ⟨p / P, p % P, Nat.mod_lt p hP, Nat.mod_add_div p P⟩
+    have hr : f^[(t + t') + r] = f^[t + t'] := by
+      calc f^[(t + t') + r] = f^[t' + (t + r) + q * P] := by
+            rw [iterate_add_mul_eq ht' (t + r) q]; congr 1; ring
+        _ = f^[t + t' + 1 * p] := by congr 1; rw [← hpq]; ring
+        _ = f^[t + t'] := iterate_add_mul_eq ht t' 1
+    rcases Nat.eq_zero_or_pos r with h0 | hr0
+    · exact ⟨q, by rw [← hpq, h0, zero_add]⟩
+    · have hle : P ≤ r := Nat.sInf_le ⟨hr0, t + t', hr⟩
+      exact absurd hle (not_le.2 hrP)
+  · rintro ⟨c, rfl⟩
+    refine ⟨t', ?_⟩
+    simpa [mul_comm] using iterate_add_mul_eq ht' 0 c
+
+end Eventual
 
 section Torus
 
@@ -43,18 +108,23 @@ def step (D : Finset (ℤ × ℤ)) (s : Config m) : Config m :=
 
 /-- p is a period of the rule on the m-torus: from some time on, every configuration recurs
 after p steps. -/
-def IsPeriod (D : Finset (ℤ × ℤ)) (p : ℕ) : Prop :=
-  ∃ t, (step m D)^[t + p] = (step m D)^[t]
+def IsPeriod (D : Finset (ℤ × ℤ)) (p : ℕ) : Prop := IsEventualPeriod (step m D) p
 
 /-- Some positive p is a period: there are only finitely many maps of configurations. -/
-theorem exists_isPeriod (D : Finset (ℤ × ℤ)) : ∃ p, 0 < p ∧ IsPeriod m D p := by
-  obtain ⟨a, b, hab, h⟩ := Finite.exists_ne_map_eq_of_infinite fun n : ℕ => (step m D)^[n]
-  rcases Nat.lt_or_gt_of_ne hab with hlt | hlt
-  · exact ⟨b - a, by omega, a, by rw [Nat.add_sub_of_le hlt.le]; exact h.symm⟩
-  · exact ⟨a - b, by omega, b, by rw [Nat.add_sub_of_le hlt.le]; exact h⟩
+theorem exists_isPeriod (D : Finset (ℤ × ℤ)) : ∃ p, 0 < p ∧ IsPeriod m D p :=
+  exists_isEventualPeriod _
 
 /-- The period of the rule on the m-torus: its least positive period. -/
-noncomputable def period (D : Finset (ℤ × ℤ)) : ℕ := sInf {p | 0 < p ∧ IsPeriod m D p}
+noncomputable def period (D : Finset (ℤ × ℤ)) : ℕ := eventualPeriod (step m D)
+
+/-- Every period is a multiple of the period. -/
+theorem isPeriod_iff_period_dvd (D : Finset (ℤ × ℤ)) (p : ℕ) : IsPeriod m D p ↔ period m D ∣ p :=
+  isEventualPeriod_iff_dvd
+
+omit [NeZero m] in
+theorem step_empty (s : Config m) : step m ∅ s = 0 := by
+  funext v
+  simp [step]
 
 end Torus
 
@@ -281,20 +351,102 @@ theorem isPeriod_iff_eigenLcm_dvd (hζ : IsPrimitiveRoot ζ m) (D : Finset (ℤ 
 
 /-- **The period is the lcm of the multiplicative orders of the nonzero eigenvalues.** -/
 theorem period_eq_eigenLcm (hζ : IsPrimitiveRoot ζ m) (D : Finset (ℤ × ℤ)) :
-    period m D = eigenLcm m ζ D := by
-  have key := isPeriod_iff_eigenLcm_dvd hζ D
-  obtain ⟨p₀, hp₀, h₀⟩ := exists_isPeriod m D
-  have hL : 0 < eigenLcm m ζ D := Nat.pos_of_dvd_of_pos ((key p₀).1 h₀) hp₀
-  have hmem : period m D ∈ {p | 0 < p ∧ IsPeriod m D p} := Nat.sInf_mem ⟨p₀, hp₀, h₀⟩
-  apply le_antisymm
-  · exact Nat.sInf_le ⟨hL, (key _).2 dvd_rfl⟩
-  · exact Nat.le_of_dvd hmem.1 ((key _).1 hmem.2)
+    period m D = eigenLcm m ζ D :=
+  Nat.dvd_antisymm
+    ((isPeriod_iff_period_dvd m D _).1 ((isPeriod_iff_eigenLcm_dvd hζ D _).2 dvd_rfl))
+    ((isPeriod_iff_eigenLcm_dvd hζ D _).1 ((isPeriod_iff_period_dvd m D _).2 dvd_rfl))
 
-/-- Every period is a multiple of the period. -/
-theorem isPeriod_iff_period_dvd (hζ : IsPrimitiveRoot ζ m) (D : Finset (ℤ × ℤ)) (p : ℕ) :
-    IsPeriod m D p ↔ period m D ∣ p := by
-  rw [period_eq_eigenLcm hζ, isPeriod_iff_eigenLcm_dvd hζ]
+theorem hat_add (s s' : Config m) (j k : ℕ) :
+    hat ζ (s + s') j k = hat ζ s j k + hat ζ s' j k := by
+  simp only [hat, Pi.add_apply, map_add, add_mul, Finset.sum_add_distrib]
+
+/-- Two configurations with the same transform are equal. -/
+theorem eq_of_hat_eq (hζ : IsPrimitiveRoot ζ m) {s s' : Config m}
+    (h : ∀ j < m, ∀ k < m, hat ζ s j k = hat ζ s' j k) : s = s' := by
+  funext a
+  have hm : (m : K) ^ 2 ≠ 0 := pow_ne_zero 2 hζ.neZero'.out
+  apply embed_injective (K := K)
+  apply mul_left_cancel₀ hm
+  rw [← inversion hζ s a, ← inversion hζ s' a]
+  refine Finset.sum_congr rfl fun j hj => Finset.sum_congr rfl fun k hk => ?_
+  rw [h j (Finset.mem_range.1 hj) k (Finset.mem_range.1 hk)]
 
 end Fourier
+
+/-- For odd m, the algebraic closure of GF(2) has a primitive m-th root of unity. -/
+theorem exists_primitiveRoot {m : ℕ} [NeZero m] (hm : Odd m) :
+    ∃ ζ : AlgebraicClosure (ZMod 2), IsPrimitiveRoot ζ m := by
+  have : NeZero ((m : ℕ) : ZMod 2) :=
+    ⟨by rw [ZMod.natCast_eq_one_iff_odd.2 hm]; exact one_ne_zero⟩
+  exact HasEnoughRootsOfUnity.exists_isPrimitiveRoot _ m
+
+section Bound
+
+variable {m : ℕ} [NeZero m] {K : Type*} [Field K] [CharP K 2] {ζ : K}
+
+/-- Frobenius: if 2^r = 1 mod m, every eigenvalue is fixed by the 2^r-th power. -/
+theorem lam_pow_two_pow (hζ : ζ ^ m = 1) (D : Finset (ℤ × ℤ)) (j k : ℕ) {r : ℕ}
+    (hr : (2 : ZMod m) ^ r = 1) : lam m ζ D j k ^ 2 ^ r = lam m ζ D j k := by
+  unfold lam
+  rw [sum_pow_char_pow]
+  refine Finset.sum_congr rfl fun d _ => ?_
+  unfold chi
+  rw [← pow_mul]
+  apply pow_eq_pow_of_cast_eq hζ
+  rw [Nat.cast_mul, Nat.cast_pow, Nat.cast_ofNat, hr, mul_one]
+
+/-- If 2^s = -1 mod m and the neighbourhood is symmetric, every eigenvalue is fixed by the
+2^s-th power. -/
+theorem lam_pow_two_pow_of_symm (hζ : ζ ^ m = 1) {D : Finset (ℤ × ℤ)}
+    (hD : ∀ d ∈ D, -d ∈ D) (j k : ℕ) {s : ℕ} (hs : (2 : ZMod m) ^ s = -1) :
+    lam m ζ D j k ^ 2 ^ s = lam m ζ D j k := by
+  unfold lam
+  rw [sum_pow_char_pow]
+  refine Finset.sum_nbij' Neg.neg Neg.neg hD hD (fun d _ => neg_neg d) (fun d _ => neg_neg d)
+    fun d _ => ?_
+  unfold chi
+  rw [← pow_mul]
+  apply pow_eq_pow_of_cast_eq hζ
+  simp only [Nat.cast_mul, Nat.cast_add, Nat.cast_pow, Nat.cast_ofNat, hs, ZMod.natCast_zmod_val,
+    offset, Prod.fst_neg, Prod.snd_neg, Prod.fst_neg, Int.cast_neg, neg_neg]
+  ring
+
+omit [CharP K 2] in
+theorem eq_zero_or_pow_eq_one {a : K} {n : ℕ} (hn : n ≠ 0) (h : a ^ n = a) :
+    a = 0 ∨ a ^ (n - 1) = 1 := by
+  by_cases ha : a = 0
+  · exact Or.inl ha
+  · exact Or.inr ((mul_eq_right₀ ha).1 (by rw [pow_sub_one_mul hn, h]))
+
+end Bound
+
+/-- **The bound.** On the m x m torus with m odd, if 2^r = 1 mod m, the period divides
+2^r - 1. -/
+theorem period_dvd_two_pow_sub_one {m : ℕ} [NeZero m] (hm : Odd m) (D : Finset (ℤ × ℤ)) {r : ℕ}
+    (hr : (2 : ZMod m) ^ r = 1) : period m D ∣ 2 ^ r - 1 := by
+  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
+  rw [← isPeriod_iff_period_dvd, isPeriod_iff hζ]
+  intro j _ k _
+  exact eq_zero_or_pow_eq_one (by positivity) (lam_pow_two_pow hζ.pow_eq_one D j k hr)
+
+/-- **The bound for a symmetric rule.** If D = -D and 2^s = -1 mod m, the period divides
+2^s - 1. -/
+theorem period_dvd_two_pow_sub_one_of_symm {m : ℕ} [NeZero m] (hm : Odd m)
+    {D : Finset (ℤ × ℤ)} (hD : ∀ d ∈ D, -d ∈ D) {s : ℕ} (hs : (2 : ZMod m) ^ s = -1) :
+    period m D ∣ 2 ^ s - 1 := by
+  obtain ⟨ζ, hζ⟩ := exists_primitiveRoot hm
+  rw [← isPeriod_iff_period_dvd, isPeriod_iff hζ]
+  intro j _ k _
+  exact eq_zero_or_pow_eq_one (by positivity) (lam_pow_two_pow_of_symm hζ.pow_eq_one hD j k hs)
+
+/-- On an odd torus every period is odd. -/
+theorem period_odd {m : ℕ} [NeZero m] (hm : Odd m) (D : Finset (ℤ × ℤ)) : Odd (period m D) := by
+  have hr : (2 : ZMod m) ^ Nat.totient m = 1 := by
+    have h := (ZMod.natCast_eq_natCast_iff _ _ _).2
+      (Nat.ModEq.pow_totient (Nat.coprime_two_left.2 hm))
+    simpa using h
+  have hpos : Nat.totient m ≠ 0 := (Nat.totient_pos.2 hm.pos).ne'
+  refine Odd.of_dvd_nat ?_ (period_dvd_two_pow_sub_one hm D hr)
+  exact Nat.Even.sub_odd Nat.one_le_two_pow (Nat.even_pow.2 ⟨even_two, hpos⟩) odd_one
 
 end LatticeProofs

@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 124 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 125 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -32,7 +32,7 @@ default branch and no pull request is open; merging is a decision for you.
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 124 tests
+uv sync && uv run pytest              # 125 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -63,7 +63,7 @@ before the runs that tested them.
 | Atlas, round 1: Kepler's laws for 42 shell-built linear rules (38 unstudied) | blind; all 34 rules with a law kept a registered one at 1,930 new pairs | [linear-atlas.md](linear-atlas.md) |
 | Atlas, round 2: the factorisation pattern | the 34 laws held at 624 harder pairs; the pattern was refuted on 116 new rules (7 of 113 failed); the failures showed cubes and dilations | [linear-atlas.md](linear-atlas.md#round-2-the-pattern-registered) |
 | Atlas, round 3: the refined statement as a procedure, on 344 new rules | 11,315 of 11,358 held; **refuted** by 43. Every dilation and power held; a third mechanism (twisted power) was found and its expectation matched all 34 sizes; small-field coincidences at m <= 25; one case at 37 open | [linear-atlas.md](linear-atlas.md#round-3-the-refined-statement-registered) |
-| Period = lcm of eigenvalue orders (odd tori); round 2's cubes and dilation as period laws | **proved in Lean** for every odd m, standard axioms only; agrees with `eigen.py` at every odd m up to 99 | [proofs.md](proofs.md) |
+| Period = lcm of eigenvalue orders (odd tori); round 2's cubes and dilation, and round 3's twisted power, as period laws | **proved in Lean** for every odd m, standard axioms only; agrees with the atlas's engines at every size checked | [proofs.md](proofs.md) |
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated to L = 1024; power law rejected | [settling-time.md](settling-time.md) |
 | Settling-time fluctuations: one shape and ratio across lattices (Gumbel values) | eight random rules on four lattice types; B2/S34's early miss was a low draw | [settling-time.md](settling-time.md) |
 | Cumulative births under B1357/S1357 are always even | found in data, then proved | [capabilities.md](capabilities.md) |
@@ -108,7 +108,7 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
    new rules, with `eigen.py` as the checker. Judge sizes below about 30 by the predicted chance of
    a coincidence, not by exactness.
 3. **Proofs.** `proofs/` (Lean 4, mathlib v4.35.0; [proofs.md](proofs.md)) now formalises:
-   - the 12 identities behind the mechanisms, generated from the atlas code;
+   - the 14 identities behind the mechanisms, generated from the atlas code;
    - the order lemma, and the cube and twisted-power mechanisms at the eigenvalue level;
    - **the bridge** (`Bridge.lean`): on the m x m torus with m odd, p is a period exactly when
      every eigenvalue is 0 or a p-th root of unity. So the period is the lcm of the orders of the
@@ -117,12 +117,20 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      atlas's own neighbourhoods (generated into `Rules.lean`):
      - P(N4+K8+C4) = P(N4) / gcd(P(N4), 3);
      - P(A4+K8+C4+self) = P(N4+self) / gcd(P(N4+self), 3);
-     - P(C4+self, m) = P(N4+self, m / gcd(m, 3)).
+     - P(C4+self, m) = P(N4+self, m / gcd(m, 3));
+   - **the bound**: on an odd torus the period divides 2^ord(m) - 1, or 2^sord(m) - 1 for a
+     symmetric rule, so it is odd;
+   - **the triangular torus** (`Triangle.lean`) of odd side m, the odd quotient of the atlas's
+     torus at n = 2m:
+     - E and VO+T13 have period exactly 2 P(s);
+     - P(E) divides 2 (2^sord(m) - 1);
+     - **round 3's twisted power**: if 3 = +-2^k mod m and P(E) = 2P, then
+       P(VO+T13) = 2 (P / gcd(P, 1 + 2^k)). Among round 3's tested sizes, this lowers the period
+       exactly at its seven VO+T13 failures.
 
    They rest on Lean's standard axioms only. Next:
-   - the triangle torus (two cells per unit cell, a 2 x 2 matrix), so the twisted power becomes a
-     theorem about periods too;
    - the reduction from even sizes to odd parts, and the hexagon theorem's 2-part;
+   - triangle rules with a same-orientation part (the general 2 x 2 case);
    - then, as research:
    - the rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square
      D4+A4+self has period P150(n), and hexagon H2+H3+self has 2 P150(n). Both are confirmed but

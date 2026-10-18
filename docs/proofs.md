@@ -8,7 +8,10 @@ the pipeline. It covers:
 - **the bridge**: a linear rule's period on an odd torus is the lcm of the multiplicative orders
   of its nonzero eigenvalues;
 - through the bridge, **round 2's three mechanisms as theorems about periods**, for every odd
-  size, stated for the atlas's own rules.
+  size, stated for the atlas's own rules;
+- **the bound**: on an odd torus the period divides 2^ord(m) − 1, and for a symmetric rule
+  2^sord(m) − 1;
+- **the triangular torus**, with **round 3's twisted power as a theorem about periods**.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -39,6 +42,7 @@ live, so each identity holds at every eigenvalue at once.
 | `square_C4self_dilation` | C4 + self = 1 + N4(x³, y³) | round 2's dilation |
 | `square_A4C4_separable` | A4 + C4 = q(x + 1/x) + q(y + 1/y), q(t) = t³ + t² + t | round 2's accident at n = 13 |
 | `triangle_E_square` | ud_E du_E = 1 + VS | the edge rule squares to (1 + VS) I |
+| `triangle_E_s`, `triangle_VOT13_s` | ud du = s, for E and for VO + T13 | the rules' s, as their neighbourhoods |
 | `triangle_VOT13_twisted` | ud du (VO + T13) = s_E(x, y) s_E(x³, y³) | round 3's twisted power |
 
 Each proof is `linear_combination q1 * hx + q2 * hy + Q * h2`. The generator finds the
@@ -60,6 +64,9 @@ For any commutative ring of characteristic 2:
   y³ = y^(2^k), as at a character of an m-torus with 3 ≡ 2^k (mod m). Then the eigenvalue of
   VO + T13 is the edge rule's raised to 1 + 2^k, and its order is divided by
   gcd(order, 1 + 2^k).
+- `triVOT13_value_neg`: the same with the other sign. Where x³ = x^(−2^k) and y³ = y^(−2^k), as
+  when 3 ≡ −2^k (mod m), the eigenvalue is again the edge rule's raised to 1 + 2^k, because s_E is
+  symmetric (`triVS_symm`).
 - `three_dvd_one_add_two_pow`: for odd k, 3 divides 1 + 2^k. So there, every eigenvalue of
   VO + T13 is a cube.
 
@@ -71,8 +78,10 @@ Everything here is about the cellular automaton itself, not about an abstract ri
   cell. A rule is given by its neighbourhood D, a finite set of integer offsets. `step m D` makes
   every cell the sum mod 2 of the cells at its offsets.
 - **Periods.** `IsPeriod m D p` says that, from some time on, every configuration recurs after p
-  steps: step^(t+p) = step^t as maps. `period m D` is the least positive such p.
-  `exists_isPeriod` shows one exists, since there are finitely many maps.
+  steps: step^(t+p) = step^t as maps. `period m D` is the least positive such p. Both are
+  instances of `IsEventualPeriod` and `eventualPeriod`, which apply to any map of a finite set.
+  For any such map, `isEventualPeriod_iff_dvd` shows the eventual periods are exactly the
+  multiples of the least one.
 - **Characters.** Take any field K of characteristic 2 with a primitive m-th root of unity ζ;
   one exists exactly when m is odd. The characters are χ_{j,k}(v) = ζ^(j v₁ + k v₂). The
   eigenvalue at (j, k) is λ_{j,k} = Σ_{d ∈ D} χ_{j,k}(−d).
@@ -89,8 +98,45 @@ Everything here is about the cellular automaton itself, not about an abstract ri
 
 The proof is a finite Fourier transform on (Z/m)². For (⇒), apply the rule to a single live cell,
 whose transform is 1 at every character. For (⇐), two configurations with the same transform are
-equal; then step^(1+p) = step^1, so from the first step on, every configuration recurs after p
-steps.
+equal (`eq_of_hat_eq`); then step^(1+p) = step^1, so from the first step on, every configuration
+recurs after p steps.
+
+**The bound.** Frobenius fixes every eigenvalue: if 2^r ≡ 1 (mod m), then λ^(2^r) = λ. So λ is 0
+or λ^(2^r − 1) = 1 (`lam_pow_two_pow`). For a symmetric neighbourhood the same holds when
+2^r ≡ −1 (`lam_pow_two_pow_of_symm`). Through the bridge:
+
+| Theorem | Statement |
+| --- | --- |
+| `period_dvd_two_pow_sub_one` | if 2^r ≡ 1 (mod m), the period divides 2^r − 1 |
+| `period_dvd_two_pow_sub_one_of_symm` | for D = −D, if 2^r ≡ −1 (mod m), the period divides 2^r − 1 |
+| `period_odd` | on an odd torus every period is odd |
+
+That is the atlas's full bound, 2^ord(m) − 1, or 2^sord(m) − 1 for a symmetric rule, as a theorem.
+Whether a rule *reaches* it is the conjecture.
+
+### The triangular torus (`LatticeProofs/Triangle.lean`)
+
+The triangular lattice has two cells per unit cell, an up and a down triangle. Its translations
+form Z² in the atlas's τ coordinates. The triangular torus of side m is the quotient by mZ²:
+m² unit cells and 2m² cells.
+
+- **Rules.** A `TriRule` is four neighbourhoods: the translations an up cell reads among up cells
+  (uu) and among down cells (ud), and those a down cell reads (du, dd). `triStep` is one step and
+  `triPeriod` the period.
+- **Relation to the atlas's torus.** The atlas's torus of side n = 2m has translation group
+  Z²/Λ, with Λ = ⟨(m, −m), (m, m)⟩ ⊂ mZ² of index 2 in mZ². So its odd quotient is this torus,
+  and the odd part of a rule's period there is the odd part of its period here. That reduction is
+  the unformalised one below.
+
+| Theorem | Statement |
+| --- | --- |
+| `triStep_triStep` | for a rule with uu = dd = ∅ whose cross eigenvalues multiply to those of a square-torus rule S, two steps are one step of S on each layer |
+| `even_of_isEventualPeriod` | if the rule swaps the parities of the layers' live-cell counts, every period is even |
+| `triPeriod_eq_two_mul` | together, on a torus of odd side, the period is exactly 2 P(S) |
+
+The parity argument starts from a single live up cell: its up layer has an odd count exactly at
+even times. The torus can need a transient of two steps, not one. Where s = 0 at a character,
+the 2 × 2 eigenvalue matrix can be nilpotent of index 2.
 
 ### Theorems about periods (`LatticeProofs/Periods.lean`)
 
@@ -113,15 +159,37 @@ just explanations of the sizes tested. Two general results carry them:
   period is the other's divided by gcd(period, n);
 - `eq_div_gcd_of_dvd_iff`: the number theory behind that step.
 
+Round 3's triangle rules, on the triangular torus of every odd side m. Here E is the edge rule
+(LatticeLife's B13/S13), s_E = 1 + VS is its s, and VO + T13 is round 3's twisted power:
+
+| Theorem | Statement | Round 3 |
+| --- | --- | --- |
+| `triPeriod_triE` | P(E) = 2 P(s_E) | the edge rule squares to s_E I |
+| `triPeriod_triVOT13` | P(VO + T13) = 2 P(s), s = s_E(x, y) s_E(x³, y³) | |
+| `triPeriod_triE_dvd` | if 2^r ≡ ±1 (mod m), P(E) divides 2 (2^r − 1) | the triangle law's bound |
+| `period_triSVOT13` | if 3 ≡ ±2^k (mod m), P(s) = P(s_E) / gcd(P(s_E), 1 + 2^k) | |
+| `triPeriod_twisted` | **if 3 ≡ ±2^k (mod m) and P(E) = 2P, then P(VO + T13) = 2 (P / gcd(P, 1 + 2^k))** | the twisted power |
+
+`triPeriod_twisted` is the mechanism round 3 found, now a theorem at every odd size, both signs
+included; m = 35 needs the minus sign. When k is odd, 3 divides 1 + 2^k
+(`three_dvd_one_add_two_pow`). Up to 141, the theorem lowers the period at 12 odd sizes: 5, 25,
+29, 35, 53, 55, 77, 95, 97, 101, 115 and 125, each time by a factor of 3. Round 3 tested seven of
+them, 25, 29, 35, 53, 55, 95 and 101, and those are exactly its seven VO + T13 failures.
+
+The generated neighbourhoods follow the atlas's engine exactly. A cell at g reads g − e for each
+exponent e of its polynomial, so a triangle entry's translations are its negated exponents.
+
 ## What is not
 
 - **Even sizes.** The bridge is for odd m: only there is m a unit in a field of characteristic
   2, so that the transform can be inverted. At even sizes the rule is not semisimple. The atlas
-  uses the standard reduction: the odd part of the period at n is the period at the odd part of n.
-  That reduction is not formalised.
-- **The triangle.** The twisted power (round 3) is proved at the eigenvalue level
-  (`triVOT13_value`), not yet as a theorem about periods. That needs the triangular torus, with
-  two cells per unit cell and a 2 × 2 matrix of polynomials.
+  uses the standard reduction: the odd part of the period on a torus is the odd part of the period
+  on its odd quotient. For the square that quotient is the torus of side odd(n). For the triangle
+  at n = 2m it is the triangular torus of side m above. The reduction is not formalised, so the
+  theorems speak about odd sides only. For the triangle, that is the triangular torus of side m,
+  not the atlas's n × n torus itself.
+- **Triangle rules with a same-orientation part.** `triStep_triStep` assumes uu = dd = ∅, which
+  covers E and VO + T13. Rules such as E + VS + self would need the general 2 × 2 case.
 - **The hexagon theorem as a whole.** That is the period law 2 · 2^v(n) · R(m), including the
   2-part. `hexagon_two_steps` is its key step.
 - **The rule-150 analogues.** D4 + A4 + self has period P150(n), and H2 + H3 + self has
@@ -150,7 +218,12 @@ blocked. GitHub release downloads and git clones work. So the build:
 The proofs themselves then build in about 20 seconds. Where the cache hosts are allowed,
 `lake exe cache get` replaces step 4.
 
-`tests/test_proofs.py` also checks the three period theorems against the atlas numerically, with
-`eigen.py` at every odd size up to 61. That is not part of the proof; it checks that the formal
-definitions (the torus, the step, the period) mean what the atlas means. The exact matrix engine
-agrees at 3, 5, 9, 15, 21 and 27.
+`tests/test_proofs.py` also checks the period theorems against the atlas numerically. That is
+not part of the proof; it checks that the formal definitions (the tori, the steps, the periods)
+mean what the atlas means.
+
+- The three square theorems are checked with `eigen.py` at every odd size up to 61. The exact
+  matrix engine agrees at 3, 5, 9, 15, 21 and 27.
+- On the triangular torus, the period 2 P(s) of E and of VO + T13 is checked with the exact engine
+  at every odd side up to 13; outside the test, up to 31.
+- The twisted power is checked with `eigen.py` at every odd m up to 101 with 3 ≡ ±2^k.
