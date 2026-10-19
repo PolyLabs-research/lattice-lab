@@ -1,0 +1,270 @@
+{
+ "calls": 108,
+ "by_tool": {
+  "Bash": 102,
+  "Write": 5,
+  "Edit": 1
+ },
+ "flags": [
+  {
+   "i": 5,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/3"
+   ],
+   "command": "mkdir -p scratch && cat > scratch/look.py <<'EOF'\nimport sys, json\nsys.path.insert(0,'tools')\nfrom eigen import Field, eigenvalue\nfrom family import rule\nF=Field(25); m=25\nd=json.load(open('data/family25.json'))\ndef chi(v):  # cube character index 0,1,2\n    if v==0: return '.'\n    w=F.pow(v,F.order//3)\n    return {1:'0'}.get(w, 'x')\nfor h in d['hits'][:3]:\n    f=frozenset(map(tuple,h['terms']))\n    print(h['id'])\n    for j in range(25):\n        print(''.join(chi(eigenvalue(F,f,j,k)) for k in range(25)))\nEOF\n./python scratch/look.py"
+  },
+  {
+   "i": 8,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/2"
+   ],
+   "command": "cat > scratch/lines.py <<'EOF'\nimport sys, json\nsys.path.insert(0,'tools')\nimport sympy\nfrom halffrob import _sym_to_t, _psi, _cldivmod\nt=sympy.Symbol('t')\nm=25\nd=json.load(open('data/family25.json'))\ndef lines(m):\n    L=[(1,r) for r in range(m)]+[(5*s,1) for s in range(5)]\n    return L\ndef red(e): \n    e%=m\n    return e-m if e>m//2 else e\ndef tpoly(H):\n    return sympy.Poly(sum(t**i for i in range(H.bit_length()) if H>>i&1),t,modulus=2)\npsis={e:tpoly(_psi(e)) for e in range(3,60,2)}\ndef name(g):\n    for e,p in psis.items():\n        if p==g: return 'Psi%d'%e\n    if g==sympy.Poly(t,t,modulus=2): return 't'\n    return str(g.as_expr())\nfor h in d['hits'][:int(sys.argv[1])]:\n    f=[tuple(a) for a in h['terms']]\n    print(h['id'],h['orbits'])\n    for (a,b) in lines(m):\n        H=_sym_to_t([red(p*a+q*b) for p,q in f])\n        if H==0: print('  ',(a,b),0); continue\n        P=tpoly(H)\n        print('  ',(a,b),[(name(g),e) for g,e in P.factor_list()[1]])\nEOF\n./python scratch/lines.py 2"
+  },
+  {
+   "i": 11,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n",
+    "/n",
+    "/n",
+    "/n"
+   ],
+   "command": "cat > scratch/joint.py <<'EOF'\nimport sys, json, collections, itertools\nsys.path.insert(0,'tools')\nfrom eigen import Field\nfrom family import rule, ORBITS, orbit\nF=Field(25); m=25\nZ=[F.pow(F.zeta,e) for e in range(m)]\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\n# orbit eigenvalue tables\ntab={c:[0]*15 for c in reps}\nfor c in reps:\n    for i,o in enumerate(ORBITS):\n        v=0\n        for a,b in orbit(*o): v^=Z[(a*c[0]+b*c[1])%m]\n        tab[c][i]=v\ndef ok(v):\n    return v==0 or F.pow(v,341)==1\nokc=collections.Counter(); allok=0; pair=collections.Counter()\nN=0\nres=[]\nfor bits in range(1,2**15):\n    vals={}\n    for c in reps:\n        v=0\n        for i in range(15):\n            if bits>>i&1: v^=tab[c][i]\n        vals[c]=v\n    o={c:ok(vals[c]) for c in reps}\n    res.append((bits,o))\njson.dump([[b,[int(o[c]) for c in reps]] for b,o in res],open('scratch/ok25.json','w'))\nn=len(res)\nfor c in reps: print(c, sum(o[c] for b,o in res)/n)\nprint('all', sum(all(o.values()) for b,o in res))\nimport math\nfor c1,c2 in itertools.combinations(reps,2):\n    p1=sum(o[c1] for b,o in res)/n; p2=sum(o[c2] for b,o in res)/n\n    p12=sum(o[c1] and o[c2] for b,o in res)/n\n    r=p12/(p1*p2)\n    if abs(r-1)>0.05: print(c1,c2,round(r,3))\nEOF\n./python scratch/joint.py"
+  },
+  {
+   "i": 12,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n",
+    "/P"
+   ],
+   "command": "cat > scratch/joint2.py <<'EOF'\nimport json, itertools, math\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\nR=json.load(open('scratch/ok25.json')); n=len(R)\nidx={c:i for i,c in enumerate(reps)}\ndef P(cs): return sum(all(o[idx[c]] for c in cs) for b,o in R)/n\nind=math.prod(P([c]) for c in reps)\nprint('independent marginals', ind*n)\nblocks=[[(0,1),(0,5)],[(1,1),(5,5)]]\nrest=[c for c in reps if not any(c in b for b in blocks)]\nprint('blocks', math.prod(P(b) for b in blocks)*math.prod(P([c]) for c in rest)*n)\nprint('P(0,1|0,5)',P([(0,1),(0,5)])/P([(0,5)]),'P(0,1|not 0,5)',(P([(0,1)])-P([(0,1),(0,5)]))/(1-P([(0,5)])))\nEOF\n./python scratch/joint2.py"
+  },
+  {
+   "i": 14,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/P"
+   ],
+   "command": "cat >> scratch/joint2.py <<'EOF'\nblocks=[[(0,5),(0,1),(1,5),(1,10)],[(5,5),(1,1),(1,4),(1,9)],[(5,10),(1,2),(1,3),(1,7)]]\npb=[P(b) for b in blocks]\nprint('3 blocks', pb, math.prod(pb)*n, 'observed all', P(reps)*n)\nfor b in blocks:\n    print(b, 'P(all|5c ok)', P(b)/P(b[:1]), 'indep', math.prod(P([c]) for c in b[1:]))\nEOF\n./python scratch/joint2.py"
+  },
+  {
+   "i": 18,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/1"
+   ],
+   "command": "cat > scratch/chi.py <<'EOF'\nimport sys\nsys.path.insert(0,'tools')\nfrom eigen import Field, eigenvalue, orbits\nF=Field(25); m=25\nreps=[jk for jk,_ in orbits(m) if jk!=(0,0)]\ndef chi(v):\n    if v==0: return '.'\n    w=F.pow(v,341)\n    return '0' if w==1 else ('1' if w==33792 else '2')\ndef P(s):  # parse 'a,b a,b'\n    return frozenset(tuple(map(int,p.split(','))) for p in s.split())\nfacs={\n 'Psi3a':P('-1,0 0,0 1,0'),'Psi3b':P('0,-1 0,0 0,1'),'u':P('-1,0 0,-1 0,1 1,0'),\n 'K':P('-2,0 -1,-1 -1,0 -1,1 0,-2 0,-1 0,1 0,2 1,-1 1,0 1,1 2,0'),\n \"K'\":P('-2,-1 -2,1 -1,-2 -1,2 0,0 1,-2 1,2 2,-1 2,1'),\n 'a':P('-1,0 1,0'),'w':P('1,1 1,-1 -1,1 -1,-1'),\n}\nprint('      ',' '.join('%5s'%('%d%d'%(c[0]//1,c[1]) if False else str(c[0])+','+str(c[1])) for c in reps))\nfor n,f in facs.items():\n    print('%6s'%n,' '.join('%5s'%chi(eigenvalue(F,f,*c)) for c in reps))\nEOF\n./python scratch/chi.py"
+  },
+  {
+   "i": 31,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/11"
+   ],
+   "command": "sed -i 's|    y=F.pow(x,93)|    y=F.pow(x,F.order//11)|' scratch/cube2.py && time ./python scratch/cube2.py"
+  },
+  {
+   "i": 32,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/11"
+   ],
+   "command": "cat > scratch/cube3.py <<'EOF'\nimport sys, json, itertools, collections, math\nsys.path.insert(0,'tools')\nfrom eigen import Field, orbits, eigenvalue\nfrom family import ORBITS, orbit\nfrom halffrob import _psi\nF=Field(25); m=25\nreps=[jk for jk,_ in orbits(m) if jk!=(0,0)]\nZ=[F.pow(F.zeta,e) for e in range(m)]\ny=None\nfor x in range(2,1<<20):\n    y=F.pow(x,F.order//11)\n    if y!=1: break\ng=y; lg={}; y=1\nfor k in range(11): lg[y]=k; y=F.mul(y,g)\ndef v11(x): return lg[F.pow(x,93)]\ndef ev_rule(f,c): return eigenvalue(F,f,*c)\nT=[[0]*15 for _ in reps]\nfor i,c in enumerate(reps):\n    for k,o in enumerate(ORBITS):\n        s=0\n        for a,b in orbit(*o): s^=Z[(a*c[0]+b*c[1])%m]\n        T[i][k]=s\nfam={}\nfor M in range(1,2**15):\n    e=[]\n    for row in T:\n        s=0\n        for k in range(15):\n            if M>>k&1: s^=row[k]\n        e.append(s)\n    fam[M]=e\n# units: rule-90 along w and psi_e(t_w), as eigen functions\ndef t(w,c):\n    e=(w[0]*c[0]+w[1]*c[1])%m\n    return Z[e]^Z[(-e)%m]\ndef polyT(H,x):\n    r=0;p=1;i=0\n    while H>>i:\n        if H>>i&1: r^=p\n        p=F.mul(p,x); i+=1\n    return r\nws=[(1,0),(0,1),(1,1),(1,-1),(1,2),(2,1),(1,-2),(2,-1),(1,3),(3,1),(1,-3),(3,-1),(2,3),(3,2),(2,-3),(3,-2),(3,4),(4,3),(3,-4),(4,-3)]\nunits={}\nfor w in ws:\n    units['t%s'%(w,)]=[t(w,c) for c in reps]\n    for e in (3,5,7,9,11):\n        units['P%d%s'%(e,w)]=[polyT(_psi(e),t(w,c)) for c in reps]\nd=json.load(open('data/family25.json'))\nR=json.load(open('data/rules.json'))\ntargets=[(h['id'],[ev_rule(frozenset(map(tuple,h['terms'])),c) for c in reps]) for h in d['hits']]\nfor r in R:\n    if r['lattice']!='square' and '+'.join(r['shells']) in ('E+T7+self','H1+H3+H13','H3+H4+H5'):\n        targets.append(('+'.join(r['shells']),[ev_rule(frozenset(map(tuple,r['terms'])),c) for c in reps]))\nnames=list(units)\ncombos=[()]+[(n,) for n in names]+list(itertools.combinations(names,2))\nprint('combos',len(combos))\nfor name,lf in targets:\n    sols=[]\n    act=[i for i in range(len(reps)) if lf[i]!=0]\n    # table of family M restricted to act, zero-free there\n    tab=collections.defaultdict(list)\n    for M,e in fam.items():\n        if any(e[i]==0 for i in act): continue\n        tab[tuple(3*v11(e[i])%11 for i in act)].append(M)\n    for cb in combos:\n        uv=[1]*len(reps)\n        for n in cb:\n            uv=[F.mul(uv[i],units[n][i]) for i in range(len(reps))]\n        if any(uv[i]==0 for i in act): continue\n        tgt=tuple((-v11(lf[i])-3*v11(uv[i]))%11 for i in act)\n        for M in tab.get(tgt,[]):\n            sols.append((cb,M))\n    print(name,len(sols),sols[:4],flush=True)\nEOF\ntime ./python scratch/cube3.py"
+  },
+  {
+   "i": 33,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/b237oq35c.output"
+   ],
+   "command": "sleep 240; cat /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/b237oq35c.output"
+  },
+  {
+   "i": 35,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/b237oq35c.output"
+   ],
+   "command": "cat /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/b237oq35c.output"
+  },
+  {
+   "i": 37,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bd0vb4zfz.output",
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bd0vb4zfz.output"
+   ],
+   "command": "timeout 900 bash -c 'until grep -q H3+H4+H5 /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bd0vb4zfz.output; do sleep 10; done'; cat /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bd0vb4zfz.output"
+  },
+  {
+   "i": 39,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/11"
+   ],
+   "command": "cat > scratch/hex.py <<'EOF'\nimport sys, json, itertools, collections\nsys.path.insert(0,'tools')\nfrom eigen import Field, orbits, eigenvalue\nfrom halffrob import symmetries, _apply\nF=Field(25); m=25\nreps=[jk for jk,_ in orbits(m) if jk!=(0,0)]\nZ=[F.pow(F.zeta,e) for e in range(m)]\ny=None\nfor x in range(2,1<<20):\n    y=F.pow(x,F.order//11)\n    if y!=1: break\ng=y; lg={}; y=1\nfor k in range(11): lg[y]=k; y=F.mul(y,g)\ndef v11(x): return lg[F.pow(x,93)]\nR=json.load(open('data/rules.json'))\nns=[2,3,7,8,12,13,17,18,22,23]\nfor r in R:\n    name='+'.join(r['shells'])\n    if r['lattice']=='square' or name not in ('E+T7+self','H1+H3+H13','H3+H4+H5'): continue\n    f=frozenset(map(tuple,r['terms']))\n    G=symmetries(f)\n    orbs=[];seen=set()\n    for p in itertools.product(range(-4,5),repeat=2):\n        if p in seen: continue\n        o=frozenset(_apply(M,p) for M in G)\n        seen|=o\n        if max(max(abs(a),abs(b),abs(a-b),abs(a+b)) for a,b in o)<=6: orbs.append(o)\n    orbs.sort(key=lambda o:max(abs(a)+abs(b) for a,b in o))\n    orbs=orbs[:14]\n    print(name,len(G),len(orbs))\n    chars=sorted({((n*c[0])%m,(n*c[1])%m) for c in reps for n in [1]+ns})\n    ci={c:i for i,c in enumerate(chars)}\n    OT=[[0]*len(orbs) for _ in chars]\n    for i,c in enumerate(chars):\n        for k,o in enumerate(orbs):\n            s=0\n            for a,b in o: s^=Z[(a*c[0]+b*c[1])%m]\n            OT[i][k]=s\n    lf=[eigenvalue(F,f,*c) for c in reps]\n    act=[i for i in range(len(reps)) if lf[i]]\n    vf=[v11(lf[i]) for i in act]\n    for M in range(1,2**len(orbs)):\n        e=[]\n        for row in OT:\n            s=0\n            for k in range(len(orbs)):\n                if M>>k&1: s^=row[k]\n            e.append(s)\n        er=[e[ci[c]] for c in reps]\n        # twisted pair\n        for n in ns:\n            if all(F.mul(er[i],e[ci[((n*c[0])%m,(n*c[1])%m)]])==lf[i] for i,c in enumerate(reps)):\n                print('  twisted',M,n,[sorted(orbs[k])[0] for k in range(len(orbs)) if M>>k&1])\n        if any(er[i]==0 for i in act): continue\n        vm=[v11(er[i]) for i in act]\n        for k in range(1,11):\n            if 3*k==21: continue\n            if all((vf[j]+3*k*vm[j])%11==0 for j in range(len(act))):\n                print('  cubecert',M,3*k,[sorted(orbs[kk])[0] for kk in range(len(orbs)) if M>>kk&1])\nEOF\ntime ./python scratch/hex.py"
+  },
+  {
+   "i": 41,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n",
+    "/n"
+   ],
+   "command": "python3 -c \"\nimport json\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\nR=json.load(open('scratch/ok25.json'));n=len(R)\ni2,i3=reps.index((1,2)),reps.index((1,3))\nprint(sum(o[i2] for b,o in R)/n, sum(o[i2] and o[i3] for b,o in R)/n)\n\"\n"
+  },
+  {
+   "i": 47,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/dev/stdin"
+   ],
+   "command": "python3 - <<'EOF'\nsrc=open('mechanism.py').read()\nstart=src.index('def certificate(f, m):')\nend=src.index('# ---------------------------------------------------------------- mechanism A')\nimport re\nnew=open('/dev/stdin').read() if False else None\nEOF\npython3 - <<'PYEOF'\nsrc=open('/home/user/lattice-lab/mechanism.py').read()\nstart=src.index('def certificate(f, m):')\nend=src.index('# ---------------------------------------------------------------- mechanism A')\nnew=r'''def certificate(f, m):\n    \"\"\"Mechanism B: the best (q, witness) found, or (1, None).\"\"\"\n    f = frozenset(map(tuple, f))\n    levels = _levels(m)\n    if not levels:\n        return 1, None\n    group = symmetries(f)\n    atoms = _atoms(group, m)\n    probes = [_Probe(f, v, m) for v in PROBES]\n    best = (1, None)\n    combos = [()] + [c for k in range(1, MAX_ATOMS + 1)\n                     for c in itertools.combinations_with_replacement(range(len(atoms)), k)]\n    qs_all = sorted({q for _, _, qs in levels for q in qs}, reverse=True)\n    for combo in combos:\n        M = frozenset({(0, 0)})\n        zero_dirs = []\n        for i in combo:\n            M = pmul(M, atoms[i][1])\n            zero_dirs += atoms[i][2]\n        for q in qs_all:\n            if q <= best[0]:\n                break\n            Es = [0] if not combo else list(range(q, MAX_E + 1, q))\n            for E in Es:\n                gs = [(g, n) for g, n, qs in levels if q in qs]\n                gs = [(g, n) for g, n in gs if all(P.invariant(M, E, n) for P in probes)]\n                if not gs or not all(line_ok(f, w, m, q) for w in zero_dirs):\n                    continue\n                B = _dense_product(f, M, E, m)\n                for g, n in gs:\n                    if _invariant(B, n, m):\n                        best = (q, dict(M=[atoms[i][0] for i in combo], E=E, g=g, n=n, q=q))\n                        break\n                if best[0] == q:\n                    break\n    return best\n\n\nPROBES = ((1, 0), (0, 1), (1, 1), (1, 2), (2, 1), (1, 3))\n\n\ndef _fold(x, m, mask):\n    while x >> m:\n        x = (x & mask) ^ (x >> m)\n    return x\n\n\nclass _Probe:\n    \"\"\"The image of polynomials under x^(p, r) -> z^(v_1 p + v_2 r) mod z^m - 1, a ring\n    homomorphism commuting with the dilations: a cheap necessary condition for invariance.\"\"\"\n\n    def __init__(self, f, v, m):\n        self.v, self.m, self.mask = v, m, (1 << m) - 1\n        self.f = self.image(f)\n        self.cache = {}\n\n    def image(self, P):\n        x = 0\n        for p, r in P:\n            x ^= 1 << ((self.v[0] * p + self.v[1] * r) % self.m)\n        return x\n\n    def mul(self, a, b):\n        return _fold(halffrob._clmul(a, b), self.m, self.mask)\n\n    def invariant(self, M, E, n):\n        key = (M, E)\n        if key not in self.cache:\n            b, base, e = self.f, self.image(M), E\n            while e:\n                if e & 1:\n                    b = self.mul(b, base)\n                base, e = self.mul(base, base), e >> 1\n            self.cache[key] = b\n        b = self.cache[key]\n        out, i, m = 0, 0, self.m\n        x = b\n        while x:\n            if x & 1:\n                out |= 1 << (i * n % m)\n            x >>= 1\n            i += 1\n        return out == b\n\n\ndef _dense_product(f, M, E, m):\n    \"\"\"f * M^E (mod x^m - 1, y^m - 1) as a dense 0/1 array, by repeated squaring with exact\n    integer FFT convolution (entries are counts < 2^53, reduced mod 2 after each product).\"\"\"\n\n    def mul(A, B):\n        C = np.fft.ifft2(np.fft.fft2(A) * np.fft.fft2(B)).real\n        return (np.rint(C).astype(np.int64) & 1).astype(np.float64)\n\n    R = _dense(f, m).astype(np.float64)\n    base, e = _dense(M, m).astype(np.float64), E\n    while e:\n        if e & 1:\n            R = mul(R, base)\n        e >>= 1\n        if e:\n            base = mul(base, base)\n    return R.astype(np.uint8)\n\n\n'''\nsrc=src[:start]+new+src[end:]\nopen('/home/user/lattice-lab/mechanism.py','w').write(src)\nPYEOF\ncd /home/user/lattice-lab && grep -n \"_dmul_sparse\\b\\|_dmul_sparse(\" mechanism.py; ./python scratch/t1.py 2>&1 | tail -4"
+  },
+  {
+   "i": 48,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/q"
+   ],
+   "command": "python3 - <<'EOF'\np='/home/user/lattice-lab/mechanism.py'\ns=open(p).read()\na=s.index('def _dmul_sparse(D, P, m):'); b=s.index('def _invariant')\ns=s[:a]+s[b:]\nopen(p,'w').write(s)\nEOF\n./python scratch/t1.py | head -3\ncat > scratch/sound.py <<'EOF'\nimport sys, json, time, math\nsys.path.insert(0,'.'); sys.path.insert(0,'tools')\nimport mechanism\nfrom eigen import Field, eigenvalues\nR=json.load(open('data/rules.json'))\nms=[int(a) for a in sys.argv[1:]]\nfor m in ms:\n    t=time.time(); claims=[]\n    for r in R:\n        f=frozenset(map(tuple,r['terms']))\n        q=mechanism.condition(f,m)\n        if q>1: claims.append((r,q))\n    el=time.time()-t\n    F=Field(m); bad=0; kinds={}\n    for r,q in claims:\n        f=frozenset(map(tuple,r['terms']))\n        ok=all(v==0 or F.pow(v,F.order//q)==1 for v in eigenvalues(F,f).values())\n        if not ok: bad+=1; print('FALSE',m,r['id'],r['shells'],q, mechanism.explain(f,m))\n        w=mechanism.explain(f,m)\n        for k,_,_ in w['found']: kinds[k]=kinds.get(k,0)+1\n    print(m,'time %.1f'%el,'claims',len(claims),'false',bad,kinds,flush=True)\nEOF\n./python scratch/sound.py 25 21 37"
+  },
+  {
+   "i": 49,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bcs40ctgn.output",
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bcs40ctgn.output"
+   ],
+   "command": "timeout 600 bash -c 'until grep -q \"^37 \" /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bcs40ctgn.output; do sleep 5; done'; cat /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bcs40ctgn.output"
+  },
+  {
+   "i": 52,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/MAX_ATOMS",
+    "/MAX_K"
+   ],
+   "command": "sed -i 's/^MAX_ATOMS = 2 .*/MAX_ATOMS = 1  # M is a single atom (or 1)/; s/^MAX_E = 33 .*/MAX_K = 3  # exponents E = q k, k <= MAX_K/; s/            Es = \\[0\\] if not combo else list(range(q, MAX_E + 1, q))/            Es = [0] if not combo else [q * k for k in range(1, MAX_K + 1)]/' mechanism.py && grep -n \"MAX_\" mechanism.py && ./python scratch/prof.py 37 && ./python scratch/prof.py 21"
+  },
+  {
+   "i": 57,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/q"
+   ],
+   "command": "cat > scratch/soundall.py <<'EOF'\nimport sys, json, time\nsys.path.insert(0,'.'); sys.path.insert(0,'tools')\nimport mechanism\nfrom eigen import Field, eigenvalues\nfrom family import rule\nR=json.load(open('data/rules.json'))\nmode=sys.argv[1]; ms=[int(a) for a in sys.argv[2:]]\nout=open('scratch/sound_%s.log'%mode,'a')\nfor m in ms:\n    t=time.time()\n    if mode=='atlas': rules=[(r['id'],'+'.join(r['shells'])+'/'+r['lattice'][0],frozenset(map(tuple,r['terms']))) for r in R]\n    else: rules=[(b,str(b),rule(b)) for b in range(1,2**15)]\n    claims=[]\n    for i,name,f in rules:\n        w=mechanism.explain(f,m)\n        if w: claims.append((i,name,f,w))\n    el=time.time()-t\n    F=Field(m); bad=[]\n    for i,name,f,w in claims:\n        q=w['q']\n        if not all(v==0 or F.pow(v,F.order//q)==1 for v in eigenvalues(F,f).values()): bad.append((name,w))\n    kinds={}\n    newk=[]\n    for i,name,f,w in claims:\n        ks=tuple(sorted(k for k,_,_ in w['found']))\n        kinds[ks]=kinds.get(ks,0)+1\n        if 'half-Frobenius' not in ks: newk.append(name)\n    print(m,'time %.1f'%el,'claims',len(claims),'FALSE',len(bad),bad[:3],kinds,'new:',newk[:40],file=out,flush=True)\nEOF\nnohup ./python scratch/soundall.py atlas $(seq 9 2 161) 175 189 201 225 243 255 273 299 > /dev/null 2>&1 &\nnohup ./python scratch/soundall.py family 25 21 15 27 33 35 39 45 49 51 55 63 > /dev/null 2>&1 &\necho started"
+  },
+  {
+   "i": 61,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/q",
+    "/n",
+    "/n"
+   ],
+   "command": "cat > scratch/block.py <<'EOF'\n\"\"\"Refined chance model: classes linked by c -> p c (p | m prime) form blocks; joint\ndistribution within a block taken from the population, blocks independent.\"\"\"\nimport sys, json, math, collections\nsys.path.insert(0,'.'); sys.path.insert(0,'tools')\nfrom eigen import Field\nfrom chance import symmetries, partition\nfrom family import rule\nimport mechanism\n\ndef model(pop, m, q=3, exclude=()):\n    F=Field(m)\n    gen=frozenset().union(*pop)\n    sym=symmetries(gen,m)\n    cls=partition(m,sym)\n    reps=[c for c,_,_ in cls]\n    # class index of each character\n    idx={}\n    def act(M,a,b): return (M[0]*a+M[2]*b)%m,(M[1]*a+M[3]*b)%m\n    for i,(c,size,deg) in enumerate(cls):\n        st=[c]; idx[c]=i\n        while st:\n            a,b=st.pop()\n            for nx in [(2*a%m,2*b%m)]+[act(M,a,b) for M in sym]:\n                if nx not in idx: idx[nx]=i; st.append(nx)\n    par=list(range(len(cls)))\n    def find(i):\n        while par[i]!=i: par[i]=par[par[i]]; i=par[i]\n        return i\n    primes=[p for p in range(3,m+1,2) if m%p==0 and all(p%r for r in range(3,p,2))]\n    for c in reps:\n        for p in primes:\n            pc=(p*c[0]%m,p*c[1]%m)\n            if pc!=(0,0): par[find(idx[c])]=find(idx[pc])\n    blocks=collections.defaultdict(list)\n    for i in range(len(cls)): blocks[find(i)].append(i)\n    Z=[F.pow(F.zeta,e) for e in range(m)]\n    rows=[]\n    for f in pop:\n        ok=[]\n        for c in reps:\n            v=0\n            for x,y in f: v^=Z[(x*c[0]+y*c[1])%m]\n            ok.append(v==0 or F.pow(v,F.order//q)==1 if (F.order%q==0) else True)\n        rows.append(ok)\n    keep=[r for f,r in zip(pop,rows) if f not in exclude]\n    n=len(keep)\n    naive=n*math.prod(sum(r[i] for r in keep)/n for i in range(len(cls)))\n    blk=n*math.prod(sum(all(r[i] for i in b) for r in keep)/n for b in blocks.values())\n    allok=[f for f,r in zip(pop,rows) if all(r)]\n    return dict(n=n,naive=naive,block=blk,observed_all=len(allok),blocks=[[reps[i] for i in b] for b in blocks.values()]), allok\n\nif __name__=='__main__':\n    m=int(sys.argv[1]); which=sys.argv[2]\n    R=json.load(open('data/rules.json'))\n    if which=='family':\n        pop=[rule(b) for b in range(1,2**15)]\n    else:\n        pop=[frozenset(map(tuple,r['terms'])) for r in R if r['lattice']==which]\n    res,allok=model(pop,m)\n    expl=[f for f in allok if mechanism.condition(f,m)>1]\n    res2,_=model(pop,m,exclude=set(expl))\n    print(which,m,{k:v for k,v in res.items() if k!='blocks'},'explained by mechanism.py',len(expl),\n          'block model without them %.2f naive %.2f'%(res2['block'],res2['naive']))\n    print('blocks',res['blocks'])\nEOF\n./python scratch/block.py 25 hexagon; ./python scratch/block.py 25 triangle; ./python scratch/block.py 25 square"
+  },
+  {
+   "i": 62,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/3"
+   ],
+   "command": "./python scratch/block.py 25 family 2>&1 | head -3; ./python -c \"\nimport sys,json; sys.path.insert(0,'.'); sys.path.insert(0,'tools')\nimport mechanism\nfrom eigen import Field, eigenvalues\nR=json.load(open('data/rules.json')); F=Field(25)\nfor r in R:\n    if r['lattice']=='square': continue\n    f=frozenset(map(tuple,r['terms']))\n    if all(v==0 or F.pow(v,F.order//3)==1 for v in eigenvalues(F,f).values()):\n        print(r['lattice'],r['shells'],mechanism.explain(f,25))\n\""
+  },
+  {
+   "i": 64,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n"
+   ],
+   "command": "python3 - <<'EOF'\nimport json, itertools, math\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\nR=json.load(open('scratch/ok25.json')); n=len(R)\nblocks=[[(0,1),(0,5),(1,5),(1,10)],[(1,1),(1,4),(1,9),(5,5)],[(1,2),(1,3),(1,7),(5,10)]]\nidx={c:i for i,c in enumerate(reps)}\ndef P(cs): return sum(all(o[idx[c]] for c in cs) for b,o in R)/n\npb=[P(b) for b in blocks]\nprint(pb)\nfor i,j in itertools.combinations(range(3),2):\n    print(i,j,P(blocks[i]+blocks[j])/(pb[i]*pb[j]))\nprint('all',P(reps)*n, 'product', math.prod(pb)*n)\n# exclude the 31 explained\nEOF"
+  },
+  {
+   "i": 65,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n"
+   ],
+   "command": "cat > scratch/block2.py <<'EOF'\nimport json, itertools, math, sys\nsys.path.insert(0,'.'); sys.path.insert(0,'tools')\nimport mechanism\nfrom family import rule\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\nR=json.load(open('scratch/ok25.json'))\nallok=[b for b,o in R if all(o)]\nexpl={b for b in allok if mechanism.condition(rule(b),25)>1}\n# forced: per data/family25.json forced=12 ; use chance.analyse forced flag\nfrom chance import analyse\nforced={b for b in allok if analyse(rule(b),25)['forced']}\nprint('allok',len(allok),'mechanism.py',len(expl),'forced',len(forced),'union',len(expl|forced))\nkeep=[o for b,o in R if b not in (expl|forced)]\nn=len(keep); idx={c:i for i,c in enumerate(reps)}\ndef P(cs): return sum(all(o[idx[c]] for c in cs) for o in keep)/n\nblocks=[[(0,1),(0,5),(1,5),(1,10)],[(1,1),(1,4),(1,9),(5,5)],[(1,2),(1,3),(1,7),(5,10)]]\npb=[P(b) for b in blocks]\nprint('n',n,'indep blocks',n*math.prod(pb))\nfor i,j in itertools.combinations(range(3),2):\n    k=3-i-j\n    print('merge',i,j,'ratio %.2f'%(P(blocks[i]+blocks[j])/(pb[i]*pb[j])),'expected %.2f'%(n*P(blocks[i]+blocks[j])*pb[k]))\nprint('observed remaining', n*P(reps))\nEOF\n./python scratch/block2.py"
+  },
+  {
+   "i": 66,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/n",
+    "/P",
+    "/P",
+    "/P",
+    "/P",
+    "/P"
+   ],
+   "command": "python3 - <<'EOF'\nimport json, itertools\nreps=[(0,1),(1,1),(1,2),(1,3),(1,4),(1,5),(1,7),(1,9),(1,10),(0,5),(5,5),(5,10)]\nR=json.load(open('scratch/ok25.json')); n=len(R); idx={c:i for i,c in enumerate(reps)}\ndef P(cs): return sum(all(o[idx[c]] for c in cs) for b,o in R)/n\nb0=[(0,1),(0,5),(1,5),(1,10)]; b1=[(1,1),(1,4),(1,9),(5,5)]\nfor x in b0:\n    for y in b1:\n        r=P([x,y])/(P([x])*P([y]))\n        if abs(r-1)>0.03: print(x,y,round(r,3))\nprint('b0 given 05', P(b0)/P([(0,5)]), 'b1 given 55', P(b1)/P([(5,5)]))\nprint('b0 & b1 given (0,5),(5,5)', P(b0+b1)/P([(0,5),(5,5)]), (P(b0)/P([(0,5)]))*(P(b1)/P([(5,5)])))\nEOF"
+  },
+  {
+   "i": 80,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/ms"
+   ],
+   "command": "sed -i 's/^ms = list(range(9, 62, 2)) + (\\[63, 65, 69, 73, 75, 85, 99, 105, 127, 151\\] if FULL else \\[\\])/ms = list(range(9, 62, 2)) + [63, 65, 69, 73, 75, 85, 99, 105, 127, 151] if FULL else [13, 21, 25, 29, 37]/' proposal.py && grep -n \"^ms =\" proposal.py"
+  },
+  {
+   "i": 81,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/.elan"
+   ],
+   "command": "sed -n 210,260p proofs/LatticeProofs/Bridge.lean; grep -rn \"sum_pow_char_pow\\|theorem add_pow_char_pow\" ~/.elan 2>/dev/null | head -2; ls proofs/.lake/packages 2>/dev/null | head; grep -rn \"theorem sum_pow_char_pow\\|theorem add_pow_char_pow\" proofs/.lake/packages/mathlib/Mathlib/Algebra/CharP/*.lean | head"
+  },
+  {
+   "i": 87,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bwz5267qq.output"
+   ],
+   "command": "export PATH=$HOME/.elan/bin:$PATH ELAN_TOOLCHAIN=v4.35.0-local && lake build LatticeProofs.Pilot 2>&1 | grep -A12 \"error:\" | head -80; cat /tmp/claude-0/-home-user-lattice-lab/c9311424-2889-5be2-a968-7229ef3e8c0d/tasks/bwz5267qq.output | tail -45"
+  },
+  {
+   "i": 88,
+   "tool": "Bash",
+   "why": "path outside",
+   "paths": [
+    "/--",
+    "/--",
+    "/--"
+   ],
+   "command": "cd /home/user/lattice-lab && python3 - <<'EOF'\np='scratch/genlean.py'; s=open(p).read()\n# 1 explicit exponents in Nat polys\ns=s.replace(\"\"\"def nat_poly(S, m=25):\n    return ' + '.join(mono(a % m, b % m, 'X', 'X', 'Y', 'Y') for a, b in sorted(S, reverse=True))\"\"\",\n\"\"\"def nat_poly(S, m=25):\n    return ' + '.join('X^%d*Y^%d' % (a % m, b % m) for a, b in sorted(S, reverse=True))\"\"\")\n# 2 t_cube\ns=s.replace(\"\"\"  rw [show (128 : \u2115) = 2 ^ 7 by norm_num, t_frob, pow_mod25 hz (2 ^ 7)]\n\"\"\",\"\"\"  rw [show (128 : \u2115) = 2 ^ 7 by norm_num, t_frob, pow_mod25 hz (2 ^ 7),\n    show 2 ^ 7 % 25 = 3 by norm_num]\n\"\"\")\n# 3 own line identity\ns=s.replace(\"\"\"/-- On the axes: t^2\"\"\",\"\"\"/-- (t + 1)^2 t = t(x^3) for t = x + 1/x, in characteristic 2 (as in Cubes37). -/\ntheorem line_identity {R : Type*} [CommRing R] (h2 : (2 : R) = 0) (x xi : R) (hx : x * xi = 1) :\n    (x + xi + 1)^2 * (x + xi) = x^3 + xi^3 := by\n  linear_combination (x^2 + 2*x + xi^2 + 2*xi + 2) * h2 + (3*x + 3*xi + 4) * hx\n\n/-- On the axes: t^2\"\"\")\ns=s.replace(\"Cubes37.line_identity h2\",\"line_identity h2\")\n# 4 hN\ns=s.replace(\"\"\"  have hN : (((X + X\u207b\u00b9) * (Y + Y\u207b\u00b9)) ^ 3) ^ 341 = 1 := by\n    rw [\u2190 pow_mul, mul_pow, show 3 * 341 = 1023 by norm_num, v1, v2, one_mul]\"\"\",\n\"\"\"  have hN : ((X + X\u207b\u00b9) ^ 3) ^ 341 * ((Y + Y\u207b\u00b9) ^ 3) ^ 341 = 1 := by\n    rw [\u2190 pow_mul, \u2190 pow_mul, show 3 * 341 = 1023 by norm_num, v1, v2, one_mul]\"\"\")\n# 5 ev_frob\ns=s.replace(\"\"\"theorem ev_frob (D : Finset (\u2124 \u00d7 \u2124)) (x y : K) (n : \u2115) :\n    ev D x y ^ 2 ^ n = ev D (x ^ 2 ^ n) (y ^ 2 ^ n) := by\n  unfold ev\n  rw [sum_pow_char_pow]\n  refine Finset.sum_congr rfl fun d _ => ?_\n  rw [mul_pow, \u2190 zpow_natCast, \u2190 zpow_natCast, \u2190 zpow_mul, \u2190 zpow_mul, \u2190 zpow_natCast (x ^ 2 ^ n),\n    \u2190 zpow_natCast (y ^ 2 ^ n), \u2190 zpow_mul, \u2190 zpow_mul, mul_comm (d.1 : \u2124), mul_comm (d.2 : \u2124)]\"\"\",\n\"\"\"theorem zpow_pow_comm (x : K) (a : \u2124) (k : \u2115) : (x ^ a) ^ k = (x ^ k) ^ a := by\n  rw [\u2190 zpow_natCast, \u2190 zpow_natCast x, \u2190 zpow_mul, \u2190 zpow_mul, mul_comm]\n\ntheorem ev_frob (D : Finset (\u2124 \u00d7 \u2124)) (x y : K) (n : \u2115) :\n    ev D x y ^ 2 ^ n = ev D (x ^ 2 ^ n) (y ^ 2 ^ n) := by\n  unfold ev\n  rw [sum_pow_char_pow]\n  refine Finset.sum_congr rfl fun d _ => ?_\n  rw [mul_pow, zpow_pow_comm, zpow_pow_comm]\"\"\")\nopen(p,'w').write(s)\nEOF\n./python scratch/genlean.py && cd proofs && export PATH=$HOME/.elan/bin:$PATH ELAN_TOOLCHAIN=v4.35.0-local && lake build LatticeProofs.Pilot 2>&1 | grep -A14 \"error:\" | head -120"
+  }
+ ]
+}

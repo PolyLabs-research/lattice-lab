@@ -51,3 +51,83 @@ The harness is the m = 37 pilot's (examples/llm-pilot-37), with these changes:
 - **16:42:17 UTC.** The agent's session, `session_01Ksrsh7wMG2nHAELuaMo8jS`, was created from
   `pilot-sandbox-25` at depth 1, in its own container, with the prompt in `prompt.md`, verbatim,
   and asked to push to `pilot-25-submission`. A watcher polls that branch for `report.md`.
+- The held-out census ran alongside, in the orchestrator's container.
+
+## The run
+
+The agent's own messages are in `transcript/messages.md`; its tool calls in
+`transcript/tool_calls.jsonl`, read from the server-side transcript.
+
+- **16:53 (11 minutes in).** Three of the 14 family rules are exact twisted products,
+  f = C(x, y) C(x³, y³), with C = self + N4, self + D4 and N4 + D4 (1227, 21029, 32184). As
+  3 ≡ 2^7 (mod 25), their eigenvalues are c^129 = (c^43)³. This is mechanism 4 with d = 3, which
+  the census's check for twisted powers did not try.
+- **17:05 (23 minutes in).** The card's lead, generalised: for 3096 and 23608,
+  f · (t(x) t(y))³ = B exactly, with B a union of shells that (x, y) ↦ (x^7, y^7) permutes mod 25.
+  So B's eigenvalues lie in F(2^5), which lies in the cubes, and off the axes f = B / (a cube).
+  On the axes f restricts to t²(t + 1)² = t · t(z³) = t^129. The previous pilot's mixed case
+  needed rule 90 itself to be confined, and it is not at 25; a multiplier that enters as a cube
+  needs no confinement of its own. The agent calls this a **cube certificate**.
+- **17:30.** `mechanism.py` pushed (`2e8705c`): twisted pairs (Theorem A) and certificates
+  f · M^E ≡ B (Theorem B: B invariant under ×2^g, q | E, and a check on the lines where M
+  vanishes), plus the previous pilot's condition. It did not change after this commit; every
+  later run of it, including the agent's checks on the whole family at 27, 33 and 35, came after.
+- **17:37.** The certificates also explain 19 of the census remainder's 45: 16 at m = 13 that the
+  orchestrator had filed as chance, and 3 of the 5 "coinciding eigenvalue" rules at 21.
+- **17:36 to 17:56.** Lean, its mathlib build having finished in the background: a script
+  generates the identities' certificates, it fixes its first build's errors, and `period 25 D ∣ 341`
+  holds for all five on the standard axioms (`66eb18a`).
+- **18:08.** A soundness sweep of `condition` over the atlas at 85 sizes up to 299: 1,060 claims,
+  none false by its count. Two claims are not about cubes: 5th powers at 35 and 11th powers at 61.
+- **18:17.** `report.md` pushed (`333a67d`); the watcher saw it at 18:17:41, 95 minutes after
+  launch.
+
+Beyond the mechanisms, the agent proved an identity it calls the fibre lemma: at 25, for a
+character c of order 25, λ(c)^341 = N(λ(c)) = λ(5c) + a sum over necklaces of the rule's terms. So
+whether λ(c) is a cube is tied to the order-5 value λ(5c), which the chance model treats as
+independent. A model that keeps each fibre {5c, c, ...} together expects 6.1 of the nine
+remaining family rules, or 11.8 with the axis and diagonal fibres coupled; it argues that the
+rest of the excess at 25 is mostly the model's.
+
+The session made 108 tool calls (102 Bash, 5 Write, 1 Edit) and cost about USD 14.2. Its only
+inputs were the prompt and five notifications of its own background tasks.
+
+## The audit
+
+`transcript/audit.json`, over all 108 calls:
+
+- no MCP tools, no web search or fetch, no subagents;
+- its git commands: `status`, `checkout -b pilot-25-submission`, `add`, `commit`, `log --oneline`
+  and `push` to its own branch, nothing else;
+- 27 flags, none a step outside the boundary: 21 are Python divisions (`/3`, `/n`, `/q`) and `sed`
+  patterns read as paths, one a `/dev/stdin` read, one a `grep` in `~/.elan` (allowed), and five
+  read the output files of its own background commands, which the harness keeps under `/tmp`.
+
+## The orchestrator's check
+
+`tests/test_cubes25.py` multiplies the identities out again with the orchestrator's arithmetic
+and the atlas's own shells, not the agent's code: both certificates hold exactly and are invariant
+under ×7 mod 25; on the axes both rules restrict to t · t(z³); the three twisted pairs hold
+exactly; `eigen.odd_part` divides 341 for all five at 25; and the three twisted pairs are cubes at
+29, 35, 53 and 55, the held-out sizes where 3 ≡ ±2^odd. The five rules in `Pilot.lean` are
+exactly the family's rules 3096, 23608, 1227, 21029 and 32184 (their offset sets compared).
+
+## The registered held-out census
+
+The study (`study.py`) finished at 18:07 UTC, after 91 minutes, and recorded its verdict in the
+ledger: **chance is refuted.** At 6 of the 14 sizes the square family has more unexplained
+confinement than the model's expected count + 3 sd + 1:
+
+| m | confined | explained by pilot 4 | unexplained | expected by chance |
+| --- | --- | --- | --- | --- |
+| 29 | 16 | 0 | 16 | 5.6 ± 2.4 |
+| 35 | 3 | 0 | 3 | 0.009 |
+| 37 | 34 | 18 | 16 | 0.62 ± 0.79 |
+| 53 | 3 | 0 | 3 | 0.008 |
+| 55 | 3 | 0 | 3 | 3 × 10⁻⁶ |
+| 61 | 3 | 0 | 3 | 0.0009 |
+
+and none at 39, 41, 45, 51, 63, 65, 69 or 75. The three at 35, 53 and 55 are exactly the agent's
+twisted pairs (1227, 21029, 32184), which are also among the 16 at 29. The three at 61 (3461,
+18246, 26883) are also among the 16 unexplained at 37. The orchestrator's registered expectation
+was wrong; the agent's mechanism, which never saw these sizes, is tested on them by the judge.
