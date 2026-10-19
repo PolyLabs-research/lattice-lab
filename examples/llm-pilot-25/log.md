@@ -45,3 +45,9 @@ The harness is the m = 37 pilot's (examples/llm-pilot-37), with these changes:
 - **The judge, round 0**, on the base: library unchanged, nothing submitted
   (`judgements/round-0.json`).
 - **The held-out census** started as soon as the registration was pushed.
+
+## Launch
+
+- **16:42:17 UTC.** The agent's session, `session_01Ksrsh7wMG2nHAELuaMo8jS`, was created from
+  `pilot-sandbox-25` at depth 1, in its own container, with the prompt in `prompt.md`, verbatim,
+  and asked to push to `pilot-25-submission`. A watcher polls that branch for `report.md`.
