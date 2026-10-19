@@ -1,0 +1,46 @@
+m,lattice,shells,lattice_symmetries,symmetries_mod_m,free,distinct_free_values,chance,verdict
+13,square,K8+E4+self,8,24,2,2,0.1111111111111111,chance
+13,square,N4+C4+L8,8,8,3,3,0.037037037037037035,chance
+13,square,N4+L8+E4+self,8,8,4,2,0.012345679012345678,chance
+13,square,D4+A4+M8+self,8,8,4,3,0.012345679012345678,chance
+13,square,D4+C4+L8+self,8,8,4,3,0.012345679012345678,chance
+13,square,D4+L8+M8+self,8,8,4,3,0.012345679012345678,chance
+13,square,D4+M8+E4,8,8,3,1,0.037037037037037035,chance
+13,square,A4+M8+E4+self,8,8,3,2,0.037037037037037035,chance
+13,square,B4+C4+M8+self,8,8,3,2,0.037037037037037035,chance
+13,square,B4+L8+M8+self,8,8,4,3,0.012345679012345678,chance
+13,square,N4+D4+C4+E4,8,8,4,2,0.012345679012345678,chance
+13,square,N4+B4+C4+E4,8,8,4,2,0.012345679012345678,chance
+13,square,D4+A4+L8+M8+self,8,8,4,3,0.012345679012345678,chance
+13,square,A4+K8+B4+C4+self,8,8,4,3,0.012345679012345678,chance
+13,square,N4+K8+B4+M8+E4+self,8,8,4,3,0.012345679012345678,chance
+13,square,D4+A4+C4+L8+M8+E4,8,8,4,4,0.012345679012345678,chance
+13,square,A4+K8+B4+C4+L8+M8+self,8,8,4,3,0.012345679012345678,chance
+13,square,A4+K8+B4+L8+M8+E4+self,8,8,4,2,0.012345679012345678,chance
+13,triangle,E+T9,12,24,1,1,0.3333333333333333,chance
+13,triangle,E+VS+T7,12,12,3,3,0.037037037037037035,chance
+13,triangle,VO+VS+T13+self,12,12,2,2,0.1111111111111111,chance
+13,hexagon,H4+self,12,24,2,2,0.1111111111111111,chance
+13,hexagon,H2+H4+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H3+H4+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H4+H5+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H4+H13,12,12,1,1,0.3333333333333333,chance
+13,hexagon,H3+H4+H13+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H3+H5+H13,12,12,2,2,0.1111111111111111,chance
+13,hexagon,H3+H5+H13+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H4+H5+H13+self,12,12,3,3,0.037037037037037035,chance
+13,hexagon,H2+H3+H4+H13+self,12,12,3,1,0.037037037037037035,chance
+13,hexagon,H2+H3+H5+H13+self,12,12,3,2,0.037037037037037035,chance
+13,hexagon,H3+H4+H5+H13,12,12,2,2,0.1111111111111111,chance
+21,square,N4+K8+C4+L8+M8,8,8,7,2,0.0004572473708276176,coinciding eigenvalues; mild excess
+21,square,N4+D4+K8+C4+M8+E4,8,8,7,4,0.0004572473708276176,coinciding eigenvalues; mild excess
+21,square,N4+A4+K8+B4+L8+E4+self,8,8,7,3,0.0004572473708276176,coinciding eigenvalues; mild excess
+21,square,D4+A4+B4+C4+L8+M8+self,8,8,7,3,0.0004572473708276176,coinciding eigenvalues; mild excess
+21,triangle,E+VO+T7+T9+self,12,72,1,1,0.3333333333333333,hidden symmetries mod m
+21,hexagon,H4+H13+self,12,12,5,4,0.004115226337448559,coinciding eigenvalues; mild excess
+25,triangle,E+T7+self,12,12,5,3,0.004115226337448559,open
+25,hexagon,H1+H3+H13,12,12,6,5,0.001371742112482853,open
+25,hexagon,H3+H4+H5,12,12,5,3,0.004115226337448559,open
+29,square,K8+M8+self,8,8,8,7,0.00015241579027587253,chance
+69,triangle,E+VO+T7+T9+self,12,72,4,4,0.012345679012345678,hidden symmetries mod m
+115,square,N4+D4+B4+C4,8,8,39,38,2.467579001990983e-19,a split the procedure mispredicts (four correlated rule-90 passes)
