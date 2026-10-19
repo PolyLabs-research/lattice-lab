@@ -179,7 +179,7 @@ renderLedger();
 // ---------------- the agents' timelines ----------------
 const CATS = {
   setup: ["setup", "--muted"], read: ["read", "--cell-soft"], compute: ["Python", "--cell"],
-  write: ["write a file", "--gold"], lean: ["compile Lean", "--ok"], wait: ["waiting on a running command", "--line"],
+  write: ["write a file", "--gold"], lean: ["compile Lean", "--ok"], wait: ["a gap between calls", "--line"],
   commit: ["commit and push", "--ink"], shell: ["other shell", "--muted"],
 };
 $("tl-legend").innerHTML = Object.values(CATS).filter(([n]) => n !== "other shell")
