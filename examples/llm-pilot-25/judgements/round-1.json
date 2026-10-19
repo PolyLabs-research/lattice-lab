@@ -1,0 +1,1366 @@
+{
+ "round": 1,
+ "branch": "pilot-25-submission",
+ "base": "5c231204be7262d0ed9b71d07d3eef002c88213c",
+ "head": "333a67dc88d995aac8f2ffad8cd2ca38a4304fbb",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "A",
+    "mechanism.py"
+   ],
+   [
+    "M",
+    "proofs/LatticeProofs/Pilot.lean"
+   ],
+   [
+    "A",
+    "proposal.md"
+   ],
+   [
+    "A",
+    "proposal.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ],
+   [
+    "A",
+    "scratch/PilotAxioms.lean"
+   ],
+   [
+    "A",
+    "scratch/block.py"
+   ],
+   [
+    "A",
+    "scratch/block2.py"
+   ],
+   [
+    "A",
+    "scratch/chi.py"
+   ],
+   [
+    "A",
+    "scratch/closed.py"
+   ],
+   [
+    "A",
+    "scratch/cls.py"
+   ],
+   [
+    "A",
+    "scratch/conf.py"
+   ],
+   [
+    "A",
+    "scratch/cube.py"
+   ],
+   [
+    "A",
+    "scratch/cube2.py"
+   ],
+   [
+    "A",
+    "scratch/cube3.py"
+   ],
+   [
+    "A",
+    "scratch/cube4.py"
+   ],
+   [
+    "A",
+    "scratch/divs.py"
+   ],
+   [
+    "A",
+    "scratch/fac.py"
+   ],
+   [
+    "A",
+    "scratch/famtime.py"
+   ],
+   [
+    "A",
+    "scratch/fib.py"
+   ],
+   [
+    "A",
+    "scratch/fn.py"
+   ],
+   [
+    "A",
+    "scratch/fullfac.py"
+   ],
+   [
+    "A",
+    "scratch/genlean.py"
+   ],
+   [
+    "A",
+    "scratch/gl2.py"
+   ],
+   [
+    "A",
+    "scratch/hex.py"
+   ],
+   [
+    "A",
+    "scratch/hexfam.py"
+   ],
+   [
+    "A",
+    "scratch/joint.py"
+   ],
+   [
+    "A",
+    "scratch/joint2.py"
+   ],
+   [
+    "A",
+    "scratch/lift.py"
+   ],
+   [
+    "A",
+    "scratch/lines.py"
+   ],
+   [
+    "A",
+    "scratch/look.py"
+   ],
+   [
+    "A",
+    "scratch/n5.py"
+   ],
+   [
+    "A",
+    "scratch/ok25.json"
+   ],
+   [
+    "A",
+    "scratch/p.out"
+   ],
+   [
+    "A",
+    "scratch/pairs.py"
+   ],
+   [
+    "A",
+    "scratch/parse.py"
+   ],
+   [
+    "A",
+    "scratch/pi.py"
+   ],
+   [
+    "A",
+    "scratch/prof.py"
+   ],
+   [
+    "A",
+    "scratch/prof2.py"
+   ],
+   [
+    "A",
+    "scratch/proposal_out.txt"
+   ],
+   [
+    "A",
+    "scratch/remainder.py"
+   ],
+   [
+    "A",
+    "scratch/rot.py"
+   ],
+   [
+    "A",
+    "scratch/showB.py"
+   ],
+   [
+    "A",
+    "scratch/sound.py"
+   ],
+   [
+    "A",
+    "scratch/sound_atlas.log"
+   ],
+   [
+    "A",
+    "scratch/sound_family.log"
+   ],
+   [
+    "A",
+    "scratch/soundall.py"
+   ],
+   [
+    "A",
+    "scratch/t1.py"
+   ],
+   [
+    "A",
+    "scratch/twist.py"
+   ],
+   [
+    "A",
+    "scratch/twist2.py"
+   ],
+   [
+    "A",
+    "scratch/uw.py"
+   ],
+   [
+    "A",
+    "scratch/wit.py"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": true,
+  "targets": {
+   "explained": 5,
+   "of": 17,
+   "rules": [
+    [
+     25,
+     "family 1227"
+    ],
+    [
+     25,
+     "family 3096"
+    ],
+    [
+     25,
+     "family 21029"
+    ],
+    [
+     25,
+     "family 23608"
+    ],
+    [
+     25,
+     "family 32184"
+    ]
+   ]
+  },
+  "train": {
+   "claims": 967,
+   "false": [],
+   "hold": 967,
+   "beyond_known": 60
+  },
+  "heldout": {
+   "claims": 414,
+   "false": [],
+   "hold": 414,
+   "beyond_known": 13
+  },
+  "coverage": {
+   "remainder": [
+    19,
+    45
+   ],
+   "family_train": [
+    9,
+    26
+   ],
+   "family_heldout": [
+    12,
+    44
+   ]
+  },
+  "coverage_rows": {
+   "remainder": [
+    [
+     13,
+     "square N4+C4+L8"
+    ],
+    [
+     13,
+     "square N4+L8+E4+self"
+    ],
+    [
+     13,
+     "square D4+C4+L8+self"
+    ],
+    [
+     13,
+     "square D4+L8+M8+self"
+    ],
+    [
+     13,
+     "square D4+M8+E4"
+    ],
+    [
+     13,
+     "square A4+M8+E4+self"
+    ],
+    [
+     13,
+     "square B4+C4+M8+self"
+    ],
+    [
+     13,
+     "square N4+D4+C4+E4"
+    ],
+    [
+     13,
+     "square D4+A4+L8+M8+self"
+    ],
+    [
+     13,
+     "square D4+A4+C4+L8+M8+E4"
+    ],
+    [
+     13,
+     "square A4+K8+B4+C4+L8+M8+self"
+    ],
+    [
+     13,
+     "triangle VO+VS+T13+self"
+    ],
+    [
+     13,
+     "hexagon H4+H13"
+    ],
+    [
+     13,
+     "hexagon H3+H4+H13+self"
+    ],
+    [
+     13,
+     "hexagon H4+H5+H13+self"
+    ],
+    [
+     13,
+     "hexagon H2+H3+H5+H13+self"
+    ],
+    [
+     21,
+     "square N4+K8+C4+L8+M8"
+    ],
+    [
+     21,
+     "square N4+D4+K8+C4+M8+E4"
+    ],
+    [
+     21,
+     "square N4+A4+K8+B4+L8+E4+self"
+    ]
+   ],
+   "family_train": [
+    [
+     21,
+     466
+    ],
+    [
+     21,
+     699
+    ],
+    [
+     21,
+     854
+    ],
+    [
+     21,
+     22429
+    ],
+    [
+     25,
+     1227
+    ],
+    [
+     25,
+     3096
+    ],
+    [
+     25,
+     21029
+    ],
+    [
+     25,
+     23608
+    ],
+    [
+     25,
+     32184
+    ]
+   ],
+   "family_heldout": [
+    [
+     29,
+     1227
+    ],
+    [
+     29,
+     21029
+    ],
+    [
+     29,
+     32184
+    ],
+    [
+     35,
+     1227
+    ],
+    [
+     35,
+     21029
+    ],
+    [
+     35,
+     32184
+    ],
+    [
+     53,
+     1227
+    ],
+    [
+     53,
+     21029
+    ],
+    [
+     53,
+     32184
+    ],
+    [
+     55,
+     1227
+    ],
+    [
+     55,
+     21029
+    ],
+    [
+     55,
+     32184
+    ]
+   ]
+  },
+  "per_m": {
+   "atlas 9": {
+    "ok": true,
+    "seconds": 10.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 11": {
+    "ok": true,
+    "seconds": 11.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 13": {
+    "ok": true,
+    "seconds": 14.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 15": {
+    "ok": true,
+    "seconds": 13.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 17": {
+    "ok": true,
+    "seconds": 15.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 19": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 21": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 25": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 27": {
+    "ok": true,
+    "seconds": 18.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 29": {
+    "ok": true,
+    "seconds": 21.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 33": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 35": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 37": {
+    "ok": true,
+    "seconds": 26.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 39": {
+    "ok": true,
+    "seconds": 20.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 41": {
+    "ok": true,
+    "seconds": 21.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 43": {
+    "ok": true,
+    "seconds": 21.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 45": {
+    "ok": true,
+    "seconds": 19.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 51": {
+    "ok": true,
+    "seconds": 20.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 53": {
+    "ok": true,
+    "seconds": 20.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 55": {
+    "ok": true,
+    "seconds": 21.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 57": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 59": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 61": {
+    "ok": true,
+    "seconds": 28.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 63": {
+    "ok": true,
+    "seconds": 21.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 65": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 67": {
+    "ok": true,
+    "seconds": 23.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 69": {
+    "ok": true,
+    "seconds": 22.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 75": {
+    "ok": true,
+    "seconds": 21.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 77": {
+    "ok": true,
+    "seconds": 25.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 81": {
+    "ok": true,
+    "seconds": 20.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 83": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 85": {
+    "ok": true,
+    "seconds": 20.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 87": {
+    "ok": true,
+    "seconds": 25.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 91": {
+    "ok": true,
+    "seconds": 23.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 93": {
+    "ok": true,
+    "seconds": 20.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 95": {
+    "ok": true,
+    "seconds": 25.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 97": {
+    "ok": true,
+    "seconds": 25.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 99": {
+    "ok": true,
+    "seconds": 21.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 101": {
+    "ok": true,
+    "seconds": 22.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 105": {
+    "ok": true,
+    "seconds": 19.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 107": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 109": {
+    "ok": true,
+    "seconds": 25.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 111": {
+    "ok": true,
+    "seconds": 27.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 113": {
+    "ok": true,
+    "seconds": 23.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 115": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 117": {
+    "ok": true,
+    "seconds": 21.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 119": {
+    "ok": true,
+    "seconds": 25.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 121": {
+    "ok": true,
+    "seconds": 22.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 123": {
+    "ok": true,
+    "seconds": 24.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 125": {
+    "ok": true,
+    "seconds": 20.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 129": {
+    "ok": true,
+    "seconds": 21.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 131": {
+    "ok": true,
+    "seconds": 20.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 133": {
+    "ok": true,
+    "seconds": 25.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 135": {
+    "ok": true,
+    "seconds": 22.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 137": {
+    "ok": true,
+    "seconds": 20.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 139": {
+    "ok": true,
+    "seconds": 21.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 141": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 143": {
+    "ok": true,
+    "seconds": 32.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 145": {
+    "ok": true,
+    "seconds": 21.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 147": {
+    "ok": true,
+    "seconds": 24.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 149": {
+    "ok": true,
+    "seconds": 20.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 153": {
+    "ok": true,
+    "seconds": 23.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 155": {
+    "ok": true,
+    "seconds": 22.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 157": {
+    "ok": true,
+    "seconds": 20.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 159": {
+    "ok": true,
+    "seconds": 22.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 21": {
+    "ok": true,
+    "seconds": 24.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2011
+   },
+   "family 25": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2012
+   },
+   "atlas 163": {
+    "ok": true,
+    "seconds": 22.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 165": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 169": {
+    "ok": true,
+    "seconds": 24.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 171": {
+    "ok": true,
+    "seconds": 21.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 173": {
+    "ok": true,
+    "seconds": 20.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 175": {
+    "ok": true,
+    "seconds": 27.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 177": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 179": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 181": {
+    "ok": true,
+    "seconds": 32.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 183": {
+    "ok": true,
+    "seconds": 31.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 185": {
+    "ok": true,
+    "seconds": 23.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 187": {
+    "ok": true,
+    "seconds": 27.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 189": {
+    "ok": true,
+    "seconds": 24.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 193": {
+    "ok": true,
+    "seconds": 29.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 195": {
+    "ok": true,
+    "seconds": 20.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 197": {
+    "ok": true,
+    "seconds": 25.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 201": {
+    "ok": true,
+    "seconds": 22.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 203": {
+    "ok": true,
+    "seconds": 36.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 205": {
+    "ok": true,
+    "seconds": 21.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 207": {
+    "ok": true,
+    "seconds": 24.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 209": {
+    "ok": true,
+    "seconds": 25.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 211": {
+    "ok": true,
+    "seconds": 30.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 213": {
+    "ok": true,
+    "seconds": 26.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 215": {
+    "ok": true,
+    "seconds": 23.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 219": {
+    "ok": true,
+    "seconds": 24.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 221": {
+    "ok": true,
+    "seconds": 28.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 225": {
+    "ok": true,
+    "seconds": 24.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 259": {
+    "ok": true,
+    "seconds": 37.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 333": {
+    "ok": true,
+    "seconds": 36.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 29": {
+    "ok": true,
+    "seconds": 31.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2015
+   },
+   "family 35": {
+    "ok": true,
+    "seconds": 27.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 37": {
+    "ok": true,
+    "seconds": 34.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2016
+   },
+   "family 39": {
+    "ok": true,
+    "seconds": 28.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 41": {
+    "ok": true,
+    "seconds": 28.5,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 45": {
+    "ok": true,
+    "seconds": 25.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 51": {
+    "ok": true,
+    "seconds": 26.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 53": {
+    "ok": true,
+    "seconds": 26.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 55": {
+    "ok": true,
+    "seconds": 29.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 61": {
+    "ok": true,
+    "seconds": 35.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 63": {
+    "ok": true,
+    "seconds": 26.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 65": {
+    "ok": true,
+    "seconds": 25.3,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 69": {
+    "ok": true,
+    "seconds": 26.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 75": {
+    "ok": true,
+    "seconds": 26.3,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   }
+  },
+  "all_ran": true
+ },
+ "lean": {
+  "present": true,
+  "builds": true,
+  "forbidden_words": [],
+  "theorems": {
+   "LatticeProofs.Pilot25.axis_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.eq_one_of_add_inv": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.ev_frob": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.ev_r23608": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.ev_r3096": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.frob_term": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.frob_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.inv_eq_pow24": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.line_identity": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_dvd_of_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_r1227_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_r21029_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_r23608_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_r3096_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.period_r32184_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.pow_mod25": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r1227_pair": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r1227_sym": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r21029_pair": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r21029_sym": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608B_eq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608_axisx": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608_axisy": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608_frob": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608_identity": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r23608_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096B_eq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096_axisx": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096_axisy": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096_frob": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096_identity": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r3096_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r32184_pair": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.r32184_sym": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.t_cube": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.t_frob": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.t_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.twisted_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot25.zpow_pow_comm": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ]
+  },
+  "standard": [
+   "LatticeProofs.Pilot25.axis_val",
+   "LatticeProofs.Pilot25.eq_one_of_add_inv",
+   "LatticeProofs.Pilot25.ev_frob",
+   "LatticeProofs.Pilot25.ev_r23608",
+   "LatticeProofs.Pilot25.ev_r3096",
+   "LatticeProofs.Pilot25.frob_term",
+   "LatticeProofs.Pilot25.frob_val",
+   "LatticeProofs.Pilot25.inv_eq_pow24",
+   "LatticeProofs.Pilot25.line_identity",
+   "LatticeProofs.Pilot25.period_dvd_of_val",
+   "LatticeProofs.Pilot25.period_r1227_dvd",
+   "LatticeProofs.Pilot25.period_r21029_dvd",
+   "LatticeProofs.Pilot25.period_r23608_dvd",
+   "LatticeProofs.Pilot25.period_r3096_dvd",
+   "LatticeProofs.Pilot25.period_r32184_dvd",
+   "LatticeProofs.Pilot25.pow_mod25",
+   "LatticeProofs.Pilot25.r1227_pair",
+   "LatticeProofs.Pilot25.r1227_sym",
+   "LatticeProofs.Pilot25.r21029_pair",
+   "LatticeProofs.Pilot25.r21029_sym",
+   "LatticeProofs.Pilot25.r23608B_eq",
+   "LatticeProofs.Pilot25.r23608_axisx",
+   "LatticeProofs.Pilot25.r23608_axisy",
+   "LatticeProofs.Pilot25.r23608_frob",
+   "LatticeProofs.Pilot25.r23608_identity",
+   "LatticeProofs.Pilot25.r23608_val",
+   "LatticeProofs.Pilot25.r3096B_eq",
+   "LatticeProofs.Pilot25.r3096_axisx",
+   "LatticeProofs.Pilot25.r3096_axisy",
+   "LatticeProofs.Pilot25.r3096_frob",
+   "LatticeProofs.Pilot25.r3096_identity",
+   "LatticeProofs.Pilot25.r3096_val",
+   "LatticeProofs.Pilot25.r32184_pair",
+   "LatticeProofs.Pilot25.r32184_sym",
+   "LatticeProofs.Pilot25.t_cube",
+   "LatticeProofs.Pilot25.t_frob",
+   "LatticeProofs.Pilot25.t_val",
+   "LatticeProofs.Pilot25.twisted_val",
+   "LatticeProofs.Pilot25.zpow_pow_comm"
+  ],
+  "build": {
+   "returncode": 0,
+   "seconds": 55.9,
+   "output": "\u26a0 [1171/1411] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1411] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2849] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2849] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2849/2849] Built LatticeProofs.Pilot (51s)\nwarning: LatticeProofs/Pilot.lean:115:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.pow_mod25`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:123:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.inv_eq_pow24`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:180:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.frob_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:241:20: Unused tactic linter: `rfl` does nothing.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: LatticeProofs/Pilot.lean:243:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.ev_r3096`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:333:20: Unused tactic linter: `rfl` does nothing.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: LatticeProofs/Pilot.lean:335:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.ev_r23608`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:370:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot25.zpow_pow_comm`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:407:29: Variable name `hx` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hx\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:407:42: Variable name `hy` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hy\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:419:30: Variable name `hx` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hx\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:419:43: Variable name `hy` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hy\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:431:30: Variable name `hx` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hx\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:431:43: Variable name `hy` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hy\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nBuild completed successfully (2849 jobs).\n"
+  }
+ },
+ "proposal": {
+  "present": true,
+  "returncode": 0,
+  "seconds": 289.8,
+  "output": "1. The seventeen at m = 25: what condition() claims, and each claim against the eigenvalues\n  [ok]   1227: q = 3075 via ['twisted pair']\n  [ok]   3096: q = 3075 via ['certificate']\n         6538: no claim\n         10441: no claim\n         11508: no claim\n         12668: no claim\n  [ok]   21029: q = 3075 via ['twisted pair']\n         21081: no claim\n         22626: no claim\n  [ok]   23608: q = 3075 via ['certificate']\n         24319: no claim\n         25912: no claim\n         26229: no claim\n  [ok]   32184: q = 3075 via ['twisted pair']\n         E+T7+self: no claim\n         H1+H3+H13: no claim\n         H3+H4+H5: no claim\n  [ok]   five of the seventeen explained (1227, 3096, 21029, 23608, 32184)\n2. The identities behind them (exact, over GF(2))\n  [ok]   3096 * (t(x) t(y))^3 = Sh(3, 1) + Sh(4, 1) + Sh(7, 1) + Sh(7, 3) + Sh(7, 4)\n  [ok]     that B is permuted by x -> x^7 (7 = 2^5 mod 25)\n  [ok]   23608 * (t(x) t(y))^3 = Sh(1, 1) + Sh(3, 1) + Sh(4, 1) + Sh(7, 3) + Sh(7, 4) + Sh(7, 7)\n  [ok]     that B is permuted by x -> x^7 (7 = 2^5 mod 25)\n  [ok]   1227 = C(x, y) C(x^3, y^3), 3 = 2^7 mod 25\n  [ok]   21029 = C(x, y) C(x^3, y^3), 3 = 2^7 mod 25\n  [ok]   32184 = C(x, y) C(x^3, y^3), 3 = 2^7 mod 25\n  [ok]   3096 on the axes: t^2 Psi_3(t)^2, exponent A = 258 = 3 * 86 (t^129 = t t^(2^7))\n  [ok]   Psi_e(0) = 1 for odd e < 61 (used on the lines at j = 0)\n3. Soundness: every claim of condition() against the eigenvalues\n  [ok]   atlas, m = 13: 54 claims, 0 false  (15 s)\n  [ok]   atlas, m = 21: 24 claims, 0 false  (20 s)\n  [ok]   atlas, m = 25: 14 claims, 0 false  (19 s)\n  [ok]   atlas, m = 29: 12 claims, 0 false  (22 s)\n  [ok]   atlas, m = 37: 60 claims, 0 false  (24 s)\n  [ok]   family sample (1500), m = 21: 0 claims, 0 false\n  [ok]   family sample (1500), m = 25: 2 claims, 0 false\n  [ok]   family sample (1500), m = 27: 0 claims, 0 false\n  [ok]   family sample (1500), m = 33: 0 claims, 0 false\n  [ok]   family sample (1500), m = 35: 0 claims, 0 false\n  [ok]   family sample (1500), m = 45: 0 claims, 0 false\n  [ok]   family sample (1500), m = 49: 0 claims, 0 false\n  [ok]   family sample (1500), m = 55: 0 claims, 0 false\n  [ok]   family sample (1500), m = 63: 0 claims, 0 false\n4. Census remainder (data/remainder.csv) explained by condition()\n  [ok]   19 of 45 remainder rows explained, by size {13: 16, 21: 3}\n5. The fibre identity: N(lambda(c)) = lambda(5c) + E(c) at m = 25 (necklaces of length 5)\n  [ok]   N(lambda(c)) = lambda^341 = lambda(5c) + E(c) on random rules\n6. Refined chance model at 25 (fibres of c -> 5c as blocks, joint law from the family)\n         atlas hexagon: unexplained confined 2; expected: independent classes 0.08, independent fibres 0.24\n         atlas triangle: unexplained confined 1; expected: independent classes 0.03, independent fibres 0.13\n         atlas square: unexplained confined 0; expected: independent classes 0.06, independent fibres 0.43\n\n31 checks, 0 failed\n"
+ },
+ "sound": true
+}

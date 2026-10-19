@@ -131,3 +131,48 @@ and none at 39, 41, 45, 51, 63, 65, 69 or 75. The three at 35, 53 and 55 are exa
 twisted pairs (1227, 21029, 32184), which are also among the 16 at 29. The three at 61 (3461,
 18246, 26883) are also among the 16 unexplained at 37. The orchestrator's registered expectation
 was wrong; the agent's mechanism, which never saw these sizes, is tested on them by the judge.
+
+## The judge, round 1 (`333a67d`)
+
+`judgements/round-1.json`, finished at 18:58 UTC. The library was unchanged (only `Pilot.lean`
+touched, and the agent's own new files), and:
+
+- **Explains 5 of the 17**: `condition` returns q = 3075 = 3 · 1025 (every eigenvalue a cube in
+  F(2^10), lifted to F(2^20)) for 1227, 3096, 21029, 23608 and 32184, and nothing for the other
+  twelve.
+- **Sound: 967 claims at the training sizes and 414 at the held-out sizes, none false**, each
+  checked by the judge's own eigenvalue computation. 60 of the training claims and 13 of the
+  held-out ones are confinements the known mechanisms (and pilot 4's condition) do not explain.
+- **Coverage**: 19 of the census remainder's 45 entries (16 at m = 13, 3 at 21); 9 of the 26
+  family confinements it was given (the five at 25, and 466, 699, 854 and 22429 at 21); and
+  **12 of the 44 unexplained family confinements at the held-out sizes**, all of them the three
+  twisted pairs, at 29, 35, 53 and 55.
+- **Lean**: `Pilot.lean` builds against the real library, and all 39 of its theorems rest on
+  `propext`, `Classical.choice` and `Quot.sound` only. No `sorry`, `axiom` or `native_decide`.
+- **The agent's own checks** (`proposal.py`): 31 of 31, in 290 seconds.
+
+No feedback was sent; the agent had finished.
+
+## Into the library
+
+`Pilot.lean` is `proofs/LatticeProofs/Cubes25.lean`, verbatim except for its namespace (`Pilot25`
+became `Cubes25`), with a root in `lakefile.toml`. It builds in 196 seconds, and `Axioms.lean`
+shows only the standard three axioms for the five `period_*_dvd` theorems.
+
+## What it means
+
+- **The five at 25 are explained and proved.** Three are a known mechanism the census's check
+  missed (twisted powers with d = 3); two are a new form of pilot 4's mechanism, in which the
+  multiplier enters as a cube and needs no confinement of its own.
+- **The orchestrator's verdicts were wrong twice.** The census remainder filed 34 entries as
+  chance; 16 of them, at m = 13, are cube certificates. And the registered expectation for the
+  held-out census, chance, was refuted at 6 of 14 sizes. The twisted pairs alone account for
+  35, 53 and 55. With them counted, 29 has 13 left against a bound of 13.8 (5.6 expected).
+- **What remains is new.** At 37, 16 square rules are confined to the cubes with 9 or 10 free
+  classes each, against 0.6 expected, and neither pilot's condition explains them; three of
+  them (3461, 18246, 26883) are also confined at 61. At 25, nine family rules and three atlas
+  rules remain, which the agent argues are mostly the chance model's error: it ignores the tie
+  between characters of order 25 and 5 that its fibre identity makes exact.
+- **On the agent's conduct**: it said plainly what it had not explained, named the census's
+  oversight (the twisted pairs) itself, and its condition made no false claim at 1,381 claims,
+  414 of them at sizes it never saw.
