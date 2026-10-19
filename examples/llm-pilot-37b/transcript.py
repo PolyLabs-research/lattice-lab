@@ -37,7 +37,9 @@ def main() -> None:
     calls, texts, inputs, sidechains = [], [], [], set()
     for t, kind, inner in events(sys.argv[1:]):
         body = inner.get("internal_anthropic_catchall", inner)
-        if body.get("parent_tool_use_id"):
+        # tool_progress events also carry a parent tool id (a long-running Bash call), so only
+        # assistant and user events can mark a subagent's sidechain
+        if kind in ("assistant", "user") and body.get("parent_tool_use_id"):
             sidechains.add(body["parent_tool_use_id"])
         message = body.get("message", {})
         content = message.get("content") if isinstance(message, dict) else None
