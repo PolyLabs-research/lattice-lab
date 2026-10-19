@@ -158,7 +158,11 @@ them.
    - **the cubes at m = 37** (`Cubes37.lean`, found and proved by the fourth pilot's agent): the
      six rules each have period dividing 87381 on the 37 x 37 torus, through the half-Frobenius
      identities, and rule 90's period there divides 87381 by an explicit cube root
-     (`period_r90_dvd`). Its build takes about 13 minutes, most of it the triangle identity.
+     (`period_r90_dvd`). Its build takes about 13 minutes, most of it the triangle identity;
+   - **the cubes at m = 25** (`Cubes25.lean`, found and proved by the fifth pilot's agent): five of
+     the seventeen rules at 25 have period dividing 341 on the 25 x 25 torus, two through cube
+     certificates (f (t(x) t(y))^3 is invariant under the dilation by 7 = 2^5) and three as
+     twisted pairs C(x, y) C(x^3, y^3), with 3 = 2^7 mod 25.
 
    They rest on Lean's standard axioms only. Next:
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));

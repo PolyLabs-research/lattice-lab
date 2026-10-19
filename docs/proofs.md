@@ -387,6 +387,29 @@ build here, most of it the triangle rule's identity.
 The first six were in the agent's report; the person following the pilot then asked it for rule
 90's case, and the last seven came from that.
 
+### The cubes at m = 25 (`LatticeProofs/Cubes25.lean`, by the fifth pilot's agent)
+
+The fifth pilot's proof ([llm-pilot.md](llm-pilot.md#pilot-5-the-cubes-at-m--25)), verbatim
+except for its namespace, `Pilot25` in the sandbox and `Cubes25` here. Its own build takes
+about 3 minutes here, and `#print axioms` lists only the standard three for all five theorems. At 25, d = 20, s = 10, and the cubes of F(2^10)* are its elements of order dividing
+341 = (2^10 − 1)/3. The five rules are the square family's 3096, 23608, 1227, 21029 and 32184
+(unions of D4 orbits within distance 4; `examples/llm-pilot-25/tools/family.py`).
+
+- **Cube certificates** (`r3096_identity`, `r23608_identity`): over GF(2), with x xi = y yi = 1,
+  f · (t(x) t(y))³ = B, with t(z) = z + 1/z and B a union of shells that the dilation by
+  7 = 2^5 (mod 25) permutes (`r3096_frob`). So λ_B^(2^5) = λ_B: B = 0 or B^31 = 1. Rule-90
+  values satisfy t^1024 = t, so off the axes f^341 = B^341 / (t(x) t(y))^1023 = 1. On the axes
+  (`axis_val`) f restricts to t²(t + 1)² = t(z) t(z³) = t^129, as 3 = 2^7 (mod 25).
+- **Twisted pairs** (`twisted_val`): if C is symmetric and D = C(x, y) C(x³, y³), then D's
+  eigenvalue is c^129 with c^1023 = 1, so D^341 = 1. 1227, 21029 and 32184 are such pairs, with
+  C = self + N4, self + D4 and N4 + D4.
+
+| Theorem | Statement |
+| --- | --- |
+| `period_r3096_dvd`, `period_r23608_dvd` | period 25 D ∣ 341, by the cube certificates |
+| `period_r1227_dvd`, `period_r21029_dvd`, `period_r32184_dvd` | period 25 D ∣ 341, as twisted pairs |
+| `period_dvd_of_val` | if every value of D at 25th roots of unity is 0 or has order dividing 341, period 25 D ∣ 341 |
+
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.
