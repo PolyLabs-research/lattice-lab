@@ -46,6 +46,7 @@ extend-exclude = [
     "examples/llm-pilot-vot13/submission",
     "examples/llm-pilot-37/submission",
     "examples/llm-pilot-25/submission",
+    "examples/llm-pilot-37b/submission",
     "examples/llm-pilot-25/tools/halffrob.py",
     "examples/llm-pilot-37b/tools/halffrob.py",
     "examples/llm-pilot-37b/tools/certificate.py",
