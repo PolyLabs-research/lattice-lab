@@ -59,3 +59,11 @@ at every such m from 9 to 161 (`census-train.jsonl`).
   29 protected files, and no pinned statement.
 - **The judge, round 0**, on the base: library unchanged, no mechanism yet, no Lean changes
   (`judgements/round-0.json`).
+
+## Launch
+
+- **06:40:26 UTC.** The agent's session, `session_01WGk9TPzDv4NH9NkB6zczhr`, was created from
+  `pilot-sandbox-37` at depth 1, in its own container, with the prompt in `prompt.md`, verbatim,
+  and asked to push to `pilot-37-submission`.
+- The held-out census (the registered study) started at the same time, in the orchestrator's
+  container.
