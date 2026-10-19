@@ -1,36 +1,41 @@
-# The LLM-central pilots: three period laws and an open question, answered by agents
+# The LLM-central pilots: three period laws and two open questions, worked by agents
 
-**Result: in all four pilots so far, a fresh agent, given only a problem card and the Lean
+**Result: in all five pilots so far, a fresh agent, given only a problem card and the Lean
 library, passed the judge in its first round. In the third it also found the law itself, from
 data. In the fourth, on a question nobody had answered, it found the mechanism, proved it in
-Lean, and its general condition held at every one of 633 claims, 180 of them at sizes it never
-saw.** The judge accepted each proof, not the agent's own report:
+Lean, and its general condition held at every one of 633 claims, 180 of them at held-out sizes
+registered before it started. In the fifth, on a harder open question, it explained and proved
+5 of 17 cases, said plainly that it could not explain the rest, and its condition held at all
+1,381 claims, 414 of them at held-out sizes.** The judge accepted each proof, not the agent's own report:
 
 - the proof builds against the real library;
 - the statements match pinned copies;
 - the axioms are only Lean's standard three.
 
-The registered predictions, at sizes nobody had computed, all held. In pilot 3 the agent's own
-law also held at all 20 held-out sizes, which it never saw. All four proofs are now in the
-library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim, and `Cubes37.lean`
-with only its namespace renamed.
+In pilots 1 to 4 the registered predictions, at sizes nobody had computed, all held. In pilot 3 the agent's own
+law also held at all 20 held-out sizes, which it never saw. In pilot 5 the orchestrator's own
+registered expectation failed, at 6 of 14 held-out sizes; the agent's mechanism accounts for part
+of that, and the rest is a new open question. All five proofs are now in the library:
+`HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim, `Cubes37.lean` and
+`Cubes25.lean` with only their namespaces renamed.
 
-| | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law | Pilot 4: the cubes at m = 37 |
-| --- | --- | --- | --- | --- |
-| Given | the statement | the statements | a question and data | an open question, a census and data |
-| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` | `period_w_dvd_87381` and five more, `period_r90_dvd`; and a `condition` in Python |
-| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 | the same as pilot 2 |
-| Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 | the same as pilot 2 |
-| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls |
-| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 |
-| The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 | 39 of 39 |
-| Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 | the census at 29 held-out sizes: no unexplained confinement, as registered; the agent's condition held at all 180 of its claims there |
-| Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 | nobody knew the answer |
+| | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law | Pilot 4: the cubes at m = 37 | Pilot 5: the cubes at m = 25 |
+| --- | --- | --- | --- | --- | --- |
+| Given | the statement | the statements | a question and data | an open question, a census and data | an open question, a census remainder, a chance model and pilot 4's mechanism |
+| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` | `period_w_dvd_87381` and five more, `period_r90_dvd`; and a `condition` in Python | `period_r3096_dvd` and four more; and a `condition` in Python |
+| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 |
+| Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 |
+| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls | 95 minutes, 108 calls |
+| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 | passed in round 1: 5 of 17 explained, none of 1,381 claims false |
+| The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 | 39 of 39 | 31 of 31 |
+| Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 | the census at 29 held-out sizes: no unexplained confinement, as registered; the agent's condition held at all 180 of its claims there | the orchestrator's expectation (chance) **refuted** at 6 of 14 sizes; the agent's condition explains 12 of the 44 unexplained confinements there, and held at all 414 of its claims |
+| Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 | nobody knew the answer | nobody knew the answer |
 
     examples/llm-pilot/                 pilot 1: card, tools, sandbox, judge, study, log, submission
     examples/llm-pilot-triangle/        pilot 2: the same, plus setup.sh, audit.py, transcript/
     examples/llm-pilot-vot13/           pilot 3: the same, plus data/, exact.py, transcript.py
     examples/llm-pilot-37/              pilot 4: the same, plus census.py, evaluate.py
+    examples/llm-pilot-25/              pilot 5: the same, plus the square family and the chance model
 
 ## Why pilots
 
@@ -40,6 +45,86 @@ answer is known but which the agent could not look up. That makes it possible to
 loop's mechanics rather than the problem. The exact 2-parts of the parity laws were such
 problems: each had a hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
 and the library had the odd parts and the upper bounds, but not the exact 2-parts.
+
+## Pilot 5: the cubes at m = 25
+
+**The problem.** The census remainder ([census-remainder.md](census-remainder.md)) left one part
+open: at m = 25, three atlas rules (triangle E + T7 + self, hexagon H1 + H3 + H13 and
+H3 + H4 + H5) and **14 of the 32,767 symmetric square rules within distance 4** have every
+eigenvalue a cube, against 0.24 and 1.7 ± 1.3 expected by chance, with no symmetry of any kind.
+25 has 37's arithmetic (2^5 ≡ 7 and 7² ≡ −1 mod 25), but rule 90 is not confined there, so the
+m = 37 mechanism does not apply as it stands. Nobody knew the answer.
+
+**What the agent was asked for.** As in pilot 4: a `condition(f, m)` the judge can run on every
+rule at every size, a proof, Lean optional. The card gave the family's confinements at 21 and
+25, the remainder with the orchestrator's verdict on each entry, the chance model and its tools,
+and pilot 4's condition.
+
+**The registered test** was the orchestrator's, not the agent's: before the launch it registered
+that the square family's census at the 14 odd sizes from 27 to 75 where the cubes are a proper
+subgroup would show nothing beyond chance, once pilot 4's mechanism is counted
+(`examples/llm-pilot-25/ledger.jsonl`). The judge also runs the agent's condition on the family
+at those sizes, for which the agent was given no data.
+
+**What happened** (`examples/llm-pilot-25/log.md`):
+
+1. **Twisted pairs, in 11 minutes.** Three of the 14 family rules are exactly
+   C(x, y) · C(x³, y³), with C = self + N4, self + D4 and N4 + D4. As 3 ≡ 2^7 (mod 25), the
+   second factor's eigenvalue is the first's to the power 2^7, and the product is c^129 = (c^43)³.
+   This is the known twisted-power mechanism with d = 3, which the census's check had not tried.
+2. **Cube certificates, in 23 minutes.** The card's lead, turned around. For two more rules,
+
+       3096 · (t(x) t(y))³ = Sh(3,1) + Sh(4,1) + Sh(7,1) + Sh(7,3) + Sh(7,4),
+
+   with t(z) = z + 1/z and Sh(a, b) the shell of (a, b), and the right side is a union of shells
+   that the dilation by 7 = 2^5 maps onto itself mod 25. So its eigenvalues lie in F(2^5), every
+   one a cube in F(2^10), and off the axes f is such an element divided by a cube. On the axes f
+   restricts to t · t(z³) = t^129. Pilot 4's mixed case needed rule 90 to be confined; a
+   multiplier that enters as a cube needs nothing of its own. The general form, which the agent
+   proved, is f · M^E ≡ B with B invariant under ×2^g and q | E, plus a check on the lines where
+   M vanishes.
+3. **`mechanism.py` at 48 minutes**, unchanged after that; Lean for all five by 74 minutes
+   (`period 25 D ∣ 341`); report at 95 minutes, 108 tool calls.
+4. **The rest.** For the other nine family rules and the three atlas rules it found no
+   structure, and said so, with what it had ruled out. It proved an identity that ties a
+   character of order 25 to one of order 5, λ(c)^341 = λ(5c) + a sum over necklaces, and argued
+   that the chance model, which treats those as independent, underestimates: a model that keeps
+   them together expects 6.1 of the nine (11.8 with two fibres coupled).
+
+**The judge**, round 1 (`judgements/round-1.json`): `condition` explains 5 of the 17; it made
+**967 claims at the training sizes and 414 at the held-out sizes, none false**, each checked by
+the judge's own eigenvalue computation; it covers 19 of the census remainder's 45 entries and 12
+of the 44 unexplained confinements at the held-out sizes; the Lean file builds against the real
+library, all 39 theorems on the standard axioms; and the agent's own checks passed, 31 of 31.
+
+**The registered held-out census refuted the orchestrator's expectation.** At 6 of the 14 sizes
+(29, 35, 37, 53, 55 and 61) the family has more unexplained confinement than chance allows. 35, 53
+and 55 hold exactly the three twisted pairs, and 29 holds them among its 16; the agent's
+condition claims all twelve. ("Held-out" means the agent was given no data there, not that it
+could not compute there: after its mechanism was fixed, it checked its own claims on the whole
+family at 35 and on samples at 35, 45, 55 and 63, and on the atlas at four of the judge's
+held-out sizes. Nothing it did at those sizes came before the mechanism.) With them counted, 29 has 13 left against a bound of
+13.8. **But 37 has 16 square rules confined to the cubes that neither pilot explains**, against
+0.6 expected, each with 9 or 10 free classes, and three of them (3461, 18246, 26883) are also
+confined at 61. That is a new open question, found by the registered test.
+
+**The audit** (`transcript/audit.json`, all 108 calls) found no MCP tools, no web access, no
+subagents, no git beyond its own branch, and no step outside the checkout; its 27 flags are
+Python divisions, `sed` patterns, an allowed read in `~/.elan`, and its own background tasks'
+output files. Its only inputs were the prompt and five notifications of its own background tasks.
+
+**The orchestrator's check** (`tests/test_cubes25.py`) multiplies every identity out again with
+the orchestrator's arithmetic and the atlas's shells, and checks the five rules' odd parts at 25
+and the twisted pairs' at 29, 35, 53 and 55 with `eigen.py`. The Lean file is in the library as
+`Cubes25.lean`, its namespace renamed; it builds in about 3 minutes and its five theorems rest on
+the standard axioms only.
+
+**What it means.** Five of the seventeen are explained and proved, by a known mechanism
+the orchestrator's census had applied too narrowly and by a new form of pilot 4's. The same
+certificates explain 16 census entries at m = 13 that the orchestrator had filed as chance. The
+agent said plainly what it had not explained, and gave a reason to think much of the rest at 25
+is the chance model's error. The orchestrator was wrong twice, in its chance verdicts and its
+registered expectation, and both errors were caught by checks it had set up for the agent.
 
 ## Pilot 4: the cubes at m = 37
 
@@ -111,6 +196,13 @@ in the orchestrator's library as `Cubes37.lean`, and `#print axioms` lists only 
 The judge's round 2 reran every check on that branch (`judgements/round-2.json`): the same
 mechanism results as round 1, and all 70 theorems of the file on the standard axioms, with no
 `sorry`, `axiom` or `native_decide`.
+
+**A caveat, found in pilot 5's audit.** "Held-out" means the agent was given no data at those
+sizes, not that it could not compute there. Pilot 4's agent swept its condition over every odd m
+up to 301 at 07:13, which covers 28 of the 29 held-out sizes, checking its own claims against
+eigenvalues, and changed `mechanism.py` once afterwards (07:47, adding the pure case that acts at
+m = 13). All 180 of its held-out claims were confinements the known mechanisms already explain,
+so the held-out grid tested its soundness there, not new explanations.
 
 **The audit** (`transcript/audit.json`, all 137 tool calls) found no MCP tools, no web access, no
 subagents, and no fetch or listing of other refs. One step went outside the checkout: a
@@ -368,9 +460,10 @@ verify` finds no problems):
 
 ## What the pilots show, and what they do not
 
-**They show that the loop's mechanics work end to end, four times, with real isolation in the
-last three, and that the loop can answer a question its orchestrator could not.** A precise card, a sandbox and an automatic judge were enough. Acceptance was decided
-by Lean, the pinned statements and the axioms, not by the model's description of its work.
+**They show that the loop's mechanics work end to end, five times, with real isolation in the
+last four, and that the loop can answer a question its orchestrator could not.** A precise card,
+a sandbox and an automatic judge were enough. Acceptance was decided by Lean, the pinned
+statements and the axioms, not by the model's description of its work.
 
 - In pilot 1 the agent carried a technique from the library, the Jordan block of the XOR law's
   proof, to a new setting. That needed a new idea, the intermediate sub-torus that keeps a Z/2
@@ -383,6 +476,11 @@ by Lean, the pinned statements and the axioms, not by the model's description of
 - In pilot 4 nobody knew the answer. The agent found a factor shared by four of the six rules,
   then a mechanism, wrote it as a condition the judge could test on every rule at every size, and
   proved it. The condition held at 633 claims, 180 of them at held-out sizes.
+- In pilot 5 the question was harder, and the agent answered part of it: five of seventeen
+  cases, with a new form of pilot 4's mechanism and a known one the orchestrator had applied too
+  narrowly. It reported the other twelve as unexplained rather than stretching its mechanism, and
+  its condition made no false claim. The same checks caught the orchestrator: its chance verdicts
+  on 16 census entries, and its registered expectation for the held-out census.
 
 **They do not show reliability, or that the hard questions are within reach.**
 - Pilot 3's law was easy to read off the data: one division per row. The orchestrator had found
@@ -394,13 +492,20 @@ by Lean, the pinned statements and the axioms, not by the model's description of
   found the shared factor W, had anyone looked for factors shared between rules.
 - Its general condition is sufficient, not necessary: it searches a finite family, and leaves 45
   of the census's 69 entries unexplained.
-- Four runs, each on a different problem, each passed in the judge's first round. That says
+- Pilot 5's answer is partial. Its search is bounded (one multiplier, small exponents), the
+  twelve it left are unexplained, and its argument that most of them are chance rests on a
+  model it fitted to the same family.
+- Five runs, each on a different problem, each passed in the judge's first round. That says
   little about the failure rate, or about where the approach stops working.
 
 ## Next
 
-- **The rest of the census:** the 45 unexplained entries, mostly at m = 13, and whether a
-  wider search family of the same mechanism reaches them.
+- **The cubes at m = 37, again:** the held-out census found 16 square rules confined to the
+  cubes at 37 that neither pilot's mechanism explains, against 0.6 expected, and three of them
+  also at 61. That is the natural sixth pilot.
+- **The rest at m = 25:** nine family rules and three atlas rules, which the agent argues are
+  mostly the chance model's error. A chance model that keeps the fibres together could be
+  registered and tested on a fresh family.
 - **A harder law from data:** a rule whose period law the atlas has not settled, so that the
   law is not one division away. The rules round 3 left unexplained are candidates.
 - **Harness:**

@@ -113,7 +113,9 @@
           <tr><td>Rules that do not split reach the full bound</td><td>113 predictions on 116 new rules</td><td><span class="badge bad">refuted</span> 7 failed, which revealed cubes and dilations</td></tr>
           <tr><td>The refined statement, as a fixed procedure</td><td>11,358 predictions, 344 new rules</td><td><span class="badge bad">refuted</span> 43 failed (0.4%), which revealed the twisted power</td></tr>
           <tr><td>The laws the agents proved, at sizes nobody had computed</td><td>15, 40 and 20 predictions in three pilots</td><td><span class="badge ok">75 of 75</span></td></tr>
-          <tr><td>The fourth agent's mechanism for m = 37, at a held-out grid registered before it started</td><td>180 claims at 29 sizes it never saw</td><td><span class="badge ok">180 of 180</span></td></tr>
+          <tr><td>The fourth agent's mechanism for m = 37, at a held-out grid registered before it started</td><td>180 claims at 29 held-out sizes</td><td><span class="badge ok">180 of 180</span></td></tr>
+          <tr><td>The fifth agent's mechanism for m = 25, at a held-out grid registered before it started</td><td>414 claims at 43 held-out sizes, on the atlas and the square family</td><td><span class="badge ok">414 of 414</span></td></tr>
+          <tr><td>Our expectation that the cube confinements left in the square family are chance</td><td>all 32,767 rules at 14 sizes, registered before the run</td><td><span class="badge bad">refuted</span> at 6: twisted pairs at four, and 16 rules at m = 37 nobody can yet explain</td></tr>
         </tbody>
       </table>
     </div>
@@ -147,11 +149,12 @@
         share one shape and one ratio, the Gumbel values of extreme-value theory.</p>
     </a>
     <a class="card" href="model.html#pilots">
-      <span class="badge ok status">4 of 4 accepted</span>
+      <span class="badge ok status">5 of 5 accepted</span>
       <h3>Agents that prove</h3>
-      <p>Four fresh agents, each given only a problem card and the Lean library, proved a theorem
+      <p>Five fresh agents, each given only a problem card and the Lean library, proved theorems
         the library lacked, each passing the judge in its first round. The third found its law
-        from data first. The fourth answered a question nobody had answered.</p>
+        from data first. The fourth answered a question nobody had answered; the fifth answered
+        part of a harder one, and said plainly what it could not explain.</p>
     </a>
     <a class="card" href="atlas.html#m37">
       <span class="badge ok status" id="m37-status">answered by an agent</span>
@@ -159,7 +162,7 @@
       <p id="m37-text">Six rules that none of the known mechanisms touches had every eigenvalue a
         cube at m = 37, far beyond chance. In the fourth pilot an agent found why, on a question
         nobody had answered, and proved it in Lean. Its condition made 633 claims at 94 sizes,
-        180 of them at sizes it never saw, and none was false.</p>
+        180 of them at held-out sizes registered before it started, and none was false.</p>
     </a>
     <a class="card" href="proofs.html">
       <span class="badge ok status">Lean 4, standard axioms</span>

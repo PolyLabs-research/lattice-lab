@@ -130,12 +130,12 @@ confinement than the model's expected count + 3 sd + 1:
 and none at 39, 41, 45, 51, 63, 65, 69 or 75. The three at 35, 53 and 55 are exactly the agent's
 twisted pairs (1227, 21029, 32184), which are also among the 16 at 29. The three at 61 (3461,
 18246, 26883) are also among the 16 unexplained at 37. The orchestrator's registered expectation
-was wrong; the agent's mechanism, which never saw these sizes, is tested on them by the judge.
+was wrong; the agent's mechanism, given no data at these sizes, is tested on them by the judge.
 
 ## The judge, round 1 (`333a67d`)
 
-`judgements/round-1.json`, finished at 18:58 UTC. The library was unchanged (only `Pilot.lean`
-touched, and the agent's own new files), and:
+`judgements/round-1.json`, finished at 19:15 UTC, after about an hour. The library was unchanged
+(only `Pilot.lean` touched, and the agent's own new files), and:
 
 - **Explains 5 of the 17**: `condition` returns q = 3075 = 3 · 1025 (every eigenvalue a cube in
   F(2^10), lifted to F(2^20)) for 1227, 3096, 21029, 23608 and 32184, and nothing for the other
@@ -175,4 +175,5 @@ shows only the standard three axioms for the five `period_*_dvd` theorems.
   between characters of order 25 and 5 that its fibre identity makes exact.
 - **On the agent's conduct**: it said plainly what it had not explained, named the census's
   oversight (the twisted pairs) itself, and its condition made no false claim at 1,381 claims,
-  414 of them at sizes it never saw.
+  414 of them at held-out sizes. It ran its own checks at some of those (the family at 35, the
+  atlas at 175, 189, 201 and 225), but only after its mechanism was fixed.

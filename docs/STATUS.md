@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 132 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 139 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -89,14 +89,19 @@ eigenvalues**. Five mechanisms are known, each a theorem once its inputs are kno
    y^n) with n = 2^g mod m leaves a polynomial unchanged, its eigenvalues lie in F(2^g). At 37,
    2^9 ≡ −6, and each of six rules becomes such a polynomial after multiplying by rule-90 factors,
    whose eigenvalues are cubes there. So every eigenvalue is a cube. Without the rule-90 factors it
-   also explains 18 of the coincidences at m = 13.
+   also explains 18 of the coincidences at m = 13. **The cube-certificate form** (the fifth pilot,
+   at m = 25): if f · M^E is such a polynomial and 3 divides E, every eigenvalue of f is a cube
+   whether or not M is confined, as long as f is checked on the lines where M vanishes. At 25,
+   2^5 ≡ 7 and f · (t(x) t(y))^3 is invariant under ×7 for two square rules.
 
 On top of these come **coincidences in small fields**. At m = 13, 15, 21 and 25, rules with only 3
 to 7 distinct eigenvalues sometimes have all of them in a subfield or in the cube subgroup. Above
 m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's. A census of all
 1,274 shell rules (`examples/llm-pilot-37`) leaves 45 unexplained entries from 9 to 161, mostly at
 13, and none at the 29 held-out sizes up to 333; [census-remainder.md](census-remainder.md) sorts
-them.
+them. Some of what looked like coincidence is not: the fifth pilot's cube certificates explain 16
+of those at 13 and 3 at 21, and its twisted pairs (mechanism 4 with d = 3, which the census had not
+tried) explain three square rules at 25, 29, 35, 53 and 55.
 
 **Tools.**
 - `examples/linear-atlas-3/eigen.py` computes the odd part from the eigenvalues in seconds. It
@@ -109,13 +114,15 @@ them.
 
 ## Open questions, roughly in order
 
-1. **m = 25.** The census remainder is sorted ([census-remainder.md](census-remainder.md),
-   `examples/census-remainder`, exploratory). Of its 45 entries, 34 are chance (m = 13 and 29);
-   one is a split the procedure mispredicts (m = 115); two are a triangle rule's hidden symmetries
-   mod 21 and 69; five at m = 21 have coinciding eigenvalues, a mild excess. What remains is
-   m = 25: three atlas rules, and 14 of all 32,768 symmetric square rules within distance 4,
-   against 1.7 expected, with no symmetry of any kind. 25 has 37's half-Frobenius arithmetic
-   (2^5 = 7, 7^2 = -1 mod 25), but rule 90 is not confined there. A fifth pilot suits it.
+1. **The cubes at m = 37, in the square family.** The fifth pilot's registered held-out census
+   (`examples/llm-pilot-25`) found 16 symmetric square rules within distance 4 confined to the
+   cubes at m = 37 that neither pilot's mechanism explains, against 0.6 expected by chance, each
+   with 9 or 10 free classes; three of them (3461, 18246, 26883) are also confined at 61. A sixth
+   pilot suits it. Also open at m = 25 ([llm-pilot.md](llm-pilot.md#pilot-5-the-cubes-at-m--25)):
+   nine family rules and the three atlas rules the fifth pilot did not explain. Its agent argues
+   these are mostly the chance model's error, since the model treats characters of order 25 and 5
+   as independent where an identity ties them; a chance model that keeps them together could be
+   registered and tested.
 2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
    half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
@@ -172,14 +179,22 @@ them.
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Four pilots
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Five pilots
    have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, found
-   VO + T13's law from data and proved it, and in the fourth answered the open m = 37 question and
-   proved the answer, judged by Lean and, for the mechanism, by its claims at held-out sizes. The
-   last three ran in their own cloud sessions, whose containers cloned only an orphan sandbox
-   branch, and their transcripts were audited. Next:
-   - the rest of the census (item 1), or another open question;
+   VO + T13's law from data and proved it, in the fourth answered the open m = 37 question and
+   proved the answer, and in the fifth explained and proved 5 of the 17 cube confinements at
+   m = 25, judged by Lean and, for the mechanism, by its claims at held-out sizes (1,381, none
+   false). The last four ran in their own cloud sessions, whose containers cloned only an orphan
+   sandbox branch, and their transcripts were audited. Next:
+   - the 16 at m = 37 that the fifth pilot's held-out census found (item 1);
    - a law that is not one division away in the data, such as a rule round 3 left unexplained.
+
+   **Parked: people in the proposer's seat.** Mathematicians could take the agent's role on the
+   same cards, judged by the same checks: open problem cards, submissions as pull requests with
+   the public half of the judge in CI, the held-out half run privately, held-out grids published
+   as SHA-256 commitments before a card opens. Undecided: where contributors work (a new public
+   repository, opening this one, or invited collaborators), whether they may use AI tools, and a
+   licence; none of the repositories has one yet.
 
    Each pilot leaves two branches (`pilot-sandbox-*`, `pilot-*-submission`) that this session's
    git proxy would not delete; each pilot's `branches.bundle` holds everything on them, so they

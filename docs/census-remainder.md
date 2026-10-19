@@ -25,6 +25,30 @@ mechanism accounts for it. The pilot's agent explained 24 of them
 The tools are `examples/census-remainder`; `findings.py` reproduces every number here in a few
 seconds from the census and the files beside it.
 
+## After pilot 5: two of these verdicts were wrong
+
+The fifth pilot's agent took m = 25 ([llm-pilot.md](llm-pilot.md#pilot-5-the-cubes-at-m--25)),
+and the judge checked its condition on every entry here:
+
+- **16 of the 33 "chance" entries at m = 13 are structure.** They are cube certificates: f · M^E
+  is invariant under the dilation by 4 or 8 mod 13 (2^2 and 2^3; 8² ≡ −1), with M a product of
+  rule-90 factors (or of t + 1 along them) and E = 3, 6 or 9, so every eigenvalue is a cube. The
+  chance model counted them as free classes that happened to be cubes; it has no term for a
+  multiplier that enters as a cube.
+- **3 of the 5 "coinciding eigenvalue" entries at m = 21 are cube certificates too**: rule 90
+  along both axes, E = 6, and the dilation by 8 = 2^3 (8² ≡ 1 mod 21).
+- **At m = 25, 5 of the 17 are explained and proved in Lean** (`Cubes25.lean`): two cube
+  certificates, f · (t(x) t(y))³ invariant under ×7, and three twisted pairs
+  C(x, y) C(x³, y³), a case of mechanism 4 (3 ≡ 2^7 mod 25) that this note's check for twisted
+  powers did not try. None of the three atlas rules is among them.
+- **Chance was refuted at held-out sizes.** The orchestrator registered, before the pilot, that
+  the square family's census at 14 sizes from 27 to 75 would show nothing beyond chance. It
+  showed excess at 6. The twisted pairs explain 35, 53 and 55, and part of 29. **At 37, 16
+  square rules are confined that no known mechanism explains** (0.6 expected), three of them also
+  at 61.
+
+So of the 45 here, 19 now have a proved mechanism, and the counts below are as first written.
+
 ## The method
 
 **Forced subfields.** A rule's eigenvalue at a character c is λ(c) = f(ζ^c). Frobenius gives

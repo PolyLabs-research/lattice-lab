@@ -253,7 +253,7 @@ PILOT37 = {
     "card": "Six rules that none of the known mechanisms touches had every eigenvalue a cube at "
     "m = 37, far beyond chance. In the fourth pilot an agent found why within 23 minutes, on a "
     "question nobody had answered, and proved it in Lean. Its condition made 633 claims at 94 "
-    "sizes, 180 of them at sizes it never saw, and none was false.",
+    "sizes, 180 of them at held-out sizes registered before it started, and none was false.",
     "time": "95 min, 131 calls; a follow-up took 6 more",
     "judge": '<span class="badge ok">passed, round 1</span>',
     "test": "180 of 180 claims held at held-out sizes",
@@ -272,7 +272,7 @@ PILOT37 = {
       <button id="m37-identity" class="primary" type="button">Multiply out its identity</button>
     </div>
     <p>The judge ran the agent's general condition on all 1,274 rules at 94 sizes, 29 of them
-      registered before the launch and never shown to the agent, and checked each claim
+      registered before the launch with no data from them given to the agent, and checked each claim
       against its own eigenvalues: <strong>633 claims, none false</strong>. The agent proved in
       Lean that each of the six has period dividing 87,381 at 37. Its first version took rule 90's
       period as given; asked for more, it proved that too, with an explicit cube root.</p>
