@@ -95,7 +95,8 @@ On top of these come **coincidences in small fields**. At m = 13, 15, 21 and 25,
 to 7 distinct eigenvalues sometimes have all of them in a subfield or in the cube subgroup. Above
 m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's. A census of all
 1,274 shell rules (`examples/llm-pilot-37`) leaves 45 unexplained entries from 9 to 161, mostly at
-13, and found none at the held-out sizes computed so far.
+13, and none at the 29 held-out sizes up to 333; [census-remainder.md](census-remainder.md) sorts
+them.
 
 **Tools.**
 - `examples/linear-atlas-3/eigen.py` computes the odd part from the eigenvalues in seconds. It
@@ -108,12 +109,15 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
 
 ## Open questions, roughly in order
 
-1. **The rest of the census.** m = 37 is answered (the fifth mechanism above, found and proved by
-   the fourth pilot's agent). 45 of the census's 69 unexplained entries remain, 33 of them at
-   m = 13 with a few distinct eigenvalues each. Whether a wider search over the same mechanism
-   reaches them, or they are chance, is open. Register the mechanism as a step of the procedure
-   (item 2).
-2. **Round 4.** Add the twisted-power step to `atlas3.predict`. That needs a faster test than
+1. **m = 25.** The census remainder is sorted ([census-remainder.md](census-remainder.md),
+   `examples/census-remainder`, exploratory). Of its 45 entries, 34 are chance (m = 13 and 29);
+   one is a split the procedure mispredicts (m = 115); two are a triangle rule's hidden symmetries
+   mod 21 and 69; five at m = 21 have coinciding eigenvalues, a mild excess. What remains is
+   m = 25: three atlas rules, and 14 of all 32,768 symmetric square rules within distance 4,
+   against 1.7 expected, with no symmetry of any kind. 25 has 37's half-Frobenius arithmetic
+   (2^5 = 7, 7^2 = -1 mod 25), but rule 90 is not confined there. A fifth pilot suits it.
+2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
+   half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
    new rules, with `eigen.py` as the checker. Judge sizes below about 30 by the predicted chance of
    a coincidence, not by exactness.

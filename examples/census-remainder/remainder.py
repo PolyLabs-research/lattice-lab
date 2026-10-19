@@ -27,6 +27,8 @@ import math
 import sys
 from pathlib import Path
 
+import sympy
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "llm-pilot-37"))
 
@@ -123,3 +125,62 @@ def analyse(f: frozenset, m: int) -> dict:
         "cubes": all(eigen._pow(c["value"], N // 3, mod, d) == 1 for c in nonzero)
         and bool(nonzero),
     }
+
+
+def full_symmetries(f: frozenset, m: int) -> list[tuple[int, int, int, int]]:
+    """Every matrix in GL2(Z/m) that maps f's translations onto themselves mod m, found through
+    the largest prime-power factor P of m: candidates mod P first, then every lift mod m.
+    For the small m of the census (it is about m^4 / P^4 * P^4-search work)."""
+    support = {(x % m, y % m) for x, y in f}
+    P = max(p**e for p, e in sympy.factorint(m).items())
+    Q = m // P
+
+    def keeps(M, mod, pts):
+        return all(
+            ((M[0] * x + M[1] * y) % mod, (M[2] * x + M[3] * y) % mod) in pts for x, y in pts
+        )
+
+    def invertible(M, mod):
+        return math.gcd((M[0] * M[3] - M[1] * M[2]) % mod, mod) == 1
+
+    small = {(x % P, y % P) for x, y in support}
+    mod_p = [
+        M for M in itertools.product(range(P), repeat=4) if invertible(M, P) and keeps(M, P, small)
+    ]
+    mod_q = [M for M in itertools.product(range(Q), repeat=4) if invertible(M, Q)]
+    lift = {
+        (a, b): next(x for x in range(m) if x % P == a and x % Q == b)
+        for a in range(P)
+        for b in range(Q)
+    }
+    out = []
+    for Mp in mod_p:
+        for Mq in mod_q:
+            M = tuple(lift[(a, b)] for a, b in zip(Mp, Mq, strict=True))
+            if keeps(M, m, support):
+                out.append(M)
+    return sorted(out)
+
+
+def distinct_free(f: frozenset, m: int, sym: tuple) -> tuple[int, int, float]:
+    """With a given symmetry set: the free classes, their distinct values up to Frobenius, and
+    the chance model's probability that all nonzero values are cubes."""
+    mod, d, N, zeta, _ = census.setup(m)
+    nonzero = []
+    for (j, k), _, degree in partition(m, sym):
+        value = 0
+        for x, y in f:
+            value ^= zeta[(x * j + y * k) % m]
+        if value:
+            nonzero.append((degree, value))
+    free = [v for g, v in nonzero if cube_chance(g, m) < 1]
+
+    def canon(v):
+        best = w = v
+        for _ in range(d):
+            w = eigen._pow(w, 2, mod, d)
+            best = min(best, w)
+        return best
+
+    chance = math.prod(cube_chance(g, m) for g, _ in nonzero)
+    return len(free), len({canon(v) for v in free}), chance
