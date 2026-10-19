@@ -73,3 +73,76 @@ The harness is the fifth pilot's, with these changes:
 - **21:51:40 UTC.** The agent's session, `session_018qfyPPSsY668o93hfGivki`, was created from
   `pilot-sandbox-37b` at depth 1, in its own container, with the prompt in `prompt.md`, verbatim,
   and asked to push to `pilot-37b-submission`. A watcher polls that branch for `report.md`.
+
+## The run
+
+The agent's own messages are in `transcript/messages.md`; its tool calls in
+`transcript/tool_calls.jsonl`, read from the server-side transcript.
+
+- **21:54.** It rewrote the rules in a = x + 1/x and b = y + 1/y: every rule of the square
+  family is a symmetric polynomial F(a, b) of degree at most 4 in each, since the D4 orbit of
+  (i, j) is D_i(a) D_j(b) + D_j(a) D_i(b), with D_n the Dickson polynomials.
+- **By 22:02 (11 minutes in).** Factoring the 16 that way (Kronecker substitution and
+  recombination, since sympy has no bivariate factoring over GF(2)): nine are a unit times a
+  cube, f = U · g³, with U one of a + b, ab, (a + 1)(b + 1) and g one of a + b + 1 (N4 + self),
+  ab + 1 (D4 + self), ab + a + b (N4 + D4), all nine combinations. The units' values are cubes:
+  a + b and ab are products of rule-90 values, which are cubes at 37; (a + 1)(b + 1) has
+  Ψ₃(t)² = t(z³)/t(z), a quotient of rule-90 values at 37, and at 61, where 3 = 2⁶, it is t^63,
+  a cube with no help from rule 90. So the three in the (a + 1)(b + 1) row are exactly the three
+  also confined at 61.
+- **22:12.** `condition` (the theorem "unit times power": f = monomial × ∏ Φ_e(X_w)^k × h^q
+  exactly, with each unit whose exponent q does not divide taking q-th-power values at m)
+  explained the nine; pushed at 22:20 (`db13beb`).
+- **22:14 onwards.** The chance model: over the whole family at 37, the axis and diagonal
+  classes are cubes 93.5% of the time, not one in three, because a rule's value on the axis is
+  H(t) with deg H ≤ 4, and 29 of the 31 such H are products of Ψ_e's (units at 37). With the
+  measured per-class rates, the expected count of chance confinements at 37 is 5.7, not 0.62;
+  seven remain unexplained.
+- **22:27.** It checked its predictions (the nine wherever rule 90 is confined to the cubes; the
+  (a + 1)(b + 1) row also where Ψ₃ is good on its own) directly, up to m = 151, which includes
+  95, 101 and 111 of the registered grid. At 111 = 3 · 37 its condition missed the (a + 1)(b + 1)
+  row, since 3 divides 111; at 22:27:50 it extended its Lemma 1(a) to prime e, with a proof
+  (t_{pi} = t_i Ψ_p(t_i)²). So its coverage at 111 is not blind. `mechanism.py` changed once more
+  (22:32, `_xorder` rewritten to the same result, faster), and not after.
+- **22:53 to 22:55.** Lean, once its mathlib build finished: all twelve theorems built at the
+  first attempt and rest on the standard axioms (`5aa26ef`).
+- **22:57.** `report.md` pushed (`8b0d911`); the watcher saw it at 22:57:37, 66 minutes after
+  launch.
+
+The session made 99 tool calls (95 Bash, 4 Write). Its only inputs were the prompt and six
+notifications of its own background tasks.
+
+## The audit
+
+`transcript/audit.json`, over all 99 calls:
+
+- no MCP tools, no web search or fetch, no subagents (`transcript.py` first counted 13
+  "subagent calls": they were `tool_progress` events, which carry a parent tool id; it now counts
+  only assistant and user events);
+- its git commands: `status`, `checkout -b pilot-37b-submission`, `add`, `commit`, `log`, and
+  `push` to its own branch;
+- 14 flags, none a step outside the boundary: Python divisions and text inside the files it
+  wrote, read as paths, and one `ls ~/.elan/bin` (allowed).
+
+## The orchestrator's check
+
+`tests/test_unitcubes.py` multiplies all nine identities out again with the orchestrator's
+arithmetic and the atlas's shells; checks the odd parts at 37 (all nine divide 87,381) and at 61
+(exactly the (a + 1)(b + 1) row is confined, and rule 90 is not); and checks that the held-out
+census's unexplained confinements are exactly the nine at 95, 101 and 111 and nothing elsewhere.
+The per-class cube rates at 37 were recomputed over all 32,767 rules: 0.935 on the axis and the
+diagonal, 0.394 on the class (1, 2), as the agent reported. The Lean file's nine rule
+definitions are exactly the family's rules (offset sets compared).
+
+## The registered held-out census
+
+The study finished at 22:59 UTC, 68 minutes after it started and two minutes after the agent's
+report; the caches warmed faster than in the fifth pilot. **Chance is refuted at 95, 101 and 111, and only there**: at each, 9
+confinements that neither earlier pilot's condition explains, against at most 1.5 × 10⁻⁸
+expected.
+They are exactly the agent's nine rules, at exactly the sizes it predicted (where rule 90 is
+confined to the cubes). At the other 14 sizes every confinement is explained: the fifth pilot's
+twisted pairs 1227, 21029 and 32184 at 77, 95, 97, 101, 115 and 125 (and 31801 at 101), and at 115 two rules
+that split into correlated rule-90 passes (102 and 1548), counted apart as registered. As far as
+its transcript shows, the agent never computed which family rules are confined at these sizes:
+it checked its own claims there, and its nine rules.

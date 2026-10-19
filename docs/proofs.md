@@ -410,6 +410,26 @@ about 3 minutes here, and `#print axioms` lists only the standard three for all 
 | `period_r1227_dvd`, `period_r21029_dvd`, `period_r32184_dvd` | period 25 D ∣ 341, as twisted pairs |
 | `period_dvd_of_val` | if every value of D at 25th roots of unity is 0 or has order dividing 341, period 25 D ∣ 341 |
 
+### Unit times cube at m = 37 and 61 (`LatticeProofs/UnitCubes.lean`, by the sixth pilot's agent)
+
+The sixth pilot's proof ([llm-pilot.md](llm-pilot.md#pilot-6-the-square-family-at-m--37)),
+verbatim except for its namespace, `Pilot37b` in the sandbox and `UnitCubes` here. It imports
+`Cubes37.lean` for rule 90's confinement at 37, and builds in under a minute.
+
+Nine square-family rules are exactly f = U · g³ over GF(2), with a = x + 1/x, b = y + 1/y,
+U ∈ {a + b, ab, (a + 1)(b + 1)} and g ∈ {a + b + 1, ab + 1, ab + a + b}. The cube needs no reason;
+the unit's values are cubes:
+
+- a + b = t(XY) t(X/Y) with x = X², y = Y² (`sum_split`), and ab = t(x) t(y): products of rule-90
+  values, cubes at 37 by `Cubes37.r90_val`;
+- (a + 1)(b + 1): a + 1 = (t(X) + 1)², handled by `Cubes37.line_val` at 37; at 61, where rule 90
+  is not confined, `psi3_val61` proves (t + 1)² = t⁶³ from t⁶⁴ = t(z³) (3 = 2⁶ mod 61).
+
+| Theorem | Statement |
+| --- | --- |
+| `period_r1112_dvd_37`, … (nine) | period 37 D ∣ 87381 = (2^18 − 1)/3 |
+| `period_r3461_dvd_61`, `period_r26883_dvd_61`, `period_r18246_dvd_61` | period 61 D ∣ 357913941 = (2^30 − 1)/3 |
+
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.

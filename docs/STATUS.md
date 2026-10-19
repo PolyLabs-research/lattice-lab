@@ -169,7 +169,11 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
    - **the cubes at m = 25** (`Cubes25.lean`, found and proved by the fifth pilot's agent): five of
      the seventeen rules at 25 have period dividing 341 on the 25 x 25 torus, two through cube
      certificates (f (t(x) t(y))^3 is invariant under the dilation by 7 = 2^5) and three as
-     twisted pairs C(x, y) C(x^3, y^3), with 3 = 2^7 mod 25.
+     twisted pairs C(x, y) C(x^3, y^3), with 3 = 2^7 mod 25;
+   - **unit times cube** (`UnitCubes.lean`, found and proved by the sixth pilot's agent): nine
+     square-family rules f = U g^3, with U a product of rule-90 or Psi_3 factors, have period
+     dividing 87381 at m = 37, and the three with U = (a + 1)(b + 1) also divide (2^30 - 1)/3 at
+     61, where 3 = 2^6.
 
    They rest on Lean's standard axioms only. Next:
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
