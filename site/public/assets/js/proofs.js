@@ -13,6 +13,7 @@ const INFO = {
   HexTwoPart: { by: "pilot 1's agent", text: "The hexagon law's 2-part, exactly 2<sup>v+1</sup>P(m) for m ≥ 5. The agent's idea: stop one Frobenius step early, on the sub-torus Z/2m × Z/m, which keeps the Z/2 factor where the extra 2 lives, and find a Jordan block there. Its route differs from the hand proof.", key: ["hexPeriod_hexH1_exact", "hexSub_even"] },
   TriTwoPart: { by: "pilot 2's agent", text: "Both triangle laws' 2-part, exactly 2<sup>v+1</sup>P(m) for m ≥ 3. The same route as the hand proof, which the agent never saw: the sub-torus at level 2<sup>v−1</sup>, and a Jordan block for each rule.", key: ["atlasTriPeriod_triE_exact", "atlasTriPeriod_triEVOVS_exact", "triSub_even"] },
   Cubes37: { by: "pilot 4's agent", text: "The cubes at m = 37, an open question until the agent answered it. At 37, 2<sup>9</sup> ≡ −6, so the dilation by 6 acts on eigenvalues as half a Frobenius: each of six rules, multiplied by rule-90 factors, becomes invariant under it, with eigenvalues in F(2<sup>9</sup>). Each of the six has period dividing 87,381, and so does rule 90, by an explicit cube root.", key: ["period_w_dvd_87381", "period_tri_dvd_87381", "period_r90_dvd", "w_identity"] },
+  Cubes25: { by: "pilot 5's agent", text: "The cubes at m = 25, for five of the seventeen rules a census left unexplained. Two have a cube certificate: multiplied by the cube of rule 90 along both axes, each becomes a union of shells that the dilation by 7 = 2<sup>5</sup> maps onto itself, so off the axes its eigenvalues are an element of F(2<sup>5</sup>) over a cube. Three are twisted pairs C(x, y) C(x<sup>3</sup>, y<sup>3</sup>), with 3 = 2<sup>7</sup> mod 25. Each of the five has period dividing 341.", key: ["period_r3096_dvd", "period_r23608_dvd", "period_r1227_dvd", "twisted_val"] },
   VOT13Law: { by: "pilot 3's agent", text: "VO + T13's law, which the agent first found from data. For m ≥ 3 a Jordan block, as for the other triangle rules. For m = 1, which had no proof of any kind, a fibre lemma and three finite facts checked by the kernel.", key: ["atlasTriPeriod_triVOT13_law", "gstep_eq_self_of_fibers"] },
 };
 const names = Object.keys(MODS).filter(n => INFO[n]);
@@ -30,15 +31,16 @@ for (const n of names) {
 let selected = "Bridge";
 const libSvg = $("lib-svg");
 function drawLib() {
-  const maxD = Math.max(...Object.values(depth)), W = 440, H = 520, rowH = (H - 40) / (maxD + 1), w = 124, h = 34;
+  const maxD = Math.max(...Object.values(depth)), W = 440, H = 520, rowH = (H - 40) / (maxD + 1), h = 34;
   const rows = {};
   for (const n of names) (rows[depth[n]] ||= []).push(n);
+  // pos[n] = [x, y, box width]; a crowded row gets narrower boxes
   const pos = {};
-  for (const [d, ns] of Object.entries(rows)) ns.forEach((n, i) => { pos[n] = [((i + 1) * W) / (ns.length + 1), H - 26 - Number(d) * rowH]; });
+  for (const [d, ns] of Object.entries(rows)) ns.forEach((n, i) => { pos[n] = [((i + 1) * W) / (ns.length + 1), H - 26 - Number(d) * rowH, Math.min(124, W / (ns.length + 1) - 10)]; });
   let s = "";
   for (const [a, b] of edges) s += `<line x1="${pos[a][0]}" y1="${pos[a][1] + h / 2}" x2="${pos[b][0]}" y2="${pos[b][1] - h / 2}" style="stroke: var(--line); stroke-width: 1.4"/>`;
   for (const n of names) {
-    const [x, y] = pos[n], on = n === selected, by = INFO[n].by;
+    const [x, y, w] = pos[n], on = n === selected, by = INFO[n].by;
     const fill = on ? (by.startsWith("pilot") ? "var(--gold)" : "var(--cell)") : "var(--panel)";
     const stroke = by.startsWith("pilot") ? "var(--gold)" : by === "generated" ? "var(--muted)" : "var(--cell)";
     s += `<g class="node" tabindex="0" role="button" aria-pressed="${on}" aria-label="${n}.lean, ${by}" data-n="${n}">`;

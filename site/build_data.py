@@ -194,6 +194,7 @@ def timelines() -> list[dict]:
         ("Pilot 2: the triangle laws", EX / "llm-pilot-triangle", "2026-10-18T20:28:23Z"),
         ("Pilot 3: VO + T13's law, from data", EX / "llm-pilot-vot13", "2026-10-18T22:05:13Z"),
         ("Pilot 4: the cubes at m = 37", EX / "llm-pilot-37", "2026-10-19T06:40:26Z"),
+        ("Pilot 5: the cubes at m = 25", EX / "llm-pilot-25", "2026-10-19T16:42:17Z"),
     ]
     out = []
     for name, d, start in pilots:
