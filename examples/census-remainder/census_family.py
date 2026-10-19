@@ -3,7 +3,7 @@ Every symmetric square rule within distance 4 (all 2^15 unions of the D4 orbits 
 translations with coordinates in [-4, 4]): at odd m, which are confined to the cubes although
 no known mechanism predicts it, and what the chance model expects.
 
-    uv run --no-sync python examples/census-remainder/family.py <m>
+    uv run --no-sync python examples/census-remainder/census_family.py <m>
 
 Writes family-<m>.json.
 """
