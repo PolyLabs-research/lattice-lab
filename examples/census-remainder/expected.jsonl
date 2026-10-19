@@ -1,0 +1,65 @@
+{"m": 9, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 26.5}
+{"m": 11, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.5}
+{"m": 13, "population": 1242, "forced": ["square M8", "square M8+self", "square A4+C4", "square A4+C4+self", "square B4+E4", "square B4+E4+self", "square A4+C4+M8", "square A4+C4+M8+self", "square B4+M8+E4+self", "square A4+B4+C4+E4", "square A4+B4+C4+E4+self", "square A4+B4+C4+M8+E4", "triangle T13", "triangle T13+self", "hexagon H13", "hexagon H13+self", "hexagon H3+H5", "hexagon H3+H5+self"], "expected": 29.136, "sd": 5.257, "observed": 33, "confined": [["square K8+E4+self", 0.012346, 4], ["square N4+C4+L8", 0.037037, 3], ["square N4+L8+E4+self", 0.012346, 4], ["square D4+A4+M8+self", 0.012346, 4], ["square D4+C4+L8+self", 0.012346, 4], ["square D4+L8+M8+self", 0.012346, 4], ["square D4+M8+E4", 0.037037, 3], ["square A4+M8+E4+self", 0.037037, 3], ["square B4+C4+M8+self", 0.037037, 3], ["square B4+L8+M8+self", 0.012346, 4], ["square N4+D4+C4+E4", 0.012346, 4], ["square N4+B4+C4+E4", 0.012346, 4], ["square D4+A4+L8+M8+self", 0.012346, 4], ["square A4+K8+B4+C4+self", 0.012346, 4], ["square N4+K8+B4+M8+E4+self", 0.012346, 4], ["square D4+A4+C4+L8+M8+E4", 0.012346, 4], ["square A4+K8+B4+C4+L8+M8+self", 0.012346, 4], ["square A4+K8+B4+L8+M8+E4+self", 0.012346, 4], ["triangle E+T9", 0.037037, 3], ["triangle E+VS+T7", 0.037037, 3], ["triangle VO+VS+T13+self", 0.111111, 2], ["hexagon H4+self", 0.037037, 3], ["hexagon H2+H4+self", 0.037037, 3], ["hexagon H3+H4+self", 0.037037, 3], ["hexagon H4+H5+self", 0.037037, 3], ["hexagon H4+H13", 0.333333, 1], ["hexagon H3+H4+H13+self", 0.037037, 3], ["hexagon H3+H5+H13", 0.111111, 2], ["hexagon H3+H5+H13+self", 0.037037, 3], ["hexagon H4+H5+H13+self", 0.037037, 3], ["hexagon H2+H3+H4+H13+self", 0.037037, 3], ["hexagon H2+H3+H5+H13+self", 0.037037, 3], ["hexagon H3+H4+H5+H13", 0.111111, 2]], "seconds": 3.1}
+{"m": 15, "population": 1251, "forced": [], "expected": 0.612, "sd": 0.779, "observed": 0, "confined": [], "seconds": 1.5}
+{"m": 17, "population": 1251, "forced": [], "expected": 0.194, "sd": 0.44, "observed": 0, "confined": [], "seconds": 2.4}
+{"m": 19, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.6}
+{"m": 21, "population": 1242, "forced": [], "expected": 1.876, "sd": 1.363, "observed": 6, "confined": [["square N4+K8+C4+L8+M8", 0.000457, 7], ["square N4+D4+K8+C4+M8+E4", 0.000457, 7], ["square N4+A4+K8+B4+L8+E4+self", 0.000457, 7], ["square D4+A4+B4+C4+L8+M8+self", 0.000457, 7], ["triangle E+VO+T7+T9+self", 0.004115, 5], ["hexagon H4+H13+self", 0.004115, 5]], "seconds": 2.0}
+{"m": 25, "population": 1250, "forced": [], "expected": 0.242, "sd": 0.491, "observed": 3, "confined": [["triangle E+T7+self", 0.004115, 5], ["hexagon H1+H3+H13", 0.001372, 6], ["hexagon H3+H4+H5", 0.004115, 5]], "seconds": 5.5}
+{"m": 27, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.5}
+{"m": 29, "population": 1249, "forced": [], "expected": 0.709, "sd": 0.841, "observed": 1, "confined": [["square K8+M8+self", 0.000152, 8]], "seconds": 9.1}
+{"m": 33, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.8}
+{"m": 35, "population": 1250, "forced": [], "expected": 0.007, "sd": 0.084, "observed": 0, "confined": [], "seconds": 4.1}
+{"m": 37, "population": 1218, "forced": [], "expected": 0.168, "sd": 0.41, "observed": 6, "confined": [["square A4+K8+B4+self", 1.7e-05, 10], ["square K8+M8+E4", 5.1e-05, 9], ["square C4+L8+M8", 5.1e-05, 9], ["square C4+L8+M8+E4", 1.7e-05, 10], ["square A4+B4+C4+L8+E4+self", 1.7e-05, 10], ["triangle VS+T9+T13+self", 0.000457, 7]], "seconds": 10.2}
+{"m": 39, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.015, "observed": 0, "confined": [], "seconds": 3.6}
+{"m": 41, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.005, "observed": 0, "confined": [], "seconds": 5.4}
+{"m": 43, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.5}
+{"m": 45, "population": 1243, "forced": [], "expected": 0.0, "sd": 0.01, "observed": 0, "confined": [], "seconds": 3.7}
+{"m": 51, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 2.7}
+{"m": 53, "population": 1250, "forced": [], "expected": 0.007, "sd": 0.082, "observed": 0, "confined": [], "seconds": 14.0}
+{"m": 55, "population": 1249, "forced": [], "expected": 0.0, "sd": 0.005, "observed": 0, "confined": [], "seconds": 6.0}
+{"m": 57, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.5}
+{"m": 59, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.8}
+{"m": 61, "population": 1241, "forced": [], "expected": 0.002, "sd": 0.046, "observed": 0, "confined": [], "seconds": 18.2}
+{"m": 63, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 2.7}
+{"m": 65, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 3.8}
+{"m": 67, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 1.1}
+{"m": 69, "population": 1242, "forced": [], "expected": 0.0, "sd": 0.003, "observed": 1, "confined": [["triangle E+VO+T7+T9+self", 0.0, 16]], "seconds": 6.3}
+{"m": 75, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 6.3}
+{"m": 77, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.003, "observed": 0, "confined": [], "seconds": 8.2}
+{"m": 81, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.6}
+{"m": 83, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.9}
+{"m": 85, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 2.4}
+{"m": 87, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 7.7}
+{"m": 91, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 4.0}
+{"m": 93, "population": 1243, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 4.0}
+{"m": 95, "population": 1218, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 12.7}
+{"m": 97, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 15.1}
+{"m": 99, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.6}
+{"m": 101, "population": 1218, "forced": [], "expected": 0.0, "sd": 0.001, "observed": 0, "confined": [], "seconds": 37.9}
+{"m": 105, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 4.3}
+{"m": 107, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 1.9}
+{"m": 109, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 10.5}
+{"m": 111, "population": 1219, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 12.0}
+{"m": 113, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 8.8}
+{"m": 115, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 1, "confined": [["square N4+D4+B4+C4", 0.0, 39]], "seconds": 13.4}
+{"m": 117, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 3.9}
+{"m": 119, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 6.8}
+{"m": 121, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 4.2}
+{"m": 123, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 6.4}
+{"m": 125, "population": 1250, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 31.4}
+{"m": 129, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 0.5}
+{"m": 131, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 4.1}
+{"m": 133, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 5.9}
+{"m": 135, "population": 1243, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 10.3}
+{"m": 137, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 19.5}
+{"m": 139, "population": 0, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 5.2}
+{"m": 141, "population": 1215, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 14.9}
+{"m": 143, "population": 1242, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 21.0}
+{"m": 145, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 8.9}
+{"m": 147, "population": 1242, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 12.8}
+{"m": 149, "population": 1249, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 52.2}
+{"m": 153, "population": 1243, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 8.1}
+{"m": 155, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 6.5}
+{"m": 157, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 15.9}
+{"m": 159, "population": 1251, "forced": [], "expected": 0.0, "sd": 0.0, "observed": 0, "confined": [], "seconds": 16.7}
