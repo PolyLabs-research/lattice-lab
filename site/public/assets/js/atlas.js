@@ -72,6 +72,10 @@ $("ev-mode-order").addEventListener("click", () => setMode("order"));
 $("ev-mode-cube").addEventListener("click", () => setMode("cube"));
 evRule.addEventListener("change", e => { ev.rule = e.target.value; evCompute(); });
 evM.addEventListener("change", e => { ev.m = Number(e.target.value); evCompute(); });
+function showIdentity(i) {
+  mechPick.value = String(i); showIdent(i);
+  $("mech-pick").closest(".figure").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
+}
 function showEv(rule, m, mode) {
   ev.rule = rule; ev.m = m; evRule.value = rule; evM.value = String(m);
   setMode(mode); evCompute();
@@ -113,6 +117,18 @@ const IDENTS = [
     left: [["u (up from down)", RULES.triE.ud], ["d (down from up)", RULES.triE.du]],
     right: [["s of E", RULES.triE.terms]],
   },
+  {
+    name: "Half-Frobenius at m = 37: A4 + K8 + B4 + self",
+    text: "Found by the fourth pilot's agent. At m = 37, 2^9 ≡ −6 and 6² ≡ −1, so multiplying a character by 6 acts on eigenvalues as the Frobenius x ↦ x^(2^9). A rule whose cells are unchanged by ×6 has every eigenvalue in F(2^9), and every element of F(2^9) is a cube in F(2^18). W = A4 + K8 + B4 + self is not such a rule, but W(x², y²) times four rule-90 passes, whose eigenvalues are cubes at 37, is the shell of eight cells at (±7, ±5) and (±5, ±7), and ×6 maps that shell onto itself mod 37.",
+    left: [["W(x², y²)", ldil(RULES.m1.terms, 2)], ["x + 1/x", R90(1, 0)], ["y + 1/y", R90(0, 1)], ["xy + 1/(xy)", R90(1, 1)], ["x/y + y/x", R90(1, -1)]],
+    right: [["(±7, ±5), (±5, ±7)", [[7, 5], [7, -5], [-7, 5], [-7, -5], [5, 7], [5, -7], [-5, 7], [-5, -7]]]],
+    extra(R) {
+      const red = T => new Set(T.map(([x, y]) => `${((x % 37) + 37) % 37},${((y % 37) + 37) % 37}`));
+      const a = red(R), b = red(R.map(([x, y]) => [6 * x, 6 * y]));
+      const same = a.size === b.size && [...a].every(k => b.has(k));
+      return `<span class="badge ${same ? "ok" : "bad"}">${same ? "unchanged by ×6 mod 37" : "changed by ×6 mod 37"}</span>`;
+    },
+  },
 ];
 const mechPick = $("mech-pick");
 IDENTS.forEach((d, i) => mechPick.add(new Option(d.name, String(i))));
@@ -142,7 +158,7 @@ function showIdent(i) {
   if (d.right.length > 1) html += `<span class="op">→</span>` + stencil("product", Rr);
   $("mech-eq").innerHTML = html;
   const same = lsame(L, Rr);
-  $("mech-check").innerHTML = `<span class="badge ${same ? "ok" : "bad"}">${same ? "both sides equal" : "the sides differ"}</span> <span class="note">multiplied out in your browser: ${L.length} and ${Rr.length} translations</span>`;
+  $("mech-check").innerHTML = `<span class="badge ${same ? "ok" : "bad"}">${same ? "both sides equal" : "the sides differ"}</span>${d.extra ? " " + d.extra(Rr) : ""} <span class="note">multiplied out in your browser: ${L.length} and ${Rr.length} translations</span>`;
 }
 mechPick.addEventListener("change", e => showIdent(Number(e.target.value)));
 
@@ -188,6 +204,8 @@ if (p37 && p37.html) {
   $("m37-pilot").innerHTML = p37.html;
   if (p37.eyebrow) $("m37-eyebrow").textContent = p37.eyebrow;
 }
+const identBtn = document.getElementById("m37-identity");
+if (identBtn) identBtn.addEventListener("click", () => showIdentity(IDENTS.length - 1));
 
 evRule.value = ev.rule; evM.value = String(ev.m);
 evCompute();

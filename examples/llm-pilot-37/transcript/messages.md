@@ -176,3 +176,18 @@ Builds cleanly on the first try. Checking axioms.
 
 Now updating the Lean header, proposal and report to reflect that the proof is unconditional, then committing.
 
+## 2026-10-19T08:43:07.539768Z
+
+Rule 90's cube property at 37 is now proved in Lean, so the six-rule result is fully formal with no outside input. The build passes, and every new theorem uses only Lean's three standard axioms (propext, Classical.choice, Quot.sound), with no `sorry` or `native_decide`. Everything is committed and pushed to `pilot-37-submission`.
+
+**`period_r90_dvd : period 37 r90Offsets ∣ 87381`**, where 87381 = (2¹⁸ − 1)/3, is proved by giving an explicit cube root:
+
+- **The field:** Φ₃₇ is irreducible over F₂, because 2 is a primitive root mod 37. So t = z + 1/z generates F(2¹⁸) = F₂[t]/Ψ₃₇, where Ψ₃₇ has degree 18.
+- **Ψ₃₇(t) = 0:** this follows from the identity Ψ₃₇(z + 1/z)·z¹⁸ = 1 + z + … + z³⁶ in characteristic 2, and that sum is 0 whenever z³⁷ = 1 and z ≠ 1.
+- **The cube root:** v(t) = t¹⁵ + t¹³ + t¹² + t¹¹ + t⁹ + t⁷ + t⁶ + t satisfies v(t)³ = t modulo Ψ₃₇. I found v with a discrete-log computation and checked the identity in Lean with an explicit certificate.
+- **Conclusion:** t^(2¹⁸) = t because 2¹⁸ ≡ −1 (mod 37), so v(t) is also fixed by that power. Hence t^87381 = v(t)^(2¹⁸ − 1) = 1.
+
+Combined with the six earlier bounds (each period divides lcm(511, rule 90's period)) and 511 dividing 87381, the file now has six unconditional theorems, `period_w_dvd_87381` through `period_tri_dvd_87381`. Each says `period 37 D ∣ 87381`, so every eigenvalue of each of the six rules is a cube in F(2¹⁸).
+
+I updated the header of `Pilot.lean`, `proposal.md` and `report.md` to say the result is unconditional. One thing remains unformalized: the arithmetic explanation of why rule 90 is confined at 37 (via the fundamental unit 6 + √37 of Q(√37)). It is checked numerically only and is now just commentary, since the Lean certificate replaces it.
+

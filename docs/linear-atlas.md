@@ -510,13 +510,24 @@ in three, so a rule with 3 values falls short about 1 time in 27, and there are 
 The chance falls quickly as m grows. Many of these rules do not factor at all, so no mechanism
 of the procedure applies. They are coincidences of small fields.
 
-### Open: m = 37
+### m = 37, answered by the fourth pilot
 
 Triangle VS+T9+T13+self fails at m = 37 with 87381, rule 90's own period there. Its s is
-irreducible, and its 9 distinct eigenvalues are all cubes in F(2^18), odds of about 1 in 20,000.
-Round 2's square A4+K8+B4+self did the same at 37, with 172 distinct eigenvalues, all cubes. Two
-unrelated irreducible rules land on rule 90's shortfall at exactly the first size where rule 90
-has one. That points to structure at 37 that is not yet found.
+irreducible, and its 9 distinct eigenvalues up to Frobenius are all cubes in F(2^18), odds of
+about 1 in 20,000. Round 2's square A4+K8+B4+self did the same at 37. (This write-up first said
+172 distinct eigenvalues for it, counting conjugates separately; up to Frobenius it has 11.)
+
+A census of all 1,274 shell rules later found six such rules at 37, and the fourth LLM pilot
+([llm-pilot.md](llm-pilot.md#pilot-4-the-cubes-at-m--37)) set an agent on them. Its answer,
+**half-Frobenius confinement**: at 37, 2^9 ≡ −6 and 6² ≡ −1, so the dilation by 6 acts on
+eigenvalues as the Frobenius x ↦ x^(2^9), and a polynomial invariant under it has its
+eigenvalues in F(2^9), all cubes in F(2^18). Each of the six becomes invariant after multiplying
+by rule-90 factors, whose eigenvalues are cubes at 37; for example
+W(x², y²) t(x) t(y) t(xy) t(x/y) is the shell (±7, ±5), (±5, ±7), with W = A4+K8+B4+self. Three
+of the six are W times rule-90 products. All six are proved in Lean (`Cubes37.lean`): each has
+period dividing 87381 at 37, unconditionally. So the statement of round 3 gains a fifth
+mechanism, a dilation acting as part of a Frobenius, which combines with rule 90's own
+confinement.
 
 ### What round 3 says
 
@@ -526,7 +537,8 @@ has one. That points to structure at 37 that is not yet found.
   predictions are VO+T13's. They came from a third mechanism, found during the run, which then
   predicted every size of that rule.
 - **The statement now has four parts:** splitting, powers, dilations, and twisted powers g(x)
-  g(x^d) where d acts as a Frobenius. Small fields add coincidences on top. The open case is 37.
+  g(x^d) where d acts as a Frobenius. Small fields add coincidences on top. The open case was
+  37, since explained by a fifth mechanism (above).
 - **A round 4 could:**
   - register the twisted-power step on new rules;
   - judge small sizes by the predicted chance of a coincidence, not by exactness;

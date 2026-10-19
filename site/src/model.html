@@ -95,11 +95,12 @@
       in a cloud container that holds nothing else: an orphan branch with one commit, no write-ups
       and no hand proofs. It works alone. When it reports, the judge runs; if the judge rejects the
       work, only the judge's output goes back to the agent.</p>
-    <p>The chart shows every tool call the agents in pilots 2 and 3 made, read from the session
-      transcripts on the server, not from anything the agents wrote. Both wrote their whole proof
-      within ten minutes, then waited half an hour or more for mathlib to compile in their fresh
-      containers. Pilot 1's agent ran inside the orchestrator's container, so it has no separate
-      transcript.</p>
+    <p>The chart shows every tool call the agents in pilots 2 to 4 made, read from the session
+      transcripts on the server, not from anything the agents wrote. In pilots 2 and 3 the agents
+      wrote their whole proof within ten minutes, then waited half an hour or more for mathlib to
+      compile in their fresh containers. In pilot 4, on an open question, the agent had its
+      mechanism after 23 minutes and spent the rest of its time checking and proving it. Pilot 1's
+      agent ran inside the orchestrator's container, so it has no separate transcript.</p>
   </section>
 
   <section class="figure" aria-labelledby="tl-title">
@@ -117,10 +118,10 @@
       <tbody>
         <tr><td>Given</td><td>the statement</td><td>the statements</td><td>a question and data</td><td>an open question and a census</td></tr>
         <tr><td>Where it ran</td><td>a subagent in the orchestrator's container</td><td>its own container, holding only the sandbox</td><td>the same as pilot 2</td><td>the same as pilot 2</td></tr>
-        <tr><td>Time, tool calls</td><td>15 min, 35</td><td>41 min, 40</td><td>53 min, 42</td><td id="p4-time">about 95 min</td></tr>
-        <tr><td>Judge</td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td id="p4-judge"><span class="badge gold">being judged</span></td></tr>
-        <tr><td>Registered test</td><td>15 of 15 sizes</td><td>40 of 40 predictions</td><td>20 of 20, and the agent's own law 20 of 20</td><td id="p4-test">a held-out census, 29 sizes</td></tr>
-        <tr><td>Against the hand proof</td><td>a different route</td><td>the same route</td><td>no proof existed for m = 1</td><td>nobody knows the answer</td></tr>
+        <tr><td>Time, tool calls</td><td>15 min, 35</td><td>41 min, 40</td><td>53 min, 42</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td></tr>
+        <tr><td>Judge</td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td></tr>
+        <tr><td>Registered test</td><td>15 of 15 sizes</td><td>40 of 40 predictions</td><td>20 of 20, and the agent's own law 20 of 20</td><td id="p4-test">180 of 180 claims held at held-out sizes</td></tr>
+        <tr><td>Against the hand proof</td><td>a different route</td><td>the same route</td><td>no proof existed for m = 1</td><td>nobody knew the answer</td></tr>
       </tbody>
     </table>
   </div>
@@ -151,7 +152,9 @@
       nobody had proved. They do not yet show discovery of anything hard. The third pilot's law
       took one division per row of its data, and the orchestrator knew it beforehand. Each library
       held close worked examples, and the agents said they followed them. Three successes on three
-      problems say little about how often the approach fails, or where it stops working. That is
-      what the fourth pilot, on a question nobody has answered, begins to test.</p>
+      problems say little about how often the approach fails, or where it stops working. The fourth
+      pilot was the first on a question nobody had answered, and its agent answered it. The
+      mechanism it found is elementary once seen, and one success on one open question is still one
+      data point.</p>
   </section>
 </main>

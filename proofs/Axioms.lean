@@ -2,6 +2,7 @@ import LatticeProofs
 import LatticeProofs.HexTwoPart
 import LatticeProofs.TriTwoPart
 import LatticeProofs.VOT13Law
+import LatticeProofs.Cubes37
 
 -- `lake env lean Axioms.lean`: the axioms each result rests on. Lean's standard three
 -- (propext, Classical.choice, Quot.sound) and nothing else; no sorryAx.
@@ -47,3 +48,10 @@ import LatticeProofs.VOT13Law
 #print axioms LatticeProofs.atlasTriPeriod_triE_exact
 #print axioms LatticeProofs.atlasTriPeriod_triEVOVS_exact
 #print axioms LatticeProofs.atlasTriPeriod_triVOT13_law
+#print axioms LatticeProofs.Cubes37.period_r90_dvd
+#print axioms LatticeProofs.Cubes37.period_w_dvd_87381
+#print axioms LatticeProofs.Cubes37.period_k8m8e4_dvd_87381
+#print axioms LatticeProofs.Cubes37.period_c4l8m8_dvd_87381
+#print axioms LatticeProofs.Cubes37.period_a4b4c4l8e4self_dvd_87381
+#print axioms LatticeProofs.Cubes37.period_v_dvd_87381
+#print axioms LatticeProofs.Cubes37.period_tri_dvd_87381

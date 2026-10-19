@@ -113,6 +113,7 @@
           <tr><td>Rules that do not split reach the full bound</td><td>113 predictions on 116 new rules</td><td><span class="badge bad">refuted</span> 7 failed, which revealed cubes and dilations</td></tr>
           <tr><td>The refined statement, as a fixed procedure</td><td>11,358 predictions, 344 new rules</td><td><span class="badge bad">refuted</span> 43 failed (0.4%), which revealed the twisted power</td></tr>
           <tr><td>The laws the agents proved, at sizes nobody had computed</td><td>15, 40 and 20 predictions in three pilots</td><td><span class="badge ok">75 of 75</span></td></tr>
+          <tr><td>The fourth agent's mechanism for m = 37, at a held-out grid registered before it started</td><td>180 claims at 29 sizes it never saw</td><td><span class="badge ok">180 of 180</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -146,18 +147,19 @@
         share one shape and one ratio, the Gumbel values of extreme-value theory.</p>
     </a>
     <a class="card" href="model.html#pilots">
-      <span class="badge ok status">3 of 3 accepted</span>
+      <span class="badge ok status">4 of 4 accepted</span>
       <h3>Agents that prove</h3>
-      <p>Three fresh agents, each given only a problem card and the Lean library, proved a theorem
-        the library lacked, each on the first attempt. The third had to find the law from data first.
-        It held at 20 sizes the agent never saw, and one case of its proof had no proof before.</p>
+      <p>Four fresh agents, each given only a problem card and the Lean library, proved a theorem
+        the library lacked, each passing the judge in its first round. The third found its law
+        from data first. The fourth answered a question nobody had answered.</p>
     </a>
     <a class="card" href="atlas.html#m37">
-      <span class="badge gold status" id="m37-status">open</span>
+      <span class="badge ok status" id="m37-status">answered by an agent</span>
       <h3>The cubes at m = 37</h3>
-      <p id="m37-text">Six rules that none of the known mechanisms touches have every eigenvalue a
-        cube at m = 37, far beyond chance. The fourth pilot sets an agent on the question, where
-        nobody knows the answer, the orchestrator included.</p>
+      <p id="m37-text">Six rules that none of the known mechanisms touches had every eigenvalue a
+        cube at m = 37, far beyond chance. In the fourth pilot an agent found why, on a question
+        nobody had answered, and proved it in Lean. Its condition made 633 claims at 94 sizes,
+        180 of them at sizes it never saw, and none was false.</p>
     </a>
     <a class="card" href="proofs.html">
       <span class="badge ok status">Lean 4, standard axioms</span>
@@ -174,7 +176,8 @@
       your browser from the rules themselves. Experiments run on
       <a href="https://github.com/PolyLabs-research/gameoflife_advanced">LatticeLife</a>; laws are
       fitted by <a href="https://github.com/PolyLabs-research/kepler">Kepler</a>; both are open
-      source. The studies, ledgers and Lean library are in lattice-lab, which is private for now.</p>
+      source. The studies, ledgers and Lean library are in lattice-lab, which is private for
+      now.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
       problem card. Their proofs count because Lean accepts them, not because they say so.</p>
     <div class="links">

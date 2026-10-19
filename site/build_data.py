@@ -63,7 +63,11 @@ RULES = {
     "m3": ("square", ("K8", "M8", "E4"), "Square K8 + M8 + E4"),
     "m4": ("square", ("C4", "L8", "M8"), "Square C4 + L8 + M8"),
     "m5": ("square", ("C4", "L8", "M8", "E4"), "Square C4 + L8 + M8 + E4"),
-    "m6": ("square", ("A4", "B4", "C4", "L8", "E4", "self"), "Square A4 + B4 + C4 + L8 + E4 + self"),
+    "m6": (
+        "square",
+        ("A4", "B4", "C4", "L8", "E4", "self"),
+        "Square A4 + B4 + C4 + L8 + E4 + self",
+    ),
     "xor": ("square", ("N4", "D4"), "Square parity rule B1357/S1357 (N4 + D4)"),
     "n4": ("square", ("N4",), "Square N4, the four nearest cells"),
     "n4self": ("square", ("N4", "self"), "Square N4 + self"),
@@ -235,7 +239,8 @@ def proofs() -> dict:
             if line.startswith("import LatticeProofs"):
                 name = line.split()[1]
                 imports += core if name == "LatticeProofs" else [name.split(".")[1]]
-        theorems = len(re.findall(r"^(?:@\[[^\]]*\]\s*)?(?:private\s+)?(?:theorem|lemma)\s", text, re.M))
+        declaration = r"^(?:@\[[^\]]*\]\s*)?(?:private\s+)?(?:theorem|lemma)\s"
+        theorems = len(re.findall(declaration, text, re.M))
         out[path.stem] = {"lines": len(text.splitlines()), "theorems": theorems,
                           "imports": sorted(set(imports)), "core": path.stem in core}  # fmt: skip
     return out
@@ -243,11 +248,36 @@ def proofs() -> dict:
 
 # The fourth pilot's state, as the site shows it. Edited by hand as the pilot moves on.
 PILOT37 = {
-    "status": "an agent's answer, being judged",
-    "card": "Six rules that none of the known mechanisms touches have every eigenvalue a cube at "
-    "m = 37, far beyond chance. The fourth pilot set an agent on the question, where nobody knew "
-    "the answer. It has proposed a mechanism and proofs, which are being judged.",
-    "time": "95 min",
+    "status": "answered by an agent",
+    "card": "Six rules that none of the known mechanisms touches had every eigenvalue a cube at "
+    "m = 37, far beyond chance. In the fourth pilot an agent found why within 23 minutes, on a "
+    "question nobody had answered, and proved it in Lean. Its condition made 633 claims at 94 "
+    "sizes, 180 of them at sizes it never saw, and none was false.",
+    "time": "95 min, 131 calls; a follow-up took 6 more",
+    "judge": '<span class="badge ok">passed, round 1</span>',
+    "test": "180 of 180 claims held at held-out sizes",
+    "eyebrow": "answered in the fourth pilot",
+    "html": """<p>The fourth pilot set an agent on this question, in its own container, with the
+      census up to <em class="var">m</em> = 161 and the Lean library. Nobody knew the answer, the
+      orchestrator included. Ten minutes in, it found that three of the six are the first one
+      times rule-90 factors. After 23 minutes it had a mechanism that explains all six, which it
+      calls <strong>half-Frobenius confinement</strong>.</p>
+    <p>At 37, 2<sup>9</sup> ≡ −6 and 6² ≡ −1, so multiplying a character by 6 acts on
+      eigenvalues as the Frobenius x ↦ x<sup>2<sup>9</sup></sup>. A rule whose cells are unchanged
+      by ×6 has every eigenvalue in F(2<sup>9</sup>), and every element of F(2<sup>9</sup>) is a
+      cube in F(2<sup>18</sup>). None of the six is such a rule. But each becomes one when
+      multiplied by a few rule-90 passes, whose eigenvalues are cubes at 37, and that is enough.</p>
+    <div class="row">
+      <button id="m37-identity" class="primary" type="button">Multiply out its identity</button>
+    </div>
+    <p>The judge ran the agent's general condition on all 1,274 rules at 94 sizes, 29 of them
+      registered before the launch and never shown to the agent, and checked each claim
+      against its own eigenvalues: <strong>633 claims, none false</strong>. The agent proved in
+      Lean that each of the six has period dividing 87,381 at 37. Its first version took rule 90's
+      period as given; asked for more, it proved that too, with an explicit cube root.</p>
+    <p class="note">By the agent's account, the mechanism needs both a short square root of −1
+      mod m and rule 90's own confinement at m. In its sweep up to m = 301, the mixed form acts
+      on the atlas's rules only at 37, which is why 37 looked unique.</p>""",
 }
 
 

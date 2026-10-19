@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 127 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 132 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -32,7 +32,7 @@ default branch and no pull request is open; merging is a decision for you.
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 127 tests
+uv sync && uv run pytest              # 132 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -67,6 +67,7 @@ before the runs that tested them.
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated to L = 1024; power law rejected | [settling-time.md](settling-time.md) |
 | Settling-time fluctuations: one shape and ratio across lattices (Gumbel values) | eight random rules on four lattice types; B2/S34's early miss was a low draw | [settling-time.md](settling-time.md) |
 | Cumulative births under B1357/S1357 are always even | found in data, then proved | [capabilities.md](capabilities.md) |
+| The cubes at m = 37: six rules have every eigenvalue a cube, because a dilation by 6 acts as half a Frobenius and combines with rule 90's own confinement | **answered by an LLM agent** in the fourth pilot, on a question the orchestrator could not answer; **proved in Lean** for all six, unconditionally; its general condition held at 633 claims, 180 at held-out sizes, none false | [llm-pilot.md](llm-pilot.md#pilot-4-the-cubes-at-m--37), [linear-atlas.md](linear-atlas.md#m--37-answered-by-the-fourth-pilot) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
@@ -76,7 +77,7 @@ triangle a 2 x 2 matrix with M^2 = s I. At an odd part m, the odd part of its pe
 the multiplicative orders of its eigenvalues. Those are f evaluated at pairs of m-th roots of
 unity, and they lie in F(2^sord(m)), so the period divides the full bound 2^sord(m) - 1. The
 current statement is that the period **reaches the full bound unless something confines the
-eigenvalues**. Four mechanisms are known, each a theorem once its inputs are known:
+eigenvalues**. Five mechanisms are known, each a theorem once its inputs are known:
 
 1. **one-dimensional splitting:** the eigenvalues are products of a 1D rule's (rounds 1 and 2);
 2. **an odd prime power** g^k: the eigenvalues are k-th powers (round 2);
@@ -84,9 +85,17 @@ eigenvalues**. Four mechanisms are known, each a theorem once its inputs are kno
 4. **a twisted power** g(x, y) g(x^d, y^d) where d = +-2^k mod m: the eigenvalues are
    lambda^(1 + 2^k) (round 3, triangle VO+T13). Cubes are the case d = 2.
 
+5. **a dilation acting as part of a Frobenius** (the fourth pilot, at m = 37): if (x, y) ↦ (x^n,
+   y^n) with n = 2^g mod m leaves a polynomial unchanged, its eigenvalues lie in F(2^g). At 37,
+   2^9 ≡ −6, and each of six rules becomes such a polynomial after multiplying by rule-90 factors,
+   whose eigenvalues are cubes there. So every eigenvalue is a cube. Without the rule-90 factors it
+   also explains 18 of the coincidences at m = 13.
+
 On top of these come **coincidences in small fields**. At m = 13, 15, 21 and 25, rules with only 3
 to 7 distinct eigenvalues sometimes have all of them in a subfield or in the cube subgroup. Above
-m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's.
+m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's. A census of all
+1,274 shell rules (`examples/llm-pilot-37`) leaves 45 unexplained entries from 9 to 161, mostly at
+13, and found none at the held-out sizes computed so far.
 
 **Tools.**
 - `examples/linear-atlas-3/eigen.py` computes the odd part from the eigenvalues in seconds. It
@@ -99,11 +108,11 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
 
 ## Open questions, roughly in order
 
-1. **m = 37.** Two unrelated, irreducible rules have every eigenvalue a cube at m = 37, giving rule
-   90's own period, 87381: square A4+K8+B4+self (round 2, 172 distinct eigenvalues) and triangle
-   VS+T9+T13+self (round 3, 9). That is far beyond chance, and 37 is the first size where rule 90
-   falls short. Searches for a torus-specific factorisation (products of rule-90 values along
-   linear forms) found nothing. This is the most promising lead.
+1. **The rest of the census.** m = 37 is answered (the fifth mechanism above, found and proved by
+   the fourth pilot's agent). 45 of the census's 69 unexplained entries remain, 33 of them at
+   m = 13 with a few distinct eigenvalues each. Whether a wider search over the same mechanism
+   reaches them, or they are chance, is open. Register the mechanism as a step of the procedure
+   (item 2).
 2. **Round 4.** Add the twisted-power step to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
    new rules, with `eigen.py` as the checker. Judge sizes below about 30 by the predicted chance of
@@ -141,7 +150,11 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      open odd-part statement;
    - **VO + T13's law** (`VOT13Law.lean`, found from data and proved by the third pilot's agent):
      period 2^(v+1) P(m) for m >= 3, and 2^(v-1) at n = 2^v, on the atlas's triangular torus at
-     every even n >= 4. The m = 1 case uses finite checks by kernel `decide` on two small tori.
+     every even n >= 4. The m = 1 case uses finite checks by kernel `decide` on two small tori;
+   - **the cubes at m = 37** (`Cubes37.lean`, found and proved by the fourth pilot's agent): the
+     six rules each have period dividing 87381 on the 37 x 37 torus, through the half-Frobenius
+     identities, and rule 90's period there divides 87381 by an explicit cube root
+     (`period_r90_dvd`). Its build takes about 13 minutes, most of it the triangle identity.
 
    They rest on Lean's standard axioms only. Next:
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
@@ -151,12 +164,13 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Three pilots
-   have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, and in the
-   third found VO + T13's law from data and proved it, judged by Lean. The last two ran in their
-   own cloud sessions, whose containers cloned only an orphan sandbox branch, and their
-   transcripts were audited. Next:
-   - an open question, such as m = 37 (item 1), where the orchestrator does not know the answer;
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Four pilots
+   have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, found
+   VO + T13's law from data and proved it, and in the fourth answered the open m = 37 question and
+   proved the answer, judged by Lean and, for the mechanism, by its claims at held-out sizes. The
+   last three ran in their own cloud sessions, whose containers cloned only an orphan sandbox
+   branch, and their transcripts were audited. Next:
+   - the rest of the census (item 1), or another open question;
    - a law that is not one division away in the data, such as a rule round 3 left unexplained.
 
    Each pilot leaves two branches (`pilot-sandbox-*`, `pilot-*-submission`) that this session's

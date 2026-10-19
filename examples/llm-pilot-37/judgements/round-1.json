@@ -1,0 +1,1034 @@
+{
+ "round": 1,
+ "branch": "pilot-37-submission",
+ "base": "b79238c0ac074675848bb069f5913252c08fff52",
+ "head": "ace49c59810b22b4b2b7803e43eacc79ca2fd9ff",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "A",
+    "mechanism.py"
+   ],
+   [
+    "M",
+    "proofs/LatticeProofs/Pilot.lean"
+   ],
+   [
+    "A",
+    "proposal.md"
+   ],
+   [
+    "A",
+    "proposal.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ],
+   [
+    "A",
+    "scratch/PilotAxioms.lean"
+   ],
+   [
+    "A",
+    "scratch/ab.py"
+   ],
+   [
+    "A",
+    "scratch/analyze.py"
+   ],
+   [
+    "A",
+    "scratch/bifac.py"
+   ],
+   [
+    "A",
+    "scratch/c37.py"
+   ],
+   [
+    "A",
+    "scratch/cert_W.txt"
+   ],
+   [
+    "A",
+    "scratch/common.py"
+   ],
+   [
+    "A",
+    "scratch/e1.py"
+   ],
+   [
+    "A",
+    "scratch/e2.py"
+   ],
+   [
+    "A",
+    "scratch/e3.py"
+   ],
+   [
+    "A",
+    "scratch/e4.py"
+   ],
+   [
+    "A",
+    "scratch/e5.py"
+   ],
+   [
+    "A",
+    "scratch/e6.py"
+   ],
+   [
+    "A",
+    "scratch/e7.py"
+   ],
+   [
+    "A",
+    "scratch/e8.py"
+   ],
+   [
+    "A",
+    "scratch/fac.py"
+   ],
+   [
+    "A",
+    "scratch/gen_lean.py"
+   ],
+   [
+    "A",
+    "scratch/gen_tri.py"
+   ],
+   [
+    "A",
+    "scratch/lc.py"
+   ],
+   [
+    "A",
+    "scratch/lc2.py"
+   ],
+   [
+    "A",
+    "scratch/lc3.py"
+   ],
+   [
+    "A",
+    "scratch/lc4.py"
+   ],
+   [
+    "A",
+    "scratch/lean_build.log"
+   ],
+   [
+    "A",
+    "scratch/lean_gen.txt"
+   ],
+   [
+    "A",
+    "scratch/lean_gen_field.txt"
+   ],
+   [
+    "A",
+    "scratch/lean_tri_field.txt"
+   ],
+   [
+    "A",
+    "scratch/lean_tri_polys.txt"
+   ],
+   [
+    "A",
+    "scratch/lines.py"
+   ],
+   [
+    "A",
+    "scratch/look.py"
+   ],
+   [
+    "A",
+    "scratch/lp.py"
+   ],
+   [
+    "A",
+    "scratch/novel.py"
+   ],
+   [
+    "A",
+    "scratch/old/sw0.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/sw0.log"
+   ],
+   [
+    "A",
+    "scratch/old/sw1.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/sw1.log"
+   ],
+   [
+    "A",
+    "scratch/old/sw2.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/sw2.log"
+   ],
+   [
+    "A",
+    "scratch/old/sw3.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/sw3.log"
+   ],
+   [
+    "A",
+    "scratch/old/swb0.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/swb0.log"
+   ],
+   [
+    "A",
+    "scratch/old/swb1.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/swb1.log"
+   ],
+   [
+    "A",
+    "scratch/old/swb2.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/swb2.log"
+   ],
+   [
+    "A",
+    "scratch/old/swb3.jsonl"
+   ],
+   [
+    "A",
+    "scratch/old/swb3.log"
+   ],
+   [
+    "A",
+    "scratch/p.out"
+   ],
+   [
+    "A",
+    "scratch/prof.py"
+   ],
+   [
+    "A",
+    "scratch/prof2.py"
+   ],
+   [
+    "A",
+    "scratch/proposal_out.txt"
+   ],
+   [
+    "A",
+    "scratch/r90.log"
+   ],
+   [
+    "A",
+    "scratch/r90.py"
+   ],
+   [
+    "A",
+    "scratch/swc0.jsonl"
+   ],
+   [
+    "A",
+    "scratch/swc0.log"
+   ],
+   [
+    "A",
+    "scratch/swc1.jsonl"
+   ],
+   [
+    "A",
+    "scratch/swc1.log"
+   ],
+   [
+    "A",
+    "scratch/swc2.jsonl"
+   ],
+   [
+    "A",
+    "scratch/swc2.log"
+   ],
+   [
+    "A",
+    "scratch/swc3.jsonl"
+   ],
+   [
+    "A",
+    "scratch/swc3.log"
+   ],
+   [
+    "A",
+    "scratch/sweep.py"
+   ],
+   [
+    "A",
+    "scratch/t1.py"
+   ],
+   [
+    "A",
+    "scratch/t2.py"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": true,
+  "six": {
+   "square A4+K8+B4+self": 786435,
+   "triangle VS+T9+T13+self": 786435,
+   "square K8+M8+E4": 786435,
+   "square C4+L8+M8": 786435,
+   "square C4+L8+M8+E4": 786435,
+   "square A4+B4+C4+L8+E4+self": 786435
+  },
+  "explains_six": true,
+  "train": {
+   "claims": 453,
+   "false": [],
+   "hold": 453,
+   "beyond_known": 30
+  },
+  "heldout": {
+   "claims": 180,
+   "false": [],
+   "hold": 180,
+   "beyond_known": 0
+  },
+  "census_covered": {
+   "train": [
+    24,
+    69
+   ],
+   "heldout": [
+    0,
+    0
+   ]
+  },
+  "census_covered_rows": {
+   "train": [
+    [
+     13,
+     "hexagon",
+     "H13"
+    ],
+    [
+     13,
+     "hexagon",
+     "H13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H3+H5"
+    ],
+    [
+     13,
+     "hexagon",
+     "H3+H5+self"
+    ],
+    [
+     13,
+     "square",
+     "A4+B4+C4+E4"
+    ],
+    [
+     13,
+     "square",
+     "A4+B4+C4+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "A4+B4+C4+M8+E4"
+    ],
+    [
+     13,
+     "square",
+     "A4+C4"
+    ],
+    [
+     13,
+     "square",
+     "A4+C4+M8"
+    ],
+    [
+     13,
+     "square",
+     "A4+C4+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "A4+C4+self"
+    ],
+    [
+     13,
+     "square",
+     "B4+E4"
+    ],
+    [
+     13,
+     "square",
+     "B4+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "B4+M8+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "M8"
+    ],
+    [
+     13,
+     "square",
+     "M8+self"
+    ],
+    [
+     13,
+     "triangle",
+     "T13"
+    ],
+    [
+     13,
+     "triangle",
+     "T13+self"
+    ],
+    [
+     37,
+     "square",
+     "A4+B4+C4+L8+E4+self"
+    ],
+    [
+     37,
+     "square",
+     "A4+K8+B4+self"
+    ],
+    [
+     37,
+     "square",
+     "C4+L8+M8"
+    ],
+    [
+     37,
+     "square",
+     "C4+L8+M8+E4"
+    ],
+    [
+     37,
+     "square",
+     "K8+M8+E4"
+    ],
+    [
+     37,
+     "triangle",
+     "VS+T9+T13+self"
+    ]
+   ],
+   "heldout": []
+  },
+  "per_m": {
+   "9": {
+    "ok": true,
+    "seconds": 8.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "11": {
+    "ok": true,
+    "seconds": 10.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "13": {
+    "ok": true,
+    "seconds": 11.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "15": {
+    "ok": true,
+    "seconds": 12.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "17": {
+    "ok": true,
+    "seconds": 13.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "19": {
+    "ok": true,
+    "seconds": 14.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "21": {
+    "ok": true,
+    "seconds": 15.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "25": {
+    "ok": true,
+    "seconds": 15.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "27": {
+    "ok": true,
+    "seconds": 15.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "29": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "33": {
+    "ok": true,
+    "seconds": 15.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "35": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "37": {
+    "ok": true,
+    "seconds": 17.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "39": {
+    "ok": true,
+    "seconds": 15.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "41": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "43": {
+    "ok": true,
+    "seconds": 16.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "45": {
+    "ok": true,
+    "seconds": 19.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "51": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "53": {
+    "ok": true,
+    "seconds": 19.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "55": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "57": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "59": {
+    "ok": true,
+    "seconds": 17.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "61": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "63": {
+    "ok": true,
+    "seconds": 19.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "65": {
+    "ok": true,
+    "seconds": 18.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "67": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "69": {
+    "ok": true,
+    "seconds": 17.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "75": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "77": {
+    "ok": true,
+    "seconds": 17.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "81": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "83": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "85": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "87": {
+    "ok": true,
+    "seconds": 17.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "91": {
+    "ok": true,
+    "seconds": 16.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "93": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "95": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "97": {
+    "ok": true,
+    "seconds": 19.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "99": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "101": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "105": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "107": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "109": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "111": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "113": {
+    "ok": true,
+    "seconds": 17.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "115": {
+    "ok": true,
+    "seconds": 17.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "117": {
+    "ok": true,
+    "seconds": 16.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "119": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "121": {
+    "ok": true,
+    "seconds": 19.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "123": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "125": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "129": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "131": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "133": {
+    "ok": true,
+    "seconds": 17.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "135": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "137": {
+    "ok": true,
+    "seconds": 20.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "139": {
+    "ok": true,
+    "seconds": 17.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "141": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "143": {
+    "ok": true,
+    "seconds": 16.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "145": {
+    "ok": true,
+    "seconds": 18.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "147": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "149": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "153": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "155": {
+    "ok": true,
+    "seconds": 17.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "157": {
+    "ok": true,
+    "seconds": 19.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "159": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "163": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "165": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "169": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "171": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "173": {
+    "ok": true,
+    "seconds": 19.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "175": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "177": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "179": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "181": {
+    "ok": true,
+    "seconds": 18.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "183": {
+    "ok": true,
+    "seconds": 18.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "185": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "187": {
+    "ok": true,
+    "seconds": 18.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "189": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "193": {
+    "ok": true,
+    "seconds": 19.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "195": {
+    "ok": true,
+    "seconds": 16.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "197": {
+    "ok": true,
+    "seconds": 18.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "201": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "203": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "205": {
+    "ok": true,
+    "seconds": 18.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "207": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "209": {
+    "ok": true,
+    "seconds": 17.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "211": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "213": {
+    "ok": true,
+    "seconds": 17.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "215": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "219": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "221": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "225": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "259": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "333": {
+    "ok": true,
+    "seconds": 22.2,
+    "errors": 0,
+    "first_error": null
+   }
+  },
+  "all_ran": true
+ },
+ "lean": {
+  "present": true,
+  "builds": true,
+  "forbidden_words": [],
+  "theorems": {},
+  "standard": [],
+  "build": {
+   "returncode": 0,
+   "seconds": 988.1,
+   "output": "\u26a0 [1185/1202] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1316/1339] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2849] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2849] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2849/2849] Built LatticeProofs.Pilot (856s)\nwarning: LatticeProofs/Pilot.lean:210:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.ev_w`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:214:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.ev_r90`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:217:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.pow_mod37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:244:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.inv_eq_pow36`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:319:2: Unused tactic linter: `all_goals\n  first\n  | rfl\n  | ring` does nothing.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: LatticeProofs/Pilot.lean:319:12: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nwarning: LatticeProofs/Pilot.lean:362:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.pow_of_line`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:453:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.prod_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:465:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.sq37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:489:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.ev_tri`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:493:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.ev_v`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:577:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot.ratio_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:599:41: this constant has no effect on the linear combination; it can be dropped from the term\nBuild completed successfully (2849 jobs).\n"
+  }
+ },
+ "proposal": {
+  "present": true,
+  "returncode": 0,
+  "seconds": 133.0,
+  "output": "== 1. exact identities over GF(2)\n[held] W(x^2,y^2) * t(x) t(y) t(xy) t(x/y) = Sh(7,5)\n[held] V(x^2,y^2) * t(x) t(y) = Sh(7,7) + Sh(5,5)\n[held] K8+M8+E4 = a b W\n[held] C4+L8+M8 = (a + b) W\n[held] A4+B4+C4+L8+E4+self = (a+1)(b+1) W\n[held] triangle s: S(x^2,y^2) * O(1,0) O(2,1) = Hex(14,12) + Hex(12,10)\n[held] 2^9 = -6 and 6^2 = -1 mod 37\n[held] Sh(7,5) invariant under x 2^9 mod 37\n[held] Sh(7,7)+Sh(5,5) invariant under x 2^9 mod 37\n[held] Hex(14,12)+Hex(12,10) invariant under x 2^9 mod 37\n== 2. condition on the six rules at m = 37, and the eigenvalues\n[held] condition(A4+K8+B4+self, 37) = 786435  (r=2, units=[], N=((-1, 0), (-1, -1)), g=9)\n[held]   all eigenvalues of A4+K8+B4+self are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of A4+K8+B4+self at 37 is 87381\n[held] condition(K8+M8+E4, 37) = 786435  (r=2, units=[('O', (-1, 0)), ('O', (-1, 0))], N=((-1, 0), (-1, -1)), g=9)\n[held]   all eigenvalues of K8+M8+E4 are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of K8+M8+E4 at 37 is 87381\n[held] condition(C4+L8+M8, 37) = 786435  (r=2, units=[('O', (-1, -1))], N=((-1, 0), (-1, -1)), g=9)\n[held]   all eigenvalues of C4+L8+M8 are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of C4+L8+M8 at 37 is 87381\n[held] condition(C4+L8+M8+E4, 37) = 786435  (r=2, units=[], N=((-1, 0),), g=9)\n[held]   all eigenvalues of C4+L8+M8+E4 are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of C4+L8+M8+E4 at 37 is 87381\n[held] condition(A4+B4+C4+L8+E4+self, 37) = 786435  (r=2, units=[('P3', (-1, 0)), ('P3', (-1, 0))], N=((-1, 0), (-1, -1)), g=9)\n[held]   all eigenvalues of A4+B4+C4+L8+E4+self are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of A4+B4+C4+L8+E4+self at 37 is 87381\n[held] condition(VS+T9+T13+self, 37) = 786435  (r=2, units=[], N=((-1, 0), (-1, 1)), g=9)\n[held]   all eigenvalues of VS+T9+T13+self are 786435-th powers in F(2^36) (cubes of F(2^18))\n[held]   odd part of VS+T9+T13+self at 37 is 87381\n== 3. closed forms at 37 (p = t_{(j+k)/2}, q = t_{(j-k)/2})\n[held] lambda_W = Tr(p^(2^9) q) / (pq(p+q)) at all 34 orbit characters with pq(p+q) != 0\n[held] lambda_V = (N(p) + N(q)) / (p + q) there\n== 4. rule 90 at 37\n[held] prod over squares h mod 37 of (1 + zeta^h) = 1  (N_{F(2^18)/F_4}(t_1) = 1)\n[held] rule 90's odd part at 37 is 87381 = (2^18-1)/3\n== 5. soundness: every claim of condition, at several m, checked by eigenvalues\n[held] m = 13: 21 claims, all hold  (10s)\n[held] m = 21: 9 claims, all hold  (15s)\n[held] m = 37: 55 claims, all hold  (18s)\n[held] m = 101: 49 claims, all hold  (24s)\n[held] m = 111: 37 claims, all hold  (23s)\n== 6. census entries explained\n   24 of 69 census entries are claimed by condition:\n     (13, 'square', 'M8', 9)\n     (13, 'square', 'M8+self', 9)\n     (13, 'square', 'A4+C4', 9)\n     (13, 'square', 'A4+C4+self', 9)\n     (13, 'square', 'B4+E4', 9)\n     (13, 'square', 'B4+E4+self', 9)\n     (13, 'square', 'A4+C4+M8', 9)\n     (13, 'square', 'A4+C4+M8+self', 9)\n     (13, 'square', 'B4+M8+E4+self', 9)\n     (13, 'square', 'A4+B4+C4+E4', 9)\n     (13, 'square', 'A4+B4+C4+E4+self', 9)\n     (13, 'square', 'A4+B4+C4+M8+E4', 9)\n     (13, 'triangle', 'T13', 21)\n     (13, 'triangle', 'T13+self', 21)\n     (13, 'hexagon', 'H13', 21)\n     (13, 'hexagon', 'H13+self', 21)\n     (13, 'hexagon', 'H3+H5', 9)\n     (13, 'hexagon', 'H3+H5+self', 9)\n     (37, 'square', 'A4+K8+B4+self', 3)\n     (37, 'square', 'K8+M8+E4', 3)\n     (37, 'square', 'C4+L8+M8', 3)\n     (37, 'square', 'C4+L8+M8+E4', 3)\n     (37, 'square', 'A4+B4+C4+L8+E4+self', 3)\n     (37, 'triangle', 'VS+T9+T13+self', 3)\n[held] the six rules at 37 are among them\n== 7. the six rules at the other odd m in 9..161: no claim (they reach the full bound)\n[held] condition claims nothing for the six away from 37\n\n39 of 39 checks held  (131s)\n"
+ },
+ "sound": true
+}

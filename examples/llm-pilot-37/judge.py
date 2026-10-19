@@ -134,6 +134,19 @@ def checkout(head: str) -> Path:
     return tree
 
 
+def declared(source: str) -> list[str]:
+    """Full names of the theorems a Lean file declares, through its namespace blocks."""
+    stack, out = [], []
+    for line in source.splitlines():
+        if m := re.match(r"namespace\s+([\w.]+)", line):
+            stack.append(m.group(1))
+        elif (m := re.match(r"end\s+([\w.]+)", line)) and stack and stack[-1] == m.group(1):
+            stack.pop()
+        elif m := re.match(r"(?:theorem|lemma)\s+([\w.']+)", line):
+            out.append(".".join([*stack, m.group(1)]))
+    return out
+
+
 def lean_check(tree: Path, base: str, head: str) -> dict:
     lean = [p for _, p in library_check(base, head)["touched"] if p.endswith(".lean")]
     if not lean:
@@ -156,18 +169,15 @@ def lean_check(tree: Path, base: str, head: str) -> dict:
     sources += [p.read_text() for p in pilot.glob("Pilot/**/*.lean")]
     forbidden = [w for w in ["axiom ", "native_decide"] if any(w in s for s in sources)]
     build = run(["lake", "build", "LatticeProofs.Pilot"], proj, 3600)
-    names = sorted(
-        {n for s in sources for n in re.findall(r"^(?:theorem|lemma)\s+([\w.']+)", s, re.M)}
-    )
+    names = sorted({n for s in sources for n in declared(s)})
     (proj / "AllAxioms.lean").write_text(
-        "import LatticeProofs.Pilot\n"
-        + "".join(f"#print axioms LatticeProofs.{n}\n" for n in names)
+        "import LatticeProofs.Pilot\n" + "".join(f"#print axioms {n}\n" for n in names)
     )
     every = run(["lake", "env", "lean", "AllAxioms.lean"], proj, 1800)
-    found = re.findall(
-        r"'LatticeProofs\.([\w.']+)' depends on axioms: \[([^\]]*)\]", every["output"]
-    )
+    found = re.findall(r"'([\w.']+)' depends on axioms: \[([^\]]*)\]", every["output"])
     axioms = {n: sorted(a.strip() for a in ax.split(",")) for n, ax in found}
+    for n in re.findall(r"'([\w.']+)' does not depend on any axioms", every["output"]):
+        axioms[n] = []
     standard = [n for n, ax in axioms.items() if set(ax) <= STANDARD]
     return {
         "present": True,

@@ -38,8 +38,8 @@ PAGES = {
     ),
     "settling": (
         "Settling time · PolyLabs Research",
-        "How long a random soup takes to settle: a logarithmic law replicated to tori of side 1024, "
-        "and fluctuations with one shape across lattices.",
+        "How long a random soup takes to settle: a logarithmic law replicated to tori of side "
+        "1024, and fluctuations with one shape across lattices.",
     ),
     "proofs": (
         "Proofs · PolyLabs Research",
@@ -104,7 +104,8 @@ FOOT = """<footer class="site-foot gutter">
       your browser from the rules themselves. Experiments run on
       <a href="https://github.com/PolyLabs-research/gameoflife_advanced">LatticeLife</a>; laws are
       fitted by <a href="https://github.com/PolyLabs-research/kepler">Kepler</a>; both are open
-      source. The studies, ledgers and Lean library are in lattice-lab, which is private for now.</p>
+      source. The studies, ledgers and Lean library are in lattice-lab, which is private for
+      now.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
       problem card. Their proofs count because Lean accepts them, not because they say so.</p>
     <div class="links">

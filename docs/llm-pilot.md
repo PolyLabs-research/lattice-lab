@@ -1,32 +1,36 @@
-# The LLM-central pilots: three period laws, proved by agents
+# The LLM-central pilots: three period laws and an open question, answered by agents
 
-**Result: in all three pilots so far, a fresh agent, given only a problem card and the Lean
-library, proved its theorem on the first attempt. In the third it also found the law itself,
-from data.** The judge accepted each proof, not the agent's own report:
+**Result: in all four pilots so far, a fresh agent, given only a problem card and the Lean
+library, passed the judge in its first round. In the third it also found the law itself, from
+data. In the fourth, on a question nobody had answered, it found the mechanism, proved it in
+Lean, and its general condition held at every one of 633 claims, 180 of them at sizes it never
+saw.** The judge accepted each proof, not the agent's own report:
 
 - the proof builds against the real library;
 - the statements match pinned copies;
 - the axioms are only Lean's standard three.
 
 The registered predictions, at sizes nobody had computed, all held. In pilot 3 the agent's own
-law also held at all 20 held-out sizes, which it never saw. All three proofs are now in the
-library, verbatim: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean`.
+law also held at all 20 held-out sizes, which it never saw. All four proofs are now in the
+library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim, and `Cubes37.lean`
+with only its namespace renamed.
 
-| | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law |
-| --- | --- | --- | --- |
-| Given | the statement | the statements | a question and data |
-| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` |
-| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 |
-| Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 |
-| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls |
-| Judge | passed in round 1 | passed in round 1 | passed in round 1 |
-| The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 |
-| Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 |
-| Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 |
+| | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law | Pilot 4: the cubes at m = 37 |
+| --- | --- | --- | --- | --- |
+| Given | the statement | the statements | a question and data | an open question, a census and data |
+| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` | `period_w_dvd_87381` and five more, `period_r90_dvd`; and a `condition` in Python |
+| Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 | the same as pilot 2 |
+| Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 | the same as pilot 2 |
+| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls |
+| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 |
+| The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 | 39 of 39 |
+| Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 | the census at 29 held-out sizes: no unexplained confinement, as registered; the agent's condition held at all 180 of its claims there |
+| Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 | nobody knew the answer |
 
     examples/llm-pilot/                 pilot 1: card, tools, sandbox, judge, study, log, submission
     examples/llm-pilot-triangle/        pilot 2: the same, plus setup.sh, audit.py, transcript/
     examples/llm-pilot-vot13/           pilot 3: the same, plus data/, exact.py, transcript.py
+    examples/llm-pilot-37/              pilot 4: the same, plus census.py, evaluate.py
 
 ## Why pilots
 
@@ -36,6 +40,91 @@ answer is known but which the agent could not look up. That makes it possible to
 loop's mechanics rather than the problem. The exact 2-parts of the parity laws were such
 problems: each had a hand proof in [parity-lattices.md](parity-lattices.md#the-factor-2--2vn-proved),
 and the library had the odd parts and the upper bounds, but not the exact 2-parts.
+
+## Pilot 4: the cubes at m = 37
+
+**The problem.** At m = 37 the full bound is 2^18 − 1 = 3 · 87381, and 87381 is rule 90's own
+period there. A census of all 1,274 shell rules of the atlas (`examples/llm-pilot-37/census.py`)
+found **six** rules that none of the four known mechanisms touches with every eigenvalue a cube
+at 37, and period 87381: square A4 + K8 + B4 + self, K8 + M8 + E4, C4 + L8 + M8, C4 + L8 + M8 + E4
+and A4 + B4 + C4 + L8 + E4 + self, and triangle VS + T9 + T13 + self. Each has only 9 to 11
+distinct eigenvalues up to Frobenius, so chance would confine it about once in 20,000 to 180,000.
+None of them falls short at any other odd m from 9 to 161. This was open question 1 of
+[STATUS.md](STATUS.md), and the orchestrator did not know the answer.
+
+**What the agent was asked for.** A condition `condition(f, m)` on a rule and a size that forces
+every eigenvalue to be a q-th power, implemented in Python so the judge could run it on every
+rule at every size; a proof in `proposal.md`; Lean optional. The card gave the census up to 161,
+the tools and the library.
+
+**The judge's new checks.** It ran `condition` on all 1,274 rules at every odd m with ord_m(2)
+even from 9 to 161 (65 sizes) and at the 29 held-out sizes from 163 to 333 registered before the
+launch (`ledger.jsonl`), and checked each claim with its own eigenvalue computation. One false
+claim would refute the mechanism as stated. The agent was told the held-out grid existed, not its
+results.
+
+**What happened** (`examples/llm-pilot-37/log.md`):
+
+1. **A shared factor, in ten minutes.** Factoring the six, the agent found that three are the
+   first one times rule-90 products: with a = x + 1/x and b = y + 1/y and W = A4 + K8 + B4 + self,
+   K8 + M8 + E4 = ab W, C4 + L8 + M8 = (a + b) W, and A4 + B4 + C4 + L8 + E4 + self =
+   (a + 1)(b + 1) W. No round of the atlas had looked for factors shared between rules.
+2. **The mechanism, in 23 minutes**, which it calls half-Frobenius confinement. At 37,
+   2^9 ≡ −6 and 6² ≡ −1, so the dilation by 6 acts on eigenvalues as the Frobenius x ↦ x^(2^9). A
+   polynomial whose support mod 37 is invariant under it has every eigenvalue in F(2^9), and as
+   3 does not divide 2^9 − 1, every element of F(2^9) is a cube in F(2^18). None of the six is
+   invariant, but each becomes so after multiplying by rule-90 factors, whose eigenvalues are
+   cubes at 37:
+
+       W(x², y²) · t(x) t(y) t(xy) t(x/y) = the shell (±7, ±5), (±5, ±7),
+
+   and 6 · (7, 5) ≡ (5, −7) (mod 37). C4 + L8 + M8 + E4 and the triangle rule have identities of
+   the same kind. The general `condition` searches for such factorisations: a rule f(x^r, y^r)
+   equal to rule-90 units times a core C, with C N invariant under the dilation by 2^g for g a
+   proper divisor of sord(m), N a product of rule-90 factors. Without units, it is "f is invariant
+   under a dilation by a power of 2", which puts the eigenvalues in a subfield, and explains 18 of
+   the census's coincidences at m = 13.
+3. **Lean**, once its mathlib build finished: `period 37 D ∣ lcm(511, period 37 r90)` for all six,
+   in 21 minutes, with the triangle rule last. Rule 90's period at 37 was taken as given.
+4. **Report** at 95 minutes.
+5. **A follow-up.** Eight minutes after the report, the session received "Prove rule 90's cube
+   property at 37 in Lean too". The orchestrator did not send it; the server records a person as
+   its origin, typing in the Claude app. In 20 minutes the agent proved
+   `period_r90_dvd : period 37 r90Offsets ∣ 87381` with an explicit cube root of t = z + 1/z in
+   F(2^18) = GF(2)[t]/Ψ_37, and then `period 37 D ∣ 87381` for all six, unconditionally.
+
+**The judge**, round 1, on the report as first submitted (`judgements/round-1.json`):
+
+- `condition` explains all six (q = 786435 = 3 (2^18 + 1), every eigenvalue a cube in F(2^18));
+- **sound: 453 claims at the training sizes and 180 at the held-out sizes, none false.** 30 of
+  the training claims are confinements the four known mechanisms do not explain. At the held-out
+  sizes it claimed nothing beyond them, and the registered census found nothing unexplained there
+  either: at all 29, as the orchestrator had registered before the launch;
+- it covers 24 of the census's 69 unexplained entries: the six at 37 and 18 at 13;
+- the Lean file builds against the real library. The judge's axiom listing missed the agent's
+  namespace, a harness bug since fixed; round 2, on the final branch, lists every theorem;
+- the agent's own checks: 39 of 39.
+
+**In the library.** The final branch's `Pilot.lean` (`6151adb`), with its namespace renamed, builds
+in the orchestrator's library as `Cubes37.lean`, and `#print axioms` lists only `propext`,
+`Classical.choice` and `Quot.sound` for `period_r90_dvd` and for all six `period_*_dvd_87381`.
+The judge's round 2 reran every check on that branch (`judgements/round-2.json`).
+
+**The audit** (`transcript/audit.json`, all 137 tool calls) found no MCP tools, no web access, no
+subagents, and no fetch or listing of other refs. One step went outside the checkout: a
+`find / -maxdepth 8` for mathlib's `CharP` sources, which found nothing; the agent reported it
+itself. The other flags are Lean comment markers, Python divisions and `sed` patterns read as
+paths.
+
+**The orchestrator's check.** The identities were multiplied out again with the atlas's own
+polynomials, not the agent's code, and all hold; `eigen.odd_part` gives 87381 for W at 37 and
+511 = 2^9 − 1 for the shell.
+
+**What it means.** The six are not six coincidences. They are one arithmetic fact about 37, a
+square root of −1 that is a power of 2 and small enough to pair the atlas's shells, combined with
+rule 90's own confinement there. By the agent's sweep up to m = 301, the mixed form of the
+mechanism acts on the atlas's rules only at 37, which is why 37 looked unique. The remaining 45
+entries of the census, mostly at 13, are still unexplained.
 
 ## Pilot 3: find VO + T13's law
 
@@ -277,8 +366,8 @@ verify` finds no problems):
 
 ## What the pilots show, and what they do not
 
-**They show that the loop's mechanics work end to end, three times, with real isolation in the
-last two.** A precise card, a sandbox and an automatic judge were enough. Acceptance was decided
+**They show that the loop's mechanics work end to end, four times, with real isolation in the
+last three, and that the loop can answer a question its orchestrator could not.** A precise card, a sandbox and an automatic judge were enough. Acceptance was decided
 by Lean, the pinned statements and the axioms, not by the model's description of its work.
 
 - In pilot 1 the agent carried a technique from the library, the Jordan block of the XOR law's
@@ -289,19 +378,27 @@ by Lean, the pinned statements and the axioms, not by the model's description of
 - In pilot 3 the agent found an unstated law from data, and it held at sizes it never saw. It
   then proved a case for which no proof existed, with an argument of its own: the fibre lemma and
   three finite checks, where the library's Jordan-block technique gives nothing.
+- In pilot 4 nobody knew the answer. The agent found a factor shared by four of the six rules,
+  then a mechanism, wrote it as a condition the judge could test on every rule at every size, and
+  proved it. The condition held at 633 claims, 180 of them at held-out sizes.
 
-**They do not show discovery of anything hard, or reliability.**
+**They do not show reliability, or that the hard questions are within reach.**
 - Pilot 3's law was easy to read off the data: one division per row. The orchestrator had found
   the same law beforehand, so the answer was known, if not to the agent.
 - The m = 1 case is small. Its proof reduces to finite computations on tori of 8 and 32 cells.
 - Each library held closely analogous worked examples, and the agents said they followed them.
-- Three runs, each on a different problem, each passed first time. That says little about the
-  failure rate, or about where the approach stops working.
+- Pilot 4's mechanism is elementary once seen: a dilation that acts as half a Frobenius, and
+  factors whose eigenvalues were already known to be cubes. The atlas's own tools could have
+  found the shared factor W, had anyone looked for factors shared between rules.
+- Its general condition is sufficient, not necessary: it searches a finite family, and leaves 45
+  of the census's 69 entries unexplained.
+- Four runs, each on a different problem, each passed in the judge's first round. That says
+  little about the failure rate, or about where the approach stops working.
 
 ## Next
 
-- **An open question:** the m = 37 lead of [STATUS.md](STATUS.md), where nobody knows the answer.
-  Unlike pilot 3, the orchestrator would not know the answer either.
+- **The rest of the census:** the 45 unexplained entries, mostly at m = 13, and whether a
+  wider search family of the same mechanism reaches them.
 - **A harder law from data:** a rule whose period law the atlas has not settled, so that the
   law is not one division away. The rules round 3 left unexplained are candidates.
 - **Harness:**
@@ -311,5 +408,7 @@ by Lean, the pinned statements and the axioms, not by the model's description of
   - the pilot branches cannot be deleted from the orchestrator's session (its git proxy refuses
     ref deletion), so each pilot leaves two branches behind. `branches.bundle` in each pilot's
     directory holds everything they had;
-  - the transcript audit's path check reads `sed` patterns and URLs as paths. Its flags need a
-    person, which is fine at this scale.
+  - the transcript audit's path check reads `sed` patterns, URLs and Lean comment markers as
+    paths. Its flags need a person, which is fine at this scale;
+  - a person can message the agent's session in the Claude app. Pilot 4's follow-up came that way.
+    It is recorded in the transcript with its origin, and judged as a separate round.

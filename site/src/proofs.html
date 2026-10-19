@@ -2,10 +2,10 @@
   <header class="prose">
     <div class="eyebrow">Lean 4 · mathlib · standard axioms only</div>
     <h1>What is proved</h1>
-    <p class="lede">The proof library turns the atlas's patterns into theorems. It is about three
+    <p class="lede">The proof library turns the atlas's patterns into theorems. It is about four
       thousand lines of Lean, built against mathlib. Every result rests on Lean's standard axioms
-      alone, and none uses <code>sorry</code>. Three of its files were written by AI agents, and
-      are in the library verbatim, because Lean accepted them.</p>
+      alone, and none uses <code>sorry</code>. Four of its files were written by AI agents, and
+      are in the library as they wrote them, because Lean accepted them.</p>
   </header>
 
   <section class="figure" aria-labelledby="lib-title">
@@ -40,6 +40,7 @@
         <tr><td>The square law's 2-part</td><td>P(2<sup>v</sup>m) = 2<sup>v</sup>P(m) for B1357/S1357, odd m &gt; 1</td><td><code>period_sqN4D4</code></td><td>orchestrator</td></tr>
         <tr><td>The hexagon law's 2-part</td><td>Exactly 2<sup>v+1</sup>P(m) on the atlas's hexagonal torus, for m ≥ 5</td><td><code>hexPeriod_hexH1_exact</code></td><td>pilot 1's agent</td></tr>
         <tr><td>The triangle laws' 2-part</td><td>Exactly 2<sup>v+1</sup>P(m) for m ≥ 3, for the edge and edge+vertex rules</td><td><code>atlasTriPeriod_triE_exact</code>, <code>atlasTriPeriod_triEVOVS_exact</code></td><td>pilot 2's agent</td></tr>
+        <tr><td>The cubes at m = 37</td><td>Each of the six rules that puzzled the atlas has period dividing 87,381 = (2<sup>18</sup> − 1)/3 at m = 37, and so does rule 90</td><td><code>period_w_dvd_87381</code>, …, <code>period_r90_dvd</code></td><td>pilot 4's agent</td></tr>
         <tr><td>VO + T13's law</td><td>2<sup>v+1</sup>P(m) for m ≥ 3, and n/2 at n = 2<sup>v</sup>; the agent found the law from data first</td><td><code>atlasTriPeriod_triVOT13_law</code></td><td>pilot 3's agent</td></tr>
       </tbody>
     </table>

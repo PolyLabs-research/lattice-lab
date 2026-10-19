@@ -27,7 +27,11 @@ the pipeline. It covers:
   triangle law holds at n = 2^v m exactly when P(m) = 2^sord(m) − 1, the open odd-part statement;
 - **VO + T13's law**: P(2^v m) = 2^(v+1) P(m) for m ≥ 3, and P(2^v) = 2^(v−1), on the atlas's
   triangular torus at every even n ≥ 4. The third pilot's agent found this law from data and
-  proved it.
+  proved it;
+- **the cubes at m = 37**: six rules none of the atlas's first four mechanisms explains each have
+  period dividing 87381 = (2^18 − 1)/3 on the 37 × 37 torus, so every eigenvalue is a cube in
+  F(2^18), and rule 90's period there divides 87381 too. The fourth pilot's agent found the
+  mechanism, half-Frobenius confinement, and proved it.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -354,6 +358,34 @@ proved it.
 
 At m = 1 the edge rule's period is 2^v and the edge+vertex rule dies, so VO + T13 matches
 neither; no hand proof covered this case.
+
+### The cubes at m = 37 (`LatticeProofs/Cubes37.lean`, by the fourth pilot's agent)
+
+The fourth pilot's proof ([llm-pilot.md](llm-pilot.md#pilot-4-the-cubes-at-m--37)), verbatim
+except for its namespace, `Pilot` in the sandbox and `Cubes37` here. It takes about 13 minutes to
+build here, most of it the triangle rule's identity.
+
+- **The identities**, over GF(2) with x xi = y yi = 1 (`w_identity`, `v_identity`,
+  `tri_identity`): for example W(x², y²) t(x) t(y) t(xy) t(x/y) = the eight-cell shell
+  (±7, ±5), (±5, ±7), with W = A4 + K8 + B4 + self and t(z) = z + 1/z.
+- **The half-Frobenius step**: at 37, 2^9 ≡ −6 and 6² ≡ −1, so the dilation by 6 permutes each
+  shell on the right-hand sides, and their eigenvalues satisfy λ^(2^9) = λ: they lie in F(2^9),
+  whose nonzero elements have order dividing 511.
+- **The lines** where a rule-90 factor vanishes are handled by (t + 1)² = t(z³)/t(z) and
+  t(z⁹)/t(z).
+- **Rule 90 at 37** (`period_r90_dvd`): Φ_37 is irreducible over GF(2), so t = z + 1/z generates
+  F(2^18) = GF(2)[t]/Ψ_37, and v(t) = t^15 + t^13 + t^12 + t^11 + t^9 + t^7 + t^6 + t satisfies
+  v(t)³ = t there, by a certified identity. Since t is fixed by the 2^18-th power, so is v(t), and
+  t^87381 = v(t)^(2^18 − 1) = 1.
+
+| Theorem | Statement |
+| --- | --- |
+| `period_w_dvd`, … , `period_tri_dvd` | for each of the six, period 37 D ∣ lcm(511, period 37 r90) |
+| `period_r90_dvd` | period 37 r90 ∣ 87381 |
+| `period_w_dvd_87381`, … , `period_tri_dvd_87381` | **for each of the six, period 37 D ∣ 87381**, unconditionally |
+
+The first six were in the agent's report; the person following the pilot then asked it for rule
+90's case, and the last seven came from that.
 
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).

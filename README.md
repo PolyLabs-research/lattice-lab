@@ -36,6 +36,7 @@ reasoning after the fact went beyond the tools, the write-up says so.
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated on tori up to 1024, where the power law is rejected | [settling-time.md](docs/settling-time.md) | `lab-b2s34`, `settling-time-replication` |
 | Settling-time fluctuations are universal, with extreme-value (Gumbel) shape and ratio | eight random rules on four lattice types; a first apparent miss for B2/S34 was a low draw | [settling-time.md](docs/settling-time.md) | `settling-universality`, `settling-time-local` |
 | Cumulative births under B1357/S1357 are always even | found in the data, then proved | [capabilities.md](docs/capabilities.md) | `capabilities` |
+| Six rules have every eigenvalue a cube at m = 37 because a dilation by 6 acts there as half a Frobenius, combined with rule 90's own confinement | **answered by an LLM agent**, on a question the orchestrator could not answer, and **proved in Lean** for all six, unconditionally; the agent's general condition held at 633 claims, 180 of them at held-out sizes registered before it started, none false | [llm-pilot.md](docs/llm-pilot.md#pilot-4-the-cubes-at-m--37) | `llm-pilot-37` |
 | An LLM agent, given only a problem card and the Lean library, finds a mechanism and proves it | three pilots, each on the first attempt: the hexagon and triangle laws' 2-parts, and VO + T13's law, which the agent had to find from data. **Accepted by Lean**, not by the agent's account, with pinned statements and standard axioms; the registered predictions held at 15 of 15, 40 of 40 and 20 of 20, and the third agent's own law at 20 of 20 sizes it never saw. The last two ran in their own containers, with their transcripts audited. The laws were within reach of known techniques and, for the third, of one division per data row | [llm-pilot.md](docs/llm-pilot.md) | `llm-pilot*` |
 | The atlas's mechanisms, formally | **proved in Lean** (mathlib, standard axioms only): the 18 identities behind them; the bridge, that a rule's period on an odd torus is the lcm of its nonzero eigenvalues' orders; the reduction from even sizes to odd parts on the square and the atlas's own triangular and hexagonal tori; round 2's cube and dilation at every size; round 3's twisted power on the atlas's own triangular torus; the XOR law's 2-part at every size; the hexagon and triangle laws' 2-parts and VO + T13's law (proved by LLM agents, the last also found by one); and the full bound, that the period divides 2^sord(m) - 1 | [proofs.md](docs/proofs.md) | `proofs/` |
 
@@ -213,7 +214,9 @@ new `resume` step; an independent eigenvalue computation agrees with all 11,662 
   on that was written during the run, before 29 of its 34 sizes, and matched all 34.
 - **The other 36 are at m = 13, 15, 21, 25 and 37.** There the rules have only 3 to 9 distinct
   eigenvalues, all inside a subfield or the cube subgroup; that is chance in small fields. The
-  m = 37 case is not chance, and neither is round 2's one at 37. Both are open.
+  m = 37 case is not chance, and neither is round 2's one at 37. A census found six such rules
+  at 37, and the fourth LLM pilot's agent explained and proved all six
+  ([llm-pilot.md](docs/llm-pilot.md#pilot-4-the-cubes-at-m--37)).
 
 Each study is a directory under `examples/`. The ones with ledgers check with
 `uv run lattice-lab verify --lab <dir>`.
@@ -236,6 +239,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `llm-pilot` | the LLM-central pilot: problem card, tools, sandbox, judge, the agent's submission, and the hexagon law at 15 new sizes (registered) |
 | `llm-pilot-triangle` | the second pilot, on the triangle laws' 2-part, run in a separate container: card, setup, judge, transcript audit, the agent's submission and transcript, and both triangle laws at 20 new sizes (registered) |
 | `llm-pilot-vot13` | the third pilot: the agent finds VO + T13's law from data and proves it; card, data, judge (with the law evaluated at unseen sizes), audit, the agent's submission and transcript, and the law at 20 new sizes (registered) |
+| `llm-pilot-37` | the fourth pilot, on an open question: why six rules have only cube eigenvalues at m = 37. The census of all 1,274 rules, card, data, judge (the agent's condition run on every rule at 94 sizes and checked by eigenvalues), the held-out census (registered), audit, the agent's submission and transcript |
 
 ## Settling times: a replication and a universality test
 

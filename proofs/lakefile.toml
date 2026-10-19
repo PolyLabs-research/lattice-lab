@@ -8,8 +8,9 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "LatticeProofs"
-# HexTwoPart, TriTwoPart and VOT13Law are the LLM pilots' proofs (examples/llm-pilot,
-# examples/llm-pilot-triangle and examples/llm-pilot-vot13), kept verbatim. Each imports the
-# root module, so each is a root of its own rather than imported by it.
+# HexTwoPart, TriTwoPart, VOT13Law and Cubes37 are the LLM pilots' proofs (examples/llm-pilot,
+# examples/llm-pilot-triangle, examples/llm-pilot-vot13 and examples/llm-pilot-37), kept
+# verbatim except for Cubes37's namespace (Pilot in the sandbox). Each imports the root module,
+# so each is a root of its own rather than imported by it.
 roots = ["LatticeProofs", "LatticeProofs.HexTwoPart", "LatticeProofs.TriTwoPart",
-  "LatticeProofs.VOT13Law"]
+  "LatticeProofs.VOT13Law", "LatticeProofs.Cubes37"]
