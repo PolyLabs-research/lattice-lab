@@ -41,3 +41,21 @@ at every such m from 9 to 161 (`census-train.jsonl`).
   Above 37 it holds single rules: K8 + M8 + self at 29, triangle E + VO + T7 + T9 + self at 21 and
   69, N4 + D4 + B4 + C4 at 115, and VO + T13 wherever the twisted power applies, which is
   explained and dropped from the data.
+
+## Setup
+
+- **The census** finished over all 65 sizes from 9 to 161 in 52 minutes. `data/unexplained.csv`
+  holds its 69 unexplained entries, after dropping VO + T13's, which the twisted power explains.
+- **The tools** (`tools/eigen.py`) agree with the census: odd part 87381 for A4 + K8 + B4 + self
+  and VS + T9 + T13 + self at 37, the full bound 262143 for N4 + B4, and all cubes for
+  K8 + M8 + E4.
+- **The judge** was tested with a toy mechanism (perfect cubes, plus planted false claims at
+  m = 41): true claims held and counted as known mechanisms, all 16 planted false claims were
+  caught, and the six were correctly not explained.
+- **Registered** before the launch: the held-out grid, 29 sizes (163 to 225 with ord_m(2) even,
+  and 259 and 333), with the orchestrator's expectation of no unexplained confinement there
+  (`ledger.jsonl`).
+- **The sandbox** is commit `b79238c0ac07` (`base.txt`), pushed as `pilot-sandbox-37` and `pilot-37-submission`. It has
+  29 protected files, and no pinned statement.
+- **The judge, round 0**, on the base: library unchanged, no mechanism yet, no Lean changes
+  (`judgements/round-0.json`).
