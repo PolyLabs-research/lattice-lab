@@ -1,0 +1,157 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">The research model</div>
+    <h1>Machines decide what counts</h1>
+    <p class="lede">Our results come out of a loop with five stages. A simulation suggests a law, a
+      fitting engine names it, its predictions are locked in a ledger before the runs that test
+      them, what survives is proved in Lean, and AI agents increasingly propose the mechanisms
+      and write the proofs. At every stage a claim's status comes from a check that whoever made
+      it, person or model, cannot change.</p>
+  </header>
+
+  <section class="figure" aria-labelledby="loop-title">
+    <div class="figure-head">
+      <h2 id="loop-title">The loop</h2>
+      <span class="eyebrow">select a stage</span>
+    </div>
+    <div class="loop">
+      <svg id="loop-svg" viewBox="0 0 460 420" role="group" aria-label="The five stages of the loop"></svg>
+      <div class="stage" id="loop-stage" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="why-title">
+    <h2 id="why-title">Why it is built this way</h2>
+    <p>Two failures shape the design. The first is the old one of empirical science: with enough
+      rules, sizes and candidate laws, some pattern will fit by chance, and choosing the test after
+      seeing the data makes any law look good. The cure is to register. Before a single test size
+      is computed, the predictions are written down, committed and pushed, and the harness
+      refuses to start the run until they are.</p>
+    <p>The second failure is new. A language model can write a convincing account of work it did
+      not do, or a proof that only looks right. So an agent's report is never the evidence. The
+      evidence is a build that Lean accepts, a statement that matches a pinned copy, and an
+      axiom list that is Lean's own three, checked by a judge the agent cannot edit.</p>
+    <p>Between them, these checks let us hand more of the work to agents without trusting them
+      more.</p>
+  </section>
+
+  <section class="table-box" aria-label="Roles">
+    <table>
+      <thead><tr><th>Role</th><th>Who</th><th>What it decides</th></tr></thead>
+      <tbody>
+        <tr><td>Direction</td><td>the lead researcher</td><td>which questions to pursue, and what is published</td></tr>
+        <tr><td>Orchestrator</td><td>a Claude Code session working with the lead</td><td>designs the studies, writes problem cards, tools and judges, registers predictions, audits the agents</td></tr>
+        <tr><td>Proposer and prover</td><td>a fresh Claude Code session per pilot, with only a problem card</td><td>proposes a mechanism, checks it numerically, writes the Lean proof</td></tr>
+        <tr><td>Judges</td><td>LatticeLife, Kepler, the ledger, Lean and each pilot's <code>judge.py</code></td><td>whether anything counts</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="prose" aria-labelledby="ledger-title">
+    <div class="eyebrow">Evidence</div>
+    <h2 id="ledger-title">Check a ledger yourself</h2>
+    <p>Every registered study keeps an append-only ledger. Each entry holds the SHA-256 hash of the
+      entry before it, and its own hash covers its content and that link, so changing any entry
+      breaks every link after it. Below is the real ledger of the third pilot's registered test:
+      the question, 20 predictions, the start of the run, the observations and the verdict. Your
+      browser recomputes every hash now.</p>
+    <p>Edit an entry and the chain breaks there. A forger could recompute every later hash, and
+      the Forge button does just that. This is why the ledger is pushed to GitHub before the run:
+      the remote's history fixes every hash, so a rebuilt chain no longer matches what was
+      published.</p>
+  </section>
+
+  <section class="figure" id="ledger" aria-labelledby="ledger-fig-title">
+    <div class="figure-head">
+      <h3 id="ledger-fig-title">Pilot 3's ledger, <code>llm-pilot-vot13</code></h3>
+      <span id="ledger-status" aria-live="polite"></span>
+    </div>
+    <div class="figure-body split">
+      <div class="chain" id="ledger-chain" role="list"></div>
+      <div class="controls">
+        <div class="readout">
+          <div class="kv"><span class="k">entry</span><span class="v" id="ledger-which"></span></div>
+          <div class="kv"><span class="k">stored hash</span><span class="v" id="ledger-stored"></span></div>
+          <div class="kv"><span class="k">recomputed</span><span class="v" id="ledger-recomputed"></span></div>
+          <div class="kv"><span class="k">link to previous</span><span class="v" id="ledger-link"></span></div>
+        </div>
+        <label class="field" for="ledger-text">The exact text the hash is taken over (editable)
+          <textarea id="ledger-text" class="body" spellcheck="false"></textarea>
+        </label>
+        <div class="row">
+          <button id="ledger-tamper" type="button">Change a prediction</button>
+          <button id="ledger-forge" type="button">Forge: re-hash the rest</button>
+          <button id="ledger-restore" class="primary" type="button">Restore</button>
+        </div>
+        <div class="readout" id="ledger-order"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose" id="pilots" aria-labelledby="pilots-title">
+    <div class="eyebrow">Evidence</div>
+    <h2 id="pilots-title">The agents, step by step</h2>
+    <p>In each pilot a fresh agent gets a problem card, the Lean library and a few generic tools,
+      in a cloud container that holds nothing else: an orphan branch with one commit, no write-ups
+      and no hand proofs. It works alone. When it reports, the judge runs; if the judge rejects the
+      work, only the judge's output goes back to the agent.</p>
+    <p>The chart shows every tool call the agents in pilots 2 and 3 made, read from the session
+      transcripts on the server, not from anything the agents wrote. Both wrote their whole proof
+      within ten minutes, then waited half an hour or more for mathlib to compile in their fresh
+      containers. Pilot 1's agent ran inside the orchestrator's container, so it has no separate
+      transcript.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="tl-title">
+    <div class="figure-head">
+      <h3 id="tl-title">Tool calls, by minutes after launch</h3>
+      <div class="legend" id="tl-legend"></div>
+    </div>
+    <div class="chart-box"><svg id="tl-chart" viewBox="0 0 760 260" role="img" aria-labelledby="tl-title"></svg></div>
+    <div class="tip" id="tl-tip" aria-live="polite">Point at a mark to read the call.</div>
+  </section>
+
+  <div class="table-box">
+    <table>
+      <thead><tr><th></th><th>Pilot 1: hexagon law</th><th>Pilot 2: triangle laws</th><th>Pilot 3: VO + T13's law</th><th>Pilot 4: m = 37</th></tr></thead>
+      <tbody>
+        <tr><td>Given</td><td>the statement</td><td>the statements</td><td>a question and data</td><td>an open question and a census</td></tr>
+        <tr><td>Where it ran</td><td>a subagent in the orchestrator's container</td><td>its own container, holding only the sandbox</td><td>the same as pilot 2</td><td>the same as pilot 2</td></tr>
+        <tr><td>Time, tool calls</td><td>15 min, 35</td><td>41 min, 40</td><td>53 min, 42</td><td id="p4-time">about 95 min</td></tr>
+        <tr><td>Judge</td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td id="p4-judge"><span class="badge gold">being judged</span></td></tr>
+        <tr><td>Registered test</td><td>15 of 15 sizes</td><td>40 of 40 predictions</td><td>20 of 20, and the agent's own law 20 of 20</td><td id="p4-test">a held-out census, 29 sizes</td></tr>
+        <tr><td>Against the hand proof</td><td>a different route</td><td>the same route</td><td>no proof existed for m = 1</td><td>nobody knows the answer</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="judge-title">
+    <h2 id="judge-title">What the judge checks</h2>
+    <p>Each check answers a specific way an agent's work could look right and be wrong.</p>
+  </section>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>If the agent…</th><th>it is caught by</th></tr></thead>
+      <tbody>
+        <tr><td>edits the library to make its proof easier</td><td>a SHA-256 manifest of every library file, and a diff of its branch against the base commit</td></tr>
+        <tr><td>proves a weaker statement than asked</td><td>the target statement, checked again from a pinned copy the agent cannot edit</td></tr>
+        <tr><td>leaves a gap, with <code>sorry</code> or a new axiom</td><td><code>#print axioms</code>, which must list only <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code></td></tr>
+        <tr><td>has a proof that builds only in its own copy</td><td>a rebuild against a fresh copy of the real library</td></tr>
+        <tr><td>fits its law to the data it was given</td><td>the law, evaluated at held-out sizes; the agent is told the comparison exists, never its result</td></tr>
+        <tr><td>looks the answer up</td><td>a container that holds only the sandbox, and an audit of the whole transcript, read from the server, for any step across that boundary</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="open" aria-labelledby="limits-title">
+    <div class="eyebrow">Limits</div>
+    <h2 id="limits-title">What the pilots do not show</h2>
+    <p>They show that the loop's mechanics work end to end, with real isolation, and that an agent
+      can carry a technique to a new setting, find an unstated law from data, and prove a case
+      nobody had proved. They do not yet show discovery of anything hard. The third pilot's law
+      took one division per row of its data, and the orchestrator knew it beforehand. Each library
+      held close worked examples, and the agents said they followed them. Three successes on three
+      problems say little about how often the approach fails, or where it stops working. That is
+      what the fourth pilot, on a question nobody has answered, begins to test.</p>
+  </section>
+</main>

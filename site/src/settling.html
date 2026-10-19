@@ -1,0 +1,85 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Findings · rules with no exact theory</div>
+    <h1>How long a soup takes to settle</h1>
+    <p class="lede">Fill a torus at random, run a Life-like rule, and wait for it to fall into its
+      final cycle. The loop asked how that settling time grows with the torus. It found a
+      logarithm, replicated it on tori 1,024 cells across, and then found that the fluctuations
+      around it look the same on every lattice we tried.</p>
+  </header>
+
+  <section class="prose" aria-labelledby="q-title">
+    <h2 id="q-title">The question, and the loop's answer</h2>
+    <p>The <strong>settling time</strong> is the generation at which a random soup (density 0.5)
+      on an L × L torus enters its final cycle, or empties. The loop's first question was how the
+      median settling time of B2/S34 on the hexagonal lattice grows with L. Kepler fitted six laws
+      on L = 8 to 32 and tested them at 64, 96 and 128. Its verdict was <strong>logarithmic</strong>,
+      T = 37.6 ln L − 36.3. A power law, T = 22.3 L<sup>0.398</sup>, also passed its held-out test,
+      but was 8.4 BIC points behind on all the data. The plan had said, before the run, that these
+      sizes could not be expected to separate the two, so the answer was marked one to replicate.</p>
+    <p>The replication was registered before any run at the new sizes: every law's predicted
+      median at L = 192 to 1024, with 100 soups at each. The logarithm passed, with all six sizes
+      inside their 95% bands. The power law was rejected (p = 10<sup>−9</sup>).</p>
+  </section>
+
+  <section class="figure" aria-labelledby="st-title">
+    <div class="figure-head">
+      <h3 id="st-title">B2/S34 on the hexagon: every soup, and the two laws</h3>
+      <div class="seg" role="group" aria-label="Laws shown">
+        <button id="st-both" type="button" aria-pressed="true">both laws</button>
+        <button id="st-log" type="button" aria-pressed="false">log law only</button>
+      </div>
+    </div>
+    <div class="chart-box"><svg id="st-chart" viewBox="0 0 760 360" role="img" aria-labelledby="st-title"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell-soft)"></i>one soup</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>median, the loop's sizes</span>
+      <span><i class="swatch" style="background: var(--gold)"></i>median, the registered replication</span>
+      <span><i class="swatch sq" style="background: var(--ok)"></i>log law</span>
+      <span><i class="swatch sq" style="background: var(--bad)"></i>power law</span>
+    </div>
+    <div class="tip" id="st-tip" aria-live="polite">Point at a size to read its median against both laws. The horizontal axis is logarithmic.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="u-title">
+    <h2 id="u-title">One shape, one ratio, every lattice</h2>
+    <p>A soup settles when its last region does, so its settling time is the largest of about
+      L<sup>2</sup> local times. If those are independent and light-tailed, extreme-value theory
+      says the median grows like a logarithm, and ties the spread to the growth with nothing
+      left to fit: the interquartile range divided by the slope of the median in ln L is
+      1.5725 / 2 = <strong>0.786</strong>, the Gumbel value.</p>
+    <p>To test whether that is particular to B2/S34, eight rules were drawn at random on the
+      square, the hexagon and both triangular lattices, and the claims were registered before
+      B2/S34's own replication had a verdict. For all eight the log law held and the power law
+      failed. Their ratios agree with each other (p = 0.64) at 0.765 ± 0.029, against Gumbel's
+      0.786. Their shapes agree too, at a Kelly skewness of 0.177 ± 0.023, against 0.2215.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="ratio-title">
+    <div class="figure-head">
+      <h3 id="ratio-title">Spread over growth, per rule</h3>
+      <span class="eyebrow">interquartile range / slope in ln L</span>
+    </div>
+    <div class="chart-box"><svg id="ratio-chart" viewBox="0 0 760 360" role="img" aria-labelledby="ratio-title"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell)"></i>a random rule, with its error bar</span>
+      <span><i class="swatch" style="background: var(--gold)"></i>B2/S34, all its data pooled</span>
+      <span><i class="swatch sq" style="background: var(--cell-soft)"></i>the eight rules' shared value</span>
+      <span><i class="swatch sq" style="background: var(--ink)"></i>Gumbel, 0.786</span>
+    </div>
+    <div class="tip" id="ratio-tip" aria-live="polite">Point at a rule.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="miss-title">
+    <h2 id="miss-title">A miss that was a low draw</h2>
+    <p>B2/S34's own ratio first came out low, 0.64 ± 0.04, and its registered Gumbel prediction
+      got the size of the fluctuations wrong. Rather than explain that away, we registered a test
+      of the idea that might explain it, on a new instrument in LatticeLife that times when each
+      block of the torus settles. The idea failed: local times are not independent, because late
+      regions cluster. But the miss itself did not replicate. Fresh soups at L = 256 showed that
+      the first sample was a low draw, and with all the data B2/S34's ratio is
+      <strong>0.765 ± 0.042</strong>, the eight rules' value.</p>
+    <p>Kepler's <code>identify</code> cannot yet name the extreme-value class blind at these error
+      bars: hundreds of simple constants match 0.765 ± 0.029. More soups would decide it.</p>
+  </section>
+</main>

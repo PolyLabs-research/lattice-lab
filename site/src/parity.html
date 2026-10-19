@@ -1,0 +1,122 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Findings · linear rules over GF(2)</div>
+    <h1>The parity laws</h1>
+    <p class="lede">A parity rule sets each cell to the sum, mod 2, of the cells it reads. On a
+      finite torus it must eventually repeat, and how long its cycle is follows exact laws set by
+      finite fields. Our loop found those laws from simulation, tested them in advance, got one
+      wrong, corrected it, and proved most of what it found.</p>
+  </header>
+
+  <section class="figure" id="sim" aria-labelledby="sim-title">
+    <div class="figure-head">
+      <h2 id="sim-title">One live cell</h2>
+      <span class="eyebrow">exact period, computed here</span>
+    </div>
+    <div class="figure-body split">
+      <div class="canvas-box"><canvas id="sim-canvas" aria-label="The torus, one square per cell"></canvas></div>
+      <div class="controls">
+        <label class="field" for="sim-rule">Rule
+          <select id="sim-rule">
+            <option value="xor">B1357/S1357, square parity (N4 + D4)</option>
+            <option value="xorself">B1357/S02468, with the cell itself</option>
+            <option value="n4">N4, the four nearest cells</option>
+            <option value="n4self">N4 + self</option>
+            <option value="h1">B135/S135, hexagon (axial coordinates)</option>
+          </select>
+        </label>
+        <label class="field" for="sim-n"><span>Torus side n = <span id="sim-n-out" class="mono">31</span></span>
+          <input type="range" id="sim-n" min="3" max="32" value="31">
+        </label>
+        <div class="row">
+          <button id="sim-play" class="primary" type="button">Play</button>
+          <button id="sim-step" type="button">Step</button>
+          <button id="sim-reset" type="button">Reset</button>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div class="kv"><span class="k">generation</span><span class="v" id="sim-gen">0</span></div>
+          <div class="kv"><span class="k">live cells</span><span class="v" id="sim-live">1</span></div>
+          <div class="kv"><span class="k">period (exact)</span><span class="v big" id="sim-period">…</span></div>
+          <div class="kv"><span class="k">the law</span><span class="v" id="sim-law"></span></div>
+        </div>
+        <p class="note">The rule is linear and the same everywhere, so the orbit of one cell has the
+          period of the whole rule. Your browser finds it by taking powers of the rule in the group
+          ring F<sub>2</sub>[(Z/n)²], and dividing primes out of a bound it must repeat at.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="law-title">
+    <h2 id="law-title">The square law</h2>
+    <p>Write the side as <em class="var">n</em> = 2<sup><em class="var">v</em></sup><em class="var">m</em> with
+      <em class="var">m</em> odd, and let sord(<em class="var">m</em>) be the least <em class="var">j</em>
+      with 2<sup><em class="var">j</em></sup> ≡ ±1 (mod <em class="var">m</em>). For the square parity rule
+      B1357/S1357 the period is</p>
+    <p class="formula">P(n) = 2<sup>v</sup> · (2<sup>sord(m)</sup> − 1),</p>
+    <p>and at <em class="var">n</em> = 2<sup><em class="var">v</em></sup> the torus dies. Kepler found
+      this from simulations. Its predictions were registered before the sizes were computed, and
+      held at every <em class="var">n</em> from 3 to 200. The rival law, rule 90's period, falls
+      short of it at ten of those sizes, starting at 37, and was refuted at each one. The 2-part is
+      proved in Lean at every size. The odd part is checked by machine up to 999, except at ten
+      sizes where the check is incomplete.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="law-fig-title">
+    <div class="figure-head">
+      <h3 id="law-fig-title">Measured periods, n = 3 to 200</h3>
+      <div class="legend">
+        <span><i class="swatch" style="background: var(--cell)"></i>measured = law</span>
+        <span><i class="swatch" style="border: 2px solid var(--gold)"></i>the rival law, where it differs</span>
+        <span><i class="swatch" style="background: var(--muted)"></i>dies (n a power of 2)</span>
+      </div>
+    </div>
+    <div class="chart-box"><svg id="law-chart" viewBox="0 0 760 330" role="img" aria-labelledby="law-fig-title"></svg></div>
+    <div class="tip" id="law-tip" aria-live="polite">Point at the chart to read a size.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="hex-title">
+    <h2 id="hex-title">The hexagon: a registered law that failed</h2>
+    <p>On the hexagonal lattice Kepler proposed the same form with an extra factor of 2,
+      P(n) = 2 · 2<sup>v</sup> · (2<sup>sord(m)</sup> − 1). It was registered at 70 sizes and
+      <strong>refuted at three</strong>: 74, 148 and 190, each off by a factor of 3. All three have
+      <em class="var">m</em> = 37 or 95, where rule 90's period falls short of the full bound.</p>
+    <p>That pointed at the fix. Two hexagon generations are three passes of rule 90, one along each
+      lattice direction, so the hexagon inherits rule 90's period R(<em class="var">m</em>) exactly:
+      P(n) = 2 · 2<sup>v</sup> · R(m). The corrected law was registered at 100 new sizes from 202 to
+      400 and held at all of them. It is now proved for every even <em class="var">n</em>, and its
+      2-part was proved in Lean by an AI agent in the first pilot.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="hex-fig-title">
+    <div class="figure-head">
+      <h3 id="hex-fig-title">Hexagon periods against the two laws</h3>
+      <div class="seg" role="group" aria-label="Law">
+        <button id="hex-first" type="button" aria-pressed="true">first law</button>
+        <button id="hex-corr" type="button" aria-pressed="false">corrected law</button>
+      </div>
+    </div>
+    <div class="chart-box"><svg id="hex-chart" viewBox="0 0 760 330" role="img" aria-labelledby="hex-fig-title"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--ok)"></i>law agrees</span>
+      <span><i class="swatch" style="background: var(--bad)"></i>law refuted</span>
+      <span><i class="swatch sq" style="background: var(--gold-soft)"></i>round 2 sizes, registered after the correction</span>
+    </div>
+    <div class="tip" id="hex-tip" aria-live="polite">Point at the chart to read a size.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="tri-title">
+    <h2 id="tri-title">Triangles, and what is new</h2>
+    <p>Both triangle parity rules, B13/S13 and B1,3,…,11/S1,3,…,11, follow
+      P(n) = 2 · 2<sup>v</sup> · (2<sup>sord(m)</sup> − 1). They escape rule 90's shortfalls, as the
+      square rule does. The law held at all 154 sizes registered, and its 2-part was proved in Lean
+      by the second pilot's agent.</p>
+    <p>Some of this was known. McLaughlin published the square rule's odd sizes up to 23; the
+      structure of these laws is Martin, Odlyzko and Wolfram's for rule 90 (1984); and Vadali and
+      Turner (2025) proved that the four-neighbour square rule has rule 90's cycle lengths. A brief
+      search did not find the rest: the eight-neighbour square rule escapes rule 90's shortfalls,
+      the hexagonal rule shares them exactly, and the triangular rules escape them. The identity
+      behind the hexagon result is elementary, and a specialist may know it.</p>
+    <p>Why the laws take this form, and why some rules fall short of it, is the subject of
+      <a href="atlas.html">the linear atlas</a>.</p>
+  </section>
+</main>

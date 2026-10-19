@@ -1,0 +1,128 @@
+<main class="wrap gutter">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-text">
+      <div class="eyebrow">PolyLabs Research</div>
+      <h1 id="hero-title">Finding the laws of simple worlds, and proving them</h1>
+      <p class="lede">We study cellular automata on finite lattices: square, hexagonal and
+        triangular. Each claim goes through a loop of machine checks: a simulation, a test
+        registered in advance, and a proof in Lean. More and more of the proposing and proving is
+        done by AI agents, and machines judge their work too.</p>
+      <div class="cta">
+        <a class="primary" href="model.html">How the model works</a>
+        <a href="#findings">What it has found</a>
+      </div>
+    </div>
+    <figure class="hero-fig figure" aria-labelledby="hero-cap" style="margin: 0">
+      <div class="canvas-box"><canvas id="hero-canvas" aria-label="A torus under the square parity rule, grown from one live cell"></canvas></div>
+      <label class="field" for="hero-n"><span>Torus side n = <span id="hero-n-out" class="mono">31</span></span>
+        <input type="range" id="hero-n" min="3" max="32" value="31">
+      </label>
+      <div class="readout" aria-live="polite">
+        <div class="kv"><span class="k">period, exact</span><span class="v" id="hero-period">…</span></div>
+        <div class="kv"><span class="k">the law says</span><span class="v" id="hero-law"></span></div>
+      </div>
+      <figcaption class="note" id="hero-cap">The parity rule B1357/S1357, grown from one live cell
+        on an n × n torus. Your browser computes its exact period, and the law our loop found
+        and registered predicts it.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" aria-labelledby="model-title">
+    <div class="eyebrow">The model</div>
+    <h2 id="model-title">A loop in which nobody marks their own work</h2>
+    <p>Finding a pattern in data is easy. Knowing whether it is real is hard: with enough rules,
+      sizes and laws to try, chance supplies patterns too. So every stage of our loop hands its
+      output to a check that the stage cannot change:</p>
+    <ol class="steps">
+      <li><span><strong>Experiment.</strong> LatticeLife runs the automata and says what each number
+        means, including when it is only a bound.</span></li>
+      <li><span><strong>Law.</strong> Kepler fits closed-form laws with error bars, and ranks them
+        against their rivals.</span></li>
+      <li><span><strong>Registered test.</strong> A law's predictions at untested sizes are written
+        to a hash-chained ledger and pushed to GitHub before anyone computes those sizes.</span></li>
+      <li><span><strong>Proof.</strong> What survives is proved in Lean 4. A theorem counts only if
+        it builds and rests on Lean's three standard axioms.</span></li>
+      <li><span><strong>Agents.</strong> AI agents, given a problem card and the proof library,
+        propose the mechanism and write the proof. An automatic judge decides whether it counts.</span></li>
+    </ol>
+    <p><a href="model.html">The model, in detail</a>, includes the real ledger of one study, to
+      check yourself, and a record of every step an agent took.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="board-title">
+    <div class="figure-head">
+      <h2 id="board-title">Registered tests, misses included</h2>
+      <span class="eyebrow">predictions written before the runs</span>
+    </div>
+    <p class="note" style="font-size: 0.95rem">Three of these tests refuted what we registered. We
+      count that as the method working: each miss pointed at something real, and the corrected
+      claim was then registered and tested again.</p>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Claim</th><th>Tested at</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Square parity law, P(n) = 2<sup>v</sup>(2<sup>sord(m)</sup> − 1)</td><td>45 sizes by simulation, then all 198 sizes from 3 to 200 exactly</td><td><span class="badge ok">held at all</span> its rival refuted at all 10 sizes where they differ</td></tr>
+          <tr><td>Hexagon parity law, first form</td><td>70 sizes</td><td><span class="badge bad">refuted</span> at 74, 148 and 190, by a factor of 3</td></tr>
+          <tr><td>Hexagon parity law, corrected</td><td>100 new sizes, 202 to 400</td><td><span class="badge ok">held at all</span> then proved for every even n</td></tr>
+          <tr><td>Triangle parity laws</td><td>154 sizes</td><td><span class="badge ok">held at all</span></td></tr>
+          <tr><td>Kepler finds the hexagon law itself</td><td>8 registered expectations</td><td><span class="badge ok">8 of 8</span></td></tr>
+          <tr><td>B2/S34 settling time grows like log L</td><td>hexagon tori up to L = 1024, 100 soups each</td><td><span class="badge ok">held</span> the power law rejected (p = 10<sup>−9</sup>)</td></tr>
+          <tr><td>Kepler's laws for 42 linear rules, 38 never studied</td><td>1,930 new (rule, size) pairs</td><td><span class="badge ok">held</span> every rule with a law kept one</td></tr>
+          <tr><td>Rules that do not split reach the full bound</td><td>113 predictions on 116 new rules</td><td><span class="badge bad">refuted</span> 7 failed, which revealed cubes and dilations</td></tr>
+          <tr><td>The refined statement, as a fixed procedure</td><td>11,358 predictions, 344 new rules</td><td><span class="badge bad">refuted</span> 43 failed (0.4%), which revealed the twisted power</td></tr>
+          <tr><td>The laws the agents proved, at sizes nobody had computed</td><td>15, 40 and 20 predictions in three pilots</td><td><span class="badge ok">75 of 75</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="findings" class="prose" aria-labelledby="find-title" style="max-width: none">
+    <div class="eyebrow">Findings</div>
+    <h2 id="find-title">What the loop has found</h2>
+  </section>
+  <div class="cards">
+    <a class="card" href="parity.html">
+      <span class="badge ok status">proved, in part</span>
+      <h3>The parity laws</h3>
+      <p>Exact period laws for the parity rule on all three lattices. The hexagon's first law was
+        refuted, and the corrected one is proved for every even n. The square rule escapes the
+        shortfalls of rule 90 and the hexagon shares them exactly; a brief literature search found
+        neither fact.</p>
+    </a>
+    <a class="card" href="atlas.html">
+      <span class="badge gold status">three rounds, refined twice</span>
+      <h3>The linear atlas</h3>
+      <p>Periods of 502 linear rules built from neighbour shells. A rule reaches its field's full
+        bound unless something confines its eigenvalues. Four mechanisms do, and three of them were
+        found because a registered prediction failed.</p>
+    </a>
+    <a class="card" href="settling.html">
+      <span class="badge ok status">replicated</span>
+      <h3>Settling time</h3>
+      <p>A random soup under B2/S34 settles in a time that grows like the logarithm of the torus
+        size, replicated to L = 1024. Across eight random rules on four lattices the fluctuations
+        share one shape and one ratio, the Gumbel values of extreme-value theory.</p>
+    </a>
+    <a class="card" href="model.html#pilots">
+      <span class="badge ok status">3 of 3 accepted</span>
+      <h3>Agents that prove</h3>
+      <p>Three fresh agents, each given only a problem card and the Lean library, proved a theorem
+        the library lacked, each on the first attempt. The third had to find the law from data first.
+        It held at 20 sizes the agent never saw, and one case of its proof had no proof before.</p>
+    </a>
+    <a class="card" href="atlas.html#m37">
+      <span class="badge gold status" id="m37-status">open</span>
+      <h3>The cubes at m = 37</h3>
+      <p id="m37-text">Six rules that none of the known mechanisms touches have every eigenvalue a
+        cube at m = 37, far beyond chance. The fourth pilot sets an agent on the question, where
+        nobody knows the answer, the orchestrator included.</p>
+    </a>
+    <a class="card" href="proofs.html">
+      <span class="badge ok status">Lean 4, standard axioms</span>
+      <h3>The proof library</h3>
+      <p>The bridge from periods to eigenvalues, the bound, the reduction from even sizes to odd,
+        every confinement mechanism, and the agents' three proofs, all checked by Lean against
+        mathlib.</p>
+    </a>
+  </div>
+</main>

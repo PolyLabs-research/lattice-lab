@@ -1,0 +1,71 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Lean 4 · mathlib · standard axioms only</div>
+    <h1>What is proved</h1>
+    <p class="lede">The proof library turns the atlas's patterns into theorems. It is about three
+      thousand lines of Lean, built against mathlib. Every result rests on Lean's standard axioms
+      alone, and none uses <code>sorry</code>. Three of its files were written by AI agents, and
+      are in the library verbatim, because Lean accepted them.</p>
+  </header>
+
+  <section class="figure" aria-labelledby="lib-title">
+    <div class="figure-head">
+      <h2 id="lib-title">The library</h2>
+      <span class="eyebrow">select a file</span>
+    </div>
+    <div class="loop">
+      <svg id="lib-svg" viewBox="0 0 440 520" role="group" aria-label="The library's files and their imports"></svg>
+      <div class="stage" id="lib-stage" aria-live="polite"></div>
+    </div>
+    <div class="legend">
+      <span><i class="swatch sq" style="background: var(--cell)"></i>written by the orchestrator</span>
+      <span><i class="swatch sq" style="background: var(--gold)"></i>written by a pilot's agent</span>
+      <span><i class="swatch sq" style="border: 1px solid var(--muted)"></i>generated from the atlas code</span>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="main-title">
+    <h2 id="main-title">The main results</h2>
+  </section>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Result</th><th>Statement</th><th>Theorem</th><th>Proved by</th></tr></thead>
+      <tbody>
+        <tr><td>The bridge</td><td>On an odd torus, the period is the lcm of the orders of the nonzero eigenvalues</td><td><code>period_eq_eigenLcm</code></td><td>orchestrator</td></tr>
+        <tr><td>The bound</td><td>The period divides 2<sup>ord(m)</sup> − 1, and 2<sup>sord(m)</sup> − 1 for a symmetric rule, so it is odd</td><td><code>period_dvd_two_pow_sub_one_of_symm</code></td><td>orchestrator</td></tr>
+        <tr><td>The group ring</td><td>Every rule acts on every finite torus through F<sub>2</sub>[Z²], so each identity is an identity of rules at every size</td><td><code>gstep_eq_iterate</code>, <code>isEventualPeriod_restrict_iff</code></td><td>orchestrator</td></tr>
+        <tr><td>Even sizes</td><td>The odd part of the period is the odd torus's period, and the 2-part is bounded, on the square and the atlas's triangular and hexagonal tori</td><td><code>period_eq_two_pow_mul</code></td><td>orchestrator</td></tr>
+        <tr><td>Powers and dilations</td><td>Round 2's mechanisms as theorems about periods, at every size</td><td><code>period_sqN4K8C4</code>, <code>period_sqC4self</code></td><td>orchestrator</td></tr>
+        <tr><td>The twisted power</td><td>If 3 ≡ ±2<sup>k</sup> (mod m), VO + T13's odd part is the edge rule's divided by gcd(P, 1 + 2<sup>k</sup>)</td><td><code>atlasTriPeriod_twisted</code></td><td>orchestrator</td></tr>
+        <tr><td>The square law's 2-part</td><td>P(2<sup>v</sup>m) = 2<sup>v</sup>P(m) for B1357/S1357, odd m &gt; 1</td><td><code>period_sqN4D4</code></td><td>orchestrator</td></tr>
+        <tr><td>The hexagon law's 2-part</td><td>Exactly 2<sup>v+1</sup>P(m) on the atlas's hexagonal torus, for m ≥ 5</td><td><code>hexPeriod_hexH1_exact</code></td><td>pilot 1's agent</td></tr>
+        <tr><td>The triangle laws' 2-part</td><td>Exactly 2<sup>v+1</sup>P(m) for m ≥ 3, for the edge and edge+vertex rules</td><td><code>atlasTriPeriod_triE_exact</code>, <code>atlasTriPeriod_triEVOVS_exact</code></td><td>pilot 2's agent</td></tr>
+        <tr><td>VO + T13's law</td><td>2<sup>v+1</sup>P(m) for m ≥ 3, and n/2 at n = 2<sup>v</sup>; the agent found the law from data first</td><td><code>atlasTriPeriod_triVOT13_law</code></td><td>pilot 3's agent</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="open-title">
+    <h2 id="open-title">What is not proved</h2>
+    <ul>
+      <li><strong>The odd parts.</strong> That the square and triangle rules reach the full bound,
+        P(m) = 2<sup>sord(m)</sup> − 1, is checked by machine for every odd m up to 999 except
+        ten, and proved for none in general. The hexagon's odd part, rule 90's period, is proved by
+        hand, but not yet in Lean.</li>
+      <li><strong>Why a rule with no confinement reaches the full bound.</strong> At present it is a
+        heuristic: generic elements generate.</li>
+      <li><strong>The rule-150 analogues.</strong> Square D4 + A4 + self has rule 150's period and
+        hexagon H2 + H3 + self twice it. Both are confirmed by registered tests, and unproved.</li>
+    </ul>
+  </section>
+
+  <section class="prose" aria-labelledby="check-title">
+    <h2 id="check-title">How a proof is accepted</h2>
+    <p>For the library's own files, <code>lake build</code> must succeed and
+      <code>#print axioms</code> on each main result must list nothing beyond
+      <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. An agent's
+      proof faces more: its file is rebuilt against a fresh copy of the real library, the target
+      statement is checked again from a pinned copy, and every library file must match a SHA-256
+      manifest. <a href="model.html">The model</a> describes the rest.</p>
+  </section>
+</main>

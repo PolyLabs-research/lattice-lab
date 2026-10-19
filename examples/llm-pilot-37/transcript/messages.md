@@ -1,0 +1,178 @@
+# The agent's messages, verbatim
+
+Every text block of the agent's session, in order, read from its server-side transcript.
+
+## 2026-10-19T06:42:27.228808Z
+
+Setting up done for Python; I've found a reformulation (cube in F(2^18) ⇔ norm to F_4 equals 1) and am now computing the structure of the six rules.
+
+## 2026-10-19T06:50:52.067972Z
+
+Found structure: 4 of the 5 square rules are W·(cube factor) with W = rule A4+K8+B4+self, and V = C4+L8+M8+E4 has a clean trace proof. Now working on W.
+
+## 2026-10-19T07:03:18.643725Z
+
+All six rules now pass `condition` at 37 (q = 3·(2^18+1), i.e. cubes in F(2^18)). Next: timing and a soundness sweep over all rules and many sizes against direct eigenvalue computation.
+
+## 2026-10-19T07:12:23.614813Z
+
+Sweep is running (~40 s per size, 4 in parallel); no false claims so far. Meanwhile I'll check the arithmetic fact behind rule 90 at 37 and start the write-up.
+
+## 2026-10-19T07:13:35.994202Z
+
+Sped `condition` up to ~20 s for all 1,274 rules at m = 37. The sweep is still running; meanwhile I'm writing `proposal.md`.
+
+## 2026-10-19T07:15:41.695692Z
+
+Now `proposal.py` (the numerical checks).
+
+## 2026-10-19T07:17:23.820577Z
+
+Python side is in place; the sweep is past m = 55 with no false claims. Next I'll gather coverage statistics, then attempt a Lean proof that period(W, 37) divides lcm(511, period(rule 90, 37)).
+
+## 2026-10-19T07:19:40.132290Z
+
+Mathlib is still building (~2425/2547). I'm drafting the Lean file `Pilot.lean` for rule W in the meantime.
+
+## 2026-10-19T07:21:28.916090Z
+
+Lean draft progressing (identities, half-Frobenius lemma, line lemma); mathlib build is ~96% done. Writing the main eigenvalue lemma and the period theorem next.
+
+## 2026-10-19T07:24:03.577309Z
+
+Still waiting on the mathlib build (~2560/2615) and the soundness sweep (sizes 9–301). Both are running in the background.
+
+## 2026-10-19T07:47:13.182097Z
+
+The Lean proof builds: `period 37 W ∣ lcm(511, period 37 rule90)`. Now checking its axioms.
+
+## 2026-10-19T07:52:34.554673Z
+
+Five of the six (all square rules) are now formally proved in Lean, using only the standard axioms. I'll try the triangle rule too before writing the report.
+
+## 2026-10-19T08:05:19.823282Z
+
+All six rules are now formally proved in Lean, each with period dividing lcm(511, period of rule 90) at 37, using only the standard three axioms. Updating the docs and running `proposal.py`.
+
+## 2026-10-19T08:08:52.451353Z
+
+Docs updated; waiting on a final Lean rebuild to confirm, then writing `report.md`.
+
+## 2026-10-19T08:14:51.990761Z
+
+# Report: why six rules have only cube eigenvalues at m = 37
+
+I found the mechanism and proved it, on paper and in Lean for all six rules. The one input the Lean proof takes as given is the period of rule 90 at 37, which the card supplies. Everything is committed and pushed to `pilot-37-submission`, with `report.md` last.
+
+## The mechanism: half-Frobenius confinement
+
+At m = 37 we have d = 36 and s = 18.
+
+- **The key fact.** The map x ↦ x^(2⁹) generates Gal(F(2¹⁸)/F(2⁹)). On characters it acts as multiplication by 2⁹ ≡ −6 (mod 37), and 6² ≡ −1.
+- **Consequence.** If a polynomial's support, reduced mod 37, is unchanged by ×6, all its eigenvalues lie in F(2⁹).
+- **Why that gives cubes.** 9 is odd, so 3 does not divide 2⁹ − 1, and every element of F(2⁹) is a cube in F(2¹⁸).
+- **How the six fit.** Each rule becomes such a polynomial after multiplying by a few rule-90 factors t(z) = z + 1/z. Their eigenvalues ζ^j + ζ^−j are cubes at 37, which is rule 90's own confinement there.
+
+Here a = t(x), b = t(y), and Sh(u, v) is the 8-point symmetric shell of (u, v). The identities are exact over GF(2):
+
+| Rule | Identity | Why ×6 mod 37 leaves the right side unchanged |
+| --- | --- | --- |
+| W = A4+K8+B4+self | W(x², y²) · t(x)t(y)t(xy)t(x/y) = Sh(7,5) | 6·(7,5) ≡ (5,−7) |
+| K8+M8+E4 | = ab·W | same as W |
+| C4+L8+M8 | = (a+b)·W | same as W |
+| A4+B4+C4+L8+E4+self | = (a+1)(b+1)·W | same as W |
+| V = C4+L8+M8+E4 | V(x², y²) · t(x)t(y) = Sh(7,7) + Sh(5,5) | 6·(7,7) ≡ (5,5) |
+| triangle VS+T9+T13+self (its s) | s(x², y²) · O_(1,0) · O_(2,1) = Hex(14,12) + Hex(12,10) | 6·(7,6) ≡ (5,−1) |
+
+For the triangle, O_(1,0) and O_(2,1) are products of three rule-90 factors each, and Hex(u, v) is the 12-point hexagonal orbit of (u, v).
+
+**Closed forms.** Put p = t_{(j+k)/2} and q = t_{(j−k)/2}, both rule-90 eigenvalues.
+- λ_W = Tr_{18/9}(p^(2⁹)·q) / (pq(p+q))
+- λ_V = (N(p) + N(q)) / (p + q)
+
+A trace or norm down to F(2⁹) is a cube, and p, q and p + q are cubes, so both are cubes.
+
+**General form, as implemented in `condition`.**
+- Write f(x^r, y^r), for r = 1 or 2, as a product of rule-90 "units" times a core C.
+- Look for a product N of rule-90 factors such that C·N, on the m-torus, is unchanged by ×2^g for some proper divisor g of s.
+- On the lines where N vanishes, C must restrict to a product of rule-90-type factors.
+- Then every eigenvalue lies in the group generated by F(2^g)* and the rule-90 values.
+- **Pure case:** with no units and no N, the condition just says f itself is unchanged by ×2^g mod m. All eigenvalues then lie in F(2^g), and no rule-90 input is needed.
+
+**The returned q.** At 37 `condition` returns q = 3·(2¹⁸+1) = 786435 for each of the six, meaning every eigenvalue has order dividing 87381. I did not return q = 3. In the card's convention, powers in F(2^36), q = 3 is trivially true for every symmetric rule at 37, because every element of F(2¹⁸) is a cube in F(2³⁶).
+
+## How I checked it
+
+- **`proposal.py`:** 39 checks, all held, about 2 minutes. It covers the identities, the ×6 invariance, `condition` on the six, eigenvalue powers and odd part 87381, the closed forms at every character, census coverage, and that the six get no claim at any other odd m from 9 to 161.
+- **Soundness sweep:** `condition` on all 1,274 rules at every odd m from 9 to 301 (147 sizes). Every claim was checked against eigenvalues computed directly: 838 claims, none false.
+- **Speed:** 20–25 s for all rules at one m on this machine.
+- **Lean (`proofs/LatticeProofs/Pilot.lean`):** for each of the six rules D, `period 37 D ∣ lcm(511, period 37 rule90)`.
+  - The theorems are `period_w_dvd`, `period_k8m8e4_dvd`, `period_c4l8m8_dvd`, `period_a4b4c4l8e4self_dvd`, `period_v_dvd` and `period_tri_dvd`.
+  - They use only the axioms propext, Classical.choice and Quot.sound; there is no sorry and no native_decide.
+  - With rule 90's period of 87381 from the card, and 511 dividing 87381, each period divides 87381.
+  - `lake build LatticeProofs.Pilot` takes about 9 minutes because of the large triangle identity.
+
+## Reach
+
+- **Census:** 24 of 69 entries explained.
+  - The six at 37, by the mixed case.
+  - 18 of the small-field coincidences at 13, by the pure case. These rules are unchanged by ×8 = 2³ (8² ≡ −1 mod 13) or ×4 = 2², so their eigenvalues lie in F(2³) or F(2²).
+- **Not explained (45):** 34 other entries at 13, and every entry at 21, 25, 29, 69 and 115.
+- **Beyond the census, up to 301:** the mixed mechanism has no other instance among the atlas's rules.
+  - The other claims are the known dilations at multiples of 3, the trivial rule self, and splitting-type claims.
+  - Splitting claims appear exactly where rule 90 itself is confined: 37, 95, 101, 111, 141, 197, 199, 203 and 269.
+
+## Why 37, and only these rules
+
+Whenever 2^s ≡ −1 (mod m) and s/2 is odd, 2^{s/2} is a square root of −1. The dilation by it pairs a shell of norm N with one of norm −N.
+
+At 37 that square root is ±6, because 37 = 6² + 1. That is small enough to pair the shells the six identities produce:
+- (7,5), whose norm 74 = 2·37 is 0 mod 37;
+- (7,7) with (5,5);
+- the hexagonal (7,6) with (6,5), whose norms 43 and 31 are negatives of each other mod 37.
+
+Rule 90 is also confined at 37. The reason is arithmetic: the norm of t₁ down to F₄ equals ∏(1 + ζ^h) over the squares h mod 37. That is the reduction mod 2 of ±√37·ε⁻¹, where ε = 6 + √37 is the fundamental unit. I checked numerically that the product equals 1.
+
+At 101, 197 and 269, where rule 90 is also confined, the square root of −1 is 10, 14 and 82. Pairing shells there needs much longer translations than the atlas's rules have. At 95 and 111, s = d, so no power of 2 is ≡ −1.
+
+## What I tried and what failed
+
+- **Factoring over GF(2).** I used Kronecker substitution with recombination, since sympy cannot factor two-variable polynomials over GF(2). This exposed the common factor W in four of the six rules.
+- **Finding the identities.** I rewrote the ring-shaped rules in the p, q coordinates. At 37 every Dickson polynomial acts as a power of Frobenius on rule-90 values, which gave the trace and norm forms.
+- **A dead end.** An additive form L(s)/s on its own is not enough: it gives cubes only when s is a product of two rule-90 values, not for a random cube s.
+- **Not covered by `condition`:**
+  - Powers (mechanism 2): five other all-cube rules at 37 are perfect cubes g³, and `condition` does not claim them.
+  - The 45 unexplained census entries: I found no mechanism for them.
+
+## What I am unsure of
+
+- **The q convention.** If the judge expects q = 3 at 37, my q = 786435 = 3·262145 still implies it.
+- **Rule 90's confinement in `condition`.** It finds this by testing the rule-90 values against primes below 20000. That is the only field computation in `condition`, and it is the same input splitting needs; no eigenvalue of f itself is computed. If rule 90 were confined only through a larger prime, `condition` would miss it, which is safe.
+- **Finite search.** The condition searches a finite family of factors, so it is sufficient but not necessary.
+- **Lean input.** Rule 90's confinement at 37 is assumed in Lean, not proved there.
+- **Boundary slip.** Once I ran a depth-limited `find /` for mathlib's sources. It returned nothing, and I then used the copy inside `proofs/.lake`. Otherwise all work stayed in this checkout, with no network, no other branches and no other sessions.
+
+## 2026-10-19T08:15:08.473696Z
+
+I committed and pushed the three remaining untracked scratch items to `pilot-37-submission`: the final Lean build log, the earlier partial sweep runs in `scratch/old/`, and a profiler output. The working tree is now clean.
+
+None of the deliverables changed, so the report above still stands.
+
+## 2026-10-19T08:23:21.568720Z
+
+That notice is about a background helper that only waited for `setup.sh` to finish. It hit its time limit and was stopped; nothing needs restarting. Setup completed well before that ("Build completed successfully"), and the final Lean build of `LatticeProofs.Pilot` succeeded too.
+
+The submission on `pilot-37-submission` is unchanged: `mechanism.py`, `proposal.md`, `proposal.py`, `proofs/LatticeProofs/Pilot.lean` and `report.md`, all committed and pushed, with a clean working tree.
+
+## 2026-10-19T08:24:36.403305Z
+
+I'll prove it in Lean via an explicit cube root: Φ₃₇ is irreducible over F₂ (2 is a primitive root mod 37), so t = ζ+ζ⁻¹ generates F(2¹⁸) = F₂[t]/Ψ₃₇. I'll compute a polynomial V with V(t)³ = t there and certify the identity; since V(t) is fixed by x ↦ x^(2¹⁸), t^87381 = V(t)^(2¹⁸−1) = 1.
+
+## 2026-10-19T08:33:58.870168Z
+
+Builds cleanly on the first try. Checking axioms.
+
+## 2026-10-19T08:34:09.463574Z
+
+Now updating the Lean header, proposal and report to reflect that the proof is unconditional, then committing.
+

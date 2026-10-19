@@ -1,0 +1,153 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Findings · 502 linear rules, three registered rounds</div>
+    <h1>The linear atlas</h1>
+    <p class="lede">Build a rule from rings of neighbours, called shells, and add mod 2. Every
+      such rule is linear, so its period on a torus is decided by algebra. We asked Kepler for laws
+      of 42 of them, registered the pattern behind those laws, and refined it twice, each time
+      because a registered prediction failed.</p>
+  </header>
+
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Round</th><th>Registered</th><th class="num">Predictions</th><th>Outcome</th><th>What the misses revealed</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Kepler's laws for 42 rules, 38 never studied, from tori up to 60</td><td class="num">1,930 pairs</td><td><span class="badge ok">held</span> all 34 rules with a law kept one</td><td>Afterwards: rules that split into 1D passes inherit the 1D period, and the rest reach the full bound</td></tr>
+        <tr><td>2</td><td>That pattern, on 116 new rules; the 34 laws at harder sizes up to 400</td><td class="num">113 + 624</td><td><span class="badge bad">refuted</span> 7 of 113 failed; the laws held at all 624</td><td><strong>Powers</strong> and <strong>dilations</strong>, then predicted exactly at 55 of 55 sizes; small fields at m = 13; one case at m = 37</td></tr>
+        <tr><td>3</td><td>The refined statement as a fixed procedure, on 344 new rules with nine new shells</td><td class="num">11,358</td><td><span class="badge bad">refuted</span> 43 failed (0.4%); every dilation and power held</td><td>The <strong>twisted power</strong>, whose expectation, written first, matched 34 of 34 sizes; small-field coincidences; m = 37 again</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="eig-title">
+    <h2 id="eig-title">Why: eigenvalues in a finite field</h2>
+    <p>On the torus (Z/<em class="var">m</em>)² with <em class="var">m</em> odd, a rule <em class="var">f</em>
+      acts diagonally. Its eigenvalues are <em class="var">f</em>(ζ<sup>j</sup>, ζ<sup>k</sup>), where ζ is a
+      primitive <em class="var">m</em>-th root of unity in the field F(2<sup>d</sup>) and
+      <em class="var">d</em> = ord<sub>m</sub>(2). The period's odd part is the lcm of their
+      multiplicative orders. That bridge is a theorem in our Lean library
+      (<code>period_eq_eigenLcm</code>).</p>
+    <p>Each square of the map is one eigenvalue. Squares in the same Frobenius orbit,
+      (<em class="var">j</em>, <em class="var">k</em>) → (2<em class="var">j</em>, 2<em class="var">k</em>), are
+      conjugates and share an order. A symmetric rule's eigenvalues lie in F(2<sup>sord(m)</sup>), so
+      its period divides the <strong>full bound</strong> 2<sup>sord(m)</sup> − 1. A rule falls short
+      of it only if something keeps every eigenvalue inside a proper subgroup.</p>
+  </section>
+
+  <section class="figure" id="eigen" aria-labelledby="eig-fig-title">
+    <div class="figure-head">
+      <h3 id="eig-fig-title">Eigenvalue map</h3>
+      <span class="eyebrow">computed in F(2<sup>d</sup>) here</span>
+    </div>
+    <div class="figure-body split">
+      <div class="canvas-box"><canvas id="ev-canvas" aria-label="Eigenvalues on the m by m grid of characters"></canvas></div>
+      <div class="controls">
+        <label class="field" for="ev-rule">Rule
+          <select id="ev-rule"></select>
+        </label>
+        <div class="row">
+          <label class="field" for="ev-m">Odd part m
+            <select id="ev-m"></select>
+          </label>
+          <div class="field">Colour by
+            <div class="seg" role="group" aria-label="Colour by">
+              <button id="ev-mode-order" type="button" aria-pressed="false">order</button>
+              <button id="ev-mode-cube" type="button" aria-pressed="true">cube or not</button>
+            </div>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div class="kv"><span class="k">field</span><span class="v" id="ev-field"></span></div>
+          <div class="kv"><span class="k">full bound</span><span class="v" id="ev-full"></span></div>
+          <div class="kv"><span class="k">odd part</span><span class="v big" id="ev-odd"></span></div>
+          <div class="kv"><span class="k">verdict</span><span class="v" id="ev-verdict"></span></div>
+          <div class="kv"><span class="k">eigenvalues</span><span class="v" id="ev-count"></span></div>
+          <div class="kv"><span class="k">pointer</span><span class="v" id="ev-hover">point at a square</span></div>
+        </div>
+        <div class="legend" id="ev-legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="mech-title">
+    <h2 id="mech-title">What holds a rule below the bound</h2>
+    <p>Four mechanisms confine the eigenvalues, and each is a polynomial identity over GF(2) that
+      you can multiply out below: <strong>splitting</strong> into one-dimensional passes,
+      <strong>powers</strong>, <strong>dilations</strong> and <strong>twisted powers</strong>. The
+      triangular lattice adds one more fact: each rule's 2 × 2 matrix squares to a plane rule
+      <em class="var">s</em> times the identity, so two triangle steps are one step of
+      <em class="var">s</em>.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="mech-fig-title">
+    <div class="figure-head">
+      <h3 id="mech-fig-title">Identities, multiplied out mod 2</h3>
+      <label class="field" for="mech-pick">Identity
+        <select id="mech-pick"></select>
+      </label>
+    </div>
+    <div class="ident">
+      <p id="mech-text" style="margin: 0; max-width: 66ch"></p>
+      <div class="eq" id="mech-eq"></div>
+      <div class="row" id="mech-check" aria-live="polite"></div>
+      <p class="note">Each square is a translation the rule reads, and the ring marks the origin. A
+        product of rules is the sum of all pairwise translations, kept where it occurs an odd
+        number of times.</p>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="census-title">
+    <h2 id="census-title">Coincidences, and one that is not</h2>
+    <p>In a small field a rule with few distinct eigenvalues can have all of them in a subgroup by
+      chance. The census below takes all 1,274 shell rules of the atlas, on all three lattices,
+      at every odd <em class="var">m</em> where the cubes are a proper subgroup. It counts the rules
+      whose every eigenvalue is a cube although no known mechanism accounts for it. The count falls
+      away as the field grows, as chance would, except at <em class="var">m</em> = 37.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="census-fig-title">
+    <div class="figure-head">
+      <h3 id="census-fig-title">Unexplained cube confinement, by m</h3>
+      <div class="legend">
+        <span><i class="swatch sq" style="background: var(--cell)"></i>the census the agent was given</span>
+        <span><i class="swatch sq" style="background: var(--gold)"></i>held-out sizes, registered first</span>
+        <span><i class="swatch sq" style="border: 1px dashed var(--muted)"></i>not yet computed</span>
+      </div>
+    </div>
+    <div class="chart-box"><svg id="census-chart" viewBox="0 0 760 300" role="img" aria-labelledby="census-fig-title"></svg></div>
+    <div class="tip" id="census-tip" aria-live="polite">Point at a bar to read it.</div>
+  </section>
+
+  <section class="open" id="m37" aria-labelledby="open-title">
+    <div class="eyebrow" id="m37-eyebrow">open question</div>
+    <h2 id="open-title">The cubes at m = 37</h2>
+    <p>At <em class="var">m</em> = 37 the full bound is 2<sup>18</sup> − 1 = 262,143 =
+      3 × 87,381. Six rules that none of the four mechanisms touches have <strong>every
+      eigenvalue a cube</strong> there, and period 87,381, which is rule 90's own period at 37:</p>
+    <ul class="sixlist">
+      <li>square A4 + K8 + B4 + self</li>
+      <li>triangle VS + T9 + T13 + self</li>
+      <li>square K8 + M8 + E4</li>
+      <li>square C4 + L8 + M8</li>
+      <li>square C4 + L8 + M8 + E4</li>
+      <li>square A4 + B4 + C4 + L8 + E4 + self</li>
+    </ul>
+    <p>Each has only 9 to 11 distinct eigenvalues up to Frobenius, so chance would do this about
+      once in 20,000 to 180,000 rules. It happened six times among 1,274, and none of the six falls
+      short at any other odd size from 9 to 161.</p>
+    <div class="row">
+      <button id="open-show" class="primary" type="button">Show A4 + K8 + B4 + self at 37</button>
+      <button id="open-ctrl" type="button">Compare a typical rule at 37</button>
+    </div>
+    <div id="m37-pilot" style="display: grid; gap: 14px">
+      <p>The fourth pilot set an agent on this question, in its own container, with the census
+        above up to <em class="var">m</em> = 161 and the Lean library. Nobody knows the answer,
+        the orchestrator included. Its work is being judged; the held-out census, registered
+        before the agent started, is still running.</p>
+    </div>
+  </section>
+
+  <p class="note">Rule names are the atlas's neighbour shells: N4 the four nearest cells, D4 the
+    diagonals, A4, B4, C4, K8, L8, M8 and E4 further square shells, H1 the hexagon's six
+    neighbours, and E, VO, VS, T9 and T13 the triangle's.</p>
+</main>
