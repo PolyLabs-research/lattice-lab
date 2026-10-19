@@ -50,3 +50,26 @@ The harness is the fifth pilot's, with these changes:
   the procedure's caches at m = 21, a seen size, then forks three workers.
 - **The audit** also allows the output files of the session's own background commands, which
   the fifth pilot's audit flagged five times and the card now permits.
+
+## Setup
+
+- **The sandbox**: commit `ed7db10b6a9f` (`base.txt`), pushed as `pilot-sandbox-37b` and
+  `pilot-37b-submission`; 37 protected files, no pinned statement. Its tools ran in the sandbox
+  (target 1112: odd part 87,381 at 37, no claim from either condition; rule 57: explained).
+- **The judge, tested before launch** with a toy mechanism (the fifth pilot's condition plus a
+  planted false claim, N4 confined to the cubes at 61): the false claim was caught, none of the 19
+  was explained, and the family check ran 2,015 rules at 37 in 32 seconds.
+- **The registration** (`ledger.jsonl`, pushed in `461477e` before any computation at these
+  sizes). A dry run of the census code at seen sizes (35, 37, 61, on a subset of the family)
+  checked it first. One phrase of the registered question is loose: the atlas's square rules are
+  "confined only at 37 and 115 among these sizes", where 37 is not among the grid's sizes; among
+  the census sizes is meant.
+- **The judge, round 0**, on the base: library unchanged, nothing submitted
+  (`judgements/round-0.json`).
+- **The held-out census** started at 21:51 UTC, detached (`nohup`), with three workers.
+
+## Launch
+
+- **21:51:40 UTC.** The agent's session, `session_018qfyPPSsY668o93hfGivki`, was created from
+  `pilot-sandbox-37b` at depth 1, in its own container, with the prompt in `prompt.md`, verbatim,
+  and asked to push to `pilot-37b-submission`. A watcher polls that branch for `report.md`.
