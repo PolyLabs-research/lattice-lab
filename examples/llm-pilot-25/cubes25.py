@@ -23,6 +23,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 EX = HERE.parent
 sys.path.insert(0, str(EX / "census-remainder"))
+sys.path.insert(0, str(EX / "linear-atlas-3"))
 
 import atlas3  # noqa: E402
 import remainder  # noqa: E402
