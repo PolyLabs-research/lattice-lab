@@ -108,7 +108,9 @@ results.
 **In the library.** The final branch's `Pilot.lean` (`6151adb`), with its namespace renamed, builds
 in the orchestrator's library as `Cubes37.lean`, and `#print axioms` lists only `propext`,
 `Classical.choice` and `Quot.sound` for `period_r90_dvd` and for all six `period_*_dvd_87381`.
-The judge's round 2 reran every check on that branch (`judgements/round-2.json`).
+The judge's round 2 reran every check on that branch (`judgements/round-2.json`): the same
+mechanism results as round 1, and all 70 theorems of the file on the standard axioms, with no
+`sorry`, `axiom` or `native_decide`.
 
 **The audit** (`transcript/audit.json`, all 137 tool calls) found no MCP tools, no web access, no
 subagents, and no fetch or listing of other refs. One step went outside the checkout: a

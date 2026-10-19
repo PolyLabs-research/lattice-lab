@@ -166,3 +166,12 @@ The final `Pilot.lean` is `proofs/LatticeProofs/Cubes37.lean`, verbatim except f
 `Axioms.lean` shows only the standard three axioms for `period_r90_dvd` and the six
 `period_*_dvd_87381`. `tests/test_cubes37.py` checks the identities with the atlas's own
 polynomials, the six rules' odd parts at 37, and the study's ledger.
+
+## The judge, round 2 (`6151adb`, the final branch)
+
+`judgements/round-2.json`, with the fixed axiom listing. The mechanism results are those of
+round 1 (`mechanism.py` did not change): the six explained, 453 training and 180 held-out claims,
+none false, 24 of 69 census entries. The Lean file builds (729 s), and **all 70 of its theorems
+rest on `propext`, `Classical.choice` and `Quot.sound` only**, `period_r90_dvd` and the six
+`period_*_dvd_87381` among them. No `sorry`, `axiom` or `native_decide`. `proposal.py` ran clean.
+The pilot is complete.
