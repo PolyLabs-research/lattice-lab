@@ -1,0 +1,22 @@
+{
+ "round": 0,
+ "branch": "pilot-37b-submission",
+ "base": "ed7db10b6a9f16e912bae2a59ef405efe7ac81f4",
+ "head": "ed7db10b6a9f16e912bae2a59ef405efe7ac81f4",
+ "library": {
+  "ok": true,
+  "touched": [],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": false
+ },
+ "lean": {
+  "present": false
+ },
+ "proposal": {
+  "present": false
+ },
+ "sound": false
+}
