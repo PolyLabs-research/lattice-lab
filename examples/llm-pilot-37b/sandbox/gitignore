@@ -1,0 +1,5 @@
+.venv/
+.setup/
+proofs/.lake/
+__pycache__/
+setup.log
