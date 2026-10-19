@@ -1,0 +1,1644 @@
+{
+ "round": 1,
+ "branch": "pilot-37b-submission",
+ "base": "ed7db10b6a9f16e912bae2a59ef405efe7ac81f4",
+ "head": "8b0d911c7c73f2f13a1bfc40cc0dd3774ec63884",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "A",
+    "mechanism.py"
+   ],
+   [
+    "M",
+    "proofs/LatticeProofs/Pilot.lean"
+   ],
+   [
+    "A",
+    "proposal.md"
+   ],
+   [
+    "A",
+    "proposal.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ],
+   [
+    "A",
+    "scratch/PilotAxioms.lean"
+   ],
+   [
+    "A",
+    "scratch/PilotAxioms.out"
+   ],
+   [
+    "A",
+    "scratch/ab.py"
+   ],
+   [
+    "A",
+    "scratch/acc42.py"
+   ],
+   [
+    "A",
+    "scratch/axis.py"
+   ],
+   [
+    "A",
+    "scratch/census.py"
+   ],
+   [
+    "A",
+    "scratch/classify.py"
+   ],
+   [
+    "A",
+    "scratch/classify_family.log"
+   ],
+   [
+    "A",
+    "scratch/dist.py"
+   ],
+   [
+    "A",
+    "scratch/dist2.py"
+   ],
+   [
+    "A",
+    "scratch/equiv.py"
+   ],
+   [
+    "A",
+    "scratch/f18.py"
+   ],
+   [
+    "A",
+    "scratch/fact2.py"
+   ],
+   [
+    "A",
+    "scratch/famsweep.log"
+   ],
+   [
+    "A",
+    "scratch/famsweep.py"
+   ],
+   [
+    "A",
+    "scratch/famsweep_v2.log"
+   ],
+   [
+    "A",
+    "scratch/genlean.py"
+   ],
+   [
+    "A",
+    "scratch/genpilot.py"
+   ],
+   [
+    "A",
+    "scratch/gsearch.py"
+   ],
+   [
+    "A",
+    "scratch/gsearch2.py"
+   ],
+   [
+    "A",
+    "scratch/images.log"
+   ],
+   [
+    "A",
+    "scratch/images.py"
+   ],
+   [
+    "A",
+    "scratch/lean_polys.lean"
+   ],
+   [
+    "A",
+    "scratch/lfact.py"
+   ],
+   [
+    "A",
+    "scratch/lines.py"
+   ],
+   [
+    "A",
+    "scratch/newclaims.log"
+   ],
+   [
+    "A",
+    "scratch/newclaims.py"
+   ],
+   [
+    "A",
+    "scratch/perline.py"
+   ],
+   [
+    "A",
+    "scratch/pq.py"
+   ],
+   [
+    "A",
+    "scratch/predict.py"
+   ],
+   [
+    "A",
+    "scratch/proposal_out.txt"
+   ],
+   [
+    "A",
+    "scratch/refchance.py"
+   ],
+   [
+    "A",
+    "scratch/sweep.py"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_v1.log"
+   ],
+   [
+    "A",
+    "scratch/test_targets.py"
+   ],
+   [
+    "A",
+    "scratch/timing.py"
+   ],
+   [
+    "A",
+    "scratch/tw3.py"
+   ],
+   [
+    "A",
+    "scratch/twsearch.py"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": true,
+  "targets": {
+   "explained": 12,
+   "of": 19,
+   "rules": [
+    [
+     37,
+     "family 1112"
+    ],
+    [
+     37,
+     "family 2436"
+    ],
+    [
+     37,
+     "family 3461"
+    ],
+    [
+     37,
+     "family 10498"
+    ],
+    [
+     37,
+     "family 13584"
+    ],
+    [
+     37,
+     "family 17056"
+    ],
+    [
+     37,
+     "family 18246"
+    ],
+    [
+     37,
+     "family 26883"
+    ],
+    [
+     37,
+     "family 28944"
+    ],
+    [
+     61,
+     "family 3461"
+    ],
+    [
+     61,
+     "family 18246"
+    ],
+    [
+     61,
+     "family 26883"
+    ]
+   ]
+  },
+  "train": {
+   "claims": 1065,
+   "false": [],
+   "hold": 1065,
+   "beyond_known": 64
+  },
+  "heldout": {
+   "claims": 473,
+   "false": [],
+   "hold": 473,
+   "beyond_known": 18
+  },
+  "coverage": {
+   "remainder": [
+    19,
+    45
+   ],
+   "family_train": [
+    12,
+    49
+   ],
+   "family_heldout": [
+    18,
+    18
+   ]
+  },
+  "coverage_rows": {
+   "remainder": [
+    [
+     13,
+     "square N4+C4+L8"
+    ],
+    [
+     13,
+     "square N4+L8+E4+self"
+    ],
+    [
+     13,
+     "square D4+C4+L8+self"
+    ],
+    [
+     13,
+     "square D4+L8+M8+self"
+    ],
+    [
+     13,
+     "square D4+M8+E4"
+    ],
+    [
+     13,
+     "square A4+M8+E4+self"
+    ],
+    [
+     13,
+     "square B4+C4+M8+self"
+    ],
+    [
+     13,
+     "square N4+D4+C4+E4"
+    ],
+    [
+     13,
+     "square D4+A4+L8+M8+self"
+    ],
+    [
+     13,
+     "square D4+A4+C4+L8+M8+E4"
+    ],
+    [
+     13,
+     "square A4+K8+B4+C4+L8+M8+self"
+    ],
+    [
+     13,
+     "triangle VO+VS+T13+self"
+    ],
+    [
+     13,
+     "hexagon H4+H13"
+    ],
+    [
+     13,
+     "hexagon H3+H4+H13+self"
+    ],
+    [
+     13,
+     "hexagon H4+H5+H13+self"
+    ],
+    [
+     13,
+     "hexagon H2+H3+H5+H13+self"
+    ],
+    [
+     21,
+     "square N4+K8+C4+L8+M8"
+    ],
+    [
+     21,
+     "square N4+D4+K8+C4+M8+E4"
+    ],
+    [
+     21,
+     "square N4+A4+K8+B4+L8+E4+self"
+    ]
+   ],
+   "family_train": [
+    [
+     37,
+     1112
+    ],
+    [
+     37,
+     2436
+    ],
+    [
+     37,
+     3461
+    ],
+    [
+     37,
+     10498
+    ],
+    [
+     37,
+     13584
+    ],
+    [
+     37,
+     17056
+    ],
+    [
+     37,
+     18246
+    ],
+    [
+     37,
+     26883
+    ],
+    [
+     37,
+     28944
+    ],
+    [
+     61,
+     3461
+    ],
+    [
+     61,
+     18246
+    ],
+    [
+     61,
+     26883
+    ]
+   ],
+   "family_heldout": [
+    [
+     95,
+     1112
+    ],
+    [
+     95,
+     2436
+    ],
+    [
+     95,
+     3461
+    ],
+    [
+     95,
+     10498
+    ],
+    [
+     95,
+     13584
+    ],
+    [
+     95,
+     17056
+    ],
+    [
+     95,
+     18246
+    ],
+    [
+     95,
+     26883
+    ],
+    [
+     95,
+     28944
+    ],
+    [
+     111,
+     1112
+    ],
+    [
+     111,
+     2436
+    ],
+    [
+     111,
+     3461
+    ],
+    [
+     111,
+     10498
+    ],
+    [
+     111,
+     13584
+    ],
+    [
+     111,
+     17056
+    ],
+    [
+     111,
+     18246
+    ],
+    [
+     111,
+     26883
+    ],
+    [
+     111,
+     28944
+    ]
+   ]
+  },
+  "per_m": {
+   "atlas 9": {
+    "ok": true,
+    "seconds": 10.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 11": {
+    "ok": true,
+    "seconds": 11.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 13": {
+    "ok": true,
+    "seconds": 13.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 15": {
+    "ok": true,
+    "seconds": 13.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 17": {
+    "ok": true,
+    "seconds": 15.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 19": {
+    "ok": true,
+    "seconds": 16.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 21": {
+    "ok": true,
+    "seconds": 16.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 25": {
+    "ok": true,
+    "seconds": 16.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 27": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 29": {
+    "ok": true,
+    "seconds": 19.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 33": {
+    "ok": true,
+    "seconds": 16.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 35": {
+    "ok": true,
+    "seconds": 18.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 37": {
+    "ok": true,
+    "seconds": 22.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 39": {
+    "ok": true,
+    "seconds": 19.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 41": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 43": {
+    "ok": true,
+    "seconds": 18.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 45": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 51": {
+    "ok": true,
+    "seconds": 19.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 53": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 55": {
+    "ok": true,
+    "seconds": 20.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 57": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 59": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 61": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 63": {
+    "ok": true,
+    "seconds": 19.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 65": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 67": {
+    "ok": true,
+    "seconds": 21.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 69": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 75": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 77": {
+    "ok": true,
+    "seconds": 23.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 81": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 83": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 85": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 87": {
+    "ok": true,
+    "seconds": 22.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 91": {
+    "ok": true,
+    "seconds": 21.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 93": {
+    "ok": true,
+    "seconds": 20.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 95": {
+    "ok": true,
+    "seconds": 23.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 97": {
+    "ok": true,
+    "seconds": 24.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 99": {
+    "ok": true,
+    "seconds": 19.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 101": {
+    "ok": true,
+    "seconds": 21.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 105": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 107": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 109": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 111": {
+    "ok": true,
+    "seconds": 26.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 113": {
+    "ok": true,
+    "seconds": 21.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 115": {
+    "ok": true,
+    "seconds": 20.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 117": {
+    "ok": true,
+    "seconds": 19.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 119": {
+    "ok": true,
+    "seconds": 23.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 121": {
+    "ok": true,
+    "seconds": 20.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 123": {
+    "ok": true,
+    "seconds": 22.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 125": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 129": {
+    "ok": true,
+    "seconds": 18.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 131": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 133": {
+    "ok": true,
+    "seconds": 24.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 135": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 137": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 139": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 141": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 143": {
+    "ok": true,
+    "seconds": 30.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 145": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 147": {
+    "ok": true,
+    "seconds": 22.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 149": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 153": {
+    "ok": true,
+    "seconds": 22.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 155": {
+    "ok": true,
+    "seconds": 21.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 157": {
+    "ok": true,
+    "seconds": 19.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 159": {
+    "ok": true,
+    "seconds": 21.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 21": {
+    "ok": true,
+    "seconds": 23.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2008
+   },
+   "family 25": {
+    "ok": true,
+    "seconds": 25.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2008
+   },
+   "family 29": {
+    "ok": true,
+    "seconds": 27.5,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2013
+   },
+   "family 35": {
+    "ok": true,
+    "seconds": 26.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 37": {
+    "ok": true,
+    "seconds": 32.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2015
+   },
+   "family 39": {
+    "ok": true,
+    "seconds": 28.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 41": {
+    "ok": true,
+    "seconds": 27.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 45": {
+    "ok": true,
+    "seconds": 24.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 51": {
+    "ok": true,
+    "seconds": 25.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 53": {
+    "ok": true,
+    "seconds": 25.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 55": {
+    "ok": true,
+    "seconds": 28.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 61": {
+    "ok": true,
+    "seconds": 35.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 63": {
+    "ok": true,
+    "seconds": 26.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 65": {
+    "ok": true,
+    "seconds": 25.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 69": {
+    "ok": true,
+    "seconds": 26.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 75": {
+    "ok": true,
+    "seconds": 25.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "atlas 163": {
+    "ok": true,
+    "seconds": 20.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 165": {
+    "ok": true,
+    "seconds": 18.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 169": {
+    "ok": true,
+    "seconds": 22.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 171": {
+    "ok": true,
+    "seconds": 19.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 173": {
+    "ok": true,
+    "seconds": 18.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 175": {
+    "ok": true,
+    "seconds": 26.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 177": {
+    "ok": true,
+    "seconds": 17.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 179": {
+    "ok": true,
+    "seconds": 17.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 181": {
+    "ok": true,
+    "seconds": 31.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 183": {
+    "ok": true,
+    "seconds": 29.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 185": {
+    "ok": true,
+    "seconds": 22.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 187": {
+    "ok": true,
+    "seconds": 26.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 189": {
+    "ok": true,
+    "seconds": 23.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 193": {
+    "ok": true,
+    "seconds": 27.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 195": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 197": {
+    "ok": true,
+    "seconds": 22.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 201": {
+    "ok": true,
+    "seconds": 21.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 203": {
+    "ok": true,
+    "seconds": 32.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 205": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 207": {
+    "ok": true,
+    "seconds": 23.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 209": {
+    "ok": true,
+    "seconds": 24.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 211": {
+    "ok": true,
+    "seconds": 29.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 213": {
+    "ok": true,
+    "seconds": 24.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 215": {
+    "ok": true,
+    "seconds": 21.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 219": {
+    "ok": true,
+    "seconds": 23.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 221": {
+    "ok": true,
+    "seconds": 23.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 225": {
+    "ok": true,
+    "seconds": 21.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 259": {
+    "ok": true,
+    "seconds": 33.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 333": {
+    "ok": true,
+    "seconds": 31.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 77": {
+    "ok": true,
+    "seconds": 32.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 85": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 87": {
+    "ok": true,
+    "seconds": 29.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 91": {
+    "ok": true,
+    "seconds": 29.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 93": {
+    "ok": true,
+    "seconds": 26.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 95": {
+    "ok": true,
+    "seconds": 33.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2009
+   },
+   "family 97": {
+    "ok": true,
+    "seconds": 33.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 101": {
+    "ok": true,
+    "seconds": 29.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 105": {
+    "ok": true,
+    "seconds": 24.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 109": {
+    "ok": true,
+    "seconds": 32.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 111": {
+    "ok": true,
+    "seconds": 34.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2009
+   },
+   "family 113": {
+    "ok": true,
+    "seconds": 28.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 115": {
+    "ok": true,
+    "seconds": 27.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 117": {
+    "ok": true,
+    "seconds": 28.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 119": {
+    "ok": true,
+    "seconds": 33.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 123": {
+    "ok": true,
+    "seconds": 30.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 125": {
+    "ok": true,
+    "seconds": 27.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   }
+  },
+  "all_ran": true
+ },
+ "lean": {
+  "present": true,
+  "builds": true,
+  "forbidden_words": [],
+  "theorems": {
+   "LatticeProofs.Pilot37b.cube_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r10498": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r1112": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r13584": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r17056": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r18246": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r2436": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r26883": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r28944": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.ev_r3461": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.frob_d": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.frob_m": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.frob_n": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.inv_eq_pow60": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_dvd_of_ev": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r10498_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r1112_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r13584_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r17056_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r18246_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r18246_dvd_61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r2436_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r26883_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r26883_dvd_61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r28944_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r3461_dvd_37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.period_r3461_dvd_61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.pow_mod61": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.prod_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.psi3_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.psi3_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.psi3_val61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.psi3psi3_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.psi3psi3_val61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r10498_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r10498_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r1112_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r1112_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r13584_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r13584_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r17056_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r17056_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r18246_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r18246_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r18246_val61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r2436_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r2436_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r26883_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r26883_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r26883_val61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r28944_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r28944_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r3461_identity": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r3461_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.r3461_val61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.sq_root": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.sum_split": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.sum_val37": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.t_frob61": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37b.t_pow64": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ]
+  },
+  "standard": [
+   "LatticeProofs.Pilot37b.cube_val",
+   "LatticeProofs.Pilot37b.ev_r10498",
+   "LatticeProofs.Pilot37b.ev_r1112",
+   "LatticeProofs.Pilot37b.ev_r13584",
+   "LatticeProofs.Pilot37b.ev_r17056",
+   "LatticeProofs.Pilot37b.ev_r18246",
+   "LatticeProofs.Pilot37b.ev_r2436",
+   "LatticeProofs.Pilot37b.ev_r26883",
+   "LatticeProofs.Pilot37b.ev_r28944",
+   "LatticeProofs.Pilot37b.ev_r3461",
+   "LatticeProofs.Pilot37b.frob_d",
+   "LatticeProofs.Pilot37b.frob_m",
+   "LatticeProofs.Pilot37b.frob_n",
+   "LatticeProofs.Pilot37b.inv_eq_pow60",
+   "LatticeProofs.Pilot37b.period_dvd_of_ev",
+   "LatticeProofs.Pilot37b.period_r10498_dvd_37",
+   "LatticeProofs.Pilot37b.period_r1112_dvd_37",
+   "LatticeProofs.Pilot37b.period_r13584_dvd_37",
+   "LatticeProofs.Pilot37b.period_r17056_dvd_37",
+   "LatticeProofs.Pilot37b.period_r18246_dvd_37",
+   "LatticeProofs.Pilot37b.period_r18246_dvd_61",
+   "LatticeProofs.Pilot37b.period_r2436_dvd_37",
+   "LatticeProofs.Pilot37b.period_r26883_dvd_37",
+   "LatticeProofs.Pilot37b.period_r26883_dvd_61",
+   "LatticeProofs.Pilot37b.period_r28944_dvd_37",
+   "LatticeProofs.Pilot37b.period_r3461_dvd_37",
+   "LatticeProofs.Pilot37b.period_r3461_dvd_61",
+   "LatticeProofs.Pilot37b.pow_mod61",
+   "LatticeProofs.Pilot37b.prod_val37",
+   "LatticeProofs.Pilot37b.psi3_sq",
+   "LatticeProofs.Pilot37b.psi3_val37",
+   "LatticeProofs.Pilot37b.psi3_val61",
+   "LatticeProofs.Pilot37b.psi3psi3_val37",
+   "LatticeProofs.Pilot37b.psi3psi3_val61",
+   "LatticeProofs.Pilot37b.r10498_identity",
+   "LatticeProofs.Pilot37b.r10498_val37",
+   "LatticeProofs.Pilot37b.r1112_identity",
+   "LatticeProofs.Pilot37b.r1112_val37",
+   "LatticeProofs.Pilot37b.r13584_identity",
+   "LatticeProofs.Pilot37b.r13584_val37",
+   "LatticeProofs.Pilot37b.r17056_identity",
+   "LatticeProofs.Pilot37b.r17056_val37",
+   "LatticeProofs.Pilot37b.r18246_identity",
+   "LatticeProofs.Pilot37b.r18246_val37",
+   "LatticeProofs.Pilot37b.r18246_val61",
+   "LatticeProofs.Pilot37b.r2436_identity",
+   "LatticeProofs.Pilot37b.r2436_val37",
+   "LatticeProofs.Pilot37b.r26883_identity",
+   "LatticeProofs.Pilot37b.r26883_val37",
+   "LatticeProofs.Pilot37b.r26883_val61",
+   "LatticeProofs.Pilot37b.r28944_identity",
+   "LatticeProofs.Pilot37b.r28944_val37",
+   "LatticeProofs.Pilot37b.r3461_identity",
+   "LatticeProofs.Pilot37b.r3461_val37",
+   "LatticeProofs.Pilot37b.r3461_val61",
+   "LatticeProofs.Pilot37b.sq_root",
+   "LatticeProofs.Pilot37b.sum_split",
+   "LatticeProofs.Pilot37b.sum_val37",
+   "LatticeProofs.Pilot37b.t_frob61",
+   "LatticeProofs.Pilot37b.t_pow64"
+  ],
+  "build": {
+   "returncode": 0,
+   "seconds": 30.4,
+   "output": "\u26a0 [1171/1299] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1548] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2850] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2850] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2849/2850] Replayed LatticeProofs.Cubes37\nwarning: LatticeProofs/Cubes37.lean:211:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_w`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:215:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_r90`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:218:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.pow_mod37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:245:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.inv_eq_pow36`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:320:2: Unused tactic linter: `all_goals\n  first\n  | rfl\n  | ring` does nothing.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: LatticeProofs/Cubes37.lean:320:12: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nwarning: LatticeProofs/Cubes37.lean:363:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.pow_of_line`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:454:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.prod_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:466:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.sq37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:490:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_tri`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:494:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_v`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:578:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ratio_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:600:41: this constant has no effect on the linear combination; it can be dropped from the term\n\u26a0 [2850/2850] Built LatticeProofs.Pilot (26s)\nwarning: LatticeProofs/Pilot.lean:182:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.cube_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:201:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.sq_root`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:213:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.sum_split`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:248:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.pow_mod61`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:251:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.inv_eq_pow60`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:287:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r1112`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:301:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r2436`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:315:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r3461`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:339:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r10498`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:353:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r17056`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:367:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r26883`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:391:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r13584`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:405:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r28944`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:419:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37b.ev_r18246`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nBuild completed successfully (2850 jobs).\n"
+  }
+ },
+ "proposal": {
+  "present": true,
+  "returncode": 0,
+  "seconds": 16.0,
+  "output": "==============================================================================\n1. The nine products U * g^3 (U of bidegree (1,1) a unit, g of bidegree (1,1) not)\n==============================================================================\n          a+b * (a+b+1)^3 = family rule 1112\n          a+b * (ab+1)^3 = family rule 10498\n          a+b * (ab+a+b)^3 = family rule 13584\n           ab * (a+b+1)^3 = family rule 2436\n           ab * (ab+1)^3 = family rule 17056\n           ab * (ab+a+b)^3 = family rule 28944\n   (a+1)(b+1) * (a+b+1)^3 = family rule 3461\n   (a+1)(b+1) * (ab+1)^3 = family rule 26883\n   (a+1)(b+1) * (ab+a+b)^3 = family rule 18246\n[held] all nine products are family rules and targets: [1112, 2436, 3461, 10498, 13584, 17056, 18246, 26883, 28944]\n[held] they are exactly the targets the mechanism explains at 37\n\n==============================================================================\n2. The units at 37 and 61\n==============================================================================\n[held] rule 90 is confined to the cubes at 37 (every t_j a cube in F(2^18)): 3-part of rule 90's confinement: 3\n[held] rule 90 is NOT confined to the cubes at 61: 1\n[held] at 61, 3 = 2^6, so Psi_3(t)^2 = t^A with A = 2^6 - 1 = 63, divisible by 3: A_3 = 63\n[held] unit (a+1)(b+1) is cube-valued at 61 by Lemma 3, a+b and ab are not claimed\n\n==============================================================================\n3. The 19 targets: condition, the witness, and the eigenvalues computed directly\n==============================================================================\n   m=37 rule  1112: condition q=786435 (cubes); witness ('a+b', 'a+b+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule  2436: condition q=786435 (cubes); witness ('ab', 'a+b+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule  3461: condition q=786435 (cubes); witness ('(a+1)(b+1)', 'a+b+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule  4850: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule  5972: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 10498: condition q=786435 (cubes); witness ('a+b', 'ab+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 13584: condition q=786435 (cubes); witness ('a+b', 'ab+a+b'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 13822: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 17056: condition q=786435 (cubes); witness ('ab', 'ab+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 18246: condition q=786435 (cubes); witness ('(a+1)(b+1)', 'ab+a+b'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 22064: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 25183: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 26883: condition q=786435 (cubes); witness ('(a+1)(b+1)', 'ab+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 27390: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 28586: condition q=1 (no claim); witness -; exact identity True; all eigenvalues cubes (direct) True\n   m=37 rule 28944: condition q=786435 (cubes); witness ('ab', 'ab+a+b'); exact identity True; all eigenvalues cubes (direct) True\n   m=61 rule  3461: condition q=3221225475 (cubes); witness ('(a+1)(b+1)', 'a+b+1'); exact identity True; all eigenvalues cubes (direct) True\n   m=61 rule 18246: condition q=3221225475 (cubes); witness ('(a+1)(b+1)', 'ab+a+b'); exact identity True; all eigenvalues cubes (direct) True\n   m=61 rule 26883: condition q=3221225475 (cubes); witness ('(a+1)(b+1)', 'ab+1'); exact identity True; all eigenvalues cubes (direct) True\n[held] condition explains 9 of the 16 at 37 and all 3 at 61: 9 at 37, 3 at 61\n\n==============================================================================\n4. The census: what the mechanism explains at every size\n==============================================================================\n   m=21: 12 hits, expected 6.97; previous pilots 4, this mechanism 0 []; left 8\n   m=25: 14 hits, expected 1.67; previous pilots 5, this mechanism 0 []; left 9\n   m=29: 16 hits, expected 5.64; previous pilots 3, this mechanism 0 []; left 13\n   m=35: 3 hits, expected 0.01; previous pilots 3, this mechanism 0 []; left 0\n   m=37: 34 hits, expected 0.62; previous pilots 18, this mechanism 9 [1112, 2436, 3461, 10498, 13584, 17056, 18246, 26883, 28944]; left 7\n   m=53: 3 hits, expected 0.01; previous pilots 3, this mechanism 0 []; left 0\n   m=55: 3 hits, expected 0.00; previous pilots 3, this mechanism 0 []; left 0\n   m=61: 3 hits, expected 0.00; previous pilots 0, this mechanism 3 [3461, 18246, 26883]; left 0\n\n==============================================================================\n5. The chance model at 37: the axis and diagonal classes are not free\n==============================================================================\n[held] at 37, 29 of the 31 axis polynomials H(t), deg H <= 4, give cubes; the two that do not are the quartic halves of Psi_17: non-cubes [t**4 + t + 1, t**4 + t**3 + t**2 + t + 1]\n[held] census chance model reproduced (independent classes, 1/3 each): about 0.62 at 37: 0.63\n   empirical cube rate per free class over the family at 37: (0, 1): 0.935, (1, 1): 0.935, (1, 2): 0.394, (1, 3): 0.349, (1, 4): 0.337, (1, 5): 0.343, (1, 7): 0.331, (1, 8): 0.331, (1, 10): 0.339, (1, 13): 0.337\n[held] axis and diagonal classes are cubes in 93.5% of rules (model: 1/3)\n[held] with the empirical rates (classes independent), the expected number of chance confinements at 37 is about 5.7, against 7 left unexplained: 5.71  (4 s)\n\n==============================================================================\n6. Soundness spot checks against the eigenvalues\n==============================================================================\n[held] atlas, m=13: every claim of the mechanism holds: 15 claims, 0 false\n[held] atlas, m=25: every claim of the mechanism holds: 6 claims, 0 false\n[held] atlas, m=37: every claim of the mechanism holds: 53 claims, 0 false\n[held] atlas, m=61: every claim of the mechanism holds: 16 claims, 0 false\n[held] atlas, m=65: every claim of the mechanism holds: 5 claims, 0 false\n[held] atlas, m=101: every claim of the mechanism holds: 53 claims, 0 false\n[held] family sample (3000 rules), m=37: every claim holds: 11 claims, 0 false\n[held] family sample (3000 rules), m=61: every claim holds: 5 claims, 0 false\n[held] family sample (3000 rules), m=85: every claim holds: 0 claims, 0 false\n\n32 of 32 checks held.\n"
+ },
+ "sound": true
+}

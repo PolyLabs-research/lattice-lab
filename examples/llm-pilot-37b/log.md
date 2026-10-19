@@ -146,3 +146,28 @@ twisted pairs 1227, 21029 and 32184 at 77, 95, 97, 101, 115 and 125 (and 31801 a
 that split into correlated rule-90 passes (102 and 1548), counted apart as registered. As far as
 its transcript shows, the agent never computed which family rules are confined at these sizes:
 it checked its own claims there, and its nine rules.
+
+## The judge, round 1 (`8b0d911`)
+
+`judgements/round-1.json`. The library was unchanged (only `Pilot.lean` touched, and the agent's
+own new files), and:
+
+- **Explains 12 of the 19**: `condition` returns q = 3(2^18 + 1) for the nine at 37 and
+  3(2^30 + 1) for the three at 61, and nothing for the other seven.
+- **Sound: 1,065 claims at the training sizes and 473 at the held-out sizes, none false**, each
+  checked by the judge's own eigenvalue computation; 64 and 18 of them beyond the known
+  mechanisms.
+- **Coverage**: 19 of the census remainder's 45 (16 at 13 and 3 at 21, through the fifth
+  pilot's condition, which this one calls); 12 of the 49 family confinements at the training sizes
+  that neither earlier condition explains (the twelve targets); and at the held-out sizes 18 of
+  18, the nine at 95 and at 111.
+- **Lean**: `Pilot.lean` builds against the real library (30 s), and all 60 of its theorems rest
+  on `propext`, `Classical.choice` and `Quot.sound` only.
+- **The agent's own checks** (`proposal.py`): 32 of 32.
+
+**A sequencing fault, the orchestrator's.** The judge started at 22:58, as soon as the report
+appeared, and read the held-out census's records then. The census wrote its last size, 101, at
+22:59. So round 1 judged the family at 101 on the fixed sample only, without the nine confined
+rules there, and its held-out total (18) leaves them out. A targeted run of the same evaluation
+at 101 afterwards: `condition` claims all nine (q = 3(2^50 + 1)) and every claim holds. Round 2
+reruns the whole judge on the same commit with the complete records.
