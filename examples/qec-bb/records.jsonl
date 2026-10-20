@@ -1,0 +1,32 @@
+{"characters":[[[1,1],1],[[1,2],2],[[2,1],2],[[2,2],1]],"k_characters":12,"k_linalg":12,"l":6,"m":6,"name":"[[72,12,6]]","published_k":12,"seconds":0.0,"test":"published"}
+{"characters":[[[5,1],1],[[5,2],1],[[10,1],1],[[10,2],1]],"k_characters":8,"k_linalg":8,"l":15,"m":3,"name":"[[90,8,10]]","published_k":8,"seconds":0.0,"test":"published"}
+{"characters":[[[3,1],1],[[3,2],1],[[6,1],1],[[6,2],1]],"k_characters":8,"k_linalg":8,"l":9,"m":6,"name":"[[108,8,10]]","published_k":8,"seconds":0.0,"test":"published"}
+{"characters":[[[1,1],1],[[1,2],2],[[2,1],2],[[2,2],1]],"k_characters":12,"k_linalg":12,"l":12,"m":6,"name":"[[144,12,12]] (the gross code)","published_k":12,"seconds":0.0,"test":"published"}
+{"characters":[[[1,1],1],[[1,2],2],[[2,1],2],[[2,2],1]],"k_characters":12,"k_linalg":12,"l":12,"m":12,"name":"[[288,12,18]]","published_k":12,"seconds":0.01,"test":"published"}
+{"characters":[[[1,0],1],[[2,0],1]],"k_characters":4,"k_linalg":4,"l":3,"m":5,"name":"[[30,4,6]]","published_k":4,"seconds":0.0,"test":"published"}
+{"characters":[[[0,1],1],[[0,2],1],[[0,4],1]],"k_characters":6,"k_linalg":6,"l":3,"m":7,"name":"[[42,6,6]]","published_k":6,"seconds":0.0,"test":"published"}
+{"characters":[[[0,1],1],[[0,2],1],[[0,4],1]],"k_characters":6,"k_linalg":6,"l":5,"m":7,"name":"[[70,6,8]]","published_k":6,"seconds":0.0,"test":"published"}
+{"characters":[[[0,3],1],[[0,6],1],[[0,12],1],[[0,15],1],[[0,21],1],[[0,24],1]],"k_characters":12,"k_linalg":12,"l":2,"m":27,"name":"[[108,12,6]] (poster)","published_k":12,"seconds":0.01,"test":"published"}
+{"characters":[[[0,3],1],[[0,6],1],[[0,12],1],[[0,15],1],[[0,21],1],[[0,24],1]],"k_characters":12,"k_linalg":12,"l":2,"m":27,"name":"[[108,12,6]] (Quantum)","published_k":12,"seconds":0.01,"test":"published"}
+{"characters":[[[3,4],1],[[3,5],1],[[5,2],1],[[5,7],1],[[6,1],1],[[6,8],1]],"k_characters":12,"k_linalg":12,"l":7,"m":9,"name":"[[126,12,10]] (poster)","published_k":12,"seconds":0.0,"test":"published"}
+{"characters":[[[3,4],1],[[3,5],1],[[5,2],1],[[5,7],1],[[6,1],1],[[6,8],1]],"k_characters":12,"k_linalg":12,"l":7,"m":9,"name":"[[126,12,10]] (Quantum)","published_k":12,"seconds":0.0,"test":"published"}
+{"agree":150,"codes":150,"ell":3,"k_positive":20,"m":5,"mismatches":[],"seconds":0.03,"test":"random"}
+{"agree":150,"codes":150,"ell":3,"k_positive":26,"m":7,"mismatches":[],"seconds":0.07,"test":"random"}
+{"agree":150,"codes":150,"ell":5,"k_positive":18,"m":7,"mismatches":[],"seconds":0.36,"test":"random"}
+{"agree":150,"codes":150,"ell":7,"k_positive":25,"m":9,"mismatches":[],"seconds":0.27,"test":"random"}
+{"agree":150,"codes":150,"ell":15,"k_positive":35,"m":3,"mismatches":[],"seconds":0.1,"test":"random"}
+{"agree":150,"codes":150,"ell":5,"k_positive":13,"m":5,"mismatches":[],"seconds":0.05,"test":"random"}
+{"agree":150,"codes":150,"ell":9,"k_positive":34,"m":9,"mismatches":[],"seconds":0.22,"test":"random"}
+{"agree":150,"codes":150,"ell":11,"k_positive":14,"m":3,"mismatches":[],"seconds":0.22,"test":"random"}
+{"agree":150,"codes":150,"ell":13,"k_positive":17,"m":3,"mismatches":[],"seconds":0.35,"test":"random"}
+{"agree":150,"codes":150,"ell":7,"k_positive":55,"m":7,"mismatches":[],"seconds":0.09,"test":"random"}
+{"agree":150,"codes":150,"ell":6,"k_positive":32,"m":6,"mismatches":[],"seconds":0.11,"test":"random"}
+{"agree":150,"codes":150,"ell":9,"k_positive":45,"m":6,"mismatches":[],"seconds":0.24,"test":"random"}
+{"agree":150,"codes":150,"ell":12,"k_positive":42,"m":6,"mismatches":[],"seconds":0.27,"test":"random"}
+{"agree":150,"codes":150,"ell":12,"k_positive":32,"m":12,"mismatches":[],"seconds":0.82,"test":"random"}
+{"agree":150,"codes":150,"ell":2,"k_positive":21,"m":27,"mismatches":[],"seconds":0.74,"test":"random"}
+{"agree":150,"codes":150,"ell":10,"k_positive":15,"m":5,"mismatches":[],"seconds":0.14,"test":"random"}
+{"agree":150,"codes":150,"ell":8,"k_positive":14,"m":8,"mismatches":[],"seconds":1.69,"test":"random"}
+{"agree":150,"codes":150,"ell":6,"k_positive":24,"m":10,"mismatches":[],"seconds":0.16,"test":"random"}
+{"agree":150,"codes":150,"ell":16,"k_positive":24,"m":3,"mismatches":[],"seconds":0.21,"test":"random"}
+{"agree":150,"codes":150,"ell":4,"k_positive":22,"m":12,"mismatches":[],"seconds":0.28,"test":"random"}

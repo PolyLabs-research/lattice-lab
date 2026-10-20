@@ -150,7 +150,7 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
     pub = [r for r in rows if r["test"] == "published"]
     rnd = [r for r in rows if r["test"] == "random"]
     method_bad = [r["name"] for r in pub if r["k_characters"] != r["k_linalg"]]
-    method_bad += [f"{r['l']}x{r['m']}: {len(r['mismatches'])}" for r in rnd if r["mismatches"]]
+    method_bad += [f"{r['ell']}x{r['m']}: {len(r['mismatches'])}" for r in rnd if r["mismatches"]]
     reproduced = [r["name"] for r in pub if r["k_characters"] == r["published_k"]]
     discrepancies = [r["name"] for r in pub if r["k_characters"] != r["published_k"]
                      and r["k_linalg"] == r["k_characters"]]  # fmt: skip

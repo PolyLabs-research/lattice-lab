@@ -1,6 +1,6 @@
 # Next direction: from periods on the torus to quantum error-correcting codes
 
-**Status: a plan, with its first step registered** (`examples/qec-bb`). Written 2026-10-20, after
+**Status: a plan; its first step, a registered rediscovery test (`examples/qec-bb`), passed.** Written 2026-10-20, after
 the seventh pilot.
 
 ## What the project has actually built
@@ -67,6 +67,17 @@ this ring, and a quantity, k, that the instruments here already compute.
    - **Predictions.** The two methods agree everywhere, and they reproduce every published k.
    - **Why it matters.** It decides whether the bridge is real, including the even sizes where
      each character carries a multiplicity. It costs only local computation.
+   **Result (run 2026-10-20, 8 seconds): both predictions hold.**
+   - **Method.** The two methods agree on all 3,000 random codes (1,500 of them at even sizes)
+     and on all 12 published entries.
+   - **Rediscovery.** Every published k is reproduced, including both versions of the two coprime
+     codes whose published polynomials disagree.
+   - **The gross code.** The characters show why the [[72,12,6]], [[144,12,12]] and [[288,12,18]]
+     codes share k = 12: the same four characters of the 3 × 3 odd part carry it, two with
+     multiplicity 2 in the 2-part.
+   - **The coprime codes.** Each takes its k from one Frobenius orbit of common zeros, so k is
+     twice the orbit's size: {1, 2, 4} mod 7 for [[42,6,6]], and an orbit of six characters of
+     the 7 × 9 torus for [[126,12,10]].
 2. **A census of code families.** Sweep polynomial pairs at many sizes for high k, using the
    classes and symmetries to prune. Then measure distance, the hard and expensive part, with
    established tools:

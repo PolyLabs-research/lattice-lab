@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 168 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 172 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -118,7 +118,9 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
 logical qubits are read off the same characters. Its first step, a registered rediscovery test
-against linear algebra and twelve published codes, is `examples/qec-bb`.
+against linear algebra and twelve published codes (`examples/qec-bb`), passed: 3,000 of 3,000
+random codes agree and all 12 published k are reproduced. Next: distances, which nothing here
+computes yet.
 
 **First in line: rule 4850 at m = 37.** A registered census of the radius-5 family
 (consultations.md, section 4) refuted chance for rule 4850: four more ninth-power rules at 37
