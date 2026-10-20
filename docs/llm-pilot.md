@@ -1,8 +1,7 @@
 # The LLM-central pilots: three period laws and four open questions, worked by agents
 
 **Result: in all seven pilots so far, a fresh agent, given only a problem card and the Lean
-library, passed the judge's soundness check in its first round, and in the first six its Lean
-proof built. In the third it also found the law itself, from
+library, passed the judge in its first round or, in the seventh, its second. In the third it also found the law itself, from
 data. In the fourth, on a question nobody had answered, it found the mechanism, proved it in
 Lean, and its general condition held at every one of 633 claims, 180 of them at held-out sizes
 registered before it started. In the fifth, on a harder open question, it explained and proved
@@ -12,9 +11,8 @@ test raised, it explained 12 of 19 by a factorisation in 11 minutes, showed the 
 chance model accounts for the rest, and the registered census at 17 new sizes found its rules,
 at the sizes it predicted, and nothing else unexplained. In the seventh, the first run on Claude
 Fable, it explained 4 of the 5 ninth-power rules at m = 37 by counting exponents exactly, its
-condition held at all 1,715 claims, and its Lean file, unbuilt when it was stopped for cost at two
-hours, does not build.** In pilots 1 to 6 the judge accepted each proof on its own checks, not
-the agent's report:
+condition held at all 1,715 claims, and after it was stopped for cost at two hours with its Lean
+unbuilt, a second round over the API made the proof build for $4.47.** The judge accepted each proof on its own checks, not the agent's report:
 
 - the proof builds against the real library;
 - the statements match pinned copies;
@@ -24,18 +22,18 @@ In pilots 1 to 4 the registered predictions, at sizes nobody had computed, all h
 law also held at all 20 held-out sizes, which it never saw. In pilot 5 the orchestrator's own
 registered expectation failed, at 6 of 14 held-out sizes; the agent's mechanism accounts for part
 of that, and the rest became pilot 6's question. In pilot 6 the orchestrator's expectation
-failed again, at exactly the three sizes and the nine rules the agent predicted. All six proofs
-are now in the library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim,
+failed again, at exactly the three sizes and the nine rules the agent predicted. The first six proofs
+are in the library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim,
 `Cubes37.lean`, `Cubes25.lean` and `UnitCubes.lean` with only their namespaces renamed.
 
 | | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law | Pilot 4: the cubes at m = 37 | Pilot 5: the cubes at m = 25 | Pilot 6: the square family at m = 37 | Pilot 7: the ninth powers at m = 37 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Given | the statement | the statements | a question and data | an open question, a census and data | an open question, a census remainder, a chance model and pilot 4's mechanism | an open question from pilot 5's registered test, the family's census, both earlier mechanisms | the rule-4850 study's five rules, all seven mechanisms as tools, a fast census at 37 |
-| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` | `period_w_dvd_87381` and five more, `period_r90_dvd`; and a `condition` in Python | `period_r3096_dvd` and four more; and a `condition` in Python | `period_r1112_dvd_37` and eleven more (nine at 37, three at 61); and a `condition` in Python | none: Pilot.lean (four `period 37 D ∣ 29127`) does not build; a `condition` in Python |
+| Theorems | `hexPeriod_hexH1_exact` | `atlasTriPeriod_triE_exact`, `atlasTriPeriod_triEVOVS_exact` | `atlasTriPeriod_triVOT13_law`, with the agent's own `vot13TwoExp` | `period_w_dvd_87381` and five more, `period_r90_dvd`; and a `condition` in Python | `period_r3096_dvd` and four more; and a `condition` in Python | `period_r1112_dvd_37` and eleven more (nine at 37, three at 61); and a `condition` in Python | `period_r1968276_dvd` and three more (`period 37 D ∣ 29127`), in round 2; and a `condition` in Python |
 | Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2, on Claude Fable |
 | Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 |
-| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls | 95 minutes, 108 calls | 66 minutes, 99 calls | 2 hours 2 minutes, 121 calls; stopped by the orchestrator for cost ($51.33) |
-| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 | passed in round 1: 5 of 17 explained, none of 1,381 claims false | passed in round 1: 12 of 19 explained, none of 1,547 claims false (round 2, with the census complete) | sound in round 1: 4 of 5 explained, none of 1,715 claims false; Lean fails |
+| Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls | 95 minutes, 108 calls | 66 minutes, 99 calls | 2 hours 2 minutes, 121 calls, stopped by the orchestrator for cost ($51.33); round 2 over the API, 11 minutes, 38 calls ($4.47) |
+| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 | passed in round 1: 5 of 17 explained, none of 1,381 claims false | passed in round 1: 12 of 19 explained, none of 1,547 claims false (round 2, with the census complete) | round 1: 4 of 5 explained, none of 1,715 claims false, Lean fails; passed in round 2, 32 theorems on the standard axioms |
 | The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 | 39 of 39 | 31 of 31 | 32 of 32 | 42 of 42 |
 | Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 | the census at 29 held-out sizes: no unexplained confinement, as registered; the agent's condition held at all 180 of its claims there | the orchestrator's expectation (chance) **refuted** at 6 of 14 sizes; the agent's condition explains 12 of the 44 unexplained confinements there, and held at all 414 of its claims | the orchestrator's expectation (chance) **refuted** at 95, 101 and 111, by exactly the agent's nine rules, which its condition claims; nothing else unexplained at 17 sizes | the radius-6 census at 37: mechanism supported (37 unexplained against 0.70); the agent computed it itself, and its condition covers 35 of the 37 |
 | Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 | nobody knew the answer | nobody knew the answer | nobody knew the answer | nobody knew the answer |
@@ -99,9 +97,20 @@ the four radius-5 rules are cubes, no more. For the first time the agent was **C
 - **Reach on the atlas remainder:** **27 of the 45** entries, 10 more than any earlier condition.
   The new 10 include the triangle rule at 21 that the remainder note put down to hidden
   symmetries.
-- **Lean:** **the file does not build**, with 11 errors (failed rewrites and heartbeat timeouts), so
-  no theorem is accepted. This is the first pilot without a Lean proof.
+- **Lean:** in round 1 **the file did not build**, with 11 errors (failed rewrites and heartbeat
+  timeouts), so no theorem was accepted.
 - **The agent's own checks:** 42 of 42.
+
+**Round 2, over the API.** The judge's reportable results and the Lean errors went back to Fable
+through the API instead of a cloud session (`round2.py`), with narrow tools: reads, edits to the
+Lean file and scratch/, a Lean build run as the judge runs it, and a $30 cap. It took **11 minutes,
+38 tool calls and $4.47**. It made three fixes:
+- it reversed rewrites that ran the wrong way;
+- it restated the axis cases as one-variable identities;
+- it treated the large powers as atoms before the algebra step, instead of expanding them.
+
+The judge's second round: **Pilot.lean builds, 32 theorems, all on the standard axioms**. The four
+statements are unchanged: `period 37 D ∣ 29127` for 699738, 985232, 1431278 and 1968276.
 
 **The registered held-out test** was weakened by step 3. The radius-6 rules were meant to be
 unseen. The agent computed them from its tools, which the card did not forbid, so its reach there
@@ -117,7 +126,8 @@ there is false.
 the two core identities. It also checks the dilation by 6 that puts the cores' values in F(2⁹),
 and the Ψ₅ exponent.
 
-**What it means.** Four of the five were the half-Frobenius mechanism counted exactly. The step
+**What it means.** Four of the five were the half-Frobenius mechanism counted exactly, and are now
+proved in Lean. The step
 from cubes to ninth powers is one factor of 3 in an exponent, which pilot 4 discarded by bounding
 each unit separately. Rule 4850 remains open. With 20982139 and 178279803 it forms a family of
 three apparently independent ninth-power events at radius up to 6 that no known mechanism explains. The

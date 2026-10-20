@@ -149,3 +149,46 @@ pilot's cores W and V), the two core identities, checks that their right sides a
 dilation by 6 at 37 (so the cores' values lie in F(2⁹)), and that Ψ₅(t)² = t^(2²³ − 1) for every
 nonzero rule-90 value, with the net exponent 2²³ − 2 of valuation exactly 1 at 3: the step from
 cubes to ninth powers. All pass.
+
+## Round 2, over the API: the Lean proof
+
+The person running the pilot chose to send the Lean errors back for a second round, billed to the
+consultations' API key rather than to a cloud session (`round2.py`).
+
+- **Harness.** The agent got what the judge may report from round 1: the library check, 4 of 5
+  targets, 1,182 training claims none false, proposal.py 42 of 42, and the build's errors. No
+  held-out result was sent. It worked in a worktree of its round-1 commit, through narrow tools:
+  - read and search over the checkout and mathlib's sources;
+  - edits to Pilot.lean and scratch/ only;
+  - a Lean build run exactly as the judge runs it, and a single-file Lean check;
+  - scratch Python with no environment;
+  - finish.
+
+  A test build of the unchanged round-1 file reproduced the judge's 11 errors before the round
+  started.
+- **Run.** 33 requests in 11 minutes (17:45 to 17:56 UTC), every one served by `claude-fable-5-1`, for
+  **$4.47** (the session's first round cost $51.33). The agent used 38 tool calls:
+  - 8 edits and 5 file writes;
+  - 5 single-file Lean checks, then one full build, which built with 32 theorems, all on the
+    standard axioms;
+  - 6 reads, 4 searches and 2 directory listings;
+  - 6 runs of its scratch scripts, which read and wrote only inside the checkout (one patched
+    Pilot.lean directly);
+  - finish.
+
+  One call was refused: an edit of report.md, which this round does not allow.
+- **What it fixed** (`submission/round-2/report-round-2.md`):
+  - the four eigenvalue lemmas rewrote in the wrong direction;
+  - on the axes, a `rw` turned every `1` in the goal into a 29127th power, which `linear_combination`
+    then tried to expand (the heartbeat timeouts); these became one-variable identities after
+    `generalize`;
+  - in the generic cases the large powers and polynomials were generalized to atoms before a
+    single `linear_combination`.
+- **The judge, round 2** (`judgements/round-2.json`, on `c6a4b9b`, the round-2 branch of the local
+  clone): library unchanged; **Pilot.lean builds** in 70 s, 32 theorems, **all on the standard
+  axioms**, no forbidden words. The four statements `period 37 rXOffsets ∣ 29127` and their rule
+  definitions are byte for byte those of round 1. The condition's results are as in round 1: 4 of
+  5, 1,715 claims, none false.
+
+The branch is in branches.bundle as `pilot-37c-round-2`. Pilot 7 is now complete: four of the
+five ninth-power rules explained by a condition that held at every claim, and proved in Lean.

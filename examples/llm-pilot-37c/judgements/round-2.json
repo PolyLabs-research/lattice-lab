@@ -1,0 +1,1897 @@
+{
+ "round": 2,
+ "branch": "local:round-2",
+ "base": "63e6595f966ea7123cd6a93eec5a962173a637b3",
+ "head": "c6a4b9be6e1cb6faa3b62538e1c1bb04e14aaec4",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "A",
+    "mechanism.py"
+   ],
+   [
+    "M",
+    "proofs/LatticeProofs/Pilot.lean"
+   ],
+   [
+    "A",
+    "proposal.md"
+   ],
+   [
+    "A",
+    "proposal.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ],
+   [
+    "A",
+    "scratch/alldirs.log"
+   ],
+   [
+    "A",
+    "scratch/alldirs.py"
+   ],
+   [
+    "A",
+    "scratch/bigparams.log"
+   ],
+   [
+    "A",
+    "scratch/bigparams.py"
+   ],
+   [
+    "A",
+    "scratch/census6.json"
+   ],
+   [
+    "A",
+    "scratch/census6.log"
+   ],
+   [
+    "A",
+    "scratch/census6.py"
+   ],
+   [
+    "A",
+    "scratch/check.py"
+   ],
+   [
+    "A",
+    "scratch/classify.json"
+   ],
+   [
+    "A",
+    "scratch/classify.log"
+   ],
+   [
+    "A",
+    "scratch/classify.py"
+   ],
+   [
+    "A",
+    "scratch/classify2.json"
+   ],
+   [
+    "A",
+    "scratch/classify2.log"
+   ],
+   [
+    "A",
+    "scratch/classify2.py"
+   ],
+   [
+    "A",
+    "scratch/classify3.log"
+   ],
+   [
+    "A",
+    "scratch/cubeplussquare.py"
+   ],
+   [
+    "A",
+    "scratch/cuberoots.log"
+   ],
+   [
+    "A",
+    "scratch/cuberoots.py"
+   ],
+   [
+    "A",
+    "scratch/cuberoots4850.json"
+   ],
+   [
+    "A",
+    "scratch/cubesearch.log"
+   ],
+   [
+    "A",
+    "scratch/cubesearch.py"
+   ],
+   [
+    "A",
+    "scratch/explore4850.py"
+   ],
+   [
+    "A",
+    "scratch/f18.py"
+   ],
+   [
+    "A",
+    "scratch/fix_convert.py"
+   ],
+   [
+    "A",
+    "scratch/gauss.py"
+   ],
+   [
+    "A",
+    "scratch/gen_pilot.py"
+   ],
+   [
+    "A",
+    "scratch/genlean.py"
+   ],
+   [
+    "A",
+    "scratch/hf_witness.py"
+   ],
+   [
+    "A",
+    "scratch/linefactor.py"
+   ],
+   [
+    "A",
+    "scratch/linsearch.py"
+   ],
+   [
+    "A",
+    "scratch/mk_t1.py"
+   ],
+   [
+    "A",
+    "scratch/mk_t2.py"
+   ],
+   [
+    "A",
+    "scratch/orbsearch.py"
+   ],
+   [
+    "A",
+    "scratch/orbsearch3.log"
+   ],
+   [
+    "A",
+    "scratch/orbsearch3.py"
+   ],
+   [
+    "A",
+    "scratch/orbsearch_mod.py"
+   ],
+   [
+    "A",
+    "scratch/orbsearch_rest.log"
+   ],
+   [
+    "A",
+    "scratch/orbsearch_rest.py"
+   ],
+   [
+    "A",
+    "scratch/othersizes.log"
+   ],
+   [
+    "A",
+    "scratch/othersizes.py"
+   ],
+   [
+    "A",
+    "scratch/pilot_certs.json"
+   ],
+   [
+    "A",
+    "scratch/prof.py"
+   ],
+   [
+    "A",
+    "scratch/proposal_run.log"
+   ],
+   [
+    "A",
+    "scratch/proposal_run2.log"
+   ],
+   [
+    "A",
+    "scratch/rankcheck.py"
+   ],
+   [
+    "A",
+    "scratch/refined.py"
+   ],
+   [
+    "A",
+    "scratch/regress.log"
+   ],
+   [
+    "A",
+    "scratch/regress.py"
+   ],
+   [
+    "A",
+    "scratch/report-round-2.md"
+   ],
+   [
+    "A",
+    "scratch/report_draft.md"
+   ],
+   [
+    "A",
+    "scratch/sweep_a1.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_a1b.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_a2.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_a3.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_a4.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas.py"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_103_105_107_109_111_113_115_117_119_121_123_125_127_129_131_133_135_137_139_141_143_145_147_149_151.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_153_155_157_159_161_163_165_167_169_171_173_175_177_179_181_183_185_187_189_191_193_195_197_199_201.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_3_5_7_9_11_13_15_17_19_21_23_25_27_29_31_33_35_37_39_41_43_45_47_49_51.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_53_55_57_59_61_63_65_67_69_71_73_75_77_79_81_83_85_87_89_91_93_95_97_99_101.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_atlas_5_7_9_11_13_15_17_19_21_23_25_27_29_31_33_35_37_39_41_43_45_47_49_51.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_f1.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_f1b.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_f2.log"
+   ],
+   [
+    "A",
+    "scratch/sweep_family.py"
+   ],
+   [
+    "A",
+    "scratch/sweep_family_21_25_29_31_33_35_37_39_41_43_45_47_49_51_53_55_57_59_61_63_65_67_69_71_73_75.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_family_37_39_41_43_45_47_49_51_53_55_57_59_61_63_65_67_69_71_73_75.jsonl"
+   ],
+   [
+    "A",
+    "scratch/sweep_family_77_79_81_83_85_87_89_91_93_95_97_99_101_103_105_107_109_111_113_115_117_119_121_123_125.jsonl"
+   ],
+   [
+    "A",
+    "scratch/t1.lean"
+   ],
+   [
+    "A",
+    "scratch/t2.lean"
+   ],
+   [
+    "A",
+    "scratch/t3.lean"
+   ],
+   [
+    "A",
+    "scratch/unexplained.py"
+   ],
+   [
+    "A",
+    "scratch/unexplained2.py"
+   ],
+   [
+    "A",
+    "scratch/write_pilot.py"
+   ],
+   [
+    "A",
+    "scratch/zeta19.py"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": true,
+  "targets": {
+   "explained": 4,
+   "of": 5,
+   "rules": [
+    [
+     37,
+     "square r5 699738"
+    ],
+    [
+     37,
+     "square r5 985232"
+    ],
+    [
+     37,
+     "square r5 1431278"
+    ],
+    [
+     37,
+     "square r5 1968276"
+    ]
+   ]
+  },
+  "train": {
+   "claims": 1182,
+   "false": [],
+   "hold": 1182,
+   "beyond_known": 113,
+   "ninth_or_more": 190
+  },
+  "heldout": {
+   "claims": 533,
+   "false": [],
+   "hold": 533,
+   "beyond_known": 39,
+   "ninth_or_more": 133
+  },
+  "coverage": {
+   "radius6_unexplained": [
+    35,
+    37
+   ],
+   "radius6_beyond_all_known": [
+    19,
+    21
+   ],
+   "cube_hits_train": [
+    48,
+    76
+   ],
+   "remainder": [
+    27,
+    45
+   ]
+  },
+  "coverage_rows": {
+   "radius6_unexplained": [
+    2097154,
+    2097155,
+    4194304,
+    4194305,
+    6291458,
+    6291459,
+    57515480,
+    57521562,
+    57537311,
+    58091941,
+    93777327,
+    107951322,
+    108460253,
+    115377162,
+    117135413,
+    132692042,
+    133646261,
+    134217732,
+    134217733,
+    136314886,
+    136314887,
+    138140734,
+    138412037,
+    140509190,
+    171949054,
+    189642139,
+    198817715,
+    212362513,
+    217313016,
+    229454225,
+    229592942,
+    230092206,
+    231275595,
+    247497739,
+    262020583
+   ],
+   "radius6_beyond_all_known": [
+    57515480,
+    57521562,
+    57537311,
+    58091941,
+    93777327,
+    115377162,
+    117135413,
+    132692042,
+    133646261,
+    138140734,
+    171949054,
+    189642139,
+    212362513,
+    217313016,
+    229454225,
+    230092206,
+    231275595,
+    247497739,
+    262020583
+   ],
+   "cube_hits_train": [
+    [
+     21,
+     493
+    ],
+    [
+     21,
+     14682
+    ],
+    [
+     21,
+     15086
+    ],
+    [
+     21,
+     28019
+    ],
+    [
+     29,
+     5138
+    ],
+    [
+     29,
+     15640
+    ],
+    [
+     29,
+     23574
+    ],
+    [
+     29,
+     27960
+    ],
+    [
+     37,
+     1112
+    ],
+    [
+     37,
+     2436
+    ],
+    [
+     37,
+     3461
+    ],
+    [
+     37,
+     10498
+    ],
+    [
+     37,
+     13584
+    ],
+    [
+     37,
+     17056
+    ],
+    [
+     37,
+     18246
+    ],
+    [
+     37,
+     25183
+    ],
+    [
+     37,
+     26883
+    ],
+    [
+     37,
+     28944
+    ],
+    [
+     61,
+     3461
+    ],
+    [
+     61,
+     18246
+    ],
+    [
+     61,
+     26883
+    ],
+    [
+     111,
+     1112
+    ],
+    [
+     111,
+     2436
+    ],
+    [
+     111,
+     3461
+    ],
+    [
+     111,
+     10498
+    ],
+    [
+     111,
+     13584
+    ],
+    [
+     111,
+     17056
+    ],
+    [
+     111,
+     18246
+    ],
+    [
+     111,
+     26883
+    ],
+    [
+     111,
+     28944
+    ],
+    [
+     95,
+     1112
+    ],
+    [
+     95,
+     2436
+    ],
+    [
+     95,
+     3461
+    ],
+    [
+     95,
+     10498
+    ],
+    [
+     95,
+     13584
+    ],
+    [
+     95,
+     17056
+    ],
+    [
+     95,
+     18246
+    ],
+    [
+     95,
+     26883
+    ],
+    [
+     95,
+     28944
+    ],
+    [
+     101,
+     1112
+    ],
+    [
+     101,
+     2436
+    ],
+    [
+     101,
+     3461
+    ],
+    [
+     101,
+     10498
+    ],
+    [
+     101,
+     13584
+    ],
+    [
+     101,
+     17056
+    ],
+    [
+     101,
+     18246
+    ],
+    [
+     101,
+     26883
+    ],
+    [
+     101,
+     28944
+    ]
+   ],
+   "remainder": [
+    [
+     13,
+     "square",
+     "N4+C4+L8"
+    ],
+    [
+     13,
+     "square",
+     "N4+L8+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "D4+A4+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "D4+C4+L8+self"
+    ],
+    [
+     13,
+     "square",
+     "D4+L8+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "D4+M8+E4"
+    ],
+    [
+     13,
+     "square",
+     "A4+M8+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "B4+C4+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "N4+D4+C4+E4"
+    ],
+    [
+     13,
+     "square",
+     "N4+B4+C4+E4"
+    ],
+    [
+     13,
+     "square",
+     "D4+A4+L8+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "N4+K8+B4+M8+E4+self"
+    ],
+    [
+     13,
+     "square",
+     "D4+A4+C4+L8+M8+E4"
+    ],
+    [
+     13,
+     "square",
+     "A4+K8+B4+C4+L8+M8+self"
+    ],
+    [
+     13,
+     "square",
+     "A4+K8+B4+L8+M8+E4+self"
+    ],
+    [
+     13,
+     "triangle",
+     "E+T9"
+    ],
+    [
+     13,
+     "triangle",
+     "VO+VS+T13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H4+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H3+H4+H13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H3+H5+H13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H4+H5+H13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H2+H3+H4+H13+self"
+    ],
+    [
+     13,
+     "hexagon",
+     "H2+H3+H5+H13+self"
+    ],
+    [
+     21,
+     "square",
+     "N4+D4+K8+C4+M8+E4"
+    ],
+    [
+     21,
+     "square",
+     "N4+A4+K8+B4+L8+E4+self"
+    ],
+    [
+     21,
+     "square",
+     "D4+A4+B4+C4+L8+M8+self"
+    ],
+    [
+     21,
+     "triangle",
+     "E+VO+T7+T9+self"
+    ]
+   ]
+  },
+  "per_m": {
+   "atlas 9": {
+    "ok": true,
+    "seconds": 17.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 11": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 13": {
+    "ok": true,
+    "seconds": 50.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 15": {
+    "ok": true,
+    "seconds": 30.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 17": {
+    "ok": true,
+    "seconds": 69.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 19": {
+    "ok": true,
+    "seconds": 40.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 21": {
+    "ok": true,
+    "seconds": 18.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 25": {
+    "ok": true,
+    "seconds": 16.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 27": {
+    "ok": true,
+    "seconds": 13.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 29": {
+    "ok": true,
+    "seconds": 41.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 33": {
+    "ok": true,
+    "seconds": 13.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 35": {
+    "ok": true,
+    "seconds": 16.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 37": {
+    "ok": true,
+    "seconds": 46.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 39": {
+    "ok": true,
+    "seconds": 15.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 41": {
+    "ok": true,
+    "seconds": 36.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 43": {
+    "ok": true,
+    "seconds": 38.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 45": {
+    "ok": true,
+    "seconds": 12.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 51": {
+    "ok": true,
+    "seconds": 15.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 53": {
+    "ok": true,
+    "seconds": 45.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 55": {
+    "ok": true,
+    "seconds": 21.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 57": {
+    "ok": true,
+    "seconds": 13.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 59": {
+    "ok": true,
+    "seconds": 51.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 61": {
+    "ok": true,
+    "seconds": 60.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 63": {
+    "ok": true,
+    "seconds": 10.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 65": {
+    "ok": true,
+    "seconds": 9.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 67": {
+    "ok": true,
+    "seconds": 17.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 69": {
+    "ok": true,
+    "seconds": 11.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 75": {
+    "ok": true,
+    "seconds": 9.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 77": {
+    "ok": true,
+    "seconds": 15.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 81": {
+    "ok": true,
+    "seconds": 10.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 83": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 85": {
+    "ok": true,
+    "seconds": 12.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 87": {
+    "ok": true,
+    "seconds": 12.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 91": {
+    "ok": true,
+    "seconds": 16.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 93": {
+    "ok": true,
+    "seconds": 12.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 95": {
+    "ok": true,
+    "seconds": 12.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 97": {
+    "ok": true,
+    "seconds": 24.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 99": {
+    "ok": true,
+    "seconds": 11.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 101": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 105": {
+    "ok": true,
+    "seconds": 9.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 107": {
+    "ok": true,
+    "seconds": 25.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 109": {
+    "ok": true,
+    "seconds": 27.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 111": {
+    "ok": true,
+    "seconds": 14.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 113": {
+    "ok": true,
+    "seconds": 29.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 115": {
+    "ok": true,
+    "seconds": 13.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 117": {
+    "ok": true,
+    "seconds": 12.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 119": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 121": {
+    "ok": true,
+    "seconds": 16.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 123": {
+    "ok": true,
+    "seconds": 13.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 125": {
+    "ok": true,
+    "seconds": 12.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 129": {
+    "ok": true,
+    "seconds": 8.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 131": {
+    "ok": true,
+    "seconds": 21.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 133": {
+    "ok": true,
+    "seconds": 10.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 135": {
+    "ok": true,
+    "seconds": 5.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 137": {
+    "ok": true,
+    "seconds": 20.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 139": {
+    "ok": true,
+    "seconds": 22.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 141": {
+    "ok": true,
+    "seconds": 8.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 143": {
+    "ok": true,
+    "seconds": 13.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 145": {
+    "ok": true,
+    "seconds": 7.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 147": {
+    "ok": true,
+    "seconds": 8.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 149": {
+    "ok": true,
+    "seconds": 23.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 153": {
+    "ok": true,
+    "seconds": 8.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 155": {
+    "ok": true,
+    "seconds": 8.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 157": {
+    "ok": true,
+    "seconds": 27.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 159": {
+    "ok": true,
+    "seconds": 9.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 163": {
+    "ok": true,
+    "seconds": 28.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 165": {
+    "ok": true,
+    "seconds": 6.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 169": {
+    "ok": true,
+    "seconds": 12.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 171": {
+    "ok": true,
+    "seconds": 7.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 173": {
+    "ok": true,
+    "seconds": 30.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 175": {
+    "ok": true,
+    "seconds": 9.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 177": {
+    "ok": true,
+    "seconds": 8.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 179": {
+    "ok": true,
+    "seconds": 1.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 181": {
+    "ok": true,
+    "seconds": 31.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 183": {
+    "ok": true,
+    "seconds": 11.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 185": {
+    "ok": true,
+    "seconds": 9.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 187": {
+    "ok": true,
+    "seconds": 14.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 189": {
+    "ok": true,
+    "seconds": 8.4,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 193": {
+    "ok": true,
+    "seconds": 37.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 195": {
+    "ok": true,
+    "seconds": 5.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 197": {
+    "ok": true,
+    "seconds": 36.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 201": {
+    "ok": true,
+    "seconds": 9.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 203": {
+    "ok": true,
+    "seconds": 15.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 205": {
+    "ok": true,
+    "seconds": 9.2,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 207": {
+    "ok": true,
+    "seconds": 9.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 209": {
+    "ok": true,
+    "seconds": 15.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 211": {
+    "ok": true,
+    "seconds": 24.9,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 213": {
+    "ok": true,
+    "seconds": 11.3,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 215": {
+    "ok": true,
+    "seconds": 9.8,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 219": {
+    "ok": true,
+    "seconds": 11.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 221": {
+    "ok": true,
+    "seconds": 15.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 225": {
+    "ok": true,
+    "seconds": 7.1,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 259": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 333": {
+    "ok": true,
+    "seconds": 13.0,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 21": {
+    "ok": true,
+    "seconds": 19.3,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2008
+   },
+   "family 25": {
+    "ok": true,
+    "seconds": 26.5,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2008
+   },
+   "family 29": {
+    "ok": true,
+    "seconds": 62.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2013
+   },
+   "family 35": {
+    "ok": true,
+    "seconds": 25.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 37": {
+    "ok": true,
+    "seconds": 78.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2015
+   },
+   "family 39": {
+    "ok": true,
+    "seconds": 25.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 41": {
+    "ok": true,
+    "seconds": 61.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 45": {
+    "ok": true,
+    "seconds": 17.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 51": {
+    "ok": true,
+    "seconds": 23.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 53": {
+    "ok": true,
+    "seconds": 79.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 55": {
+    "ok": true,
+    "seconds": 35.3,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 61": {
+    "ok": true,
+    "seconds": 101.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "family 63": {
+    "ok": true,
+    "seconds": 17.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 65": {
+    "ok": true,
+    "seconds": 19.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 69": {
+    "ok": true,
+    "seconds": 19.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 75": {
+    "ok": true,
+    "seconds": 17.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 123": {
+    "ok": true,
+    "seconds": 25.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 119": {
+    "ok": true,
+    "seconds": 33.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 117": {
+    "ok": true,
+    "seconds": 21.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 113": {
+    "ok": true,
+    "seconds": 51.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 115": {
+    "ok": true,
+    "seconds": 24.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 111": {
+    "ok": true,
+    "seconds": 26.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2009
+   },
+   "family 125": {
+    "ok": true,
+    "seconds": 23.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 109": {
+    "ok": true,
+    "seconds": 48.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 105": {
+    "ok": true,
+    "seconds": 18.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 97": {
+    "ok": true,
+    "seconds": 45.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 95": {
+    "ok": true,
+    "seconds": 22.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2009
+   },
+   "family 93": {
+    "ok": true,
+    "seconds": 23.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 91": {
+    "ok": true,
+    "seconds": 28.0,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 85": {
+    "ok": true,
+    "seconds": 18.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 87": {
+    "ok": true,
+    "seconds": 21.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 77": {
+    "ok": true,
+    "seconds": 27.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "family 101": {
+    "ok": true,
+    "seconds": 45.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2009
+   },
+   "ninth37 37": {
+    "ok": true,
+    "seconds": 87.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2042
+   },
+   "radius6 37": {
+    "ok": true,
+    "seconds": 102.5,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2083
+   },
+   "square5 129": {
+    "ok": true,
+    "seconds": 16.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 131": {
+    "ok": true,
+    "seconds": 41.1,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 133": {
+    "ok": true,
+    "seconds": 23.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 135": {
+    "ok": true,
+    "seconds": 16.5,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 137": {
+    "ok": true,
+    "seconds": 40.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 139": {
+    "ok": true,
+    "seconds": 41.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 141": {
+    "ok": true,
+    "seconds": 18.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 143": {
+    "ok": true,
+    "seconds": 26.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 145": {
+    "ok": true,
+    "seconds": 17.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 147": {
+    "ok": true,
+    "seconds": 19.6,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 149": {
+    "ok": true,
+    "seconds": 45.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 153": {
+    "ok": true,
+    "seconds": 17.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 155": {
+    "ok": true,
+    "seconds": 19.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 157": {
+    "ok": true,
+    "seconds": 47.8,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   },
+   "square5 159": {
+    "ok": true,
+    "seconds": 19.2,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   }
+  },
+  "all_ran": true
+ },
+ "lean": {
+  "present": true,
+  "builds": true,
+  "forbidden_words": [],
+  "theorems": {
+   "LatticeProofs.Pilot37c.axis_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.d5_identity": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.d6_identity": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.ev_r1431278": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.ev_r1968276": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.ev_r699738": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.ev_r985232": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.period_dvd_of_val'": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.period_r1431278_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.period_r1968276_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.period_r699738_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.period_r985232_dvd": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.prod_val'": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.psi5_sq": [
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.psi_pow_identity": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r1431278_poly": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r1431278_val_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r1968276_poly": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r1968276_val_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r699738_poly": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r699738_val_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r985232_poly": [
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.r985232_val_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.sh_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.sv_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t3_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t_frob23": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t_frob9": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t_norm": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t_sq": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.t_sum": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "LatticeProofs.Pilot37c.tpsi_val": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ]
+  },
+  "standard": [
+   "LatticeProofs.Pilot37c.axis_val",
+   "LatticeProofs.Pilot37c.d5_identity",
+   "LatticeProofs.Pilot37c.d6_identity",
+   "LatticeProofs.Pilot37c.ev_r1431278",
+   "LatticeProofs.Pilot37c.ev_r1968276",
+   "LatticeProofs.Pilot37c.ev_r699738",
+   "LatticeProofs.Pilot37c.ev_r985232",
+   "LatticeProofs.Pilot37c.period_dvd_of_val'",
+   "LatticeProofs.Pilot37c.period_r1431278_dvd",
+   "LatticeProofs.Pilot37c.period_r1968276_dvd",
+   "LatticeProofs.Pilot37c.period_r699738_dvd",
+   "LatticeProofs.Pilot37c.period_r985232_dvd",
+   "LatticeProofs.Pilot37c.prod_val'",
+   "LatticeProofs.Pilot37c.psi5_sq",
+   "LatticeProofs.Pilot37c.psi_pow_identity",
+   "LatticeProofs.Pilot37c.r1431278_poly",
+   "LatticeProofs.Pilot37c.r1431278_val_sq",
+   "LatticeProofs.Pilot37c.r1968276_poly",
+   "LatticeProofs.Pilot37c.r1968276_val_sq",
+   "LatticeProofs.Pilot37c.r699738_poly",
+   "LatticeProofs.Pilot37c.r699738_val_sq",
+   "LatticeProofs.Pilot37c.r985232_poly",
+   "LatticeProofs.Pilot37c.r985232_val_sq",
+   "LatticeProofs.Pilot37c.sh_val",
+   "LatticeProofs.Pilot37c.sv_val",
+   "LatticeProofs.Pilot37c.t3_val",
+   "LatticeProofs.Pilot37c.t_frob23",
+   "LatticeProofs.Pilot37c.t_frob9",
+   "LatticeProofs.Pilot37c.t_norm",
+   "LatticeProofs.Pilot37c.t_sq",
+   "LatticeProofs.Pilot37c.t_sum",
+   "LatticeProofs.Pilot37c.tpsi_val"
+  ],
+  "build": {
+   "returncode": 0,
+   "seconds": 69.9,
+   "output": "\u26a0 [1171/1197] Replayed LatticeProofs.Identities\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Identities.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [1311/1416] Replayed LatticeProofs.Eigen\nwarning: LatticeProofs/Eigen.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2841/2850] Replayed LatticeProofs.Bridge\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Algebra.Field.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.FieldTheory.Finite.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\nwarning: LatticeProofs/Bridge.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2842/2850] Replayed LatticeProofs.GroupRing\nwarning: LatticeProofs/GroupRing.lean: imports `Mathlib.Algebra.MonoidAlgebra.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file\n\u26a0 [2849/2850] Replayed LatticeProofs.Cubes37\nwarning: LatticeProofs/Cubes37.lean:211:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_w`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:215:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_r90`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:218:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.pow_mod37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:245:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.inv_eq_pow36`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:320:2: Unused tactic linter: `all_goals\n  first\n  | rfl\n  | ring` does nothing.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: LatticeProofs/Cubes37.lean:320:12: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nwarning: LatticeProofs/Cubes37.lean:363:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.pow_of_line`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:454:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.prod_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:466:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.sq37`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:490:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_tri`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:494:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ev_v`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:578:0: automatically included section variable(s) unused in theorem `LatticeProofs.Cubes37.ratio_val`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Cubes37.lean:600:41: this constant has no effect on the linear combination; it can be dropped from the term\n\u26a0 [2850/2850] Built LatticeProofs.Pilot (62s)\nwarning: LatticeProofs/Pilot.lean:124:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37c.t_sq`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:124:41: Variable name `hZ` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hZ\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: LatticeProofs/Pilot.lean:129:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37c.t_sum`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:136:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37c.psi5_sq`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: LatticeProofs/Pilot.lean:208:0: automatically included section variable(s) unused in theorem `LatticeProofs.Pilot37c.prod_val'`:\n  [CharP K 2]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CharP K 2] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nBuild completed successfully (2850 jobs).\n"
+  }
+ },
+ "proposal": {
+  "present": true,
+  "returncode": 0,
+  "seconds": 50.2,
+  "output": "== 1. Facts about F(2^18) at m = 37 (section 2 of proposal.md)\nPASS 2 is a primitive root mod 37: d = 36, s = 18\nPASS 2^9 = -6 mod 37 and 6^2 = -1 mod 37\nPASS t^(2^9) = D_6(t) = t^6 + t^2 for t = t_1 (Frobenius^9 is the dilation by 6)\nPASS norm identity N_{18/9}(t) = t^513 = t^3 (1 + t)^4\nPASS rule 90 is confined to the cubes: every t_j (j != 0) is a cube in F(2^18)*, t_1 is not a 9th power\nPASS hence rule 150 is confined to the ninth powers: 1 + t_j is a 9th power (and not a 27th)\nPASS the order of t_1 is 87381 = (2^18 - 1)/3: the rule-90 values generate every cube of F(2^18)*\nPASS elements of F(2^9)* are 27th powers (513 = 27 * 19 is prime to 511)\nPASS 5 = 2^23 mod 37 and Psi_5(t_j)^2 = t_j^(2^23 - 1) for all j != 0\nPASS exponent bookkeeping (r = 2) for 699738, 1431278: E = 2 A_5 - 2 = 2^24 - 4, v_3(E) = 1, so q' E has 3-part 9\nPASS exponent bookkeeping (r = 2) for 985232, 1968276: E = 2 * 4 - 2 = 6: v_3 = 1\nPASS the r = 1 witness of 1431278 (N = O^2 P_3^2): E = A_5 - 4 - 2 A_3 = -15 * 2^23 - 3, v_3 = 1\n== 2. The four radius-5 targets factor exactly as units times the half-Frobenius cores W, V\nPASS 699738 = Psi_5(a) Psi_5(b) (a + b) W\nPASS 985232 = a^2 b^2 (a + b) W\nPASS 1431278 = Psi_5(a) Psi_5(b) V\nPASS 1968276 = a^2 b^2 V\nPASS W(x^2, y^2) t(x) t(y) t(xy) t(x/y) = Sh(7, 5)  (exact, every m)\nPASS V(x^2, y^2) t(x) t(y) = Sh(7, 7) + Sh(5, 5)  (exact, every m)\nPASS 6 (7, 5) = (5, -7), 6 (7, 7) = (5, 5) mod 37: both right sides invariant under (x, y) -> (x^6, y^6)\nPASS so W, V have eigenvalue = (F(2^9) element) / (rule-90 product) wherever the product is nonzero\n== 3. condition(f, 37) on the five targets, and the claims verified against the eigenvalues\nPASS 4850: no claim (4850 is not explained; 482758 = 4850 * (1+a)(1+b))  [1]\nPASS 699738: q = 2359305, divisible by 9, verified  [['half-Frobenius']]\nPASS 985232: q = 2359305, divisible by 9, verified  [['half-Frobenius']]\nPASS 1431278: q = 2359305, divisible by 9, verified  [['half-Frobenius']]\nPASS 1968276: q = 2359305, divisible by 9, verified  [['half-Frobenius']]\nPASS 482758: no claim (4850 is not explained; 482758 = 4850 * (1+a)(1+b))  [1]\nPASS 482758 = 4850 * Phi_3(x) Phi_3(y) / (xy) exactly\n== 4. The 4850 family at radius 6 and the precise negatives for 4850\nPASS 10491524 is 4850 rotated by 45 degrees ((x, y) -> (xy, x/y)): same eigenvalues up to permutation\nPASS 8438150 = 4850 * Phi_3(xy) Phi_3(x/y) / (x^2)\nPASS 43250486 = 4850 * (1 + a)^2 (1 + b)^2\nPASS 4850 in (a, b): F = s^3 + P^2 s^2 + P^3 + P^2 + P, s = a + b, P = a b\nPASS rotated 4850: F' = (ab)^3 + (a + b)^4 (1 + a)^2 (1 + b)^2 + (a + b)^2  (a cube plus a square)\nPASS 4850 * O_v^n is F(2^9)-valued on no class set for v in {(1,0),(1,1),(2,1)}, n mod 171 (one orbit; more in scratch/)\nPASS 4850's class pattern (log mod 27 in units of 9) is not the pattern of any product of units: see proposal.md section 6\n== 5. The radius-6 ninth-power census at 37 (scratch/census6.json) and the condition's reach\n   radius-6 new ninth-power rules: 83; claimed with 9 | q: 78; not: [8438150, 10491524, 20982139, 43250486, 178279803]\nPASS every claim on the 83 radius-6 ninth-power rules is verified against the eigenvalues\nPASS the unexplained radius-6 ninth-power rules are the 4850 family (4850 * units, its rotation) and three others\n== 6. Soundness samples: claims verified against eigenvalues (random family rules; atlas rules)\nPASS 300 random radius-6 rules at 37: 0 claims, 0 false\nPASS 150 atlas rules at m = 13: 8 claims, 0 false\nPASS 150 atlas rules at m = 25: 1 claims, 0 false\nPASS 150 atlas rules at m = 37: 9 claims, 0 false\nPASS 150 atlas rules at m = 61: 1 claims, 0 false\nPASS 150 atlas rules at m = 95: 3 claims, 0 false\n== 7. Predictions elsewhere (section 7 of proposal.md)\n   699738 at m = 95: q = 1 (verified)\n   699738 at m = 101: q = 1 (verified)\n   699738 at m = 111: q = 1 (verified)\n   699738 at m = 141: q = 1 (verified)\ndone in 50 s, 0 failures\n"
+ },
+ "sound": true
+}
