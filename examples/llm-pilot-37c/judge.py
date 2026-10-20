@@ -36,6 +36,7 @@ results.
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import os
 import random
@@ -69,14 +70,22 @@ ENV = {
     "ELAN_TOOLCHAIN": "v4.35.0-local",
 }
 
-sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "llm-pilot-37b"))
 import cubes37b  # noqa: E402
-import study  # noqa: E402  (the registered radius-6 census, and the fast census it uses)
+
+# this pilot's study.py (the registered radius-6 census, and the fast census it uses), by path,
+# since the sixth pilot's directory, on the path for cubes37b, has a study.py of its own
+_spec = importlib.util.spec_from_file_location("pilot37c_study", HERE / "study.py")
+study = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(study)
 
 census = cubes37b.census
 family = cubes37b.family
-fast = study.census
+# the fast census at 37 (rule-4850/census.py), by path too: "census" here is the fourth pilot's
+_spec = importlib.util.spec_from_file_location("rule4850_census",
+                                               HERE.parent / "rule-4850" / "census.py")  # fmt: skip
+fast = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(fast)
 
 
 def git(*args: str) -> str:
