@@ -356,8 +356,8 @@ proposal.md and proposal.py as they are.
 theorem's axioms. lean_file checks a single scratch .lean file and is much faster for trying a \
 lemma or a tactic; it may import LatticeProofs modules (LatticeProofs, LatticeProofs.Cubes37, \
 ...) and the Mathlib modules the library's build compiled (about 2,500 of them; `import Mathlib` \
-as a whole is not built here, and neither was it in round 1). mathlib's sources can be read and searched under mathlib/, and the library's under \
-proofs/LatticeProofs/. scratch/gen_pilot.py and scratch/pilot_certs.json are your generator and \
+as a whole is not built here, and neither was it in round 1). mathlib's sources can be read \
+and searched under mathlib/, and the library's under proofs/LatticeProofs/. scratch/gen_pilot.py and scratch/pilot_certs.json are your generator and \
 certificates from round 1; run_python runs scratch scripts.
 
 The round has a fixed API budget, so work economically: test pieces with lean_file before a full \
