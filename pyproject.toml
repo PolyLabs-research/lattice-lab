@@ -55,6 +55,9 @@ extend-exclude = [
     "examples/llm-pilot-25/tools/halffrob.py",
     "examples/llm-pilot-37b/tools/halffrob.py",
     "examples/llm-pilot-37b/tools/certificate.py",
+    "examples/llm-pilot-37c/tools/halffrob.py",
+    "examples/llm-pilot-37c/tools/certificate.py",
+    "examples/llm-pilot-37c/tools/unitpower.py",
 ]
 
 [tool.ruff.lint]
