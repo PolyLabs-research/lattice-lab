@@ -197,6 +197,9 @@ def lean_check(tree: Path, base: str, head: str) -> dict:
 
 
 def grids() -> dict[str, list[int]]:
+    if os.environ.get("JUDGE_QUICK"):  # for testing the judge itself: a few sizes of each kind
+        return {"atlas_train": [37, 61], "atlas_heldout": [163], "family_train": [37, 61],
+                "square5_heldout": [127]}  # fmt: skip
     pilot4 = (HERE.parent / "llm-pilot-37" / "ledger.jsonl").read_text().splitlines()
     data = HERE / "data"
     family_sizes = [s["m"] for s in json.loads((data / "family.json").read_text())["sizes"]]
@@ -353,7 +356,8 @@ def main() -> None:
     round_no = int(sys.argv[1])
     branch = sys.argv[2] if len(sys.argv) > 2 else BRANCH
     base = (HERE / "base.txt").read_text().strip()
-    head = fetch(branch)
+    # "local:<ref>" judges a ref of the local clone (for testing the judge); otherwise fetch
+    head = git("rev-parse", branch[6:]).strip() if branch.startswith("local:") else fetch(branch)
     if git("merge-base", base, head).strip() != base:
         raise SystemExit(f"{branch} does not grow from the base commit {base[:12]}")
     if WORK.exists():
