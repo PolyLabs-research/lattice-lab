@@ -5,6 +5,7 @@
     lattice-lab verify [--lab DIR] [--rerun N]                  check the ledger and rerun records
     lattice-lab selfcheck [--thresholds FILE] [--replicates N]  recover known laws, vs pass marks
     lattice-lab laws                                            the law library
+    lattice-lab consult ask|review NAME ...                     ask other models (consult.py)
 
 A lab directory holds `ledger.jsonl`, `records/` (LatticeLife's JSONL, one file per question
 asked) and `reports/`. Progress goes to stderr; a JSON summary to stdout. Exit status: 0 when
@@ -22,6 +23,7 @@ from pathlib import Path
 
 from kepler import LAWS
 
+from lattice_lab import consult
 from lattice_lab.experiment import LatticeExperimenter, question_config, rerun_record
 from lattice_lab.ledger import Ledger, LedgerError, check_order, record_lines
 from lattice_lab.loop import ask
@@ -58,6 +60,7 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--out", type=Path, default=None, help="write the Markdown result here")
 
     sub.add_parser("laws", help="List the law library.")
+    consult.add_parser(sub)
     return parser
 
 
@@ -201,10 +204,11 @@ def main(argv: list[str] | None = None) -> int:
         "verify": cmd_verify,
         "selfcheck": cmd_selfcheck,
         "laws": cmd_laws,
+        "consult": lambda a: consult.main(a, _stderr),
     }
     try:
         return commands[args.command](args)
-    except (QuestionError, LedgerError, OSError) as exc:
+    except (QuestionError, LedgerError, consult.ConsultError, OSError) as exc:
         _stderr(str(exc))
         return 2
 

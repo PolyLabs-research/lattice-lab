@@ -64,6 +64,16 @@ uv run lattice-lab selfcheck --out docs/selfcheck.md
 uv run lattice-lab laws
 ```
 
+To put a question to other models (Claude Fable and ChatGPT) and record their answers verbatim,
+see [docs/consultations.md](docs/consultations.md#running-a-consultation):
+
+```bash
+uv sync --group consult            # the two API clients
+uv run lattice-lab consult ask 2026-10-21-next-steps --preset direction --dry-run
+uv run lattice-lab consult ask 2026-10-21-next-steps --preset direction
+uv run lattice-lab consult review 2026-10-21-next-steps
+```
+
 `ask` prints a JSON summary and writes `lab/reports/<id>-<n>.md`. The verdict is one of:
 
 | Verdict | Meaning |

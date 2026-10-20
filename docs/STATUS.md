@@ -240,3 +240,7 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
   from source in about 50 minutes; see [proofs.md](proofs.md#building-it-here). A new session
   starts without `proofs/.lake`, so it pays that again.
 - **uv** prints a warning about `UV_NATIVE_TLS` on every call; it is harmless.
+- **Consultations.** `lattice-lab consult` needs `uv sync --group consult`, the variables
+  `CONSULT_ANTHROPIC_API_KEY`, `CONSULT_OPENAI_API_KEY` and `CONSULT_OPENAI_MODEL`, and network
+  access to `api.openai.com`, which this cloud environment's policy denied on 2026-10-20
+  ([consultations.md](consultations.md#running-a-consultation)).

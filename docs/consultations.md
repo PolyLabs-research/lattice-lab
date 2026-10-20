@@ -16,6 +16,55 @@ predictions (`examples/fable-units`).
 - **Graded against a rubric** written before the answers were read.
 - **Predictions are registered** before they are tested.
 
+## Running a consultation
+
+`lattice-lab consult` (`src/lattice_lab/consult.py`) puts one prompt to Claude Fable
+(`claude-fable-5-1`) and ChatGPT through their APIs, concurrently and independently, and keeps
+every exchange.
+
+```bash
+uv sync --group consult
+uv run lattice-lab consult ask NAME --question q.md --context docs/STATUS.md --context card.md
+uv run lattice-lab consult ask NAME --preset direction     # STATUS and this file: what next?
+uv run lattice-lab consult review NAME                     # round 2
+```
+
+- **The prompt** is a fixed preamble (what the project is, and that every claim will be checked,
+  so state it precisely and say whether it is proved, computed or conjectured), then each
+  `--context` file in full, then the question. Context is the foundation: the m = 37
+  consultations showed that a model given the structure already worked out builds on it, so a
+  consultation should carry the card, data or write-up its question rests on. Everything in it is
+  sent to both providers.
+- **Round 1** (`ask`): every consultant answers alone. **Round 2** (`review`, optional): every
+  consultant gets the round-1 prompt and all the complete answers, labelled A, B, ... in name
+  order without names, and is asked where they agree and conflict, which claims are wrong, and
+  for a revised recommendation. The same prompt goes to every consultant in each round.
+- **Records** go to `consultations/NAME/round-N/`: `prompt.md`, exactly as sent; for each
+  consultant `NAME.json` (model requested and model that served, effort, the parameters sent, the
+  prompt's sha256, start and finish times, usage, stop reason, request id, the summarised
+  reasoning, the answer) and `NAME.md` (the answer alone); and in round 2 `labels.json`, which
+  letter was whom. Files are written once and never overwritten. A failed call leaves no record,
+  so running the same command again asks only the consultants still missing, and refuses if the
+  prompt has changed. Commit the directory: git is the record's history.
+- **Settings.** Fable runs with adaptive thinking (summarised), effort `high` and up to 64,000
+  output tokens, and with Anthropic's server-side refusal fallback (`fallbacks: "default"`), so a
+  request a safety classifier declines is rerun on a fallback model; the record says when that
+  happened and which model answered. ChatGPT runs through the Responses API with reasoning effort
+  `high`, summaries on, and `store: false`. Change either with `--effort fable=xhigh` and
+  `--model chatgpt=ID`; `--with fable` asks one only; `--dry-run` prints the prompt and the
+  parameters and calls nothing.
+- **Keys and model.** `CONSULT_ANTHROPIC_API_KEY`, `CONSULT_OPENAI_API_KEY` and
+  `CONSULT_OPENAI_MODEL` (ChatGPT's model has no default). The names are not the usual ones so
+  that a cloud session's own Claude credentials are never used for these calls, and the API hosts
+  are fixed. In a cloud session, add them to the environment's variables; the network policy must
+  also allow `api.openai.com`.
+- **Cost.** The `direction` prompt is about 33,000 characters (roughly 9,000 tokens). At Fable's
+  prices ($10 and $50 per million input and output tokens) one answer costs at most about $3.20 at
+  the output cap, and typically about $1; ChatGPT's depends on the model.
+
+What comes back is a consultant's view, not a result. Its claims are checked, and its predictions
+registered, before anything is built on them.
+
 ## 1. The cubes at m = 37 (pilot 4's question), 2026-10-19 and 20
 
 **The prompt** gave the five square rules of pilot 4 as unions of D4 orbits, the observation that
