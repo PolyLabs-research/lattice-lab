@@ -81,8 +81,13 @@ def answers(q: str) -> list[dict]:
     return [json.loads(p.read_text()) for p in paths]
 
 
+def price(r: dict) -> float:
+    """A record's cost, every attempt at its own model's prices (consult.cost)."""
+    return consult.cost(r["requests"], r["consultant"]["model"]) or 0.0
+
+
 def spent() -> float:
-    return sum(r.get("cost_usd") or 0 for q in QUESTIONS for r in answers(q))
+    return sum(price(r) for q in QUESTIONS for r in answers(q))
 
 
 def run() -> None:
@@ -334,14 +339,20 @@ def grade() -> None:
             ok = succeeds(q, machine, rubric) if machine else False
             rows.append({
                 "question": q, "arm": name.split("-")[0], "consultant": name,
-                "status": r["status"], "cost": r.get("cost_usd"), "seconds": r["seconds"],
+                "status": r["status"], "served_by": r["served_by"], "fallback": r["fallback"],
+                "cost": round(price(r), 4), "seconds": r["seconds"],
                 "tool_calls": r.get("tool_calls", 0), "thinking": r["usage"].get("thinking_tokens"),
                 "output": r["usage"].get("output_tokens"), "machine": machine, "rubric": rubric,
                 "success": ok,
             })  # fmt: skip
     summary = {}
-    for arm in ARMS:
-        mine = [x for x in rows if x["arm"] == arm]
+    groups = {arm: [x for x in rows if x["arm"] == arm] for arm in ARMS}
+    for model in sorted({x["served_by"] for x in rows}):  # not registered: see rubric.md
+        for arm in ARMS:
+            groups[f"{arm} {model}"] = [x for x in groups[arm] if x["served_by"] == model]
+    for arm, mine in groups.items():
+        if not mine:
+            continue
         cost = sum(x["cost"] or 0 for x in mine)
         wins = sum(bool(x["success"]) for x in mine)
         summary[arm] = {
