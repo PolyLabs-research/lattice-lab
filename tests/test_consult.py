@@ -374,3 +374,7 @@ def test_cost_counts_every_attempt_at_its_own_prices():
     plain = [{"usage": {"iterations": [{"type": "message", "output_tokens": 10}] * 3}}]
     assert {m for m, _ in consult.attempts(plain, "claude-fable-5-1")} == {"claude-fable-5-1"}
     assert consult.cost([{"usage": {"output_tokens": 1}}], "some-other-model") is None
+    # a one-hour cache write is billed at twice the input price
+    hour = {"cache_creation_input_tokens": 1000,
+            "cache_creation": {"ephemeral_1h_input_tokens": 1000}}  # fmt: skip
+    assert consult.cost([{"usage": hour}], "claude-fable-5-1") == 1000 * 20 / 1e6

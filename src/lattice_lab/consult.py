@@ -231,7 +231,11 @@ def cost(requests: list[dict], model: str) -> float | None:
     for name, usage in attempts(requests, model):
         if name not in PRICES:
             return None
-        total += sum(usage.get(k, 0) * r for k, r in zip(TOKENS, PRICES[name], strict=True))
+        prices = PRICES[name]
+        total += sum(usage.get(k, 0) * r for k, r in zip(TOKENS, prices, strict=True))
+        # a one-hour cache write costs twice the input price, not the five-minute 1.25 times
+        hour = (usage.get("cache_creation") or {}).get("ephemeral_1h_input_tokens", 0)
+        total += hour * (2 * prices[0] - prices[2])
     return round(total / 1e6, 4)
 
 
