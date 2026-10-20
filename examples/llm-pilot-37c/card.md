@@ -100,6 +100,9 @@ exponents and class logs).
 - Each is confined at 37 and at no other odd m from 11 to 101 (its odd part is the full bound).
 - They are not multiples of one another, and no map in GL2(Z/37) sends one's support onto
   another's. 4850 is irreducible over GF(2), in a, b and as a Laurent polynomial in x, y.
+- **What the known conditions do say.** For the four radius-5 targets, mechanism 5
+  (`tools/halffrob.py`) proves the cubes: it returns q = 3(2^18 + 1), every eigenvalue a cube in
+  F(2^36)*, but not the ninth powers. For 4850 none of the three conditions makes any claim.
 - **Not chance.** Each free class is a ninth power about one time in nine, independently (rates
   in `data/ninth37.json`; the axis and diagonal classes more often), so chance expected 3 × 10⁻⁴
   such rules at radius 4 and 0.0066 among the new radius-5 rules. The radius-5 count was a
