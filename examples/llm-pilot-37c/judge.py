@@ -23,8 +23,10 @@ The question is open, so there is no pinned theorem. The agent submits a mechani
    Every claim q > 1 is checked with census.confined, the orchestrator's own eigenvalue
    computation. One false claim refutes the mechanism as stated.
 4. **Reach**: how many claims hold, how many of them the atlas procedure does not account for,
-   and how many unexplained confinements they cover: the radius-6 census's (held out), the cube
-   census remainder at the training sizes, and the atlas census remainder.
+   and how many unexplained confinements they cover: the radius-6 census's 37 (held out), and
+   among them the 21 that none of the seven known mechanisms explains (baseline.json: the earlier
+   pilots' conditions prove ninth powers for the other 16), the cube census remainder at the
+   training sizes, and the atlas census remainder.
 5. **Lean**, if Pilot.lean changed: it builds against the real library, and every theorem's
    axioms are listed.
 
@@ -313,10 +315,12 @@ def mechanism_check(tree: Path) -> dict:
 
     targets = [(37, f"square r{rad} {n}") for rad, n in nine["targets"]]
     explained = [t for t in targets if covered(*t)]
+    beyond = json.loads((HERE / "baseline.json").read_text())["beyond_all_known"]
     coverage = {
         "radius6_unexplained": [
             n for rad, n in nine["unexplained"] if covered(37, f"square r{rad} {n}")
         ],  # fmt: skip
+        "radius6_beyond_all_known": [n for n in beyond if covered(37, f"square r6 {n}")],
         "cube_hits_train": [
             (m, b)
             for m in g["family_train"]
@@ -330,6 +334,7 @@ def mechanism_check(tree: Path) -> dict:
         ],  # fmt: skip
     }
     totals = {"radius6_unexplained": len(nine["unexplained"]),
+              "radius6_beyond_all_known": len(beyond),
               "cube_hits_train": sum(len(hits.get(m, [])) for m in g["family_train"]),
               "remainder": len(cubes37b.cubes25.remainder_rows())}  # fmt: skip
 

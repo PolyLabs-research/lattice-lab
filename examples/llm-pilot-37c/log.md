@@ -53,3 +53,18 @@ powers, 2 splits into rule-150 lines), one is an image of 4850 under a map in GL
 (20 of them confined to the 27th powers), against **0.70 expected** by chance (bar
 expected + 3 sd + 1 = 4.2). Mechanism: supported, as registered. These 37 are the held-out set
 for the agent's condition; the agent has not seen them.
+
+**The baseline for the agent's reach** (`baseline.json`, computed before any submission): the
+census counted as explained only what the atlas procedure (mechanisms 1 to 4) explains, as
+registered. Of its 37, the earlier pilots' conditions prove ninth powers for 16 (12 by the
+half-Frobenius condition, 4 more by the certificate condition); **21 are explained by none of the
+seven known mechanisms**, still far beyond chance (0.70 expected, bar 4.2). For the five targets
+none of those conditions proves ninth powers, as the card says. The judge reports the agent's
+coverage of both the 37 and the 21.
+
+**The judge, tested on a toy submission** (the sixth pilot's condition, true ninth-power claims
+for the five targets, and a planted false claim), in a quick mode with a few sizes of each kind:
+the first run found two module-name clashes in the judge (fixed: this pilot's study.py and the
+fast census are loaded by path); the second ran every set (2,000 to 2,083 rules each, 32 to 86
+seconds) but its planted claim, 4850 at 61, lay outside the sets the judge evaluates, so it was
+moved to 4850 at 37 (q = 27, false) for a third run.
