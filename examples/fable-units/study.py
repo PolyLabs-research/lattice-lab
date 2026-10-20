@@ -70,8 +70,8 @@ def predictions() -> list[dict]:
     for p in units.eligible(LO, HI):
         a, b = units.fundamental_unit(p)
         h = units.class_number(p)
-        out.append({"test": "unit", "p": p, "eps_parity": [a % 2, b % 2],
-                    "eps_digits": len(str(a)), "h": h, "predicted": units.predicted(p)})  # fmt: skip
+        body = {"test": "unit", "p": p, "eps_parity": [a % 2, b % 2], "eps_digits": len(str(a))}
+        out.append(body | {"h": h, "predicted": units.predicted(p)})
     for p, i in units.pyramid_primes(LO, PYRAMID_HI):
         if units.predicted(p):
             rings = list(units.pyramid_rings(i))

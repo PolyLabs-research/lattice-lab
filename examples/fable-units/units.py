@@ -202,13 +202,12 @@ def _norm_is_one(v: np.ndarray, p: int) -> bool:
     """Is v (an element of GF(2)[x]/Phi_p, as a 0/1 array mod x^p - 1) a cube? Its norm to F(4)
     is the product of v^(4^i), i < (p - 1)/2, by repeated doubling of the Frobenius power."""
     k = (p - 1) // 2  # norm = prod_{i<k} v^(4^i) = v^((4^k - 1)/3)
-    # binary method on the "exponent" sum of 4^i: N_k = N_j * Frob^{2j}(N_{k-j})
-    result = None
-    acc, acc_len = v.copy(), 1  # acc = prod_{i < acc_len} v^(4^i)
-    done = 0
+    # binary method: with N_j = prod_{i<j} v^(4^i), N_2j = N_j Frob^2j(N_j) and
+    # N_(j+1) = N_j Frob^2j(v)
+    result, done = None, 0
     for bit in bin(k)[2:]:
         if result is None:
-            result, done = acc.copy(), 1
+            result, done = v.copy(), 1
             continue
         result = _cyclic_mul(result, _frobenius(result, 2 * done, p), p)
         done *= 2
