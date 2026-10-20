@@ -228,3 +228,87 @@ prediction has been run yet):
 
 The lesson for the tool: the `direction` preset sends STATUS, which summarises, so a consultant
 flags what the full write-ups settle. A consultation about one result should carry its write-up.
+
+## 3. What effort is worth: a benchmark (`examples/consult-budget`), 2026-10-20
+
+**The question** was the cost of a *verified* answer, not of an answer: a cheap answer that is
+wrong, or needs more rounds, is not cheap. The design (`rubric.md`), the questions and the
+machine grader were pushed before any call (`f50fbd9`, 10:35:52 UTC). Two questions the project
+has answered: **Q1**, pilot 4's five rules at m = 37, word for word as put to ChatGPT and in
+the chat app (the mechanism is a dilation by 6 acting as half a Frobenius); **Q2**, pilot 6's
+sixteen rules from its card (nine are a unit times a cube). Three settings, each twice per
+question: **S0** effort high, 64,000-token budget, no code; **S1** the same with code
+execution; **S2** effort xhigh, 128,000-token budget, code. Every congruence and factorisation an
+answer listed was evaluated in F2[x, y]/(x^37 - 1, y^37 - 1) by the grader; the rubrics were
+graded blind (labels unmasked after `grades.json` was pushed, `31523d2`).
+
+**What went wrong first: half the answers were not Fable's.** Fable's **cyber** safety
+classifier declined 6 of the 12 calls, a false positive on GF(2) arithmetic: 5 of Q1's 6, 1 of
+Q2's. The server-side fallback reran each on **Claude Opus 4.8**, and the records say so
+(`fallback`, `served_by`, and the switch block's category). The cost estimate first priced only
+the serving attempt; it now prices every attempt at its own model's rates (`consult.attempts`,
+`consult.cost`), from the usage the records keep. The twelve calls cost **$27.78**.
+
+| | answers | verified successes | mean cost | cost per success |
+| --- | --- | --- | --- | --- |
+| S0: high, 64K, no code | 4 (1 Fable, 3 Opus 4.8) | 0 | $0.78 | none |
+| S1: high, 64K, code | 4 (3 Fable, 1 Opus 4.8) | 1 | $2.44 | $9.77 |
+| S2: xhigh, 128K, code | 4 (2 Fable, 2 Opus 4.8) | 2 | $3.72 | $7.45 |
+| S1, then S2 when the check fails (estimated) | | 62% | $5.23 | $8.37 |
+| Fable's answers only: S1 | 3 | 1 | $2.61 | $7.84 |
+| Fable's answers only: S2 | 2 | 2 | $4.81 | $4.81 |
+
+**The registered decision rule** (lowest cost per success; within a factor of 1.5, the cheaper
+per answer) picks **S1** on all twelve answers, since S1 is within 1.31 of S2. On Fable's
+answers alone, which is the comparison the design meant but a selection it did not register, S2
+is cheaper per success by a factor of 1.63 and is picked. With one or two successes per arm,
+neither is more than a first reading.
+
+**Per question:**
+
+- **Q1: no answer succeeded, at any setting, from either model.** None found the mechanism.
+  Without code, both answers (Opus 4.8) restated the observation as "f is a cube in the group
+  ring" and stopped. With code, all four went for certificates: three gave a complete,
+  machine-confirmed proof of the observation for all five (the norm to F(4) is idempotent,
+  ChatGPT's unaided route), and the one Fable answer also derived rule 90's unit criterion by
+  Dirichlet's formula. Three of the six asserted that no structural reason exists, or that the
+  confinement is a coincidence ("I believe there is none"), which is false and is the costly kind
+  of error: it would stop the search. Fable in the chat app had found the mechanism from the
+  same question; whether that answer itself came from Fable is not known, since consumer apps
+  also fall back to Opus 4.8.
+- **Q2: the dearer setting paid.** S2: 2 of 2 (both Fable, all nine found, both reasons right).
+  S1: 1 of 2 (the other found the structure only as cube roots in the group ring, with hundreds
+  of terms). S0:
+  Fable without code found **eight of the nine by hand**, every one machine-confirmed, and missed
+  28944; Opus 4.8 without code listed no factorisation and conjectured wrongly.
+- **No false claim** reached the grader in any answer: told that a failed claim counts against
+  them, all twelve listed only identities that hold. The errors were in the prose, where only the
+  rubric caught them.
+
+**What the answers found that the project did not know** (both checked here by machine):
+
+- **Rule 4850 has every nonzero eigenvalue a ninth power at m = 37** (an S2 answer); it is the
+  only one of the sixteen. Pilot 6 counted it among the seven that chance explains; a ninth-power
+  confinement is far beyond chance, so at least this one has a mechanism nobody has found.
+- **17056 is 1112 under the exponent map (a, b) -> (a + b, a - b)**, determinant -2, so the two
+  have the same eigenvalues at every odd m (an S1 answer). The sixteen are fifteen independent
+  cases.
+- One answer re-derived pilot 6's correction of the chance model independently (per-class cube
+  rates of 0.937 on the axis and diagonal at 37, about 5.7 expected), and two more found the
+  "once in 20,000" figure wrong for the family.
+
+**One weakness of the grader**: a cube root in the group ring counts as a "find", but every
+confined rule has one (dense, hundreds of terms), so the rule admits an answer that has not found
+the mechanism. It changed no success here (the answer with three such roots failed on the
+others), and should require a cube root with few terms next time.
+
+**What this says about the budget.** Code is the large effect: no answer without it succeeded,
+and on Q2 three of the four Fable answers with code did. Beyond that, more effort bought
+successes on the question where they were possible (Q2), at a lower cost per success, and did
+not help on Q1, where every setting chose a certificate over a mechanism. The false economy is
+real but is not mainly in dollars: a cheap answer that confidently says "there is no mechanism"
+costs more than its price. So the measure that matters is the check, not the setting: machine
+checks caught nothing because the models stayed within what they had verified, and the rubric
+caught the confident prose. The classifier is the other cost: on these questions a Fable
+consultation is an Opus 4.8 consultation about half the time, and the record must be read for
+`served_by` before any comparison.

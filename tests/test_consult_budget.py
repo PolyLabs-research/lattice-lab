@@ -5,6 +5,8 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "examples" / "consult-budget"))
 
@@ -70,3 +72,24 @@ def test_untrusted_text_is_not_run(tmp_path):
     assert out["unreadable"] == len(evil) and out["true"] == out["false"] == 0
     assert not marker.exists()
     assert bench.check("no JSON here")["json"] is False
+
+
+def _rule(n):
+    a = np.zeros((37, 37), dtype=np.uint8)
+    for p, q in bench.points(bench.family_orbits(n)):
+        a[p % 37, q % 37] ^= 1
+    return a
+
+
+def test_two_findings_of_the_benchmark():
+    """Rule 4850 (one of the seven the sixth pilot left to chance) has every nonzero eigenvalue a
+    ninth power at 37, and 17056 is 1112 under the exponent map (a, b) -> (a + b, a - b)."""
+
+    def qth_powers(n, q):  # f^((2^18 - 1)/q) idempotent: every nonzero value a q-th power
+        e = bench.power(_rule(n), (2**18 - 1) // q)
+        return bool((bench.mul(e, e) == e).all())
+
+    assert qth_powers(4850, 3) and qth_powers(4850, 9) and not qth_powers(4850, 27)
+    assert not qth_powers(1112, 9) and qth_powers(1112, 3)
+    image = {(a + b, a - b) for a, b in bench.points(bench.family_orbits(1112))}
+    assert image == bench.points(bench.family_orbits(17056))

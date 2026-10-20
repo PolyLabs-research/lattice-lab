@@ -122,7 +122,11 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
    per-class rates, the seven of pilot 6's targets it did not explain are what chance expects
    (5.7). A corrected model should be registered and tested on a fresh family before anything is
    called chance again. Still open with it: the family at m = 29 (13 unexplained against 7.85 with
-   per-class rates) and at 25 (nine, and the three atlas rules).
+   per-class rates) and at 25 (nine, and the three atlas rules). **Two corrections from the
+   consultation benchmark** (consultations.md, section 3), both checked by machine: rule 4850, one
+   of pilot 6's seven, has every nonzero eigenvalue a *ninth* power at 37, which no chance model
+   explains, so it has a mechanism nobody has found; and 17056 is 1112 under the exponent map
+   (a, b) -> (a + b, a - b), so pilot 6's sixteen were fifteen independent cases.
 2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
    half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
@@ -240,6 +244,10 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
   from source in about 50 minutes; see [proofs.md](proofs.md#building-it-here). A new session
   starts without `proofs/.lake`, so it pays that again.
 - **uv** prints a warning about `UV_NATIVE_TLS` on every call; it is harmless.
+- **Consultations: read `served_by`.** Fable's cyber classifier declines GF(2) arithmetic as a
+  false positive (6 of 12 benchmark calls, 5 of 6 on pilot 4's question), and the server-side
+  fallback answers with Claude Opus 4.8. The record says so; any comparison of models must
+  check it first.
 - **Consultations.** `lattice-lab consult` needs `uv sync --group consult`, the variables
   `CONSULT_ANTHROPIC_API_KEY`, `CONSULT_OPENAI_API_KEY` and `CONSULT_OPENAI_MODEL`, and network
   access to `api.openai.com`, which this cloud environment's policy denied on 2026-10-20

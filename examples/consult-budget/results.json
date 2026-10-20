@@ -1,0 +1,1914 @@
+{
+ "answers": [
+  {
+   "question": "q1",
+   "arm": "s0",
+   "consultant": "s0-r1",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 0.5263,
+   "seconds": 256.8,
+   "tool_calls": 0,
+   "thinking": 16333,
+   "output": 20007,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "f1(x,y)",
+       "rhs": "f1(x^-1,y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f2(x,y)",
+       "rhs": "f2(x^-1,y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f3(x,y)",
+       "rhs": "f3(x^-1,y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f4(x,y)",
+       "rhs": "f4(x^-1,y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f5(x,y)",
+       "rhs": "f5(x^-1,y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)",
+       "rhs": "x + x^-1"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 6,
+    "false": 0,
+    "unreadable": 0,
+    "definitions_error": "characters outside the expression syntax: 'ROOT: symmetric g with g*g(x^2) = t(x) mod (x^37-1); to be produced by solver'"
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0,
+    "R6": 0,
+    "notes": "No code. Restates the observation as 'f is a cube in the group ring' (f = g g(x^2, y^2)); no explicit g, no mechanism. Says it could not run code."
+   },
+   "success": false
+  },
+  {
+   "question": "q1",
+   "arm": "s0",
+   "consultant": "s0-r2",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 0.5557,
+   "seconds": 276.9,
+   "tool_calls": 0,
+   "thinking": 17658,
+   "output": 21184,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "t(x)*t(x)",
+       "rhs": "t(x^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f1(x,y)*f1(x,y)",
+       "rhs": "f1(x^2,y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f2(x,y)*f2(x,y)",
+       "rhs": "f2(x^2,y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f3(x,y)*f3(x,y)",
+       "rhs": "f3(x^2,y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f4(x,y)*f4(x,y)",
+       "rhs": "f4(x^2,y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f5(x,y)*f5(x,y)",
+       "rhs": "f5(x^2,y^2)"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 6,
+    "false": 0,
+    "unreadable": 0,
+    "definitions_error": "bad name 'f1'"
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0,
+    "R6": 0,
+    "notes": "No code. Restates as 'f is a cube in R_m'; no g, no mechanism. Says it could not run code."
+   },
+   "success": false
+  },
+  {
+   "question": "q1",
+   "arm": "s1",
+   "consultant": "s1-r1",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 2.5375,
+   "seconds": 747.1,
+   "tool_calls": 10,
+   "thinking": 24873,
+   "output": 37565,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "t(x)",
+       "rhs": "x^36*(1+x)^2"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "1+t(x)",
+       "rhs": "x^36*(1+x+x^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,0)",
+       "rhs": "t(x^2)+t(y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,0)",
+       "rhs": "x^35*y^35*(x+y)^2*(1+x*y)^2"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,2)",
+       "rhs": "t(x^2)*t(y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,1)",
+       "rhs": "t(x^2)*t(y)+t(x)*t(y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(0,0)+O(2,0)+O(2,2)",
+       "rhs": "g1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f1(x,y)",
+       "rhs": "g1+O(2,1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f1(x,y)*f1(x,y)*f1(x^3,y^3)*f1(x^4,y^4)*f1(x^7,y^7)*f1(x^9,y^9)*f1(x^10,y^10)*f1(x^11,y^11)*f1(x^12,y^12)*f1(x^16,y^16)*f1(x^21,y^21)*f1(x^25,y^25)*f1(x^26,y^26)*f1(x^27,y^27)*f1(x^28,y^28)*f1(x^30,y^30)*f1(x^33,y^33)*f1(x^34,y^34)*f1(x^36,y^36)",
+       "rhs": "f1(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f2(x,y)*f2(x,y)*f2(x^3,y^3)*f2(x^4,y^4)*f2(x^7,y^7)*f2(x^9,y^9)*f2(x^10,y^10)*f2(x^11,y^11)*f2(x^12,y^12)*f2(x^16,y^16)*f2(x^21,y^21)*f2(x^25,y^25)*f2(x^26,y^26)*f2(x^27,y^27)*f2(x^28,y^28)*f2(x^30,y^30)*f2(x^33,y^33)*f2(x^34,y^34)*f2(x^36,y^36)",
+       "rhs": "f2(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f3(x,y)*f3(x,y)*f3(x^3,y^3)*f3(x^4,y^4)*f3(x^7,y^7)*f3(x^9,y^9)*f3(x^10,y^10)*f3(x^11,y^11)*f3(x^12,y^12)*f3(x^16,y^16)*f3(x^21,y^21)*f3(x^25,y^25)*f3(x^26,y^26)*f3(x^27,y^27)*f3(x^28,y^28)*f3(x^30,y^30)*f3(x^33,y^33)*f3(x^34,y^34)*f3(x^36,y^36)",
+       "rhs": "f3(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f4(x,y)*f4(x,y)*f4(x^3,y^3)*f4(x^4,y^4)*f4(x^7,y^7)*f4(x^9,y^9)*f4(x^10,y^10)*f4(x^11,y^11)*f4(x^12,y^12)*f4(x^16,y^16)*f4(x^21,y^21)*f4(x^25,y^25)*f4(x^26,y^26)*f4(x^27,y^27)*f4(x^28,y^28)*f4(x^30,y^30)*f4(x^33,y^33)*f4(x^34,y^34)*f4(x^36,y^36)",
+       "rhs": "f4(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f5(x,y)*f5(x,y)*f5(x^3,y^3)*f5(x^4,y^4)*f5(x^7,y^7)*f5(x^9,y^9)*f5(x^10,y^10)*f5(x^11,y^11)*f5(x^12,y^12)*f5(x^16,y^16)*f5(x^21,y^21)*f5(x^25,y^25)*f5(x^26,y^26)*f5(x^27,y^27)*f5(x^28,y^28)*f5(x^30,y^30)*f5(x^33,y^33)*f5(x^34,y^34)*f5(x^36,y^36)",
+       "rhs": "f5(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)*t(x)*t(x^3)*t(x^4)*t(x^7)*t(x^9)*t(x^10)*t(x^11)*t(x^12)*t(x^16)*t(x^21)*t(x^25)*t(x^26)*t(x^27)*t(x^28)*t(x^30)*t(x^33)*t(x^34)*t(x^36)",
+       "rhs": "t(x)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "(1+x)*(1+x)*(1+x^3)*(1+x^4)*(1+x^7)*(1+x^9)*(1+x^10)*(1+x^11)*(1+x^12)*(1+x^16)*(1+x^21)*(1+x^25)*(1+x^26)*(1+x^27)*(1+x^28)*(1+x^30)*(1+x^33)*(1+x^34)*(1+x^36)",
+       "rhs": "1+x"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 15,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 1,
+    "R5": 0,
+    "R6": 1,
+    "notes": "Code. Norm certificate for all five (machine-confirmed); rule 90's confinement explained by Dirichlet's formula, the unit criterion, checked at the eligible primes below 400. Sees (1+x)^2(1+y)^2 dividing f2 but calls the cofactor generic (it is f1). Asserts 'I found no structural cause, and I believe there is none beyond Theorem A': wrong. Correctly says the chance model is wrong for the family (counts all 1,023 unions at several m)."
+   },
+   "success": false
+  },
+  {
+   "question": "q1",
+   "arm": "s1",
+   "consultant": "s1-r2",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 1.9293,
+   "seconds": 1149.1,
+   "tool_calls": 13,
+   "thinking": 34008,
+   "output": 44606,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "gt*gt*gt",
+       "rhs": "t(x)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)",
+       "rhs": "x^1 + x^36"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 2,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0,
+    "R6": 0,
+    "notes": "Code. Cube roots in the group ring, computed (dense, ~600-725 terms) but not given, except t's. Searched for small cube roots and order-3 dilation symmetry, found none, and concludes the confinement 'does not come from a simple symmetric sub-rule' and that a tidy structural reason is 'likely to be wrong': misleading, since the half-Frobenius mechanism exists."
+   },
+   "success": false
+  },
+  {
+   "question": "q1",
+   "arm": "s2",
+   "consultant": "s2-r1",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 1.8655,
+   "seconds": 891.6,
+   "tool_calls": 14,
+   "thinking": 36238,
+   "output": 50790,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "P1",
+       "rhs": "1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P5",
+       "rhs": "1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P1*P1",
+       "rhs": "P1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P2*P2",
+       "rhs": "P2"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P3*P3",
+       "rhs": "P3"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P4*P4",
+       "rhs": "P4"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "P5*P5",
+       "rhs": "P5"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "Q*Q",
+       "rhs": "Q"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 8,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0,
+    "R6": 1,
+    "notes": "Code. Norm-to-F4 certificate P_f^2 = P_f for all five (machine-confirmed), so a complete proof of the observation, not of a mechanism; says the structural reason is still open. Correctly flags the '1 in 20,000' chance figure as model-dependent (its ensemble gave 1 in 136)."
+   },
+   "success": false
+  },
+  {
+   "question": "q1",
+   "arm": "s2",
+   "consultant": "s2-r2",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 3.407,
+   "seconds": 1344.9,
+   "tool_calls": 22,
+   "thinking": 72447,
+   "output": 90259,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "f1(x,y) * f1(x^4,y^4) * f1(x^16,y^16) * f1(x^27,y^27) * f1(x^34,y^34) * f1(x^25,y^25) * f1(x^26,y^26) * f1(x^30,y^30) * f1(x^9,y^9)",
+       "rhs": "1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f5(x,y) * f5(x^4,y^4) * f5(x^16,y^16) * f5(x^27,y^27) * f5(x^34,y^34) * f5(x^25,y^25) * f5(x^26,y^26) * f5(x^30,y^30) * f5(x^9,y^9)",
+       "rhs": "1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f1(x,y) * f1(x,y) * f1(x^4,y^4) * f1(x^16,y^16) * f1(x^27,y^27) * f1(x^34,y^34) * f1(x^25,y^25) * f1(x^26,y^26) * f1(x^30,y^30) * f1(x^9,y^9)",
+       "rhs": "f1(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f2(x,y) * f2(x,y) * f2(x^4,y^4) * f2(x^16,y^16) * f2(x^27,y^27) * f2(x^34,y^34) * f2(x^25,y^25) * f2(x^26,y^26) * f2(x^30,y^30) * f2(x^9,y^9)",
+       "rhs": "f2(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f3(x,y) * f3(x,y) * f3(x^4,y^4) * f3(x^16,y^16) * f3(x^27,y^27) * f3(x^34,y^34) * f3(x^25,y^25) * f3(x^26,y^26) * f3(x^30,y^30) * f3(x^9,y^9)",
+       "rhs": "f3(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f4(x,y) * f4(x,y) * f4(x^4,y^4) * f4(x^16,y^16) * f4(x^27,y^27) * f4(x^34,y^34) * f4(x^25,y^25) * f4(x^26,y^26) * f4(x^30,y^30) * f4(x^9,y^9)",
+       "rhs": "f4(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "f5(x,y) * f5(x,y) * f5(x^4,y^4) * f5(x^16,y^16) * f5(x^27,y^27) * f5(x^34,y^34) * f5(x^25,y^25) * f5(x^26,y^26) * f5(x^30,y^30) * f5(x^9,y^9)",
+       "rhs": "f5(x,y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "gt * gt2",
+       "rhs": "t(x)"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 8,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "R1": 0,
+    "R2": 0,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0,
+    "R6": 1,
+    "notes": "Code. The same norm certificate for all five, machine-confirmed, and a clean univariate cube root of t. Calls the confinement 'a verified coincidence, not a structural consequence' while saying it found no reason: wrong, but stated as a gap."
+   },
+   "success": false
+  },
+  {
+   "question": "q2",
+   "arm": "s0",
+   "consultant": "s0-r1",
+   "status": "complete",
+   "served_by": "claude-opus-4-8",
+   "fallback": true,
+   "cost": 1.037,
+   "seconds": 332.2,
+   "tool_calls": 0,
+   "thinking": 6691,
+   "output": 11045,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "O(0,0)",
+       "rhs": "1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,0)",
+       "rhs": "t(x) + t(y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,0)",
+       "rhs": "t(x^2) + t(y^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(3,0)",
+       "rhs": "t(x^3) + t(y^3)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(4,0)",
+       "rhs": "t(x^4) + t(y^4)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,1)",
+       "rhs": "t(x*y) + t(x*y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,2)",
+       "rhs": "t(x^2*y^2) + t(x^2*y^-2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(3,3)",
+       "rhs": "t(x^3*y^3) + t(x^3*y^-3)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(4,4)",
+       "rhs": "t(x^4*y^4) + t(x^4*y^-4)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(2,1)",
+       "rhs": "t(x^2*y) + t(x^2*y^-1) + t(x*y^2) + t(x*y^-2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(3,1)",
+       "rhs": "t(x^3*y) + t(x^3*y^-1) + t(x*y^3) + t(x*y^-3)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(3,2)",
+       "rhs": "t(x^3*y^2) + t(x^3*y^-2) + t(x^2*y^3) + t(x^2*y^-3)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(4,1)",
+       "rhs": "t(x^4*y) + t(x^4*y^-1) + t(x*y^4) + t(x*y^-4)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(4,2)",
+       "rhs": "t(x^4*y^2) + t(x^4*y^-2) + t(x^2*y^4) + t(x^2*y^-4)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(4,3)",
+       "rhs": "t(x^4*y^3) + t(x^4*y^-3) + t(x^3*y^4) + t(x^3*y^-4)"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [],
+    "found": [],
+    "true": 15,
+    "false": 0,
+    "unreadable": 0,
+    "definitions_error": "bad name 't'"
+   },
+   "rubric": {
+    "Q1": 0,
+    "Q2": 0,
+    "Q3": 0,
+    "notes": "No code, no factorisations. Conjectures all 16 factor into rule-90 atoms on the torus (false for seven) and the three at 61 by a subfield after dilation (wrong). Says it could not run code."
+   },
+   "success": false
+  },
+  {
+   "question": "q2",
+   "arm": "s0",
+   "consultant": "s0-r2",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 0.9891,
+   "seconds": 217.4,
+   "tool_calls": 0,
+   "thinking": 16013,
+   "output": 18996,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "O(1,1)",
+       "rhs": "t(x)*t(y)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,0)",
+       "rhs": "(x*y+1)*(x+y)*x^-1*y^-1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "1+t(x)",
+       "rhs": "x^-1*(1+x+x^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)^3",
+       "rhs": "t(x^3)+t(x)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,1)^3",
+       "rhs": "O(3,3)+O(3,1)+O(1,1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "R(3461)",
+       "rhs": "R(2436)+O(0,0)+O(4,0)"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [
+     {
+      "claim": {
+       "rule": 17056,
+       "factors": [
+        [
+         "p",
+         1
+        ],
+        [
+         "1+p",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 17056,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 2436,
+       "factors": [
+        [
+         "p",
+         1
+        ],
+        [
+         "1+w",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 2436,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 1112,
+       "factors": [
+        [
+         "w",
+         1
+        ],
+        [
+         "1+w",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 1112,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 10498,
+       "factors": [
+        [
+         "w",
+         1
+        ],
+        [
+         "1+p",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 10498,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 13584,
+       "factors": [
+        [
+         "w",
+         1
+        ],
+        [
+         "w+p",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 13584,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 3461,
+       "factors": [
+        [
+         "r",
+         1
+        ],
+        [
+         "s",
+         1
+        ],
+        [
+         "1+w",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 3461,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 26883,
+       "factors": [
+        [
+         "r",
+         1
+        ],
+        [
+         "s",
+         1
+        ],
+        [
+         "1+p",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 26883,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 18246,
+       "factors": [
+        [
+         "r",
+         1
+        ],
+        [
+         "s",
+         1
+        ],
+        [
+         "w+p",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 18246,
+      "cube_factor": "True"
+     }
+    ],
+    "found": [
+     1112,
+     2436,
+     3461,
+     10498,
+     13584,
+     17056,
+     18246,
+     26883
+    ],
+    "true": 14,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "Q1": 1,
+    "Q2": 1,
+    "Q3": 0,
+    "notes": "No code: eight of the nine by hand in u = t(x), v = t(y) (missed 28944), all machine-confirmed; the right reasons at 37 (rule 90) and 61 (rule 150, 3 = 2^k with k even). Conjectures the other eight are also g h^3 (false for seven)."
+   },
+   "success": false
+  },
+  {
+   "question": "q2",
+   "arm": "s1",
+   "consultant": "s1-r1",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 2.4739,
+   "seconds": 1210.0,
+   "tool_calls": 19,
+   "thinking": 21678,
+   "output": 36262,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "(x+1)*P3x",
+       "rhs": "x^3+1"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)",
+       "rhs": "x^-1*(x+1)^2"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)+1",
+       "rhs": "x^-1*P3x"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "(x^1+1)*(x^3+1)*(x^4+1)*(x^7+1)*(x^9+1)*(x^10+1)*(x^11+1)*(x^12+1)*(x^16+1)*(x^21+1)*(x^25+1)*(x^26+1)*(x^27+1)*(x^28+1)*(x^30+1)*(x^33+1)*(x^34+1)*(x^36+1)",
+       "rhs": "x^1+x^2+x^3+x^4+x^5+x^6+x^7+x^8+x^9+x^10+x^11+x^12+x^13+x^14+x^15+x^16+x^17+x^18+x^19+x^20+x^21+x^22+x^23+x^24+x^25+x^26+x^27+x^28+x^29+x^30+x^31+x^32+x^33+x^34+x^35+x^36"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "R(3461)",
+       "rhs": "M*g1^3*P3x*P3y"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "R(1112)",
+       "rhs": "M*g1^3*(x*y+1)*(x+y)"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [
+     {
+      "claim": {
+       "rule": 1112,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g1",
+         3
+        ],
+        [
+         "x*y+1",
+         1
+        ],
+        [
+         "x+y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 1112,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 2436,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g1",
+         3
+        ],
+        [
+         "x+1",
+         2
+        ],
+        [
+         "y+1",
+         2
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 2436,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 3461,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g1",
+         3
+        ],
+        [
+         "P3x",
+         1
+        ],
+        [
+         "P3y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 3461,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 10498,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g2",
+         3
+        ],
+        [
+         "x*y+1",
+         1
+        ],
+        [
+         "x+y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 10498,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 13584,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g3",
+         3
+        ],
+        [
+         "x*y+1",
+         1
+        ],
+        [
+         "x+y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 13584,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 17056,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g2",
+         3
+        ],
+        [
+         "x+1",
+         2
+        ],
+        [
+         "y+1",
+         2
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 17056,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 18246,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g3",
+         3
+        ],
+        [
+         "P3x",
+         1
+        ],
+        [
+         "P3y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 18246,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 26883,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g2",
+         3
+        ],
+        [
+         "P3x",
+         1
+        ],
+        [
+         "P3y",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 26883,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 28944,
+       "factors": [
+        [
+         "M",
+         1
+        ],
+        [
+         "g3",
+         3
+        ],
+        [
+         "x+1",
+         2
+        ],
+        [
+         "y+1",
+         2
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 28944,
+      "cube_factor": "True"
+     }
+    ],
+    "found": [
+     1112,
+     2436,
+     3461,
+     10498,
+     13584,
+     17056,
+     18246,
+     26883,
+     28944
+    ],
+    "true": 15,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "Q1": 1,
+    "Q2": 1,
+    "Q3": 1,
+    "notes": "Code. All nine, with non-symmetric cube roots g1, g2, g3 and binomial or Phi_3 cofactors; a norm certificate for x + 1 at 37; Phi_3 by telescoping for 61. Seven unexplained."
+   },
+   "success": true
+  },
+  {
+   "question": "q2",
+   "arm": "s1",
+   "consultant": "s1-r2",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 2.8328,
+   "seconds": 1109.0,
+   "tool_calls": 16,
+   "thinking": 19664,
+   "output": 32901,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "R(17056)",
+       "rhs": "x^-4*y^-4+x^-3*y^-3+x^-3*y^-1+x^-2*y^-2+x^-1*y^-3+x^-3*y^1+x^1*y^-3+x^-4*y^4+x^-3*y^3+x^-2*y^2+x^2*y^-2+x^3*y^-3+x^4*y^-4+x^-1*y^3+x^3*y^-1+x^1*y^3+x^2*y^2+x^3*y^1+x^3*y^3+x^4*y^4"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [
+     {
+      "claim": {
+       "rule": 1112,
+       "factors": [
+        [
+         "G1112",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 1112,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 10498,
+       "factors": [
+        [
+         "G10498",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 10498,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 2436,
+       "factors": [
+        [
+         "G2436",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 2436,
+      "cube_factor": "True"
+     }
+    ],
+    "found": [
+     1112,
+     2436,
+     10498
+    ],
+    "true": 4,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "Q1": 0,
+    "Q2": 0,
+    "Q3": 1,
+    "notes": "Code. No unit-times-cube factorisation; instead the minimum-weight cube roots in the group ring (dense; the machine counts three as found under the registered rule, which admits any cube root). Real finds: 17056 is 1112 under the exponent map (a, b) -> (a + b, a - b), and the per-class cube rates at 37 (0.937 on axis and diagonal) and the corrected expectation of about 5.7, as the sixth pilot found. The seven: chance under the corrected model."
+   },
+   "success": false
+  },
+  {
+   "question": "q2",
+   "arm": "s2",
+   "consultant": "s2-r1",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 4.5299,
+   "seconds": 1009.1,
+   "tool_calls": 19,
+   "thinking": 48847,
+   "output": 67628,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "K3",
+       "rhs": "O(1,0)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,0)",
+       "rhs": "(x + y)*(1 + x^-1*y^-1)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "(1 + x)^2",
+       "rhs": "x*t(x)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "1 + t(x)",
+       "rhs": "x^-1*(1 + x + x^2)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)",
+       "rhs": "x^-1*(1 + x)^2"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [
+     {
+      "claim": {
+       "rule": 1112,
+       "factors": [
+        [
+         "K3",
+         1
+        ],
+        [
+         "A",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 1112,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 2436,
+       "factors": [
+        [
+         "K1",
+         1
+        ],
+        [
+         "A",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 2436,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 3461,
+       "factors": [
+        [
+         "K2",
+         1
+        ],
+        [
+         "A",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 3461,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 10498,
+       "factors": [
+        [
+         "K3",
+         1
+        ],
+        [
+         "B",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 10498,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 13584,
+       "factors": [
+        [
+         "K3",
+         1
+        ],
+        [
+         "C",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 13584,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 17056,
+       "factors": [
+        [
+         "K1",
+         1
+        ],
+        [
+         "B",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 17056,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 18246,
+       "factors": [
+        [
+         "K2",
+         1
+        ],
+        [
+         "C",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 18246,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 26883,
+       "factors": [
+        [
+         "K2",
+         1
+        ],
+        [
+         "B",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 26883,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 28944,
+       "factors": [
+        [
+         "K1",
+         1
+        ],
+        [
+         "C",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 28944,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 13822,
+       "factors": [
+        [
+         "G1",
+         1
+        ],
+        [
+         "H1",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 13822,
+      "cube_factor": false
+     },
+     {
+      "claim": {
+       "rule": 27390,
+       "factors": [
+        [
+         "C",
+         1
+        ],
+        [
+         "H2",
+         1
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 27390,
+      "cube_factor": false
+     }
+    ],
+    "found": [
+     1112,
+     2436,
+     3461,
+     10498,
+     13584,
+     17056,
+     18246,
+     26883,
+     28944
+    ],
+    "true": 16,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "Q1": 1,
+    "Q2": 1,
+    "Q3": 1,
+    "notes": "Code. All nine; the unit criterion for rule 90; 3 in <4> for the three at 61. Claims rule 4850 has every eigenvalue a ninth power at 37, which would rule out chance for it: to be checked by machine (not a rubric item)."
+   },
+   "success": true
+  },
+  {
+   "question": "q2",
+   "arm": "s2",
+   "consultant": "s2-r2",
+   "status": "complete",
+   "served_by": "claude-fable-5-1",
+   "fallback": false,
+   "cost": 5.094,
+   "seconds": 1255.9,
+   "tool_calls": 21,
+   "thinking": 47763,
+   "output": 66938,
+   "machine": {
+    "json": true,
+    "congruences": [
+     {
+      "claim": {
+       "lhs": "R(7)",
+       "rhs": "C150"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "O(1,0)",
+       "rhs": "(x^19*y^19 + x^-19*y^-19)*(x^19*y^-19 + x^-19*y^19)"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "(1 + x + x^-1)*(x^19 + x^-19)",
+       "rhs": "x^20 + x^-20"
+      },
+      "holds": true
+     },
+     {
+      "claim": {
+       "lhs": "t(x)*t(x)",
+       "rhs": "x^2 + x^-2"
+      },
+      "holds": true
+     }
+    ],
+    "factorisations": [
+     {
+      "claim": {
+       "rule": 1112,
+       "factors": [
+        [
+         "CO",
+         1
+        ],
+        [
+         "K1",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 1112,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 10498,
+       "factors": [
+        [
+         "CO",
+         1
+        ],
+        [
+         "K2",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 10498,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 13584,
+       "factors": [
+        [
+         "CO",
+         1
+        ],
+        [
+         "K3",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 13584,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 2436,
+       "factors": [
+        [
+         "C90",
+         1
+        ],
+        [
+         "K1",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 2436,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 17056,
+       "factors": [
+        [
+         "C90",
+         1
+        ],
+        [
+         "K2",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 17056,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 28944,
+       "factors": [
+        [
+         "C90",
+         1
+        ],
+        [
+         "K3",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 28944,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 3461,
+       "factors": [
+        [
+         "C150",
+         1
+        ],
+        [
+         "K1",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 3461,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 26883,
+       "factors": [
+        [
+         "C150",
+         1
+        ],
+        [
+         "K2",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 26883,
+      "cube_factor": "True"
+     },
+     {
+      "claim": {
+       "rule": 18246,
+       "factors": [
+        [
+         "C150",
+         1
+        ],
+        [
+         "K3",
+         3
+        ]
+       ]
+      },
+      "holds": true,
+      "rule": 18246,
+      "cube_factor": "True"
+     }
+    ],
+    "found": [
+     1112,
+     2436,
+     3461,
+     10498,
+     13584,
+     17056,
+     18246,
+     26883,
+     28944
+    ],
+    "true": 13,
+    "false": 0,
+    "unreadable": 0
+   },
+   "rubric": {
+    "Q1": 1,
+    "Q2": 1,
+    "Q3": 1,
+    "notes": "Code. All nine as split cofactor times a cube; rule 90 by the unit criterion, rule 150 by 3 in <4>, so exactly the three at 61; the seven unexplained, with what was excluded. Says it does not believe chance for all seven (against the card's 0.62)."
+   },
+   "success": true
+  }
+ ],
+ "summary": {
+  "s0": {
+   "answers": 4,
+   "successes": 0,
+   "cost": 3.11,
+   "mean_cost": 0.78,
+   "false_claims": 0,
+   "per_success": null,
+   "per_question": {
+    "q1": 0,
+    "q2": 0
+   }
+  },
+  "s1": {
+   "answers": 4,
+   "successes": 1,
+   "cost": 9.77,
+   "mean_cost": 2.44,
+   "false_claims": 0,
+   "per_success": 9.77,
+   "per_question": {
+    "q1": 0,
+    "q2": 1
+   }
+  },
+  "s2": {
+   "answers": 4,
+   "successes": 2,
+   "cost": 14.9,
+   "mean_cost": 3.72,
+   "false_claims": 0,
+   "per_success": 7.45,
+   "per_question": {
+    "q1": 0,
+    "q2": 2
+   }
+  },
+  "s0 claude-fable-5-1": {
+   "answers": 1,
+   "successes": 0,
+   "cost": 0.99,
+   "mean_cost": 0.99,
+   "false_claims": 0,
+   "per_success": null,
+   "per_question": {
+    "q1": 0,
+    "q2": 0
+   }
+  },
+  "s1 claude-fable-5-1": {
+   "answers": 3,
+   "successes": 1,
+   "cost": 7.84,
+   "mean_cost": 2.61,
+   "false_claims": 0,
+   "per_success": 7.84,
+   "per_question": {
+    "q1": 0,
+    "q2": 1
+   }
+  },
+  "s2 claude-fable-5-1": {
+   "answers": 2,
+   "successes": 2,
+   "cost": 9.62,
+   "mean_cost": 4.81,
+   "false_claims": 0,
+   "per_success": 4.81,
+   "per_question": {
+    "q1": 0,
+    "q2": 2
+   }
+  },
+  "s0 claude-opus-4-8": {
+   "answers": 3,
+   "successes": 0,
+   "cost": 2.12,
+   "mean_cost": 0.71,
+   "false_claims": 0,
+   "per_success": null,
+   "per_question": {
+    "q1": 0,
+    "q2": 0
+   }
+  },
+  "s1 claude-opus-4-8": {
+   "answers": 1,
+   "successes": 0,
+   "cost": 1.93,
+   "mean_cost": 1.93,
+   "false_claims": 0,
+   "per_success": null,
+   "per_question": {
+    "q1": 0,
+    "q2": 0
+   }
+  },
+  "s2 claude-opus-4-8": {
+   "answers": 2,
+   "successes": 0,
+   "cost": 5.27,
+   "mean_cost": 2.64,
+   "false_claims": 0,
+   "per_success": null,
+   "per_question": {
+    "q1": 0,
+    "q2": 0
+   }
+  },
+  "s1_then_s2": {
+   "mean_cost": 5.23,
+   "success_rate": 0.62,
+   "per_success": 8.37
+  }
+ }
+}

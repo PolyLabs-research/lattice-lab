@@ -257,6 +257,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `llm-pilot-37b` | the sixth pilot, on the 16 square-family rules confined at m = 37 that pilot 5's census found: the pre-check, card, data, both earlier conditions as tools, judge, the family's census at 17 held-out sizes (registered), audit, the agent's submission and transcript |
 | `census-remainder` | the 45 census entries pilot 4 left, sorted: forced subfields, a chance model and its calibration (all 32,768 symmetric square rules within distance 4 at m = 21 and 25), hidden symmetries mod m; pilot 5 later explained 19 of them ([write-up](docs/census-remainder.md)) |
 | `fable-units` | a registered test of Claude Fable's unit criterion and pyramid rules from a consultation: predictions from the fundamental unit and class number alone, decided by direct computation in GF(2)[x]/Phi_p ([write-up](docs/consultations.md)) |
+| `consult-budget` | what a consultation's effort is worth: two answered questions put to Fable at three settings, every claim checked by machine, rubrics graded blind; cost per verified answer, and two findings ([write-up](docs/consultations.md)) |
 
 ## Settling times: a replication and a universality test
 
