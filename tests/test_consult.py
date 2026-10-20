@@ -139,7 +139,7 @@ def test_anthropic_fallback_and_refusal():
     assert result["text"] == "whole" and result["fallback"] and result["status"] == "complete"
     client, _ = _fake_anthropic(([_text("whole")], "end_turn", ["fallback_message"]))
     sticky = consult.ask_anthropic(client, FABLE, "q")
-    assert sticky["fallback"] and sticky["text"] == "whole" and sticky["cost_usd"] is None
+    assert sticky["fallback"] and sticky["text"] == "whole"
     client, _ = _fake_anthropic(([], "refusal", None))
     assert consult.ask_anthropic(client, FABLE, "q")["status"] == "refused"
     client, _ = _fake_anthropic(([_text("x")], "max_tokens", None))
@@ -343,3 +343,30 @@ def test_command_ask_then_review(tmp_path: Path, monkeypatch, capsys):
 
     assert main(["consult", "ask", "Bad Name", "--preset", "direction"]) == 2
     assert main(["consult", "ask", "x", "--with", "nobody", "--preset", "direction"]) == 2
+
+
+def test_cost_counts_every_attempt_at_its_own_prices():
+    """The shape of a real record (2026-10-20-budget-q1, s1-r2): Fable declined after one step,
+    and Opus 4.8 ran the whole tool loop. Each attempt's last step names its model; the top-level
+    usage holds only Opus's attempt."""
+    steps = [
+        {"type": "message", "model": "claude-fable-5-1", "input_tokens": 26,
+         "output_tokens": 5000},
+        {"type": "message", "input_tokens": 10, "cache_creation_input_tokens": 2000,
+         "output_tokens": 100},
+        {"type": "message", "input_tokens": 5, "cache_read_input_tokens": 3000,
+         "output_tokens": 200},
+        {"type": "fallback_message", "model": "claude-opus-4-8", "input_tokens": 24,
+         "cache_read_input_tokens": 1000, "output_tokens": 8000},
+    ]  # fmt: skip
+    requests = [{"usage": {"input_tokens": 39, "output_tokens": 8300, "iterations": steps}}]
+    fable = (26 * 10 + 5000 * 50) / 1e6
+    opus = (39 * 5 + 8300 * 25 + 2000 * 6.25 + 4000 * 0.5) / 1e6
+    assert consult.cost(requests, "claude-fable-5-1") == round(fable + opus, 4)
+    assert [m for m, _ in consult.attempts(requests, "claude-fable-5-1")] == [
+        "claude-fable-5-1", "claude-opus-4-8", "claude-opus-4-8", "claude-opus-4-8"
+    ]  # fmt: skip
+    # no fallback: no step is named, and every step is the requested model's
+    plain = [{"usage": {"iterations": [{"type": "message", "output_tokens": 10}] * 3}}]
+    assert {m for m, _ in consult.attempts(plain, "claude-fable-5-1")} == {"claude-fable-5-1"}
+    assert consult.cost([{"usage": {"output_tokens": 1}}], "some-other-model") is None

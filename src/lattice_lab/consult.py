@@ -55,8 +55,15 @@ FALLBACK_BETA = "server-side-fallback-2026-07-01"
 BUDGET_BETA = "task-budgets-2026-03-13"
 CODE_TOOL = {"type": "code_execution_20260521", "name": "code_execution"}
 MAX_CONTINUATIONS = 8  # requests after a pause_turn, when a long tool loop is paused
-# Dollars per million tokens (input, output, cache write, cache read), for the cost estimate.
-PRICES = {"claude-fable-5-1": (10.0, 50.0, 12.5, 0.25)}
+# Dollars per million tokens (input, output, cache write, cache read), for the cost estimate:
+# Fable, and the models its refusal fallback runs.
+PRICES = {
+    "claude-fable-5-1": (10.0, 50.0, 12.5, 0.25),
+    "claude-opus-4-8": (5.0, 25.0, 6.25, 0.5),
+    "claude-opus-5": (5.0, 25.0, 6.25, 0.5),
+}
+TOKENS = ("input_tokens", "output_tokens", "cache_creation_input_tokens",
+          "cache_read_input_tokens")  # fmt: skip
 
 
 class ConsultError(Exception):
@@ -197,13 +204,35 @@ def _record(block) -> dict:
     return d
 
 
-def _cost(model: str, usage: dict) -> float | None:
-    if model not in PRICES:
-        return None
-    rates = PRICES[model]
-    keys = ("input_tokens", "output_tokens", "cache_creation_input_tokens",
-            "cache_read_input_tokens")  # fmt: skip
-    return round(sum(usage.get(k, 0) * r for k, r in zip(keys, rates, strict=True)) / 1e6, 4)
+def attempts(requests: list[dict], model: str) -> list[tuple[str, dict]]:
+    """(model, usage) for every step the requests made. The top-level usage covers only the
+    attempt that produced the message, so after a refusal fallback it leaves out the declined
+    model's tokens; `usage.iterations` lists every step. After a fallback, the last step of each
+    attempt names its model (a declined Fable attempt, then the fallback's, ending in a
+    `fallback_message`), so an unnamed step belongs to the next named one; with no fallback no
+    step is named, and all are the requested model's."""
+    out, pending = [], []
+    for r in requests:
+        steps = r["usage"].get("iterations") or []
+        if not steps:
+            pending.append(r["usage"])
+        for step in steps:
+            pending.append(step)
+            if step.get("model"):
+                model = step["model"]
+                out += [(model, u) for u in pending]
+                pending = []
+    return out + [(model, u) for u in pending]
+
+
+def cost(requests: list[dict], model: str) -> float | None:
+    """The estimated dollar cost of the requests, each attempt at its own model's prices."""
+    total = 0.0
+    for name, usage in attempts(requests, model):
+        if name not in PRICES:
+            return None
+        total += sum(usage.get(k, 0) * r for k, r in zip(TOKENS, PRICES[name], strict=True))
+    return round(total / 1e6, 4)
 
 
 def ask_anthropic(client, c: Consultant, prompt: str) -> dict:
@@ -243,10 +272,11 @@ def ask_anthropic(client, c: Consultant, prompt: str) -> dict:
     status = {"refusal": "refused", "max_tokens": "truncated", "pause_turn": "truncated"}.get(
         stop, "complete"
     )
-    usage = {k: sum(r["usage"].get(k, 0) for r in requests)
-             for k in ("input_tokens", "output_tokens", "cache_creation_input_tokens",
-                       "cache_read_input_tokens")}  # fmt: skip
-    usage["thinking_tokens"] = sum(
+    steps = attempts(requests, c.model)
+    usage = {k: sum(u.get(k, 0) for _, u in steps) for k in TOKENS}
+    usage["by_model"] = {m: {k: sum(u.get(k, 0) for n, u in steps if n == m) for k in TOKENS}
+                         for m in dict.fromkeys(n for n, _ in steps)}  # fmt: skip
+    usage["thinking_tokens"] = sum(  # of the attempts that produced the messages
         r["usage"].get("output_tokens_details", {}).get("thinking_tokens", 0) for r in requests
     )
     details = getattr(message, "stop_details", None)
@@ -259,7 +289,7 @@ def ask_anthropic(client, c: Consultant, prompt: str) -> dict:
         "stop_details": details.model_dump() if details is not None else None,
         "request_id": requests[0]["request_id"],
         "usage": usage,
-        "cost_usd": _cost(message.model, usage),
+        "cost_usd": cost(requests, c.model),
         "tool_calls": sum(b.type == "server_tool_use" for b in blocks),
         "container": container.id if container is not None else None,
         "requests": requests,
