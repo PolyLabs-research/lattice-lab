@@ -1,0 +1,11 @@
+Round 2: Pilot.lean now builds against the real library (lean_build: 57 s, "32 theorems; on the standard axioms only: 32"), so period_r1968276_dvd, period_r985232_dvd, period_r1431278_dvd and period_r699738_dvd (statements unchanged: `period 37 rXOffsets ∣ 29127`) are proved on propext / Classical.choice / Quot.sound only; no axiom, native_decide or sorry anywhere.
+
+What was wrong and what I changed (all in proofs/LatticeProofs/Pilot.lean; mechanism.py, proposal.md, proposal.py untouched):
+
+1. The four `ev_r…` lemmas: my factorisation identities `r…_poly` are stated as product = monomial sum, so `rw [← r…_poly]` looked for the sum in the goal (the library's `k8m8e4_poly` is stated the other way round). Fixed by rewriting forwards: `rw [ev_v, r…_poly …]; simp [ev, r…Offsets]; ring`.
+
+2. The axis cases of the Ψ₅ theorems (r1431278_val_sq, r699738_val_sq): `rw [← axis_val …]` rewrote every `1 : K` in the goal (including the `+ 1` inside Ψ₅) into a 29127-th power, and the subsequent `linear_combination` then tried to expand it — the heartbeat timeouts. Now: `generalize Y + Y⁻¹ = t at av ⊢; convert av using 2; linear_combination (…) * h2`, a one-variable polynomial identity. In the 699738 X = 1 branch the `rw [one_mul]` left `(Y + 1 * Y⁻¹) * (1 * Y⁻¹ + Y)`; replaced by `simp only [one_pow, inv_one, one_mul]` and `add_comm Y⁻¹ Y`.
+
+3. The generic cases: the `calc` steps called `ring` on terms containing `(X + X⁻¹) ^ (2^23 - 2)` and big Laurent expansions. Factored the Dickson/Frobenius step into a lemma `psi_pow_identity` (t^(2²³−2) t² = Ψ₅(t)² t), and in `key` I `generalize` t(X), t(Y), the two big powers, the core polynomial (and for 699738 the t(XY), t(X/Y) factors) to atoms, then close with one `linear_combination` in eX, eY. Nothing else changed.
+
+Workflow: tested with lean_file on a scratch copy of the file with the four (previously compiling) 50-term certificates sorried (scratch/mk_t2.py → scratch/t2.lean, 43 s), then one full lean_build. report.md is not writable this round, so its "unbuilt" remark from round 1 is now out of date; nothing remains unproved.
