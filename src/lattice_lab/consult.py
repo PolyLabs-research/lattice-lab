@@ -8,7 +8,9 @@ Each consultant answers on its own, and every exchange is kept verbatim under
 `consultations/NAME/`: the exact prompt sent (`round-1/prompt.md`), and for each consultant a
 record (`round-1/fable.json`: model, effort, the parameters sent, the prompt's hash, times,
 usage, stop reason, the summarised reasoning and the answer) with the answer alone beside it
-(`round-1/fable.md`). Records are written once and never overwritten. A consultant that fails
+(`round-1/fable.md`); with code execution, the record also holds every block of the exchange,
+the code run and its output included. Records are written once and never overwritten. A
+consultant that fails
 (network, rate limit) leaves no record, and one cut off at its output limit leaves its record in
 `round-1/attempts/` instead, so running `ask` again calls only the ones without an answer, and
 only if the prompt is unchanged.
@@ -17,6 +19,11 @@ A review round puts the round-1 prompt and every complete round-1 answer, labell
 a fixed order and without names, to every consultant, with the same request: where the answers
 agree and conflict, which claims are wrong, and a recommendation revised in the light of the
 others. Nothing a consultant says counts until it has been checked (docs/consultations.md).
+
+Both consultants can run code by default (Anthropic's code execution tool, OpenAI's code
+interpreter), each in its provider's sandbox, so that they can check their own identities and
+arithmetic before stating them; `--no-code` turns this off. The prompt is marked for caching,
+since a tool loop rereads it at every step and, uncached, would bill it in full each time.
 
 The keys are read from CONSULT_ANTHROPIC_API_KEY and CONSULT_OPENAI_API_KEY, not the usual
 names, so that a cloud session's own Claude credentials are never used for, or confused with,
@@ -46,6 +53,10 @@ FALLBACK_BETA = "server-side-fallback-2026-07-01"
 # and paces itself against. Without one, Fable's first consultation thought for 64,000 tokens,
 # its whole output limit, and wrote no answer.
 BUDGET_BETA = "task-budgets-2026-03-13"
+CODE_TOOL = {"type": "code_execution_20260521", "name": "code_execution"}
+MAX_CONTINUATIONS = 8  # requests after a pause_turn, when a long tool loop is paused
+# Dollars per million tokens (input, output, cache write, cache read), for the cost estimate.
+PRICES = {"claude-fable-5-1": (10.0, 50.0, 12.5, 0.25)}
 
 
 class ConsultError(Exception):
@@ -60,6 +71,7 @@ class Consultant:
     effort: str = "high"
     max_tokens: int = 64000  # the hard limit on output, thinking included
     budget: int | None = None  # the advisory task budget (Anthropic only)
+    code: bool = True  # code execution in the provider's sandbox
 
 
 def consultants() -> dict[str, Consultant]:
@@ -82,13 +94,16 @@ tested. Other models are being asked the same question independently.
 So that your answer can be checked: state each claim precisely, with the quantifiers and the \
 sizes it covers; say for each whether you proved it, checked it by computation (and how far), or \
 conjecture it; give proofs or arguments where you have them; and where you can, make predictions \
-at cases the documents below do not settle, which can then be registered and tested. Say plainly \
+at cases the documents below do not settle, which can then be registered and tested. If you \
+can run code, use it to check every identity and computation before you state it. Say plainly \
 where you think the project is wrong or missing something.
 """
 
 PRESETS = {
     "direction": {
-        "context": ["docs/STATUS.md", "docs/consultations.md"],
+        # STATUS first, then every write-up: a summary alone left Fable flagging, as open,
+        # points that the write-ups settle (docs/consultations.md, section 2).
+        "context": ["docs/STATUS.md", "docs/"],
         "question": """\
 The documents above are where the project stands. What should it do next?
 
@@ -169,43 +184,102 @@ def anthropic_params(c: Consultant) -> dict:
     if c.budget:
         params["betas"].append(BUDGET_BETA)
         params["output_config"]["task_budget"] = {"type": "tokens", "total": c.budget}
+    if c.code:
+        params["tools"] = [CODE_TOOL]
     return params
 
 
+def _record(block) -> dict:
+    """A content block as JSON, without the opaque signatures and encrypted parts."""
+    d = block.model_dump(exclude_none=True)
+    for key in ("signature", "encrypted_content"):
+        d.pop(key, None)
+    return d
+
+
+def _cost(model: str, usage: dict) -> float | None:
+    if model not in PRICES:
+        return None
+    rates = PRICES[model]
+    keys = ("input_tokens", "output_tokens", "cache_creation_input_tokens",
+            "cache_read_input_tokens")  # fmt: skip
+    return round(sum(usage.get(k, 0) * r for k, r in zip(keys, rates, strict=True)) / 1e6, 4)
+
+
 def ask_anthropic(client, c: Consultant, prompt: str) -> dict:
-    with client.beta.messages.stream(
-        **anthropic_params(c), messages=[{"role": "user", "content": prompt}]
-    ) as stream:
-        message = stream.get_final_message()
-        request_id = stream.request_id
+    params = anthropic_params(c)
+    # Cached, because a tool loop rereads the whole prompt at each step.
+    user = {"role": "user", "content": [
+        {"type": "text", "text": prompt, "cache_control": {"type": "ephemeral"}}]}  # fmt: skip
+    blocks, requests = [], []
+    for _ in range(1 + MAX_CONTINUATIONS):
+        messages = [user] + ([{"role": "assistant", "content": list(blocks)}] if blocks else [])
+        with client.beta.messages.stream(**params, messages=messages) as stream:
+            message = stream.get_final_message()
+            request_id = stream.request_id
+        blocks += list(message.content)
+        requests.append({"request_id": request_id, "stop_reason": message.stop_reason,
+                         "usage": message.usage.model_dump(exclude_none=True)})  # fmt: skip
+        if message.stop_reason != "pause_turn":
+            break
+        # A paused server-side tool loop resumes when the turn so far is sent back as it is,
+        # in the same container, with what is left of the budget.
+        params["container"] = message.container.id
+        if c.budget:
+            left = max(c.budget - sum(r["usage"]["output_tokens"] for r in requests), 0)
+            budget = {"type": "tokens", "total": c.budget, "remaining": left}
+            params["output_config"] = {**params["output_config"], "task_budget": budget}
     # After a fallback, the declined model's partial output stays in the stream, ahead of a
-    # `fallback` block; the answer is what follows the last one.
-    blocks = list(message.content)
+    # `fallback` block; the answer is what follows the last one, and its text is what follows
+    # the last tool call.
     switches = [i for i, b in enumerate(blocks) if b.type == "fallback"]
     answer = blocks[switches[-1] + 1 :] if switches else blocks
-    iterations = getattr(message.usage, "iterations", None) or []
-    status = {"refusal": "refused", "max_tokens": "truncated"}.get(message.stop_reason, "complete")
+    tools = [i for i, b in enumerate(answer) if b.type.endswith(("tool_use", "tool_result"))]
+    final = answer[tools[-1] + 1 :] if tools else answer
+    if not any(b.type == "text" for b in final):
+        final = answer
+    iterations = [e for r in requests for e in r["usage"].get("iterations", [])]
+    stop = message.stop_reason
+    status = {"refusal": "refused", "max_tokens": "truncated", "pause_turn": "truncated"}.get(
+        stop, "complete"
+    )
+    usage = {k: sum(r["usage"].get(k, 0) for r in requests)
+             for k in ("input_tokens", "output_tokens", "cache_creation_input_tokens",
+                       "cache_read_input_tokens")}  # fmt: skip
+    usage["thinking_tokens"] = sum(
+        r["usage"].get("output_tokens_details", {}).get("thinking_tokens", 0) for r in requests
+    )
     details = getattr(message, "stop_details", None)
+    container = getattr(message, "container", None)
     return {
         "status": status,
         "served_by": message.model,
-        "fallback": bool(switches) or any(e.type == "fallback_message" for e in iterations),
-        "stop_reason": message.stop_reason,
+        "fallback": bool(switches) or any(e.get("type") == "fallback_message" for e in iterations),
+        "stop_reason": stop,
         "stop_details": details.model_dump() if details is not None else None,
-        "request_id": request_id,
-        "usage": message.usage.model_dump(exclude_none=True),
+        "request_id": requests[0]["request_id"],
+        "usage": usage,
+        "cost_usd": _cost(message.model, usage),
+        "tool_calls": sum(b.type == "server_tool_use" for b in blocks),
+        "container": container.id if container is not None else None,
+        "requests": requests,
         "reasoning_summary": "\n\n".join(b.thinking for b in answer if b.type == "thinking"),
-        "text": "".join(b.text for b in answer if b.type == "text"),
+        "text": "".join(b.text for b in final if b.type == "text"),
+        "content": [_record(b) for b in blocks],
     }
 
 
 def openai_params(c: Consultant) -> dict:
-    return {
+    params = {
         "model": c.model,
         "max_output_tokens": c.max_tokens,
         "reasoning": {"effort": c.effort, "summary": "auto"},
         "store": False,
     }
+    if c.code:
+        params["tools"] = [{"type": "code_interpreter", "container": {"type": "auto"}}]
+        params["include"] = ["code_interpreter_call.outputs"]
+    return params
 
 
 def ask_openai(client, c: Consultant, prompt: str) -> dict:
@@ -230,8 +304,11 @@ def ask_openai(client, c: Consultant, prompt: str) -> dict:
         "stop_details": None,
         "request_id": response.id,
         "usage": response.usage.model_dump(exclude_none=True) if response.usage else None,
+        "cost_usd": None,
+        "tool_calls": sum(item.type == "code_interpreter_call" for item in response.output),
         "reasoning_summary": "\n\n".join(summary),
         "text": "".join(p.text for p in parts if p.type == "output_text"),
+        "content": [_record(item) for item in response.output],
     }
 
 
@@ -299,7 +376,9 @@ def run_round(directory: Path, prompt: str, chosen: list[Consultant], round_numb
             "seconds": round(time.monotonic() - t0, 1),
             **result,
         }
-        log(f"{c.name}: {result['status']} in {record['seconds']} s")
+        cost = f", ${result['cost_usd']:.2f}" if result.get("cost_usd") is not None else ""
+        log(f"{c.name}: {result['status']} in {record['seconds']} s, "
+            f"{result.get('tool_calls', 0)} tool calls{cost}")  # fmt: skip
         if result["status"] == "truncated":
             attempt = len(list((directory / "attempts").glob(f"{c.name}-*.json"))) + 1
             path = directory / "attempts" / f"{c.name}-{attempt}.json"
@@ -337,6 +416,8 @@ def _chosen(args) -> list[Consultant]:
     if unknown:
         raise ConsultError(f"unknown consultant(s) {unknown}; known: {sorted(available)}")
     chosen = {n: available[n] for n in names}
+    if args.no_code:
+        chosen = {n: replace(c, code=False) for n, c in chosen.items()}
     for field in ("model", "effort", "budget", "max_tokens"):
         for spec in getattr(args, field):
             name, _, value = spec.partition("=")
@@ -366,8 +447,18 @@ def cmd_ask(args, log: Callable[[str], None]) -> int:
     else:
         raise ConsultError("give --question FILE or --preset NAME")
     paths = args.context or [Path(p) for p in preset.get("context", [])]
-    prompt = build_prompt(question, [(str(p), p.read_text()) for p in paths])
+    prompt = build_prompt(question, [(str(p), p.read_text()) for p in expand(paths)])
     return _run(args, prompt, 1, log)
+
+
+def expand(paths: list[Path]) -> list[Path]:
+    """Files as given, and directories as their Markdown files in name order, each once."""
+    out = []
+    for path in paths:
+        for f in sorted(path.glob("*.md")) if path.is_dir() else [path]:
+            if f not in out:
+                out.append(f)
+    return out
 
 
 def cmd_review(args, log: Callable[[str], None]) -> int:
@@ -417,6 +508,7 @@ def add_parser(sub) -> None:
         q.add_argument("--budget", action="append", default=[], metavar="NAME=TOKENS",
                        help="advisory task budget (fable; 0 for none)")  # fmt: skip
         q.add_argument("--max-tokens", action="append", default=[], metavar="NAME=TOKENS")
+        q.add_argument("--no-code", action="store_true", help="no code execution")
         q.add_argument("--dry-run", action="store_true", help="print the prompt; call nothing")
         if name == "ask":
             q.add_argument("--question", type=Path, help="a file holding the question")

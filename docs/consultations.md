@@ -25,13 +25,14 @@ every exchange.
 ```bash
 uv sync --group consult
 uv run lattice-lab consult ask NAME --question q.md --context docs/STATUS.md --context card.md
-uv run lattice-lab consult ask NAME --preset direction     # STATUS and this file: what next?
+uv run lattice-lab consult ask NAME --preset direction     # STATUS and every write-up: what next?
 uv run lattice-lab consult review NAME                     # round 2
 ```
 
 - **The prompt** is a fixed preamble (what the project is, and that every claim will be checked,
-  so state it precisely and say whether it is proved, computed or conjectured), then each
-  `--context` file in full, then the question. Context is the foundation: the m = 37
+  so state it precisely, say whether it is proved, computed or conjectured, and check it by
+  running code where possible), then each `--context` file in full (a directory gives all its
+  Markdown files), then the question. Context is the foundation: the m = 37
   consultations showed that a model given the structure already worked out builds on it, so a
   consultation should carry the card, data or write-up its question rests on. Everything in it is
   sent to both providers.
@@ -48,6 +49,14 @@ uv run lattice-lab consult review NAME                     # round 2
   reasoning is often worth reading) but does not count as the answer, so running the same command
   again asks only the consultants still without one, and refuses if the prompt has changed.
   Commit the directory: git is the record's history.
+- **Code.** Both consultants can run code in their provider's sandbox by default (Anthropic's code
+  execution tool, OpenAI's code interpreter), and the record keeps every block of the exchange,
+  the code and its output included. Fable's earlier, strong answer on the m = 37 cubes came from
+  the chat app, where it could compute; its two errors in section 2, without code, were of the
+  kind one computation catches. `--no-code` turns it off. The prompt is marked for caching: a
+  tool loop rereads it at every step, and uncached each reread bills in full (a three-call test
+  billed 36,620 input tokens uncached, against 163 plus 27,186 read from cache, at 2.5% of the
+  price). A tool loop that the server pauses is resumed in the same container.
 - **Settings.** Fable runs with adaptive thinking (summarised), effort `high`, an advisory task
   budget of 64,000 tokens (thinking and answer together; the model sees it and paces itself), a
   hard limit of 128,000 output tokens, and Anthropic's server-side refusal fallback
@@ -64,10 +73,12 @@ uv run lattice-lab consult review NAME                     # round 2
   that a cloud session's own Claude credentials are never used for these calls, and the API hosts
   are fixed. In a cloud session, add them to the environment's variables; the network policy must
   also allow `api.openai.com`.
-- **Cost.** The `direction` prompt is about 33,000 characters (13,000 tokens). At Fable's prices
-  ($10 and $50 per million input and output tokens) the input costs $0.13, and output costs $3.20
-  per 64,000 tokens, so an answer within its budget is about $3.30 and the hard limit caps it at
-  $6.53. The first attempt used all 64,000 tokens and cost $3.33. ChatGPT's depends on the model.
+- **Cost.** At Fable's prices ($10 and $50 per million input and output tokens; a cache write
+  costs 1.25 times input and a cache read 2.5% of it) output dominates: $3.20 per 64,000 tokens.
+  The `direction` prompt, now STATUS and every write-up, is about 264,000 characters (roughly
+  70,000 tokens, $0.88 to write to the cache once). The first attempt used all 64,000 output
+  tokens and cost $3.33; the second, with the budget, $1.20. What effort and budget are worth
+  paying for is measured in section 3. ChatGPT's cost depends on the model.
 
 What comes back is a consultant's view, not a result. Its claims are checked, and its predictions
 registered, before anything is built on them.

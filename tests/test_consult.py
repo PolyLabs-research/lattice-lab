@@ -81,7 +81,9 @@ def test_anthropic_request_and_answer():
     assert body["output_config"] == {
         "effort": "high", "task_budget": {"type": "tokens", "total": 64000}
     }  # fmt: skip
-    assert body["messages"] == [{"role": "user", "content": "Why 37?"}]
+    assert body["messages"] == [{"role": "user", "content": [
+        {"type": "text", "text": "Why 37?", "cache_control": {"type": "ephemeral"}}]}]  # fmt: skip
+    assert body["tools"] == [consult.CODE_TOOL]
     assert "budget_tokens" not in json.dumps(body)
 
     assert result["status"] == "complete" and result["fallback"] is False
@@ -91,40 +93,97 @@ def test_anthropic_request_and_answer():
     assert result["usage"]["output_tokens"] == 40
 
 
-def test_anthropic_fallback_and_refusal():
-    """After a fallback, only the output that follows the last switch is the answer; a refusal is
-    recorded as one."""
+class _Block(SimpleNamespace):
+    def model_dump(self, **_):
+        return dict(vars(self))
 
-    def client(content, stop_reason, iterations=None):
+
+def _fake_anthropic(*turns, model="claude-opus-4-8"):
+    """A client whose streams return `turns` in order: (content, stop_reason, iterations)."""
+    sent = []
+
+    def stream(**params):
+        content, stop_reason, iterations = turns[len(sent)]
+        sent.append(params)
+        usage = {"input_tokens": 10, "output_tokens": 100,
+                 "iterations": [{"type": t} for t in iterations or []]}  # fmt: skip
         message = SimpleNamespace(
-            content=content, stop_reason=stop_reason, model="claude-opus-4-8", stop_details=None,
-            usage=SimpleNamespace(iterations=iterations, model_dump=lambda **_: {}))  # fmt: skip
-        stream = SimpleNamespace(get_final_message=lambda: message, request_id="req_2")
-        manager = SimpleNamespace(__enter__=lambda: stream)
+            content=content, stop_reason=stop_reason, model=model, stop_details=None,
+            container=SimpleNamespace(id="container_1"),
+            usage=SimpleNamespace(model_dump=lambda **_: usage))  # fmt: skip
+        live = SimpleNamespace(get_final_message=lambda: message, request_id=f"req_{len(sent)}")
 
         class Manager:
             def __enter__(self):
-                return manager.__enter__()
+                return live
 
             def __exit__(self, *exc):
                 return False
 
-        return SimpleNamespace(beta=SimpleNamespace(
-            messages=SimpleNamespace(stream=lambda **_: Manager())))  # fmt: skip
+        return Manager()
 
-    text = lambda t: SimpleNamespace(type="text", text=t)  # noqa: E731
-    switch = SimpleNamespace(type="fallback")
-    result = consult.ask_anthropic(client([text("partial"), switch, text("whole")], "end_turn"),
-                                   FABLE, "q")  # fmt: skip
+    client = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(stream=stream)))
+    return client, sent
+
+
+def _text(t):
+    return _Block(type="text", text=t)
+
+
+def test_anthropic_fallback_and_refusal():
+    """After a fallback, only the output that follows the last switch is the answer; a refusal is
+    recorded as one."""
+    switch = _Block(type="fallback")
+    client, _ = _fake_anthropic(([_text("partial"), switch, _text("whole")], "end_turn", None))
+    result = consult.ask_anthropic(client, FABLE, "q")
     assert result["text"] == "whole" and result["fallback"] and result["status"] == "complete"
-    sticky = consult.ask_anthropic(
-        client([text("whole")], "end_turn", [SimpleNamespace(type="fallback_message")]), FABLE, "q"
-    )
-    assert sticky["fallback"] and sticky["text"] == "whole"
-    assert consult.ask_anthropic(client([], "refusal"), FABLE, "q")["status"] == "refused"
-    assert consult.ask_anthropic(client([text("x")], "max_tokens"), FABLE, "q")["status"] == (
-        "truncated"
-    )
+    client, _ = _fake_anthropic(([_text("whole")], "end_turn", ["fallback_message"]))
+    sticky = consult.ask_anthropic(client, FABLE, "q")
+    assert sticky["fallback"] and sticky["text"] == "whole" and sticky["cost_usd"] is None
+    client, _ = _fake_anthropic(([], "refusal", None))
+    assert consult.ask_anthropic(client, FABLE, "q")["status"] == "refused"
+    client, _ = _fake_anthropic(([_text("x")], "max_tokens", None))
+    assert consult.ask_anthropic(client, FABLE, "q")["status"] == "truncated"
+
+
+def test_anthropic_tool_loop_resumes_after_pause():
+    """A paused tool loop is resumed with the turn so far, in the same container and with what is
+    left of the budget; the answer is the text after the last tool call, and the record keeps
+    every block."""
+    fable = consult.consultants()["fable"]
+    call = _Block(type="server_tool_use", id="t1", name="bash_code_execution", input={"cmd": "x"})
+    result_block = _Block(type="bash_code_execution_tool_result", tool_use_id="t1")
+    first = [_text("Let me check."), call, result_block]
+    second = [_Block(type="thinking", thinking="It holds.", signature="s"), _text("Holds.")]
+    client, sent = _fake_anthropic((first, "pause_turn", None), (second, "end_turn", None),
+                                   model="claude-fable-5-1")  # fmt: skip
+    result = consult.ask_anthropic(client, fable, "q")
+
+    assert len(sent) == 2 and "container" not in sent[0]
+    assert sent[1]["container"] == "container_1"
+    assert sent[1]["messages"][1] == {"role": "assistant", "content": first}
+    assert sent[1]["output_config"]["task_budget"]["remaining"] == 64000 - 100
+    assert sent[0]["output_config"]["task_budget"] == {"type": "tokens", "total": 64000}
+    assert result["text"] == "Holds." and result["status"] == "complete"
+    assert result["tool_calls"] == 1 and len(result["requests"]) == 2
+    assert result["usage"]["output_tokens"] == 200
+    assert result["cost_usd"] == round((20 * 10 + 200 * 50) / 1e6, 4)
+    assert [b["type"] for b in result["content"]] == [
+        "text", "server_tool_use", "bash_code_execution_tool_result", "thinking", "text"
+    ]  # fmt: skip
+    assert "signature" not in result["content"][3]
+
+    client, sent = _fake_anthropic(*[(first, "pause_turn", None)] * (1 + consult.MAX_CONTINUATIONS))
+    assert consult.ask_anthropic(client, fable, "q")["status"] == "truncated"
+    assert len(sent) == 1 + consult.MAX_CONTINUATIONS
+
+
+def test_context_directories(tmp_path: Path):
+    (tmp_path / "b.md").write_text("b")
+    (tmp_path / "a.md").write_text("a")
+    (tmp_path / "skip.txt").write_text("no")
+    status = tmp_path / "b.md"
+    assert consult.expand([status, tmp_path]) == [status, tmp_path / "a.md"]
 
 
 def test_openai_request_and_answer():
@@ -159,6 +218,8 @@ def test_openai_request_and_answer():
     assert body["model"] == "test-model" and body["input"] == "Why 37?" and body["stream"]
     assert body["reasoning"] == {"effort": "high", "summary": "auto"}
     assert body["store"] is False and body["max_output_tokens"] == 64000
+    assert body["tools"] == [{"type": "code_interpreter", "container": {"type": "auto"}}]
+    assert body["include"] == ["code_interpreter_call.outputs"]
 
     assert result["status"] == "complete"
     assert result["text"] == "Because 2^9 = -6."
@@ -231,12 +292,13 @@ def test_truncated_answer_is_kept_and_asked_again(tmp_path: Path, monkeypatch):
 
 
 def test_overrides(monkeypatch):
-    args = SimpleNamespace(with_=["fable"], model=[], effort=["fable=xhigh"],
+    args = SimpleNamespace(with_=["fable"], model=[], effort=["fable=xhigh"], no_code=True,
                            budget=["fable=0"], max_tokens=["fable=90000"])  # fmt: skip
     (fable,) = consult._chosen(args)
     assert (fable.effort, fable.budget, fable.max_tokens) == ("xhigh", 0, 90000)
     assert "task_budget" not in consult.anthropic_params(fable)["output_config"]
     assert consult.anthropic_params(fable)["betas"] == [consult.FALLBACK_BETA]
+    assert "tools" not in consult.anthropic_params(fable)
     with pytest.raises(consult.ConsultError):
         consult._chosen(SimpleNamespace(**{**vars(args), "budget": ["fable=lots"]}))
 
