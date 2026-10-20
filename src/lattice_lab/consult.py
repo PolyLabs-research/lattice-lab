@@ -9,7 +9,8 @@ Each consultant answers on its own, and every exchange is kept verbatim under
 record (`round-1/fable.json`: model, effort, the parameters sent, the prompt's hash, times,
 usage, stop reason, the summarised reasoning and the answer) with the answer alone beside it
 (`round-1/fable.md`). Records are written once and never overwritten. A consultant that fails
-(network, rate limit) leaves no record, so running `ask` again calls only the ones missing, and
+(network, rate limit) leaves no record, and one cut off at its output limit leaves its record in
+`round-1/attempts/` instead, so running `ask` again calls only the ones without an answer, and
 only if the prompt is unchanged.
 
 A review round puts the round-1 prompt and every complete round-1 answer, labelled A, B, ... in
@@ -41,6 +42,10 @@ OPENAI_BASE_URL = "https://api.openai.com/v1"
 # Server-side refusal fallback, "default" form: on a policy decline the API reruns the request
 # on the model Anthropic recommends for that category, inside the same call.
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
+# Task budgets: an advisory token budget for thinking and answer together, which the model sees
+# and paces itself against. Without one, Fable's first consultation thought for 64,000 tokens,
+# its whole output limit, and wrote no answer.
+BUDGET_BETA = "task-budgets-2026-03-13"
 
 
 class ConsultError(Exception):
@@ -53,12 +58,15 @@ class Consultant:
     provider: str  # "anthropic" or "openai"
     model: str | None
     effort: str = "high"
-    max_tokens: int = 64000
+    max_tokens: int = 64000  # the hard limit on output, thinking included
+    budget: int | None = None  # the advisory task budget (Anthropic only)
 
 
 def consultants() -> dict[str, Consultant]:
     return {
-        "fable": Consultant("fable", "anthropic", "claude-fable-5-1"),
+        "fable": Consultant(
+            "fable", "anthropic", "claude-fable-5-1", max_tokens=128000, budget=64000
+        ),
         "chatgpt": Consultant("chatgpt", "openai", os.environ.get("CONSULT_OPENAI_MODEL")),
     }
 
@@ -150,7 +158,7 @@ def openai_client():
 
 
 def anthropic_params(c: Consultant) -> dict:
-    return {
+    params = {
         "model": c.model,
         "max_tokens": c.max_tokens,
         "betas": [FALLBACK_BETA],
@@ -158,6 +166,10 @@ def anthropic_params(c: Consultant) -> dict:
         "thinking": {"type": "adaptive", "display": "summarized"},
         "output_config": {"effort": c.effort},
     }
+    if c.budget:
+        params["betas"].append(BUDGET_BETA)
+        params["output_config"]["task_budget"] = {"type": "tokens", "total": c.budget}
+    return params
 
 
 def ask_anthropic(client, c: Consultant, prompt: str) -> dict:
@@ -253,7 +265,8 @@ def _fix(path: Path, text: str) -> None:
 def run_round(directory: Path, prompt: str, chosen: list[Consultant], round_number: int,
               log: Callable[[str], None]) -> dict:  # fmt: skip
     """Ask every chosen consultant without a record in `directory`, concurrently; write each
-    record as it arrives. Returns {name: "written" | "exists" | error message}."""
+    record as it arrives (a truncated one to `attempts/`, so that it is asked again next time).
+    Returns {name: "written" | "exists" | "truncated: ..." | error message}."""
     _fix(directory / "prompt.md", prompt)
     digest = sha256(prompt)
     outcome = {}
@@ -286,9 +299,14 @@ def run_round(directory: Path, prompt: str, chosen: list[Consultant], round_numb
             "seconds": round(time.monotonic() - t0, 1),
             **result,
         }
+        log(f"{c.name}: {result['status']} in {record['seconds']} s")
+        if result["status"] == "truncated":
+            attempt = len(list((directory / "attempts").glob(f"{c.name}-*.json"))) + 1
+            path = directory / "attempts" / f"{c.name}-{attempt}.json"
+            _write_once(path, json.dumps(record, indent=2) + "\n")
+            return c.name, f"truncated at {c.max_tokens} output tokens; kept as {path}"
         _write_once(directory / f"{c.name}.json", json.dumps(record, indent=2) + "\n")
         _write_once(directory / f"{c.name}.md", result["text"].rstrip() + "\n")
-        log(f"{c.name}: {result['status']} in {record['seconds']} s")
         return c.name, "written"
 
     with ThreadPoolExecutor(max_workers=max(1, len(todo))) as pool:
@@ -319,11 +337,17 @@ def _chosen(args) -> list[Consultant]:
     if unknown:
         raise ConsultError(f"unknown consultant(s) {unknown}; known: {sorted(available)}")
     chosen = {n: available[n] for n in names}
-    for spec, field in [(s, "model") for s in args.model] + [(s, "effort") for s in args.effort]:
-        name, _, value = spec.partition("=")
-        if name not in chosen or not value:
-            raise ConsultError(f"--{field} takes NAME=VALUE with NAME one of {sorted(chosen)}")
-        chosen[name] = replace(chosen[name], **{field: value})
+    for field in ("model", "effort", "budget", "max_tokens"):
+        for spec in getattr(args, field):
+            name, _, value = spec.partition("=")
+            flag = "--" + field.replace("_", "-")
+            if name not in chosen or not value:
+                raise ConsultError(f"{flag} takes NAME=VALUE with NAME one of {sorted(chosen)}")
+            if field in ("budget", "max_tokens"):
+                if not value.isdigit():
+                    raise ConsultError(f"{flag} {spec}: a whole number of tokens")
+                value = int(value)
+            chosen[name] = replace(chosen[name], **{field: value})
     return list(chosen.values())
 
 
@@ -390,6 +414,9 @@ def add_parser(sub) -> None:
                        help="ask only these (repeatable; default all)")  # fmt: skip
         q.add_argument("--model", action="append", default=[], metavar="NAME=ID")
         q.add_argument("--effort", action="append", default=[], metavar="NAME=LEVEL")
+        q.add_argument("--budget", action="append", default=[], metavar="NAME=TOKENS",
+                       help="advisory task budget (fable; 0 for none)")  # fmt: skip
+        q.add_argument("--max-tokens", action="append", default=[], metavar="NAME=TOKENS")
         q.add_argument("--dry-run", action="store_true", help="print the prompt; call nothing")
         if name == "ask":
             q.add_argument("--question", type=Path, help="a file holding the question")

@@ -67,16 +67,20 @@ def test_anthropic_request_and_answer():
     seen = []
     http = _mock(_sse(events), {"request-id": "req_1"}, seen)
     client = anthropic.Anthropic(api_key="t", base_url=consult.ANTHROPIC_BASE_URL, http_client=http)
-    result = consult.ask_anthropic(client, FABLE, "Why 37?")
+    result = consult.ask_anthropic(client, consult.consultants()["fable"], "Why 37?")
 
     (request,) = seen
     assert str(request.url) == "https://api.anthropic.com/v1/messages?beta=true"
     assert consult.FALLBACK_BETA in request.headers["anthropic-beta"]
+    assert consult.BUDGET_BETA in request.headers["anthropic-beta"]
     body = json.loads(request.content)
     assert body["model"] == "claude-fable-5-1" and body["stream"] is True
     assert body["fallbacks"] == "default"
     assert body["thinking"] == {"type": "adaptive", "display": "summarized"}
-    assert body["output_config"] == {"effort": "high"}
+    assert body["max_tokens"] == 128000
+    assert body["output_config"] == {
+        "effort": "high", "task_budget": {"type": "tokens", "total": 64000}
+    }  # fmt: skip
     assert body["messages"] == [{"role": "user", "content": "Why 37?"}]
     assert "budget_tokens" not in json.dumps(body)
 
@@ -168,9 +172,11 @@ def _fake_providers(monkeypatch, answers: dict, calls: list):
             calls.append(c.name)
             if isinstance(answers[name], Exception):
                 raise answers[name]
-            return {"status": "complete", "served_by": c.model, "fallback": False,
+            answer = answers[name]
+            status, text = answer if isinstance(answer, tuple) else ("complete", answer)
+            return {"status": status, "served_by": c.model, "fallback": False,
                     "stop_reason": "end_turn", "stop_details": None, "request_id": "r",
-                    "usage": {}, "reasoning_summary": "", "text": answers[name]}  # fmt: skip
+                    "usage": {}, "reasoning_summary": "thought", "text": text}  # fmt: skip
 
         return ask
 
@@ -201,6 +207,38 @@ def test_records_are_written_once_and_resume(tmp_path: Path, monkeypatch):
     nameless = consult.Consultant("chatgpt2", "openai", None)
     outcome = consult.run_round(directory, "the prompt", [nameless], 1, lambda m: None)
     assert "no model" in outcome["chatgpt2"]
+
+
+def test_truncated_answer_is_kept_and_asked_again(tmp_path: Path, monkeypatch):
+    calls = []
+    answers = {"fable": ("truncated", "")}
+    _fake_providers(monkeypatch, answers, calls)
+    directory = tmp_path / "c" / "round-1"
+    for attempt in (1, 2):
+        outcome = consult.run_round(directory, "the prompt", [FABLE], 1, lambda m: None)
+        assert (
+            outcome["fable"].startswith("truncated") and f"fable-{attempt}.json" in outcome["fable"]
+        )
+        kept = json.loads((directory / "attempts" / f"fable-{attempt}.json").read_text())
+        assert kept["status"] == "truncated" and kept["reasoning_summary"] == "thought"
+        assert not (directory / "fable.json").exists()
+    answers["fable"] = "F says."
+    assert consult.run_round(directory, "the prompt", [FABLE], 1, lambda m: None) == {
+        "fable": "written"
+    }
+    assert calls == ["fable"] * 3
+    assert consult.round_answers(directory) == [("fable", "F says.")]
+
+
+def test_overrides(monkeypatch):
+    args = SimpleNamespace(with_=["fable"], model=[], effort=["fable=xhigh"],
+                           budget=["fable=0"], max_tokens=["fable=90000"])  # fmt: skip
+    (fable,) = consult._chosen(args)
+    assert (fable.effort, fable.budget, fable.max_tokens) == ("xhigh", 0, 90000)
+    assert "task_budget" not in consult.anthropic_params(fable)["output_config"]
+    assert consult.anthropic_params(fable)["betas"] == [consult.FALLBACK_BETA]
+    with pytest.raises(consult.ConsultError):
+        consult._chosen(SimpleNamespace(**{**vars(args), "budget": ["fable=lots"]}))
 
 
 def test_missing_key_leaves_no_record(tmp_path: Path, monkeypatch):

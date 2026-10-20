@@ -44,23 +44,30 @@ uv run lattice-lab consult review NAME                     # round 2
   prompt's sha256, start and finish times, usage, stop reason, request id, the summarised
   reasoning, the answer) and `NAME.md` (the answer alone); and in round 2 `labels.json`, which
   letter was whom. Files are written once and never overwritten. A failed call leaves no record,
-  so running the same command again asks only the consultants still missing, and refuses if the
-  prompt has changed. Commit the directory: git is the record's history.
-- **Settings.** Fable runs with adaptive thinking (summarised), effort `high` and up to 64,000
-  output tokens, and with Anthropic's server-side refusal fallback (`fallbacks: "default"`), so a
-  request a safety classifier declines is rerun on a fallback model; the record says when that
-  happened and which model answered. ChatGPT runs through the Responses API with reasoning effort
-  `high`, summaries on, and `store: false`. Change either with `--effort fable=xhigh` and
-  `--model chatgpt=ID`; `--with fable` asks one only; `--dry-run` prints the prompt and the
-  parameters and calls nothing.
+  and an answer cut off at the output limit is kept in `attempts/NAME-K.json` (its summarised
+  reasoning is often worth reading) but does not count as the answer, so running the same command
+  again asks only the consultants still without one, and refuses if the prompt has changed.
+  Commit the directory: git is the record's history.
+- **Settings.** Fable runs with adaptive thinking (summarised), effort `high`, an advisory task
+  budget of 64,000 tokens (thinking and answer together; the model sees it and paces itself), a
+  hard limit of 128,000 output tokens, and Anthropic's server-side refusal fallback
+  (`fallbacks: "default"`), so a request a safety classifier declines is rerun on a fallback
+  model; the record says when that happened and which model answered. The budget is there because
+  the first consultation, without one and with a 64,000-token limit, thought until the limit and
+  wrote no answer. ChatGPT runs through the Responses API with reasoning effort `high`, summaries
+  on, `store: false` and up to 64,000 output tokens. Change these with `--effort fable=xhigh`,
+  `--budget fable=96000` (`0` for none), `--max-tokens NAME=N` and `--model chatgpt=ID`;
+  `--with fable` asks one only; `--dry-run` prints the prompt and the parameters and calls
+  nothing.
 - **Keys and model.** `CONSULT_ANTHROPIC_API_KEY`, `CONSULT_OPENAI_API_KEY` and
   `CONSULT_OPENAI_MODEL` (ChatGPT's model has no default). The names are not the usual ones so
   that a cloud session's own Claude credentials are never used for these calls, and the API hosts
   are fixed. In a cloud session, add them to the environment's variables; the network policy must
   also allow `api.openai.com`.
-- **Cost.** The `direction` prompt is about 33,000 characters (roughly 9,000 tokens). At Fable's
-  prices ($10 and $50 per million input and output tokens) one answer costs at most about $3.20 at
-  the output cap, and typically about $1; ChatGPT's depends on the model.
+- **Cost.** The `direction` prompt is about 33,000 characters (13,000 tokens). At Fable's prices
+  ($10 and $50 per million input and output tokens) the input costs $0.13, and output costs $3.20
+  per 64,000 tokens, so an answer within its budget is about $3.30 and the hard limit caps it at
+  $6.53. The first attempt used all 64,000 tokens and cost $3.33. ChatGPT's depends on the model.
 
 What comes back is a consultant's view, not a result. Its claims are checked, and its predictions
 registered, before anything is built on them.
