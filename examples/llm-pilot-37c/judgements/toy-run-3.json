@@ -1,0 +1,230 @@
+{
+ "round": 99,
+ "branch": "local:toy",
+ "base": "63e6595f966ea7123cd6a93eec5a962173a637b3",
+ "head": "a5c8b96a2e0c5e5188766c7cd0a4e587924f9b9e",
+ "library": {
+  "ok": true,
+  "touched": [
+   [
+    "A",
+    "mechanism.py"
+   ],
+   [
+    "A",
+    "report.md"
+   ]
+  ],
+  "not_allowed": [],
+  "manifest_changed": []
+ },
+ "mechanism": {
+  "present": true,
+  "targets": {
+   "explained": 4,
+   "of": 5,
+   "rules": [
+    [
+     37,
+     "square r5 699738"
+    ],
+    [
+     37,
+     "square r5 985232"
+    ],
+    [
+     37,
+     "square r5 1431278"
+    ],
+    [
+     37,
+     "square r5 1968276"
+    ]
+   ]
+  },
+  "train": {
+   "claims": 141,
+   "false": [
+    {
+     "m": 37,
+     "rule": "square r4 4850",
+     "q": 27,
+     "holds": false,
+     "known_mechanism": false,
+     "split": "train"
+    },
+    {
+     "m": 37,
+     "rule": "square r4 4850",
+     "q": 27,
+     "holds": false,
+     "known_mechanism": false,
+     "split": "train"
+    }
+   ],
+   "hold": 139,
+   "beyond_known": 24,
+   "ninth_or_more": 22
+  },
+  "heldout": {
+   "claims": 62,
+   "false": [],
+   "hold": 62,
+   "beyond_known": 20,
+   "ninth_or_more": 24
+  },
+  "coverage": {
+   "radius6_unexplained": [
+    16,
+    37
+   ],
+   "radius6_beyond_all_known": [
+    0,
+    21
+   ],
+   "cube_hits_train": [
+    12,
+    19
+   ],
+   "remainder": [
+    0,
+    45
+   ]
+  },
+  "coverage_rows": {
+   "radius6_unexplained": [
+    2097154,
+    2097155,
+    4194304,
+    4194305,
+    6291458,
+    6291459,
+    107951322,
+    108460253,
+    134217732,
+    134217733,
+    136314886,
+    136314887,
+    138412037,
+    140509190,
+    198817715,
+    229592942
+   ],
+   "radius6_beyond_all_known": [],
+   "cube_hits_train": [
+    [
+     37,
+     1112
+    ],
+    [
+     37,
+     2436
+    ],
+    [
+     37,
+     3461
+    ],
+    [
+     37,
+     10498
+    ],
+    [
+     37,
+     13584
+    ],
+    [
+     37,
+     17056
+    ],
+    [
+     37,
+     18246
+    ],
+    [
+     37,
+     26883
+    ],
+    [
+     37,
+     28944
+    ],
+    [
+     61,
+     3461
+    ],
+    [
+     61,
+     18246
+    ],
+    [
+     61,
+     26883
+    ]
+   ],
+   "remainder": []
+  },
+  "per_m": {
+   "atlas 37": {
+    "ok": true,
+    "seconds": 32.7,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 61": {
+    "ok": true,
+    "seconds": 36.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "atlas 163": {
+    "ok": true,
+    "seconds": 27.5,
+    "errors": 0,
+    "first_error": null
+   },
+   "family 37": {
+    "ok": true,
+    "seconds": 45.7,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2015
+   },
+   "family 61": {
+    "ok": true,
+    "seconds": 47.4,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2003
+   },
+   "ninth37 37": {
+    "ok": true,
+    "seconds": 59.3,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2042
+   },
+   "radius6 37": {
+    "ok": true,
+    "seconds": 79.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2083
+   },
+   "square5 127": {
+    "ok": true,
+    "seconds": 47.9,
+    "errors": 0,
+    "first_error": null,
+    "rules": 2000
+   }
+  },
+  "all_ran": true
+ },
+ "lean": {
+  "present": false
+ },
+ "proposal": {
+  "present": false
+ },
+ "sound": false
+}

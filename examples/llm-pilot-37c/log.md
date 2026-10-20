@@ -68,3 +68,7 @@ the first run found two module-name clashes in the judge (fixed: this pilot's st
 fast census are loaded by path); the second ran every set (2,000 to 2,083 rules each, 32 to 86
 seconds) but its planted claim, 4850 at 61, lay outside the sets the judge evaluates, so it was
 moved to 4850 at 37 (q = 27, false) for a third run.
+The third run caught it: two false claims (4850 at 37 is in two of the judge's sets), sound:
+false, targets 4 of 5 (4850's only claim was the false one), and the toy's held-out coverage
+exactly the baseline, 16 of the 37 and 0 of the 21 (`judgements/toy-run-2.json`,
+`toy-run-3.json`).
