@@ -115,6 +115,11 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
 
 ## Open questions, roughly in order
 
+**A direction with an application** ([next-direction.md](next-direction.md)): the ring every
+result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
+logical qubits are read off the same characters. Its first step, a registered rediscovery test
+against linear algebra and twelve published codes, is `examples/qec-bb`.
+
 **First in line: rule 4850 at m = 37.** A registered census of the radius-5 family
 (consultations.md, section 4) refuted chance for rule 4850: four more ninth-power rules at 37
 that no known mechanism explains (699738, 985232, 1431278, 1968276), against 0.0066 expected.

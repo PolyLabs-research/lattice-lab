@@ -1,0 +1,29 @@
+{
+ "note": "Published bivariate bicycle codes: torus l x m, polynomials A and B as exponent pairs (p, q) for x^p y^q, published [[n, k, d]]. Transcribed on 2026-10-20 from web-search summaries of the papers and of later papers' tables (arXiv:2502.20189, 2609.39121, 2511.13560 for the first five; the arXiv v4, the authors' poster and the Quantum version for the coprime codes), because arXiv is not reachable from this environment; to be checked against the papers. The coprime codes' versions disagree for [[108,12,6]] and [[126,12,10]], so both versions are listed.",
+ "codes": [
+  {"name": "[[72,12,6]]", "source": "Bravyi et al., Nature 627, 778 (2024), arXiv:2308.07915", "l": 6, "m": 6,
+   "A": [[3, 0], [0, 1], [0, 2]], "B": [[0, 3], [1, 0], [2, 0]], "n": 72, "k": 12, "d": 6},
+  {"name": "[[90,8,10]]", "source": "Bravyi et al. 2024", "l": 15, "m": 3,
+   "A": [[9, 0], [0, 1], [0, 2]], "B": [[0, 0], [2, 0], [7, 0]], "n": 90, "k": 8, "d": 10},
+  {"name": "[[108,8,10]]", "source": "Bravyi et al. 2024", "l": 9, "m": 6,
+   "A": [[3, 0], [0, 1], [0, 2]], "B": [[0, 3], [1, 0], [2, 0]], "n": 108, "k": 8, "d": 10},
+  {"name": "[[144,12,12]] (the gross code)", "source": "Bravyi et al. 2024", "l": 12, "m": 6,
+   "A": [[3, 0], [0, 1], [0, 2]], "B": [[0, 3], [1, 0], [2, 0]], "n": 144, "k": 12, "d": 12},
+  {"name": "[[288,12,18]]", "source": "Bravyi et al. 2024", "l": 12, "m": 12,
+   "A": [[3, 0], [0, 2], [0, 7]], "B": [[0, 3], [1, 0], [2, 0]], "n": 288, "k": 12, "d": 18},
+  {"name": "[[30,4,6]]", "source": "Wang and Mueller, arXiv:2408.10001 (v4)", "l": 3, "m": 5,
+   "pi_A": [0, 1, 2], "pi_B": [1, 3, 8], "n": 30, "k": 4, "d": 6},
+  {"name": "[[42,6,6]]", "source": "Wang and Mueller (v4)", "l": 3, "m": 7,
+   "pi_A": [0, 2, 3], "pi_B": [1, 3, 11], "n": 42, "k": 6, "d": 6},
+  {"name": "[[70,6,8]]", "source": "Wang and Mueller (v4)", "l": 5, "m": 7,
+   "pi_A": [0, 1, 5], "pi_B": [0, 1, 12], "n": 70, "k": 6, "d": 8},
+  {"name": "[[108,12,6]] (poster)", "source": "Wang and Mueller, QCE 2024 poster", "l": 2, "m": 27,
+   "pi_A": [2, 5, 44], "pi_B": [8, 14, 47], "n": 108, "k": 12, "d": 6},
+  {"name": "[[108,12,6]] (Quantum)", "source": "Wang and Mueller, Quantum (2026)", "l": 2, "m": 27,
+   "pi_A": [0, 3, 42], "pi_B": [0, 6, 39], "n": 108, "k": 12, "d": 6},
+  {"name": "[[126,12,10]] (poster)", "source": "Wang and Mueller, QCE 2024 poster", "l": 7, "m": 9,
+   "pi_A": [0, 1, 58], "pi_B": [3, 16, 44], "n": 126, "k": 12, "d": 10},
+  {"name": "[[126,12,10]] (Quantum)", "source": "Wang and Mueller, Quantum (2026)", "l": 7, "m": 9,
+   "pi_A": [0, 1, 58], "pi_B": [0, 13, 41], "n": 126, "k": 12, "d": 10}
+ ]
+}
