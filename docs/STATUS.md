@@ -57,7 +57,7 @@ before the runs that tested them.
 | Finding | Status | Write-up |
 | --- | --- | --- |
 | Square parity rule B1357/S1357: period 2^v(n) (2^sord(m) - 1) | confirmed in advance at every n up to 200; the 2-part, P(2^v m) = 2^v P(m), **proved in Lean** for every m > 1; the odd part checked by machine up to 999 except ten | [xor-periods.md](xor-periods.md), [xor-periods-proof.md](xor-periods-proof.md), [proofs.md](proofs.md) |
-| Hexagon parity rule B135/S135: period 2 * 2^v(n) R(m) | first law refuted at 3 of 70 sizes; the corrected law was confirmed at 100 and **proved for every even n**; the 2-part also **proved in Lean**, by an LLM agent | [parity-lattices.md](parity-lattices.md), [llm-pilot.md](llm-pilot.md) |
+| Hexagon parity rule B135/S135: period 2 * 2^v(n) R(m) for odd parts m >= 5 (2^v(n) at m = 3; the torus dies at m = 1) | first law refuted at 3 of 70 sizes; the corrected law was confirmed at 100 and **proved for every even n**; the 2-part also **proved in Lean**, by an LLM agent | [parity-lattices.md](parity-lattices.md), [llm-pilot.md](llm-pilot.md) |
 | Triangle parity rules: 2 * 2^v(n) (2^sord(m) - 1) | confirmed at 154 sizes; the 2-part is proved, and also **in Lean**, by an LLM agent; the odd part is checked by machine to 999 except ten | [parity-lattices.md](parity-lattices.md), [llm-pilot.md](llm-pilot.md) |
 | Kepler finds the hexagon law itself, given 1D rule periods in its vocabulary | registered replay, 8 of 8 | [parity-lattices.md](parity-lattices.md#kepler-with-a-wider-vocabulary) |
 | Atlas, round 1: Kepler's laws for 42 shell-built linear rules (38 unstudied) | blind; all 34 rules with a law kept a registered one at 1,930 new pairs | [linear-atlas.md](linear-atlas.md) |

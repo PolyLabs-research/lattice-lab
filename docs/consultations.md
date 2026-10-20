@@ -160,3 +160,60 @@ and since 2^((p-1)/4) = +-i with (p - 1)/4 odd, that field lies in the cubes. Th
 neighbours fail is not part of any proof; it is an observation, and it held at all four. The one
 error in Fable's answer stands: its list of primes where (U) fails names 109 and 157, where 2 is
 not a primitive root, and omits 173 and 181.
+
+## 2. What next? (the `direction` preset), 2026-10-20
+
+The first consultation by API (`consultations/2026-10-20-next-steps/`), Fable only, as a check of
+the tool; ChatGPT's key is not yet set. The prompt was the preamble, STATUS and this file, and the
+`direction` question. **The first attempt** thought for 14 minutes, used all 64,000 output tokens
+on thinking and wrote no answer ($3.33; kept as `round-1/attempts/fable-1.json`). Fable now runs
+with a task budget (above). **The second** answered in 4.9 minutes: 15,372 thinking tokens, about
+6,000 of answer, $1.20.
+
+**What it suggested.**
+
+1. *One theorem for the power mechanisms:* if f = g^N in the group ring at m, every eigenvalue
+   of f is an N-th power and P(f) = P(g)/gcd(P(g), N). Twisted powers by d = 2^k are the case
+   N = 1 + 2^k, and invariance under a dilation by 2^k is f = f^(2^k). So round 4 should search
+   for N, over every prime q dividing 2^sord(m) - 1, not only q = 3. It gave predictions at
+   m = 13 and 37.
+2. *Rebuild the chance model on Galois orbits:* the eigenvalues of a symmetric rule at a prime p
+   with 2 primitive fall into one orbit per slope, which D4 merges further; treat orbits as
+   independent except where an identity ties them, and register the expected counts.
+3. *Close the XOR law's ten unchecked odd parts* by looking up the factorisations of 2^s - 1
+   they need, and reconcile rule 90's list with Martin, Odlyzko and Wolfram (1984).
+
+It called "why a non-confined rule reaches the full bound" mis-posed (a tautology unless posed
+as a null model), and asked for two rechecks: that every ledger period is the linear map's, not
+one sampled orbit's, and that "the hexagon law, proved for every even n" covers odd parts 1
+and 3.
+
+**The orchestrator's first check** (arithmetic by machine, the rest against the write-ups; no
+prediction has been run yet):
+
+- **Every number checks**: the factorisations of 2^36 - 1 and 2^18 - 1, the residues
+  (2^10 = 10, 2^9 = 5, 2^6 = 12, 2^4 = 3 mod 13; 2^6 = 27 and 2^9 = -6 mod 37) and all six
+  predicted periods (819, 455, 63, 4095 and 21 at 13; (2^36 - 1)/65 and 511 at 37). They follow
+  from its claim A, which is correct and short, so they test the engines rather than a
+  hypothesis.
+- **Overstated**: "the five mechanisms are one statement". Splitting, the unit times a cube of
+  pilot 6, and rule 90's own confinement at 37 (Fable's earlier criterion) are not f = g^N.
+- **Two errors.** Its claim D takes the square parity rule to be t(x) + t(y), which vanishes on
+  the diagonals; the rule is t(x) + t(y) + t(x) t(y) (xor-periods-proof.md), whose diagonal
+  values are t^2, not 0. And its 7th-power prediction at 37 rests on "no subfield of F(2^18) has
+  index divisible by 7", which is false for F(2) and F(4) (indices 262,143 and 87,381); the
+  conclusion may still hold for shell rules, but not for the reason given. Its own count of slope
+  classes at 13 (5) is right: a machine count gives 5 at 13 and 11 at 37, (p + 7)/4; the 7 it
+  then offered is wrong.
+- **Already settled in the write-ups it was not given**: the ten odd parts are exactly those
+  where a factor of 2^s - 1 could not be factored here (xor-periods-proof.md), equality was
+  checked against complete factorisations at the other 489, and the exact engines compute the
+  period of the linear map (a single live cell generates the whole ring). The hexagon's odd
+  parts 1 and 3 are proved separately, with different values (parity-lattices.md); STATUS's one
+  line, "2 * 2^v(n) R(m), proved for every even n", is loose there and should say m >= 5.
+- **Worth acting on**: looking up the ten factorisations (published tables may now have them,
+  which would finish the XOR and triangle odd parts to 999); the search over N for round 4; and
+  stating the chance model per Galois orbit, which open question 1 already asks for.
+
+The lesson for the tool: the `direction` preset sends STATUS, which summarises, so a consultant
+flags what the full write-ups settle. A consultation about one result should carry its write-up.
