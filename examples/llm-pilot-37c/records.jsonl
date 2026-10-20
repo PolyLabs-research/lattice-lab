@@ -1,0 +1,84 @@
+{"explained":false,"id":2097154,"image_of":null,"logs":[0,255,0,0,0,0,255,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":2097155,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":2097665,"image_of":null,"logs":[18,18,18,0,0,0,0,9,18,18,0],"multiple_of":null,"predicted_odd":29127,"procedure":"dilation by 3; splits into 1+u+u^2","test":"hit"}
+{"explained":true,"id":2101256,"image_of":null,"logs":[9,255,9,0,0,0,0,18,9,9,0],"multiple_of":null,"predicted_odd":29127,"procedure":"dilation by 2; power 3; splits into 1+u","test":"hit"}
+{"explained":true,"id":2163712,"image_of":null,"logs":[9,255,9,0,0,0,0,18,9,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":2164257,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":9709,"procedure":"power 3; splits into 1+u+u^2","test":"hit"}
+{"explained":true,"id":2168493,"image_of":null,"logs":[18,18,18,0,0,0,0,9,18,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":2248629,"image_of":null,"logs":[0,9,9,0,0,9,0,9,9,0,18],"multiple_of":null,"predicted_odd":29127,"procedure":"splits into 1+u+u^2","test":"hit"}
+{"explained":false,"id":4194304,"image_of":null,"logs":[255,255,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":4194305,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":6291458,"image_of":null,"logs":[0,255,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":6291459,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":6403210,"image_of":null,"logs":[18,255,9,18,18,0,0,9,9,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":8438150,"image_of":null,"logs":[9,0,0,18,0,9,0,18,0,0,18],"multiple_of":4850,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":10491524,"image_of":4850,"logs":[9,9,18,18,18,9,0,18,0,9,9],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":10503169,"image_of":null,"logs":[0,18,9,9,9,0,0,0,9,18,0],"multiple_of":null,"predicted_odd":29127,"procedure":"dilation by 2; splits into 1+u+u^2","test":"hit"}
+{"explained":true,"id":19611082,"image_of":null,"logs":[0,255,18,18,18,0,0,0,18,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":20982139,"image_of":null,"logs":[9,9,18,18,18,9,0,18,0,9,9],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":21504272,"image_of":null,"logs":[255,255,18,9,9,0,0,18,18,0,0],"multiple_of":null,"predicted_odd":29127,"procedure":"power 3; splits into 1+u","test":"hit"}
+{"explained":true,"id":25755792,"image_of":null,"logs":[255,255,18,9,9,0,0,18,18,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":27827210,"image_of":null,"logs":[18,255,18,0,0,0,0,9,18,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"power 3; splits into mixed factors","test":"hit"}
+{"explained":true,"id":32215178,"image_of":null,"logs":[0,255,18,18,18,0,0,0,18,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":37045893,"image_of":null,"logs":[0,9,18,18,18,0,0,0,18,9,0],"multiple_of":null,"predicted_odd":29127,"procedure":"splits into 1+u+u^2","test":"hit"}
+{"explained":true,"id":39220148,"image_of":null,"logs":[255,18,18,0,0,0,0,9,18,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":43250486,"image_of":null,"logs":[9,18,9,0,9,9,0,18,9,18,18],"multiple_of":4850,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":49441229,"image_of":null,"logs":[9,0,18,9,9,0,0,18,18,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":55654676,"image_of":null,"logs":[255,18,18,0,0,0,0,9,18,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":57515480,"image_of":null,"logs":[9,255,0,18,18,0,255,18,0,18,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":57521562,"image_of":null,"logs":[18,255,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":57537311,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":57713795,"image_of":null,"logs":[0,9,18,18,18,0,0,0,18,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":58091941,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":66560575,"image_of":null,"logs":[9,0,18,9,9,0,0,18,18,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":93139344,"image_of":null,"logs":[255,255,0,9,9,0,0,9,0,9,0],"multiple_of":985232,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":93777327,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":107951322,"image_of":null,"logs":[0,255,0,0,0,0,255,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":108460253,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":112076104,"image_of":null,"logs":[18,255,0,9,9,0,0,9,0,9,0],"multiple_of":699738,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":115377162,"image_of":null,"logs":[18,255,0,9,9,0,255,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":117135413,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":132692042,"image_of":null,"logs":[0,255,0,0,0,0,255,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":133646261,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":134217732,"image_of":null,"logs":[255,0,0,0,0,0,255,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":134217733,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":136314881,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":29127,"procedure":"dilation by 2; dilation by 3; splits into 1+u+u^2","test":"hit"}
+{"explained":false,"id":136314886,"image_of":null,"logs":[0,0,0,0,0,0,255,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":136314887,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":138140734,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":138412036,"image_of":null,"logs":[255,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":138412037,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":140509190,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":140509191,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":142606368,"image_of":null,"logs":[255,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":29127,"procedure":"dilation by 2; power 3; splits into 1+u","test":"hit"}
+{"explained":true,"id":161481577,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":167788544,"image_of":null,"logs":[255,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"dilation by 2; splits into mixed factors","test":"hit"}
+{"explained":true,"id":169886721,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":9709,"procedure":"dilation by 2; power 3; splits into 1+u+u^2","test":"hit"}
+{"explained":false,"id":171949054,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":178279465,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"dilation by 2; splits into mixed factors","test":"hit"}
+{"explained":false,"id":178279803,"image_of":null,"logs":[9,9,18,18,18,9,0,18,0,9,9],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":189642139,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":190212516,"image_of":null,"logs":[255,9,0,9,9,0,255,9,0,9,0],"multiple_of":1968276,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":192967456,"image_of":null,"logs":[255,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":197163956,"image_of":null,"logs":[255,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":198817715,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":199262207,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":212362513,"image_of":null,"logs":[0,0,9,9,9,0,0,0,9,18,0],"multiple_of":null,"predicted_odd":87381,"procedure":"power 3; full bound","test":"hit"}
+{"explained":true,"id":213024809,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":29127,"procedure":"power 3; splits into 1+u+u^2+u^3+u^4","test":"hit"}
+{"explained":true,"id":215154740,"image_of":null,"logs":[255,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":217284671,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":217313016,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":221140584,"image_of":null,"logs":[18,9,0,9,9,0,255,9,0,9,0],"multiple_of":1431278,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":229454225,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":229592942,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":230065001,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":230092206,"image_of":null,"logs":[18,9,0,9,9,0,255,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":false,"id":231275595,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":232194996,"image_of":null,"logs":[255,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":238601217,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":true,"id":242863111,"image_of":null,"logs":[0,0,0,0,0,0,0,0,0,0,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"explained":false,"id":247497739,"image_of":null,"logs":[18,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":249255988,"image_of":null,"logs":[255,9,0,9,9,0,0,9,0,9,0],"multiple_of":null,"predicted_odd":null,"procedure":"power 3; splits into mixed factors","test":"hit"}
+{"explained":false,"id":262020583,"image_of":null,"logs":[9,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":262143,"procedure":"full bound","test":"hit"}
+{"explained":true,"id":262042400,"image_of":null,"logs":[255,18,0,18,18,0,0,18,0,18,0],"multiple_of":null,"predicted_odd":null,"procedure":"splits into mixed factors","test":"hit"}
+{"class_ninth_rates":[0.33575,0.33575,0.11108,0.1111,0.11111,0.1111,1.0,0.11111,0.11111,0.1111,0.11111],"confined":{"27":29,"3":23722,"9":83},"expected_by_chance":0.6971790407102886,"new_rules":266338304,"sd":0.834972479013703,"seconds":116.7,"test":"summary"}
