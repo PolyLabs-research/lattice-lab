@@ -312,3 +312,51 @@ checks caught nothing because the models stayed within what they had verified, a
 caught the confident prose. The classifier is the other cost: on these questions a Fable
 consultation is an Opus 4.8 consultation about half the time, and the record must be read for
 `served_by` before any comparison.
+
+## 4. Rule 4850's ninth powers at m = 37, 2026-10-20
+
+**The question.** The benchmark (section 3) found that rule 4850, one of the seven confined rules
+the sixth pilot attributed to chance, has every nonzero eigenvalue at 37 a *ninth* power (odd
+part (2^18 - 1)/9 = 29,127). The orchestrator's pre-check (`examples/rule-4850/question.md`
+records it): of the 21 ninth-power rules of the family at 37, it is the only one mechanisms 1 to
+4 leave (the rest split into rule-90 and rule-150 lines, whose values at 37 are ninth powers); it
+is confined at no other odd m from 9 to 201; it is irreducible over GF(2) in a, b and in x, y;
+and no exponent map with entries in [-6, 6] sends it to another family rule.
+
+**The consultation** (`consultations/2026-10-20-rule-4850/`): two independent answers from
+Fable at effort xhigh, with code and a 128,000-token budget, both served by Fable ($13.34, 26 and
+32 minutes). Every identity they listed holds (27 of 27).
+
+- **fable-r1**: a certificate, not a principle. Each of the 38 lines through the origin carries
+  one Frobenius orbit of eigenvalues; on each, the restriction f(x, x^k), alone or multiplied by a
+  twisted "hub" line, is congruent mod x^37 - 1 to a monomial times whole cyclotomic polynomials,
+  so every eigenvalue is a root of unity times a power of 1 + zeta, which at 37 is a cube and not
+  a ninth power. Three of these are exact at every m (f(x, 1) = t(x)^3,
+  f(x, x) = x^-6 (1 + x)^4 Phi_5^2, f(x, x^2) = x^-10 (1 + x)^8 Phi_13). It predicts which
+  classes are 27th powers, and says it cannot derive the seven identities that hold only mod 37.
+- **fable-r2**: no mechanism, and a calibration. The eight generic classes are ninth powers about
+  one time in nine each, independently; the diagonal 0.47; so about 1.1e-8 per rule and 4e-4 in
+  the family: 4850 is a mechanism or a coincidence of about 1 in 3,000, not one of the seven. It
+  also found that rule 90's ninth-power class at 37 is the Legendre symbol
+  (t(x)^29127 = the sum of x^u over the non-residues u mod 37, confirmed), and proposed the test.
+
+**The registered test** (`examples/rule-4850/`, registered and pushed at 13:42 UTC before any
+radius-5 rule was computed): extend the family to the 21 orbits with 0 <= b <= a <= 5 and count,
+among the 2,064,384 new rules, those whose nonzero eigenvalues at 37 are all ninth powers, that
+the atlas procedure does not explain and that are not images of 4850. Fable's criterion: at most
+1 if 4850 is a coincidence, 2 or more a mechanism. The census reads each rule's value at the 11
+classes from a table of discrete logs (`census.py`; on the radius-4 family it reproduces the
+group-ring counts of 110 cube, 21 ninth-power and 4 27th-power rules).
+
+**Result: coincidence refuted.** 21 new ninth-power rules; the atlas procedure explains 16; **5
+are unexplained**, against **0.0066** expected under the per-class null measured on the same
+rules. All five were rechecked with `eigen.py` (odd part 29,127 each). One, 482758, is 4850
+times rule 7 = (1 + a)(1 + b), whose values are ninth powers at 37, so it follows from 4850. The
+other four, **699738, 985232, 1431278 and 1968276**, are not multiples of 4850 and not images of
+it or of each other under any map in GL2(Z/37); like 4850, each is confined at 37 and at no other
+odd m from 11 to 101.
+
+**What it means.** Rule 4850 is not a coincidence: it is one of at least five rules confined to
+the ninth powers at m = 37 by something none of the seven known mechanisms covers, specific to 37
+in every case checked. It is the project's clearest open mechanism, and the right question for
+the seventh pilot.

@@ -115,6 +115,13 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
 
 ## Open questions, roughly in order
 
+**First in line: the ninth powers at m = 37.** A registered census of the radius-5 family
+(consultations.md, section 4) refuted chance for rule 4850: among 2,064,384 new rules, four
+more ninth-power rules at 37 that no known mechanism explains and that are not related to
+4850 (699738, 985232, 1431278, 1968276), against 0.0066 expected; all five are confined at 37
+only. A Fable consultation gave a certificate for 4850 (cyclotomic line projections) but no
+principle. The question for the seventh pilot: what confines these to the ninth powers?
+
 1. **The chance model.** Two pilots have shown the census's chance model undercounts. At m = 25
    it treats characters of order 25 and 5 as independent where an identity ties them (pilot 5);
    at m = 37 it treats every class as a cube one time in three, where the axis and diagonal classes
@@ -124,9 +131,9 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
    called chance again. Still open with it: the family at m = 29 (13 unexplained against 7.85 with
    per-class rates) and at 25 (nine, and the three atlas rules). **Two corrections from the
    consultation benchmark** (consultations.md, section 3), both checked by machine: rule 4850, one
-   of pilot 6's seven, has every nonzero eigenvalue a *ninth* power at 37, which no chance model
-   explains, so it has a mechanism nobody has found; and 17056 is 1112 under the exponent map
-   (a, b) -> (a + b, a - b), so pilot 6's sixteen were fifteen independent cases.
+   of pilot 6's seven, has every nonzero eigenvalue a *ninth* power at 37; and 17056 is 1112
+   under the exponent map (a, b) -> (a + b, a - b), so pilot 6's sixteen were fifteen
+   independent cases.
 2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
    half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
