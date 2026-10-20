@@ -1,0 +1,1012 @@
+{
+ "random_r4": {
+  "rules": 32767,
+  "nonzero_offaxis": 31675,
+  "P0": 29,
+  "P1": 14,
+  "P2": 31,
+  "P0P1P2": 14,
+  "P1P2": 14,
+  "ninth": 15,
+  "ninth_and_P1": 10,
+  "ninth_and_P2": 10,
+  "P1P2_rules": [
+   1,
+   7,
+   41,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ],
+  "P2_rules": [
+   1,
+   4,
+   7,
+   32,
+   41,
+   52,
+   63,
+   512,
+   577,
+   644,
+   711,
+   800,
+   873,
+   948,
+   1023,
+   16384,
+   17409,
+   18436,
+   19463,
+   20512,
+   21545,
+   22580,
+   23615,
+   25088,
+   26177,
+   27268,
+   28359,
+   29472,
+   30569,
+   31668,
+   32767
+  ]
+ },
+ "random_r5": {
+  "rules": 30000,
+  "nonzero_offaxis": 29448,
+  "P0": 3,
+  "P1": 1,
+  "P2": 3,
+  "P0P1P2": 1,
+  "P1P2": 1,
+  "ninth": 1,
+  "ninth_and_P1": 1,
+  "ninth_and_P2": 1,
+  "P1P2_rules": [
+   1081345
+  ],
+  "P2_rules": [
+   1081345,
+   31668,
+   1860096
+  ]
+ },
+ "random_r6": {
+  "rules": 30000,
+  "nonzero_offaxis": 29710,
+  "P0": 0,
+  "P1": 0,
+  "P2": 0,
+  "P0P1P2": 0,
+  "P1P2": 0,
+  "ninth": 0,
+  "ninth_and_P1": 0,
+  "ninth_and_P2": 0,
+  "P1P2_rules": [],
+  "P2_rules": []
+ },
+ "records_r6": [
+  {
+   "id": 2097154,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 2097155,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 2097665,
+   "explained": true,
+   "procedure": "dilation by 3; splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 2101256,
+   "explained": true,
+   "procedure": "dilation by 2; power 3; splits into 1+u",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 2163712,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 2164257,
+   "explained": true,
+   "procedure": "power 3; splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": false
+  },
+  {
+   "id": 2168493,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 2248629,
+   "explained": true,
+   "procedure": "splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 4194304,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 4194305,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 6291458,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 6291459,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 6403210,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 8438150,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 10491524,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 10503169,
+   "explained": true,
+   "procedure": "dilation by 2; splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 19611082,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 20982139,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 21504272,
+   "explained": true,
+   "procedure": "power 3; splits into 1+u",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 25755792,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 27827210,
+   "explained": true,
+   "procedure": "power 3; splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 32215178,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 37045893,
+   "explained": true,
+   "procedure": "splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 39220148,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 43250486,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 49441229,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 55654676,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 57515480,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 57521562,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 57537311,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 57713795,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 58091941,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 66560575,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 93139344,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 93777327,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 107951322,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 108460253,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 112076104,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 115377162,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 117135413,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 132692042,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 133646261,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 134217732,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 134217733,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 136314881,
+   "explained": true,
+   "procedure": "dilation by 2; dilation by 3; splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 136314886,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 136314887,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 138140734,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 138412036,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 138412037,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 140509190,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 140509191,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 142606368,
+   "explained": true,
+   "procedure": "dilation by 2; power 3; splits into 1+u",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 161481577,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 167788544,
+   "explained": true,
+   "procedure": "dilation by 2; splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 169886721,
+   "explained": true,
+   "procedure": "dilation by 2; power 3; splits into 1+u+u^2",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 171949054,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 178279465,
+   "explained": true,
+   "procedure": "dilation by 2; splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 178279803,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 189642139,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 190212516,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 192967456,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 197163956,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 198817715,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 199262207,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 212362513,
+   "explained": false,
+   "procedure": "power 3; full bound",
+   "nonzero": true,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 213024809,
+   "explained": true,
+   "procedure": "power 3; splits into 1+u+u^2+u^3+u^4",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 215154740,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 217284671,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 217313016,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 221140584,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 229454225,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 229592942,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 230065001,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 230092206,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": false,
+   "P0": false,
+   "P1": false,
+   "P2": false
+  },
+  {
+   "id": 231275595,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 232194996,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 238601217,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 242863111,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 247497739,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 249255988,
+   "explained": true,
+   "procedure": "power 3; splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 262020583,
+   "explained": false,
+   "procedure": "full bound",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  },
+  {
+   "id": 262042400,
+   "explained": true,
+   "procedure": "splits into mixed factors",
+   "nonzero": true,
+   "P0": true,
+   "P1": true,
+   "P2": true
+  }
+ ],
+ "ninth37_r4": {
+  "ids": [
+   1,
+   7,
+   13,
+   41,
+   82,
+   233,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   1057,
+   3394,
+   4850,
+   5665,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ],
+  "nonzero": [
+   1,
+   7,
+   13,
+   41,
+   233,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   1057,
+   4850,
+   5665,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ],
+  "P0": [
+   1,
+   7,
+   41,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ],
+  "P1": [
+   1,
+   7,
+   41,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ],
+  "P2": [
+   1,
+   7,
+   41,
+   577,
+   644,
+   800,
+   873,
+   1023,
+   17409,
+   18436,
+   23615,
+   27268,
+   28359,
+   32767
+  ]
+ },
+ "ninth37_r5": {
+  "ids": [
+   33026,
+   102259,
+   172306,
+   318463,
+   344580,
+   411652,
+   443859,
+   482758,
+   515367,
+   699738,
+   985232,
+   1081345,
+   1114116,
+   1431278,
+   1541119,
+   1690631,
+   1825855,
+   1961671,
+   1968276,
+   2063284,
+   2097151
+  ],
+  "nonzero": [
+   102259,
+   318463,
+   344580,
+   411652,
+   443859,
+   482758,
+   515367,
+   1081345,
+   1114116,
+   1541119,
+   1690631,
+   1825855,
+   1961671,
+   2063284,
+   2097151
+  ],
+  "P0": [
+   1081345,
+   1114116,
+   1541119,
+   1690631,
+   1825855,
+   1961671,
+   2063284,
+   2097151
+  ],
+  "P1": [
+   1081345,
+   1114116,
+   1541119,
+   1690631,
+   1825855,
+   1961671,
+   2063284,
+   2097151
+  ],
+  "P2": [
+   1081345,
+   1114116,
+   1541119,
+   1690631,
+   1825855,
+   1961671,
+   2063284,
+   2097151
+  ]
+ }
+}

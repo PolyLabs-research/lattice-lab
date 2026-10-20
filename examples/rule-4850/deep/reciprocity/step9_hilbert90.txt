@@ -1,0 +1,24 @@
+f2=20982139 f1=10491524 R=6: 28 orbits, no solution
+f2=20982139 f1=10491524 R=9: 55 orbits, kernel dim 1; orbit-weights [2]
+     lightest g: orbits [(4, 4), (7, 3)]
+f2=178279803 f1=10491524 R=6: 28 orbits, no solution
+f2=178279803 f1=10491524 R=9: 55 orbits, no solution
+f2=178279803 f1=10491524 R=12: 91 orbits, no solution
+f2=178279803 f1=20982139 R=6: 28 orbits, no solution
+f2=178279803 f1=20982139 R=9: 55 orbits, kernel dim 1; orbit-weights [2]
+     lightest g: orbits [(3, 3), (7, 4)]
+f2=10491524 f1=20982139 R=6: 28 orbits, no solution
+f2=10491524 f1=20982139 R=9: 55 orbits, no solution
+f2=10491524 f1=20982139 R=12: 91 orbits, no solution
+f2=4850 f1=10491524 R=6: 28 orbits, no solution
+f2=4850 f1=10491524 R=9: 55 orbits, no solution
+f2=4850 f1=10491524 R=12: 91 orbits, no solution
+f2=20982139 f1=4850 R=6: 28 orbits, no solution
+f2=20982139 f1=4850 R=9: 55 orbits, no solution
+f2=20982139 f1=4850 R=12: 91 orbits, no solution
+f2=63878144 f1=10491524 R=6: 28 orbits, no solution
+f2=63878144 f1=10491524 R=9: 55 orbits, no solution
+f2=63878144 f1=10491524 R=12: 91 orbits, no solution
+f2=159085834 f1=10491524 R=6: 28 orbits, no solution
+f2=159085834 f1=10491524 R=9: 55 orbits, no solution
+f2=159085834 f1=10491524 R=12: 91 orbits, no solution

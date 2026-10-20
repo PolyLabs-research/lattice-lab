@@ -1,0 +1,13 @@
+setup 2.0
+chunk 0 6.2
+chunk 16 25.2
+chunk 32 46.4
+chunk 48 66.2
+chunk 64 87.6
+chunk 80 110.3
+chunk 96 133.1
+chunk 112 152.9
+r4 {3: 110, 9: 21, 27: 4} zero at a generic class: 10
+r5n {3: 415, 9: 21, 27: 3} zero at a generic class: 126
+r6n {3: 23722, 9: 83, 27: 29} zero at a generic class: 8048
+done 175.2

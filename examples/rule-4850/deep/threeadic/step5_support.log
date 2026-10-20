@@ -1,0 +1,76 @@
+4850 cyclotomic line classes: [(0, 1), (1, 1), (1, 2)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(1, 1)], 'T': [(1, 0), (1, 1), (1, 7)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+482758 cyclotomic line classes: [(0, 1), (1, 1), (1, 2)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(1, 1)], 'T': [(1, 0), (1, 1), (1, 7)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+10491524 cyclotomic line classes: [(0, 1), (1, 1), (1, 3)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 10)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(1, 1), (1, 3)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 10)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 3)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 10)]}
+8438150 cyclotomic line classes: [(0, 1), (1, 1), (1, 2)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(1, 1)], 'T': [(1, 0), (1, 1), (1, 7)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+43250486 cyclotomic line classes: [(0, 1), (1, 1), (1, 2)]
+     mod9 {'orbits': 2, 'directions': 6, 'vanishing_classes': [(1, 1)], 'T': [(1, 1), (1, 7)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 7), (1, 13)]}
+20982139 cyclotomic line classes: [(0, 1), (1, 1), (1, 4)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 10)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 4)], 'T': [(1, 0), (1, 1), (1, 3), (1, 4), (1, 5), (1, 10)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 4)], 'T': [(1, 0), (1, 1), (1, 3), (1, 4), (1, 5), (1, 10)]}
+178279803 cyclotomic line classes: [(0, 1), (1, 1), (1, 7)]
+     mod9 {'orbits': 3, 'directions': 8, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 10)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(1, 1), (1, 7)], 'T': [(1, 0), (1, 1), (1, 3), (1, 7), (1, 8), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 7)], 'T': [(1, 0), (1, 1), (1, 4), (1, 7), (1, 10), (1, 13)]}
+699738 not cube-valued / has zeros; skipped
+985232 not cube-valued / has zeros; skipped
+1431278 not cube-valued / has zeros; skipped
+1968276 not cube-valued / has zeros; skipped
+233 cyclotomic line classes: [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 10), (1, 13)]
+     mod9 {'orbits': 2, 'directions': 4, 'vanishing_classes': [], 'T': [(1, 0), (1, 1)]}
+     mod19 {'orbits': 2, 'directions': 4, 'vanishing_classes': [], 'T': [(1, 0), (1, 1)]}
+     mod171 {'orbits': 2, 'directions': 4, 'vanishing_classes': [], 'T': [(1, 0), (1, 1)]}
+13 cyclotomic line classes: [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 10), (1, 13)]
+     mod9 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 1)]}
+     mod19 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 1)]}
+     mod171 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 1)]}
+7 cyclotomic line classes: [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 10), (1, 13)]
+     mod9 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 0)]}
+     mod19 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 0)]}
+     mod171 {'orbits': 1, 'directions': 2, 'vanishing_classes': [], 'T': [(1, 0)]}
+1575116 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 5, 'directions': 16, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 7), (1, 10), (1, 13)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 8), (1, 13)]}
+     mod171 {'orbits': 8, 'directions': 28, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 3), (1, 5), (1, 7), (1, 8), (1, 10), (1, 13)]}
+1199983 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 5), (1, 7), (1, 10), (1, 13)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 4), (1, 5), (1, 7), (1, 8)]}
+     mod171 {'orbits': 8, 'directions': 28, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 7), (1, 13)]}
+742155 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 6, 'directions': 24, 'vanishing_classes': [], 'T': [(1, 2), (1, 4), (1, 7), (1, 8), (1, 10), (1, 13)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 8), (1, 13)]}
+     mod171 {'orbits': 8, 'directions': 28, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 7), (1, 13)]}
+34098 cyclotomic line classes: [(0, 1), (1, 1), (1, 2), (1, 3)]
+     mod9 {'orbits': 5, 'directions': 16, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 10), (1, 13)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 13)]}
+     mod171 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1), (1, 1), (1, 2), (1, 3)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)]}
+852007 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 4), (1, 5), (1, 8)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 4), (1, 5), (1, 8), (1, 10)]}
+     mod171 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 4), (1, 5), (1, 8), (1, 10)]}
+1548808 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 10)]}
+     mod19 {'orbits': 6, 'directions': 20, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 5), (1, 7), (1, 10)]}
+     mod171 {'orbits': 8, 'directions': 28, 'vanishing_classes': [(0, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 7), (1, 10)]}
+1229132 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 8), (1, 13)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 10)]}
+     mod171 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 8), (1, 13)]}
+455580 cyclotomic line classes: [(0, 1), (1, 1)]
+     mod9 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 5), (1, 10), (1, 13)]}
+     mod19 {'orbits': 7, 'directions': 24, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 10), (1, 13)]}
+     mod171 {'orbits': 8, 'directions': 28, 'vanishing_classes': [(0, 1), (1, 1)], 'T': [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 7), (1, 10)]}

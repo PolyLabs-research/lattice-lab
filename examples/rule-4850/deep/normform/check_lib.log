@@ -1,0 +1,15 @@
+tables 0.2942667007446289
+4850 4 nf v27 [18, 9, 9, 18, 0, 9, 0, 9, 9, 9, 18] census [18, 9, 9, 18, 0, 9, 0, 9, 9, 9, 18] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+482758 5 nf v27 [0, 0, 9, 9, 18, 9, 0, 0, 9, 0, 18] census [0, 0, 9, 9, 18, 9, 0, 0, 9, 0, 18] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+10491524 6 nf v27 [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] census [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+8438150 6 nf v27 [9, 0, 0, 18, 0, 9, 0, 18, 0, 0, 18] census [9, 0, 0, 18, 0, 9, 0, 18, 0, 0, 18] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+43250486 6 nf v27 [9, 18, 9, 0, 9, 9, 0, 18, 9, 18, 18] census [9, 18, 9, 0, 9, 9, 0, 18, 9, 18, 18] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+20982139 6 nf v27 [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] census [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+178279803 6 nf v27 [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] census [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+7 1 nf v27 [9, 18, 0, 18, 18, 0, 0, 18, 0, 18, 0] census [9, 18, 0, 18, 18, 0, 0, 18, 0, 18, 0] units [1, 4, 7, 10, 13, 16, 19, 22, 25] ninth-confined (nf, all chars): True
+2 1 nf v27 [6, -1, 15, 18, 0, 9, 0, 21, 6, 24, 18] census [24, 255, 6, 18, 0, 9, 0, 3, 24, 15, 18] units [7, 16, 25] ninth-confined (nf, all chars): False
+common unit relating the two log conventions: {16, 25, 7}
+eigen.odd_part 4850 29127 29127 % o = 0
+eigen.odd_part 20982139 29127 29127 % o = 0
+eigen.odd_part 178279803 29127 29127 % o = 0
+eigen.odd_part 10491524 29127 29127 % o = 0

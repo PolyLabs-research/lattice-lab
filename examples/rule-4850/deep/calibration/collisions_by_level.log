@@ -1,0 +1,25 @@
+== r4
+   ninth    expected      0.000   observed coprime    10  common factor     6
+   cube     expected      0.000   observed coprime     1  common factor    13
+   noncube  expected      0.000   observed coprime     0  common factor     0
+   other    expected      0.000   observed coprime     0  common factor    15
+   ninth pattern [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] coprime pairs: {'27th power only': 1}
+   ninth pattern [9, 18, 0, 18, 18, 0, 0, 18, 0, 18, 0] coprime pairs: {'27th power only': 9}
+== r5n
+   ninth    expected      0.000   observed coprime     4  common factor     5
+   cube     expected      0.000   observed coprime     1  common factor    22
+   noncube  expected      0.002   observed coprime     0  common factor     2
+   other    expected      0.049   observed coprime     4  common factor    98
+   ninth pattern [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] coprime pairs: {'27th power only': 2}
+   ninth pattern [18, 9, 0, 9, 9, 0, 0, 9, 0, 9, 0] coprime pairs: {'27th power only': 2}
+== r6n
+   ninth    expected      0.000   observed coprime   216  common factor    28
+   cube     expected      0.080   observed coprime   162  common factor    88
+   noncube  expected     23.763   observed coprime    18  common factor    68
+   other    expected    584.996   observed coprime   618  common factor  1940
+   ninth pattern [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] coprime pairs: {'27th power only': 28, 'F(2^9)': 12}
+   ninth pattern [9, 18, 0, 18, 18, 0, 0, 18, 0, 18, 0] coprime pairs: {'27th power only': 12, 'F(2^9)': 6}
+   ninth pattern [9, 9, 18, 18, 18, 9, 0, 18, 0, 9, 9] coprime pairs: {'27th power only': 3}
+   ninth pattern [18, 9, 0, 9, 9, 0, 0, 9, 0, 9, 0] coprime pairs: {'F(2^9)': 28, '27th power only': 15}
+   ninth pattern [18, 9, 0, 9, 9, 0, 27, 9, 0, 9, 0] coprime pairs: {'27th power only': 1}
+   ninth pattern [18, 18, 18, 0, 0, 0, 0, 9, 18, 18, 0] coprime pairs: {'27th power only': 1}

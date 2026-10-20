@@ -1,0 +1,13 @@
+ninth power <=> N_{K/F64} in mu7, on 3000 random elements: True
+N(t_al) = eta_al^2 with eta_al = Tr(t_al) in F64: ok
+N(W) invariant under mu6 x mu6: True
+N(lambda') = N(W)^4 / (eta_al eta_be)^2 at all off-axis characters: ok
+P(i, j) as log in F64* (mod 63);  in F8 <=> log = 0 mod 9:
+  i=0: [18, 36, 54, 18, 45, 18]  mod 9: [0, 0, 0, 0, 0, 0]
+  i=1: [36, 36, 9, 45, 36, 27]  mod 9: [0, 0, 0, 0, 0, 0]
+  i=2: [54, 9, 9, 18, 27, 9]  mod 9: [0, 0, 0, 0, 0, 0]
+  i=3: [18, 45, 18, 18, 36, 54]  mod 9: [0, 0, 0, 0, 0, 0]
+  i=4: [45, 36, 27, 36, 36, 9]  mod 9: [0, 0, 0, 0, 0, 0]
+  i=5: [18, 27, 9, 54, 9, 9]  mod 9: [0, 0, 0, 0, 0, 0]
+eta_i logs in F64*: [12, 24, 48, 33, 3, 6]
+NW(0, d) logs: [48, 27, 12, 27, 3, 45]

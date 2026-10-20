@@ -1,0 +1,23 @@
+Psi_3 (deg 1): [('t + 1', 252, 9)]
+Psi_5 (deg 2): [('t**2 + t + 1', 264, 21)]
+Psi_7 (deg 3): [('t**3 + t**2 + 1', 414, 9)]
+Psi_9 (deg 3): [('t**3 + t + 1', 387, 9)]
+Psi_13 (deg 6): [('t**6 + t**5 + t**4 + t + 1', 156, 21)]
+/home/user/lattice-lab/.venv/lib/python3.13/site-packages/sympy/polys/polytools.py:6282: SymPyDeprecationWarning: 
+
+Ordered comparisons with modular integers are deprecated.
+
+            Use e.g. int(a) < int(b) instead of a < b.
+
+See https://docs.sympy.org/latest/explanation/active-deprecations.html#modularinteger-compare
+for details.
+
+This has been deprecated since SymPy version 1.13. It
+will be removed in a future version of SymPy.
+
+  return sorted(factors, key=key)
+Psi_31 (deg 15): [('t**5 + t**2 + 1', 73, 19), ('t**5 + t**3 + 1', 344, 20), ('t**5 + t**4 + t**3 + t**2 + 1', 261, 18)]
+Psi_127 (deg 63): [('t**7 + t**3 + 1', 0, 0), ('t**7 + t**4 + 1', 323, 26), ('t**7 + t**4 + t**3 + t**2 + 1', 416, 11), ('t**7 + t**5 + t**4 + t**3 + 1', 399, 21), ('t**7 + t**6 + 1', 350, 26), ('t**7 + t**6 + t**4 + t**2 + 1', 133, 25), ('t**7 + t**6 + t**5 + t**2 + 1', 283, 13), ('t**7 + t**6 + t**5 + t**4 + 1', 403, 25), ('t**7 + t**6 + t**5 + t**4 + t**3 + t**2 + 1', 303, 6)]
+Psi_73 (deg 36): [('t**9 + t**6 + t**5 + t**3 + 1', 385, 7), ('t**9 + t**8 + t**5 + t**4 + 1', 360, 9), ('t**9 + t**8 + t**7 + t**2 + 1', 308, 11), ('t**9 + t**8 + t**7 + t**5 + 1', 486, 0)]
+Psi_11 (deg 5): [('t**5 + t**4 + t**2 + t + 1', 486, 0)]
+Psi_23 (deg 11): [('t**11 + t**10 + t**8 + t**4 + t**3 + t**2 + 1', 489, 3)]

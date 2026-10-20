@@ -1,0 +1,5 @@
+Psi_31: 3 factors of degree 5; (coset rep, class mod 9, divides G_3): [(1, 8, False), (3, 0, True), (5, 7, False)]
+   sum of classes 6, class of Psi_31(t_1) itself 6
+Psi_127: 9 factors of degree 7; (coset rep, class mod 9, divides G_3): [(1, 5, False), (3, 1, False), (5, 2, False), (7, 2, False), (9, 0, False), (11, 6, False), (13, 3, True), (19, 1, False), (21, 7, False)]
+   sum of classes 0, class of Psi_127(t_1) itself 0
+class of T at t_1: 3 ; G_3 = [(1, 2), (5, 1), (7, 1)] ; class of G_3: 0

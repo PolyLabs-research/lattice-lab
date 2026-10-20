@@ -1,0 +1,21 @@
+10491524 * ab: 12 terms, shells {(4, 4): 4, (7, 3): 8}
+20982139 * ab: 12 terms, shells {(7, 4): 8, (3, 3): 4}
+178279803 * ab: 12 terms, shells {(4, 3): 8, (7, 7): 4}
+dil(h0, 10) == h1: True
+dil(h0, 26) == h2: True
+4850(x^2,y^2) * t(xy)t(x/y): 12 terms, shells {(8, 0): 4, (10, 4): 8}
+  4850 * rule 4: 56 terms
+  4850 * rule 8: 48 terms
+  4850 * rule 7: 76 terms
+  4850 * rule 13: 40 terms
+  4850 * rule 2: 12 terms
+  4850 * rule 3: 52 terms
+  4850 * rule 5: 64 terms
+  4850 * rule 6: 68 terms
+Psi5(a)Psi5(b) = rule 63 ; Psi5(a)Psi5(b)(a+b) = rule 472
+699738 == Psi5Psi5(a+b) * W exactly: True
+1431278 == Psi5Psi5 * V exactly: True
+57 certificate (gp, dp, M1, M2) = (10, None, 1, 128) found: True [{'gp': 10, 'dp': 0, 'M1': 1, 'M2': 128, 'verified': True, 'kind': 'genuine', 'lines': [None, None]}]
+960 certificate (gp, dp, M1, M2) = (10, None, 1, 4) found: True [{'gp': 10, 'dp': 0, 'M1': 1, 'M2': 4, 'verified': True, 'kind': 'genuine', 'lines': [None, True]}]
+699738 certificate (gp, dp, M1, M2) = (0, 8, 128, 472) found: True [{'gp': 0, 'dp': 8, 'M1': 128, 'M2': 472, 'verified': True, 'kind': 'genuine', 'lines': [None, None]}]
+1431278 certificate (gp, dp, M1, M2) = (0, 8, 4, 63) found: True [{'gp': 0, 'dp': 8, 'M1': 4, 'M2': 63, 'verified': True, 'kind': 'genuine', 'lines': [None, True]}]

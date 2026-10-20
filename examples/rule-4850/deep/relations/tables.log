@@ -1,0 +1,6 @@
+log table 2.2020974159240723 s; generator 47244640308
+L5 (11, 2097152) 4.02128267288208 s
+4850 logs mod 513: [18, 198, 9, 234, 162, 63, 0, 495, 9, 387, 180]
+mod 27 agrees with census37.class_logs(4) on all 32768 rules
+class (1,6) is 0 mod 513 for every zero-free radius-5 value: ok
+zero-free rules (nonzero at all 11 classes): 2028551

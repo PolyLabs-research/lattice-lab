@@ -1,0 +1,5 @@
+20982139 vs 10491524 dilated by 10 {'terms_lhs': 12, 'terms_rhs': 12, 'terms_D': 0, 'D_is_axis_form': True, 'P_support(q)': [], 'Q_support(p)': [], 'eig_failures_jk_nonzero': 0}
+20982139 vs 10491524 dilated by 27 {'terms_lhs': 12, 'terms_rhs': 12, 'terms_D': 0, 'D_is_axis_form': True, 'P_support(q)': [], 'Q_support(p)': [], 'eig_failures_jk_nonzero': 0}
+178279803 vs 10491524 dilated by 26 {'terms_lhs': 12, 'terms_rhs': 12, 'terms_D': 0, 'D_is_axis_form': True, 'P_support(q)': [], 'Q_support(p)': [], 'eig_failures_jk_nonzero': 0}
+178279803 vs 10491524 dilated by 11 {'terms_lhs': 12, 'terms_rhs': 12, 'terms_D': 0, 'D_is_axis_form': True, 'P_support(q)': [], 'Q_support(p)': [], 'eig_failures_jk_nonzero': 0}
+control 10491524 vs itself, d=10: {'terms_lhs': 12, 'terms_rhs': 12, 'terms_D': 24, 'D_is_axis_form': False, 'P_support(q)': [], 'Q_support(p)': [], 'eig_failures_jk_nonzero': 1296}

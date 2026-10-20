@@ -1,0 +1,61 @@
+{
+ "R2": {
+  "exponents_mod513": [
+   3,
+   14,
+   41
+  ],
+  "group_ring_identity_offaxis": true,
+  "eigen_check": true,
+  "Q_weight": 709,
+  "axis_residual_mod27_mod19": {
+   "(1, 0)": [
+    0,
+    7
+   ],
+   "(0, 1)": [
+    0,
+    7
+   ]
+  }
+ },
+ "R3": {
+  "exponents_mod513": [
+   17,
+   17,
+   24
+  ],
+  "group_ring_identity_offaxis": true,
+  "eigen_check": true,
+  "Q_weight": 667,
+  "axis_residual_mod27_mod19": {
+   "(1, 0)": [
+    0,
+    8
+   ],
+   "(0, 1)": [
+    0,
+    8
+   ]
+  }
+ },
+ "R2_components": {
+  "scalars_on_(1,7,11)_components": [
+   1,
+   1,
+   7
+  ]
+ },
+ "R3_components": {
+  "scalars_on_(1,7,11)_components": [
+   1,
+   1,
+   11
+  ]
+ },
+ "component_supports": {
+  "1": 36,
+  "7": 36,
+  "11": 30
+ }
+}

@@ -1,0 +1,223 @@
+1  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1, 'stab_B': 1822176}
+7  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+13  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+41  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+57 W core {'ninth_confined': False, 'nonunit': True, 'w_u': 849, 'stab_u': 8, 'w_u3': 737, 'stab_u3': 8, 'w_u19': 649, 'stab_u19': 24, 'w_B': 577, 'stab_B': 8}
+82  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+233  {'ninth_confined': True, 'nonunit': True, 'w_u': 757, 'stab_u': 8, 'w_u3': 665, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 329, 'stab_B': 16}
+577  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+644  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+800  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1233, 'stab_B': 32}
+873  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+960 V core {'ninth_confined': False, 'nonunit': True, 'w_u': 961, 'stab_u': 8, 'w_u3': 625, 'stab_u3': 8, 'w_u19': 169, 'stab_u19': 72, 'w_B': 553, 'stab_B': 8}
+1023  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 32}
+1057  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+3394  {'ninth_confined': True, 'nonunit': True, 'w_u': 653, 'stab_u': 8, 'w_u3': 573, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 689, 'stab_B': 16}
+4850 target {'ninth_confined': True, 'nonunit': False, 'w_u': 645, 'stab_u': 8, 'w_u3': 681, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 216, 'w_B': 809, 'stab_B': 16}
+5665  {'ninth_confined': True, 'nonunit': True, 'w_u': 757, 'stab_u': 8, 'w_u3': 665, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 329, 'stab_B': 16}
+17409  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+18436  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1041, 'stab_B': 32}
+23615  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+27268  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1153, 'stab_B': 32}
+28359  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+32767  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+33026  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+102259  {'ninth_confined': True, 'nonunit': True, 'w_u': 697, 'stab_u': 8, 'w_u3': 649, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 609, 'stab_B': 16}
+172306  {'ninth_confined': True, 'nonunit': True, 'w_u': 769, 'stab_u': 8, 'w_u3': 549, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 593, 'stab_B': 16}
+318463  {'ninth_confined': True, 'nonunit': True, 'w_u': 733, 'stab_u': 8, 'w_u3': 585, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 609, 'stab_B': 16}
+344580  {'ninth_confined': True, 'nonunit': True, 'w_u': 653, 'stab_u': 8, 'w_u3': 573, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 689, 'stab_B': 16}
+411652  {'ninth_confined': True, 'nonunit': True, 'w_u': 565, 'stab_u': 8, 'w_u3': 597, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 817, 'stab_B': 16}
+443859  {'ninth_confined': True, 'nonunit': True, 'w_u': 685, 'stab_u': 8, 'w_u3': 745, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 665, 'stab_B': 16}
+482758 4850*(1+a)(1+b) {'ninth_confined': True, 'nonunit': False, 'w_u': 673, 'stab_u': 8, 'w_u3': 657, 'stab_u3': 8, 'w_u19': 721, 'stab_u19': 72, 'w_B': 761, 'stab_B': 16}
+515367  {'ninth_confined': True, 'nonunit': True, 'w_u': 657, 'stab_u': 8, 'w_u3': 745, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 753, 'stab_B': 16}
+699738 pilot7 {'ninth_confined': True, 'nonunit': True, 'w_u': 541, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 1089, 'stab_B': 16}
+985232 pilot7 {'ninth_confined': True, 'nonunit': True, 'w_u': 721, 'stab_u': 8, 'w_u3': 641, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 72, 'w_B': 585, 'stab_B': 16}
+1081345  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+1114116  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+1431278 pilot7 {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 1089, 'stab_B': 16}
+1541119  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 81, 'stab_B': 32}
+1690631  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+1825855  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+1961671  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+1968276 pilot7 {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 585, 'stab_B': 16}
+2063284  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1281, 'stab_B': 32}
+2097151  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+2097154  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1217, 'stab_B': 32}
+2097155  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 9, 'stab_B': 32}
+2097665  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+2101256  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+2163712  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1233, 'stab_B': 32}
+2164257  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+2168493  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 32}
+2248629  {'ninth_confined': True, 'nonunit': True, 'w_u': 725, 'stab_u': 8, 'w_u3': 609, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 433, 'stab_B': 48}
+4194304  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1217, 'stab_B': 32}
+4194305  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 9, 'stab_B': 32}
+6291458  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1281, 'stab_B': 16}
+6291459  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 17, 'stab_B': 16}
+6403210  {'ninth_confined': True, 'nonunit': True, 'w_u': 769, 'stab_u': 8, 'w_u3': 549, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 545, 'stab_B': 16}
+8438150 4850*Phi3(xy)Phi3(x/y) {'ninth_confined': True, 'nonunit': False, 'w_u': 693, 'stab_u': 8, 'w_u3': 681, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 216, 'w_B': 777, 'stab_B': 16}
+10491524 4850 rotated {'ninth_confined': True, 'nonunit': False, 'w_u': 645, 'stab_u': 8, 'w_u3': 681, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 216, 'w_B': 809, 'stab_B': 16}
+10503169  {'ninth_confined': True, 'nonunit': True, 'w_u': 757, 'stab_u': 8, 'w_u3': 665, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 329, 'stab_B': 16}
+19611082  {'ninth_confined': True, 'nonunit': True, 'w_u': 605, 'stab_u': 8, 'w_u3': 605, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 569, 'stab_B': 16}
+20982139 unexplained r6 {'ninth_confined': True, 'nonunit': True, 'w_u': 685, 'stab_u': 8, 'w_u3': 593, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 216, 'w_B': 713, 'stab_B': 16}
+21504272  {'ninth_confined': True, 'nonunit': True, 'w_u': 697, 'stab_u': 8, 'w_u3': 641, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 801, 'stab_B': 16}
+25755792  {'ninth_confined': True, 'nonunit': True, 'w_u': 633, 'stab_u': 8, 'w_u3': 577, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 713, 'stab_B': 16}
+27827210  {'ninth_confined': True, 'nonunit': True, 'w_u': 641, 'stab_u': 8, 'w_u3': 669, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 633, 'stab_B': 16}
+32215178  {'ninth_confined': True, 'nonunit': True, 'w_u': 661, 'stab_u': 8, 'w_u3': 669, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 609, 'stab_B': 16}
+37045893  {'ninth_confined': True, 'nonunit': True, 'w_u': 697, 'stab_u': 8, 'w_u3': 649, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 609, 'stab_B': 16}
+39220148  {'ninth_confined': True, 'nonunit': True, 'w_u': 725, 'stab_u': 8, 'w_u3': 549, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 873, 'stab_B': 16}
+43250486 4850*Phi3(x)^2Phi3(y)^2 {'ninth_confined': True, 'nonunit': False, 'w_u': 821, 'stab_u': 8, 'w_u3': 569, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 72, 'w_B': 777, 'stab_B': 16}
+49441229  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 649, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 617, 'stab_B': 16}
+55654676  {'ninth_confined': True, 'nonunit': True, 'w_u': 681, 'stab_u': 8, 'w_u3': 597, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 521, 'stab_B': 16}
+57515480  {'ninth_confined': True, 'nonunit': True, 'w_u': 541, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 673, 'stab_B': 32}
+57521562  {'ninth_confined': True, 'nonunit': True, 'w_u': 817, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 625, 'stab_B': 16}
+57537311  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 553, 'stab_B': 32}
+57713795  {'ninth_confined': True, 'nonunit': True, 'w_u': 733, 'stab_u': 8, 'w_u3': 641, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 553, 'stab_B': 16}
+58091941  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 577, 'stab_B': 16}
+66560575  {'ninth_confined': True, 'nonunit': True, 'w_u': 697, 'stab_u': 8, 'w_u3': 649, 'stab_u3': 8, 'w_u19': 613, 'stab_u19': 72, 'w_B': 625, 'stab_B': 16}
+93139344  {'ninth_confined': True, 'nonunit': True, 'w_u': 721, 'stab_u': 8, 'w_u3': 641, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 72, 'w_B': 713, 'stab_B': 16}
+93777327  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 657, 'stab_B': 16}
+107951322  {'ninth_confined': True, 'nonunit': True, 'w_u': 525, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 697, 'stab_B': 32}
+108460253  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 577, 'stab_B': 32}
+112076104  {'ninth_confined': True, 'nonunit': True, 'w_u': 685, 'stab_u': 72, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 685, 'stab_u19': 72, 'w_B': 625, 'stab_B': 16}
+115377162  {'ninth_confined': True, 'nonunit': True, 'w_u': 817, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 685, 'stab_u19': 72, 'w_B': 969, 'stab_B': 32}
+117135413  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 305, 'stab_B': 32}
+132692042  {'ninth_confined': True, 'nonunit': True, 'w_u': 525, 'stab_u': 8, 'w_u3': 525, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 809, 'stab_B': 32}
+133646261  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 417, 'stab_B': 32}
+134217732  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1217, 'stab_B': 32}
+134217733  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 9, 'stab_B': 32}
+136314881  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 81, 'stab_B': 32}
+136314886  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1281, 'stab_B': 16}
+136314887  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 17, 'stab_B': 16}
+138140734  {'ninth_confined': True, 'nonunit': False, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 1049, 'stab_B': 32}
+138412036  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1281, 'stab_B': 32}
+138412037  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 17, 'stab_B': 32}
+140509190  {'ninth_confined': True, 'nonunit': False, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1345, 'stab_B': 32}
+140509191  {'ninth_confined': True, 'nonunit': True, 'w_u': 1, 'stab_u': 1822176, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 25, 'stab_B': 32}
+142606368  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+161481577  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+167788544  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1233, 'stab_B': 32}
+169886721  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+171949054  {'ninth_confined': True, 'nonunit': False, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 953, 'stab_B': 32}
+178279465  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 32}
+178279803 unexplained r6 {'ninth_confined': True, 'nonunit': True, 'w_u': 669, 'stab_u': 8, 'w_u3': 633, 'stab_u3': 8, 'w_u19': 577, 'stab_u19': 216, 'w_B': 745, 'stab_B': 16}
+189642139  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 657, 'stab_B': 16}
+190212516  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 713, 'stab_B': 16}
+192967456  {'ninth_confined': True, 'nonunit': True, 'w_u': 973, 'stab_u': 648, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+197163956  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 721, 'stab_B': 32}
+198817715  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 577, 'stab_B': 32}
+199262207  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 441, 'stab_B': 32}
+212362513  {'ninth_confined': True, 'nonunit': True, 'w_u': 737, 'stab_u': 8, 'w_u3': 681, 'stab_u3': 8, 'w_u19': 793, 'stab_u19': 72, 'w_B': 833, 'stab_B': 16}
+213024809  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 32}
+215154740  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 897, 'stab_B': 32}
+217284671  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 441, 'stab_B': 32}
+217313016  {'ninth_confined': True, 'nonunit': False, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 801, 'stab_B': 32}
+221140584  {'ninth_confined': True, 'nonunit': True, 'w_u': 361, 'stab_u': 648, 'w_u3': 1, 'stab_u3': 1822176, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 16}
+229454225  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 577, 'stab_B': 16}
+229592942  {'ninth_confined': True, 'nonunit': False, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 841, 'stab_B': 32}
+230065001  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 289, 'stab_B': 32}
+230092206  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 625, 'stab_B': 16}
+231275595  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 417, 'stab_B': 32}
+232194996  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 1041, 'stab_B': 32}
+238601217  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 289, 'stab_B': 32}
+242863111  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 1, 'stab_u19': 1822176, 'w_B': 169, 'stab_B': 32}
+247497739  {'ninth_confined': True, 'nonunit': True, 'w_u': 625, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 257, 'stab_B': 32}
+249255988  {'ninth_confined': True, 'nonunit': True, 'w_u': 1153, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 1041, 'stab_B': 32}
+262020583  {'ninth_confined': True, 'nonunit': True, 'w_u': 121, 'stab_u': 8, 'w_u3': 121, 'stab_u3': 8, 'w_u19': 361, 'stab_u19': 648, 'w_B': 561, 'stab_B': 32}
+262042400  {'ninth_confined': True, 'nonunit': True, 'w_u': 621, 'stab_u': 8, 'w_u3': 621, 'stab_u3': 8, 'w_u19': 973, 'stab_u19': 648, 'w_B': 897, 'stab_B': 32}
+recorded rules done 164.4 s
+random done 320.3 s
+{
+ "w_u": {
+  "random": {
+   "n": 800,
+   "min": 525,
+   "median": 685.0,
+   "max": 949
+  },
+  "confined_recorded": {
+   "n": 125,
+   "min": 1,
+   "median": 625.0,
+   "max": 1153
+  }
+ },
+ "w_u3": {
+  "random": {
+   "n": 800,
+   "min": 513,
+   "median": 669.0,
+   "max": 825
+  },
+  "confined_recorded": {
+   "n": 125,
+   "min": 1,
+   "median": 121.0,
+   "max": 745
+  }
+ },
+ "w_u19": {
+  "random": {
+   "n": 800,
+   "min": 501,
+   "median": 657.0,
+   "max": 813
+  },
+  "confined_recorded": {
+   "n": 125,
+   "min": 1,
+   "median": 361.0,
+   "max": 973
+  }
+ },
+ "w_B": {
+  "random": {
+   "n": 800,
+   "min": 525,
+   "median": 677.0,
+   "max": 881
+  },
+  "confined_recorded": {
+   "n": 125,
+   "min": 1,
+   "median": 625.0,
+   "max": 1345
+  }
+ },
+ "stab_u_confined_hist": {
+  "8": 107,
+  "72": 1,
+  "648": 2,
+  "1822176": 15
+ },
+ "stab_u_random_hist": {
+  "8": 120
+ },
+ "stab_u3_confined_hist": {
+  "8": 107,
+  "1822176": 18
+ },
+ "stab_u3_random_hist": {
+  "8": 120
+ },
+ "stab_u19_confined_hist": {
+  "72": 32,
+  "216": 5,
+  "648": 52,
+  "1822176": 36
+ },
+ "stab_u19_random_hist": {
+  "8": 119,
+  "24": 1
+ },
+ "stab_B_confined_hist": {
+  "16": 49,
+  "32": 74,
+  "48": 1,
+  "1822176": 1
+ },
+ "stab_B_random_hist": {
+  "8": 120
+ },
+ "random_ninth_confined": 0
+}

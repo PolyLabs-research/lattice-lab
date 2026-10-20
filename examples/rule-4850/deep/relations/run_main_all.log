@@ -1,0 +1,13 @@
+4850 {'rule': 4850, 'mode': 'all', 'radius': 4, 'logs513': [18, 198, 9, 234, 162, 63, 0, 495, 9, 387, 180], 'hits': 91, 'all_verified': True, 'kinds': {'a': 37, 'genuine': 10, 'b': 21, 'multiple': 2, 'c': 21}, 'seconds': 35.1} genuine: 10
+10491524 {'rule': 10491524, 'mode': 'all', 'radius': 6, 'logs513': [198, 36, 234, 18, 288, 333, 0, 18, 459, 252, 387], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 32.4} genuine: 0
+20982139 {'rule': 20982139, 'mode': 'all', 'radius': 6, 'logs513': [414, 495, 207, 315, 315, 441, 0, 207, 459, 171, 36], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 32.3} genuine: 0
+178279803 {'rule': 178279803, 'mode': 'all', 'radius': 6, 'logs513': [225, 117, 18, 342, 504, 171, 0, 504, 459, 117, 144], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 30.3} genuine: 0
+482758 {'rule': 482758, 'mode': 'all', 'radius': 5, 'logs513': [270, 189, 252, 360, 396, 171, 0, 378, 225, 351, 450], 'hits': 55, 'all_verified': True, 'kinds': {'a': 47, 'genuine': 4, 'multiple': 2, 'b': 1, 'c': 1}, 'seconds': 38.5} genuine: 4
+8438150 {'rule': 8438150, 'mode': 'all', 'radius': 6, 'logs513': [9, 189, 135, 207, 405, 306, 0, 207, 216, 486, 477], 'hits': 4, 'all_verified': True, 'kinds': {'a': 4}, 'seconds': 38.1} genuine: 0
+43250486 {'rule': 43250486, 'mode': 'all', 'radius': 6, 'logs513': [9, 180, 495, 486, 117, 279, 0, 261, 441, 315, 207], 'hits': 36, 'all_verified': True, 'kinds': {'a': 20, 'genuine': 14, 'b': 1, 'c': 1}, 'seconds': 41.1} genuine: 14
+57 {'rule': 57, 'mode': 'all', 'radius': 2, 'logs513': [504, 495, 417, 408, 318, 405, 0, 72, 111, 42, 207], 'hits': 2220, 'all_verified': True, 'kinds': {'a': 76, 'genuine': 110, 'b': 1017, 'c': 1017}, 'seconds': 57.4} genuine: 110
+960 {'rule': 960, 'mode': 'all', 'radius': 3, 'logs513': [339, 165, 504, 426, 156, 414, -1, 264, 486, 489, 9], 'hits': 2335, 'all_verified': True, 'kinds': {'a': 37, 'genuine': 1908, 'multiple': 136, 'b': 127, 'c': 127}, 'seconds': 62.2} genuine: 1908
+699738 {'rule': 699738, 'logs513': [90, -1, 270, 45, 450, 405, 0, 288, 297, 207, 243], 'note': 'has zero eigenvalues'} genuine: 0
+985232 {'rule': 985232, 'logs513': [-1, -1, 27, 261, 45, 297, 0, 234, 81, 72, 486], 'note': 'has zero eigenvalues'} genuine: 0
+1431278 {'rule': 1431278, 'mode': 'all', 'radius': 5, 'logs513': [90, 180, 270, 45, 450, 405, -1, 288, 297, 207, 243], 'hits': 2931, 'all_verified': True, 'kinds': {'a': 41, 'genuine': 2726, 'multiple': 162, 'b': 1, 'c': 1}, 'seconds': 91.5} genuine: 2726
+1968276 {'rule': 1968276, 'logs513': [-1, 18, 27, 261, 45, 297, -1, 234, 81, 72, 486], 'note': 'has zero eigenvalues'} genuine: 0

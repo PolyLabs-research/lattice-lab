@@ -1,0 +1,239 @@
+ninth125 1 True {'off': ('>=20000', 0), 'all': ('>=20000', 0)} 59s
+ninth125 7 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 60s
+ninth125 13 True {'off': (2560, 3), 'all': (1246, 3)} 62s
+ninth125 41 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 63s
+ninth125 82 True {'off': (2560, 3), 'all': None} 63s
+ninth125 233 True {'off': (1039, 3), 'all': (247, 3)} 64s
+ninth125 577 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 65s
+ninth125 644 True {'off': ('>=20000', 3), 'all': None} 65s
+ninth125 800 True {'off': (5847, 3), 'all': None} 66s
+ninth125 873 True {'off': (5925, 3), 'all': (1580, 3)} 67s
+ninth125 1023 True {'off': (5847, 3), 'all': (1476, 3)} 67s
+ninth125 1057 True {'off': (2560, 3), 'all': (1246, 3)} 68s
+ninth125 3394 True {'off': (564, 3), 'all': None} 69s
+ninth125 4850 False {'off': (77, 0), 'all': (61, 0)} 70s
+ninth125 5665 True {'off': (795, 3), 'all': (133, 3)} 71s
+ninth125 17409 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 72s
+ninth125 18436 True {'off': (5925, 3), 'all': None} 72s
+ninth125 23615 True {'off': (5847, 3), 'all': (1476, 3)} 73s
+ninth125 27268 True {'off': (5925, 3), 'all': None} 73s
+ninth125 28359 True {'off': (5847, 3), 'all': (1476, 3)} 74s
+ninth125 32767 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 75s
+ninth125 33026 True {'off': (2560, 3), 'all': None} 75s
+ninth125 102259 True {'off': (650, 3), 'all': (145, 3)} 76s
+ninth125 172306 True {'off': (1739, 3), 'all': None} 77s
+ninth125 318463 True {'off': (564, 3), 'all': (132, 3)} 77s
+ninth125 344580 True {'off': (404, 3), 'all': None} 78s
+ninth125 411652 True {'off': (356, 3), 'all': None} 78s
+ninth125 443859 True {'off': (453, 3), 'all': (74, 3)} 79s
+ninth125 482758 False {'off': (37, 0), 'all': (30, 0)} 80s
+ninth125 515367 True {'off': (376, 3), 'all': (59, 3)} 81s
+ninth125 699738 False {'off': (5847, 3), 'all': None} 81s
+ninth125 985232 False {'off': ('>=20000', 3), 'all': None} 82s
+ninth125 1081345 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 82s
+ninth125 1114116 True {'off': ('>=20000', 3), 'all': None} 83s
+ninth125 1431278 False {'off': (5847, 3), 'all': (1476, 3)} 84s
+ninth125 1541119 True {'off': (5925, 3), 'all': (1580, 3)} 85s
+ninth125 1690631 True {'off': (5925, 3), 'all': (1580, 3)} 86s
+ninth125 1825855 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 86s
+ninth125 1961671 True {'off': (5847, 3), 'all': (1476, 3)} 87s
+ninth125 1968276 False {'off': ('>=20000', 3), 'all': None} 88s
+ninth125 2063284 True {'off': (5847, 3), 'all': None} 88s
+ninth125 2097151 True {'off': (5925, 3), 'all': (1580, 3)} 89s
+ninth125 2097154 False {'off': ('>=20000', 3), 'all': None} 89s
+ninth125 2097155 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 90s
+ninth125 2097665 True {'off': (2560, 3), 'all': (1246, 3)} 91s
+ninth125 2101256 True {'off': (2560, 3), 'all': None} 91s
+ninth125 2163712 True {'off': (331, 3), 'all': None} 91s
+ninth125 2164257 True {'off': (431, 3), 'all': (42, 3)} 92s
+ninth125 2168493 True {'off': (331, 3), 'all': (24, 3)} 93s
+ninth125 2248629 True {'off': (0, 0), 'all': (0, 0)} 94s
+ninth125 4194304 False {'off': ('>=20000', 3), 'all': None} 94s
+ninth125 4194305 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 94s
+ninth125 6291458 False {'off': ('>=20000', 3), 'all': None} 95s
+ninth125 6291459 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 95s
+ninth125 6403210 True {'off': (1739, 3), 'all': None} 96s
+ninth125 8438150 False {'off': (7, 0), 'all': (4, 0)} 96s
+ninth125 10491524 False {'off': (0, 0), 'all': (0, 0)} 97s
+ninth125 10503169 True {'off': (1039, 3), 'all': (247, 3)} 98s
+ninth125 19611082 True {'off': (334, 3), 'all': None} 98s
+ninth125 20982139 False {'off': (0, 0), 'all': (0, 0)} 99s
+ninth125 21504272 True {'off': (795, 3), 'all': None} 99s
+ninth125 25755792 True {'off': (331, 3), 'all': None} 100s
+ninth125 27827210 True {'off': (388, 3), 'all': None} 100s
+ninth125 32215178 True {'off': (309, 3), 'all': None} 100s
+ninth125 37045893 True {'off': (448, 3), 'all': (76, 3)} 101s
+ninth125 39220148 True {'off': (252, 3), 'all': None} 102s
+ninth125 43250486 False {'off': (33, 0), 'all': (21, 0)} 102s
+ninth125 49441229 True {'off': (235, 3), 'all': (45, 3)} 103s
+ninth125 55654676 True {'off': (439, 3), 'all': None} 104s
+ninth125 57515480 False {'off': (5847, 3), 'all': None} 104s
+ninth125 57521562 False {'off': ('>=20000', 3), 'all': None} 104s
+ninth125 57537311 False {'off': (5847, 3), 'all': (1476, 3)} 105s
+ninth125 57713795 True {'off': (356, 3), 'all': (56, 3)} 106s
+ninth125 58091941 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 107s
+ninth125 66560575 True {'off': (650, 3), 'all': (145, 3)} 108s
+ninth125 93139344 False {'off': ('>=20000', 3), 'all': None} 108s
+ninth125 93777327 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 109s
+ninth125 107951322 False {'off': (5925, 3), 'all': None} 109s
+ninth125 108460253 False {'off': (5925, 3), 'all': (1580, 3)} 110s
+ninth125 112076104 False {'off': (4887, 3), 'all': None} 110s
+ninth125 115377162 False {'off': ('>=20000', 3), 'all': None} 111s
+ninth125 117135413 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 111s
+ninth125 132692042 False {'off': (5925, 3), 'all': None} 112s
+ninth125 133646261 False {'off': (5925, 3), 'all': (1580, 3)} 113s
+ninth125 134217732 False {'off': ('>=20000', 3), 'all': None} 113s
+ninth125 134217733 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 114s
+ninth125 136314881 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 115s
+ninth125 136314886 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 115s
+ninth125 136314887 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 116s
+ninth125 138140734 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 117s
+ninth125 138412036 True {'off': ('>=20000', 3), 'all': None} 117s
+ninth125 138412037 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 118s
+ninth125 140509190 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 118s
+ninth125 140509191 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 119s
+ninth125 142606368 True {'off': ('>=20000', 3), 'all': None} 119s
+ninth125 161481577 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 120s
+ninth125 167788544 True {'off': (5847, 3), 'all': None} 121s
+ninth125 169886721 True {'off': (5925, 3), 'all': (1580, 3)} 121s
+ninth125 171949054 False {'off': (5925, 3), 'all': (1580, 3)} 122s
+ninth125 178279465 True {'off': (5847, 3), 'all': (1476, 3)} 123s
+ninth125 178279803 False {'off': (0, 0), 'all': (0, 0)} 124s
+ninth125 189642139 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 124s
+ninth125 190212516 False {'off': ('>=20000', 3), 'all': None} 125s
+ninth125 192967456 True {'off': (4887, 3), 'all': None} 125s
+ninth125 197163956 True {'off': (5925, 3), 'all': None} 126s
+ninth125 198817715 False {'off': (5925, 3), 'all': (1580, 3)} 126s
+ninth125 199262207 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 127s
+ninth125 212362513 False {'off': (1039, 3), 'all': (24, 3)} 128s
+ninth125 213024809 True {'off': (5847, 3), 'all': (1476, 3)} 129s
+ninth125 215154740 True {'off': (5925, 3), 'all': None} 129s
+ninth125 217284671 True {'off': (5847, 3), 'all': (1476, 3)} 130s
+ninth125 217313016 False {'off': (5847, 3), 'all': (1476, 3)} 131s
+ninth125 221140584 False {'off': (4887, 3), 'all': (1053, 3)} 131s
+ninth125 229454225 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 132s
+ninth125 229592942 False {'off': (5925, 3), 'all': (1580, 3)} 133s
+ninth125 230065001 True {'off': (5925, 3), 'all': (1580, 3)} 134s
+ninth125 230092206 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 135s
+ninth125 231275595 False {'off': (5925, 3), 'all': (1580, 3)} 135s
+ninth125 232194996 True {'off': (5925, 3), 'all': None} 136s
+ninth125 238601217 True {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 137s
+ninth125 242863111 True {'off': (5925, 3), 'all': (1580, 3)} 138s
+ninth125 247497739 False {'off': ('>=20000', 3), 'all': ('>=20000', 3)} 138s
+ninth125 249255988 True {'off': ('>=20000', 3), 'all': None} 139s
+ninth125 262020583 False {'off': (5847, 3), 'all': (1476, 3)} 140s
+ninth125 262042400 True {'off': (5847, 3), 'all': None} 140s
+random6 11614359 None {'off': (0, 0), 'all': (0, 0)} 141s
+random6 11177240 None {'off': (5, 1), 'all': None} 141s
+random6 12200288 None {'off': (0, 0), 'all': (0, 0)} 142s
+random6 126255800 None {'off': (0, 0), 'all': (0, 0)} 142s
+random6 126674511 None {'off': (0, 0), 'all': (0, 0)} 143s
+random6 127724671 None {'off': (0, 0), 'all': (0, 0)} 144s
+random6 232703459 None {'off': (0, 0), 'all': (0, 0)} 144s
+random6 232257697 None {'off': (0, 0), 'all': (0, 0)} 145s
+random6 232743472 None {'off': (10, 3), 'all': None} 145s
+random6 212695494 None {'off': (0, 0), 'all': (0, 0)} 146s
+random6 212894629 None {'off': (0, 0), 'all': (0, 0)} 146s
+random6 213846433 None {'off': (0, 0), 'all': (0, 0)} 147s
+random6 247290494 None {'off': (0, 0), 'all': (0, 0)} 147s
+random6 246262927 None {'off': (0, 0), 'all': (0, 0)} 148s
+random6 245449816 None {'off': (0, 0), 'all': (0, 0)} 149s
+random6 115793920 None {'off': (0, 0), 'all': (0, 0)} 149s
+random6 117131455 None {'off': (0, 0), 'all': (0, 0)} 150s
+random6 116586845 None {'off': (0, 0), 'all': (0, 0)} 151s
+random6 66590925 None {'off': (0, 0), 'all': (0, 0)} 151s
+random6 65321927 None {'off': (0, 0), 'all': (0, 0)} 152s
+random6 65125233 None {'off': (0, 0), 'all': (0, 0)} 152s
+random6 38149973 None {'off': (0, 0), 'all': (0, 0)} 153s
+random6 39431410 None {'off': (0, 0), 'all': (0, 0)} 154s
+random6 38499508 None {'off': (0, 0), 'all': (0, 0)} 154s
+random6 114541030 None {'off': (0, 0), 'all': (0, 0)} 155s
+random6 114235868 None {'off': (0, 0), 'all': (0, 0)} 156s
+random6 113820923 None {'off': (0, 0), 'all': (0, 0)} 156s
+random6 189334815 None {'off': (0, 0), 'all': (0, 0)} 157s
+random6 189729406 None {'off': (0, 0), 'all': (0, 0)} 158s
+random6 189195021 None {'off': (0, 0), 'all': (0, 0)} 158s
+random6 82512458 None {'off': (0, 0), 'all': (0, 0)} 159s
+random6 82800196 None {'off': (0, 0), 'all': (0, 0)} 159s
+random6 83665275 None {'off': (0, 0), 'all': (0, 0)} 160s
+random6 241002790 None {'off': (0, 0), 'all': (0, 0)} 161s
+random6 240809304 None {'off': (0, 0), 'all': (0, 0)} 161s
+random6 241068750 None {'off': (0, 0), 'all': (0, 0)} 162s
+cube6 10961543 None {'off': (0, 0), 'all': (0, 0)} 162s
+cube6 12570156 None {'off': (0, 0), 'all': (0, 0)} 163s
+cube6 10674414 None {'off': (5, 1), 'all': (5, 1)} 164s
+cube6 11244194 None {'off': (0, 0), 'all': (0, 0)} 164s
+cube6 125988636 None {'off': (0, 0), 'all': (0, 0)} 165s
+cube6 125870847 None {'off': (0, 0), 'all': (0, 0)} 166s
+cube6 126437444 None {'off': (0, 0), 'all': (0, 0)} 166s
+cube6 127355965 None {'off': (0, 0), 'all': (0, 0)} 167s
+cube6 231963431 None {'off': (0, 0), 'all': (0, 0)} 168s
+cube6 231366286 None {'off': (0, 0), 'all': (0, 0)} 168s
+cube6 231383201 None {'off': (0, 0), 'all': (0, 0)} 169s
+cube6 232667187 None {'off': (0, 0), 'all': (0, 0)} 170s
+cube6 212783034 None {'off': (0, 0), 'all': (0, 0)} 170s
+cube6 212912822 None {'off': (0, 0), 'all': (0, 0)} 171s
+cube6 213534682 None {'off': (0, 0), 'all': (0, 0)} 172s
+cube6 213182446 None {'off': (0, 0), 'all': (0, 0)} 172s
+cube6 247196767 None {'off': (0, 0), 'all': (0, 0)} 173s
+cube6 246299797 None {'off': (0, 0), 'all': (0, 0)} 174s
+cube6 245585420 None {'off': (0, 0), 'all': (0, 0)} 174s
+cube6 246464512 None {'off': (0, 0), 'all': (0, 0)} 175s
+cube6 115937780 None {'off': (0, 0), 'all': (0, 0)} 176s
+cube6 116294261 None {'off': (0, 0), 'all': (0, 0)} 176s
+cube6 117051218 None {'off': (0, 0), 'all': (0, 0)} 177s
+cube6 116371656 None {'off': (5, 1), 'all': None} 177s
+cube6 66470972 None {'off': (0, 0), 'all': (0, 0)} 178s
+cube6 66207176 None {'off': (0, 0), 'all': (0, 0)} 178s
+cube6 65160390 None {'off': (0, 0), 'all': (0, 0)} 179s
+cube6 66522498 None {'off': (0, 0), 'all': (0, 0)} 180s
+cube6 39465448 None {'off': (5, 1), 'all': (5, 1)} 180s
+cube6 38192839 None {'off': (0, 0), 'all': (0, 0)} 181s
+cube6 39060524 None {'off': (0, 0), 'all': (0, 0)} 182s
+cube6 39506816 None {'off': (0, 0), 'all': (0, 0)} 182s
+cube6 114935209 None {'off': (0, 0), 'all': (0, 0)} 183s
+cube6 114714639 None {'off': (0, 0), 'all': (0, 0)} 183s
+cube6 113759874 None {'off': (0, 0), 'all': (0, 0)} 184s
+cube6 114538310 None {'off': (5, 1), 'all': (5, 1)} 185s
+cube6 190389083 None {'off': (0, 0), 'all': (0, 0)} 185s
+cube6 190772783 None {'off': (0, 0), 'all': (0, 0)} 186s
+cube6 190467008 None {'off': (0, 0), 'all': (0, 0)} 187s
+cube6 190757890 None {'off': (0, 0), 'all': (0, 0)} 187s
+cube6 81846759 None {'off': (0, 0), 'all': (0, 0)} 188s
+cube6 82948440 None {'off': (0, 0), 'all': (0, 0)} 188s
+cube6 83656884 None {'off': (0, 0), 'all': (0, 0)} 189s
+cube6 82971386 None {'off': (4, 0), 'all': (4, 0)} 190s
+cube6 239208443 None {'off': (0, 0), 'all': (0, 0)} 190s
+cube6 240285970 None {'off': (0, 0), 'all': (0, 0)} 191s
+cube6 239516342 None {'off': (0, 0), 'all': (0, 0)} 191s
+cube6 239555559 None {'off': (0, 0), 'all': (0, 0)} 192s
+random5 401458 None {'off': (18, 0), 'all': (18, 0)} 193s
+random5 902294 None {'off': (18, 0), 'all': (18, 0)} 193s
+random5 1342839 None {'off': (18, 0), 'all': (18, 0)} 194s
+random5 1177248 None {'off': (18, 0), 'all': (18, 0)} 194s
+random5 1569137 None {'off': (37, 3), 'all': (30, 3)} 195s
+random5 574697 None {'off': (18, 0), 'all': (18, 0)} 196s
+random5 251478 None {'off': (18, 0), 'all': (18, 0)} 196s
+random5 850821 None {'off': (18, 0), 'all': (18, 0)} 197s
+random5 1339870 None {'off': (18, 0), 'all': (18, 0)} 198s
+random5 333608 None {'off': (18, 0), 'all': (18, 0)} 198s
+random5 372422 None {'off': (18, 0), 'all': (18, 0)} 199s
+random5 1748825 None {'off': (18, 0), 'all': (18, 0)} 199s
+random5 1616854 None {'off': (18, 0), 'all': (18, 0)} 200s
+random5 983691 None {'off': (18, 0), 'all': (18, 0)} 201s
+random5 1291715 None {'off': (37, 3), 'all': (30, 3)} 201s
+random5 1626206 None {'off': (18, 0), 'all': (18, 0)} 202s
+random5 162275 None {'off': (18, 0), 'all': (18, 0)} 203s
+random5 1459963 None {'off': (18, 0), 'all': (18, 0)} 203s
+random5 1832207 None {'off': (18, 0), 'all': (18, 0)} 204s
+random5 686667 None {'off': (18, 0), 'all': (18, 0)} 205s
+random5 1736881 None {'off': (18, 0), 'all': (18, 0)} 205s
+random5 1067501 None {'off': (18, 0), 'all': (18, 0)} 206s
+random5 784529 None {'off': (18, 0), 'all': (18, 0)} 206s
+random5 807244 None {'off': (18, 0), 'all': (18, 0)} 207s
+random5 682065 None {'off': (18, 0), 'all': (18, 0)} 208s
+random5 1189725 None {'off': (18, 0), 'all': (18, 0)} 208s
+random5 97809 None {'off': (18, 0), 'all': (18, 0)} 209s
+random5 44801 None {'off': (18, 0), 'all': (18, 0)} 209s
+random5 469787 None {'off': (18, 0), 'all': (18, 0)} 210s
+random5 1595844 None {'off': (18, 0), 'all': (18, 0)} 210s

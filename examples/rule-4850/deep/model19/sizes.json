@@ -1,0 +1,62 @@
+[
+ {
+  "m": 37,
+  "rule": 4850,
+  "frame": "diag",
+  "orbits": 38,
+  "ninth": true,
+  "P0": true,
+  "I": true,
+  "I_checked": 34
+ },
+ {
+  "m": 37,
+  "rule": 10491524,
+  "frame": "std",
+  "orbits": 38,
+  "ninth": true,
+  "P0": true,
+  "I": true,
+  "I_checked": 36
+ },
+ {
+  "m": 109,
+  "rule": 4850,
+  "frame": "diag",
+  "orbits": 330,
+  "ninth": false,
+  "P0": false,
+  "I": false,
+  "I_checked": 318
+ },
+ {
+  "m": 109,
+  "rule": 10491524,
+  "frame": "std",
+  "orbits": 330,
+  "ninth": false,
+  "P0": false,
+  "I": false,
+  "I_checked": 324
+ },
+ {
+  "m": 185,
+  "rule": 4850,
+  "frame": "diag",
+  "orbits": 956,
+  "ninth": false,
+  "P0": false,
+  "I": false,
+  "I_checked": 932
+ },
+ {
+  "m": 185,
+  "rule": 10491524,
+  "frame": "std",
+  "orbits": 956,
+  "ninth": false,
+  "P0": false,
+  "I": false,
+  "I_checked": 944
+ }
+]

@@ -1,0 +1,9 @@
+log table 0.3 s
+20982139 rho logs/189 mod 1387: [np.int64(1104), np.int64(427), np.int64(736), np.int64(1347), np.int64(214), np.int64(1046), np.int64(1083), np.int64(1213), np.int64(1349), np.int64(1372), np.int64(1360)]  mod 19: [np.int64(2), np.int64(9), np.int64(14), np.int64(17), np.int64(5), np.int64(1), np.int64(0), np.int64(16), np.int64(0), np.int64(4), np.int64(11)]  mod 73: [np.int64(9), np.int64(62), np.int64(6), np.int64(33), np.int64(68), np.int64(24), np.int64(61), np.int64(45), np.int64(35), np.int64(58), np.int64(46)]
+178279803 rho logs/189 mod 1387: [np.int64(81), np.int64(15), np.int64(682), np.int64(174), np.int64(40), np.int64(27), np.int64(1045), np.int64(1173), np.int64(304), np.int64(412), np.int64(1019)]  mod 19: [np.int64(5), np.int64(15), np.int64(17), np.int64(3), np.int64(2), np.int64(8), np.int64(0), np.int64(14), np.int64(0), np.int64(13), np.int64(12)]  mod 73: [np.int64(8), np.int64(15), np.int64(25), np.int64(28), np.int64(40), np.int64(27), np.int64(23), np.int64(5), np.int64(12), np.int64(47), np.int64(70)]
+radius 4: 32768 rules, nonvanishing 30719  (0.0s)
+   target 20982139: rules h of radius 4 with rho = h^e: 0 []
+   target 178279803: rules h of radius 4 with rho = h^e: 0 []
+radius 5: 2097152 rules, nonvanishing 2028551  (0.5s)
+   target 20982139: rules h of radius 5 with rho = h^e: 0 []
+   target 178279803: rules h of radius 5 with rho = h^e: 0 []

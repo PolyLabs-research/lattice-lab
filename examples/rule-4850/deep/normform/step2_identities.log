@@ -1,0 +1,12 @@
+10491524 orbits: [(1, 1), (3, 1), (3, 3), (4, 0), (4, 2), (6, 0), (6, 2)]
+F' = pi^3 + Y^2 equals rule 10491524 : True
+Y = (a^3+a^2+1)(b+1) + (a+1)(b^3+b^2+1) : True
+pi * Y^2 = orbit(7,3) : True
+pi^4 = orbit(4,4) : True
+pi * F' = orbit(4,4) + orbit(7,3) : True
+4850 = S^3 + P^2 S^2 + P^3 + P^2 + P : True
+4850 * S = orbit(4,0) + orbit(5,2) : True
+mu6 = [1, 10, 11, 26, 27, 36] mu3 = [1, 10, 26]
+|h| = 12  h^4 support == orbit(4,4)+orbit(7,3) mod 37: True
+h invariant under T_c, c in mu6: True
+lambda'(al,be) t_al t_be = W^4 at all 1369 characters: True  (W = 0 at 73 characters: the axes)

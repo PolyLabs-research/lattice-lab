@@ -1,0 +1,29 @@
+10491524 * ab: 12 terms, shells {(4, 4): 4, (7, 3): 8}
+20982139 * ab: 12 terms, shells {(7, 4): 8, (3, 3): 4}
+178279803 * ab: 12 terms, shells {(4, 3): 8, (7, 7): 4}
+dil(h0, 10) == h1: True
+dil(h0, 26) == h2: True
+4850(x^2,y^2) * t(xy)t(x/y): 12 terms, shells {(8, 0): 4, (10, 4): 8}
+  4850 * rule 4: 56 terms
+  4850 * rule 8: 48 terms
+  4850 * rule 7: 76 terms
+  4850 * rule 13: 40 terms
+  4850 * rule 2: 12 terms
+  4850 * rule 3: 52 terms
+  4850 * rule 5: 64 terms
+  4850 * rule 6: 68 terms
+10491524 * ab: 12 terms, shells {(4, 4): 4, (7, 3): 8}
+20982139 * ab: 12 terms, shells {(7, 4): 8, (3, 3): 4}
+178279803 * ab: 12 terms, shells {(4, 3): 8, (7, 7): 4}
+dil(h0, 10) == h1: True
+dil(h0, 26) == h2: True
+4850(x^2,y^2) * t(xy)t(x/y): 12 terms, shells {(8, 0): 4, (10, 4): 8}
+  4850 * rule 4: 56 terms
+  4850 * rule 8: 48 terms
+  4850 * rule 7: 76 terms
+  4850 * rule 13: 40 terms
+  4850 * rule 2: 12 terms
+  4850 * rule 3: 52 terms
+  4850 * rule 5: 64 terms
+  4850 * rule 6: 68 terms
+4850 * (a+b) shells: {(5, 2): 8, (4, 0): 4}

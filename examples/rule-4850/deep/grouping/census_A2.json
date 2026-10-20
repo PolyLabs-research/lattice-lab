@@ -1,0 +1,686 @@
+{
+ "r4_A_g1": [
+  {
+   "rule": 1,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "monomial",
+   "explained": true
+  },
+  {
+   "rule": 2,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 8,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 13,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 64,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 82,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "power 3; splits into 1+u",
+   "explained": true
+  },
+  {
+   "rule": 873,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "power 3; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 1024,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1057,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "dilation by 2; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 1160,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1197,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 4850,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "full bound",
+   "explained": false
+  },
+  {
+   "rule": 13384,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  }
+ ],
+ "r4_A_D": [
+  {
+   "rule": 1,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "monomial",
+   "explained": true
+  },
+  {
+   "rule": 4,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 7,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 32,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 41,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "dilation by 2; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 52,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 63,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 512,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 577,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "dilation by 3; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 644,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "power 3; splits into 1+u",
+   "explained": true
+  },
+  {
+   "rule": 711,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 800,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 873,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "power 3; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 948,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1023,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 16384,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 17409,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "dilation by 2; dilation by 2; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 18436,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 20512,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 21545,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 22580,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 23615,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 25088,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 26177,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 27268,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 28359,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 29472,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 31668,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 32767,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  }
+ ],
+ "r4_both": [
+  1,
+  873
+ ],
+ "r4_totals": {
+  "cube": 110,
+  "ninth": 21
+ },
+ "r5_A_g1": [
+  {
+   "rule": 32768,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 33026,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 34880,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 35154,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 105299,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 132096,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 439706,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 443859,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 1084246,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1541119,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 1690631,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 2097151,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into 1+u+u^2+u^3+u^4+u^5+u^6+u^7+u^8+u^9+u^10",
+   "explained": true
+  }
+ ],
+ "r5_A_D": [
+  {
+   "rule": 1048576,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1081345,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "dilation by 5; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 1114116,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 1179680,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1245236,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1278015,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1311232,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1376900,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1409735,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1442592,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1541119,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 1589248,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1656836,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1690631,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 1758249,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1792052,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1825855,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 1860096,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1893953,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1927812,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 1961671,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "power 5; splits into 1+u+u^2",
+   "explained": true
+  },
+  {
+   "rule": 1995552,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "procedure": null,
+   "explained": null
+  },
+  {
+   "rule": 2063284,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "procedure": "splits into mixed factors",
+   "explained": true
+  },
+  {
+   "rule": 2097151,
+   "cube": true,
+   "ninth": true,
+   "q27": true,
+   "procedure": "splits into 1+u+u^2+u^3+u^4+u^5+u^6+u^7+u^8+u^9+u^10",
+   "explained": true
+  }
+ ],
+ "r5_both": [
+  1541119,
+  1690631,
+  2097151
+ ],
+ "r5_totals": {
+  "cube": 415,
+  "ninth": 21
+ },
+ "rotated_reduction": {
+  "10491524": {
+   "chi(d) log mod 27, d=0..5": [
+    9,
+    18,
+    18,
+    0,
+    18,
+    9
+   ],
+   "psi": 9
+  },
+  "20982139": {
+   "chi(d) log mod 27, d=0..5": [
+    9,
+    18,
+    18,
+    0,
+    18,
+    9
+   ],
+   "psi": 9
+  },
+  "178279803": {
+   "chi(d) log mod 27, d=0..5": [
+    9,
+    18,
+    18,
+    0,
+    18,
+    9
+   ],
+   "psi": 9
+  }
+ }
+}

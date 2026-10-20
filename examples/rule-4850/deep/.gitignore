@@ -1,0 +1,7 @@
+# Regenerable bulk data from the investigators' scripts (tens of MB each); the scripts that
+# write them are committed.
+*.npy
+*.npz
+__pycache__/
+relations/sigma.json
+relations/results_small_off.json

@@ -1,0 +1,6 @@
+closed form 4850: [(5, 1), (2, 18)]/x+y: matches census logs at 10/10 classes
+closed form 10491524: [(14, 8), (2, 2)]/xy: matches census logs at 10/10 classes
+x+y terms 2 : nonzero 3150 cube 36 ninth 18
+x+y terms 3 : nonzero 285867 cube 369 ninth 63
+xy terms 2 : nonzero 2862 cube 36 ninth 18
+xy terms 3 : nonzero 232119 cube 369 ninth 63

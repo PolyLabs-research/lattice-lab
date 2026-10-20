@@ -1,0 +1,9 @@
+reciprocity law verified on 397 random coprime pairs (n = 9) and samples for n = 3, 7, 21, 63
+pi_0 = T^3 + w^30 T^2 + w^12 T + w^60
+pi_1 = T^3 + w^60 T^2 + w^24 T + w^57
+pi_2 = T^3 + w^57 T^2 + w^48 T + w^51
+pi_3 = T^3 + w^51 T^2 + w^33 T + w^39
+pi_4 = T^3 + w^39 T^2 + w^3 T + w^15
+pi_5 = T^3 + w^15 T^2 + w^6 T + w^30
+pi_{a+1} = sigma(pi_a) (coefficientwise squaring)
+(Q/pi_0)_9 = Q(t_1)^29127 = (pi_0/Q)_9 for 200 random Q in GF(2)[T]

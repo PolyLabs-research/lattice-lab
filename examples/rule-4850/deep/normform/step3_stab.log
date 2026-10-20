@@ -1,0 +1,4 @@
+/home/user/lattice-lab/examples/rule-4850/deep/normform/symlib.py:2: SyntaxWarning: invalid escape sequence '\ '
+  v(c) = v27(lambda(c)) in Z/27 (or -1 for a zero eigenvalue), c in (Z/37)^2 \ 0.
+4850 |Gamma| = 3888  #k=0: 216  multipliers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+   non-monomial k=0 elements (first 8): [((2, 5), (5, 2)), ((2, 32), (5, 35)), ((2, 14), (14, 2)), ((2, 23), (14, 35)), ((2, 14), (23, 35)), ((2, 23), (23, 2)), ((2, 5), (32, 35)), ((2, 32), (32, 2))]

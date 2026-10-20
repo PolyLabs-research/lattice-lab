@@ -1,0 +1,4 @@
+m = 5: |Stab| = 32; non-signed-permutation elements e.g. []
+m = 13: |Stab| = 24; non-signed-permutation elements e.g. [(2, 7, 7, 11), (11, 7, 6, 11), (2, 7, 6, 2), (11, 7, 7, 2)]
+m = 37: |Stab| = 24; non-signed-permutation elements e.g. [(8, 19, 18, 29), (29, 19, 19, 29), (8, 19, 19, 8), (29, 19, 18, 8)]
+sizes with a stabiliser larger than D4: [(5, 32), (13, 24), (37, 24)]

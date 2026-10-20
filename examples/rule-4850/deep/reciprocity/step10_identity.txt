@@ -1,0 +1,3 @@
+F2*G == F1*G'  : True
+F3*G == F1*G'': True
+F3*G' == F2*G'': True

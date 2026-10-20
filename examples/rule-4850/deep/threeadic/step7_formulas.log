@@ -1,0 +1,9 @@
+dictionary: 81 distinct nonzero class patterns
+4850 [2, 1, 1, 2, 0, 1, 0, 1, 1, 1, 2] exact: [] | modulo axis/diag/delta_diag: 1 [('lin(-6,-5)', 2, (1, 1, 2))]
+482758 [0, 0, 1, 1, 2, 1, 0, 0, 1, 0, 2] exact: [] | modulo axis/diag/delta_diag: 1 [('lin(-6,-5)', 2, (2, 1, 2))]
+10491524 [1, 1, 2, 2, 2, 1, 0, 2, 0, 1, 1] exact: [] | modulo axis/diag/delta_diag: 0 []
+8438150 [1, 0, 0, 2, 0, 1, 0, 2, 0, 0, 2] exact: [] | modulo axis/diag/delta_diag: 1 [('lin(-6,-5)', 2, (1, 2, 2))]
+43250486 [1, 2, 1, 0, 1, 1, 0, 2, 1, 2, 2] exact: [] | modulo axis/diag/delta_diag: 1 [('lin(-6,-5)', 2, (0, 1, 2))]
+20982139 [1, 1, 2, 2, 2, 1, 0, 2, 0, 1, 1] exact: [] | modulo axis/diag/delta_diag: 0 []
+178279803 [1, 1, 2, 2, 2, 1, 0, 2, 0, 1, 1] exact: [] | modulo axis/diag/delta_diag: 0 []
+null (uniform digit vectors, 3000): exact match rate 0.0007, loose match rate 0.0547

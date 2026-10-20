@@ -1,0 +1,5 @@
+control W(x^2)*O31: 8 terms; [(-7, -5), (-7, 5), (-5, -7), (-5, 7), (5, -7), (5, 7), (7, -5), (7, 5)]
+B for 20982139: 1296 terms of 1369, max |coord| 18
+   support invariant under x -> x^-6: True
+B for 178279803: 1296 terms of 1369, max |coord| 18
+   support invariant under x -> x^-6: True

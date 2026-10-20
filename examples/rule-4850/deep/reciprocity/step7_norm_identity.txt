@@ -1,0 +1,10 @@
+rule 4850: |f| = 40, |n(f)| = 768, n(f) invariant under [8]: True
+rule 10491524: |f| = 40, |n(f)| = 768, n(f) invariant under [8]: True
+rule 20982139: |f| = 65, |n(f)| = 601, n(f) invariant under [8]: True
+rule 178279803: |f| = 73, |n(f)| = 601, n(f) invariant under [8]: True
+rule 482758: |f| = 76, |n(f)| = 840, n(f) invariant under [8]: True
+rule 8438150: |f| = 40, |n(f)| = 456, n(f) invariant under [8]: True
+rule 43250486: |f| = 92, |n(f)| = 528, n(f) invariant under [8]: True
+n(20982139) == n(10491524): False
+n(178279803) == n(10491524): False
+|n(20982139) - n(10491524)| = 1369

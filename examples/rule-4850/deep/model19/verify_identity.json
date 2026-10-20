@@ -1,0 +1,170 @@
+{
+ "I_4850": {
+  "holds": true,
+  "mult": "s",
+  "M": [
+   [
+    19,
+    8
+   ],
+   [
+    8,
+    19
+   ]
+  ],
+  "weight_G": 12,
+  "weight_side": 144
+ },
+ "I_10491524": {
+  "holds": true,
+  "mult": "ab",
+  "M": [
+   [
+    27,
+    0
+   ],
+   [
+    0,
+    11
+   ]
+  ],
+  "weight_G": 12,
+  "weight_side": 144
+ },
+ "I_20982139": {
+  "holds": true,
+  "mult": "ab",
+  "M": [
+   [
+    27,
+    0
+   ],
+   [
+    0,
+    11
+   ]
+  ],
+  "weight_G": 12,
+  "weight_side": 144
+ },
+ "I_178279803": {
+  "holds": true,
+  "mult": "ab",
+  "M": [
+   [
+    27,
+    0
+   ],
+   [
+    0,
+    11
+   ]
+  ],
+  "weight_G": 12,
+  "weight_side": 144
+ },
+ "I_controls_random_r4": [
+  [
+   31328,
+   false,
+   false
+  ],
+  [
+   28283,
+   false,
+   false
+  ],
+  [
+   31059,
+   false,
+   false
+  ],
+  [
+   27822,
+   false,
+   false
+  ],
+  [
+   1854,
+   false,
+   false
+  ],
+  [
+   3002,
+   false,
+   false
+  ],
+  [
+   2782,
+   false,
+   false
+  ],
+  [
+   11832,
+   false,
+   false
+  ],
+  [
+   27378,
+   false,
+   false
+  ],
+  [
+   5541,
+   false,
+   false
+  ],
+  [
+   24117,
+   false,
+   false
+  ],
+  [
+   26509,
+   false,
+   false
+  ],
+  [
+   21946,
+   false,
+   false
+  ],
+  [
+   27979,
+   false,
+   false
+  ],
+  [
+   10098,
+   false,
+   false
+  ],
+  [
+   8244,
+   false,
+   false
+  ],
+  [
+   19856,
+   false,
+   false
+  ],
+  [
+   6954,
+   false,
+   false
+  ],
+  [
+   19884,
+   false,
+   false
+  ],
+  [
+   1171,
+   false,
+   false
+  ]
+ ],
+ "N_20982139": true,
+ "N_178279803": true
+}

@@ -1,0 +1,12 @@
+target 4850 [np.uint8(18), np.uint8(9), np.uint8(54), np.uint8(9), np.uint8(9), np.uint8(18), np.uint8(9), np.uint8(18), np.uint8(27), np.uint8(45), np.uint8(36)]
+target 10491524 [np.uint8(9), np.uint8(36), np.uint8(9), np.uint8(45), np.uint8(45), np.uint8(36), np.uint8(36), np.uint8(45), np.uint8(36), np.uint8(36), np.uint8(36)]
+target 482758 [np.uint8(27), np.uint8(27), np.uint8(18), np.uint8(54), np.uint8(54), np.uint8(0), np.uint8(27), np.uint8(0), np.uint8(45), np.uint8(0), np.uint8(18)]
+target 8438150 [np.uint8(36), np.uint8(27), np.uint8(36), np.uint8(0), np.uint8(18), np.uint8(0), np.uint8(18), np.uint8(36), np.uint8(18), np.uint8(9), np.uint8(0)]
+target 43250486 [np.uint8(36), np.uint8(45), np.uint8(45), np.uint8(36), np.uint8(36), np.uint8(45), np.uint8(45), np.uint8(45), np.uint8(0), np.uint8(18), np.uint8(0)]
+tables built 0.7 s
+scan done 19.9 s; ninth-power-confined rules (incl. 0): 126
+rules with the same F_64-norm vector as 4850: [4850]
+rules with the same F_64-norm vector as 10491524: [10491524, 20982139, 178279803]
+rules with the same F_64-norm vector as 482758: [482758]
+rules with the same F_64-norm vector as 8438150: [8438150]
+rules with the same F_64-norm vector as 43250486: [43250486]

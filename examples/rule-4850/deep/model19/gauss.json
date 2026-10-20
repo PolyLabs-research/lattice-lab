@@ -1,0 +1,31 @@
+{
+ "G37_chi3": {
+  "order_chi": 3,
+  "v27": 3,
+  "in_mu27": true,
+  "order": 9,
+  "G^63 == chi(2)^3": true
+ },
+ "G37_chi9": {
+  "order_chi": 9,
+  "v27": 7,
+  "in_mu27": true,
+  "order": 27,
+  "G^63 == chi(2)^3": true
+ },
+ "G19_chi3": {
+  "order_chi": 3,
+  "v27": 21,
+  "in_mu27": true,
+  "order": 9,
+  "G^63 == chi(2)^3": true
+ },
+ "G19_chi9": {
+  "order_chi": 9,
+  "v27": 16,
+  "in_mu27": true,
+  "order": 27,
+  "G^63 == chi(2)^3": true
+ },
+ "G37 = sum_e chi(2)^e R_k(t_2^e)": true
+}

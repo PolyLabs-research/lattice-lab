@@ -1,0 +1,8 @@
+4850 {'rule': 4850, 'mode': 'off', 'radius': 4, 'logs513': [18, 198, 9, 234, 162, 63, 0, 495, 9, 387, 180], 'hits': 163, 'all_verified': True, 'kinds': {'a': 37, 'genuine': 62, 'b': 31, 'multiple': 2, 'c': 31}, 'seconds': 38.9} genuine: 62
+10491524 {'rule': 10491524, 'mode': 'off', 'radius': 6, 'logs513': [198, 36, 234, 18, 288, 333, 0, 18, 459, 252, 387], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 34.4} genuine: 0
+20982139 {'rule': 20982139, 'mode': 'off', 'radius': 6, 'logs513': [414, 495, 207, 315, 315, 441, 0, 207, 459, 171, 36], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 32.6} genuine: 0
+178279803 {'rule': 178279803, 'mode': 'off', 'radius': 6, 'logs513': [225, 117, 18, 342, 504, 171, 0, 504, 459, 117, 144], 'hits': 0, 'all_verified': True, 'kinds': {}, 'seconds': 33.3} genuine: 0
+482758 {'rule': 482758, 'mode': 'off', 'radius': 5, 'logs513': [270, 189, 252, 360, 396, 171, 0, 378, 225, 351, 450], 'hits': 73, 'all_verified': True, 'kinds': {'a': 47, 'genuine': 22, 'multiple': 2, 'b': 1, 'c': 1}, 'seconds': 40.5} genuine: 22
+8438150 {'rule': 8438150, 'mode': 'off', 'radius': 6, 'logs513': [9, 189, 135, 207, 405, 306, 0, 207, 216, 486, 477], 'hits': 20, 'all_verified': True, 'kinds': {'a': 4, 'genuine': 16}, 'seconds': 43.3} genuine: 16
+43250486 {'rule': 43250486, 'mode': 'off', 'radius': 6, 'logs513': [9, 180, 495, 486, 117, 279, 0, 261, 441, 315, 207], 'hits': 78, 'all_verified': True, 'kinds': {'a': 20, 'genuine': 56, 'b': 1, 'c': 1}, 'seconds': 40.4} genuine: 56
+57 {'rule': 57, 'mode': 'off', 'radius': 2, 'logs513': [504, 495, 417, 408, 318, 405, 0, 72, 111, 42, 207], 'hits': 8236, 'all_verified': True, 'kinds': {'a': 76, 'genuine': 5762, 'multiple': 36, 'b': 1181, 'c': 1181}, 'seconds': 100.6} genuine: 5762

@@ -1,0 +1,82 @@
+{
+ "D6_equals_f(x^6,y^6)": true,
+ "D6_weight": 40,
+ "D6_k": 9,
+ "D6_equals_f^(2^k)": true,
+ "D6_scalar_invariance": [
+  2
+ ],
+ "D8_equals_f(x^8,y^8)": true,
+ "D8_weight": 40,
+ "D8_k": 3,
+ "D8_equals_f^(2^k)": true,
+ "D8_scalar_invariance": [
+  2
+ ],
+ "D10_equals_f(x^10,y^10)": true,
+ "D10_weight": 40,
+ "D10_k": 6,
+ "D10_equals_f^(2^k)": true,
+ "D10_scalar_invariance": [
+  2
+ ],
+ "D23_equals_f(x^23,y^23)": true,
+ "D23_weight": 40,
+ "D23_k": 15,
+ "D23_equals_f^(2^k)": true,
+ "D23_scalar_invariance": [
+  2
+ ],
+ "D26_equals_f(x^26,y^26)": true,
+ "D26_weight": 40,
+ "D26_k": 12,
+ "D26_equals_f^(2^k)": true,
+ "D26_scalar_invariance": [
+  2
+ ],
+ "congruence_holds_4850": true,
+ "lhs_weight": 768,
+ "lhs_exponent": 4161,
+ "rhs_exponent": 33288,
+ "rhs_over_lhs": 8.0,
+ "D_eigenvalues_are_frobenius_conjugates": true,
+ "radius4_rules": 32767,
+ "radius4_congruence_holds": 21,
+ "radius4_census_ninth_confined": 21,
+ "radius4_agree": 32767,
+ "radius4_mismatch": [],
+ "radius4_holds_list": [
+  1,
+  7,
+  13,
+  41,
+  82,
+  233,
+  577,
+  644,
+  800,
+  873,
+  1023,
+  1057,
+  3394,
+  4850,
+  5665,
+  17409,
+  18436,
+  23615,
+  27268,
+  28359,
+  32767
+ ],
+ "radius4_cube_congruence_sample": 2978,
+ "radius4_cube_congruence_agree": 2978,
+ "relatives_congruence": {
+  "20982139": true,
+  "178279803": true,
+  "10491524": true,
+  "482758": true,
+  "8438150": true,
+  "43250486": true
+ },
+ "random_r6_congruence_holds": 0
+}

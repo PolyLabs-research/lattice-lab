@@ -1,0 +1,8132 @@
+{
+ "ninth125": [
+  {
+   "rule": 1,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 40069,
+    "genuine_seen": 5494,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 33044,
+    "genuine_seen": 864,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 7,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 57,
+    "genuine_seen": 6,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      6,
+      16384,
+      32
+     ],
+     [
+      10,
+      0,
+      4,
+      24864
+     ],
+     [
+      1,
+      0,
+      7448,
+      56098
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 599,
+    "genuine_seen": 13,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      7,
+      31743,
+      1032191
+     ],
+     [
+      5,
+      2,
+      28359,
+      1023
+     ],
+     [
+      9,
+      8,
+      1,
+      1825855
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 13,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 22,
+    "genuine_seen": 7,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      10,
+      1152,
+      35152
+     ],
+     [
+      17,
+      16,
+      2,
+      70144
+     ],
+     [
+      0,
+      15,
+      1024,
+      1084246
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1246,
+    "checked": 847,
+    "genuine_seen": 25,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      14,
+      13,
+      1197,
+      1197
+     ],
+     [
+      10,
+      11,
+      15835,
+      1681670
+     ],
+     [
+      1,
+      5,
+      1197,
+      1197
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 41,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 71,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      4,
+      1,
+      32,
+      711
+     ],
+     [
+      6,
+      7,
+      52,
+      52
+     ],
+     [
+      17,
+      0,
+      32760,
+      32184
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 417,
+    "genuine_seen": 4,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      8,
+      40,
+      1571840
+     ],
+     [
+      14,
+      4,
+      577,
+      7
+     ],
+     [
+      17,
+      0,
+      3295,
+      1227
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 82,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 5,
+    "genuine_seen": 4,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      10,
+      11736,
+      2065350
+     ],
+     [
+      8,
+      0,
+      7448,
+      414384
+     ],
+     [
+      8,
+      8,
+      21545,
+      7893
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 233,
+   "explained": true,
+   "off": {
+    "hits": 1039,
+    "checked": 5,
+    "genuine_seen": 4,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      1,
+      18992,
+      688450
+     ],
+     [
+      10,
+      0,
+      1024,
+      30752
+     ],
+     [
+      10,
+      9,
+      31472,
+      334224
+     ]
+    ]
+   },
+   "all": {
+    "hits": 247,
+    "checked": 35,
+    "genuine_seen": 6,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      17,
+      832,
+      318450
+     ],
+     [
+      1,
+      1,
+      3295,
+      36211
+     ],
+     [
+      9,
+      9,
+      13,
+      1825855
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 577,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 28,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      4,
+      29472,
+      1409735
+     ],
+     [
+      11,
+      0,
+      12432,
+      1672078
+     ],
+     [
+      11,
+      4,
+      18436,
+      644
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 45,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      2,
+      17409,
+      1431278
+     ],
+     [
+      11,
+      4,
+      26177,
+      21545
+     ],
+     [
+      8,
+      5,
+      1023,
+      23615
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 644,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      9,
+      27270,
+      1114142
+     ],
+     [
+      7,
+      9,
+      16991,
+      1842315
+     ],
+     [
+      7,
+      9,
+      30104,
+      1369626
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 800,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      5,
+      7,
+      41
+     ],
+     [
+      14,
+      0,
+      24864,
+      25088
+     ],
+     [
+      15,
+      9,
+      63,
+      1995552
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 873,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      14,
+      24864,
+      816960
+     ],
+     [
+      4,
+      4,
+      711,
+      25088
+     ],
+     [
+      12,
+      0,
+      28359,
+      41
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 7,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      7,
+      23615,
+      32767
+     ],
+     [
+      13,
+      5,
+      21545,
+      816960
+     ],
+     [
+      5,
+      0,
+      960,
+      26177
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1023,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      9,
+      878,
+      2062484
+     ],
+     [
+      9,
+      9,
+      53,
+      1441792
+     ],
+     [
+      15,
+      17,
+      18436,
+      1825855
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 7,
+    "genuine_seen": 6,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      13,
+      32767,
+      873
+     ],
+     [
+      3,
+      17,
+      873,
+      1081345
+     ],
+     [
+      2,
+      17,
+      873,
+      7
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1057,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      1,
+      2320,
+      829634
+     ],
+     [
+      9,
+      14,
+      1,
+      82
+     ],
+     [
+      9,
+      8,
+      20489,
+      208338
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1246,
+    "checked": 42,
+    "genuine_seen": 4,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      5,
+      1197,
+      1197
+     ],
+     [
+      17,
+      1,
+      26177,
+      379675
+     ],
+     [
+      17,
+      10,
+      32767,
+      233
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 3394,
+   "explained": true,
+   "off": {
+    "hits": 564,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      9,
+      169,
+      1589247
+     ],
+     [
+      9,
+      2,
+      784,
+      365834
+     ],
+     [
+      0,
+      1,
+      218,
+      886062
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 4850,
+   "explained": false,
+   "off": {
+    "hits": 77,
+    "checked": 77,
+    "genuine_seen": 14,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 61,
+    "checked": 61,
+    "genuine_seen": 6,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 5665,
+   "explained": true,
+   "off": {
+    "hits": 795,
+    "checked": 5,
+    "genuine_seen": 5,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      10,
+      24864,
+      233810
+     ],
+     [
+      10,
+      0,
+      10240,
+      8
+     ],
+     [
+      10,
+      10,
+      233,
+      1968276
+     ]
+    ]
+   },
+   "all": {
+    "hits": 133,
+    "checked": 11,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      17,
+      233,
+      32767
+     ],
+     [
+      9,
+      11,
+      15835,
+      508694
+     ],
+     [
+      0,
+      14,
+      1023,
+      515367
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 17409,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 46,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      873,
+      1968276
+     ],
+     [
+      16,
+      0,
+      24864,
+      24312
+     ],
+     [
+      16,
+      9,
+      6160,
+      498954
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 140,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      29479,
+      553
+     ],
+     [
+      16,
+      7,
+      9,
+      104783
+     ],
+     [
+      16,
+      2,
+      32767,
+      1825855
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 18436,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      15,
+      711,
+      711
+     ],
+     [
+      12,
+      1,
+      164,
+      204944
+     ],
+     [
+      17,
+      1,
+      711,
+      593936
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 23615,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      12,
+      644,
+      1825855
+     ],
+     [
+      1,
+      4,
+      644,
+      644
+     ],
+     [
+      5,
+      13,
+      31668,
+      791872
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      0,
+      7,
+      1541119
+     ],
+     [
+      4,
+      0,
+      1023,
+      17409
+     ],
+     [
+      10,
+      2,
+      41,
+      873
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 27268,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      7,
+      8320,
+      867666
+     ],
+     [
+      12,
+      14,
+      873,
+      2097151
+     ],
+     [
+      13,
+      14,
+      26177,
+      25088
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 28359,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      17,
+      32,
+      1656836
+     ],
+     [
+      2,
+      3,
+      32767,
+      2097151
+     ],
+     [
+      14,
+      9,
+      745,
+      1067812
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      1,
+      3295,
+      14113
+     ],
+     [
+      16,
+      8,
+      16425,
+      1978143
+     ],
+     [
+      16,
+      8,
+      5121,
+      765479
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 32767,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      8,
+      18436,
+      1081345
+     ],
+     [
+      1,
+      9,
+      18617,
+      2056441
+     ],
+     [
+      8,
+      8,
+      28359,
+      7
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      9,
+      15779,
+      761705
+     ],
+     [
+      1,
+      9,
+      10848,
+      881868
+     ],
+     [
+      1,
+      9,
+      2513,
+      210399
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 33026,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      454,
+      233910
+     ],
+     [
+      9,
+      9,
+      941,
+      482341
+     ],
+     [
+      9,
+      9,
+      706,
+      379826
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 102259,
+   "explained": true,
+   "off": {
+    "hits": 650,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      16,
+      5153,
+      35167
+     ],
+     [
+      9,
+      8,
+      12544,
+      2320
+     ],
+     [
+      2,
+      3,
+      7893,
+      948
+     ]
+    ]
+   },
+   "all": {
+    "hits": 145,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      9,
+      5676,
+      1540542
+     ],
+     [
+      8,
+      9,
+      6685,
+      1589825
+     ],
+     [
+      8,
+      9,
+      7829,
+      1885131
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 172306,
+   "explained": true,
+   "off": {
+    "hits": 1739,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      9,
+      27120,
+      349288
+     ],
+     [
+      0,
+      10,
+      6672,
+      1409735
+     ],
+     [
+      8,
+      9,
+      18649,
+      412801
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 318463,
+   "explained": true,
+   "off": {
+    "hits": 564,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      11,
+      1160,
+      886062
+     ],
+     [
+      10,
+      7,
+      644,
+      82
+     ],
+     [
+      1,
+      9,
+      8,
+      1462452
+     ]
+    ]
+   },
+   "all": {
+    "hits": 132,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      8,
+      17448,
+      101202
+     ],
+     [
+      1,
+      9,
+      46,
+      101202
+     ],
+     [
+      10,
+      10,
+      3196,
+      439854
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 344580,
+   "explained": true,
+   "off": {
+    "hits": 404,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      11,
+      3394,
+      32767
+     ],
+     [
+      0,
+      16,
+      26177,
+      283296
+     ],
+     [
+      10,
+      16,
+      577,
+      3394
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 411652,
+   "explained": true,
+   "off": {
+    "hits": 356,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      1,
+      25183,
+      1874943
+     ],
+     [
+      3,
+      3,
+      5665,
+      18436
+     ],
+     [
+      9,
+      9,
+      6749,
+      1195551
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 443859,
+   "explained": true,
+   "off": {
+    "hits": 453,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      2,
+      745,
+      403840
+     ],
+     [
+      10,
+      10,
+      26600,
+      657664
+     ],
+     [
+      0,
+      14,
+      7,
+      411652
+     ]
+    ]
+   },
+   "all": {
+    "hits": 74,
+    "checked": 6,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      5665,
+      1825855
+     ],
+     [
+      0,
+      14,
+      711,
+      508914
+     ],
+     [
+      17,
+      7,
+      966,
+      758111
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 482758,
+   "explained": false,
+   "off": {
+    "hits": 37,
+    "checked": 37,
+    "genuine_seen": 10,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 30,
+    "checked": 30,
+    "genuine_seen": 3,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 515367,
+   "explained": true,
+   "off": {
+    "hits": 376,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      5,
+      448,
+      508914
+     ],
+     [
+      9,
+      9,
+      4621,
+      1650832
+     ],
+     [
+      10,
+      10,
+      15808,
+      34880
+     ]
+    ]
+   },
+   "all": {
+    "hits": 59,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      5,
+      1023,
+      5665
+     ],
+     [
+      2,
+      2,
+      5665,
+      23615
+     ],
+     [
+      2,
+      1,
+      1057,
+      28359
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 699738,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      6,
+      8,
+      41,
+      1081345
+     ],
+     [
+      12,
+      17,
+      13232,
+      65
+     ],
+     [
+      7,
+      16,
+      577,
+      1114116
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 985232,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      9,
+      13639,
+      561185
+     ],
+     [
+      8,
+      9,
+      10480,
+      860156
+     ],
+     [
+      8,
+      9,
+      5786,
+      450224
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 1081345,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 17,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      5,
+      0,
+      2,
+      30752
+     ],
+     [
+      1,
+      4,
+      24312,
+      711
+     ],
+     [
+      5,
+      9,
+      1,
+      1968276
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 138,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      7,
+      17448,
+      32184
+     ],
+     [
+      12,
+      3,
+      26177,
+      1893953
+     ],
+     [
+      10,
+      8,
+      1023,
+      17409
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1114116,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      9,
+      16781,
+      1852393
+     ],
+     [
+      8,
+      9,
+      23000,
+      1601154
+     ],
+     [
+      8,
+      9,
+      19596,
+      2027070
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 1431278,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      4,
+      31668,
+      1048576
+     ],
+     [
+      0,
+      1,
+      18436,
+      1023
+     ],
+     [
+      3,
+      13,
+      20512,
+      593936
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      8,
+      24312,
+      1893953
+     ],
+     [
+      6,
+      17,
+      29,
+      164219
+     ],
+     [
+      4,
+      9,
+      43,
+      1700295
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1541119,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      8,
+      5160,
+      580450
+     ],
+     [
+      8,
+      7,
+      11736,
+      52
+     ],
+     [
+      8,
+      1,
+      25088,
+      448
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      8,
+      41,
+      1023
+     ],
+     [
+      2,
+      2,
+      7,
+      41
+     ],
+     [
+      11,
+      13,
+      32767,
+      41
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1690631,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      17,
+      18436,
+      873
+     ],
+     [
+      7,
+      9,
+      24312,
+      1860096
+     ],
+     [
+      14,
+      7,
+      448,
+      24312
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      13,
+      23615,
+      41
+     ],
+     [
+      12,
+      13,
+      577,
+      577
+     ],
+     [
+      4,
+      16,
+      7,
+      1825855
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1825855,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      19686,
+      2023826
+     ],
+     [
+      9,
+      9,
+      24893,
+      1198413
+     ],
+     [
+      9,
+      9,
+      5428,
+      430032
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      24459,
+      991
+     ],
+     [
+      9,
+      9,
+      18927,
+      2053407
+     ],
+     [
+      9,
+      9,
+      12601,
+      594681
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1961671,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      6,
+      28359,
+      2063284
+     ],
+     [
+      5,
+      4,
+      800,
+      1825855
+     ],
+     [
+      11,
+      4,
+      17409,
+      1541119
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 4,
+    "genuine_seen": 4,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      5,
+      14,
+      17409,
+      873
+     ],
+     [
+      6,
+      14,
+      63,
+      960
+     ],
+     [
+      13,
+      1,
+      21545,
+      1681990
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1968276,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      9,
+      17163,
+      1845623
+     ],
+     [
+      8,
+      9,
+      28375,
+      1081729
+     ],
+     [
+      8,
+      9,
+      16368,
+      778508
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 2063284,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      4,
+      24312,
+      1995552
+     ],
+     [
+      8,
+      13,
+      960,
+      816960
+     ],
+     [
+      14,
+      10,
+      448,
+      1048576
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 2097151,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      14,
+      800,
+      577
+     ],
+     [
+      2,
+      15,
+      11736,
+      1758249
+     ],
+     [
+      1,
+      14,
+      32767,
+      577
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      12,
+      577,
+      1825855
+     ],
+     [
+      12,
+      0,
+      17409,
+      1961671
+     ],
+     [
+      8,
+      10,
+      17448,
+      1961664
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 2097154,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      31695,
+      31695
+     ],
+     [
+      0,
+      9,
+      29452,
+      29452
+     ],
+     [
+      0,
+      9,
+      31375,
+      31375
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 2097155,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      8503,
+      8503
+     ],
+     [
+      12,
+      8,
+      16392,
+      34
+     ],
+     [
+      0,
+      9,
+      6169,
+      6169
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      12205,
+      12205
+     ],
+     [
+      0,
+      9,
+      27225,
+      27225
+     ],
+     [
+      0,
+      9,
+      25362,
+      25362
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 2097665,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 6,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      11,
+      18992,
+      2086167
+     ],
+     [
+      10,
+      0,
+      24864,
+      233810
+     ],
+     [
+      11,
+      10,
+      2328,
+      141570
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1246,
+    "checked": 140,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      5,
+      1057,
+      13
+     ],
+     [
+      10,
+      11,
+      32184,
+      5676
+     ],
+     [
+      17,
+      7,
+      5665,
+      32767
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 2101256,
+   "explained": true,
+   "off": {
+    "hits": 2560,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      9,
+      246,
+      99074
+     ],
+     [
+      4,
+      7,
+      1160,
+      32768
+     ],
+     [
+      17,
+      1,
+      384,
+      8448
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 2163712,
+   "explained": true,
+   "off": {
+    "hits": 331,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      16,
+      1157,
+      35167
+     ],
+     [
+      1,
+      15,
+      25857,
+      6544
+     ],
+     [
+      4,
+      3,
+      8,
+      105299
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 2164257,
+   "explained": true,
+   "off": {
+    "hits": 431,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      3,
+      1160,
+      1160
+     ],
+     [
+      5,
+      9,
+      1024,
+      1197
+     ],
+     [
+      12,
+      1,
+      8,
+      32768
+     ]
+    ]
+   },
+   "all": {
+    "hits": 42,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      14,
+      1057,
+      13
+     ],
+     [
+      8,
+      14,
+      13,
+      1057
+     ],
+     [
+      13,
+      6,
+      13,
+      1057
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 2168493,
+   "explained": true,
+   "off": {
+    "hits": 331,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      0,
+      1197,
+      8
+     ],
+     [
+      2,
+      13,
+      82,
+      33026
+     ],
+     [
+      0,
+      6,
+      64,
+      70144
+     ]
+    ]
+   },
+   "all": {
+    "hits": 24,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      7,
+      1197,
+      1197
+     ],
+     [
+      11,
+      17,
+      1197,
+      1197
+     ],
+     [
+      12,
+      15,
+      13,
+      1057
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 2248629,
+   "explained": true,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 4194304,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      17081,
+      17081
+     ],
+     [
+      0,
+      9,
+      1279,
+      1279
+     ],
+     [
+      0,
+      9,
+      23167,
+      23167
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 4194305,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      0,
+      18992,
+      384
+     ],
+     [
+      2,
+      0,
+      272,
+      25857
+     ],
+     [
+      0,
+      9,
+      29373,
+      29373
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      2375,
+      2375
+     ],
+     [
+      0,
+      9,
+      10221,
+      10221
+     ],
+     [
+      0,
+      9,
+      20107,
+      20107
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 6291458,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      8923,
+      8923
+     ],
+     [
+      0,
+      9,
+      5374,
+      5374
+     ],
+     [
+      0,
+      9,
+      6733,
+      6733
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 6291459,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      26964,
+      26964
+     ],
+     [
+      0,
+      9,
+      32560,
+      32560
+     ],
+     [
+      0,
+      9,
+      16490,
+      16490
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      297,
+      297
+     ],
+     [
+      0,
+      9,
+      6605,
+      6605
+     ],
+     [
+      0,
+      9,
+      18648,
+      18648
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 6403210,
+   "explained": true,
+   "off": {
+    "hits": 1739,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      17,
+      2370,
+      29479
+     ],
+     [
+      7,
+      6,
+      784,
+      202752
+     ],
+     [
+      9,
+      9,
+      26076,
+      383318
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 8438150,
+   "explained": false,
+   "off": {
+    "hits": 7,
+    "checked": 7,
+    "genuine_seen": 3,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 4,
+    "checked": 4,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 10491524,
+   "explained": false,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 10503169,
+   "explained": true,
+   "off": {
+    "hits": 1039,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      11,
+      52,
+      6672
+     ],
+     [
+      9,
+      7,
+      32,
+      141568
+     ],
+     [
+      17,
+      8,
+      30745,
+      1070597
+     ]
+    ]
+   },
+   "all": {
+    "hits": 247,
+    "checked": 18,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      6,
+      7,
+      7893,
+      711
+     ],
+     [
+      8,
+      8,
+      1057,
+      1825855
+     ],
+     [
+      17,
+      17,
+      361,
+      35167
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 19611082,
+   "explained": true,
+   "off": {
+    "hits": 334,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      7,
+      873,
+      233
+     ],
+     [
+      16,
+      7,
+      13384,
+      15808
+     ],
+     [
+      9,
+      9,
+      5128,
+      886694
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 20982139,
+   "explained": false,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 21504272,
+   "explained": true,
+   "off": {
+    "hits": 795,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      11,
+      448,
+      2320
+     ],
+     [
+      8,
+      9,
+      4,
+      233810
+     ],
+     [
+      9,
+      9,
+      10884,
+      36211
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 25755792,
+   "explained": true,
+   "off": {
+    "hits": 331,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      2,
+      472,
+      1296215
+     ],
+     [
+      9,
+      9,
+      11394,
+      1759047
+     ],
+     [
+      0,
+      1,
+      320,
+      885826
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 27827210,
+   "explained": true,
+   "off": {
+    "hits": 388,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      5,
+      5665,
+      41
+     ],
+     [
+      8,
+      3,
+      873,
+      443859
+     ],
+     [
+      0,
+      1,
+      29479,
+      208338
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 32215178,
+   "explained": true,
+   "off": {
+    "hits": 309,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      6,
+      63,
+      508914
+     ],
+     [
+      8,
+      10,
+      23615,
+      411652
+     ],
+     [
+      8,
+      17,
+      22225,
+      886062
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 37045893,
+   "explained": true,
+   "off": {
+    "hits": 448,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      3,
+      24864,
+      141568
+     ],
+     [
+      16,
+      14,
+      8,
+      3288
+     ],
+     [
+      17,
+      17,
+      164,
+      1376900
+     ]
+    ]
+   },
+   "all": {
+    "hits": 76,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      1,
+      233,
+      2097151
+     ],
+     [
+      0,
+      1,
+      29479,
+      279681
+     ],
+     [
+      15,
+      15,
+      13,
+      32767
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 39220148,
+   "explained": true,
+   "off": {
+    "hits": 252,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      17,
+      23615,
+      172306
+     ],
+     [
+      1,
+      15,
+      63,
+      2065350
+     ],
+     [
+      0,
+      8,
+      82,
+      18436
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 43250486,
+   "explained": false,
+   "off": {
+    "hits": 33,
+    "checked": 33,
+    "genuine_seen": 19,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 21,
+    "checked": 21,
+    "genuine_seen": 7,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 49441229,
+   "explained": true,
+   "off": {
+    "hits": 235,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      2,
+      13,
+      800
+     ],
+     [
+      11,
+      0,
+      1024,
+      507096
+     ],
+     [
+      0,
+      8,
+      9610,
+      22225
+     ]
+    ]
+   },
+   "all": {
+    "hits": 45,
+    "checked": 5,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      11,
+      11,
+      13,
+      1023
+     ],
+     [
+      0,
+      6,
+      873,
+      5665
+     ],
+     [
+      0,
+      6,
+      960,
+      379675
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 55654676,
+   "explained": true,
+   "off": {
+    "hits": 439,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      11736,
+      164
+     ],
+     [
+      1,
+      1,
+      4772,
+      24864
+     ],
+     [
+      8,
+      7,
+      7448,
+      365834
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 57515480,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      7,
+      8,
+      40,
+      19236
+     ],
+     [
+      11,
+      13,
+      960,
+      960
+     ],
+     [
+      1,
+      13,
+      577,
+      27268
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 57521562,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      26329,
+      1284341
+     ],
+     [
+      14,
+      3,
+      800,
+      2063284
+     ],
+     [
+      9,
+      9,
+      10739,
+      862065
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 57537311,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      7,
+      20512,
+      1311232
+     ],
+     [
+      13,
+      14,
+      41,
+      1690631
+     ],
+     [
+      15,
+      13,
+      711,
+      26177
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      15,
+      873,
+      7
+     ],
+     [
+      5,
+      8,
+      40,
+      1675320
+     ],
+     [
+      16,
+      4,
+      7,
+      2097151
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 57713795,
+   "explained": true,
+   "off": {
+    "hits": 356,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      12,
+      13,
+      2063284
+     ],
+     [
+      0,
+      3,
+      18436,
+      318463
+     ],
+     [
+      14,
+      14,
+      7893,
+      52
+     ]
+    ]
+   },
+   "all": {
+    "hits": 56,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      2,
+      233,
+      2097151
+     ],
+     [
+      12,
+      12,
+      13,
+      1431278
+     ],
+     [
+      1,
+      1,
+      41,
+      102259
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 58091941,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      31755,
+      1564423
+     ],
+     [
+      9,
+      9,
+      20213,
+      2003759
+     ],
+     [
+      9,
+      9,
+      25123,
+      1180553
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      9833,
+      1040721
+     ],
+     [
+      9,
+      9,
+      11476,
+      823484
+     ],
+     [
+      9,
+      9,
+      21865,
+      1761377
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 66560575,
+   "explained": true,
+   "off": {
+    "hits": 650,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      15,
+      5128,
+      35155
+     ],
+     [
+      10,
+      9,
+      221,
+      34834
+     ],
+     [
+      0,
+      17,
+      11736,
+      6672
+     ]
+    ]
+   },
+   "all": {
+    "hits": 145,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      17,
+      51,
+      283309
+     ],
+     [
+      0,
+      15,
+      17409,
+      13
+     ],
+     [
+      9,
+      9,
+      3196,
+      1041460
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 93139344,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      28406,
+      1081906
+     ],
+     [
+      15,
+      3,
+      1023,
+      41
+     ],
+     [
+      9,
+      9,
+      29786,
+      1362904
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 93777327,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      15127,
+      686873
+     ],
+     [
+      9,
+      9,
+      28299,
+      1084471
+     ],
+     [
+      9,
+      9,
+      8222,
+      921716
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      27972,
+      1102396
+     ],
+     [
+      9,
+      9,
+      8803,
+      945489
+     ],
+     [
+      10,
+      8,
+      947,
+      1901635
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 107951322,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      14,
+      7,
+      960,
+      24312
+     ],
+     [
+      15,
+      0,
+      11736,
+      32834
+     ],
+     [
+      11,
+      13,
+      18436,
+      1690631
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 108460253,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      11,
+      14,
+      577,
+      41
+     ],
+     [
+      17,
+      1,
+      31668,
+      29472
+     ],
+     [
+      10,
+      5,
+      12904,
+      25151
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      15,
+      5,
+      1,
+      873
+     ],
+     [
+      4,
+      3,
+      23615,
+      32767
+     ],
+     [
+      2,
+      15,
+      23615,
+      32767
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 112076104,
+   "explained": false,
+   "off": {
+    "hits": 4887,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      1,
+      25088,
+      1442592
+     ],
+     [
+      17,
+      9,
+      12904,
+      875284
+     ],
+     [
+      12,
+      5,
+      512,
+      1758249
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 115377162,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      13183,
+      617775
+     ],
+     [
+      9,
+      9,
+      17983,
+      1941287
+     ],
+     [
+      9,
+      9,
+      19264,
+      2047208
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 117135413,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      32494,
+      1555176
+     ],
+     [
+      9,
+      9,
+      793,
+      19181
+     ],
+     [
+      9,
+      9,
+      5508,
+      431220
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      23289,
+      1582721
+     ],
+     [
+      9,
+      9,
+      29045,
+      1408207
+     ],
+     [
+      9,
+      9,
+      22588,
+      1589466
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 132692042,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      3,
+      17409,
+      1968276
+     ],
+     [
+      0,
+      3,
+      960,
+      960
+     ],
+     [
+      0,
+      12,
+      20512,
+      512
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 133646261,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      1,
+      2097151
+     ],
+     [
+      11,
+      0,
+      16384,
+      26177
+     ],
+     [
+      11,
+      4,
+      948,
+      1681990
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      11,
+      32767,
+      1961671
+     ],
+     [
+      2,
+      0,
+      1,
+      1690631
+     ],
+     [
+      10,
+      16,
+      7,
+      41
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 134217732,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      0,
+      20512,
+      512
+     ],
+     [
+      0,
+      9,
+      2982,
+      2982
+     ],
+     [
+      0,
+      9,
+      25813,
+      25813
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 134217733,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      6322,
+      6322
+     ],
+     [
+      0,
+      9,
+      28984,
+      28984
+     ],
+     [
+      0,
+      9,
+      24325,
+      24325
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      32691,
+      32691
+     ],
+     [
+      0,
+      9,
+      6652,
+      6652
+     ],
+     [
+      17,
+      8,
+      5153,
+      29
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 136314881,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 30,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      7,
+      74,
+      1015808
+     ],
+     [
+      9,
+      9,
+      27268,
+      1968276
+     ],
+     [
+      9,
+      9,
+      18480,
+      1430830
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 84,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      7,
+      711,
+      711
+     ],
+     [
+      15,
+      3,
+      1023,
+      41
+     ],
+     [
+      13,
+      1,
+      1023,
+      32767
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 136314886,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      21768,
+      21768
+     ],
+     [
+      17,
+      8,
+      132,
+      399488
+     ],
+     [
+      0,
+      9,
+      16007,
+      16007
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      14760,
+      14760
+     ],
+     [
+      0,
+      9,
+      26718,
+      26718
+     ],
+     [
+      0,
+      9,
+      10274,
+      10274
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 136314887,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      7209,
+      7209
+     ],
+     [
+      0,
+      9,
+      17269,
+      17269
+     ],
+     [
+      0,
+      9,
+      8881,
+      8881
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      31958,
+      31958
+     ],
+     [
+      0,
+      9,
+      29278,
+      29278
+     ],
+     [
+      0,
+      9,
+      15881,
+      15881
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 138140734,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      18702,
+      2048996
+     ],
+     [
+      2,
+      2,
+      577,
+      1968276
+     ],
+     [
+      9,
+      9,
+      10472,
+      859814
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      22352,
+      1741224
+     ],
+     [
+      9,
+      9,
+      6050,
+      451790
+     ],
+     [
+      7,
+      7,
+      24312,
+      960
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 138412036,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      22148,
+      22148
+     ],
+     [
+      0,
+      9,
+      22540,
+      22540
+     ],
+     [
+      0,
+      9,
+      26599,
+      26599
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 138412037,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      29658,
+      29658
+     ],
+     [
+      0,
+      9,
+      11383,
+      11383
+     ],
+     [
+      0,
+      9,
+      3549,
+      3549
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      31405,
+      31405
+     ],
+     [
+      0,
+      9,
+      25605,
+      25605
+     ],
+     [
+      0,
+      9,
+      29237,
+      29237
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 140509190,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      28580,
+      28580
+     ],
+     [
+      0,
+      9,
+      3426,
+      3426
+     ],
+     [
+      10,
+      0,
+      7,
+      1825855
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      7795,
+      7795
+     ],
+     [
+      0,
+      9,
+      31994,
+      31994
+     ],
+     [
+      0,
+      9,
+      11323,
+      11323
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 140509191,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      3305,
+      3305
+     ],
+     [
+      0,
+      9,
+      29502,
+      29502
+     ],
+     [
+      0,
+      9,
+      4085,
+      4085
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      9,
+      1143,
+      1143
+     ],
+     [
+      0,
+      9,
+      5383,
+      5383
+     ],
+     [
+      0,
+      9,
+      4438,
+      4438
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 142606368,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      6,
+      9,
+      22806,
+      1604414
+     ],
+     [
+      6,
+      9,
+      16320,
+      779064
+     ],
+     [
+      6,
+      9,
+      18839,
+      2054953
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 161481577,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      4,
+      8,
+      17417,
+      883
+     ],
+     [
+      4,
+      9,
+      5572,
+      432300
+     ],
+     [
+      4,
+      9,
+      11532,
+      834622
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      4,
+      9,
+      30463,
+      1352431
+     ],
+     [
+      4,
+      9,
+      6022,
+      452430
+     ],
+     [
+      4,
+      9,
+      22879,
+      1603387
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 167788544,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      9,
+      7448,
+      727040
+     ],
+     [
+      15,
+      14,
+      711,
+      791872
+     ],
+     [
+      16,
+      13,
+      7679,
+      1468836
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 169886721,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      5,
+      14,
+      30569,
+      1146887
+     ],
+     [
+      7,
+      13,
+      1023,
+      699738
+     ],
+     [
+      16,
+      4,
+      960,
+      1995552
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      2,
+      41,
+      1023
+     ],
+     [
+      7,
+      3,
+      32767,
+      23615
+     ],
+     [
+      7,
+      9,
+      903,
+      1268289
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 171949054,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      5,
+      23615,
+      644
+     ],
+     [
+      1,
+      15,
+      31668,
+      960
+     ],
+     [
+      3,
+      14,
+      948,
+      16384
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      3,
+      3295,
+      101575
+     ],
+     [
+      16,
+      16,
+      1,
+      1541119
+     ],
+     [
+      16,
+      1,
+      32760,
+      32190
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 178279465,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      4,
+      32767,
+      27268
+     ],
+     [
+      4,
+      0,
+      12544,
+      25088
+     ],
+     [
+      5,
+      0,
+      873,
+      2063284
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      15,
+      41,
+      17409
+     ],
+     [
+      0,
+      16,
+      63,
+      816960
+     ],
+     [
+      5,
+      15,
+      1023,
+      23615
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 178279803,
+   "explained": false,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 189642139,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      19536,
+      2030104
+     ],
+     [
+      9,
+      9,
+      23051,
+      1585639
+     ],
+     [
+      9,
+      9,
+      411,
+      8263
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      30029,
+      1372897
+     ],
+     [
+      0,
+      9,
+      23569,
+      1017
+     ],
+     [
+      10,
+      7,
+      16385,
+      553
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 190212516,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      5358,
+      435016
+     ],
+     [
+      9,
+      9,
+      22920,
+      1598426
+     ],
+     [
+      9,
+      9,
+      535,
+      29321
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 192967456,
+   "explained": true,
+   "off": {
+    "hits": 4887,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      9,
+      18436,
+      1968276
+     ],
+     [
+      11,
+      5,
+      27268,
+      7
+     ],
+     [
+      1,
+      16,
+      800,
+      644
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 197163956,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      5,
+      12,
+      12544,
+      1179680
+     ],
+     [
+      2,
+      16,
+      4,
+      1278015
+     ],
+     [
+      2,
+      9,
+      21124,
+      25950
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 198817715,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      14,
+      948,
+      21545
+     ],
+     [
+      0,
+      1,
+      1023,
+      699738
+     ],
+     [
+      11,
+      6,
+      1023,
+      800
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      2,
+      17409,
+      23615
+     ],
+     [
+      14,
+      4,
+      23615,
+      17409
+     ],
+     [
+      14,
+      7,
+      577,
+      1431278
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 199262207,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      9,
+      26865,
+      1146363
+     ],
+     [
+      12,
+      9,
+      16193,
+      785071
+     ],
+     [
+      3,
+      3,
+      63,
+      1311232
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      9,
+      24042,
+      1695852
+     ],
+     [
+      12,
+      9,
+      7045,
+      291347
+     ],
+     [
+      12,
+      9,
+      25214,
+      1183288
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 212362513,
+   "explained": false,
+   "off": {
+    "hits": 1039,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      16,
+      7,
+      784,
+      18992
+     ],
+     [
+      0,
+      10,
+      384,
+      689635
+     ],
+     [
+      0,
+      10,
+      384,
+      2085302
+     ]
+    ]
+   },
+   "all": {
+    "hits": 24,
+    "checked": 11,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      17,
+      745,
+      1874943
+     ],
+     [
+      17,
+      17,
+      720,
+      1874886
+     ],
+     [
+      17,
+      17,
+      809,
+      2034349
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 213024809,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      15,
+      18436,
+      32767
+     ],
+     [
+      2,
+      8,
+      4,
+      63
+     ],
+     [
+      5,
+      10,
+      1023,
+      1114116
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      17,
+      577,
+      873
+     ],
+     [
+      12,
+      4,
+      7,
+      1690631
+     ],
+     [
+      6,
+      16,
+      24312,
+      1893953
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 215154740,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      15,
+      18436,
+      873
+     ],
+     [
+      13,
+      1,
+      272,
+      1759047
+     ],
+     [
+      14,
+      1,
+      18436,
+      18436
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 217284671,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      10,
+      29,
+      507687
+     ],
+     [
+      15,
+      8,
+      7626,
+      8448
+     ],
+     [
+      4,
+      9,
+      17060,
+      1460707
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      10,
+      32767,
+      1081345
+     ],
+     [
+      8,
+      13,
+      1023,
+      23615
+     ],
+     [
+      9,
+      9,
+      21001,
+      1268289
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 217313016,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      12,
+      4,
+      18436,
+      28359
+     ],
+     [
+      14,
+      0,
+      24312,
+      1656836
+     ],
+     [
+      12,
+      9,
+      25088,
+      512
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      6,
+      41,
+      1541119
+     ],
+     [
+      0,
+      17,
+      7,
+      41
+     ],
+     [
+      16,
+      8,
+      5153,
+      773159
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 221140584,
+   "explained": false,
+   "off": {
+    "hits": 4887,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      15,
+      15,
+      27268,
+      985232
+     ],
+     [
+      8,
+      9,
+      14608,
+      472
+     ],
+     [
+      2,
+      6,
+      7,
+      28359
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1053,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      14,
+      5,
+      7,
+      2097151
+     ],
+     [
+      3,
+      4,
+      873,
+      577
+     ],
+     [
+      5,
+      9,
+      18280,
+      24512
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 229454225,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      7,
+      41,
+      577
+     ],
+     [
+      9,
+      9,
+      8595,
+      930205
+     ],
+     [
+      9,
+      9,
+      7394,
+      375334
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      20123,
+      2006199
+     ],
+     [
+      9,
+      9,
+      18661,
+      2059599
+     ],
+     [
+      9,
+      9,
+      10453,
+      859259
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 229592942,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      4,
+      644,
+      1023
+     ],
+     [
+      11,
+      0,
+      16,
+      1997460
+     ],
+     [
+      6,
+      16,
+      960,
+      1245236
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      15,
+      11,
+      1227,
+      440051
+     ],
+     [
+      3,
+      8,
+      41,
+      1023
+     ],
+     [
+      9,
+      16,
+      17409,
+      1081345
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 230065001,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      17,
+      7,
+      800,
+      800
+     ],
+     [
+      17,
+      9,
+      21545,
+      1589248
+     ],
+     [
+      1,
+      10,
+      31668,
+      1409735
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      4,
+      711,
+      816960
+     ],
+     [
+      11,
+      11,
+      28359,
+      577
+     ],
+     [
+      16,
+      0,
+      873,
+      873
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 230092206,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      23599,
+      1691015
+     ],
+     [
+      9,
+      9,
+      16493,
+      1863045
+     ],
+     [
+      9,
+      9,
+      5569,
+      432287
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      24321,
+      1672567
+     ],
+     [
+      9,
+      9,
+      13942,
+      580002
+     ],
+     [
+      9,
+      9,
+      26399,
+      1291523
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 231275595,
+   "explained": false,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      2,
+      11,
+      577,
+      1023
+     ],
+     [
+      8,
+      7,
+      1024,
+      854144
+     ],
+     [
+      6,
+      5,
+      448,
+      816960
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      3,
+      75,
+      1995559
+     ],
+     [
+      6,
+      14,
+      24312,
+      26177
+     ],
+     [
+      1,
+      14,
+      32767,
+      577
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 232194996,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      8,
+      16,
+      26177,
+      29472
+     ],
+     [
+      3,
+      1,
+      23615,
+      41
+     ],
+     [
+      9,
+      12,
+      63,
+      52
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 238601217,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      9,
+      18483,
+      2062761
+     ],
+     [
+      5,
+      3,
+      26177,
+      1278015
+     ],
+     [
+      3,
+      9,
+      8048,
+      387484
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      3,
+      9,
+      31771,
+      1564295
+     ],
+     [
+      3,
+      9,
+      31804,
+      1563930
+     ],
+     [
+      3,
+      9,
+      5219,
+      440881
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 242863111,
+   "explained": true,
+   "off": {
+    "hits": 5925,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      13,
+      5,
+      52,
+      1860096
+     ],
+     [
+      3,
+      7,
+      12544,
+      1893953
+     ],
+     [
+      2,
+      1,
+      12544,
+      1995552
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1580,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      13,
+      32767,
+      1081345
+     ],
+     [
+      5,
+      8,
+      5153,
+      912005
+     ],
+     [
+      7,
+      7,
+      26177,
+      1409735
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 247497739,
+   "explained": false,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      19879,
+      2020829
+     ],
+     [
+      9,
+      9,
+      7401,
+      375521
+     ],
+     [
+      9,
+      9,
+      12305,
+      600327
+     ]
+    ]
+   },
+   "all": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      5837,
+      447425
+     ],
+     [
+      9,
+      9,
+      14667,
+      656783
+     ],
+     [
+      9,
+      9,
+      3612,
+      190222
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 249255988,
+   "explained": true,
+   "off": {
+    "hits": ">=20000",
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      20421,
+      2009483
+     ],
+     [
+      9,
+      9,
+      5763,
+      450541
+     ],
+     [
+      9,
+      9,
+      20342,
+      2011698
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 262020583,
+   "explained": false,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      3,
+      644,
+      699738
+     ],
+     [
+      10,
+      0,
+      29472,
+      1311232
+     ],
+     [
+      5,
+      10,
+      1,
+      23615
+     ]
+    ]
+   },
+   "all": {
+    "hits": 1476,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      1,
+      11,
+      577,
+      873
+     ],
+     [
+      9,
+      8,
+      873,
+      1825855
+     ],
+     [
+      15,
+      13,
+      23615,
+      1431278
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 262042400,
+   "explained": true,
+   "off": {
+    "hits": 5847,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      16,
+      41,
+      41
+     ],
+     [
+      14,
+      6,
+      27268,
+      1114116
+     ],
+     [
+      3,
+      9,
+      25704,
+      1434424
+     ]
+    ]
+   },
+   "all": null
+  }
+ ],
+ "random6": [
+  {
+   "rule": 11614359,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 11177240,
+   "explained": null,
+   "off": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      1160,
+      193707
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 12200288,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 126255800,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 126674511,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 127724671,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 232703459,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 232257697,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 232743472,
+   "explained": null,
+   "off": {
+    "hits": 10,
+    "checked": 3,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      10,
+      448,
+      1887454
+     ],
+     [
+      0,
+      1,
+      12544,
+      1887454
+     ],
+     [
+      0,
+      2,
+      52,
+      1887454
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 212695494,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 212894629,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 213846433,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 247290494,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 246262927,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 245449816,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 115793920,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 117131455,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 116586845,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 66590925,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 65321927,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 65125233,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 38149973,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 39431410,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 38499508,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 114541030,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 114235868,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 113820923,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 189334815,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 189729406,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 189195021,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 82512458,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 82800196,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 83665275,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 241002790,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 240809304,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 241068750,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  }
+ ],
+ "cube6": [
+  {
+   "rule": 10961543,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 12570156,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 10674414,
+   "explained": null,
+   "off": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      99921
+     ]
+    ]
+   },
+   "all": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      99921
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 11244194,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 125988636,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 125870847,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 126437444,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 127355965,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 231963431,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 231366286,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 231383201,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 232667187,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 212783034,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 212912822,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 213534682,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 213182446,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 247196767,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 246299797,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 245585420,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 246464512,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 115937780,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 116294261,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 117051218,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 116371656,
+   "explained": null,
+   "off": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      1160,
+      1814132
+     ]
+    ]
+   },
+   "all": null
+  },
+  {
+   "rule": 66470972,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 66207176,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 65160390,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 66522498,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 39465448,
+   "explained": null,
+   "off": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      421935
+     ]
+    ]
+   },
+   "all": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      421935
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 38192839,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 39060524,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 39506816,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 114935209,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 114714639,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 113759874,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 114538310,
+   "explained": null,
+   "off": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      677315
+     ]
+    ]
+   },
+   "all": {
+    "hits": 5,
+    "checked": 5,
+    "genuine_seen": 1,
+    "clean_found": 1,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32184,
+      677315
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 190389083,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 190772783,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 190467008,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 190757890,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 81846759,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 82948440,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 83656884,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 82971386,
+   "explained": null,
+   "off": {
+    "hits": 4,
+    "checked": 4,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 4,
+    "checked": 4,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 239208443,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 240285970,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 239516342,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 239555559,
+   "explained": null,
+   "off": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 0,
+    "checked": 0,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  }
+ ],
+ "random5": [
+  {
+   "rule": 401458,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 902294,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1342839,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1177248,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1569137,
+   "explained": null,
+   "off": {
+    "hits": 37,
+    "checked": 6,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      7,
+      644,
+      32233
+     ],
+     [
+      10,
+      10,
+      32233,
+      1968276
+     ],
+     [
+      0,
+      1,
+      32767,
+      32233
+     ]
+    ]
+   },
+   "all": {
+    "hits": 30,
+    "checked": 25,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      0,
+      1,
+      32767,
+      32233
+     ],
+     [
+      9,
+      9,
+      32233,
+      1825855
+     ],
+     [
+      17,
+      17,
+      32233,
+      32767
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 574697,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 251478,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 850821,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1339870,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 333608,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 372422,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1748825,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1616854,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 983691,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1291715,
+   "explained": null,
+   "off": {
+    "hits": 37,
+    "checked": 4,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      10,
+      10,
+      26389,
+      1114116
+     ],
+     [
+      10,
+      10,
+      26389,
+      1968276
+     ],
+     [
+      0,
+      7,
+      644,
+      26389
+     ]
+    ]
+   },
+   "all": {
+    "hits": 30,
+    "checked": 16,
+    "genuine_seen": 3,
+    "clean_found": 3,
+    "verified": true,
+    "examples": [
+     [
+      9,
+      9,
+      26389,
+      1825855
+     ],
+     [
+      17,
+      17,
+      26389,
+      32767
+     ],
+     [
+      0,
+      1,
+      32767,
+      26389
+     ]
+    ]
+   }
+  },
+  {
+   "rule": 1626206,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 162275,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1459963,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1832207,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 686667,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1736881,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1067501,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 784529,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 807244,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 682065,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1189725,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 97809,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 44801,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 469787,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  },
+  {
+   "rule": 1595844,
+   "explained": null,
+   "off": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   },
+   "all": {
+    "hits": 18,
+    "checked": 18,
+    "genuine_seen": 0,
+    "clean_found": 0,
+    "verified": true,
+    "examples": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+rule 4850, logs mod 63: |group| = 144
+rule 4850, logs mod 27: |group| = 216
+rule 4850, logs mod 7: |group| = 144
+    5 s
+rule 10491524, logs mod 63: |group| = 144
+rule 10491524, logs mod 27: |group| = 216
+rule 10491524, logs mod 7: |group| = 144
+    9 s
+rule 20982139, logs mod 63: |group| = 144
+rule 20982139, logs mod 27: |group| = 216
+rule 20982139, logs mod 7: |group| = 144
+    13 s
+control rule 14824 (radius 4), mod 63: |group| = 24
+control rule 28369 (radius 4), mod 63: |group| = 24
+control rule 7 (radius 4), mod 63: |group| = 288
+control rule 1057 (radius 4), mod 63: |group| = 288

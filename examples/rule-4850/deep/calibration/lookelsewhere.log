@@ -1,0 +1,50 @@
+D 13 {5: 0.0, 7: 2.19635, 9: 1.14495, 13: 0.0} 3.1
+D 15 {5: 1.27936} 1.0
+D 17 {5: 0.01323, 17: 0.0} 1.7
+D 21 {7: 0.0005, 9: 0.00805} 1.7
+D 25 {5: 0.0, 11: 0.00069, 25: 0.0, 31: 1e-05, 41: 0.0} 5.1
+D 29 {5: 0.0, 29: 0.0, 43: 0.0, 113: 0.0, 127: 0.0} 7.0
+D 35 {5: 0.00141, 7: 0.0, 9: 0.0, 13: 0.0} 3.5
+D 37 {5: 0.0, 7: 0.00013, 9: 7e-05, 13: 0.0, 19: 0.0, 27: 0.0, 37: 0.0, 73: 0.0, 109: 0.0} 10.1
+E_4850 0.0003363063040993128 p_local 0.0003362497594732172 combos 121 with E >= p_obs 29
+effective trials besides 4850: 9.27  p_global: 0.0034
+   {'family': 'square r6 new', 'm': 37, 'q': 3, 'E': 22783.657548358115, 'source': 'C', 'P_comparable': 0.0003298530310688595}
+   {'family': 'square r<=4', 'm': 37, 'q': 3, 'E': 5.711657611842522, 'source': 'A', 'P_comparable': 0.00030156776638438736}
+   {'family': 'atlas', 'm': 13, 'q': 3, 'E': 29.136, 'source': 'B', 'P_comparable': 0.00027537940981426577}
+   {'family': 'square r5 new', 'm': 37, 'q': 3, 'E': 231.172112480821, 'source': 'C', 'P_comparable': 0.00027417445185511265}
+   {'family': 'square r<=4', 'm': 29, 'q': 3, 'E': 5.638469745466964, 'source': 'A', 'P_comparable': 0.00026238742370457673}
+   {'family': 'atlas', 'm': 13, 'q': 9, 'E': 1.144947416552344, 'source': 'D', 'P_comparable': 0.00018951612755672493}
+   {'family': 'atlas', 'm': 21, 'q': 3, 'E': 1.876, 'source': 'B', 'P_comparable': 0.00014889631017361054}
+   {'family': 'atlas', 'm': 37, 'q': 7, 'E': 0.00012975093818371497, 'source': 'D', 'P_comparable': 0.00012974252089478943}
+   {'family': 'square r6 new', 'm': 37, 'q': 9, 'E': 0.7465076722588979, 'source': 'C', 'P_comparable': 0.00012732432437268754}
+   {'family': 'square r<=4', 'm': 21, 'q': 3, 'E': 6.966773357721407, 'source': 'A', 'P_comparable': 0.00012234331528684827}
+   {'family': 'atlas', 'm': 25, 'q': 3, 'E': 0.242, 'source': 'B', 'P_comparable': 0.0001178459469418988}
+   {'family': 'atlas', 'm': 13, 'q': 7, 'E': 2.196346760278454, 'source': 'D', 'P_comparable': 9.954914184183645e-05}
+   {'family': 'atlas', 'm': 29, 'q': 3, 'E': 0.709, 'source': 'B', 'P_comparable': 9.646130383787407e-05}
+   {'family': 'atlas', 'm': 17, 'q': 5, 'E': 0.013231718400000056, 'source': 'D', 'P_comparable': 8.67708080760842e-05}
+   {'family': 'atlas', 'm': 37, 'q': 9, 'E': 6.636257748934435e-05, 'source': 'D', 'P_comparable': 6.636037554220804e-05}
+   {'family': 'square r<=4', 'm': 25, 'q': 3, 'E': 1.6720012193275628, 'source': 'A', 'P_comparable': 6.32704009965698e-05}
+   {'family': 'atlas', 'm': 15, 'q': 5, 'E': 1.2793600000000072, 'source': 'D', 'P_comparable': 5.757994056328854e-05}
+   {'family': 'atlas', 'm': 17, 'q': 3, 'E': 0.194, 'source': 'B', 'P_comparable': 5.0560753509830944e-05}
+   {'family': 'atlas', 'm': 15, 'q': 3, 'E': 0.612, 'source': 'B', 'P_comparable': 4.3315537117773884e-05}
+   {'family': 'square r<=4', 'm': 35, 'q': 3, 'E': 0.008614314665224228, 'source': 'A', 'P_comparable': 3.689081617893407e-05}
+   {'family': 'atlas', 'm': 21, 'q': 9, 'E': 0.008050787422345149, 'source': 'D', 'P_comparable': 3.223417532005623e-05}
+   {'family': 'square r<=4', 'm': 53, 'q': 3, 'E': 0.007731599347604155, 'source': 'A', 'P_comparable': 2.9735201096000436e-05}
+   {'family': 'atlas', 'm': 37, 'q': 3, 'E': 0.168, 'source': 'B', 'P_comparable': 2.9028307604781714e-05}
+   {'family': 'square r5 new', 'm': 37, 'q': 9, 'E': 0.007463784017870383, 'source': 'C', 'P_comparable': 2.7715825413313862e-05}
+   {'family': 'atlas', 'm': 35, 'q': 3, 'E': 0.007, 'source': 'B', 'P_comparable': 2.4385966232249387e-05}
+   {'family': 'atlas', 'm': 53, 'q': 3, 'E': 0.007, 'source': 'B', 'P_comparable': 2.4385966232249387e-05}
+   {'family': 'square r<=4', 'm': 39, 'q': 3, 'E': 2.15806288391323e-05, 'source': 'A', 'P_comparable': 2.158039597903684e-05}
+   {'family': 'square r6 new', 'm': 37, 'q': 27, 'E': 1.4742500782021652e-05, 'source': 'C', 'P_comparable': 1.474239211189101e-05}
+   {'family': 'square r<=4', 'm': 45, 'q': 3, 'E': 1.2777962407772867e-05, 'source': 'A', 'P_comparable': 1.277788076995894e-05}
+   {'family': 'atlas', 'm': 25, 'q': 31, 'E': 5.42265510182926e-06, 'source': 'D', 'P_comparable': 5.422640399261661e-06}
+   {'family': 'square r<=4', 'm': 55, 'q': 3, 'E': 3.4538349358002734e-06, 'source': 'A', 'P_comparable': 3.453828971319262e-06}
+   {'family': 'atlas', 'm': 37, 'q': 19, 'E': 2.616497249493699e-06, 'source': 'D', 'P_comparable': 2.6164938264677567e-06}
+   {'family': 'atlas', 'm': 61, 'q': 3, 'E': 0.002, 'source': 'B', 'P_comparable': 1.9973353322671108e-06}
+   {'family': 'atlas', 'm': 35, 'q': 13, 'E': 1.748596238095547e-06, 'source': 'D', 'P_comparable': 1.7485947093020365e-06}
+   {'family': 'square r<=4', 'm': 41, 'q': 3, 'E': 1.7254994150837797e-06, 'source': 'A', 'P_comparable': 1.725497926410523e-06}
+   {'family': 'atlas', 'm': 29, 'q': 43, 'E': 1.2902463717104662e-06, 'source': 'D', 'P_comparable': 1.290245539342974e-06}
+   {'family': 'atlas', 'm': 35, 'q': 5, 'E': 0.0014064680959999978, 'source': 'D', 'P_comparable': 9.881493386896463e-07}
+   {'family': 'atlas', 'm': 35, 'q': 7, 'E': 8.10410520824309e-07, 'source': 'D', 'P_comparable': 8.104101924417916e-07}
+   {'family': 'square r<=4', 'm': 61, 'q': 3, 'E': 0.0008588342884464561, 'source': 'A', 'P_comparable': 3.6858707782162374e-07}
+   {'family': 'atlas', 'm': 25, 'q': 11, 'E': 0.0006896005395736355, 'source': 'D', 'P_comparable': 2.3766516742630004e-07}

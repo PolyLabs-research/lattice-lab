@@ -1,0 +1,11 @@
+gen codes 71.0
+full r4 {'pairs': 45, 'cluster_sizes': {2: 14, 3: 7, 5: 1}}
+full r5n {'pairs': 136, 'cluster_sizes': {2: 127, 3: 3}}
+full r6n {'pairs': 3138, 'cluster_sizes': {2: 2684, 3: 28, 4: 5, 5: 1, 6: 3, 7: 2, 10: 2, 18: 1}}
+gen r4 {'pairs': 160, 'cluster_sizes': {2: 65, 3: 14, 4: 3, 5: 2, 6: 1}}
+gen r5n {'pairs': 1385, 'cluster_sizes': {2: 1018, 3: 57, 4: 6, 5: 1, 6: 3, 15: 1}}
+gen r6n {'pairs': 167366, 'cluster_sizes': {2: 158499, 3: 1026, 4: 60, 5: 7, 6: 13, 7: 7, 11: 2, 15: 4, 19: 1, 29: 1, 61: 1, 65: 1}}
+r4 {"N": 32767, "full_pairs_obs": 45, "full_pairs_exp": 2.2519745284496612e-05, "full_cluster_sizes": {"2": 14, "3": 7, "5": 1}, "gen_pairs_obs_by_cell": {"zero": 28, "cube_nonzero": 52, "noncube": 1, "mixed": 79}, "gen_pairs_exp_by_cell": {"zero": 0.03232491446201679, "cube_nonzero": 0.047142994649945875, "noncube": 0.006121729964955016, "mixed": 0.2162037369296338}, "pairs_sharing_a_mod9_cell": {"zero": 210.0, "cube_nonzero": 306.0, "noncube": 40.0, "mixed": 1405.0}, "gen_cluster_sizes": {"2": 65, "3": 14, "4": 3, "5": 2, "6": 1}}
+r5n {"N": 2064384, "full_pairs_obs": 136, "full_pairs_exp": 0.05092395034457615, "full_cluster_sizes": {"2": 127, "3": 3}, "gen_pairs_obs_by_cell": {"zero": 25, "cube_nonzero": 205, "noncube": 37, "mixed": 1118}, "gen_pairs_exp_by_cell": {"zero": 0.03208643664383094, "cube_nonzero": 0.13439003933043692, "noncube": 0.29538209153098904, "mixed": 7.769446766935367}, "pairs_sharing_a_mod9_cell": {"zero": 210.0, "cube_nonzero": 880.0, "noncube": 1938.0, "mixed": 50944.0}, "gen_cluster_sizes": {"2": 1018, "3": 57, "4": 6, "5": 1, "6": 3, "15": 1}}
+r6n {"N": 266338304, "full_pairs_obs": 3138, "full_pairs_exp": 608.8398799724221, "full_cluster_sizes": {"2": 2684, "3": 28, "4": 5, "5": 1, "6": 3, "7": 2, "10": 2, "18": 1}, "gen_pairs_obs_by_cell": {"zero": 661, "cube_nonzero": 4458, "noncube": 6174, "mixed": 156073}, "gen_pairs_exp_by_cell": {"zero": 0.6238034133337746, "cube_nonzero": 21.10562638329179, "noncube": 4905.111568358469, "mixed": 120662.55566240998}, "pairs_sharing_a_mod9_cell": {"zero": 4095.0, "cube_nonzero": 138500.0, "noncube": 32182437.0, "mixed": 791716764.0}, "gen_cluster_sizes": {"2": 158499, "3": 1026, "4": 60, "5": 7, "6": 13, "7": 7, "11": 2, "15": 4, "19": 1, "29": 1, "61": 1, "65": 1}}
+done 395.7

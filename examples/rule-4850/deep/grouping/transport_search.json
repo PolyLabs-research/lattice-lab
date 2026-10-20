@@ -1,0 +1,117 @@
+{
+ "results": {
+  "R1": [
+   {
+    "rule": 4850,
+    "family": true,
+    "hits": 12,
+    "first_g": [
+     1,
+     1,
+     1,
+     36
+    ],
+    "c19": 1
+   },
+   {
+    "rule": 8438150,
+    "family": true,
+    "hits": 12,
+    "first_g": [
+     1,
+     1,
+     1,
+     36
+    ],
+    "c19": 1
+   },
+   {
+    "rule": 10491524,
+    "family": true,
+    "hits": 12,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 1
+   },
+   {
+    "rule": 20982139,
+    "family": true,
+    "hits": 12,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 11
+   },
+   {
+    "rule": 178279803,
+    "family": true,
+    "hits": 12,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 7
+   }
+  ],
+  "4850": [
+   {
+    "rule": 4850,
+    "family": true,
+    "hits": 4,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 1
+   },
+   {
+    "rule": 482758,
+    "family": true,
+    "hits": 4,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 1
+   },
+   {
+    "rule": 10491524,
+    "family": true,
+    "hits": 4,
+    "first_g": [
+     1,
+     1,
+     1,
+     36
+    ],
+    "c19": 10
+   },
+   {
+    "rule": 43250486,
+    "family": true,
+    "hits": 4,
+    "first_g": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "c19": 1
+   }
+  ]
+ },
+ "candidates": 125
+}

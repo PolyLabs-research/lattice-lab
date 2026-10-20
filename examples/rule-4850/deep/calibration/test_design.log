@@ -1,0 +1,36 @@
+{
+ "4": {
+  "axis_rate": 0.46875,
+  "P(axis and diagonal ninth-OK)": 0.244140625
+ },
+ "5": {
+  "axis_rate": 0.359375,
+  "P(axis and diagonal ninth-OK)": 0.14892578125
+ },
+ "6": {
+  "axis_rate": 0.3359375,
+  "P(axis and diagonal ninth-OK)": 0.1202392578125
+ },
+ "7": {
+  "axis_rate": 0.27734375,
+  "P(axis and diagonal ninth-OK)": 0.079498291015625
+ },
+ "check_r6_P_ad_census": 0.12001337967519685,
+ "T1": {
+  "new_rules_radius7": 68451041280,
+  "chance_ninth_rules_radius7": 126.4147575839748,
+  "sum_p(pattern in the 16 cluster patterns | ninth)": 0.00026437684391434816,
+  "chance_rules_on_cluster_patterns": 0.033421134634248666,
+  "P(>=2 by chance)": 0.0005461972000043724,
+  "cost_core_hours": 8.4,
+  "cost_wall_hours_4_cores": 2.1
+ },
+ "T2": {
+  "orbits": 25,
+  "classes": 20,
+  "rules": 33554431,
+  "non_D4_rules": 33521664,
+  "chance_per_rule": 2.2208211017918863e-18,
+  "chance_count": 7.444561877837741e-11
+ }
+}

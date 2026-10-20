@@ -1,0 +1,13 @@
+D = e(1,0), M = R3: radius <= 6: 28 orbits, solution space dimension 1
+   rules in V: 1; tie violations: 0; ninth-power confined: 1; cube-confined: 1  (0s)
+     confined: 4850 [(1, 0), (2, 1), (2, 2), (3, 0), (3, 1), (3, 3), (4, 2)]
+D = e(1,1), M = diag(10,26): radius <= 6: 28 orbits, solution space dimension 3
+   rules in V: 7; tie violations: 0; ninth-power confined: 3; cube-confined: 4  (0s)
+     confined: 20982139 [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (3, 0), (3, 2), (4, 1), (4, 3), (6, 1), (6, 3)]
+     confined: 10491524 [(1, 1), (3, 1), (3, 3), (4, 0), (4, 2), (6, 0), (6, 2)]
+     confined: 178279803 [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (3, 0), (3, 2), (4, 0), (4, 2), (4, 4), (6, 0), (6, 2), (6, 4), (6, 6)]
+D = e(1,1), M = diag(26,10): radius <= 6: 28 orbits, solution space dimension 3
+   rules in V: 7; tie violations: 0; ninth-power confined: 3; cube-confined: 4  (0s)
+     confined: 20982139 [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (3, 0), (3, 2), (4, 1), (4, 3), (6, 1), (6, 3)]
+     confined: 10491524 [(1, 1), (3, 1), (3, 3), (4, 0), (4, 2), (6, 0), (6, 2)]
+     confined: 178279803 [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (3, 0), (3, 2), (4, 0), (4, 2), (4, 4), (6, 0), (6, 2), (6, 4), (6, 6)]

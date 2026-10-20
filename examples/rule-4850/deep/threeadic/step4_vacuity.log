@@ -1,0 +1,9 @@
+X X^T = 37 I over Z; Y Ybar^T = 37 I mod 19: ok
+1 + t_n: nonzero, ninth power, digit2 = 1 chi(n), log mod 19 = 4 psi(n)
+4850 | 3-part: 20 directions, orbits [(1, 0), (1, 1), (1, 2), (1, 7), (1, 8), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 696 of 1369, total exponent 884
+482758 | 3-part: 18 directions, orbits [(1, 1), (1, 2), (1, 7), (1, 8), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 696 of 1369, total exponent 882
+10491524 | 3-part: 20 directions, orbits [(1, 0), (1, 1), (1, 3), (1, 4), (1, 7), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 716 of 1369, total exponent 922
+8438150 | 3-part: 18 directions, orbits [(1, 0), (1, 2), (1, 7), (1, 8), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 696 of 1369, total exponent 882
+43250486 | 3-part: 20 directions, orbits [(1, 0), (1, 1), (1, 2), (1, 7), (1, 8), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 696 of 1369, total exponent 880
+20982139 | 3-part: 20 directions, orbits [(1, 0), (1, 1), (1, 3), (1, 4), (1, 7), (1, 10)] | 19-part: 36 directions, 10 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 589 of 1369, total exponent 922
+178279803 | 3-part: 20 directions, orbits [(1, 0), (1, 1), (1, 3), (1, 4), (1, 7), (1, 10)] | 19-part: 32 directions, 9 orbits | B = f*N: dilation(2^9)-invariant True, F(2^9)-valued True, weight 677 of 1369, total exponent 1036

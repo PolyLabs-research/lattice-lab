@@ -1,0 +1,38 @@
+targets 239 queries 366387
+chunk 31 55638 20s
+chunk 63 72213 40s
+chunk 95 102186 59s
+chunk 127 128321 77s
+{
+ "ninth125": {
+  "targets": 125,
+  "partner_any": 124,
+  "partner_sigma": 116,
+  "sigma_self": 93
+ },
+ "random6": {
+  "targets": 36,
+  "partner_any": 2,
+  "partner_sigma": 0,
+  "sigma_self": 0
+ },
+ "cube6": {
+  "targets": 48,
+  "partner_any": 1,
+  "partner_sigma": 0,
+  "sigma_self": 0
+ },
+ "random5": {
+  "targets": 30,
+  "partner_any": 30,
+  "partner_sigma": 0,
+  "sigma_self": 0
+ }
+}
+4850 [(0, 4, 1, 346932, True, None, True), (0, 4, 42, 482758, True, None, True), (0, 4, 2, 35027332, True, None, True), (0, 4, 84, 43250486, True, None, True), (0, 4, 43, 55712304, True, None, True), (0, 4, 101, 64328834, True, None, True), (0, 7, 1, 482758, True, True, True), (0, 7, 2, 43250486, True, True, True), (0, 8, 86, 132096, True, True, None), (0, 8, 42, 8438150, True, True, None), (0, 8, 1, 8755264, True, True, None)]
+10491524 [(1, 4, 63, 20982139, True, None, True), (1, 7, 30, 20982139, True, False, True), (2, 4, 162, 178279803, True, None, True), (2, 7, 12, 178279803, True, False, True)]
+20982139 [(1, 4, 63, 178279803, True, None, True), (1, 7, 30, 178279803, True, False, True), (2, 4, 162, 10491524, True, None, True), (2, 7, 12, 10491524, True, False, True)]
+178279803 [(1, 4, 63, 10491524, True, None, True), (1, 7, 30, 10491524, True, False, True), (2, 4, 162, 20982139, True, None, True), (2, 7, 12, 20982139, True, False, True)]
+482758 [(0, 4, 129, 4850, True, None, True), (0, 4, 130, 346932, True, None, True), (0, 4, 131, 35027332, True, None, True), (0, 4, 42, 43250486, True, None, True), (0, 4, 1, 55712304, True, None, True), (0, 4, 59, 64328834, True, None, True), (0, 7, 56, 4850, True, True, True), (0, 7, 1, 43250486, True, True, True), (0, 8, 86, 29799616, True, True, None)]
+8438150 [(0, 8, 129, 4850, True, True, None), (0, 8, 44, 132096, True, True, None), (0, 8, 130, 8755264, True, True, None)]
+43250486 [(0, 4, 87, 4850, True, None, True), (0, 4, 88, 346932, True, None, True), (0, 4, 129, 482758, True, None, True), (0, 4, 89, 35027332, True, None, True), (0, 4, 130, 55712304, True, None, True), (0, 4, 17, 64328834, True, None, True), (0, 7, 55, 4850, True, True, True), (0, 7, 56, 482758, True, True, True)]

@@ -1,0 +1,119 @@
+{
+ "direction_classes": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   3
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   1,
+   6
+  ],
+  [
+   1,
+   7
+  ],
+  [
+   1,
+   8
+  ],
+  [
+   1,
+   10
+  ],
+  [
+   1,
+   13
+  ]
+ ],
+ "rank_T_mod19_all": 10,
+ "rank_T_mod3_all": 0,
+ "w2=R2/R1|all": [],
+ "w2=R2/R1|all|mod19": null,
+ "w2=R2/R1|all|mod27": [
+  0,
+  []
+ ],
+ "w2=R2/R1|offaxis": [],
+ "w2=R2/R1|offaxis|mod19": null,
+ "w2=R2/R1|offaxis|mod27": [
+  0,
+  []
+ ],
+ "w3=R3/R1|all": [],
+ "w3=R3/R1|all|mod19": null,
+ "w3=R3/R1|all|mod27": [
+  0,
+  []
+ ],
+ "w3=R3/R1|offaxis": [],
+ "w3=R3/R1|offaxis|mod19": null,
+ "w3=R3/R1|offaxis|mod27": [
+  0,
+  []
+ ],
+ "Z=R3 R1^7/R2^8|all": [],
+ "Z=R3 R1^7/R2^8|all|mod19": null,
+ "Z=R3 R1^7/R2^8|all|mod27": [
+  0,
+  []
+ ],
+ "Z=R3 R1^7/R2^8|offaxis": [
+  []
+ ],
+ "Z=R3 R1^7/R2^8|offaxis|mod19": [
+  0,
+  []
+ ],
+ "Z=R3 R1^7/R2^8|offaxis|mod27": [
+  0,
+  []
+ ],
+ "R1|all": [],
+ "R1|all|mod19": null,
+ "R1|all|mod27": null,
+ "R1|offaxis": [],
+ "R1|offaxis|mod19": null,
+ "R1|offaxis|mod27": [
+  3,
+  [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    10
+   ]
+  ]
+ ],
+ "4850|all": [],
+ "4850|all|mod19": null,
+ "4850|all|mod27": null,
+ "4850|offaxis": [],
+ "4850|offaxis|mod19": null,
+ "4850|offaxis|mod27": null
+}
