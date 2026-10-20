@@ -1,0 +1,7 @@
+f0(1, 2^d) = 1 + X + Y with a = t_1^63 verified for d = 0..5
+d=0: over 72 orbits of primitive 1387th roots: ninth powers 72 (rate 1.000), zeros 0;  at a = t_1^63: v27 = 0
+d=1: over 72 orbits of primitive 1387th roots: ninth powers 9 (rate 0.125), zeros 0;  at a = t_1^63: v27 = 18
+d=2: over 72 orbits of primitive 1387th roots: ninth powers 5 (rate 0.069), zeros 0;  at a = t_1^63: v27 = 9
+d=3: over 72 orbits of primitive 1387th roots: ninth powers 72 (rate 1.000), zeros 0;  at a = t_1^63: v27 = 0
+d=4: over 72 orbits of primitive 1387th roots: ninth powers 5 (rate 0.069), zeros 0;  at a = t_1^63: v27 = 9
+d=5: over 72 orbits of primitive 1387th roots: ninth powers 9 (rate 0.125), zeros 0;  at a = t_1^63: v27 = 9

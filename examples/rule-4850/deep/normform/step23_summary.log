@@ -1,0 +1,19 @@
+class    T-type       f0   10491524   |  4850type   4850
+(0, 1)   axis         18          9   |  d=0          18
+(1, 1)   d=0           0          9   |  axis          9
+(1, 2)   d=+-1        18         18   |  d=+-2         9
+(1, 3)   d=+-2         9         18   |  d=+-1        18
+(1, 4)   d=+-2         9         18   |  d=3           0
+(1, 5)   d=+-1         9          9   |  d=+-1         9
+(1, 6)   d=3           0          0   |  d=3           0
+(1, 7)   d=+-2         9         18   |  d=0           9
+(1, 8)   d=3           0          0   |  d=+-2         9
+(1, 10)  d=0           0          9   |  d=+-2         9
+(1, 13)  d=+-1         9          9   |  d=+-1        18
+482758 = 4850 * unit at every character: True ;  unit values ninth powers: True
+8438150 = 4850 * unit at every character: True ;  unit values ninth powers: True
+43250486 = 4850 * unit at every character: True ;  unit values ninth powers: True
+axis 10491524 : (1, [(t, 2), (t**2 + t + 1, 2)])
+axis 20982139 : (1, [(t**3 + t**2 + 1, 1)])
+axis 178279803 : (1, [(t + 1, 1), (t**5 + t**4 + t**2 + t + 1, 1)])
+axis f0 : (1, [(t + 1, 1), (t**3 + t + 1, 1), (t**5 + t**4 + t**2 + t + 1, 1)])

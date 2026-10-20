@@ -1,0 +1,14 @@
+log eta_i: [12, 24, 48, 33, 3, 6]  log theta_i: [54, 45, 27]  log rho: [21, 42]
+theta in F8: True  rho in F4: True
+d=0: N(W)(1, 2^d) = 0 + sum [0, 0, 1, 0, 0, 0] . eta_i   log=48 ;  N(f0) log=0 in F8: True
+d=1: N(W)(1, 2^d) = 0 + sum [0, 0, 1, 0, 0, 1] . eta_i   log=27 ;  N(f0) log=18 in F8: True
+d=2: N(W)(1, 2^d) = 0 + sum [1, 0, 0, 0, 0, 0] . eta_i   log=12 ;  N(f0) log=18 in F8: True
+d=3: N(W)(1, 2^d) = 0 + sum [0, 0, 1, 0, 0, 1] . eta_i   log=27 ;  N(f0) log=0 in F8: True
+d=4: N(W)(1, 2^d) = 0 + sum [0, 0, 0, 0, 1, 0] . eta_i   log=3 ;  N(f0) log=36 in F8: True
+d=5: N(W)(1, 2^d) = 0 + sum [0, 1, 0, 0, 1, 0] . eta_i   log=45 ;  N(f0) log=9 in F8: True
+  d=0  N(f0) log 0 = theta-monomials: [('theta', (-2, -2, -2)), ('theta', (-2, -1, 1)), ('theta', (-2, 1, 0)), ('theta', (-1, -1, -1))]
+  d=1  N(f0) log 18 = theta-monomials: [('theta', (-2, -2, 1)), ('theta', (-2, 0, 0)), ('theta', (-2, 2, -1)), ('theta', (-1, -2, -1))]
+  d=2  N(f0) log 18 = theta-monomials: [('theta', (-2, -2, 1)), ('theta', (-2, 0, 0)), ('theta', (-2, 2, -1)), ('theta', (-1, -2, -1))]
+  d=3  N(f0) log 0 = theta-monomials: [('theta', (-2, -2, -2)), ('theta', (-2, -1, 1)), ('theta', (-2, 1, 0)), ('theta', (-1, -1, -1))]
+  d=4  N(f0) log 36 = theta-monomials: [('theta', (-2, -1, 0)), ('theta', (-2, 1, -1)), ('theta', (-2, 2, 2)), ('theta', (-1, -2, 2))]
+  d=5  N(f0) log 9 = theta-monomials: [('theta', (-2, -1, -1)), ('theta', (-2, 0, 2)), ('theta', (-2, 1, -2)), ('theta', (-2, 2, 1))]

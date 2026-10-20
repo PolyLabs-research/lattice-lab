@@ -1,0 +1,2135 @@
+[
+ {
+  "rule": 1,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   1,
+   "monomial"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 68719476735,
+  "terms": 1
+ },
+ {
+  "rule": 2,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   24,
+   255,
+   6,
+   18,
+   0,
+   9,
+   0,
+   3,
+   24,
+   15,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 8,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   21,
+   255,
+   12,
+   9,
+   0,
+   18,
+   0,
+   6,
+   21,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 2; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 13,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   18,
+   18,
+   18,
+   0,
+   0,
+   0,
+   0,
+   9,
+   18,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 64,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   15,
+   255,
+   24,
+   18,
+   0,
+   9,
+   0,
+   12,
+   15,
+   6,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 3; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 82,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   18,
+   255,
+   18,
+   0,
+   0,
+   0,
+   0,
+   9,
+   18,
+   18,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "power 3; splits into 1+u"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 16
+ },
+ {
+  "rule": 873,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   9709,
+   "power 3; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 7077915,
+  "terms": 25
+ },
+ {
+  "rule": 1024,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   15,
+   255,
+   24,
+   18,
+   0,
+   9,
+   0,
+   12,
+   15,
+   6,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 2; dilation by 2; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 1057,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   9,
+   9,
+   9,
+   0,
+   0,
+   0,
+   0,
+   18,
+   9,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "dilation by 2; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 1160,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   12,
+   255,
+   3,
+   9,
+   0,
+   18,
+   0,
+   15,
+   12,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 1197,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   15,
+   15,
+   24,
+   18,
+   0,
+   9,
+   0,
+   12,
+   15,
+   6,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "splits into 1+u+u^2+u^3+u^4"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 25
+ },
+ {
+  "rule": 4850,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   18,
+   9,
+   9,
+   18,
+   0,
+   9,
+   0,
+   9,
+   9,
+   9,
+   18
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   262143,
+   "full bound"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 1,
+  "terms": 40
+ },
+ {
+  "rule": 13384,
+  "radius": 4,
+  "sym": "M0",
+  "logs27": [
+   24,
+   255,
+   6,
+   18,
+   0,
+   9,
+   0,
+   3,
+   24,
+   15,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 28
+ },
+ {
+  "rule": 1,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   1,
+   "monomial"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 68719476735,
+  "terms": 1
+ },
+ {
+  "rule": 4,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   21,
+   18,
+   12,
+   12,
+   9,
+   0,
+   12,
+   0,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 7,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   9,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 32,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   15,
+   9,
+   24,
+   24,
+   18,
+   0,
+   24,
+   0,
+   15,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 2; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 41,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "dilation by 2; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 52,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   12,
+   18,
+   3,
+   3,
+   9,
+   0,
+   3,
+   0,
+   12,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 63,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   21,
+   15,
+   9,
+   24,
+   24,
+   18,
+   0,
+   24,
+   0,
+   15,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "splits into 1+u+u^2+u^3+u^4"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 25
+ },
+ {
+  "rule": 512,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 3; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 577,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   9,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "dilation by 3; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 644,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "power 3; splits into 1+u"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 16
+ },
+ {
+  "rule": 711,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   3,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 25
+ },
+ {
+  "rule": 800,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 16
+ },
+ {
+  "rule": 873,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   9709,
+   "power 3; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 7077915,
+  "terms": 25
+ },
+ {
+  "rule": 948,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 5505045,
+  "terms": 36
+ },
+ {
+  "rule": 1023,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   9,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 49
+ },
+ {
+  "rule": 16384,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 2; dilation by 2; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 17409,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   9,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "dilation by 2; dilation by 2; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 18436,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 16
+ },
+ {
+  "rule": 20512,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   24,
+   9,
+   6,
+   6,
+   18,
+   0,
+   6,
+   0,
+   24,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "dilation by 2; splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 21545,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   15,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 2; splits into 1+u+u^2+u^3+u^4"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 25
+ },
+ {
+  "rule": 22580,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   12,
+   18,
+   3,
+   3,
+   9,
+   0,
+   3,
+   0,
+   12,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 5505045,
+  "terms": 36
+ },
+ {
+  "rule": 23615,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 49
+ },
+ {
+  "rule": 25088,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   12,
+   18,
+   3,
+   3,
+   9,
+   0,
+   3,
+   0,
+   12,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 26177,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   12,
+   24,
+   9,
+   6,
+   6,
+   18,
+   0,
+   6,
+   0,
+   24,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 25
+ },
+ {
+  "rule": 27268,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 36
+ },
+ {
+  "rule": 28359,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   9,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 49
+ },
+ {
+  "rule": 29472,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   21,
+   18,
+   12,
+   12,
+   9,
+   0,
+   12,
+   0,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 36
+ },
+ {
+  "rule": 31668,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   255,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 5505045,
+  "terms": 64
+ },
+ {
+  "rule": 32767,
+  "radius": 4,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 81
+ },
+ {
+  "rule": 32768,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   12,
+   255,
+   3,
+   9,
+   0,
+   18,
+   0,
+   15,
+   12,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 5; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 33026,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   9,
+   255,
+   9,
+   0,
+   0,
+   0,
+   0,
+   18,
+   9,
+   9,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 16
+ },
+ {
+  "rule": 34880,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   12,
+   255,
+   3,
+   9,
+   0,
+   18,
+   0,
+   15,
+   12,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "power 5; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 35154,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   6,
+   255,
+   15,
+   18,
+   0,
+   9,
+   0,
+   21,
+   6,
+   24,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 401868285,
+  "terms": 36
+ },
+ {
+  "rule": 105299,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   3,
+   18,
+   21,
+   9,
+   0,
+   18,
+   0,
+   24,
+   3,
+   12,
+   9
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   262143,
+   "full bound"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 57
+ },
+ {
+  "rule": 132096,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   15,
+   255,
+   15,
+   9,
+   0,
+   18,
+   0,
+   12,
+   6,
+   24,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   262143,
+   "full bound"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 1,
+  "terms": 12
+ },
+ {
+  "rule": 132097,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   9,
+   0,
+   17,
+   22,
+   0,
+   26,
+   0,
+   18,
+   14,
+   20,
+   7
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   262143,
+   "full bound"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 1,
+  "terms": 13
+ },
+ {
+  "rule": 439706,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   21,
+   255,
+   12,
+   9,
+   0,
+   18,
+   0,
+   6,
+   21,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 72
+ },
+ {
+  "rule": 443859,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   18,
+   18,
+   18,
+   0,
+   0,
+   0,
+   0,
+   9,
+   18,
+   18,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 61
+ },
+ {
+  "rule": 1084246,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   6,
+   12,
+   15,
+   18,
+   0,
+   9,
+   0,
+   21,
+   6,
+   24,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   262143,
+   "full bound"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 48
+ },
+ {
+  "rule": 1541119,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 81
+ },
+ {
+  "rule": 1690631,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 49
+ },
+ {
+  "rule": 2097151,
+  "radius": 5,
+  "sym": "M0",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   1387,
+   "splits into 1+u+u^2+u^3+u^4+u^5+u^6+u^7+u^8+u^9+u^10"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 49545405,
+  "terms": 121
+ },
+ {
+  "rule": 1048576,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   24,
+   9,
+   6,
+   6,
+   18,
+   0,
+   6,
+   0,
+   24,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "dilation by 5; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 4
+ },
+ {
+  "rule": 1081345,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "dilation by 5; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 9
+ },
+ {
+  "rule": 1114116,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 16
+ },
+ {
+  "rule": 1179680,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 1245236,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 14942265,
+  "terms": 36
+ },
+ {
+  "rule": 1278015,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   21,
+   15,
+   9,
+   24,
+   24,
+   18,
+   0,
+   24,
+   0,
+   15,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 49
+ },
+ {
+  "rule": 1311232,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   24,
+   9,
+   6,
+   6,
+   18,
+   0,
+   6,
+   0,
+   24,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   87381,
+   "power 5; splits into 1+u"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 1376900,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   12,
+   18,
+   3,
+   3,
+   9,
+   0,
+   3,
+   0,
+   12,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 401868285,
+  "terms": 36
+ },
+ {
+  "rule": 1409735,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   3,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 49
+ },
+ {
+  "rule": 1442592,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   21,
+   18,
+   12,
+   12,
+   9,
+   0,
+   12,
+   0,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 36
+ },
+ {
+  "rule": 1541119,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 81
+ },
+ {
+  "rule": 1589248,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   3,
+   18,
+   21,
+   21,
+   9,
+   0,
+   21,
+   0,
+   3,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 16
+ },
+ {
+  "rule": 1656836,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   24,
+   9,
+   6,
+   6,
+   18,
+   0,
+   6,
+   0,
+   24,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 36
+ },
+ {
+  "rule": 1690631,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 7077915,
+  "terms": 49
+ },
+ {
+  "rule": 1758249,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   24,
+   21,
+   18,
+   12,
+   12,
+   9,
+   0,
+   12,
+   0,
+   21,
+   9
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 49
+ },
+ {
+  "rule": 1792052,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   15,
+   9,
+   24,
+   24,
+   18,
+   0,
+   24,
+   0,
+   15,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 64
+ },
+ {
+  "rule": 1825855,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 81
+ },
+ {
+  "rule": 1860096,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   21,
+   18,
+   12,
+   12,
+   9,
+   0,
+   12,
+   0,
+   21,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 36
+ },
+ {
+  "rule": 1893953,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   3,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 0,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 49
+ },
+ {
+  "rule": 1927812,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   12,
+   18,
+   3,
+   3,
+   9,
+   0,
+   3,
+   0,
+   12,
+   9
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 786435,
+  "terms": 64
+ },
+ {
+  "rule": 1961671,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   18,
+   9,
+   0,
+   9,
+   9,
+   0,
+   0,
+   9,
+   0,
+   9,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   29127,
+   "power 5; splits into 1+u+u^2"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 2359305,
+  "terms": 81
+ },
+ {
+  "rule": 1995552,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   6,
+   9,
+   15,
+   15,
+   18,
+   0,
+   15,
+   0,
+   6,
+   18
+  ],
+  "zeros": 1,
+  "ninth": false,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 5505045,
+  "terms": 64
+ },
+ {
+  "rule": 2063284,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   255,
+   18,
+   0,
+   18,
+   18,
+   0,
+   0,
+   18,
+   0,
+   18,
+   0
+  ],
+  "zeros": 1,
+  "ninth": true,
+  "atlas": [
+   null,
+   "splits into mixed factors"
+  ],
+  "atlas_ninth": false,
+  "pilot_q": 2359305,
+  "terms": 100
+ },
+ {
+  "rule": 2097151,
+  "radius": 5,
+  "sym": "T",
+  "logs27": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "zeros": 0,
+  "ninth": true,
+  "atlas": [
+   1387,
+   "splits into 1+u+u^2+u^3+u^4+u^5+u^6+u^7+u^8+u^9+u^10"
+  ],
+  "atlas_ninth": true,
+  "pilot_q": 49545405,
+  "terms": 121
+ }
+]

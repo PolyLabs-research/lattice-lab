@@ -1,0 +1,6 @@
+distinct dilates 2^k S: 18
+|Stab(S) up to dilation| = 432
+dilation exponents k (mod 18) realised: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+#elements with g S = S: 24
+|<D4, T_mu6>| = 24  elements fixing S outside it: []
+examples of g S = 2^k S, k != 0: [(((2, 0), (0, 2)), 1), (((0, 2), (2, 0)), 1), (((2, 0), (0, 35)), 1), (((0, 2), (35, 0)), 1), (((15, 0), (0, 17)), 1), (((0, 15), (17, 0)), 1)]

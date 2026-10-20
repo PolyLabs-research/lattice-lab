@@ -1,0 +1,3 @@
+chi(be/al) = +1:  N(W)(al, be) = eta(4 al^2 / be) at all such characters: True
+chi(be/al) = -1:  N(W) = theta(c al^r be^s) for (c, r, s) in [] ... total 0
+all NQR values are index-3 periods (in F8 and of the form eta(x)+eta(8x)): True

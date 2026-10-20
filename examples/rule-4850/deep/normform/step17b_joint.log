@@ -1,0 +1,6 @@
+orbits: 72  d1: 9  d2: 5  both: 3
+a = t_1^63 is g1387^1381, orbit rep 173, in "both": True
+d1 vs (k mod 19 == 0): {(False, False): 63, (False, True): 9}
+after normalising k = 1 mod 19, the mu73 exponents with d1 ninth: [16, 17, 26, 28, 34, 43, 50, 54, 55]
+                                    with d2 ninth: [22, 26, 50, 52, 55]
+   t_1^63 has mu73 exponent [50]

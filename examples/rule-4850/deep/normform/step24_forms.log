@@ -1,0 +1,8 @@
+10491524 explicit form equals the rule: True
+20982139 explicit form equals the rule: True
+178279803 explicit form equals the rule: True
+g_3(z) = a + 1
+g_5(z) = a**2 + a + 1
+g_7(z) = a**3 + a**2 + 1
+g_11(z) = a**5 + a**4 + a**2 + a + 1
+f0 explicit form equals 1 + orbit(11,10)/(ab): True

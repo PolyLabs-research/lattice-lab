@@ -1,0 +1,4 @@
+N(W) : affine symmetries found: 24
+   linear parts: [((0, 1), (1, 0)), ((1, 0), (0, 1)), ((3, 4), (4, 3)), ((4, 3), (3, 4))]
+N(f0) : affine symmetries found: 48
+   linear parts: [((0, 1), (1, 0)), ((1, 0), (0, 1)), ((3, 4), (4, 3)), ((4, 3), (3, 4))]

@@ -1,0 +1,107 @@
+{
+ "rows": [
+  {
+   "d": 0,
+   "NW_expansion": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "logNW": 48,
+   "logNf0": 0,
+   "Nf0_in_F8": true
+  },
+  {
+   "d": 1,
+   "NW_expansion": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "logNW": 27,
+   "logNf0": 18,
+   "Nf0_in_F8": true
+  },
+  {
+   "d": 2,
+   "NW_expansion": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "logNW": 12,
+   "logNf0": 18,
+   "Nf0_in_F8": true
+  },
+  {
+   "d": 3,
+   "NW_expansion": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "logNW": 27,
+   "logNf0": 0,
+   "Nf0_in_F8": true
+  },
+  {
+   "d": 4,
+   "NW_expansion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "logNW": 3,
+   "logNf0": 36,
+   "Nf0_in_F8": true
+  },
+  {
+   "d": 5,
+   "NW_expansion": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "logNW": 45,
+   "logNf0": 9,
+   "Nf0_in_F8": true
+  }
+ ],
+ "log_eta": [
+  12,
+  24,
+  48,
+  33,
+  3,
+  6
+ ],
+ "log_theta": [
+  54,
+  45,
+  27
+ ]
+}

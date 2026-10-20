@@ -1,0 +1,16 @@
+{'m': 7, 'd': 3, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 13, 'd': 12, 'v3': 2, 'f0_cube': True, 'f0_ninth': False, 'ninth_fail_orbits': 4, 'W_zero_orbits': 0, 'rule4850_ninth': False, 'rule10491524_ninth': False, 'rule20982139_ninth': False, 'rule178279803_ninth': False}
+{'m': 19, 'd': 18, 'v3': 3, 'f0_cube': True, 'f0_ninth': True, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0, 'rule4850_ninth': True, 'rule10491524_ninth': True, 'rule20982139_ninth': True, 'rule178279803_ninth': True}
+{'m': 31, 'd': 5, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 37, 'd': 36, 'v3': 3, 'f0_cube': True, 'f0_ninth': True, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0, 'rule4850_ninth': True, 'rule10491524_ninth': True, 'rule20982139_ninth': True, 'rule178279803_ninth': True}
+{'m': 43, 'd': 14, 'v3': 1, 'f0_cube': True, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 12}
+{'m': 61, 'd': 60, 'v3': 2, 'f0_cube': False, 'f0_ninth': False, 'ninth_fail_orbits': 24, 'W_zero_orbits': 0, 'rule4850_ninth': False, 'rule10491524_ninth': False, 'rule20982139_ninth': False, 'rule178279803_ninth': False}
+{'m': 73, 'd': 9, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 79, 'd': 39, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 97, 'd': 48, 'v3': 2, 'f0_cube': False, 'f0_ninth': False, 'ninth_fail_orbits': 148, 'W_zero_orbits': 0, 'rule4850_ninth': False, 'rule10491524_ninth': False, 'rule20982139_ninth': False, 'rule178279803_ninth': False}
+{'m': 103, 'd': 51, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 109, 'd': 36, 'v3': 3, 'f0_cube': False, 'f0_ninth': False, 'ninth_fail_orbits': 264, 'W_zero_orbits': 0, 'rule4850_ninth': False, 'rule10491524_ninth': False, 'rule20982139_ninth': False, 'rule178279803_ninth': False}
+{'m': 127, 'd': 7, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 151, 'd': 15, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 157, 'd': 52, 'v3': 1, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}
+{'m': 223, 'd': 37, 'v3': 0, 'f0_cube': False, 'f0_ninth': None, 'ninth_fail_orbits': 0, 'W_zero_orbits': 0}

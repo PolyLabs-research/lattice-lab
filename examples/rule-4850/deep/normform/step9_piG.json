@@ -1,0 +1,80 @@
+{
+ "10491524": {
+  "pif_orbits": [
+   [
+    4,
+    4
+   ],
+   [
+    7,
+    3
+   ]
+  ],
+  "T_invariant": true,
+  "n_T_orbits": 1,
+  "best_k": 0,
+  "best_radius": 7,
+  "g_orbits": [
+   [
+    4,
+    4
+   ],
+   [
+    7,
+    3
+   ]
+  ]
+ },
+ "20982139": {
+  "pif_orbits": [
+   [
+    3,
+    3
+   ],
+   [
+    7,
+    4
+   ]
+  ],
+  "T_invariant": true,
+  "n_T_orbits": 1,
+  "best_k": 0,
+  "best_radius": 7,
+  "g_orbits": [
+   [
+    3,
+    3
+   ],
+   [
+    7,
+    4
+   ]
+  ]
+ },
+ "178279803": {
+  "pif_orbits": [
+   [
+    4,
+    3
+   ],
+   [
+    7,
+    7
+   ]
+  ],
+  "T_invariant": true,
+  "n_T_orbits": 1,
+  "best_k": 0,
+  "best_radius": 7,
+  "g_orbits": [
+   [
+    4,
+    3
+   ],
+   [
+    7,
+    7
+   ]
+  ]
+ }
+}

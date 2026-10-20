@@ -1,0 +1,20 @@
+[
+ {
+  "m": 37,
+  "t_in_K": true,
+  "t_cubes": true,
+  "eta_cubes_in_F64": true,
+  "QR_formula": "18/18",
+  "NQR_in_F8": "18/18",
+  "NQR_is_theta": "18/18"
+ },
+ {
+  "m": 109,
+  "t_in_K": true,
+  "t_cubes": false,
+  "eta_cubes_in_F64": false,
+  "QR_formula": "18/162",
+  "NQR_in_F8": "30/162",
+  "NQR_is_theta": "12/162"
+ }
+]

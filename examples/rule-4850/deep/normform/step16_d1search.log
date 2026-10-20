@@ -1,0 +1,7 @@
+(a) W(1,2) as a word of <= 4 factors t_j^n, (1+t_i)^n, |n| <= 2: [(('(1+t1)', 2), ('(1+t9)', 2), ('t1', -1), ('t11', 1)), (('(1+t11)', -1), ('(1+t3)', -2), ('t12', 2), ('t5', 2)), (('(1+t3)', -2), ('t1', -2), ('t11', 1), ('t5', 2)), (('(1+t11)', -2), ('(1+t9)', 2), ('t1', 2), ('t3', 1)), (('(1+t1)', -2), ('(1+t11)', 1), ('(1+t3)', 1), ('(1+t5)', -1))]
+    control W(1,4) found: True
+    control random found: False
+(b) line (1,2): W(x, x^2) terms [-12, -9, -6, -5, -3, -1, 1, 3, 5, 6, 9, 12]; factors (degree, mult, order of roots or False): [(1, 4, 1), (2, 2, 3), (8, 1, 85), (8, 1, 85)]
+(b) line (1,5): W(x, x^5) terms [-13, -9, -8, -6, -4, -2, 2, 4, 6, 8, 9, 13]; factors (degree, mult, order of roots or False): [(1, 6, 1), (2, 1, 3), (9, 1, 511), (9, 1, 511)]
+(b) line (1,13): W(x, x^13) terms [-15, -14, -12, -8, -7, -5, 5, 7, 8, 12, 14, 15]; factors (degree, mult, order of roots or False): [(1, 2, 1), (2, 3, 3), (3, 1, 7), (3, 1, 7), (8, 1, 85), (8, 1, 85)]
+(b) line (1,4): W(x, x^4) terms [-17, -14, -8, -5, 5, 8, 14, 17]; factors (degree, mult, order of roots or False): [(1, 4, 1), (2, 2, 3), (6, 1, 9), (10, 2, 11)]

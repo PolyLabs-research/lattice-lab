@@ -1,0 +1,12 @@
+number of <D4,T>-orbits off the axes: 63  sizes: Counter({24: 45, 12: 18})
+core statement C (W pi^2 ninth at every off-axis character): True
+size 12: j = -1: ninth-confined 9 / 18   prediction agrees on 18 / 18
+size 12: j =  0: ninth-confined 0 / 18   prediction agrees on 18 / 18
+size 12: j =  1: ninth-confined 9 / 18   prediction agrees on 18 / 18
+size 12: j =  2: ninth-confined 9 / 18   prediction agrees on 18 / 18
+size 24: j = -1: ninth-confined 0 / 45
+size 24: j =  0: ninth-confined 9 / 45
+size 24: j =  1: ninth-confined 0 / 45
+size 24: j =  2: ninth-confined 0 / 45
+size-12 orbits (rep, k, confined for j=-1..2): [((1, 1), 0, [1, 0, 0, 1]), ((1, 10), 12, [1, 0, 0, 1]), ((1, 11), 24, [1, 0, 0, 1]), ((2, 2), 1, [0, 0, 1, 0]), ((2, 15), 25, [0, 0, 1, 0]), ((2, 17), 13, [0, 0, 1, 0]), ((3, 3), 26, [1, 0, 0, 1]), ((3, 4), 14, [1, 0, 0, 1]), ((3, 7), 2, [1, 0, 0, 1]), ((5, 5), 23, [0, 0, 1, 0]), ((5, 13), 35, [0, 0, 1, 0]), ((5, 18), 11, [0, 0, 1, 0]), ((6, 6), 27, [0, 0, 1, 0]), ((6, 8), 15, [0, 0, 1, 0]), ((6, 14), 3, [0, 0, 1, 0]), ((9, 9), 16, [1, 0, 0, 1]), ((9, 12), 4, [1, 0, 0, 1]), ((9, 16), 28, [1, 0, 0, 1])]
+size-24 orbits confined for some j: [((1, 6), [0, 1, 0, 0]), ((1, 8), [0, 1, 0, 0]), ((1, 14), [0, 1, 0, 0]), ((2, 9), [0, 1, 0, 0]), ((2, 12), [0, 1, 0, 0]), ((2, 16), [0, 1, 0, 0]), ((3, 5), [0, 1, 0, 0]), ((3, 13), [0, 1, 0, 0]), ((3, 18), [0, 1, 0, 0])]
