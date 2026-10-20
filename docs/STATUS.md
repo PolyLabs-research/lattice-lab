@@ -114,15 +114,14 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
 
 ## Open questions, roughly in order
 
-1. **The cubes at m = 37, in the square family.** The fifth pilot's registered held-out census
-   (`examples/llm-pilot-25`) found 16 symmetric square rules within distance 4 confined to the
-   cubes at m = 37 that neither pilot's mechanism explains, against 0.6 expected by chance, each
-   with 9 or 10 free classes; three of them (3461, 18246, 26883) are also confined at 61. A sixth
-   pilot suits it. Also open at m = 25 ([llm-pilot.md](llm-pilot.md#pilot-5-the-cubes-at-m--25)):
-   nine family rules and the three atlas rules the fifth pilot did not explain. Its agent argues
-   these are mostly the chance model's error, since the model treats characters of order 25 and 5
-   as independent where an identity ties them; a chance model that keeps them together could be
-   registered and tested.
+1. **The chance model.** Two pilots have shown the census's chance model undercounts. At m = 25
+   it treats characters of order 25 and 5 as independent where an identity ties them (pilot 5);
+   at m = 37 it treats every class as a cube one time in three, where the axis and diagonal classes
+   are cubes 93.5% of the time because they inherit rule 90's confinement (pilot 6). With
+   per-class rates, the seven of pilot 6's targets it did not explain are what chance expects
+   (5.7). A corrected model should be registered and tested on a fresh family before anything is
+   called chance again. Still open with it: the family at m = 29 (13 unexplained against 7.85 with
+   per-class rates) and at 25 (nine, and the three atlas rules).
 2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
    half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
    Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
@@ -183,14 +182,16 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Five pilots
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Six pilots
    have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, found
    VO + T13's law from data and proved it, in the fourth answered the open m = 37 question and
-   proved the answer, and in the fifth explained and proved 5 of the 17 cube confinements at
-   m = 25, judged by Lean and, for the mechanism, by its claims at held-out sizes (1,381, none
-   false). The last four ran in their own cloud sessions, whose containers cloned only an orphan
+   proved the answer, in the fifth explained and proved 5 of the 17 cube confinements at
+   m = 25, and in the sixth 12 of the 19 at m = 37 and 61 (unit times cube, `UnitCubes.lean`),
+   judged by Lean and, for the mechanism, by its claims at held-out sizes (none false in either).
+   The sixth's registered census found its nine rules at exactly the three new sizes it
+   predicted, and nothing else unexplained. The last five ran in their own cloud sessions, whose containers cloned only an orphan
    sandbox branch, and their transcripts were audited. Next:
-   - the 16 at m = 37 that the fifth pilot's held-out census found (item 1);
+   - the corrected chance model (item 1), and the rest at 25 and 29;
    - a law that is not one division away in the data, such as a rule round 3 left unexplained.
 
    **Parked: people in the proposer's seat.** Mathematicians could take the agent's role on the

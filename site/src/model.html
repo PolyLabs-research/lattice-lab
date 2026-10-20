@@ -95,12 +95,13 @@
       in a cloud container that holds nothing else: an orphan branch with one commit, no write-ups
       and no hand proofs. It works alone. When it reports, the judge runs; if the judge rejects the
       work, only the judge's output goes back to the agent.</p>
-    <p>The chart shows every tool call the agents in pilots 2 to 5 made, read from the session
+    <p>The chart shows every tool call the agents in pilots 2 to 6 made, read from the session
       transcripts on the server, not from anything the agents wrote. In pilots 2 and 3 the agents
       wrote their whole proof within ten minutes, then waited half an hour or more for mathlib to
       compile in their fresh containers. In pilots 4 and 5, on open questions, the agents had
       their mechanisms after 23 minutes and spent the rest of their time checking and proving
-      them; the fifth also spent it looking for more, and reported what it could not explain.
+      them; the fifth also spent it looking for more, and reported what it could not explain. The
+      sixth found its factorisation in 11 minutes and finished in 66.
       Pilot 1's agent ran inside the orchestrator's container, so it has no separate
       transcript.</p>
   </section>
@@ -116,17 +117,18 @@
 
   <div class="table-box">
     <table>
-      <thead><tr><th></th><th>Pilot 1: hexagon law</th><th>Pilot 2: triangle laws</th><th>Pilot 3: VO + T13's law</th><th>Pilot 4: m = 37</th><th>Pilot 5: m = 25</th></tr></thead>
+      <thead><tr><th>Pilot</th><th>Given</th><th>Time, tool calls</th><th>Judge</th><th>Registered test</th><th>Against the hand proof</th></tr></thead>
       <tbody>
-        <tr><td>Given</td><td>the statement</td><td>the statements</td><td>a question and data</td><td>an open question and a census</td><td>a harder open question, a census and a chance model</td></tr>
-        <tr><td>Where it ran</td><td>a subagent in the orchestrator's container</td><td>its own container, holding only the sandbox</td><td>the same as pilot 2</td><td>the same as pilot 2</td><td>the same as pilot 2</td></tr>
-        <tr><td>Time, tool calls</td><td>15 min, 35</td><td>41 min, 40</td><td>53 min, 42</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td><td>95 min, 108 calls</td></tr>
-        <tr><td>Judge</td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span></td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td><td><span class="badge ok">passed, round 1</span> 5 of 17 explained</td></tr>
-        <tr><td>Registered test</td><td>15 of 15 sizes</td><td>40 of 40 predictions</td><td>20 of 20, and the agent's own law 20 of 20</td><td id="p4-test">180 of 180 claims held at held-out sizes</td><td>414 of 414 claims held at held-out sizes; our own expectation <span class="badge bad">refuted</span></td></tr>
-        <tr><td>Against the hand proof</td><td>a different route</td><td>the same route</td><td>no proof existed for m = 1</td><td>nobody knew the answer</td><td>nobody knew the answer</td></tr>
+        <tr><td>1: hexagon law</td><td>the statement</td><td>15 min, 35</td><td><span class="badge ok">passed, round 1</span></td><td>15 of 15 sizes</td><td>a different route</td></tr>
+        <tr><td>2: triangle laws</td><td>the statements</td><td>41 min, 40</td><td><span class="badge ok">passed, round 1</span></td><td>40 of 40 predictions</td><td>the same route</td></tr>
+        <tr><td>3: VO + T13's law</td><td>a question and data</td><td>53 min, 42</td><td><span class="badge ok">passed, round 1</span></td><td>20 of 20, and the agent's own law 20 of 20</td><td>no proof existed for m = 1</td></tr>
+        <tr><td>4: m = 37</td><td>an open question and a census</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td><td id="p4-test">180 of 180 claims held at held-out sizes</td><td>nobody knew the answer</td></tr>
+        <tr><td>5: m = 25</td><td>a harder open question, a census and a chance model</td><td>95 min, 108 calls</td><td><span class="badge ok">passed, round 1</span> 5 of 17 explained</td><td>414 of 414 claims held at held-out sizes; our own expectation <span class="badge bad">refuted</span></td><td>nobody knew the answer</td></tr>
+        <tr><td>6: m = 37 again</td><td>a question the fifth pilot's registered test raised</td><td>66 min, 99 calls</td><td><span class="badge ok">passed, round 1</span> 12 of 19 explained</td><td>our expectation <span class="badge bad">refuted</span> at 3 of 17 sizes, by exactly the agent's nine rules, where it predicted them</td><td>nobody knew the answer</td></tr>
       </tbody>
     </table>
   </div>
+  <p class="note" style="margin-top: 0.75rem">Pilot 1's agent ran as a subagent in the orchestrator's container; every later agent ran in its own container, which held only the sandbox, and its whole transcript was audited.</p>
 
   <section class="prose" aria-labelledby="judge-title">
     <h2 id="judge-title">What the judge checks</h2>
@@ -156,7 +158,8 @@
       atlas's own tools could have found its key factor had anyone looked for factors shared
       between rules. Each library held close worked examples, and the agents said they followed
       them. The fifth pilot answered only part of its question, and left twelve cases unexplained.
-      Five runs on five problems say little about how often the approach fails, or where it stops
+      The sixth pilot's answer was a factorisation we had listed as unchecked and not tried. Six
+      runs on six problems say little about how often the approach fails, or where it stops
       working.</p>
   </section>
 </main>

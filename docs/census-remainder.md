@@ -49,6 +49,15 @@ and the judge checked its condition on every entry here:
 
 So of the 45 here, 19 now have a proved mechanism, and the counts below are as first written.
 
+**And after pilot 6** ([llm-pilot.md](llm-pilot.md#pilot-6-the-square-family-at-m--37)): the 16
+at 37 were not one thing. Nine are a unit times a cube, f = U · g³ exactly, with U a product of
+rule-90 or Ψ₃ factors; the other seven are what chance gives once the model is corrected. Its
+rate of one in three per free class is wrong where rule 90 is confined: at 37 the axis and
+diagonal classes are cubes 93.5% of the time (29 of the 31 possible one-dimensional values are
+products of units), and the expected count of chance confinements in the family there is 5.7,
+not 0.62. The verdicts here that rest on the model inherit that error wherever rule 90 is
+confined; at 13 it is not.
+
 ## The method
 
 **Forced subfields.** A rule's eigenvalue at a character c is λ(c) = f(ζ^c). Frobenius gives
