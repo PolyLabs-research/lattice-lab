@@ -171,3 +171,12 @@ appeared, and read the held-out census's records then. The census wrote its last
 rules there, and its held-out total (18) leaves them out. A targeted run of the same evaluation
 at 101 afterwards: `condition` claims all nine (q = 3(2^50 + 1)) and every claim holds. Round 2
 reruns the whole judge on the same commit with the complete records.
+
+## The judge, round 2 (`8b0d911`, the same commit, with the complete census)
+
+`judgements/round-2.json`, finished at 00:50 UTC. Everything as in round 1, and at the held-out
+sizes **482 claims, none false, covering all 27 confinements the earlier conditions leave**: the
+nine at each of 95, 101 and 111. Lean: all 60 theorems on the standard axioms. The round's first
+45 minutes went before its evaluations began, most likely in the fetch of the agent's branch.
+
+No feedback was sent; the agent had finished. The pilot is complete.

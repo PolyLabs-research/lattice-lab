@@ -31,7 +31,7 @@ are now in the library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean`
 | Where the agent ran | a subagent in the orchestrator's container | its own cloud session, whose container held only the sandbox | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 |
 | Isolation | by instruction only | a separate container, and the whole transcript audited | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 | the same as pilot 2 |
 | Time, tool calls | 15 minutes, 35 calls | 41 minutes (31 waiting for its mathlib build), 40 calls | 53 minutes (41 waiting for its build), 42 calls | 95 minutes, 131 calls; then a follow-up a person asked for, 20 minutes and 6 calls | 95 minutes, 108 calls | 66 minutes, 99 calls |
-| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 | passed in round 1: 5 of 17 explained, none of 1,381 claims false | passed in round 1: 12 of 19 explained, none of 1,538 claims false (round 2 adds the nine at 101) |
+| Judge | passed in round 1 | passed in round 1 | passed in round 1 | passed in round 1; the follow-up judged in round 2 | passed in round 1: 5 of 17 explained, none of 1,381 claims false | passed in round 1: 12 of 19 explained, none of 1,547 claims false (round 2, with the census complete) |
 | The agent's own checks | 56 of 56 | 54 of 54 | 63 of 63 | 39 of 39 | 31 of 31 | 32 of 32 |
 | Registered test | 15 of 15 sizes | 40 of 40 predictions | 20 of 20, and the agent's law 20 of 20 | the census at 29 held-out sizes: no unexplained confinement, as registered; the agent's condition held at all 180 of its claims there | the orchestrator's expectation (chance) **refuted** at 6 of 14 sizes; the agent's condition explains 12 of the 44 unexplained confinements there, and held at all 414 of its claims | the orchestrator's expectation (chance) **refuted** at 95, 101 and 111, by exactly the agent's nine rules, which its condition claims; nothing else unexplained at 17 sizes |
 | Route, against the hand proof | a different one | the same one | no hand proof existed for m = 1 | nobody knew the answer | nobody knew the answer | nobody knew the answer |
@@ -87,12 +87,12 @@ cannot factor two-variable polynomials over GF(2).
    99 tool calls.
 
 **The judge**, round 1: `condition` explains 12 of the 19; it made
-**1,065 claims at the training sizes and 473 at the held-out sizes, none false**, each checked
+**1,065 claims at the training sizes and 482 at the held-out sizes, none false**, each checked
 by the judge's own eigenvalue computation; at the held-out sizes it covers all 27 confinements
 the earlier conditions leave (the nine at 95, 101 and 111); the Lean file builds against the real
 library, all 60 theorems on the standard axioms; the agent's own checks passed, 32 of 32. (Round 1
 read the census records a minute before the census wrote its last size, 101, and so missed the
-nine there; round 2, on the same commit, has them.)
+nine there; round 2, on the same commit, has them, and these are its numbers.)
 
 **The registered held-out census** (17 sizes from 77 to 125, registered before the launch, with
 the orchestrator's expectation of chance) refuted that expectation at 95, 101 and 111, and only
