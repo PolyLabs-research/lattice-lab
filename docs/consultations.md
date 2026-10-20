@@ -59,7 +59,48 @@ primitive root, and omits 173 and 181, which are eligible and do fail.
 | ChatGPT, after the hint | yes | by the unit of Q(sqrt 37) | abstract | none |
 | Claude Fable | yes | by the unit, with a criterion | yes | yes, all correct where checked |
 
-**What came of it.** Fable's criterion and pyramid recipe make predictions at primes nobody has
-looked at; they are registered and tested in `examples/fable-units`. Two models finding the same
-argument for rule 90 independently is good evidence that it is the right explanation, and it is
-better than the computed cube root in the library's `Cubes37.lean`.
+**What came of it.** Fable's criterion and pyramid recipe made predictions at primes nobody had
+looked at, so they were registered and tested (below). Two models finding the same argument for
+rule 90 independently is good evidence that it is the right explanation, and it is better than the
+computed cube root in the library's `Cubes37.lean`.
+
+## The registered test of Fable's criterion (`examples/fable-units`), 2026-10-20
+
+**The claims.** For a prime p = 5 (mod 8) at which 2 is a primitive root, (U) rule 90 is confined
+to the cubes at p (equivalently, 1 + zeta is a cube in F(2^(p-1))) exactly when eps^h lies in
+Z[sqrt p], for the fundamental unit eps and class number h of Q(sqrt p); and at p = i^2 + 1 where
+(U) holds, the pyramid rule (the centre and the square rings at radii 2, 4, ..., i/2 - 1) is
+confined to the cubes, while the pyramid without its largest ring is not.
+
+**The design.** The predictions come from number theory alone (`units.predicted`: eps from the
+continued fraction of (1 + sqrt p)/2, h by counting cycles of reduced quadratic forms), with no
+cyclotomic arithmetic. The truth comes from direct computation in GF(2)[x]/Phi_p
+(`units.confined`: the norm of 1 + zeta to F(4); `units.pyramid_confined`: the norm of every
+eigenvalue of the pyramid, one per orbit of doubling and the lattice's symmetries). The grid was
+every eligible prime from 302 to 20,000 (405 of them) and the pyramid primes among them below
+10,000 (677, 4357, 5477 and 8837). Every eligible prime up to 301 counts as seen. The predictions
+were pushed at 08:32:54 UTC (`981793f`), and the run started at 08:33:03.
+
+**The result: both claims held everywhere.**
+
+- **(U), at 405 primes, none wrong.** 144 are confined: at 114 eps itself lies in Z[sqrt p] (a
+  and b even in eps = (a + b sqrt p)/2), and at 30 eps does not but 3 divides h. At the other
+  261, eps is not in Z[sqrt p], 3 does not divide h, and rule 90 is not confined. The class
+  numbers reach 19 and the units 46 digits.
+- **The pyramids, 4 of 4.** Each predicted pyramid is confined and each neighbour is not. The
+  largest, at 8837 (i = 94, 23 rings), took 88 seconds; the whole run took 2.5 minutes.
+- `lattice-lab verify --lab examples/fable-units`: the ledger's 417 entries chain, no problems.
+
+**What the test does and does not show.** Both claims come with Fable's arguments, and filled in
+they are proofs, so the test is a check of the argument and of the arithmetic at scale, not the
+settling of a conjecture. Fable's step from (U) to eps^h is one line ("i.e."). It is Dirichlet's
+class number formula: with eta and eta' the products of 1 - zeta^s over the quadratic residues and
+non-residues, eta eta' = p and eta'/eta = eps^(2h), so eta = sqrt p eps^(-h). Since
+sqrt p = 2 theta - 1 = 1 (mod 2), eta = 1 (mod 2) exactly when eps^h does, which is when eps^h
+lies in Z + 2 O_K = Z[sqrt p]. For the pyramids, Fable's identity
+sum_{r <= N} Q_r t(X) t(Y) = t(X/Y) t((XY)^(2N+2)) + t(XY) t((X/Y)^(2N+2)) (with 2N + 2 = i)
+puts their values off the axes, up to rule-90 factors, in the field fixed by the dilation by i,
+and since 2^((p-1)/4) = +-i with (p - 1)/4 odd, that field lies in the cubes. That the
+neighbours fail is not part of any proof; it is an observation, and it held at all four. The one
+error in Fable's answer stands: its list of primes where (U) fails names 109 and 157, where 2 is
+not a primitive root, and omits 173 and 181.
