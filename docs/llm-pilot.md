@@ -22,9 +22,10 @@ In pilots 1 to 4 the registered predictions, at sizes nobody had computed, all h
 law also held at all 20 held-out sizes, which it never saw. In pilot 5 the orchestrator's own
 registered expectation failed, at 6 of 14 held-out sizes; the agent's mechanism accounts for part
 of that, and the rest became pilot 6's question. In pilot 6 the orchestrator's expectation
-failed again, at exactly the three sizes and the nine rules the agent predicted. The first six proofs
+failed again, at exactly the three sizes and the nine rules the agent predicted. All seven proofs
 are in the library: `HexTwoPart.lean`, `TriTwoPart.lean` and `VOT13Law.lean` verbatim,
-`Cubes37.lean`, `Cubes25.lean` and `UnitCubes.lean` with only their namespaces renamed.
+`Cubes37.lean`, `Cubes25.lean`, `UnitCubes.lean` and `Ninth37.lean` with only their namespaces
+renamed.
 
 | | Pilot 1: the hexagon law | Pilot 2: the triangle laws | Pilot 3: VO + T13's law | Pilot 4: the cubes at m = 37 | Pilot 5: the cubes at m = 25 | Pilot 6: the square family at m = 37 | Pilot 7: the ninth powers at m = 37 |
 | --- | --- | --- | --- | --- | --- | --- | --- |

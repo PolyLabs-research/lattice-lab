@@ -130,7 +130,8 @@ explained those four: they are line units times pilot 4's half-Frobenius cores, 
 units' exponents exactly gives the extra factor of 3. Its condition held at all 1,715 claims and
 covers 35 of the 37 unexplained ninth-power rules of radius 6. Its Lean file did not build (it
 was stopped for cost before compiling it); a second round over the API ($4.47) fixed it, and the
-judge accepts the four `period 37 D ∣ 29127` theorems on the standard axioms. **4850 stays open**, with two radius-6 rules of the same class pattern (20982139,
+judge accepts the four `period 37 D ∣ 29127` theorems on the standard axioms; they are in the
+library as `Ninth37.lean`. **4850 stays open**, with two radius-6 rules of the same class pattern (20982139,
 178279803), and the agent's report lists precisely what it is not (units times an F(2⁹)-valued
 rule, g³ times one, a twisted pair, a sparse power, a line-by-line certificate, Gauss sums).
 

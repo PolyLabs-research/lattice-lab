@@ -5,6 +5,7 @@ import LatticeProofs.VOT13Law
 import LatticeProofs.Cubes37
 import LatticeProofs.Cubes25
 import LatticeProofs.UnitCubes
+import LatticeProofs.Ninth37
 
 -- `lake env lean Axioms.lean`: the axioms each result rests on. Lean's standard three
 -- (propext, Classical.choice, Quot.sound) and nothing else; no sorryAx.
@@ -74,3 +75,7 @@ import LatticeProofs.UnitCubes
 #print axioms LatticeProofs.UnitCubes.period_r3461_dvd_61
 #print axioms LatticeProofs.UnitCubes.period_r26883_dvd_61
 #print axioms LatticeProofs.UnitCubes.period_r18246_dvd_61
+#print axioms LatticeProofs.Ninth37.period_r1968276_dvd
+#print axioms LatticeProofs.Ninth37.period_r985232_dvd
+#print axioms LatticeProofs.Ninth37.period_r1431278_dvd
+#print axioms LatticeProofs.Ninth37.period_r699738_dvd

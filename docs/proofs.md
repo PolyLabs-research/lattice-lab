@@ -430,6 +430,30 @@ the unit's values are cubes:
 | `period_r1112_dvd_37`, … (nine) | period 37 D ∣ 87381 = (2^18 − 1)/3 |
 | `period_r3461_dvd_61`, `period_r26883_dvd_61`, `period_r18246_dvd_61` | period 61 D ∣ 357913941 = (2^30 − 1)/3 |
 
+### Ninth powers at m = 37 (`LatticeProofs/Ninth37.lean`, by the seventh pilot's agent)
+
+The seventh pilot's proof ([llm-pilot.md](llm-pilot.md#pilot-7-the-ninth-powers-at-m--37)), from
+its second round, verbatim except for its namespace: `Pilot37c` in the sandbox, `Ninth37` here. It
+imports `Cubes37.lean`, and builds in about a minute.
+
+Four rules of the radius-5 square family are exactly line units times the fourth pilot's
+half-Frobenius cores W = A4 + K8 + B4 + self and V = C4 + L8 + M8 + E4, with a = x + 1/x,
+b = y + 1/y and Ψ₅(t) = t² + t + 1:
+
+- 699738 = Ψ₅(a)Ψ₅(b)(a + b) · W
+- 985232 = a²b²(a + b) · W
+- 1431278 = Ψ₅(a)Ψ₅(b) · V
+- 1968276 = a²b² · V
+
+The cores' values are F(2⁹)-valued up to rule-90 factors, and so are 27th powers. Exact
+exponent bookkeeping shows the units contribute one more factor of 3 than rule 90's cube
+confinement: Ψ₅(t)² = t^(2²³ − 1) at 37, since 5 ≡ 2²³. Together these make every eigenvalue a
+ninth power.
+
+| Theorem | Statement |
+| --- | --- |
+| `period_r1968276_dvd`, `period_r985232_dvd`, `period_r1431278_dvd`, `period_r699738_dvd` | period 37 D ∣ 29127 = (2^18 − 1)/9 |
+
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).
   That is not formalised.
