@@ -1,0 +1,9 @@
+class residues of 32768 rules computed, distinct values 132358 time 18.3
+expansion check ok
+(a) zero-free radius-4 rules: 30719 ; rules with mu27 residue fixed by P_g: {'g=1,A': 2, 'g=1,B': 2, 'g=2,A': 10, 'g=2,B': 4, 'g=3,A': 2, 'g=3,B': 2, 'g=4,A': 10, 'g=4,B': 4, 'g=5,A': 2, 'g=5,B': 2, 'g=6,A': 14, 'g=6,B': 6, 'g=7,A': 2, 'g=7,B': 2, 'g=8,A': 10, 'g=8,B': 4, 'g=9,A': 2, 'g=9,B': 2, 'g=10,A': 10, 'g=10,B': 4, 'g=11,A': 2, 'g=11,B': 2, 'g=12,A': 14, 'g=12,B': 6, 'g=13,A': 2, 'g=13,B': 2, 'g=14,A': 10, 'g=14,B': 4, 'g=15,A': 2, 'g=15,B': 2, 'g=16,A': 10, 'g=16,B': 4, 'g=17,A': 2, 'g=17,B': 2}
+    lemma (P_g-invariance => (2^g-1) R = 0 mod 27) holds on every hit: True []
+(b) 4850: P^B_6-invariant mu27: True ; R(Pc) == 19 R(c): True ; cube: True ; ninth: True
+    the lemma at the mod-9 level: (2^6 - 1) = 63 = 0 mod 9, so its conclusion is empty: True
+    M0 = ((18, 29), (29, 18))
+    zero-free radius-4 rules with M0-invariant mu27 residue off the diagonals: 6 ; among them P^B_6-invariant: 6 ; cube-confined off diagonals: 6 ; P-inv <=> cube on all of them: True
+time 48.3

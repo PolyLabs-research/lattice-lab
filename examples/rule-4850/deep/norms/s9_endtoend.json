@@ -1,0 +1,7 @@
+{
+ "(1) core f0 norm = (theta theta)^(3m(d))": true,
+ "(2) 4850 norm = (theta theta)^(2(2n(d)-1)) off j=+-k (1296 chars)": true,
+ "(3) 4850 ninth powers on j=+-k (72 chars)": true,
+ "(4) t_x^29127 = rho(2x)": true,
+ "(5) eta = theta rho": true
+}

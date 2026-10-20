@@ -1,0 +1,13 @@
+gcd(x^24 + x^9 + 1, x^63 + 1) = x^9 + x^3 + 1  factors: ['x^3 + x^2 + 1', 'x^6 + x^5 + x^4 + x^2 + 1']
+the sextic factor m(x) = x^6 + x^5 + x^4 + x^2 + 1   m | x^21 + 1: True
+d=0: (*)_d(x) = (x * x^(2^d))^2  mod m(x): True
+d=1: (*)_d(x) = (x * x^(2^d))^-1  mod m(x): True
+d=2: (*)_d(x) = (x * x^(2^d))^-4  mod m(x): True
+d=3: (*)_d(x) = (x * x^(2^d))^2  mod m(x): True
+d=4: (*)_d(x) = (x * x^(2^d))^-4  mod m(x): True
+d=5: (*)_d(x) = (x * x^(2^d))^-1  mod m(x): True
+m(eta_0) = 0 in GF(2^36): True
+N(W) = (eta(al) eta(be))^n(d) at all characters: True
+additive forms (QR: eta(4al^2/be); d=3: theta(4al^2/be); d=+-1: theta(8al^2/be)): True
+core f0: N(W/(t_al t_be)) in F8 at all off-axis characters: True
+theta_2 = eta_0^-3 : True   (theta_k = eta(2^k) + eta(2^(k+3)))

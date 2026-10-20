@@ -1,0 +1,101 @@
+{
+ "cross_size_W": {
+  "13": {
+   "d": 12,
+   "W_orbits": 12,
+   "W_ninth": 6,
+   "by_category": {
+    "factorised": {
+     "n": 12,
+     "ninth": 6,
+     "rate": 0.5
+    }
+   }
+  },
+  "61": {
+   "d": 60,
+   "W_orbits": 60,
+   "W_ninth": 18,
+   "by_category": {
+    "factorised": {
+     "n": 18,
+     "ninth": 0,
+     "rate": 0.0
+    },
+    "unforced": {
+     "n": 36,
+     "ninth": 12,
+     "rate": 0.3333333333333333
+    },
+    "frobenius-forced": {
+     "n": 6,
+     "ninth": 6,
+     "rate": 1.0
+    }
+   }
+  },
+  "97": {
+   "d": 48,
+   "W_orbits": 192,
+   "W_ninth": 48,
+   "by_category": {
+    "factorised": {
+     "n": 36,
+     "ninth": 12,
+     "rate": 0.3333333333333333
+    },
+    "unforced": {
+     "n": 156,
+     "ninth": 36,
+     "rate": 0.23076923076923078
+    }
+   }
+  },
+  "109": {
+   "d": 36,
+   "W_orbits": 324,
+   "W_ninth": 60,
+   "by_category": {
+    "factorised": {
+     "n": 54,
+     "ninth": 6,
+     "rate": 0.1111111111111111
+    },
+    "unforced": {
+     "n": 252,
+     "ninth": 36,
+     "rate": 0.14285714285714285
+    },
+    "frobenius-forced": {
+     "n": 18,
+     "ninth": 18,
+     "rate": 1.0
+    }
+   }
+  },
+  "241": {
+   "d": 24,
+   "W_orbits": 2400,
+   "W_ninth": 234,
+   "by_category": {
+    "factorised": {
+     "n": 180,
+     "ninth": 6,
+     "rate": 0.03333333333333333
+    },
+    "unforced": {
+     "n": 2220,
+     "ninth": 228,
+     "rate": 0.10270270270270271
+    }
+   }
+  }
+ },
+ "pooled_unforced_ninth_rate": 0.11711711711711711,
+ "norms_closed_form": {
+  "checked": 1296,
+  "holds": 1296,
+  "residual_norm_in_F8": true
+ },
+ "time": 1.5
+}

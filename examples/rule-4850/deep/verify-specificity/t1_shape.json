@@ -1,0 +1,1194 @@
+{
+ "T_orbits_off_axes": {
+  "count": 63,
+  "size_hist": {
+   "24": 45,
+   "12": 18
+  }
+ },
+ "T_rows": [
+  {
+   "size": 12,
+   "rep": [
+    3,
+    4
+   ],
+   "lift_radius": 7,
+   "f_radius": 6,
+   "f_terms": 73,
+   "rule": 178279803,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0,
+   "odd_part": 29127,
+   "odd_divides_29127": true
+  },
+  {
+   "size": 12,
+   "rep": [
+    3,
+    3
+   ],
+   "lift_radius": 7,
+   "f_radius": 6,
+   "f_terms": 65,
+   "rule": 20982139,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0,
+   "odd_part": 29127,
+   "odd_divides_29127": true
+  },
+  {
+   "size": 12,
+   "rep": [
+    3,
+    7
+   ],
+   "lift_radius": 7,
+   "f_radius": 6,
+   "f_terms": 40,
+   "rule": 10491524,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1,
+   "odd_part": 29127,
+   "odd_divides_29127": true
+  },
+  {
+   "size": 12,
+   "rep": [
+    1,
+    10
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 141,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    1,
+    1
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 221,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    1,
+    11
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 120,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1
+  },
+  {
+   "size": 12,
+   "rep": [
+    6,
+    8
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 172,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 73
+  },
+  {
+   "size": 12,
+   "rep": [
+    6,
+    6
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 132,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 73
+  },
+  {
+   "size": 12,
+   "rep": [
+    6,
+    14
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 112,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 73
+  },
+  {
+   "size": 12,
+   "rep": [
+    9,
+    12
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 472,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1
+  },
+  {
+   "size": 12,
+   "rep": [
+    9,
+    9
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 177,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    9,
+    16
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 432,
+   "rule": null,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1
+  },
+  {
+   "size": 12,
+   "rep": [
+    2,
+    15
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 349,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    2,
+    2
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 64,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 1
+  },
+  {
+   "size": 12,
+   "rep": [
+    2,
+    17
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 293,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    5,
+    13
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 404,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 1
+  },
+  {
+   "size": 12,
+   "rep": [
+    5,
+    5
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 493,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "size": 12,
+   "rep": [
+    5,
+    18
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 349,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    3
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 108,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    7
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 112,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    4
+   ],
+   "lift_radius": 11,
+   "f_radius": 10,
+   "f_terms": 180,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    6
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 328,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    8
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 204,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    8
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 164,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    6
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 156,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    14
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 128,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    14
+   ],
+   "lift_radius": 14,
+   "f_radius": 13,
+   "f_terms": 220,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    6,
+    12
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 272,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    9
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 408,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    12
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 180,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    6,
+    9
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 220,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    12
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 160,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    6,
+    16
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 340,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    9
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 300,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    16
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 188,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    16
+   ],
+   "lift_radius": 16,
+   "f_radius": 15,
+   "f_terms": 108,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    12
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 692,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    8
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 320,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    9
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 204,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    2
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 428,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    15
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 324,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    16
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 560,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    6
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 228,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    4
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 124,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    14
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 132,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    3
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 236,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    7
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 176,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    17
+   ],
+   "lift_radius": 17,
+   "f_radius": 16,
+   "f_terms": 136,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    5
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 644,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    9
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 416,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    13
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 608,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    6
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 260,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    16
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 376,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    13
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 320,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    5
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 212,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    12
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 284,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    14
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 336,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    5
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 256,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    5,
+    8
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 428,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    13
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 168,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    3,
+    18
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 184,
+   "rule": null,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    2,
+    18
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 228,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  },
+  {
+   "size": 24,
+   "rep": [
+    1,
+    18
+   ],
+   "lift_radius": 18,
+   "f_radius": 17,
+   "f_terms": 316,
+   "rule": null,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 217
+  }
+ ],
+ "summary_T": {
+  "12": {
+   "n": 18,
+   "cube": 18,
+   "ninth": 9
+  },
+  "24": {
+   "n": 45,
+   "cube": 9,
+   "ninth": 0
+  }
+ },
+ "T_unions_in_box": [
+  {
+   "orbits": [
+    [
+     3,
+     3
+    ]
+   ],
+   "rule": 20982139,
+   "radius": 6,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0
+  },
+  {
+   "orbits": [
+    [
+     3,
+     4
+    ]
+   ],
+   "rule": 178279803,
+   "radius": 6,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 0
+  },
+  {
+   "orbits": [
+    [
+     3,
+     7
+    ]
+   ],
+   "rule": 10491524,
+   "radius": 6,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1
+  },
+  {
+   "orbits": [
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "rule": 199261184,
+   "radius": 6,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 1
+  },
+  {
+   "orbits": [
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     7
+    ]
+   ],
+   "rule": 31473663,
+   "radius": 6,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "orbits": [
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     7
+    ]
+   ],
+   "rule": 167789567,
+   "radius": 6,
+   "cube": false,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 0
+  },
+  {
+   "orbits": [
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     7
+    ]
+   ],
+   "rule": 188770948,
+   "radius": 6,
+   "cube": true,
+   "ninth": false,
+   "q27": false,
+   "eig_ninth": false,
+   "zero_chars": 73
+  }
+ ],
+ "M0_unions_in_box": [
+  {
+   "orbits": [
+    [
+     0,
+     4
+    ]
+   ],
+   "sizes": [
+    12
+   ],
+   "rule": 4850,
+   "radius": 4,
+   "cube": true,
+   "ninth": true,
+   "q27": false,
+   "eig_ninth": true,
+   "zero_chars": 1
+  }
+ ],
+ "recorded_rules_checked": 125,
+ "recorded_with_pi_f_single_T_orbit": [
+  10491524,
+  20982139,
+  178279803
+ ],
+ "recorded_with_s_f_single_M0_orbit": [
+  4850
+ ],
+ "time": 5.6
+}

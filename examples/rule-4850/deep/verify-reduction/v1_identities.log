@@ -1,0 +1,13 @@
+4850 orbits: [(1, 0), (2, 1), (2, 2), (3, 0), (3, 1), (3, 3), (4, 2)]  |f| = 40
+(a) f(xy, x/y) == rule 10491524 (exact Laurent): True
+(b) pi * f' == orbit(4,4) + orbit(7,3) exactly: True
+    |supp h| = 12
+    pi f' == h^4 in F2[(Z/37)^2] (via dilation): True  (via 3 honest products): True
+(c) h invariant under T = diag(10, 26): True
+(d) lambda_4850(j,k) = lambda'((j+k)/2, (j-k)/2) at all characters: True
+    lambda'(a,b) t_a t_b == W(a,b)^4 at all 1369: True ; W = h(zeta^a, zeta^b): True ; W(Tc) == W(c): True
+    4850: zeros off the trivial character: 0 ; ninth-confined: True ; 27th-confined: False
+    4850 class residues (log omega of lambda^9709, my omega): [18, 9, 9, 18, 0, 9, 0, 9, 9, 9, 18]
+(e) eigen.odd_part(4850, 37) = 29127 ; divides 29127: True ; divides 9709: False
+    eigen.odd_part(10491524, 37) = 29127 ; divides 29127: True
+time 0.4

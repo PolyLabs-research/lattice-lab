@@ -1,0 +1,211 @@
+[
+ {
+  "m": 13,
+  "r": 6,
+  "A": 2,
+  "index_of_2": 1,
+  "free_classes": 1,
+  "T_orbits": 1,
+  "T_orbits_C1": 1,
+  "T_orbits_C2": 0,
+  "C1_constant_on_T_orbits": 1
+ },
+ {
+  "m": 37,
+  "r": 16,
+  "A": 3,
+  "index_of_2": 1,
+  "free_classes": 7,
+  "T_orbits": 3,
+  "T_orbits_C1": 3,
+  "T_orbits_C2": 3,
+  "C1_constant_on_T_orbits": 3
+ },
+ {
+  "m": 61,
+  "r": 27,
+  "A": 2,
+  "index_of_2": 1,
+  "free_classes": 13,
+  "T_orbits": 5,
+  "T_orbits_C1": 4,
+  "T_orbits_C2": 2,
+  "C1_constant_on_T_orbits": 5
+ },
+ {
+  "m": 97,
+  "r": 26,
+  "A": 2,
+  "index_of_2": 2,
+  "free_classes": 46,
+  "T_orbits": 16,
+  "T_orbits_C1": 7,
+  "T_orbits_C2": 1,
+  "C1_constant_on_T_orbits": 16
+ },
+ {
+  "m": 109,
+  "r": 18,
+  "A": 3,
+  "index_of_2": 3,
+  "free_classes": 75,
+  "T_orbits": 27,
+  "T_orbits_C1": 11,
+  "T_orbits_C2": 5,
+  "C1_constant_on_T_orbits": 27
+ },
+ {
+  "m": 181,
+  "r": 84,
+  "A": 3,
+  "index_of_2": 1,
+  "free_classes": 43,
+  "T_orbits": 15,
+  "T_orbits_C1": 6,
+  "T_orbits_C2": 2,
+  "C1_constant_on_T_orbits": 15
+ },
+ {
+  "m": 193,
+  "r": 24,
+  "A": 2,
+  "index_of_2": 2,
+  "free_classes": 94,
+  "T_orbits": 32,
+  "T_orbits_C1": 12,
+  "T_orbits_C2": 1,
+  "C1_constant_on_T_orbits": 32
+ },
+ {
+  "m": 241,
+  "r": 31,
+  "A": 2,
+  "index_of_2": 10,
+  "free_classes": 590,
+  "T_orbits": 200,
+  "T_orbits_C1": 58,
+  "T_orbits_C2": 3,
+  "C1_constant_on_T_orbits": 200
+ },
+ {
+  "m": 313,
+  "r": 116,
+  "A": 2,
+  "index_of_2": 2,
+  "free_classes": 152,
+  "T_orbits": 52,
+  "T_orbits_C1": 23,
+  "T_orbits_C2": 4,
+  "C1_constant_on_T_orbits": 52
+ },
+ {
+  "m": 349,
+  "r": 104,
+  "A": 2,
+  "index_of_2": 1,
+  "free_classes": 85,
+  "T_orbits": 29,
+  "T_orbits_C1": 5,
+  "T_orbits_C2": 2,
+  "C1_constant_on_T_orbits": 29
+ },
+ {
+  "m": 373,
+  "r": 177,
+  "A": 2,
+  "index_of_2": 1,
+  "free_classes": 91,
+  "T_orbits": 31,
+  "T_orbits_C1": 14,
+  "T_orbits_C2": 6,
+  "C1_constant_on_T_orbits": 31
+ },
+ {
+  "m": 111,
+  "r": 21,
+  "A": 3,
+  "index_of_2": 2,
+  "free_classes": 46,
+  "T_orbits": 18,
+  "T_orbits_C1": 8,
+  "T_orbits_C2": 6,
+  "C1_constant_on_T_orbits": 18
+ },
+ {
+  "m": 133,
+  "r": 23,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 111,
+  "T_orbits": 39,
+  "T_orbits_C1": 5,
+  "T_orbits_C2": 0,
+  "C1_constant_on_T_orbits": 11
+ },
+ {
+  "m": 133,
+  "r": 61,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 111,
+  "T_orbits": 39,
+  "T_orbits_C1": 4,
+  "T_orbits_C2": 0,
+  "C1_constant_on_T_orbits": 15
+ },
+ {
+  "m": 169,
+  "r": 45,
+  "A": 2,
+  "index_of_2": 1,
+  "free_classes": 46,
+  "T_orbits": 17,
+  "T_orbits_C1": 7,
+  "T_orbits_C2": 1,
+  "C1_constant_on_T_orbits": 17
+ },
+ {
+  "m": 247,
+  "r": 72,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 210,
+  "T_orbits": 72,
+  "T_orbits_C1": 11,
+  "T_orbits_C2": 2,
+  "C1_constant_on_T_orbits": 22
+ },
+ {
+  "m": 247,
+  "r": 110,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 210,
+  "T_orbits": 72,
+  "T_orbits_C1": 5,
+  "T_orbits_C2": 1,
+  "C1_constant_on_T_orbits": 23
+ },
+ {
+  "m": 259,
+  "r": 16,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 234,
+  "T_orbits": 80,
+  "T_orbits_C1": 18,
+  "T_orbits_C2": 5,
+  "C1_constant_on_T_orbits": 32
+ },
+ {
+  "m": 259,
+  "r": 58,
+  "A": 3,
+  "index_of_2": 6,
+  "free_classes": 234,
+  "T_orbits": 80,
+  "T_orbits_C1": 13,
+  "T_orbits_C2": 4,
+  "C1_constant_on_T_orbits": 32
+ }
+]

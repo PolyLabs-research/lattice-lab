@@ -1,0 +1,90 @@
+{
+ "claim3_mult_form_lambda_tt_eq_W4_failures_of_1369": 0,
+ "claim3_quotient_form_failures": 0,
+ "claim3_characters_with_t_al_t_be_zero": 73,
+ "claim3_of_which_lambda_nonzero": 72,
+ "claim3_W_same_with_mu3_1_10_26": 1369,
+ "claim4_h0_eq_Sh73_Sh44": true,
+ "claim4_h1_eq_Sh74_Sh33": true,
+ "claim4_h2_eq_Sh43_Sh77": true,
+ "claim4_terms": [
+  12,
+  12,
+  12
+ ],
+ "claim4_dil10_h0_mod37": "h1",
+ "claim4_dil26_h0_mod37": "h2",
+ "claim4_dil27_h0_mod37": "h1",
+ "claim4_dil11_h0_mod37": "h2",
+ "claim4_10_is_minus_2^6": true,
+ "claim4_26_is_2^12": true,
+ "claim4_g1_identity_failures_of_1296": 0,
+ "claim4_g2_identity_failures_of_1296": 0,
+ "claim4_g1_identity_on_axis_failures_of_36": 36,
+ "claim4_Psi": {
+  "3": "t + 1",
+  "5": "t**2 + t + 1",
+  "7": "t**3 + t**2 + 1",
+  "11": "t**5 + t**4 + t**2 + t + 1"
+ },
+ "claim4_axis_polys": {
+  "f0": "t**6 + t**4 + t**2",
+  "g1": "t**3 + t**2 + 1",
+  "g2": "t**6 + t**4 + t**3 + 1",
+  "4850": "t**3"
+ },
+ "claim4_axis_g1_eq_Psi7": true,
+ "claim4_axis_g2_eq_Psi3Psi11": true,
+ "claim4_axis_f0_eq_t2Psi5sq": true,
+ "claim4_axis_f0_ninth_all": true,
+ "claim4_axis_f0_cube_all": true,
+ "claim4_axis_g1_ninth_all": true,
+ "claim4_axis_g1_cube_all": true,
+ "claim4_axis_g2_ninth_all": true,
+ "claim4_axis_g2_cube_all": true,
+ "claim4_axis_4850_ninth_all": true,
+ "claim4_axis_4850_cube_all": true,
+ "one_plus_zeta_cube": true,
+ "one_plus_zeta_ninth": false,
+ "dlog2_mod37_of_3_5_7_11": {
+  "3": 26,
+  "5": 23,
+  "7": 32,
+  "11": 30
+ },
+ "status_4850": {
+  "ninth": true,
+  "cube": true,
+  "q27": false,
+  "zeros": 0,
+  "period_own": 29127,
+  "period_odd_part": 29127
+ },
+ "status_10491524": {
+  "ninth": true,
+  "cube": true,
+  "q27": false,
+  "zeros": 0,
+  "period_own": 29127,
+  "period_odd_part": 29127
+ },
+ "status_20982139": {
+  "ninth": true,
+  "cube": true,
+  "q27": false,
+  "zeros": 0,
+  "period_own": 29127,
+  "period_odd_part": 29127
+ },
+ "status_178279803": {
+  "ninth": true,
+  "cube": true,
+  "q27": false,
+  "zeros": 0,
+  "period_own": 29127,
+  "period_odd_part": 29127
+ },
+ "offaxis_ninth_10491524": true,
+ "offaxis_ninth_20982139": true,
+ "offaxis_ninth_178279803": true
+}

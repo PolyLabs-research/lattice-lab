@@ -1,0 +1,27 @@
+actual coset data (a, b, b') = (4, 3, 5)
+ d=0 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 9, 12, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+ d=1 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 3, 6, 9, 15, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+ d=2 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 1, 3, 4, 8, 9, 11, 12, 15, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+ d=3 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 9, 12, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+ d=4 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 1, 2, 3, 6, 8, 9, 15, 16, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+ d=5 {'formula_matches_field': True, 'exps_mod21_of_N_over_X2Y2': [0, 3, 9, 12, 15, 18], 'formal_F8_under_cube': True, 'brute_all_order21': True, 'at_eta0': True}
+4850 (rotated, 10491524 = W^4/(t t)):
+ d=0 formal F8 under cube hypothesis: True
+ d=1 formal F8 under cube hypothesis: True
+ d=2 formal F8 under cube hypothesis: True
+ d=3 formal F8 under cube hypothesis: True
+ d=4 formal F8 under cube hypothesis: True
+ d=5 formal F8 under cube hypothesis: True
+ no cube hypothesis, d=0: {'n_good': 30, 'of': 54, 'good_are_order21': False}
+ no cube hypothesis, d=1: {'n_good': 18, 'of': 54, 'good_are_order21': False}
+ no cube hypothesis, d=2: {'n_good': 12, 'of': 54, 'good_are_order21': True}
+ no cube hypothesis, d=3: {'n_good': 54, 'of': 54, 'good_are_order21': False}
+ no cube hypothesis, d=4: {'n_good': 12, 'of': 54, 'good_are_order21': True}
+ no cube hypothesis, d=5: {'n_good': 18, 'of': 54, 'good_are_order21': False}
+coset data (A, B, B') with ALL six d formal-F8 under the cube hypothesis: [(4, 0, 0), (4, 1, 1), (4, 1, 3), (4, 1, 5), (4, 2, 2), (4, 3, 1), (4, 3, 3), (4, 3, 5), (4, 4, 4), (4, 5, 1), (4, 5, 3), (4, 5, 5)]
+pattern counts (flags for d=0..5):
+    (False, False, False, True, False, False) 150
+    (True, False, False, True, False, False) 30
+    (False, True, False, True, False, True) 24
+    (True, True, True, True, True, True) 12
+coset data with d = 1 formal-F8: [(4, 0, 0), (4, 0, 1), (4, 0, 2), (4, 0, 3), (4, 0, 4), (4, 0, 5), (4, 1, 0), (4, 1, 1), (4, 1, 2), (4, 1, 3), (4, 1, 4), (4, 1, 5), (4, 2, 0), (4, 2, 1), (4, 2, 2), (4, 2, 3), (4, 2, 4), (4, 2, 5), (4, 3, 0), (4, 3, 1), (4, 3, 2), (4, 3, 3), (4, 3, 4), (4, 3, 5), (4, 4, 0), (4, 4, 1), (4, 4, 2), (4, 4, 3), (4, 4, 4), (4, 4, 5), (4, 5, 0), (4, 5, 1), (4, 5, 2), (4, 5, 3), (4, 5, 4), (4, 5, 5)]

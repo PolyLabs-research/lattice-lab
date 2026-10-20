@@ -1,0 +1,59 @@
+[
+ {
+  "m": 421,
+  "d": 420,
+  "A": 2,
+  "agen": 2,
+  "r": 41,
+  "u": 21,
+  "t_level": 0,
+  "pi_level": 0,
+  "W_level": 0,
+  "W_equals_pi_n": [
+   null,
+   0
+  ],
+  "best_member_level_off": 0,
+  "confined": [],
+  "members": 210,
+  "secs": 4.4
+ },
+ {
+  "m": 541,
+  "d": 540,
+  "A": 4,
+  "agen": 4,
+  "r": 259,
+  "u": 130,
+  "t_level": 0,
+  "pi_level": 0,
+  "W_level": 0,
+  "W_equals_pi_n": [
+   null,
+   0
+  ],
+  "best_member_level_off": 0,
+  "confined": [],
+  "members": 270,
+  "secs": 10.6
+ },
+ {
+  "m": 613,
+  "d": 612,
+  "A": 3,
+  "agen": 3,
+  "r": 131,
+  "u": 66,
+  "t_level": 0,
+  "pi_level": 0,
+  "W_level": 0,
+  "W_equals_pi_n": [
+   null,
+   0
+  ],
+  "best_member_level_off": 0,
+  "confined": [],
+  "members": 306,
+  "secs": 13.7
+ }
+]

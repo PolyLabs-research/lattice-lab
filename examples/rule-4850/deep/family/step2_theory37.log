@@ -1,0 +1,6 @@
+(a) reduction formula: 22 -3-type pairs, 30096 characters checked, 0 mismatches
+(T) t_j cubes: True ; v(t_j) = 3*eps*chi(j) mod 9 with eps = 1: True
+    v(t_1) mod 27 = 21 ; v(t_j) = 2^ind(j) v(t_1) mod 27: True
+(C) W zero at 0 characters; W cube everywhere: True; W = t_al t_be mod ninth powers everywhere: True
+    27-adic digit of W/(t_al t_be): distribution Counter({0: 432, 1: 432, 2: 432})
+    digit by (chi(al), chi(be)): {(1, 1): {0: 108, 2: 216}, (1, -1): {1: 108, 2: 108, 0: 108}, (-1, 1): {1: 108, 2: 108, 0: 108}, (-1, -1): {0: 108, 1: 216}}

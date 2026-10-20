@@ -1,0 +1,14 @@
+generator g of K* found; N(g) has order 63
+(a) for all 262143 z in K*: ninth power <=> N_{K/F64}(z) in F8*: True (spot checks vs direct arithmetic: 27 )
+    eta_i in F64: True ; theta_i in F8: True ; theta_i == eta_i + eta_{i+3}: True ; mu12 == mu6 u 8 mu6: True
+(b) lambda_4850(1,3) == lambda'(1,2): True ; == W(1,2)^4/(t_1 t_2): True
+    chi(1), chi(2) = 1 -1 ; t_1 t_2 ninth power: True
+    4850 class (1, 3) -> T frame (2, 36) : ninth(lambda) = True ; t_a t_b ninth: True ; N(W) in F8: True ; equivalence holds: True
+    4850 class (1, 5) -> T frame (3, 35) : ninth(lambda) = True ; t_a t_b ninth: True ; N(W) in F8: True ; equivalence holds: True
+    4850 class (1, 13) -> T frame (7, 31) : ninth(lambda) = True ; t_a t_b ninth: True ; N(W) in F8: True ; equivalence holds: True
+(c) N(W(1,2)) = W W^64 W^4096 == prod_{c in mu3} W(1, 2c): True
+    N(W(1,2)) == theta_2 = eta_2 + eta_5: True ; == theta_0, theta_1: False False ; N(W(1,2)) in F8: True
+    exact: prod_c W_x(1,2c) (1728 terms, count mod 2) == eta_2(x) + eta_5(x): True ; == eta_2 + eta_5 + J: False ; agrees with g1mul product: True ; total count 1728
+    support of the product: [3, 4, 5, 7, 13, 18, 19, 24, 30, 32, 33, 34]  4 mu12 = [3, 4, 5, 7, 13, 18, 19, 24, 30, 32, 33, 34]
+    N(W(1,2^d)) for d = 0..5: (d, in F8, equals): [(0, False, ['eta2']), (1, True, ['theta2']), (2, False, ['eta0']), (3, True, ['theta2']), (4, False, ['eta4']), (5, True, ['theta1'])]
+time 11.5

@@ -1,0 +1,122 @@
+{
+ "modulus_36": "0b1000000001000000000000000000000000001",
+ "zeta": 5034522583,
+ "modulus_is_not_Phi37": true,
+ "rule_numbering_matches_census": true,
+ "4850_orbits": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   3,
+   1
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   2
+  ]
+ ],
+ "eig_homomorphism": true,
+ "status": {
+  "4850": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "482758": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "10491524": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "8438150": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "43250486": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "20982139": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  },
+  "178279803": {
+   "gr_cube": true,
+   "gr_ninth": true,
+   "gr_27": false,
+   "eig_ninth": true,
+   "eig_27": false,
+   "zeros": 0
+  }
+ },
+ "R4850^29127 == 1 + J": true,
+ "4850_logs27_own_generator": [
+  9,
+  18,
+  18,
+  9,
+  0,
+  18,
+  0,
+  18,
+  18,
+  18,
+  9
+ ],
+ "4850_logs27_equal_dossier_up_to_unit": [
+  2,
+  5,
+  8,
+  11,
+  14,
+  17,
+  20,
+  23,
+  26
+ ],
+ "odd_part_4850": 29127,
+ "time": 1.6
+}

@@ -1,0 +1,36 @@
+{'cls': (0, 1), 'T_frame': (19, 18), 'd': 0, 'W_terms': 1, 'W_t_factorisation': (4,), 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 9, 'v27_W': 3, 'v27_pi': 3}
+{'cls': (1, 1), 'T_frame': (1, 0), 'type': 'T-axis (4850 diagonal)'}
+{'cls': (1, 2), 'T_frame': (20, 18), 'd': 2, 'W_terms': 4, 'W_t_factorisation': (4, 12, 17), 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 18, 'v27_W': 3, 'v27_pi': 21}
+{'cls': (1, 3), 'T_frame': (2, 36), 'd': 1, 'W_terms': 6, 'W_t_factorisation': None, 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 9, 'v27_W': 18, 'v27_pi': 9}
+{'cls': (1, 4), 'T_frame': (21, 17), 'd': 3, 'W_terms': 6, 'W_t_factorisation': None, 'frobenius_stabiliser_exponents': [9, 18, 27], 'v27_lambda': 0, 'v27_W': 0, 'v27_pi': 0}
+{'cls': (1, 5), 'T_frame': (3, 35), 'd': 1, 'W_terms': 6, 'W_t_factorisation': None, 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 18, 'v27_W': 9, 'v27_pi': 18}
+{'cls': (1, 6), 'T_frame': (22, 16), 'd': 3, 'W_terms': 6, 'W_t_factorisation': None, 'frobenius_stabiliser_exponents': [9, 18, 27], 'v27_lambda': 0, 'v27_W': 0, 'v27_pi': 0}
+{'cls': (1, 7), 'T_frame': (4, 34), 'd': 0, 'W_terms': 1, 'W_t_factorisation': (18,), 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 18, 'v27_W': 24, 'v27_pi': 24}
+{'cls': (1, 8), 'T_frame': (23, 15), 'd': 2, 'W_terms': 4, 'W_t_factorisation': (6, 11, 16), 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 18, 'v27_W': 12, 'v27_pi': 3}
+{'cls': (1, 10), 'T_frame': (24, 14), 'd': 2, 'W_terms': 4, 'W_t_factorisation': (4, 11, 18), 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 18, 'v27_W': 21, 'v27_pi': 12}
+{'cls': (1, 13), 'T_frame': (7, 31), 'd': 1, 'W_terms': 6, 'W_t_factorisation': None, 'frobenius_stabiliser_exponents': [18], 'v27_lambda': 9, 'v27_W': 18, 'v27_pi': 9}
+residual classes [(1, 3), (1, 5), (1, 13)] are one <D4,T,2I>-orbit of W-arguments: True
+R1: T-invariant (mu27, off axes): True ; R(Pc) = 19 R(c): True ; P = Sy 26 T: True  => P-invariance <=> 18 R = 0 mod 27 <=> cube
+T-invariant but not cube example (G_O^4/pi, O = orbit of (1,2)): {'orbit_rep': (1, 2), 'orbit_size': 24, 'T_invariant': True, 'cube_off_axis': False, 'P_invariant': False}
+trinomial identity d=0..5: [True, True, True, True, True, True] 
+trinomial null (over a of order 1387): {0: {'orbits': 72, 'ninth': 72, 'cube': 72, 'rate_ninth': 1.0, 'rate_cube': 1.0}, 1: {'orbits': 72, 'ninth': 9, 'cube': 23, 'rate_ninth': 0.125, 'rate_cube': 0.3194444444444444}, 2: {'orbits': 72, 'ninth': 5, 'cube': 17, 'rate_ninth': 0.06944444444444445, 'rate_cube': 0.2361111111111111}, 3: {'orbits': 72, 'ninth': 72, 'cube': 72, 'rate_ninth': 1.0, 'rate_cube': 1.0}, 4: {'orbits': 72, 'ninth': 5, 'cube': 17, 'rate_ninth': 0.06944444444444445, 'rate_cube': 0.2361111111111111}, 5: {'orbits': 72, 'ninth': 9, 'cube': 23, 'rate_ninth': 0.125, 'rate_cube': 0.3194444444444444}}
+W null at m=13: {'d': 12, 'symmetric_value_field_degree': 6, 'three_part_of_value_field': 2, 'W_orbits': 12, 'W_ninth': 6, 'rate': 0.5, 'unforced': 0, 'unforced_ninth': 0, 'unforced_rate': None}
+W null at m=19: {'d': 18, 'symmetric_value_field_degree': 9, 'three_part_of_value_field': 0, 'W_orbits': 18, 'W_ninth': 18, 'rate': 1.0, 'unforced': 0, 'unforced_ninth': 0, 'unforced_rate': None}
+W null at m=61: {'d': 60, 'symmetric_value_field_degree': 30, 'three_part_of_value_field': 2, 'W_orbits': 60, 'W_ninth': 18, 'rate': 0.3, 'unforced': 36, 'unforced_ninth': 12, 'unforced_rate': 0.3333333333333333}
+W null at m=97: {'d': 48, 'symmetric_value_field_degree': 24, 'three_part_of_value_field': 2, 'W_orbits': 192, 'W_ninth': 48, 'rate': 0.25, 'unforced': 156, 'unforced_ninth': 36, 'unforced_rate': 0.23076923076923078}
+W null at m=109: {'d': 36, 'symmetric_value_field_degree': 18, 'three_part_of_value_field': 3, 'W_orbits': 324, 'W_ninth': 60, 'rate': 0.18518518518518517, 'unforced': 252, 'unforced_ninth': 36, 'unforced_rate': 0.14285714285714285}
+W null at m=241: {'d': 24, 'symmetric_value_field_degree': 12, 'three_part_of_value_field': 2, 'W_orbits': 2400, 'W_ninth': 234, 'rate': 0.0975, 'unforced': 2220, 'unforced_ninth': 228, 'unforced_rate': 0.10270270270270271}
+m = 19: random radius-4 symmetric rules ninth-confined: 40 of 40
+   482758 = 4850 (1+a)(1+b) : True
+   43250486 = 4850 (1+a)^2(1+b)^2 : True
+   8438150 = 4850 (1+t(xy))(1+t(x/y)) : True
+   R2 pi = dil_10(R1 pi) mod 37 : True
+   R3 pi = dil_26(R1 pi) mod 37 : True
+   lambda_R2 = lambda_R1^64 pi^63 off axes : True
+   lambda_R3 = lambda_R1^4096 pi^4095 off axes : True
+   10 = -2^6, 26 = 2^12 mod 37 : (True, True)
+   unit (1+a)(1+b) ninth : True
+   unit (1+t(xy))(1+t(x/y)) ninth : True
+   unit pi^63 (off axes) ninth : True
+p-values: {'residual_two_trits_uniform': 0.1111111111111111, 'residual_one_trit_if_cube_granted': 0.3333333333333333, 'normform_trinomial_null_d1': 0.125, 'normform_trinomial_null_cube_d1': 0.3194444444444444, 'cross_size_unforced_W_ninth_rate': 0.11711711711711711}
+time 2.4

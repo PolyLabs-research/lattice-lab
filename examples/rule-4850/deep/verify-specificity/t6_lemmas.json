@@ -1,0 +1,277 @@
+{
+ "hexagon": {
+  "L1 P_g=6,B": {
+   "hyp": 21,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=12,B": {
+   "hyp": 21,
+   "fail": 0,
+   "examples": []
+  },
+  "L2 M0": {
+   "hyp": 21,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=2,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=4,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=8,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=10,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=14,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=16,B": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=1,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=3,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=5,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=7,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=9,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=11,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=13,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=15,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=17,B": {
+   "hyp": 1,
+   "fail": 0,
+   "examples": []
+  }
+ },
+ "radius4": {
+  "L1 P_g=1,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=1,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=2,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=2,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=3,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=3,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=4,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=4,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=5,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=5,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=6,A": {
+   "hyp": 29,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=6,B": {
+   "hyp": 13,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=7,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=7,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=8,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=8,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=9,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=9,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=10,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=10,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=11,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=11,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=12,A": {
+   "hyp": 29,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=12,B": {
+   "hyp": 13,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=13,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=13,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=14,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=14,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=15,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=15,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=16,A": {
+   "hyp": 14,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=16,B": {
+   "hyp": 5,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=17,A": {
+   "hyp": 4,
+   "fail": 0,
+   "examples": []
+  },
+  "L1 P_g=17,B": {
+   "hyp": 2,
+   "fail": 0,
+   "examples": []
+  },
+  "L2 M0": {
+   "hyp": 13,
+   "fail": 0,
+   "examples": []
+  },
+  "L2 T": {
+   "hyp": 29,
+   "fail": 0,
+   "examples": []
+  }
+ },
+ "time": 20.9
+}

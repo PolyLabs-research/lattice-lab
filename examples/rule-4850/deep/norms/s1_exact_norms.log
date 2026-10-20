@@ -1,0 +1,41 @@
+period expansion == field norm at all 1296 characters: True
+N(al, be) depends only on (log2 al, log2 be) mod 6: True
+0 0 QR char0 (c0; c_0..c_5) = (90, 60, 58, 37, 28, 46, 44)  mod 2: eta_2
+0 1 NQR char0 (c0; c_0..c_5) = (60, 48, 44, 53, 50, 42, 41)  mod 2: theta_2
+0 2 QR char0 (c0; c_0..c_5) = (42, 41, 44, 48, 56, 48, 44)  mod 2: eta_0
+0 3 NQR char0 (c0; c_0..c_5) = (36, 48, 46, 47, 48, 46, 47)  mod 2: theta_2
+0 4 QR char0 (c0; c_0..c_5) = (42, 48, 56, 48, 44, 41, 44)  mod 2: eta_4
+0 5 NQR char0 (c0; c_0..c_5) = (60, 44, 53, 50, 42, 41, 48)  mod 2: theta_1
+1 0 NQR char0 (c0; c_0..c_5) = (60, 48, 44, 53, 50, 42, 41)  mod 2: theta_2
+1 1 QR char0 (c0; c_0..c_5) = (90, 44, 60, 58, 37, 28, 46)  mod 2: eta_3
+1 2 NQR char0 (c0; c_0..c_5) = (60, 41, 48, 44, 53, 50, 42)  mod 2: theta_0
+1 3 QR char0 (c0; c_0..c_5) = (42, 44, 41, 44, 48, 56, 48)  mod 2: eta_1
+1 4 NQR char0 (c0; c_0..c_5) = (36, 47, 48, 46, 47, 48, 46)  mod 2: theta_0
+1 5 QR char0 (c0; c_0..c_5) = (42, 44, 48, 56, 48, 44, 41)  mod 2: eta_5
+2 0 QR char0 (c0; c_0..c_5) = (42, 41, 44, 48, 56, 48, 44)  mod 2: eta_0
+2 1 NQR char0 (c0; c_0..c_5) = (60, 41, 48, 44, 53, 50, 42)  mod 2: theta_0
+2 2 QR char0 (c0; c_0..c_5) = (90, 46, 44, 60, 58, 37, 28)  mod 2: eta_4
+2 3 NQR char0 (c0; c_0..c_5) = (60, 42, 41, 48, 44, 53, 50)  mod 2: theta_1
+2 4 QR char0 (c0; c_0..c_5) = (42, 48, 44, 41, 44, 48, 56)  mod 2: eta_2
+2 5 NQR char0 (c0; c_0..c_5) = (36, 46, 47, 48, 46, 47, 48)  mod 2: theta_1
+3 0 NQR char0 (c0; c_0..c_5) = (36, 48, 46, 47, 48, 46, 47)  mod 2: theta_2
+3 1 QR char0 (c0; c_0..c_5) = (42, 44, 41, 44, 48, 56, 48)  mod 2: eta_1
+3 2 NQR char0 (c0; c_0..c_5) = (60, 42, 41, 48, 44, 53, 50)  mod 2: theta_1
+3 3 QR char0 (c0; c_0..c_5) = (90, 28, 46, 44, 60, 58, 37)  mod 2: eta_5
+3 4 NQR char0 (c0; c_0..c_5) = (60, 50, 42, 41, 48, 44, 53)  mod 2: theta_2
+3 5 QR char0 (c0; c_0..c_5) = (42, 56, 48, 44, 41, 44, 48)  mod 2: eta_3
+4 0 QR char0 (c0; c_0..c_5) = (42, 48, 56, 48, 44, 41, 44)  mod 2: eta_4
+4 1 NQR char0 (c0; c_0..c_5) = (36, 47, 48, 46, 47, 48, 46)  mod 2: theta_0
+4 2 QR char0 (c0; c_0..c_5) = (42, 48, 44, 41, 44, 48, 56)  mod 2: eta_2
+4 3 NQR char0 (c0; c_0..c_5) = (60, 50, 42, 41, 48, 44, 53)  mod 2: theta_2
+4 4 QR char0 (c0; c_0..c_5) = (90, 37, 28, 46, 44, 60, 58)  mod 2: eta_0
+4 5 NQR char0 (c0; c_0..c_5) = (60, 53, 50, 42, 41, 48, 44)  mod 2: theta_0
+5 0 NQR char0 (c0; c_0..c_5) = (60, 44, 53, 50, 42, 41, 48)  mod 2: theta_1
+5 1 QR char0 (c0; c_0..c_5) = (42, 44, 48, 56, 48, 44, 41)  mod 2: eta_5
+5 2 NQR char0 (c0; c_0..c_5) = (36, 46, 47, 48, 46, 47, 48)  mod 2: theta_1
+5 3 QR char0 (c0; c_0..c_5) = (42, 56, 48, 44, 41, 44, 48)  mod 2: eta_3
+5 4 NQR char0 (c0; c_0..c_5) = (60, 53, 50, 42, 41, 48, 44)  mod 2: theta_0
+5 5 QR char0 (c0; c_0..c_5) = (90, 58, 37, 28, 46, 44, 60)  mod 2: eta_1
+QR (i - j even):  N = eta_{2 + 2i - j} = eta(4 al^2 / be): True
+NQR (i - j odd): N is an index-3 period theta_k: True
+k - i mod 3 as a function of d = j - i mod 6: {1: {2}, 3: {2}, 5: {1}}

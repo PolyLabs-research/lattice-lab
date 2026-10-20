@@ -1,0 +1,7 @@
+(a) t_{ca}/t_a is a 27th power for all c in mu3, a != 0: True ; 2^24 mod 27 = 10 ; (2^24 - 1) mod 27 = 9
+(b) counterexample O=(1,2)-orbit, |f| = 1184 : R(27c) == 10 R(c) at all off-axis c: True ; characters with R(27c) != R(c): 432
+(c) eigen.odd_part(f_O, 37) = 262143 ; divides 87381 (all eigenvalues cubes): False ; 3-adic part of the period: 27
+(d) f = G_O/pi over 63 orbits: {'T_inv_mu27': 63, 'P_inv_mu27': 27, 'P_inv_mod9': 63, 'P_acts_as_19': 63, 'cube_off_axis': 27, 'ninth_off_axis': 9} ; P_inv_mu27 == cube for all: True
+    T-invariant, not mu27 P-invariant: 36 ; smallest radius examples: [((1, 3), 24, 10), ((1, 4), 24, 10), ((1, 7), 24, 10), ((3, 6), 24, 13)]
+    eigen.odd_part of the smallest one (radius 10, 108 terms): 262143; divides 87381: False
+time 17.1

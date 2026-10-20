@@ -1,0 +1,49 @@
+{
+ "criterion": true,
+ "NW_eq_theta2": true,
+ "exact_groupring": true,
+ "table": [
+  [
+   0,
+   false,
+   [
+    "eta2"
+   ]
+  ],
+  [
+   1,
+   true,
+   [
+    "theta2"
+   ]
+  ],
+  [
+   2,
+   false,
+   [
+    "eta0"
+   ]
+  ],
+  [
+   3,
+   true,
+   [
+    "theta2"
+   ]
+  ],
+  [
+   4,
+   false,
+   [
+    "eta4"
+   ]
+  ],
+  [
+   5,
+   true,
+   [
+    "theta1"
+   ]
+  ]
+ ]
+}

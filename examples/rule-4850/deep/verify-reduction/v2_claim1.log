@@ -1,0 +1,13 @@
+(i) P == Sy * 26 * T: True ; 2^12 mod 37 = 26 ; 2^12 mod 27 = 19 ; 64 mod 27 = 10
+(ii) 10491524 {'zeros_off_axis': 0, 'T_inv_mu27': True, 'P_inv_mu27': True, 'P_inv_mod9': True, 'P_acts_as_19': True, 'cube_off_axis': True, 'ninth_off_axis': True}
+(iii) family f_O = G_O^4/pi over all 63 <D4,T>-orbits off the axes (sizes 12/24):
+     T_inv_mu27       true for 63 / 63
+     P_inv_mu27       true for 27 / 63
+     P_inv_mod9       true for 63 / 63
+     P_acts_as_19     true for 63 / 63
+     cube_off_axis    true for 27 / 63
+     ninth_off_axis   true for 9 / 63
+     P_inv_mu27 == cube_off_axis for every member: True
+     members with T-invariance but NOT mu27 P-invariance: 36  e.g. [((1, 2), 24, np.int64(67)), ((1, 3), 24, np.int64(43)), ((1, 4), 24, np.int64(43)), ((1, 5), 24, np.int64(71)), ((1, 7), 24, np.int64(43))]
+     explicit: O rep (1, 2)  character c = (1, 3)  R(c) = 19  R(Tc) = 19  R(Pc) = 10  19 R(c) mod 27 = 10
+time 47.4

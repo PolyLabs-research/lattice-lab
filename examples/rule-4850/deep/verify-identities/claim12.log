@@ -1,0 +1,37 @@
+rule4850_matches_dossier_orbits : True
+rule4850_matches_census : True
+claim1_hex_disjoint : True
+claim1_laurent_identity : True
+claim1_equals_Sh52_plus_Sh40 : True
+claim1_G_terms : 12
+claim1_f_terms : 40
+claim1b_F_equals_dossier_form : True
+claim1b_F_times_s_equals_orbits_40_52 : True
+claim1c_eigen_failures_of_1369 : 0
+claim2_det_M : 1
+claim2_M3 : ((36, 0), (0, 36))
+claim2_M_order3_mod_pm1 : True
+claim2_G_mod37_terms : 12
+claim2_G_invariant_under_M : True
+claim2_G_invariant_under_M_over_Z : False
+claim2_eigen_invariance_failures : 0
+claim2_f_invariant_under_M : False
+claim2_s_invariant_under_M : False
+claim2_R_Rinv_identity : True
+claim2_RMRinv : ((27, 0), (0, 11))
+claim2_rotated_f_is_10491524 : True
+claim2_rotated_G_is_10491524_ab : True
+claim2_Gp_invariant_diag_27_11 : True
+claim2_Gp_invariant_diag_10_26 : True
+claim2_10_26_cube_roots : (1, 1, 1, 36, 1)
+claim2_stabiliser_order : 24
+claim2_stabiliser_dets : [1, 36]
+claim2_M_in_stabiliser : True
+claim2_stabG_also_stabilising_f : 8
+claim2_rotation_Q : [['-1/2', '-3/5'], ['5/4', '-1/2']]
+claim2_rotation_transposed_Q : [['-1/2', '5/4'], ['-3/5', '-1/2']]
+claim2_numerators_of_R_minus_Rswap : [37]
+claim2_primes_where_rotations_agree : [37]
+claim2_rotation_mod37 : ((18, 29), (29, 18))
+claim2_minus_rotation_mod37_equals_M : True
+claim2_hex_maps_to_itself_over_Q : True

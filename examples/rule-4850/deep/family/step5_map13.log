@@ -1,0 +1,63 @@
+-3 type members p,q <= 20 at 13: 60 ; prediction agrees: 60
+  ( 1, 6) chi_p=+1 same_parity=0 radius= 5 terms=  24 odd_part= 63 predicted= 63 rule 70146
+  ( 1, 7) chi_p=+1 same_parity=1 radius= 6 terms=  28 odd_part= 63 predicted= 63 rule 4333570
+  ( 1,19) chi_p=+1 same_parity=1 radius=18 terms=  76 odd_part= 63 predicted= 63 
+  ( 1,20) chi_p=+1 same_parity=0 radius=19 terms=  80 odd_part= 63 predicted= 63 
+  ( 2, 1) chi_p=-1 same_parity=0 radius= 3 terms=  20 odd_part= 63 predicted= 63 rule 86
+  ( 2,12) chi_p=-1 same_parity=1 radius=11 terms=  96 odd_part= 21 predicted= 21 
+  ( 2,14) chi_p=-1 same_parity=1 radius=13 terms= 112 odd_part= 21 predicted= 21 
+  ( 3, 5) chi_p=+1 same_parity=1 radius= 5 terms=  28 odd_part= 63 predicted= 63 rule 43074
+  ( 3, 8) chi_p=+1 same_parity=0 radius= 7 terms=  96 odd_part= 63 predicted= 63 rule 2190859090
+  ( 3,18) chi_p=+1 same_parity=0 radius=17 terms= 216 odd_part= 63 predicted= 63 
+  ( 4, 2) chi_p=+1 same_parity=1 radius= 7 terms=  48 odd_part= 63 predicted= 63 rule 272803906
+  ( 4,11) chi_p=+1 same_parity=0 radius=10 terms= 176 odd_part= 63 predicted= 63 
+  ( 4,15) chi_p=+1 same_parity=0 radius=14 terms= 240 odd_part= 63 predicted= 63 
+  ( 5, 4) chi_p=-1 same_parity=0 radius= 9 terms= 116 odd_part= 63 predicted= 63 
+  ( 5, 9) chi_p=-1 same_parity=1 radius= 9 terms=  84 odd_part= 21 predicted= 21 
+  ( 5,17) chi_p=-1 same_parity=1 radius=16 terms= 340 odd_part= 21 predicted= 21 
+  ( 6, 3) chi_p=-1 same_parity=0 radius=11 terms= 180 odd_part= 63 predicted= 63 
+  ( 6,10) chi_p=-1 same_parity=1 radius=11 terms= 112 odd_part= 21 predicted= 21 
+  ( 6,16) chi_p=-1 same_parity=1 radius=15 terms= 304 odd_part= 21 predicted= 21 
+  ( 7, 3) chi_p=-1 same_parity=1 radius=13 terms= 148 odd_part= 21 predicted= 21 
+  ( 7,10) chi_p=-1 same_parity=0 radius=13 terms= 280 odd_part= 63 predicted= 63 
+  ( 7,16) chi_p=-1 same_parity=0 radius=15 terms= 448 odd_part= 63 predicted= 63 
+  ( 8, 4) chi_p=-1 same_parity=1 radius=15 terms= 192 odd_part= 21 predicted= 21 
+  ( 8, 9) chi_p=-1 same_parity=0 radius=15 terms= 288 odd_part= 63 predicted= 63 
+  ( 8,17) chi_p=-1 same_parity=0 radius=16 terms= 544 odd_part= 63 predicted= 63 
+  ( 9, 2) chi_p=+1 same_parity=0 radius=17 terms= 380 odd_part= 63 predicted= 63 
+  ( 9,11) chi_p=+1 same_parity=1 radius=17 terms= 268 odd_part= 63 predicted= 63 
+  ( 9,15) chi_p=+1 same_parity=1 radius=17 terms= 252 odd_part= 63 predicted= 63 
+  (10, 5) chi_p=+1 same_parity=0 radius=19 terms= 500 odd_part= 63 predicted= 63 
+  (10, 8) chi_p=+1 same_parity=1 radius=19 terms= 336 odd_part= 63 predicted= 63 
+  (10,18) chi_p=+1 same_parity=1 radius=19 terms= 336 odd_part= 63 predicted= 63 
+  (11, 1) chi_p=-1 same_parity=1 radius=21 terms= 444 odd_part= 21 predicted= 21 
+  (11,12) chi_p=-1 same_parity=0 radius=21 terms= 528 odd_part= 63 predicted= 63 
+  (11,14) chi_p=-1 same_parity=0 radius=21 terms= 616 odd_part= 63 predicted= 63 
+  (12, 6) chi_p=+1 same_parity=1 radius=23 terms= 432 odd_part= 63 predicted= 63 
+  (12, 7) chi_p=+1 same_parity=0 radius=23 terms= 716 odd_part= 63 predicted= 63 
+  (12,19) chi_p=+1 same_parity=0 radius=23 terms= 912 odd_part= 63 predicted= 63 
+  (12,20) chi_p=+1 same_parity=1 radius=23 terms= 448 odd_part= 63 predicted= 63 
+  (14, 6) chi_p=+1 same_parity=1 radius=27 terms= 592 odd_part= 63 predicted= 63 
+  (14, 7) chi_p=+1 same_parity=0 radius=27 terms= 980 odd_part= 63 predicted= 63 
+  (14,19) chi_p=+1 same_parity=0 radius=27 terms=1064 odd_part= 63 predicted= 63 
+  (14,20) chi_p=+1 same_parity=1 radius=27 terms= 592 odd_part= 63 predicted= 63 
+  (15, 1) chi_p=-1 same_parity=1 radius=29 terms= 844 odd_part= 21 predicted= 21 
+  (15,12) chi_p=-1 same_parity=0 radius=29 terms=1044 odd_part= 63 predicted= 63 
+  (15,14) chi_p=-1 same_parity=0 radius=29 terms= 956 odd_part= 63 predicted= 63 
+  (16, 5) chi_p=+1 same_parity=0 radius=31 terms=1244 odd_part= 63 predicted= 63 
+  (16, 8) chi_p=+1 same_parity=1 radius=31 terms= 768 odd_part= 63 predicted= 63 
+  (16,18) chi_p=+1 same_parity=1 radius=31 terms= 912 odd_part= 63 predicted= 63 
+  (17, 2) chi_p=+1 same_parity=0 radius=33 terms=1276 odd_part= 63 predicted= 63 
+  (17,11) chi_p=+1 same_parity=1 radius=33 terms= 892 odd_part= 63 predicted= 63 
+  (17,15) chi_p=+1 same_parity=1 radius=33 terms=1036 odd_part= 63 predicted= 63 
+  (18, 4) chi_p=-1 same_parity=1 radius=35 terms=1072 odd_part= 21 predicted= 21 
+  (18, 9) chi_p=-1 same_parity=0 radius=35 terms=1620 odd_part= 63 predicted= 63 
+  (18,17) chi_p=-1 same_parity=0 radius=35 terms=1364 odd_part= 63 predicted= 63 
+  (19, 3) chi_p=-1 same_parity=1 radius=37 terms=1252 odd_part= 21 predicted= 21 
+  (19,10) chi_p=-1 same_parity=0 radius=37 terms=1804 odd_part= 63 predicted= 63 
+  (19,16) chi_p=-1 same_parity=0 radius=37 terms=1636 odd_part= 63 predicted= 63 
+  (20, 3) chi_p=-1 same_parity=0 radius=39 terms=1804 odd_part= 63 predicted= 63 
+  (20,10) chi_p=-1 same_parity=1 radius=39 terms=1200 odd_part= 21 predicted= 21 
+  (20,16) chi_p=-1 same_parity=1 radius=39 terms=1344 odd_part= 21 predicted= 21 
+other pairs: odd parts [(63, 258), (21, 18), (1, 16), (9, 9)]
+other pairs with odd part | 21: [(2, 2, 21), (2, 11, 21), (2, 15, 21), (5, 5, 21), (5, 8, 21), (5, 18, 21), (6, 6, 1), (6, 7, 1), (6, 19, 1), (6, 20, 1), (7, 6, 1), (7, 7, 1), (7, 19, 1), (7, 20, 1), (8, 5, 21), (8, 8, 21), (8, 18, 21), (11, 2, 21), (11, 11, 21), (11, 15, 21), (15, 2, 21), (15, 11, 21), (15, 15, 21), (18, 5, 21), (18, 8, 21), (18, 18, 21), (19, 6, 1), (19, 7, 1), (19, 19, 1), (19, 20, 1), (20, 6, 1), (20, 7, 1), (20, 19, 1), (20, 20, 1)]

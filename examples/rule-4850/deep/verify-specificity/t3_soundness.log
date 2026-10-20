@@ -1,0 +1,110 @@
+projective order-3 elements of SL2(F37): 2812
+(A) 21563: {'pi_f_terms': 12, 'order3_elements_fixing_pi_f': 4, 'example': [((18, 11), (26, 18)), ((18, 26), (11, 18))], 'zero_chars': 144, 'cube': False, 'ninth': False, 'gr_cube': False, 'gr_ninth': False, 'odd_part': 262143, 'odd_ninth': False, 'odd_cube': False, 'order3_elements_fixing_s_f': 0}
+(A) 105299 {'s_f_terms': 16, 's_f_support_M0_invariant': False, 's_f_order3_elements': 0, 'residue27_M0_invariant': True, 'residue_mod9_M0_invariant': True, 'zero_chars': 0, 'cube': True, 'ninth': False, 'gr_cube': True, 'gr_ninth': False, 'odd_part': 87381, 'odd_ninth': False, 'odd_cube': True}
+(A) 132097 {'s_f_terms': 52, 's_f_support_M0_invariant': False, 's_f_order3_elements': 0, 'residue27_M0_invariant': True, 'residue_mod9_M0_invariant': True, 'zero_chars': 0, 'cube': False, 'ninth': False, 'gr_cube': False, 'gr_ninth': False, 'odd_part': 262143, 'odd_ninth': False, 'odd_cube': False}
+(A) 1084246 {'s_f_terms': 44, 's_f_support_M0_invariant': False, 's_f_order3_elements': 0, 'residue27_M0_invariant': True, 'residue_mod9_M0_invariant': True, 'zero_chars': 1, 'cube': True, 'ninth': False, 'gr_cube': True, 'gr_ninth': False, 'odd_part': 87381, 'odd_ninth': False, 'odd_cube': True}
+(A) 4850 {'s_f_terms': 12, 's_f_support_M0_invariant': True, 's_f_order3_elements': 4, 'residue27_M0_invariant': True, 'residue_mod9_M0_invariant': True, 'zero_chars': 1, 'cube': True, 'ninth': True, 'gr_cube': True, 'gr_ninth': True, 'odd_part': 29127, 'odd_ninth': True, 'odd_cube': True}
+f_{2,5} == rule 4850: True
+  37 {'p': 2, 'q': 2, 'type': '', 'radius': 3, 'order3_fixers': 0, 'cube': True, 'ninth': True, 'odd_part': 29127, 'zero_chars': 73} 
+  37 {'p': 2, 'q': 5, 'type': '-3', 'radius': 4, 'order3_fixers': 4, 'cube': True, 'ninth': True, 'odd_part': 29127, 'zero_chars': 1} e=2 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 2, 'q': 7, 'type': '+3', 'radius': 6, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 145} 
+  37 {'p': 3, 'q': 8, 'type': '+3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 145} 
+  37 {'p': 3, 'q': 11, 'type': '-3', 'radius': 10, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 73} e=9 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 4, 'q': 10, 'type': '-3', 'radius': 9, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 73} e=3 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 5, 'q': 1, 'type': '+3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 217} 
+  37 {'p': 5, 'q': 5, 'type': '', 'radius': 9, 'order3_fixers': 0, 'cube': True, 'ninth': True, 'odd_part': 1387, 'zero_chars': 73} 
+  37 {'p': 5, 'q': 6, 'type': '-3', 'radius': 9, 'order3_fixers': 4, 'cube': True, 'ninth': True, 'odd_part': 29127, 'zero_chars': 1} e=6 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 6, 'q': 6, 'type': '', 'radius': 11, 'order3_fixers': 0, 'cube': True, 'ninth': True, 'odd_part': 29127, 'zero_chars': 73} 
+  37 {'p': 7, 'q': 1, 'type': '-3', 'radius': 13, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 73} e=15 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 7, 'q': 6, 'type': '+3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 145} 
+  37 {'p': 8, 'q': 8, 'type': '', 'radius': 15, 'order3_fixers': 0, 'cube': True, 'ninth': True, 'odd_part': 29127, 'zero_chars': 73} 
+  37 {'p': 8, 'q': 9, 'type': '+3', 'radius': 15, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 145} 
+  37 {'p': 9, 'q': 4, 'type': '-3', 'radius': 17, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 1} e=17 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 10, 'q': 2, 'type': '+3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 217} 
+  37 {'p': 10, 'q': 12, 'type': '-3', 'radius': 19, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 73} e=7 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 11, 'q': 9, 'type': '-3', 'radius': 21, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 73} e=13 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+  37 {'p': 12, 'q': 5, 'type': '+3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 145} 
+  37 {'p': 12, 'q': 7, 'type': '-3', 'radius': 23, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 87381, 'zero_chars': 1} e=11 pred37: covered 24 wrong 0 residual 12 ident True | generic wrong 0
+hex37 summary: {'rules': 144, 'with_order3_symmetry': 16, 'symmetric_cube': 9, 'symmetric_ninth': 2, 'symmetric_not_cube': [(2, 7, '+3'), (3, 8, '+3'), (5, 1, '+3'), (7, 6, '+3'), (8, 9, '+3'), (10, 2, '+3'), (12, 5, '+3')], 'type_counts': {'-3': 9, '+3': 7, '-3+3': 0}, 'ninth_all': [(2, 2, ''), (2, 5, '-3'), (5, 5, ''), (5, 6, '-3'), (6, 6, ''), (8, 8, '')], 'minus3_pred37_wrong': 0, 'minus3_generic_wrong': 0, 'minus3_reduction_vs_actual': [(2, 5, 2, True, True, True), (3, 11, 9, False, False, False), (4, 10, 3, False, False, False), (5, 6, 6, True, True, True), (7, 1, 15, False, False, False), (9, 4, 17, False, False, False), (10, 12, 7, False, False, False), (11, 9, 13, False, False, False), (12, 7, 11, False, False, False)]}
+time 27.9
+  m=13 {'p': 1, 'q': 4, 'type': '+3', 'radius': 3, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 1, 'q': 6, 'type': '-3', 'radius': 5, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 1, 'q': 7, 'type': '-3', 'radius': 6, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 1, 'q': 9, 'type': '+3', 'radius': 8, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 2, 'q': 1, 'type': '-3', 'radius': 3, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 2, 'q': 5, 'type': '+3', 'radius': 4, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 2, 'q': 8, 'type': '+3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 2, 'q': 12, 'type': '-3', 'radius': 11, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 3, 'q': 1, 'type': '+3', 'radius': 5, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 3, 'q': 5, 'type': '-3', 'radius': 5, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 3, 'q': 8, 'type': '-3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 3, 'q': 12, 'type': '+3', 'radius': 11, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 4, 'q': 2, 'type': '-3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 4, 'q': 3, 'type': '+3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 4, 'q': 10, 'type': '+3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 4, 'q': 11, 'type': '-3', 'radius': 10, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 5, 'q': 4, 'type': '-3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 5, 'q': 6, 'type': '+3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 5, 'q': 7, 'type': '+3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 5, 'q': 9, 'type': '-3', 'radius': 9, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 6, 'q': 2, 'type': '+3', 'radius': 11, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 6, 'q': 3, 'type': '-3', 'radius': 11, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 6, 'q': 10, 'type': '-3', 'radius': 11, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 6, 'q': 11, 'type': '+3', 'radius': 11, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 7, 'q': 2, 'type': '+3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 7, 'q': 3, 'type': '-3', 'radius': 13, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 7, 'q': 10, 'type': '-3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 7, 'q': 11, 'type': '+3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 8, 'q': 4, 'type': '-3', 'radius': 15, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 8, 'q': 6, 'type': '+3', 'radius': 15, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 8, 'q': 7, 'type': '+3', 'radius': 15, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 8, 'q': 9, 'type': '-3', 'radius': 15, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 9, 'q': 2, 'type': '-3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 9, 'q': 3, 'type': '+3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 9, 'q': 10, 'type': '+3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 9, 'q': 11, 'type': '-3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 10, 'q': 1, 'type': '+3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 10, 'q': 5, 'type': '-3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 10, 'q': 8, 'type': '-3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 10, 'q': 12, 'type': '+3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 11, 'q': 1, 'type': '-3', 'radius': 21, 'order3_fixers': 4, 'cube': True, 'ninth': False, 'odd_part': 21, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 11, 'q': 5, 'type': '+3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 11, 'q': 8, 'type': '+3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+  m=13 {'p': 11, 'q': 12, 'type': '-3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 12, 'q': 4, 'type': '+3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 73} 
+  m=13 {'p': 12, 'q': 6, 'type': '-3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 25} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 12, 'q': 7, 'type': '-3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 1} generic: ident True covered 12 wrong 0 residual 0 | 37-law kappa None covered 0 wrong 0
+  m=13 {'p': 12, 'q': 9, 'type': '+3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 63, 'zero_chars': 49} 
+m=13 summary: {'d': 12, 'order3_elements': 364, 'symmetric': 48, 'symmetric_cube': 6, 'symmetric_ninth': 0, 'any_ninth': [], 'generic_wrong': 0, 'transplanted_wrong': 0}  time 28.7
+  m=61 {'p': 1, 'q': 8, 'type': '+3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 241} 
+  m=61 {'p': 2, 'q': 5, 'type': '', 'radius': 4, 'order3_fixers': 0, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 1} 
+  m=61 {'p': 2, 'q': 7, 'type': '-3', 'radius': 6, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 1} generic: ident True covered 24 wrong 0 residual 36 | 37-law kappa None covered 0 wrong 0
+  m=61 {'p': 7, 'q': 5, 'type': '+3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 361} 
+  m=61 {'p': 7, 'q': 6, 'type': '-3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 1} generic: ident True covered 24 wrong 0 residual 36 | 37-law kappa None covered 0 wrong 0
+  m=61 {'p': 8, 'q': 3, 'type': '+3', 'radius': 15, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 241} 
+  m=61 {'p': 9, 'q': 1, 'type': '-3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 121} generic: ident True covered 24 wrong 0 residual 36 | 37-law kappa None covered 0 wrong 0
+  m=61 {'p': 9, 'q': 11, 'type': '+3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 361} 
+  m=61 {'p': 11, 'q': 8, 'type': '-3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 1073741823, 'zero_chars': 1} generic: ident True covered 24 wrong 0 residual 36 | 37-law kappa None covered 0 wrong 0
+m=61 summary: {'d': 60, 'order3_elements': 7564, 'symmetric': 8, 'symmetric_cube': 0, 'symmetric_ninth': 0, 'any_ninth': [], 'generic_wrong': 0, 'transplanted_wrong': 0}  time 41.6
+  m=97 {'p': 1, 'q': 10, 'type': '+3', 'radius': 9, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 385} 
+  m=97 {'p': 2, 'q': 5, 'type': '', 'radius': 4, 'order3_fixers': 0, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 1} 
+  m=97 {'p': 4, 'q': 7, 'type': '-3', 'radius': 7, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 1} generic: ident True covered 36 wrong 0 residual 156 | 37-law kappa None covered 0 wrong 0
+  m=97 {'p': 7, 'q': 12, 'type': '-3', 'radius': 13, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 1} generic: ident True covered 36 wrong 0 residual 156 | 37-law kappa None covered 0 wrong 0
+  m=97 {'p': 9, 'q': 7, 'type': '+3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 577} 
+  m=97 {'p': 10, 'q': 3, 'type': '+3', 'radius': 19, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 385} 
+  m=97 {'p': 11, 'q': 5, 'type': '-3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 16777215, 'zero_chars': 193} generic: ident True covered 36 wrong 0 residual 156 | 37-law kappa None covered 0 wrong 0
+m=97 summary: {'d': 48, 'order3_elements': 19012, 'symmetric': 6, 'symmetric_cube': 0, 'symmetric_ninth': 0, 'any_ninth': [], 'generic_wrong': 0, 'transplanted_wrong': 0}  time 57.7
+  m=109 {'p': 2, 'q': 5, 'type': '', 'radius': 4, 'order3_fixers': 0, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 1} 
+  m=109 {'p': 2, 'q': 11, 'type': '+3', 'radius': 10, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 505} 
+  m=109 {'p': 6, 'q': 1, 'type': '-3', 'radius': 11, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 1} generic: ident True covered 72 wrong 0 residual 252 | 37-law kappa None covered 0 wrong 0
+  m=109 {'p': 9, 'q': 5, 'type': '+3', 'radius': 17, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 721} 
+  m=109 {'p': 11, 'q': 6, 'type': '+3', 'radius': 21, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 505} 
+  m=109 {'p': 12, 'q': 2, 'type': '-3', 'radius': 23, 'order3_fixers': 4, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 217} generic: ident True covered 72 wrong 0 residual 252 | 37-law kappa None covered 0 wrong 0
+m=109 summary: {'d': 36, 'order3_elements': 23980, 'symmetric': 5, 'symmetric_cube': 0, 'symmetric_ninth': 0, 'any_ninth': [], 'generic_wrong': 0, 'transplanted_wrong': 0}  time 67.3
+  m=185 {'p': 2, 'q': 5, 'type': '', 'radius': 4, 'order3_fixers': 0, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 9} 
+  m=185 {'p': 10, 'q': 25, 'type': '-3', 'radius': 24, 'order3_fixers': 124, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 1465} generic: ident True covered 604 wrong 0 residual 340 | 37-law kappa None covered 0 wrong 0
+  m=185 {'p': 25, 'q': 5, 'type': '+3', 'radius': 49, 'order3_fixers': 124, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 5425} 
+  m=185 {'p': 25, 'q': 30, 'type': '-3', 'radius': 49, 'order3_fixers': 124, 'cube': False, 'ninth': False, 'odd_part': 262143, 'zero_chars': 1465} generic: ident True covered 604 wrong 0 residual 340 | 37-law kappa None covered 0 wrong 0
+m=185 summary: {'d': 36, 'order3_elements': 59092, 'symmetric': 3, 'symmetric_cube': 0, 'symmetric_ninth': 0, 'any_ninth': [], 'generic_wrong': 0, 'transplanted_wrong': 0}  time 89.6
+(D) f_O = G_O^4/pi over all <D4,T>-orbits: {'n': 63, 'cube': 27, 'ninth': 9, 'cube_by_size': {12: 18, 24: 9}, 'cube_off_axis': 27}
+time 98.5

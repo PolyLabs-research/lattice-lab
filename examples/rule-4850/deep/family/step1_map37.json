@@ -1,0 +1,7202 @@
+[
+ {
+  "p": 1,
+  "q": 1,
+  "kind": "pp",
+  "terms": 4,
+  "radius": 1,
+  "rule": 2,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 2,
+  "kind": "",
+  "terms": 8,
+  "radius": 1,
+  "rule": 6,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 3,
+  "kind": "",
+  "terms": 12,
+  "radius": 2,
+  "rule": 18,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 4,
+  "kind": "",
+  "terms": 16,
+  "radius": 3,
+  "rule": 162,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 5,
+  "kind": "",
+  "terms": 20,
+  "radius": 4,
+  "rule": 2306,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 6,
+  "kind": "",
+  "terms": 24,
+  "radius": 5,
+  "rule": 70146,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 7,
+  "kind": "",
+  "terms": 28,
+  "radius": 6,
+  "rule": 4333570,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 8,
+  "kind": "",
+  "terms": 32,
+  "radius": 7,
+  "rule": 545538050,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 9,
+  "kind": "",
+  "terms": 36,
+  "radius": 8,
+  "rule": 138529996802,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 10,
+  "kind": "",
+  "terms": 40,
+  "radius": 9,
+  "rule": 70645804171266,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 11,
+  "kind": "",
+  "terms": 44,
+  "radius": 10,
+  "rule": 72198885644173314,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 12,
+  "kind": "",
+  "terms": 48,
+  "radius": 11,
+  "rule": 147718350360964759554,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 13,
+  "kind": "",
+  "terms": 52,
+  "radius": 12,
+  "rule": 604758346508036248436738,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 14,
+  "kind": "",
+  "terms": 56,
+  "radius": 13,
+  "rule": 4952969673834537172093370370,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 15,
+  "kind": "+3",
+  "terms": 60,
+  "radius": 14,
+  "rule": 81139544353954350770064472408066,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 16,
+  "kind": "-3",
+  "terms": 64,
+  "radius": 15,
+  "rule": 2658618270658539654509154249505505282,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 17,
+  "kind": "",
+  "terms": 68,
+  "radius": 16,
+  "rule": 174229889100061810372556817278379963187202,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 18,
+  "kind": "",
+  "terms": 72,
+  "radius": 17,
+  "rule": 22836311543073558220553320624826478942050320386,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 1,
+  "q": 19,
+  "kind": "",
+  "terms": 76,
+  "radius": 18,
+  "rule": 5986356379130464500078734181447144865439786777706498,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 1,
+  "q": 20,
+  "kind": "",
+  "terms": 80,
+  "radius": 19,
+  "rule": 3138562840406098642846894869072196102340908601805572669442,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 0,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 1,
+  "kind": "",
+  "terms": 20,
+  "radius": 3,
+  "rule": 86,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 2,
+  "kind": "pp",
+  "terms": 16,
+  "radius": 3,
+  "rule": 82,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 3,
+  "kind": "",
+  "terms": 24,
+  "radius": 3,
+  "rule": 118,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 4,
+  "kind": "",
+  "terms": 16,
+  "radius": 3,
+  "rule": 322,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 5,
+  "kind": "-3",
+  "terms": 40,
+  "radius": 4,
+  "rule": 4850,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 6,
+  "kind": "",
+  "terms": 48,
+  "radius": 5,
+  "rule": 141650,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 7,
+  "kind": "+3",
+  "terms": 56,
+  "radius": 6,
+  "rule": 8737362,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 8,
+  "kind": "",
+  "terms": 64,
+  "radius": 7,
+  "rule": 1095376978,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 9,
+  "kind": "",
+  "terms": 72,
+  "radius": 8,
+  "rule": 277605531730,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 10,
+  "kind": "",
+  "terms": 80,
+  "radius": 9,
+  "rule": 141430136242258,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 11,
+  "kind": "",
+  "terms": 88,
+  "radius": 10,
+  "rule": 144468417092517970,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 12,
+  "kind": "",
+  "terms": 96,
+  "radius": 11,
+  "rule": 295508899607305257042,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 13,
+  "kind": "",
+  "terms": 104,
+  "radius": 12,
+  "rule": 1209664411366433461633106,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 14,
+  "kind": "",
+  "terms": 112,
+  "radius": 13,
+  "rule": 9906544106015582311715700818,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 15,
+  "kind": "",
+  "terms": 120,
+  "radius": 14,
+  "rule": 162284041677582536077301038186578,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 16,
+  "kind": "",
+  "terms": 128,
+  "radius": 15,
+  "rule": 5317317680861433263369043379111329874,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 17,
+  "kind": "",
+  "terms": 136,
+  "radius": 16,
+  "rule": 348462436818394279284768143711009431879762,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 18,
+  "kind": "",
+  "terms": 144,
+  "radius": 17,
+  "rule": 45672797316036216502917013806434207467044864082,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 2,
+  "q": 19,
+  "kind": "",
+  "terms": 152,
+  "radius": 18,
+  "rule": 11972735594572472073715688916214914557358515605733458,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 2,
+  "q": 20,
+  "kind": "",
+  "terms": 160,
+  "radius": 19,
+  "rule": 6277131667168576416158289816878573651752895667103084838994,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 1,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 1,
+  "kind": "",
+  "terms": 28,
+  "radius": 5,
+  "rule": 35138,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 2,
+  "kind": "",
+  "terms": 44,
+  "radius": 5,
+  "rule": 35190,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 3,
+  "kind": "pp",
+  "terms": 36,
+  "radius": 5,
+  "rule": 35154,
+  "odd_part": 171,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 4,
+  "kind": "",
+  "terms": 48,
+  "radius": 5,
+  "rule": 35702,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 5,
+  "kind": "",
+  "terms": 28,
+  "radius": 5,
+  "rule": 43074,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 6,
+  "kind": "",
+  "terms": 72,
+  "radius": 5,
+  "rule": 318450,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 7,
+  "kind": "",
+  "terms": 52,
+  "radius": 6,
+  "rule": 17473618,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 8,
+  "kind": "+3",
+  "terms": 96,
+  "radius": 7,
+  "rule": 2190859090,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 9,
+  "kind": "",
+  "terms": 108,
+  "radius": 8,
+  "rule": 555213302098,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 10,
+  "kind": "",
+  "terms": 120,
+  "radius": 9,
+  "rule": 282860818057554,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 11,
+  "kind": "-3",
+  "terms": 132,
+  "radius": 10,
+  "rule": 288936972444535122,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 12,
+  "kind": "",
+  "terms": 144,
+  "radius": 11,
+  "rule": 591017869860414720338,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 13,
+  "kind": "",
+  "terms": 156,
+  "radius": 12,
+  "rule": 2419328894931683579562322,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 14,
+  "kind": "",
+  "terms": 168,
+  "radius": 13,
+  "rule": 19813088359749514984396196178,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 15,
+  "kind": "",
+  "terms": 180,
+  "radius": 14,
+  "rule": 324568083959923418627385233279314,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 16,
+  "kind": "",
+  "terms": 192,
+  "radius": 15,
+  "rule": 10634635366675836200572623930316065106,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 17,
+  "kind": "",
+  "terms": 204,
+  "radius": 16,
+  "rule": 696924873717928102923490602128101945149778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 18,
+  "kind": "",
+  "terms": 216,
+  "radius": 17,
+  "rule": 91345594634731051276492567267377569183595268434,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 3,
+  "q": 19,
+  "kind": "",
+  "terms": 228,
+  "radius": 18,
+  "rule": 23945471189319174036531439642802312108990319317518674,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 3,
+  "q": 20,
+  "kind": "",
+  "terms": 240,
+  "radius": 19,
+  "rule": 12554263334359989143859653191977700624130617813148220033362,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 8,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 1,
+  "kind": "",
+  "terms": 76,
+  "radius": 7,
+  "rule": 272804338,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 2,
+  "kind": "",
+  "terms": 48,
+  "radius": 7,
+  "rule": 272803906,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 3,
+  "kind": "",
+  "terms": 76,
+  "radius": 7,
+  "rule": 272804726,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 4,
+  "kind": "pp",
+  "terms": 64,
+  "radius": 7,
+  "rule": 272804178,
+  "odd_part": 12483,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 5,
+  "kind": "",
+  "terms": 80,
+  "radius": 7,
+  "rule": 272821110,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 6,
+  "kind": "",
+  "terms": 48,
+  "radius": 7,
+  "rule": 273320002,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 7,
+  "kind": "",
+  "terms": 112,
+  "radius": 7,
+  "rule": 307690482,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 8,
+  "kind": "",
+  "terms": 64,
+  "radius": 7,
+  "rule": 4652040274,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 9,
+  "kind": "",
+  "terms": 144,
+  "radius": 8,
+  "rule": 1110699408210,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 10,
+  "kind": "-3",
+  "terms": 112,
+  "radius": 9,
+  "rule": 565721633950034,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 11,
+  "kind": "",
+  "terms": 176,
+  "radius": 10,
+  "rule": 577873945707342162,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 12,
+  "kind": "",
+  "terms": 192,
+  "radius": 11,
+  "rule": 1182035739790642162002,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 13,
+  "kind": "",
+  "terms": 208,
+  "radius": 12,
+  "rule": 4838657789934013236029778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 14,
+  "kind": "+3",
+  "terms": 224,
+  "radius": 13,
+  "rule": 39626176719571193601349298514,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 15,
+  "kind": "",
+  "terms": 240,
+  "radius": 14,
+  "rule": 649136167919994555605131704052050,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 16,
+  "kind": "",
+  "terms": 256,
+  "radius": 15,
+  "rule": 21269270733352277159455691847042771282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 17,
+  "kind": "",
+  "terms": 272,
+  "radius": 16,
+  "rule": 1393849747435861158816655038793376256403794,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 18,
+  "kind": "",
+  "terms": 288,
+  "radius": 17,
+  "rule": 182691189269462183692529488415282868155706419538,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 4,
+  "q": 19,
+  "kind": "",
+  "terms": 304,
+  "radius": 18,
+  "rule": 47890942378638350731681149944144278727134888413276498,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 4,
+  "q": 20,
+  "kind": "",
+  "terms": 320,
+  "radius": 19,
+  "rule": 25108526668719978461949195484017211318512774995927525140818,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 2,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 1,
+  "kind": "+3",
+  "terms": 84,
+  "radius": 9,
+  "rule": 35323174887506,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 2,
+  "kind": "",
+  "terms": 124,
+  "radius": 9,
+  "rule": 35323174894578,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 3,
+  "kind": "",
+  "terms": 76,
+  "radius": 9,
+  "rule": 35323174881346,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 4,
+  "kind": "",
+  "terms": 116,
+  "radius": 9,
+  "rule": 35323174906742,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 5,
+  "kind": "pp",
+  "terms": 100,
+  "radius": 9,
+  "rule": 35323174889810,
+  "odd_part": 1387,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 6,
+  "kind": "-3",
+  "terms": 120,
+  "radius": 9,
+  "rule": 35323175955318,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 7,
+  "kind": "",
+  "terms": 76,
+  "radius": 9,
+  "rule": 35323241465922,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 8,
+  "kind": "",
+  "terms": 160,
+  "radius": 9,
+  "rule": 35331933928434,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 9,
+  "kind": "",
+  "terms": 84,
+  "radius": 9,
+  "rule": 37543722647634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 10,
+  "kind": "",
+  "terms": 200,
+  "radius": 9,
+  "rule": 1166765914585938,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 11,
+  "kind": "",
+  "terms": 124,
+  "radius": 10,
+  "rule": 1155783142867503442,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 12,
+  "kind": "",
+  "terms": 240,
+  "radius": 11,
+  "rule": 2364071514904459143506,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 13,
+  "kind": "",
+  "terms": 196,
+  "radius": 12,
+  "rule": 9677315579867957209246034,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 14,
+  "kind": "",
+  "terms": 280,
+  "radius": 13,
+  "rule": 79252353439142493171132049746,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 15,
+  "kind": "",
+  "terms": 300,
+  "radius": 14,
+  "rule": 1298272335839989147380421302593874,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 16,
+  "kind": "",
+  "terms": 320,
+  "radius": 15,
+  "rule": 42538541466704554466629769377679583570,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 17,
+  "kind": "",
+  "terms": 340,
+  "radius": 16,
+  "rule": 2787699494871722318237994601089766441789778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 18,
+  "kind": "",
+  "terms": 360,
+  "radius": 17,
+  "rule": 365382378538924367390011946504400308806135490898,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 5,
+  "q": 19,
+  "kind": "",
+  "terms": 380,
+  "radius": 18,
+  "rule": 95781884757276701463443439432340206527131230405306706,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 5,
+  "q": 20,
+  "kind": "",
+  "terms": 400,
+  "radius": 19,
+  "rule": 50217053337439956923901049586305081176680059181427185068370,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 5,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 1,
+  "kind": "",
+  "terms": 164,
+  "radius": 11,
+  "rule": 73859210503657339730,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 2,
+  "kind": "",
+  "terms": 112,
+  "radius": 11,
+  "rule": 73859210503657128018,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 3,
+  "kind": "",
+  "terms": 180,
+  "radius": 11,
+  "rule": 73859210503657552882,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 4,
+  "kind": "",
+  "terms": 112,
+  "radius": 11,
+  "rule": 73859210503656736834,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 5,
+  "kind": "",
+  "terms": 164,
+  "radius": 11,
+  "rule": 73859210503658335094,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 6,
+  "kind": "pp",
+  "terms": 144,
+  "radius": 11,
+  "rule": 73859210503657269586,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 7,
+  "kind": "",
+  "terms": 168,
+  "radius": 11,
+  "rule": 73859210503792552822,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 8,
+  "kind": "",
+  "terms": 112,
+  "radius": 11,
+  "rule": 73859210520769497154,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 9,
+  "kind": "",
+  "terms": 216,
+  "radius": 11,
+  "rule": 73859214944822557682,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 10,
+  "kind": "",
+  "terms": 112,
+  "radius": 11,
+  "rule": 73861473311387582546,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 11,
+  "kind": "",
+  "terms": 264,
+  "radius": 11,
+  "rule": 76170706147424074578,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 12,
+  "kind": "",
+  "terms": 144,
+  "radius": 11,
+  "rule": 4802002133302441445714,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 13,
+  "kind": "",
+  "terms": 312,
+  "radius": 12,
+  "rule": 19354705018876326391507282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 14,
+  "kind": "",
+  "terms": 208,
+  "radius": 13,
+  "rule": 158504706952107779427448039762,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 15,
+  "kind": "-3",
+  "terms": 360,
+  "radius": 14,
+  "rule": 2596544671680052153971345716848978,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 16,
+  "kind": "+3",
+  "terms": 304,
+  "radius": 15,
+  "rule": 85077082933409108933223439381805312338,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 17,
+  "kind": "",
+  "terms": 408,
+  "radius": 16,
+  "rule": 5575398989743444636476210779669751155829074,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 18,
+  "kind": "",
+  "terms": 432,
+  "radius": 17,
+  "rule": 730764757077848734780024195535728321503584495954,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 6,
+  "q": 19,
+  "kind": "",
+  "terms": 456,
+  "radius": 18,
+  "rule": 191563769514553402926886883817650160747939490211473746,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 6,
+  "q": 20,
+  "kind": "",
+  "terms": 480,
+  "radius": 19,
+  "rule": 100434106674879913847802099253747230525004479568292828850514,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 9,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 1,
+  "kind": "-3",
+  "terms": 172,
+  "radius": 13,
+  "rule": 2476484910776479089699621202,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 2,
+  "kind": "",
+  "terms": 236,
+  "radius": 13,
+  "rule": 2476484910776479089712692050,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 3,
+  "kind": "",
+  "terms": 148,
+  "radius": 13,
+  "rule": 2476484910776479089686511698,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 4,
+  "kind": "",
+  "terms": 244,
+  "radius": 13,
+  "rule": 2476484910776479089738841074,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 5,
+  "kind": "",
+  "terms": 156,
+  "radius": 13,
+  "rule": 2476484910776479089636313154,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 6,
+  "kind": "+3",
+  "terms": 220,
+  "radius": 13,
+  "rule": 2476484910776479089839238006,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 7,
+  "kind": "pp",
+  "terms": 196,
+  "radius": 13,
+  "rule": 2476484910776479089703954770,
+  "odd_part": 12483,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 8,
+  "kind": "",
+  "terms": 224,
+  "radius": 13,
+  "rule": 2476484910776479124198976374,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 9,
+  "kind": "",
+  "terms": 156,
+  "radius": 13,
+  "rule": 2476484910776487868549466178,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 10,
+  "kind": "",
+  "terms": 280,
+  "radius": 13,
+  "rule": 2476484910781004722682657778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 11,
+  "kind": "",
+  "terms": 148,
+  "radius": 13,
+  "rule": 2476484915399430682710147154,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 12,
+  "kind": "",
+  "terms": 336,
+  "radius": 13,
+  "rule": 2476494367062326908125444946,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 13,
+  "kind": "",
+  "terms": 172,
+  "radius": 13,
+  "rule": 2515194173058615242056042834,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 14,
+  "kind": "",
+  "terms": 392,
+  "radius": 13,
+  "rule": 319485898667274182658376001874,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 15,
+  "kind": "",
+  "terms": 228,
+  "radius": 14,
+  "rule": 5193091819844792965086622244841810,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 16,
+  "kind": "",
+  "terms": 448,
+  "radius": 15,
+  "rule": 170154165869294702629793803034380904786,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 17,
+  "kind": "",
+  "terms": 316,
+  "radius": 16,
+  "rule": 11150797979486891749134288393853253223885138,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 18,
+  "kind": "",
+  "terms": 504,
+  "radius": 17,
+  "rule": 1461529514155697469562524875982233051450523167058,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 7,
+  "q": 19,
+  "kind": "",
+  "terms": 436,
+  "radius": 18,
+  "rule": 383127539029106805853773767634997942358724474523265362,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 7,
+  "q": 20,
+  "kind": "",
+  "terms": 560,
+  "radius": 19,
+  "rule": 200868213349759827695604198507501890504445851731840140486994,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 14,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 1,
+  "kind": "",
+  "terms": 284,
+  "radius": 15,
+  "rule": 1329309137805754738031056215002245458,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 2,
+  "kind": "",
+  "terms": 208,
+  "radius": 15,
+  "rule": 1329309137805754738031056213361330514,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 3,
+  "kind": "",
+  "terms": 316,
+  "radius": 15,
+  "rule": 1329309137805754738031056216647531346,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 4,
+  "kind": "",
+  "terms": 192,
+  "radius": 15,
+  "rule": 1329309137805754738031056210077188178,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 5,
+  "kind": "",
+  "terms": 316,
+  "radius": 15,
+  "rule": 1329309137805754738031056223215746034,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 6,
+  "kind": "",
+  "terms": 208,
+  "radius": 15,
+  "rule": 1329309137805754738031056197209196610,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 7,
+  "kind": "",
+  "terms": 284,
+  "radius": 15,
+  "rule": 1329309137805754738031056248951729014,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 8,
+  "kind": "pp",
+  "terms": 256,
+  "radius": 15,
+  "rule": 1329309137805754738031056214456707410,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 9,
+  "kind": "+3",
+  "terms": 288,
+  "radius": 15,
+  "rule": 1329309137805754738031073841137773430,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 10,
+  "kind": "",
+  "terms": 208,
+  "radius": 15,
+  "rule": 1329309137805754738040054600370915394,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 11,
+  "kind": "",
+  "terms": 352,
+  "radius": 15,
+  "rule": 1329309137805754747276968282799668210,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 12,
+  "kind": "",
+  "terms": 192,
+  "radius": 15,
+  "rule": 1329309137805773650562162167939891282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 13,
+  "kind": "",
+  "terms": 416,
+  "radius": 15,
+  "rule": 1329309137883173262597591404640205650,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 14,
+  "kind": "",
+  "terms": 208,
+  "radius": 15,
+  "rule": 1329309771824582174891927362819098962,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 15,
+  "kind": "",
+  "terms": 480,
+  "radius": 15,
+  "rule": 1339695316492474503564019169862019410,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 16,
+  "kind": "",
+  "terms": 256,
+  "radius": 15,
+  "rule": 341637640871441885506716280659088943442,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 17,
+  "kind": "-3",
+  "terms": 544,
+  "radius": 16,
+  "rule": 22301597288282916351054675301473616521767250,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 18,
+  "kind": "",
+  "terms": 336,
+  "radius": 17,
+  "rule": 2923059028312724248255421515839377831902271154514,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 8,
+  "q": 19,
+  "kind": "",
+  "terms": 608,
+  "radius": 18,
+  "rule": 766255078058213613036856668125199982299929490053835090,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 8,
+  "q": 20,
+  "kind": "-3",
+  "terms": 448,
+  "radius": 19,
+  "rule": 401736426699519655391209726283549525920667307352681603574098,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 3,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 1,
+  "kind": "",
+  "terms": 292,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444295546951870802,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 2,
+  "kind": "",
+  "terms": 380,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444295963087399250,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 3,
+  "kind": "",
+  "terms": 252,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444295130268600658,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 4,
+  "kind": "-3",
+  "terms": 404,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444296795908471634,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 5,
+  "kind": "",
+  "terms": 244,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444293464899223634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 6,
+  "kind": "",
+  "terms": 396,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444300126647155698,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 7,
+  "kind": "",
+  "terms": 268,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444286872141334594,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 8,
+  "kind": "",
+  "terms": 356,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444313312162933622,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 9,
+  "kind": "pp",
+  "terms": 324,
+  "radius": 17,
+  "rule": 11418155772866088248082415050444295685481867602,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 10,
+  "kind": "",
+  "terms": 360,
+  "radius": 17,
+  "rule": 11418155772866088248082415050462327710672415606,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 11,
+  "kind": "",
+  "terms": 268,
+  "radius": 17,
+  "rule": 11418155772866088248082415068882023746596145218,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 12,
+  "kind": "",
+  "terms": 432,
+  "radius": 17,
+  "rule": 11418155772866088248082452875515558858405641202,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 13,
+  "kind": "+3",
+  "terms": 244,
+  "radius": 17,
+  "rule": 11418155772866088248237252016508413652286603346,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 14,
+  "kind": "",
+  "terms": 504,
+  "radius": 17,
+  "rule": 11418155772866089516120069928789029269740190546,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 15,
+  "kind": "",
+  "terms": 252,
+  "radius": 17,
+  "rule": 11418155772886860605455542819946429775362427218,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 16,
+  "kind": "",
+  "terms": 576,
+  "radius": 17,
+  "rule": 11418156453482751715354681315957703736769309010,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 17,
+  "kind": "",
+  "terms": 292,
+  "radius": 17,
+  "rule": 11462758964784035802677477909976760253642090834,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 18,
+  "kind": "",
+  "terms": 648,
+  "radius": 17,
+  "rule": 5857536212395655966483323614568717644441233041746,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 9,
+  "q": 19,
+  "kind": "",
+  "terms": 364,
+  "radius": 18,
+  "rule": 1532510167534582996281142662173562412722301473355639122,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 9,
+  "q": 20,
+  "kind": "",
+  "terms": 720,
+  "radius": 19,
+  "rule": 803472853399050728938189660037111148923480777568227603163474,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 16,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 1,
+  "kind": "",
+  "terms": 436,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220898667234072373586,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 2,
+  "kind": "+3",
+  "terms": 336,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220898455158131960146,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 3,
+  "kind": "",
+  "terms": 484,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220898879449086224722,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 4,
+  "kind": "",
+  "terms": 304,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220898030866898389330,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 5,
+  "kind": "",
+  "terms": 500,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220899728031007898450,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 6,
+  "kind": "",
+  "terms": 304,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220896333771778850898,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 7,
+  "kind": "",
+  "terms": 484,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220903122221246905330,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 8,
+  "kind": "",
+  "terms": 336,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220889580575672928322,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 9,
+  "kind": "",
+  "terms": 436,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220916628613458750326,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 10,
+  "kind": "pp",
+  "terms": 400,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466220898596588268202322,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 11,
+  "kind": "",
+  "terms": 440,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180466257810116760877853558,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 12,
+  "kind": "-3",
+  "terms": 336,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784180541760306562416286795842,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 13,
+  "kind": "",
+  "terms": 520,
+  "radius": 19,
+  "rule": 1569281420214467477196313522784490140171518656658563595250,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 14,
+  "kind": "",
+  "terms": 304,
+  "radius": 19,
+  "rule": 1569281420214467477196313525320255435847238856581348098130,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 15,
+  "kind": "",
+  "terms": 600,
+  "radius": 19,
+  "rule": 1569281420214467477196355067498926740672474560404872231762,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 16,
+  "kind": "",
+  "terms": 304,
+  "radius": 19,
+  "rule": 1569281420214467478557546849716171397843510172948352764242,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 17,
+  "kind": "",
+  "terms": 680,
+  "radius": 19,
+  "rule": 1569281420214556683580149417893409301202282857369511586130,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 18,
+  "kind": "",
+  "terms": 336,
+  "radius": 19,
+  "rule": 1569281431906703590441893238370358061813758038223360272722,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 10,
+  "q": 19,
+  "kind": "",
+  "terms": 760,
+  "radius": 19,
+  "rule": 1572346440526700331643143631770867467823739453214125893970,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 10,
+  "q": 20,
+  "kind": "",
+  "terms": 400,
+  "radius": 19,
+  "rule": 1608514988218293089042028569555402561497543249290854807546194,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 6,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 1,
+  "kind": "",
+  "terms": 444,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227753401366007740279122,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 2,
+  "kind": "",
+  "terms": 556,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227753618033310476970322,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 3,
+  "kind": "",
+  "terms": 388,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227753184627920939952466,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 4,
+  "kind": "",
+  "terms": 596,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227754051438838818990418,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 5,
+  "kind": "",
+  "terms": 364,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227752317817071501085010,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 6,
+  "kind": "",
+  "terms": 604,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227755785060537151257426,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 7,
+  "kind": "",
+  "terms": 372,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227748850608859212972114,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 8,
+  "kind": "",
+  "terms": 580,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227762719476961727413234,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 9,
+  "kind": "-3",
+  "terms": 412,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227735017804807079626818,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 10,
+  "kind": "",
+  "terms": 524,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227790385085065994103670,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 11,
+  "kind": "pp",
+  "terms": 484,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024227753473564893384452434,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 12,
+  "kind": "",
+  "terms": 528,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493024378906112536894640941942,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 13,
+  "kind": "",
+  "terms": 412,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944187493643122196796769030205769794,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 14,
+  "kind": "",
+  "terms": 616,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839767944192565174242656296611225391791090,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 15,
+  "kind": "",
+  "terms": 372,
+  "radius": 21,
+  "rule": 3450876464412242943230488905839768027276919730920322156727903985893458,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 16,
+  "kind": "",
+  "terms": 704,
+  "radius": 21,
+  "rule": 3450876464412242943230488905842490410841357160928047829787993920502610,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 17,
+  "kind": "+3",
+  "terms": 364,
+  "radius": 21,
+  "rule": 3450876464412242943230489084252535615935876148853150707800424803502418,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 18,
+  "kind": "",
+  "terms": 792,
+  "radius": 21,
+  "rule": 3450876464412242943253873378066259103619299398246452187855300367149394,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 11,
+  "q": 19,
+  "kind": "",
+  "terms": 388,
+  "radius": 21,
+  "rule": 3450876464412249073271113371548660264750724631205633528955821675948370,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 11,
+  "q": 20,
+  "kind": "+3",
+  "terms": 880,
+  "radius": 21,
+  "rule": 3450876467626134356826646148969432461445819129650354764404464778127698,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 12,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 1,
+  "kind": "",
+  "terms": 620,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778257273114404621128477010,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 2,
+  "kind": "",
+  "terms": 496,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778256829887154652858460498,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 3,
+  "kind": "",
+  "terms": 684,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778257716413924120578402642,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 4,
+  "kind": "",
+  "terms": 448,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778255943360314469794359634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 5,
+  "kind": "+3",
+  "terms": 716,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778259489467533841447971154,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 6,
+  "kind": "",
+  "terms": 432,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778252397253130350953007442,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 7,
+  "kind": "-3",
+  "terms": 716,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778266581681902078585207634,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 8,
+  "kind": "",
+  "terms": 448,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778238212860422673701830738,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 9,
+  "kind": "",
+  "terms": 684,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778294950467317433087491058,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 10,
+  "kind": "",
+  "terms": 496,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778181549076568259535472706,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 11,
+  "kind": "",
+  "terms": 620,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778408278035026261420206966,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 12,
+  "kind": "pp",
+  "terms": 576,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732816778257125396054260163717458,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 13,
+  "kind": "",
+  "terms": 624,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721732818016348317320406536319331190,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 14,
+  "kind": "",
+  "terms": 496,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812721742957364013355269090095711553602,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 15,
+  "kind": "",
+  "terms": 720,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786680812887911670810990164002500421957385202,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 16,
+  "kind": "",
+  "terms": 448,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655423786686257654994905606253124095901682414682194,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 17,
+  "kind": "",
+  "terms": 816,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806655424143506348065232119102817676553992491518393170,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 18,
+  "kind": "",
+  "terms": 432,
+  "radius": 23,
+  "rule": 121416834712147630643837280006806702192731133793669783151699714511155311750435342674,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 12,
+  "q": 19,
+  "kind": "",
+  "terms": 912,
+  "radius": 23,
+  "rule": 121416834712147630643837280019066736672718098597383631637365652416572762027011795282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 12,
+  "q": 20,
+  "kind": "",
+  "terms": 448,
+  "radius": 23,
+  "rule": 121416834712147630643843707789633847738272852347524385678389883878471463450982918482,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 10,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 1,
+  "kind": "",
+  "terms": 628,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039251632873296151340382857554,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 2,
+  "kind": "",
+  "terms": 764,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039253447296054025810092927314,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 3,
+  "kind": "",
+  "terms": 556,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039249818302747727693051767122,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 4,
+  "kind": "",
+  "terms": 820,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039257076289432593389594519890,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 5,
+  "kind": "",
+  "terms": 516,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039242560316062826465536944466,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 6,
+  "kind": "",
+  "terms": 844,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039271592262802325199365531986,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 7,
+  "kind": "",
+  "terms": 508,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039213528369359391781539580242,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 8,
+  "kind": "",
+  "terms": 836,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039329656156209194566814792530,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 9,
+  "kind": "",
+  "terms": 532,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039097400656332629341483597906,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 10,
+  "kind": "+3",
+  "terms": 796,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039561911582262719446926687218,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 11,
+  "kind": "",
+  "terms": 588,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506038633192035680483238553487426,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 12,
+  "kind": "",
+  "terms": 724,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506040490328823567011652786908022,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 13,
+  "kind": "pp",
+  "terms": 676,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554506039252237631642659376631294290,
+  "odd_part": 1387,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 14,
+  "kind": "-3",
+  "terms": 728,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824554526322899932475237435600038194038,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 15,
+  "kind": "",
+  "terms": 588,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280222824886802896374619178071223029997930562,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 16,
+  "kind": "",
+  "terms": 832,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839280233714421040361208259434688446885147900914,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 17,
+  "kind": "",
+  "terms": 532,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078704839993873893746057226788320135258730170452836434,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 18,
+  "kind": "",
+  "terms": 936,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793929078798377169128786533696138587701306313101990382533458,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 13,
+  "q": 19,
+  "kind": "",
+  "terms": 508,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757814793953598867337142968557796449492963375735646989770039527762,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 13,
+  "q": 20,
+  "kind": "",
+  "terms": 1040,
+  "radius": 25,
+  "rule": 68351589223541682389786427858666757827649494733089468252567255393138697020023668820293860299041106,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 11,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 1,
+  "kind": "",
+  "terms": 836,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715656424434678142097226400966994,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 2,
+  "kind": "-3",
+  "terms": 688,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715641564920898291977742591895890,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 3,
+  "kind": "",
+  "terms": 916,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715671284553364057075038703757650,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 4,
+  "kind": "",
+  "terms": 624,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715611845288284736366453231102290,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 5,
+  "kind": "",
+  "terms": 964,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715730723818443450017902264756562,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 6,
+  "kind": "",
+  "terms": 592,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715492966758126058708270244342098,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 7,
+  "kind": "",
+  "terms": 980,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715968480878760805263622979643730,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 8,
+  "kind": "",
+  "terms": 592,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715017452637565135193262178470226,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 9,
+  "kind": "",
+  "terms": 964,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305716919509119882652293638565919570,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 10,
+  "kind": "",
+  "terms": 624,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305713115396457552896036888303927378,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 11,
+  "kind": "",
+  "terms": 916,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305720723621479907130606386314935282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 12,
+  "kind": "+3",
+  "terms": 688,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305705509647617582510171942604146754,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 13,
+  "kind": "",
+  "terms": 836,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305735935119159847902336277714496374,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 14,
+  "kind": "pp",
+  "terms": 784,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207305715651471465004307560054307596626,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 15,
+  "kind": "",
+  "terms": 840,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014618207970349933011617784354239807854668662,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 16,
+  "kind": "",
+  "terms": 688,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294196014639985044881450763050270259095810699593794,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 17,
+  "kind": "",
+  "terms": 952,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746294197441920346021175734609096088752593965538016242,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 18,
+  "kind": "",
+  "terms": 624,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709434746481271792332127782361204859418366609795733537194066,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 14,
+  "q": 19,
+  "kind": "",
+  "terms": 1064,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496285709483786619191740115118722910287167141801028667042196093778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 14,
+  "q": 20,
+  "kind": "",
+  "terms": 592,
+  "radius": 27,
+  "rule": 615656355992658543410092165715953828506009392098496311420566055063442184412878376602292889236587916067659474569554,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 15,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 1,
+  "kind": "",
+  "terms": 844,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664052963939180279228232896679112255826,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 2,
+  "kind": "",
+  "terms": 1004,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664053207362766310765119744044622850386,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 3,
+  "kind": "+3",
+  "terms": 756,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664052720510640673259165039358351419730,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 4,
+  "kind": "",
+  "terms": 1076,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664053694214892553177139271875015911762,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 5,
+  "kind": "",
+  "terms": 700,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664051746806388793193436321645456959826,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 6,
+  "kind": "",
+  "terms": 1116,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664055641623396313160878427585644243282,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 7,
+  "kind": "",
+  "terms": 676,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664047851989381273299817185266154776914,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 8,
+  "kind": "",
+  "terms": 1124,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664063431257411352948116629698989975890,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 9,
+  "kind": "",
+  "terms": 684,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664032272721351495956795684835282684242,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 10,
+  "kind": "",
+  "terms": 1100,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664094589793470907634159630560188693330,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 11,
+  "kind": "",
+  "terms": 724,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107663969955651708266663280443662687830098,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 12,
+  "kind": "",
+  "terms": 1044,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664219223932757366221190112905378331634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 13,
+  "kind": "",
+  "terms": 796,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107663720727937954556792560326866811127874,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 14,
+  "kind": "",
+  "terms": 956,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664717679360264785962630346497131735926,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 15,
+  "kind": "pp",
+  "terms": 900,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806107664053045078724633182583666743584663890,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 16,
+  "kind": "",
+  "terms": 960,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207057806151220860645240388109274580097763462802294,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 17,
+  "kind": "",
+  "terms": 796,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332207060660581271061164760009467075484441506411087938,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 18,
+  "kind": "-3",
+  "terms": 1080,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858440332581209361557284739404829412583513279713119077071858,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 15,
+  "q": 19,
+  "kind": "-3",
+  "terms": 724,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442448858538412857036411730692909094895185115751992023677312991314,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 15,
+  "q": 20,
+  "kind": "",
+  "terms": 1200,
+  "radius": 29,
+  "rule": 88725430542394062979915333331828776170455440739268055271931482047442500280702949745550859348076881816966209297452116558416627891026,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 13,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 1,
+  "kind": "",
+  "terms": 1084,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866714449951327268681252629420382129662290,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 2,
+  "kind": "",
+  "terms": 912,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866706474015375748708334751222753512827218,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 3,
+  "kind": "-3",
+  "terms": 1180,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866722425968423285977798692890062940186962,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 4,
+  "kind": "",
+  "terms": 832,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866690522062323257864438664574285854189906,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 5,
+  "kind": "",
+  "terms": 1244,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866754329874523314696064750000187128850770,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 6,
+  "kind": "",
+  "terms": 784,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866626714250123201032738611639483187767634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 7,
+  "kind": "",
+  "terms": 1276,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866881945498923428359317137590077301107026,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 8,
+  "kind": "",
+  "terms": 768,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866371483001322974008465363562107253205330,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 9,
+  "kind": "",
+  "terms": 1276,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225867392407996523882407863633674183911598418,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 10,
+  "kind": "",
+  "terms": 784,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225865350558006124541791450942154582356166994,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 11,
+  "kind": "",
+  "terms": 1244,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225869434257986920746841892476489233160207186,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 12,
+  "kind": "",
+  "terms": 832,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225861266858065895632130696597372378365853778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 13,
+  "kind": "",
+  "terms": 1180,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225877601657867378566163401166053641140763634,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 14,
+  "kind": "",
+  "terms": 912,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225844933387532975778403552122050622685087810,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 15,
+  "kind": "",
+  "terms": 1084,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225910268598933218273617690116697152502295414,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 16,
+  "kind": "pp",
+  "terms": 1024,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478744225866711791333056610141598120266132624157010,
+  "odd_part": 87381,
+  "level3": 1,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": 1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 17,
+  "kind": "",
+  "terms": 1088,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252712478749934901039422772742506761567914677698033281910,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 18,
+  "kind": "+3",
+  "terms": 912,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437252713227030209662970269733500296182350129124187381598274,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 16,
+  "q": 19,
+  "kind": "+3",
+  "terms": 1216,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630067437448873778704291717046934352855806368905827047822541650930,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 16,
+  "q": 20,
+  "kind": "",
+  "terms": 832,
+  "radius": 31,
+  "rule": 204586913184045277861199081479857199745484431219802217410630556932964291384921507066630170281777944188412005575572323156562560876919276924622551941202,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": 1,
+  "chi_q": -1,
+  "k": 4,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 1,
+  "kind": "",
+  "terms": 1092,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238755664484021898908204833832196754042002254162,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 2,
+  "kind": "",
+  "terms": 1276,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238756187176347817364294491157157743431397321042,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 3,
+  "kind": "",
+  "terms": 988,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238755141789037281041912282898411904320020326738,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 4,
+  "kind": "+3",
+  "terms": 1364,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238757232563658434831174023044052825797949040978,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 5,
+  "kind": "",
+  "terms": 916,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238753051014416127247696968394412977978698541394,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 6,
+  "kind": "",
+  "terms": 1420,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238761414112900742414651682525934491669464000850,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 7,
+  "kind": "",
+  "terms": 876,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238744687915931512080742556420378859043834997074,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 8,
+  "kind": "",
+  "terms": 1444,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238778140309869972748560506326284449824030501202,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 9,
+  "kind": "",
+  "terms": 868,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238711235521993051415400788898321902031616518482,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 10,
+  "kind": "",
+  "terms": 1436,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238845045097746894079244041370398293203208825170,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 11,
+  "kind": "",
+  "terms": 892,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238577425946239249318852926113435063306288138578,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 12,
+  "kind": "",
+  "terms": 1396,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081239112664249254498272339766940171970653320117074,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 13,
+  "kind": "-3",
+  "terms": 948,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238042187644553268928446390846791515466350231634,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 14,
+  "kind": "",
+  "terms": 1324,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081240183140852626459053152837473459066333195860978,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 15,
+  "kind": "",
+  "terms": 1036,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081235901321550095279127066896404116826639260878914,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 16,
+  "kind": "",
+  "terms": 1220,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081244464873041542438655911826358808443987374566262,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 17,
+  "kind": "pp",
+  "terms": 1156,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217779081238755838713910998970015206389014032421965441362,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 18,
+  "kind": "",
+  "terms": 1224,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888217780577822141499886130679229180527832620571662298573686,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 17,
+  "q": 19,
+  "kind": "",
+  "terms": 1036,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649657888610097191408730555867537997790911696673607978080801032258,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 17,
+  "q": 20,
+  "kind": "pp",
+  "terms": 1360,
+  "radius": 33,
+  "rule": 7547924851400470906499479814932130775349772789683566040396859608067926952707127780829802635535574410235649863577268243248877426155676347365483292577692719442152805825522,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 1,
+  "kind": "",
+  "terms": 1364,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154879934885568730757086658931004499894349072706480466,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 2,
+  "kind": "",
+  "terms": 1168,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154879866376459871647311935460670068633662663611296082,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 3,
+  "kind": "",
+  "terms": 1476,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154880003394851822414579714870251142445439314251393362,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 4,
+  "kind": "",
+  "terms": 1072,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154879729358067918221344745848195459785001975222544722,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 5,
+  "kind": "",
+  "terms": 1556,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154880277431635726607895828389630379468143613616761170,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 6,
+  "kind": "",
+  "terms": 1008,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154879181284500109834793658353488413198759130728933714,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 7,
+  "kind": "",
+  "terms": 1604,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154881373578771343380997998426074946524442491475372370,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 8,
+  "kind": "-3",
+  "terms": 976,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154876988990228876288589320757084115931231075682658642,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 9,
+  "kind": "",
+  "terms": 1620,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154885758167313810473406673618883393341218886407334226,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 10,
+  "kind": "",
+  "terms": 976,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154868219813143942103812535190674525710724927437580626,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 11,
+  "kind": "+3",
+  "terms": 1604,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154903296521483678842960244751702573782160537638857042,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 12,
+  "kind": "",
+  "terms": 1008,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154833143104804206693933388709952037732648823780575570,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 13,
+  "kind": "",
+  "terms": 1556,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154973449938163149662718537713147549738312744407399250,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 14,
+  "kind": "",
+  "terms": 1072,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154692836271532377340348563033708709719846942909956178,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 15,
+  "kind": "",
+  "terms": 1476,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976155254063604706808369888189065634205763916506148568050,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 16,
+  "kind": "",
+  "terms": 1168,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154131620356426601573688308795023153264600510489593922,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 17,
+  "kind": "",
+  "terms": 1364,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976156376495434918359903208697543005318674409370989292406,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 18,
+  "kind": "pp",
+  "terms": 1296,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548059976154879912049257187683528438377683875067870130656160082,
+  "odd_part": 1,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 18,
+  "q": 19,
+  "kind": "pp",
+  "terms": 1368,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465548060760794093418770013839376886598501307331468839928993606518,
+  "odd_part": 1,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 18,
+  "q": 20,
+  "kind": "",
+  "terms": 1168,
+  "radius": 35,
+  "rule": 4455508415906019741297070830355718592978420087470124169486699067133237889985892171288447664845995314831941523598113842325462465959435723165574669227621157476186984561556113275780197324589122,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 1,
+  "kind": "",
+  "terms": 1372,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412305040950677713461520256453882281172792440451049892178,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 2,
+  "kind": "",
+  "terms": 1580,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412323000042651416398094050876979943232215238753433332050,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 3,
+  "kind": "",
+  "terms": 1252,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412287081835867524751983803748420926005548889918510115154,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 4,
+  "kind": "",
+  "terms": 1684,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412358918249435482276752016338007872596385015125968070994,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 5,
+  "kind": "",
+  "terms": 1164,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412215245422299567224556891748631388111130784330597181778,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 6,
+  "kind": "",
+  "terms": 1756,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412502591076571397328947222071881378404546609224381802834,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 7,
+  "kind": "",
+  "terms": 1108,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132411927899768027737120166561422904005769382618780511414610,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 8,
+  "kind": "-3",
+  "terms": 1796,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132413077282385115057537727882718383173561926753513424726354,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 9,
+  "kind": "",
+  "terms": 1084,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132410778517150940416702605280694720227516237487247800838482,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 10,
+  "kind": "",
+  "terms": 1804,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132415376047619289698372850444174750729920498736863685290322,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 11,
+  "kind": "+3",
+  "terms": 1092,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132406180986682591135033689385777770030672069526354676328786,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 12,
+  "kind": "",
+  "terms": 1780,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132424571108555988261710682234008651123608834588004675676498,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 13,
+  "kind": "",
+  "terms": 1132,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132387790864809194095470311737870215889919297326743883385170,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 14,
+  "kind": "",
+  "terms": 1724,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132461351352302782340837437529823759405114378987225716095826,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 15,
+  "kind": "",
+  "terms": 1204,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132314230377327023918758448825288465614663804489392868851794,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 16,
+  "kind": "",
+  "terms": 1636,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132608472327267122694261163354987259955625364661927745092594,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 17,
+  "kind": "",
+  "terms": 1308,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132019991420553696465600173656108001916589457395338658875458,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 18,
+  "kind": "pp",
+  "terms": 1516,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454133196950240813777600577713693348187351774058850036165045110,
+  "odd_part": 1,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 19,
+  "q": 19,
+  "kind": "pp",
+  "terms": 1444,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772217454132412311027307056843926020335188063728317657880237827598674,
+  "odd_part": 1,
+  "level3": 3,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   1
+  ]
+ },
+ {
+  "p": 19,
+  "q": 20,
+  "kind": "",
+  "terms": 1520,
+  "radius": 37,
+  "rule": 42081087212999348471782364409739040723284378535603042839895246572222125070528018718943408526108276959334983993676313963482832336551666085881974772218276885475610843834855085168992368600678719706875639967839349622,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 17,
+  "parity": [
+   1,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 1,
+  "kind": "",
+  "terms": 1676,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727636051197658009262806681177077329697565071006128595410790738,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 2,
+  "kind": "",
+  "terms": 1456,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727626635503150434587747675992391378927810977201859686753282386,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 3,
+  "kind": "",
+  "terms": 1804,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727645466898151963153307693935400235202086860715339938058119506,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 4,
+  "kind": "+3",
+  "terms": 1344,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727607804108148883185701885086724240290144217322530862585784658,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 5,
+  "kind": "",
+  "terms": 1900,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727683129688155043121087735331794562582639410156672893848299858,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 6,
+  "kind": "",
+  "terms": 1264,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727532478528142723250316032182954510270937799477169000666540370,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 7,
+  "kind": "",
+  "terms": 1964,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727833780848167362991859438480715756915482265172779540274653522,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 8,
+  "kind": "",
+  "terms": 1216,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727231176208118083508772625885233825968208588790065699259853138,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 9,
+  "kind": "",
+  "terms": 1996,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505728436385488216642474946251076157120567971160430799331959417170,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 10,
+  "kind": "",
+  "terms": 1200,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505726025966928019524542599002023579094448751429452142327043369298,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 11,
+  "kind": "",
+  "terms": 1996,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505730846804048413760407293498799466583606885331388366361231796562,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 12,
+  "kind": "",
+  "terms": 1216,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505721205129807625288677991618862891928617569711508709548277016914,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 13,
+  "kind": "-3",
+  "terms": 1964,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505740488478289202232136508265120840915269248767275161273505868114,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 14,
+  "kind": "",
+  "terms": 1264,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505701921781326048356637543627867822313759130595331080953316542802,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 15,
+  "kind": "",
+  "terms": 1900,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505779055175252356096217404247110980144986126999630418462881348434,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 16,
+  "kind": "",
+  "terms": 1344,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505624788387402733783829005353064025000862777078244821924417929298,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": 1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 17,
+  "kind": "pp",
+  "terms": 1804,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505933321963098985241834480796718574770778834033802936520678505458,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 18,
+  "kind": "",
+  "terms": 1456,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505316256380984909339265043212796191551193967035488646924832245826,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ },
+ {
+  "p": 20,
+  "q": 19,
+  "kind": "",
+  "terms": 1676,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296506550385975934634130962405077254241670116454119315286519849872246,
+  "odd_part": 262143,
+  "level3": 0,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   1
+  ]
+ },
+ {
+  "p": 20,
+  "q": 20,
+  "kind": "pp",
+  "terms": 1600,
+  "radius": 39,
+  "rule": 6359114106086838120720168107913482562709904331566578642050982727541305824612352018588777661418220854992789117580313452607868724126839987981117231291128298607056373216296505727632912634817603164163834282208257501462730097526789838121298,
+  "odd_part": 29127,
+  "level3": 2,
+  "divides": true,
+  "chi_p": -1,
+  "chi_q": -1,
+  "k": 7,
+  "parity": [
+   0,
+   0
+  ]
+ }
+]

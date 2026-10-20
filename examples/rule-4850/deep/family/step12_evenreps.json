@@ -1,0 +1,70 @@
+[
+ {
+  "name": "hex(1)+L3(7)",
+  "parts": [
+   [
+    1,
+    1
+   ],
+   [
+    7,
+    21
+   ]
+  ],
+  "terms": 1040,
+  "radius": 35,
+  "odd_part": 29127
+ },
+ {
+  "name": "hex(4) [= f_{2,32}-type, check]",
+  "parts": [
+   [
+    4,
+    4
+   ]
+  ],
+  "terms": 256,
+  "radius": 31,
+  "odd_part": 29127
+ },
+ {
+  "name": "L3(2)+L6(5)",
+  "parts": [
+   [
+    2,
+    6
+   ],
+   [
+    5,
+    30
+   ]
+  ],
+  "terms": 912,
+  "radius": 35,
+  "odd_part": 29127
+ },
+ {
+  "name": "L3(2) alone",
+  "parts": [
+   [
+    2,
+    6
+   ]
+  ],
+  "terms": 240,
+  "radius": 17,
+  "odd_part": 262143
+ },
+ {
+  "name": "L6(5) alone",
+  "parts": [
+   [
+    5,
+    30
+   ]
+  ],
+  "terms": 816,
+  "radius": 35,
+  "odd_part": 87381
+ }
+]

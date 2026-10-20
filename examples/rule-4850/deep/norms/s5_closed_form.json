@@ -1,0 +1,22 @@
+{
+ "gcd(x^24+x^9+1, x^63+1)": "x^9 + x^3 + 1",
+ "factors": [
+  "x^3 + x^2 + 1",
+  "x^6 + x^5 + x^4 + x^2 + 1"
+ ],
+ "m": "x^6 + x^5 + x^4 + x^2 + 1",
+ "m divides x^21+1": true,
+ "certificate_mod_m": {
+  "0": true,
+  "1": true,
+  "2": true,
+  "3": true,
+  "4": true,
+  "5": true
+ },
+ "m(eta_0) = 0": true,
+ "N = (eta(al) eta(be))^n(d) at all 1296 characters": true,
+ "additive forms at all characters": true,
+ "N(W/(t t)) in F8 at all characters": true,
+ "theta_2 = eta_0^-3": true
+}

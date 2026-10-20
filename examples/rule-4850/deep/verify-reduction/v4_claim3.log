@@ -1,0 +1,34 @@
+(1) census classes merged by M0 (4850 frame): [[(0, 1), (1, 7)], [(1, 1)], [(1, 2), (1, 8), (1, 10)], [(1, 3), (1, 5), (1, 13)], [(1, 4), (1, 6)]]
+(2) t(x)^29127 == sum_{u nonres} x^u in F2[Z/37]: True
+    rho = sum_{nonres} zeta^u: rho^2 + rho + 1 = 0: True ; t_j^29127 = rho^chi(j) for all j != 0: True
+    (1 + t(x))^29127 == 1: True
+    |<D4, 2I, T>| with multipliers = 432
+    {'cls': (0, 1), 'T_frame': (19, 18), 'type': 'd=0', 'R': 18, 'ninth': True, 'W_terms': 2, 'W_as_t_product': (1,), 'W_eq_t_sq': 18, 'legendre_exponent_mod3': 0}
+    {'cls': (1, 1), 'T_frame': (1, 0), 'type': 'axis', 'R': 9, 'ninth': True}
+    {'cls': (1, 2), 'T_frame': (20, 18), 'type': 'd=+-2', 'R': 9, 'ninth': True, 'W_terms': 8, 'W_as_t_product': (1, 3, 5), 'legendre_exponent_mod3': 0, 'two_of_six_cancel': True}
+    {'cls': (1, 3), 'T_frame': (2, 36), 'type': 'd=+-1', 'R': 18, 'ninth': True, 'W_terms': 12, 'W_as_t_product': None, 'nontrivial_fixers': 0}
+    {'cls': (1, 4), 'T_frame': (21, 17), 'type': 'd=3', 'R': 0, 'ninth': True, 'W_terms': 12, 'W_as_t_product': None, 'fixing_elements_with_odd_k': 1, 'example_fixer': (((0, 23), (29, 0)), 9, 'forces (2^9 - 1) R = 0 mod 27, gcd = 1')}
+    {'cls': (1, 5), 'T_frame': (3, 35), 'type': 'd=+-1', 'R': 9, 'ninth': True, 'W_terms': 12, 'W_as_t_product': None, 'nontrivial_fixers': 0}
+    {'cls': (1, 6), 'T_frame': (22, 16), 'type': 'd=3', 'R': 0, 'ninth': True, 'W_terms': 12, 'W_as_t_product': None, 'fixing_elements_with_odd_k': 1, 'example_fixer': (((0, 6), (31, 0)), 9, 'forces (2^9 - 1) R = 0 mod 27, gcd = 1')}
+    {'cls': (1, 7), 'T_frame': (4, 34), 'type': 'd=0', 'R': 9, 'ninth': True, 'W_terms': 2, 'W_as_t_product': (14,), 'W_eq_t_sq': 7, 'legendre_exponent_mod3': 0}
+    {'cls': (1, 8), 'T_frame': (23, 15), 'type': 'd=+-2', 'R': 9, 'ninth': True, 'W_terms': 8, 'W_as_t_product': (4, 12, 17), 'legendre_exponent_mod3': 0, 'two_of_six_cancel': True}
+    {'cls': (1, 10), 'T_frame': (24, 14), 'type': 'd=+-2', 'R': 9, 'ninth': True, 'W_terms': 8, 'W_as_t_product': (1, 12, 14), 'legendre_exponent_mod3': 0, 'two_of_six_cancel': True}
+    {'cls': (1, 13), 'T_frame': (7, 31), 'type': 'd=+-1', 'R': 18, 'ninth': True, 'W_terms': 12, 'W_as_t_product': None, 'nontrivial_fixers': 0}
+(3) axis (0,1): lambda = t_1^3: True ; t_1 cube, not ninth: True True
+    diagonal (1,1): lambda = t^2 (1+t+t^2)^2 at t = t_1: True
+    t_1 = zeta^-1 (1+zeta)^2: True ; 1+t+t^2 = zeta^-2 (1+zeta^5)/(1+zeta): True ; 1+zeta^5 = (1+zeta)^(2^23): True (5 = 2^23 mod 37: True )
+    1+zeta in F(2^36)*: cube True , ninth False ; lambda(1,1) = zeta^-6 (1+zeta)^(2^24 + 2), (2^24+2) mod 3 = 0 -> ninth power; check: True  R = 9
+(4) (1,6): lambda^(2^9) == lambda: True ; 2^9 (1,6) = (31, 1)
+(5) per 4850 class (type in T frame / ninth / explanation):
+      (0, 1) d=0 True W=t^2
+      (1, 1) axis True diagonal: cyclotomic exponents
+      (1, 2) d=+-2 True W=t t t + Legendre
+      (1, 3) d=+-1 True NONE
+      (1, 4) d=3 True forced by T-symmetry
+      (1, 5) d=+-1 True NONE
+      (1, 6) d=3 True Gamma0: F(2^9)-valued
+      (1, 7) d=0 True W=t^2
+      (1, 8) d=+-2 True W=t t t + Legendre
+      (1, 10) d=+-2 True W=t t t + Legendre
+      (1, 13) d=+-1 True NONE
+time 0.6

@@ -1,0 +1,16 @@
+13 {'ord': 12, 'e': 6, 'k_degree': 2, 'w': 9, 'formula_fail': 0, 'of': 144, 'aux_identity_fail': 0}
+37 {'ord': 36, 'e': 18, 'k_degree': 6, 'w': 10, 'formula_fail': 0, 'of': 1296, 'aux_identity_fail': 0}
+61 {'ord': 60, 'e': 30, 'k_degree': 10, 'w': 13, 'formula_fail': 0, 'of': 3600, 'aux_identity_fail': 0}
+97 {'ord': 48, 'e': 24, 'k_degree': 8, 'w': 35, 'formula_fail': 0, 'of': 9216, 'aux_identity_fail': 0}
+109 {'ord': 36, 'e': 18, 'k_degree': 6, 'w': 45, 'formula_fail': 0, 'of': 11664, 'aux_identity_fail': 0}
+181 {'ord': 180, 'skipped': 'field too large for this script'}
+193 {'ord': 96, 'skipped': 'field too large for this script'}
+229 {'ord': 76, 'skipped': 'need ord = 2e with 3 | e'}
+277 {'ord': 92, 'skipped': 'need ord = 2e with 3 | e'}
+313 {'ord': 156, 'skipped': 'field too large for this script'}
+349 {'ord': 348, 'skipped': 'field too large for this script'}
+373 {'ord': 372, 'skipped': 'field too large for this script'}
+397 {'ord': 44, 'skipped': 'need ord = 2e with 3 | e'}
+409 {'ord': 204, 'skipped': 'field too large for this script'}
+421 {'ord': 420, 'skipped': 'field too large for this script'}
+433 {'ord': 72, 'skipped': 'field too large for this script'}

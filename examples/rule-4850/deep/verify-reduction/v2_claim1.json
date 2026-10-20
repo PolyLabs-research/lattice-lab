@@ -1,0 +1,1023 @@
+{
+ "r10491524": {
+  "10491524": {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true
+  }
+ },
+ "family": [
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    1,
+    1
+   ],
+   "size": 12,
+   "terms": 336,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    1,
+    10
+   ],
+   "size": 12,
+   "terms": 1648,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    1,
+    11
+   ],
+   "size": 12,
+   "terms": 1344,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    2
+   ],
+   "size": 12,
+   "terms": 1024,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    15
+   ],
+   "size": 12,
+   "terms": 3792,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    17
+   ],
+   "size": 12,
+   "terms": 2896,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    3,
+    3
+   ],
+   "size": 12,
+   "terms": 528,
+   "radius": "27"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    3,
+    4
+   ],
+   "size": 12,
+   "terms": 688,
+   "radius": "27"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    3,
+    7
+   ],
+   "size": 12,
+   "terms": 448,
+   "radius": "27"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    5
+   ],
+   "size": 12,
+   "terms": 2480,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    13
+   ],
+   "size": 12,
+   "terms": 3904,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    18
+   ],
+   "size": 12,
+   "terms": 2224,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    6
+   ],
+   "size": 12,
+   "terms": 2112,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    8
+   ],
+   "size": 12,
+   "terms": 2752,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    14
+   ],
+   "size": 12,
+   "terms": 1792,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    9,
+    9
+   ],
+   "size": 12,
+   "terms": 2832,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    9,
+    12
+   ],
+   "size": 12,
+   "terms": 3232,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 0,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": true,
+   "orbit_rep": [
+    9,
+    16
+   ],
+   "size": 12,
+   "terms": 2592,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    2
+   ],
+   "size": 24,
+   "terms": 1184,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    3
+   ],
+   "size": 24,
+   "terms": 960,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    4
+   ],
+   "size": 24,
+   "terms": 896,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    5
+   ],
+   "size": 24,
+   "terms": 2112,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    6
+   ],
+   "size": 24,
+   "terms": 1728,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    7
+   ],
+   "size": 24,
+   "terms": 544,
+   "radius": "43"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    8
+   ],
+   "size": 24,
+   "terms": 1952,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    9
+   ],
+   "size": 24,
+   "terms": 2016,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    12
+   ],
+   "size": 24,
+   "terms": 2144,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    13
+   ],
+   "size": 24,
+   "terms": 3200,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    14
+   ],
+   "size": 24,
+   "terms": 992,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    15
+   ],
+   "size": 24,
+   "terms": 2368,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    16
+   ],
+   "size": 24,
+   "terms": 992,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    17
+   ],
+   "size": 24,
+   "terms": 1664,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    1,
+    18
+   ],
+   "size": 24,
+   "terms": 1696,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    3
+   ],
+   "size": 24,
+   "terms": 1472,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    4
+   ],
+   "size": 24,
+   "terms": 1856,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    5
+   ],
+   "size": 24,
+   "terms": 1568,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    6
+   ],
+   "size": 24,
+   "terms": 2496,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    7
+   ],
+   "size": 24,
+   "terms": 832,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    8
+   ],
+   "size": 24,
+   "terms": 2816,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    9
+   ],
+   "size": 24,
+   "terms": 2080,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    12
+   ],
+   "size": 24,
+   "terms": 2496,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    13
+   ],
+   "size": 24,
+   "terms": 2400,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    14
+   ],
+   "size": 24,
+   "terms": 1728,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    16
+   ],
+   "size": 24,
+   "terms": 2112,
+   "radius": "67"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    2,
+    18
+   ],
+   "size": 24,
+   "terms": 2368,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    5
+   ],
+   "size": 24,
+   "terms": 2080,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    6
+   ],
+   "size": 24,
+   "terms": 1152,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    8
+   ],
+   "size": 24,
+   "terms": 1728,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    9
+   ],
+   "size": 24,
+   "terms": 1376,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    12
+   ],
+   "size": 24,
+   "terms": 1856,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    13
+   ],
+   "size": 24,
+   "terms": 1216,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    14
+   ],
+   "size": 24,
+   "terms": 928,
+   "radius": "55"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    16
+   ],
+   "size": 24,
+   "terms": 1056,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": true,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": true,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    3,
+    18
+   ],
+   "size": 24,
+   "terms": 1568,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    6
+   ],
+   "size": 24,
+   "terms": 3232,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    8
+   ],
+   "size": 24,
+   "terms": 2176,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    9
+   ],
+   "size": 24,
+   "terms": 2048,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    12
+   ],
+   "size": 24,
+   "terms": 2272,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    14
+   ],
+   "size": 24,
+   "terms": 2464,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    5,
+    16
+   ],
+   "size": 24,
+   "terms": 2720,
+   "radius": "71"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    9
+   ],
+   "size": 24,
+   "terms": 1984,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    12
+   ],
+   "size": 24,
+   "terms": 1920,
+   "radius": "63"
+  },
+  {
+   "zeros_off_axis": 216,
+   "T_inv_mu27": true,
+   "P_inv_mu27": false,
+   "P_inv_mod9": true,
+   "P_acts_as_19": true,
+   "cube_off_axis": false,
+   "ninth_off_axis": false,
+   "orbit_rep": [
+    6,
+    16
+   ],
+   "size": 24,
+   "terms": 1696,
+   "radius": "63"
+  }
+ ]
+}

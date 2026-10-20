@@ -1,0 +1,127 @@
+[
+ {
+  "p": 2,
+  "q": 5,
+  "r": 1,
+  "r_QR": true,
+  "p_QR": false,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "ninth",
+  "actual_all": "ninth",
+  "diagonal_levels": [
+   "ninth"
+  ],
+  "zero_eigenvalues": 0
+ },
+ {
+  "p": 3,
+  "q": 11,
+  "r": 20,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [],
+  "zero_eigenvalues": 72
+ },
+ {
+  "p": 4,
+  "q": 10,
+  "r": 2,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [],
+  "zero_eigenvalues": 72
+ },
+ {
+  "p": 5,
+  "q": 6,
+  "r": 21,
+  "r_QR": true,
+  "p_QR": false,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "ninth",
+  "actual_all": "ninth",
+  "diagonal_levels": [
+   "ninth"
+  ],
+  "zero_eigenvalues": 0
+ },
+ {
+  "p": 7,
+  "q": 1,
+  "r": 22,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [],
+  "zero_eigenvalues": 72
+ },
+ {
+  "p": 9,
+  "q": 4,
+  "r": 23,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [
+   "cube"
+  ],
+  "zero_eigenvalues": 0
+ },
+ {
+  "p": 10,
+  "q": 12,
+  "r": 5,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [],
+  "zero_eigenvalues": 72
+ },
+ {
+  "p": 11,
+  "q": 9,
+  "r": 24,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [],
+  "zero_eigenvalues": 72
+ },
+ {
+  "p": 12,
+  "q": 7,
+  "r": 6,
+  "r_QR": false,
+  "p_QR": true,
+  "off_diag_chars": 1296,
+  "predicted_norm_mismatches": 0,
+  "predicted_offdiag": "cube",
+  "actual_all": "cube",
+  "diagonal_levels": [
+   "cube"
+  ],
+  "zero_eigenvalues": 0
+ }
+]
