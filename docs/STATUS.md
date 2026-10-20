@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 139 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 168 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -115,12 +115,17 @@ tried) explain three square rules at 25, 29, 35, 53 and 55.
 
 ## Open questions, roughly in order
 
-**First in line: the ninth powers at m = 37.** A registered census of the radius-5 family
-(consultations.md, section 4) refuted chance for rule 4850: among 2,064,384 new rules, four
-more ninth-power rules at 37 that no known mechanism explains and that are not related to
-4850 (699738, 985232, 1431278, 1968276), against 0.0066 expected; all five are confined at 37
-only. A Fable consultation gave a certificate for 4850 (cyclotomic line projections) but no
-principle. The question for the seventh pilot: what confines these to the ninth powers?
+**First in line: rule 4850 at m = 37.** A registered census of the radius-5 family
+(consultations.md, section 4) refuted chance for rule 4850: four more ninth-power rules at 37
+that no known mechanism explains (699738, 985232, 1431278, 1968276), against 0.0066 expected.
+The seventh pilot, on Claude Fable ([llm-pilot.md](llm-pilot.md#pilot-7-the-ninth-powers-at-m--37)),
+explained those four: they are line units times pilot 4's half-Frobenius cores, and counting the
+units' exponents exactly gives the extra factor of 3. Its condition held at all 1,715 claims and
+covers 35 of the 37 unexplained ninth-power rules of radius 6. Its Lean file does not build (it
+was stopped for cost before compiling it), so the four are not yet proved in Lean; that is a
+bounded job. **4850 stays open**, with two radius-6 rules of the same class pattern (20982139,
+178279803), and the agent's report lists precisely what it is not (units times an F(2⁹)-valued
+rule, g³ times one, a twisted pair, a sparse power, a line-by-line certificate, Gauss sums).
 
 1. **The chance model.** Two pilots have shown the census's chance model undercounts. At m = 25
    it treats characters of order 25 and 5 as independent where an identity ties them (pilot 5);
