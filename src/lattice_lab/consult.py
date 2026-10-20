@@ -459,6 +459,9 @@ def _chosen(args) -> list[Consultant]:
                     raise ConsultError(f"{flag} {spec}: a whole number of tokens")
                 value = int(value)
             chosen[name] = replace(chosen[name], **{field: value})
+    if args.replicates > 1:  # independent answers from the same settings: fable-r1, fable-r2, ...
+        return [replace(c, name=f"{c.name}-r{k}") for c in chosen.values()
+                for k in range(1, args.replicates + 1)]  # fmt: skip
     return list(chosen.values())
 
 
@@ -539,6 +542,8 @@ def add_parser(sub) -> None:
                        help="advisory task budget (fable; 0 for none)")  # fmt: skip
         q.add_argument("--max-tokens", action="append", default=[], metavar="NAME=TOKENS")
         q.add_argument("--no-code", action="store_true", help="no code execution")
+        q.add_argument("--replicates", type=int, default=1, metavar="N",
+                       help="N independent answers from each consultant")  # fmt: skip
         q.add_argument("--dry-run", action="store_true", help="print the prompt; call nothing")
         if name == "ask":
             q.add_argument("--question", type=Path, help="a file holding the question")

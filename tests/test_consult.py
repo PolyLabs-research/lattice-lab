@@ -293,6 +293,7 @@ def test_truncated_answer_is_kept_and_asked_again(tmp_path: Path, monkeypatch):
 
 def test_overrides(monkeypatch):
     args = SimpleNamespace(with_=["fable"], model=[], effort=["fable=xhigh"], no_code=True,
+                           replicates=1,
                            budget=["fable=0"], max_tokens=["fable=90000"])  # fmt: skip
     (fable,) = consult._chosen(args)
     assert (fable.effort, fable.budget, fable.max_tokens) == ("xhigh", 0, 90000)
@@ -301,6 +302,9 @@ def test_overrides(monkeypatch):
     assert "tools" not in consult.anthropic_params(fable)
     with pytest.raises(consult.ConsultError):
         consult._chosen(SimpleNamespace(**{**vars(args), "budget": ["fable=lots"]}))
+    two = consult._chosen(SimpleNamespace(**{**vars(args), "replicates": 2}))
+    assert [c.name for c in two] == ["fable-r1", "fable-r2"]
+    assert all(c.effort == "xhigh" and c.max_tokens == 90000 for c in two)
 
 
 def test_missing_key_leaves_no_record(tmp_path: Path, monkeypatch):
