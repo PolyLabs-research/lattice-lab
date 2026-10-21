@@ -25,6 +25,10 @@ consult = [
     "anthropic>=1.15",
     "openai>=3.35",
 ]
+# examples/qec-distance: exact code distances by integer programming (SCIP).
+qec = [
+    "pyscipopt>=6.0",
+]
 
 # Both libraries are pinned to git commits until each makes releases. A result's ledger entry
 # records the commits actually installed, so moving a pin never changes what an old result
