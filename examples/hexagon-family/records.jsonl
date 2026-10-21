@@ -35,3 +35,7 @@
 {"agrees":true,"m":703,"odd_part":68719476735,"predicted":68719476735,"rule":"f_{23,35} (q = 243 p mod 703 = 19*37; NR mod 37, same parity)@703","terms":1588,"test":"prediction"}
 {"m":709,"predicted":"2^354 - 1 (3-part 3^2)","rule":"f_{2,201}@709","test":"prediction","timeout":2700}
 {"m":757,"predicted":"2^378 - 1 (3-part 3^4)","rule":"f_{2,110}@757","test":"prediction","timeout":2700}
+{"m":829,"not_run":"the prediction is an expression, not an integer","predicted":"2^414 - 1 (3-part 3^3)","rule":"f_{2,327}@829","test":"prediction"}
+{"m":877,"not_run":"the prediction is an expression, not an integer","predicted":"2^438 - 1 (3-part 3^2)","rule":"f_{2,253}@877","test":"prediction"}
+{"m":1213,"not_run":"the prediction is an expression, not an integer","predicted":"2^606 - 1 (3-part 3^2)","rule":"f_{2,343}@1213","test":"prediction"}
+{"m":1861,"not_run":"the prediction is an expression, not an integer","predicted":"2^930 - 1 (3-part 3^2)","rule":"f_{2,43}@1861","test":"prediction"}

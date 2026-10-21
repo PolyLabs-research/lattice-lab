@@ -888,8 +888,13 @@ name.
 
   All pass, in 3 seconds.
 - **The registered test** (`examples/hexagon-family`, registered and pushed in `f13c115` before any
-  prediction was computed). At the time of writing, 35 of the 41 held-out predictions have been
-  computed and all 35 agree. The T4 entries, at m = 709 to 1861, hit the 45-minute limit and count
-  as not tested. Their predictions are written as expressions such as "2^930 - 1", not integers, so
-  they could not have been compared as registered anyway; that is a flaw of the prediction file, and
-  moot here.
+  prediction was computed) is finished. **Verdict: the classification holds.**
+  - **Tested:** 35 of 41 predictions, all agreeing and none wrong, spread over the tiers (17 T0,
+    10 T3, 6 T1 and 2 T2).
+  - **Sizes:** 21 at 37, 6 at 13, and 61, 97, 109, 111, 181, 193, 481 and 703 once each.
+  - **Not tested:** the six T4 entries, at 709 to 1861. Two exceeded the 45-minute limit.
+  - **The run was interrupted.** A container restart killed it after 37 records. Before it was
+    resumed, the study recorded the last four T4 entries as not run (documented in its docstring
+    and commit). Their registered predictions are expressions such as "2^930 - 1", which the
+    registered comparison cannot match.
+  - **The ledger** verifies with no problems.
