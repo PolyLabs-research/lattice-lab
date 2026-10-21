@@ -1,0 +1,7 @@
+{
+ "eta = theta*rho exactly in F2[Z/37]/(J)": true,
+ "eta = theta*rho in field": true,
+ "rho in F4": true,
+ "theta in F8": true,
+ "N(lambda) = (theta theta)^(2(2n-1)) failures (off-diagonal)": 0
+}

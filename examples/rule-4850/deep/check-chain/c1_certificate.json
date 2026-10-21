@@ -1,0 +1,130 @@
+{
+ "(a) sigma multiplier 2^6 mod 37, w": [
+  27,
+  10
+ ],
+ "(a) cosets (a, b, b2) of 1-w, 2-w, 2-w^2": [
+  4,
+  3,
+  5
+ ],
+ "(a) mu6 == <2^6>": true,
+ "(a) cosets with w^2 instead": [
+  4,
+  5,
+  3
+ ],
+ "(b) product rule multiset of cosets of 1 + (1-w) v": {
+  "3": 1,
+  "1": 2,
+  "5": 1,
+  "0": 2
+ },
+ "(b) odd-multiplicity cosets": [
+  3,
+  5
+ ],
+ "(b) product rule exact in Z[Z/37] for all x,y": true,
+ "(c) aux relation x^(1+2^a) + x^(2^b) + x^(2^b2) = x^8 * (x^24 + x^9 + 1)": true,
+ "(c) gcd(aux, x^63+1)": "x^9 + x^3 + 1",
+ "(c) factors": [
+  "x^3 + x^2 + 1",
+  "x^6 + x^5 + x^4 + x^2 + 1"
+ ],
+ "(c) sextic m": "x^6 + x^5 + x^4 + x^2 + 1",
+ "(c) m irreducible (Rabin)": true,
+ "(c) m | x^21 + 1": true,
+ "(c) multiplicative order of x mod m": 21,
+ "(c) cubic factor has roots in F8 (divides x^7+1)": [
+  true
+ ],
+ "(d) Phi_37 irreducible over F2": true,
+ "(d) mu6 and 8*mu6 disjoint, 0 not in either": true,
+ "(e) certificate per d": {
+  "0": {
+   "ok": true,
+   "star_mod_m": "x^4",
+   "log_x": [
+    4
+   ],
+   "n_mod_21_solutions": [
+    2
+   ],
+   "claimed_n_mod_21": 2,
+   "max_true_exponent": 64,
+   "XY_order": 21
+  },
+  "1": {
+   "ok": true,
+   "star_mod_m": "x^5 + x^4 + x^2",
+   "log_x": [
+    18
+   ],
+   "n_mod_21_solutions": [
+    6,
+    13,
+    20
+   ],
+   "claimed_n_mod_21": 20,
+   "max_true_exponent": 96,
+   "XY_order": 7
+  },
+  "2": {
+   "ok": true,
+   "star_mod_m": "x",
+   "log_x": [
+    1
+   ],
+   "n_mod_21_solutions": [
+    17
+   ],
+   "claimed_n_mod_21": 17,
+   "max_true_exponent": 160,
+   "XY_order": 21
+  },
+  "3": {
+   "ok": true,
+   "star_mod_m": "x^5 + x^4 + x^2",
+   "log_x": [
+    18
+   ],
+   "n_mod_21_solutions": [
+    2,
+    9,
+    16
+   ],
+   "claimed_n_mod_21": 2,
+   "max_true_exponent": 288,
+   "XY_order": 7
+  },
+  "4": {
+   "ok": true,
+   "star_mod_m": "x^3 + x^2 + 1",
+   "log_x": [
+    16
+   ],
+   "n_mod_21_solutions": [
+    17
+   ],
+   "claimed_n_mod_21": 17,
+   "max_true_exponent": 544,
+   "XY_order": 21
+  },
+  "5": {
+   "ok": true,
+   "star_mod_m": "x^3 + 1",
+   "log_x": [
+    9
+   ],
+   "n_mod_21_solutions": [
+    6,
+    13,
+    20
+   ],
+   "claimed_n_mod_21": 20,
+   "max_true_exponent": 1056,
+   "XY_order": 7
+  }
+ },
+ "(e) all d certified": true
+}

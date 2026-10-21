@@ -1,0 +1,15 @@
+w = 10  1-w, 2-w, 2-w^2 = 28 29 13 = -9, -8, -24: True
+cosets (log2 mod 6): (4, 3, 5)   with w^2 as generator: (4, 5, 3)
+eta(x) eta((1-w)x) = sum_v eta(x(1+(1-w)v)); arguments and cosets: [(29, 3), (22, 1), (13, 5), (26, 0), (17, 1), (10, 0)]
+   eta(0) edge case enters the aux identity: False
+   surviving cosets mod 2: [3, 5]  => X * X^16 = X^(2^3) + X^(2^5) = X^8 + X^32
+X^17 + X^8 + X^32 == X^8 (X^24 + X^9 + 1): True
+gcd(x^24+x^9+1, x^63+1): own = 0b1000001001  sympy = x**9 + x**3 + 1  == x^9+x^3+1: True
+(x^3+x^2+1)(x^6+x^5+x^4+x^2+1) == x^9+x^3+1: True
+sympy factor_list(x^9+x^3+1): (1, [(Poly(x**3 + x**2 + 1, x, modulus=2), 1), (Poly(x**6 + x**5 + x**4 + x**2 + 1, x, modulus=2), 1)])
+irreducibility: {'cubic_rabin': True, 'sextic_rabin': True, 'sextic_gcd_x4_x': 1, 'sextic_gcd_x8_x': 1}
+sextic | x^21 + 1: True   sextic | x^7 + 1: False  (roots of order exactly 21 if not | x^7+1, x^3+1)
+squarefree x^24+x^9+1 (gcd with derivative x^8): True
+eta_0 facts: {'rank_zeta1_to_zeta36': 36, 'period_supports_disjoint_cover': True, 'periods_distinct_nonzero': True, 'eta0_nonzero': True, 'eta0_in_F64': True, 'eta0_in_F8': False, 'eta0_in_F4': False, 'Frob3_eta0_is_eta8': True, 'sextic_at_eta0': 0, 'cubic_at_eta0_nonzero': True, 'eta0_x24_x9_1': 0, 'eta0_order': 21, 'eta0_is_cube_in_F64': True}
+solutions in F64 of X^17 = X^8 + X^32: 10  by degree: Counter({6: 6, 3: 3, 1: 1})  conjugates of eta_0 among them: 6
+(f) field norm == (eta(al)eta(be))^n(d) at all 1296 characters: True   formal mod sextic: {0: True, 1: True, 2: True, 3: True, 4: True, 5: True}

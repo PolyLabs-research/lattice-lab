@@ -130,9 +130,10 @@ and the Ψ₅ exponent.
 **What it means.** Four of the five were the half-Frobenius mechanism counted exactly, and are now
 proved in Lean. The step
 from cubes to ninth powers is one factor of 3 in an exponent, which pilot 4 discarded by bounding
-each unit separately. Rule 4850 remains open. With 20982139 and 178279803 it forms a family of
-three apparently independent ninth-power events at radius up to 6 that no known mechanism explains. The
-agent's negative result is specific about what that mechanism is not.
+each unit separately. Rule 4850 remained open after the pilot. A multi-agent deep dive then
+explained it (examples/rule-4850/deep/REPORT.md): a hexagon identity, an order-3 symmetry that
+exists only at 37, and a Gauss-period norm formula. The two radius-6 relatives turned out to be
+Frobenius conjugates of 4850's rotation.
 
 ## Pilot 6: the square family at m = 37
 

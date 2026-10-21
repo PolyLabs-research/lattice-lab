@@ -12,7 +12,7 @@ default branch and no pull request is open; merging is a decision for you.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 172 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 175 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
 
@@ -122,18 +122,25 @@ against linear algebra and twelve published codes (`examples/qec-bb`), passed: 3
 random codes agree and all 12 published k are reproduced. Next: distances, which nothing here
 computes yet.
 
-**First in line: rule 4850 at m = 37.** A registered census of the radius-5 family
-(consultations.md, section 4) refuted chance for rule 4850: four more ninth-power rules at 37
-that no known mechanism explains (699738, 985232, 1431278, 1968276), against 0.0066 expected.
-The seventh pilot, on Claude Fable ([llm-pilot.md](llm-pilot.md#pilot-7-the-ninth-powers-at-m--37)),
-explained those four: they are line units times pilot 4's half-Frobenius cores, and counting the
-units' exponents exactly gives the extra factor of 3. Its condition held at all 1,715 claims and
-covers 35 of the 37 unexplained ninth-power rules of radius 6. Its Lean file did not build (it
-was stopped for cost before compiling it); a second round over the API ($4.47) fixed it, and the
-judge accepts the four `period 37 D ∣ 29127` theorems on the standard axioms; they are in the
-library as `Ninth37.lean`. **4850 stays open**, with two radius-6 rules of the same class pattern (20982139,
-178279803), and the agent's report lists precisely what it is not (units times an F(2⁹)-valued
-rule, g³ times one, a twisted pair, a sparse power, a line-by-line certificate, Gauss sums).
+**Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
+- **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
+- **A multi-agent deep dive then explained 4850 itself, with a proof.**
+  - The hexagon identity: (x + 1/x + y + 1/y) · 4850 = Hex(x,y) + Hex(y,x), with Hex = {±(4,0), ±(2,±5)}.
+  - An order-3 symmetry that exists only at 37, since 5² + 3·2² = 37.
+  - The closed form λ · t_α t_β = W⁴, with W a Kloosterman-type sum over μ6.
+  - A norm formula in Gauss periods. At 37 it puts every eigenvalue's norm to F64 in F8*, and that
+    is exactly the ninth-power condition.
+- **Checking.** Three independent checkers each found that the proof stands with repairs, and the
+  orchestrator rechecked the final chain (`tests/test_rule4850_proof.py`).
+- **The relatives.** The two radius-6 relatives are exact Frobenius conjugates of 4850's rotation.
+- **The hexagon family.** It is classified at 37: p a non-residue gives ninth powers, p a residue
+  gives cubes. A held-out registered test of 41 predictions (`examples/hexagon-family`) has 35 of
+  35 correct so far.
+- **Still open:**
+  - the repaired proof as one document, and in Lean;
+  - why 37's coset data are (4, 3, 5);
+  - the classes mod 27;
+  - non-confinement elsewhere, which is computed, not derived.
 
 1. **The chance model.** Two pilots have shown the census's chance model undercounts. At m = 25
    it treats characters of order 25 and 5 as independent where an identity ties them (pilot 5);

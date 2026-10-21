@@ -1,0 +1,11 @@
+{'(a) sigma multiplier 2^6 mod 37, w': [27, 10], '(a) cosets (a, b, b2) of 1-w, 2-w, 2-w^2': [4, 3, 5], '(a) mu6 == <2^6>': True, '(a) cosets with w^2 instead': [4, 5, 3]}
+(b) [3, 5] True
+(c) x^9 + x^3 + 1 ['x^3 + x^2 + 1', 'x^6 + x^5 + x^4 + x^2 + 1'] order of x mod m: 21
+(d) True True
+d=0 {'ok': True, 'star_mod_m': 'x^4', 'log_x': [4], 'n_mod_21_solutions': [2], 'claimed_n_mod_21': 2, 'max_true_exponent': 64, 'XY_order': 21}
+d=1 {'ok': True, 'star_mod_m': 'x^5 + x^4 + x^2', 'log_x': [18], 'n_mod_21_solutions': [6, 13, 20], 'claimed_n_mod_21': 20, 'max_true_exponent': 96, 'XY_order': 7}
+d=2 {'ok': True, 'star_mod_m': 'x', 'log_x': [1], 'n_mod_21_solutions': [17], 'claimed_n_mod_21': 17, 'max_true_exponent': 160, 'XY_order': 21}
+d=3 {'ok': True, 'star_mod_m': 'x^5 + x^4 + x^2', 'log_x': [18], 'n_mod_21_solutions': [2, 9, 16], 'claimed_n_mod_21': 2, 'max_true_exponent': 288, 'XY_order': 7}
+d=4 {'ok': True, 'star_mod_m': 'x^3 + x^2 + 1', 'log_x': [16], 'n_mod_21_solutions': [17], 'claimed_n_mod_21': 17, 'max_true_exponent': 544, 'XY_order': 21}
+d=5 {'ok': True, 'star_mod_m': 'x^3 + 1', 'log_x': [9], 'n_mod_21_solutions': [6, 13, 20], 'claimed_n_mod_21': 20, 'max_true_exponent': 1056, 'XY_order': 7}
+ALL d certified: True

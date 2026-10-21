@@ -1,0 +1,7 @@
+GF(2^36) modulus (dense random): 0x196aacd5cd  weight 21  w = 10
+(a) rank of {zeta^i} = 36 ; eta0 in F64: True  in F8: False  order: 21
+(b) coset data = (4, 3, 5) ; log2 3 = 26 (mod 12: 2 ); 3^3 = 2^6: True ; log2(1-w) = 34  = (log3+6)/2 mod 18 -> 16
+    2-w = 29 = -8? True ; 2-w^2 = 13 = -24? True ; 1-w = 28 = -9? True ; log2 7 mod 6 = 2
+(c) W forms agree: True ; (*) mismatches: 0 ; closed-form mismatches: 0
+(d) 4850: {'off': 1296, 'diag': 72, 'zero': 0, 'h4_bad': 0, 'normform_bad': 0, 'ninth_direct_fail': 0, 'normF8_vs_direct_disagree': 0, 'diag_formula_bad': 0, 'diag_ninth_fail': 0, 'in_F18_fail': 0}
+(e) N(t_x) = eta(x)^2: True ; t_x 3-levels by chi: {'1': [1], '-1': [1]} ; ninth class depends only on chi(x): True

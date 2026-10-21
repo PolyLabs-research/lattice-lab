@@ -1,0 +1,24 @@
+{'rep': (0, 1), 'frame': 'off-diagonal d=0', 'al': 19, 'be': 18, 'log27': 18, 'log63': 9, 'pred_log63': 9, 'log9': 0, 'dossier27': 18}
+{'rep': (1, 1), 'frame': 'diagonal (be=0 or al=0)', 'al': 1, 'be': 0, 'log27': 9, 'log63': 36, 'pred_log63': 36, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 2), 'frame': 'off-diagonal d=4', 'al': 20, 'be': 18, 'log27': 9, 'log63': 27, 'pred_log63': 27, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 3), 'frame': 'off-diagonal d=5', 'al': 2, 'be': 36, 'log27': 18, 'log63': 36, 'pred_log63': 36, 'log9': 0, 'dossier27': 18}
+{'rep': (1, 4), 'frame': 'off-diagonal d=3', 'al': 21, 'be': 17, 'log27': 0, 'log63': 36, 'pred_log63': 36, 'log9': 0, 'dossier27': 0}
+{'rep': (1, 5), 'frame': 'off-diagonal d=5', 'al': 3, 'be': 35, 'log27': 9, 'log63': 9, 'pred_log63': 9, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 6), 'frame': 'off-diagonal d=3', 'al': 22, 'be': 16, 'log27': 0, 'log63': 36, 'pred_log63': 36, 'log9': 0, 'dossier27': 0}
+{'rep': (1, 7), 'frame': 'off-diagonal d=0', 'al': 4, 'be': 34, 'log27': 9, 'log63': 9, 'pred_log63': 9, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 8), 'frame': 'off-diagonal d=4', 'al': 23, 'be': 15, 'log27': 9, 'log63': 45, 'pred_log63': 45, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 10), 'frame': 'off-diagonal d=4', 'al': 24, 'be': 14, 'log27': 9, 'log63': 54, 'pred_log63': 54, 'log9': 0, 'dossier27': 9}
+{'rep': (1, 13), 'frame': 'off-diagonal d=1', 'al': 7, 'be': 31, 'log27': 18, 'log63': 18, 'pred_log63': 18, 'log9': 0, 'dossier27': 18}
+orbits selected by the bits of 4850 : [(1, 0), (2, 1), (2, 2), (3, 0), (3, 1), (3, 3), (4, 2)]
+matches dossier orbit list : True
+nonzero characters : 1368
+zero eigenvalues : 0
+all in F(2^18) : True
+all ninth powers (lambda^29127 = 1) : True
+number that are 27th powers : 216
+all class logs mod 27 in {0,9,18} : True
+predicted log mod 63 == actual at every class : True
+ours == dossier (mod 27) exactly : True
+ours == dossier (mod 27) after global swap 9<->18 : False
+units u mod 27 with u*ours == dossier at all 11 classes : [1, 4, 7, 10, 13, 16, 19, 22, 25]
+log mod 9 over all characters of each class : {'(0, 1)': [0], '(1, 1)': [0], '(1, 2)': [0], '(1, 3)': [0], '(1, 4)': [0], '(1, 5)': [0], '(1, 6)': [0], '(1, 7)': [0], '(1, 8)': [0], '(1, 10)': [0], '(1, 13)': [0]}

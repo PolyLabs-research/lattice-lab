@@ -1,0 +1,14 @@
+13: eta0 is a primitive cube root in F4 (eta0 + eta1 = 1): True ; coset triple (mod 2): (1, 1, 0) ; N(W) by (coset al, coset be): {'00': 'eta0', '01': '1', '10': '1', '11': 'eta1'}
+61 {'p': 2, 'q': 7, 'terms': 56, 'odd_part': 1073741823, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+61 {'p': 1, 'q': 27, 'terms': 108, 'odd_part': 1073741823, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+61 {'p': 5, 'q': 13, 'terms': 196, 'odd_part': 1073741823, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+61 {'p': 3, 'q': 20, 'terms': 240, 'odd_part': 1073741823, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+61 {'f': 10, 'ninth_decidable_by_N': False, 'cube_decidable_by_N': True, 'index_of_2': 1, 'single_orbit': True, 'eta_all_cubes_in_k': False, 'K_3adic': 2, '4850_odd_part': 1073741823, '4850_level': 0}
+97 {'p': 4, 'q': 7, 'terms': 112, 'odd_part': 16777215, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+97 {'p': 7, 'q': 12, 'terms': 336, 'odd_part': 16777215, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+97 {'p': 1, 'q': 26, 'terms': 104, 'odd_part': 16777215, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 1, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+97 {'f': 8, 'ninth_decidable_by_N': False, 'cube_decidable_by_N': True, 'index_of_2': 2, 'single_orbit': False, 'eta_all_cubes_in_k': False, 'K_3adic': 2, '4850_odd_part': 16777215, '4850_level': 0}
+109 {'p': 6, 'q': 1, 'terms': 164, 'odd_part': 262143, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 2, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+109 {'p': 1, 'q': 18, 'terms': 72, 'odd_part': 262143, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 2, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+109 {'p': 7, 'q': 17, 'terms': 316, 'odd_part': 262143, 'level_all_chars': 0, 'offdiag_level_direct': 0, 'offdiag_level_from_star': 0, 'star_decides_up_to_level': 2, 'star_vs_field_norm_mismatch': 0, 'agree': True}
+109 {'f': 6, 'ninth_decidable_by_N': True, 'cube_decidable_by_N': True, 'index_of_2': 3, 'single_orbit': False, 'eta_all_cubes_in_k': False, 'K_3adic': 3, '4850_odd_part': 262143, '4850_level': 0}

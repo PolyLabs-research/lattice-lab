@@ -1,0 +1,14 @@
+{
+ "28,41": {
+  "mu6_of_hexagon_is_frobenius_mu6": false,
+  "sampled": 3997,
+  "cubes": 1316,
+  "ninth": 428
+ },
+ "32,31": {
+  "mu6_of_hexagon_is_frobenius_mu6": true,
+  "sampled": 3999,
+  "cubes": 1353,
+  "ninth": 446
+ }
+}

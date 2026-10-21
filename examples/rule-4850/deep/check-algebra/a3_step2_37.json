@@ -1,0 +1,100 @@
+{
+ "w": 10,
+ "multipliers_mod_37": {
+  "1-w": 28,
+  "2-w": 29,
+  "2-w^2": 13,
+  "1-w^2": 12,
+  "2-(w^2)": 13,
+  "2-(w^2)^2=2-w": 29
+ },
+ "cosets_(1-w,2-w,2-w^2)": [
+  4,
+  3,
+  5
+ ],
+ "cosets_other_generator_(1-w^2,2-w^2,2-w)": [
+  4,
+  5,
+  3
+ ],
+ "product_rule_args_eta(x)eta((1-w)x)": [
+  {
+   "v": 1,
+   "arg": 29,
+   "coset": 3
+  },
+  {
+   "v": 10,
+   "arg": 22,
+   "coset": 1
+  },
+  {
+   "v": 11,
+   "arg": 13,
+   "coset": 5
+  },
+  {
+   "v": 26,
+   "arg": 26,
+   "coset": 0
+  },
+  {
+   "v": 27,
+   "arg": 17,
+   "coset": 1
+  },
+  {
+   "v": 36,
+   "arg": 10,
+   "coset": 0
+  }
+ ],
+ "aux_surviving_cosets": [
+  3,
+  5
+ ],
+ "gcd": "0b1000001001",
+ "gcd_is_x9_x3_1": true,
+ "factorisation_ok": true,
+ "irreducible": {
+  "cubic_rabin": true,
+  "sextic_rabin": true,
+  "sextic_gcd_x4_x": 1,
+  "sextic_gcd_x8_x": 1
+ },
+ "sextic_divides_x21_1": true,
+ "sextic_divides_x7_1": false,
+ "eta0": {
+  "rank_zeta1_to_zeta36": 36,
+  "period_supports_disjoint_cover": true,
+  "periods_distinct_nonzero": true,
+  "eta0_nonzero": true,
+  "eta0_in_F64": true,
+  "eta0_in_F8": false,
+  "eta0_in_F4": false,
+  "Frob3_eta0_is_eta8": true,
+  "sextic_at_eta0": 0,
+  "cubic_at_eta0_nonzero": true,
+  "eta0_x24_x9_1": 0,
+  "eta0_order": 21,
+  "eta0_is_cube_in_F64": true
+ },
+ "F64_solutions": {
+  "n": 10,
+  "by_degree": {
+   "1": 1,
+   "6": 6,
+   "3": 3
+  }
+ },
+ "f_norm_closed_form_all_chars": true,
+ "f_formal_mod_sextic": {
+  "0": true,
+  "1": true,
+  "2": true,
+  "3": true,
+  "4": true,
+  "5": true
+ }
+}

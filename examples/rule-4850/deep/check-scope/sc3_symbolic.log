@@ -1,0 +1,8 @@
+symbolic: N - (*) == 0 in F2[A,B]/(e3 - e1^2): True ; identically zero without it: False
+S1 + S2 = e1 e2 + e3 identically: True  (with e3 = e1^2 this is the aux relation X Xa = Xb + Xb')
+13 {'f': 2, 'w': 9, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 144}
+19 {'f': 3, 'w': 11, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 324}
+37 {'f': 6, 'w': 10, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 1296}
+61 {'f': 10, 'w': 13, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 3600}
+109 {'f': 6, 'w': 45, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 11664}
+181 {'f': 30, 'w': 132, 'dictionary_failures': 0, 'star_failures': 0, 'star_pairs': 3240}

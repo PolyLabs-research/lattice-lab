@@ -1,0 +1,46 @@
+{
+ "modulus_P": "0x196aacd5cd",
+ "w": 10,
+ "rank zeta^1..36": 36,
+ "eta0 in F64": true,
+ "eta0 in F8": false,
+ "eta0 order": 21,
+ "coset data (a,b,b2)": [
+  4,
+  3,
+  5
+ ],
+ "log2 3 mod 36": 26,
+ "3^3 = 2^6 mod 37": true,
+ "(1-w)^2 = -3w": true,
+ "log2(1-w) mod 36": 34,
+ "A_full = (log3 + 6)/2 mod 18": 16,
+ "log2 7 mod 6": 2,
+ "(2-w)(2-w^2) = 7": true,
+ "W(sum mu3 t t) == W(definition) mismatches": 0,
+ "(*) mismatches /1296": 0,
+ "closed form mismatches /1296": 0,
+ "4850 exponent set == census.rule(4850, 4)": true,
+ "4850": {
+  "off": 1296,
+  "diag": 72,
+  "zero": 0,
+  "h4_bad": 0,
+  "normform_bad": 0,
+  "ninth_direct_fail": 0,
+  "normF8_vs_direct_disagree": 0,
+  "diag_formula_bad": 0,
+  "diag_ninth_fail": 0,
+  "in_F18_fail": 0
+ },
+ "N(t_x) = eta(x)^2": true,
+ "t_x levels by Legendre symbol": {
+  "1": [
+   1
+  ],
+  "-1": [
+   1
+  ]
+ },
+ "t_x ninth class constant on QR / on NR, and different": true
+}

@@ -1,0 +1,9 @@
+(A) gcd = x**9 + x**3 + 1  factors ['x**3 + x**2 + 1', 'x**6 + x**5 + x**4 + x**2 + 1']  sextic | x^21+1: True  irreducible: True
+    reductions mod sextic: {0: True, 1: True, 2: True, 3: True, 4: True, 5: True}
+(B) actual (4,3,5): {'n_aux_solutions_deg6': 6, 'aux_solutions_all_cubes': True, 'cube_forced_e1': [True, True, True, True, True, True], 'aux_forced_e1': [True, True, True, True, True, True], 'cube_forced_e4': [True, True, True, True, True, True], 'aux_forced_e4': [True, True, True, True, True, True]}
+    cube hypothesis, d = +-1 forced (4850, e=4): A values [4]  #triples 36 ; (core, e=1): A values [4] # 36
+    cube hypothesis, all six d forced (4850): [(4, 0, 0), (4, 1, 1), (4, 1, 3), (4, 1, 5), (4, 2, 2), (4, 3, 1), (4, 3, 3), (4, 3, 5), (4, 4, 4), (4, 5, 1), (4, 5, 3), (4, 5, 5)]
+    aux relation only, d = +-1 forced (4850): [(1, 1, 3), (1, 3, 1), (2, 1, 3), (2, 3, 1), (3, 0, 1), (3, 0, 3), (3, 1, 0), (3, 3, 0), (4, 1, 5), (4, 3, 5), (4, 5, 1), (4, 5, 3)]
+    aux relation only, all six forced (4850): [(4, 3, 5), (4, 5, 3)]
+    triples whose aux relation admits only cubes (deg-6 solutions): [(2, 1, 5), (2, 5, 1), (3, 1, 4), (3, 4, 1), (4, 3, 5), (4, 5, 3)]
+    A = 4 triples with degree-6 aux solutions: (n_sol, all cubes, residual forced): {(4, 1, 2): (6, False, False), (4, 1, 5): (6, False, True), (4, 2, 1): (6, False, False), (4, 3, 5): (6, True, True), (4, 5, 1): (6, False, True), (4, 5, 3): (6, True, True)}

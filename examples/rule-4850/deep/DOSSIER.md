@@ -1,5 +1,7 @@
 # Rule 4850 at m = 37: the dossier
 
+**Resolved since: see [REPORT.md](REPORT.md).** This dossier is the starting brief, kept as it was.
+
 Everything the project knows about rule 4850, for the deep dive. Paths are relative to
 /home/user/lattice-lab unless they start with /home/user/pilot-37c-round2 (the seventh pilot's
 sandbox, with its tools/, data/ and scratch/).
