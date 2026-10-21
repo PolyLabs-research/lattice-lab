@@ -134,8 +134,9 @@ computes yet.
   orchestrator rechecked the final chain (`tests/test_rule4850_proof.py`).
 - **The relatives.** The two radius-6 relatives are exact Frobenius conjugates of 4850's rotation.
 - **The hexagon family.** It is classified at 37: p a non-residue gives ninth powers, p a residue
-  gives cubes. A held-out registered test of 41 predictions (`examples/hexagon-family`) has 35 of
-  35 correct so far.
+  gives cubes. A held-out registered test (`examples/hexagon-family`) confirmed it: 35 of 35
+  tested predictions are correct, at 37, 13 and eight other sizes; the six largest sizes were
+  not tested.
 - **Still open:**
   - the repaired proof as one document, and in Lean;
   - why 37's coset data are (4, 3, 5);
