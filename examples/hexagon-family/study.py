@@ -26,6 +26,16 @@ Each prediction is computed in its own process, by the family's builders and
 examples/linear-atlas-3/eigen.py odd_part, with a time limit of 45 minutes. A prediction that
 runs out of time is recorded as not tested; it neither supports nor refutes. Any computed odd
 part that differs from the prediction refutes the classification as stated.
+
+Change after registration (2026-10-21, before the run was resumed). The first run was killed by
+a container restart after 37 of the 41 records: 35 agreed and 2 timed out (the T4 entries at 709
+and 757). The four entries left (T4, at m = 829, 877, 1213 and 1861) are not run.
+- Their registered predictions are expressions, such as "2^930 - 1 (3-part 3^2)", not integers.
+  The registered comparison cannot match them, so a completed computation would have counted as a
+  false mismatch.
+- The two smaller T4 entries already exceeded the time limit.
+
+They are recorded as not run, which counts like a time-out: not tested. Nothing else changes.
 """
 
 from __future__ import annotations
@@ -94,6 +104,20 @@ def execute(path: Path, workers: int) -> None:
     code = WORKER.format(family=str(FAMILY))
     for p in sorted(held_out(), key=lambda p: p["m"]):
         if p["rule"] + "@" + str(p["m"]) in done:
+            continue
+        if not isinstance(p["predicted_odd_part"], int):  # see the change note above
+            append_records(
+                path,
+                [
+                    {
+                        "test": "prediction",
+                        "rule": p["rule"] + "@" + str(p["m"]),
+                        "m": p["m"],
+                        "predicted": p["predicted_odd_part"],
+                        "not_run": "the prediction is an expression, not an integer",
+                    }
+                ],
+            )
             continue
         try:
             out = subprocess.run([str(PYTHON), "-c", code, json.dumps(p)], cwd=FAMILY,
