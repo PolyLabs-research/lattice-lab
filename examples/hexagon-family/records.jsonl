@@ -34,3 +34,4 @@
 {"agrees":true,"m":481,"odd_part":262143,"predicted":262143,"rule":"f_{19,29} (q = 201 p mod 481 = 13*37; NR mod 13 and mod 37, same parity)@481","terms":1084,"test":"prediction"}
 {"agrees":true,"m":703,"odd_part":68719476735,"predicted":68719476735,"rule":"f_{23,35} (q = 243 p mod 703 = 19*37; NR mod 37, same parity)@703","terms":1588,"test":"prediction"}
 {"m":709,"predicted":"2^354 - 1 (3-part 3^2)","rule":"f_{2,201}@709","test":"prediction","timeout":2700}
+{"m":757,"predicted":"2^378 - 1 (3-part 3^4)","rule":"f_{2,110}@757","test":"prediction","timeout":2700}
