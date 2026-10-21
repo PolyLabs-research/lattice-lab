@@ -8,3 +8,6 @@ __pycache__/
 
 # Lean build output
 /proofs/.lake/
+
+# Firebase CLI deploy cache
+site/.firebase/

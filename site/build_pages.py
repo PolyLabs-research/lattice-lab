@@ -72,16 +72,14 @@ HEAD = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{base}<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -127,7 +125,10 @@ def build(page: str) -> str:
     title, description = PAGES[page]
     nav = "\n".join(f'      <a href="{p}.html">{label}</a>' for p, label in NAV)
     body = (SRC / f"{page}.html").read_text()
-    head = HEAD.format(title=title, description=description, mark=MARK, nav=nav)
+    # The 404 page is served at whatever path was missed, such as /proofs/nope, so its relative
+    # links must resolve from the root.
+    base = '<base href="/">\n' if page == "404" else ""
+    head = HEAD.format(title=title, description=description, base=base, mark=MARK, nav=nav)
     js = OUT / "assets" / "js" / f"{page}.js"
     script = f'<script src="assets/js/{page}.js"></script>' if js.exists() else ""
     return head + body.rstrip() + "\n" + FOOT.format(script=script)

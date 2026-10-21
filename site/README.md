@@ -35,41 +35,47 @@ links would 404 for visitors. Kepler and LatticeLife are public and are linked.
 
 ## Deploying on Google Cloud
 
-### Recommended: Firebase Hosting
+### In use: Firebase Hosting
 
 Firebase Hosting is Google Cloud's static hosting. It serves from a global CDN, issues the TLS
-certificate for a custom domain itself, and is free at this site's size. It works with an existing
-Google Cloud project.
+certificate for a custom domain itself, and is free at this site's size.
 
-1. Install the CLI and sign in:
-   ```bash
-   npm install -g firebase-tools
-   firebase login
-   ```
-2. Add Firebase to the Google Cloud project you already use: in the
-   [Firebase console](https://console.firebase.google.com/), choose **Add project** and pick
-   the existing Google Cloud project from the list.
-3. Deploy from `site/`, where `firebase.json` is:
-   ```bash
-   cd site
-   firebase deploy --only hosting --project YOUR_PROJECT_ID
-   ```
-   The site is now live at `https://YOUR_PROJECT_ID.web.app`.
-4. Connect the domain: in the Firebase console, open **Hosting**, then **Add custom domain**,
-   and enter `polylabs-research.net`. Add `www.polylabs-research.net` too, set to redirect to
-   the bare domain. Firebase shows the DNS records to create.
-5. In GoDaddy, open **My Products**, then **Domains**, then **polylabs-research.net**, then
-   **DNS**, and:
-   - add the **TXT** record Firebase gives, for verification;
-   - delete GoDaddy's default **A** record for `@` (the "Parked" one), and add the **A**
-     records Firebase gives for `@`;
-   - for `www`, replace the default CNAME with the record Firebase gives.
+The site is hosted in the Google Cloud project `polylabs-512110` (billed to the Poly-Labs
+account, which has a GBP 5 budget alert on this project). Its default address is
+`https://polylabs-512110.web.app`. `site/.firebaserc` names the project, so no `--project` flag
+is needed.
 
-   DNS usually takes minutes but can take a few hours. Firebase then issues the certificate by
-   itself, and the console shows the domain as **Connected**.
+Deploy from `site/`, where `firebase.json` is:
 
-To redeploy after a change, run `firebase deploy --only hosting --project YOUR_PROJECT_ID`
-again. Earlier versions stay in the console's release history, and one click rolls back.
+```bash
+npm install -g firebase-tools     # once
+cd site
+firebase hosting:channel:deploy preview --expires 1d   # optional: a private preview URL first
+firebase deploy --only hosting
+```
+
+The CLI signs in with `firebase login`, or uses gcloud's application-default credentials if
+`GOOGLE_CLOUD_QUOTA_PROJECT=polylabs-512110` is set. Earlier versions stay in the console's
+release history, and one click rolls back.
+
+The fonts (IBM Plex Mono, STIX Two Text) are served from `public/assets/fonts/`, not Google
+Fonts, so a visit makes no third-party requests.
+
+#### The domain
+
+`polylabs-research.net` and `www.polylabs-research.net` (a redirect to the bare domain) are
+registered on the Firebase site. Their DNS is at GoDaddy: **My Products**, then **Domains**,
+then **polylabs-research.net**, then **DNS**. The records Firebase needs:
+
+| Type  | Name  | Value                          |
+|-------|-------|--------------------------------|
+| A     | `@`   | `199.36.158.100`               |
+| TXT   | `@`   | `hosting-site=polylabs-512110` |
+| CNAME | `www` | `polylabs-512110.web.app`      |
+
+GoDaddy's two parked **A** records for `@` must be deleted, and its default `www` CNAME (to
+`@`) replaced. Firebase then issues the certificate by itself, and the console's Hosting page
+shows each domain as **Connected**.
 
 ### Alternative: a Cloud Storage bucket behind a load balancer
 
