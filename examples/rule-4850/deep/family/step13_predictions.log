@@ -1,0 +1,7 @@
+f_{23,2} m = 37 predicted 29127 computed 29127 agree True (0 s)
+f_{24,38} m = 13 predicted 21 computed 21 agree True (0 s)
+f_{2,7}  (61 = 7^2 + 3*2^2, the 4850 analogue) m = 61 predicted 1073741823 computed 1073741823 agree True (0 s)
+f_{1,21} (q = 21 p mod 111 = 3*37) m = 111 predicted 68719476735 computed 68719476735 agree True (1 s)
+even-rep (L3(2) + L6(5))/s m = 37 predicted 29127 computed 29127 agree True (0 s)
+even-rep (hex(1) + L3(7))/s m = 37 predicted 29127 computed 29127 agree True (0 s)
+47 predictions, 6 computed

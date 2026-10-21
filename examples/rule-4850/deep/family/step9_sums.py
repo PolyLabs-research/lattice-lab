@@ -80,4 +80,4 @@ for m in [int(x) for x in sys.argv[1:]] or [37, 13]:
     print(m, 'pairs confined off-diagonal:', len(found))
     for f in found[:60]:
         print('   ', f)
-json.dump({str(k): v for k, v in res.items()}, open('step9_sums.json', 'w'), indent=1)
+json.dump({str(k): v for k, v in res.items()}, open('step9_sums_%s.json' % '_'.join(str(k) for k in res), 'w'), indent=1)

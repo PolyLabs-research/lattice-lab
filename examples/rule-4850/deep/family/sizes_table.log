@@ -1,0 +1,66 @@
+    m    d   A  ind2   -1   agen |   t  pi   W W=pi^n@3^i  best
+    7    3   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+   13   12   2     1    y      2 |   0   0   0    [-5, 1]     1
+   19   18   3     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+   21    6   2     2    n      2 |   0   0   0  [None, 0]     0
+   31    5   0     6    n      - | no 3-torsion in F(2^d)*: nothing to confine
+   37   36   3     1    y      3 |   1   1   1    [-5, 2]     2
+   39   12   2     2    n      2 |   0   0   0  [None, 0]     0
+   43   14   1     3    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+   49   21   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+   57   18   3     2    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+   61   60   2     1    y      2 |   0   0   0  [None, 0]     0
+   67   66   2     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+   73    9   0     8    n      - | no 3-torsion in F(2^d)*: nothing to confine
+   79   39   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+   91   12   2     6    n      2 |   0   0   0  [None, 0]     0
+   91   12   2     6    n      2 |   0   0   0  [None, 0]     0
+   93   10   1     6    n      1 |   0   0   0  [None, 0]     0
+   97   48   2     2    y      2 |   0   0   0  [None, 0]     0
+  103   51   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  109   36   3     3    y      3 |   0   0   0  [None, 0]     0
+  111   36   3     2    n      3 |   1   1   0  [None, 0]     0
+  127    7   0    18    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  129   14   1     6    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  133   18   3     6    n      3 |   0   0   0  [None, 0]     0
+  133   18   3     6    n      3 |   0   0   0  [None, 0]     0
+  139  138   2     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  147   42   2     2    n      2 |   0   0   0  [None, 0]     0
+  151   15   0    10    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  157   52   1     3    y      1 |   0   0   0  [None, 0]     0
+  163  162   5     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  169  156   2     1    y      2 |   0   0   0  [None, 0]     0
+  181  180   3     1    y      3 |   0   0   0  [None, 0]     0
+  183   60   2     2    n      2 |   0   0   0  [None, 0]     0
+  193   96   2     2    y      2 |   0   0   0  [None, 0]     0
+  199   99   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  201   66   2     2    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  211  210   2     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  217   15   0    12    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  219   18   3     8    n      3 |   0   0   0  [None, 0]     0
+  223   37   0     6    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  229   76   1     3    y      1 |   0   0   0  [None, 0]     0
+  237   78   2     2    n      2 |   0   0   0  [None, 0]     0
+  241   24   2    10    y      2 |   0   0   0  [None, 0]     0
+  247   36   3     6    n      3 |   0   0   0  [None, 0]     0
+  247   36   3     6    n      3 |   0   0   0  [None, 0]     0
+  259   36   3     6    n      3 |   0   0   0  [None, 0]     0
+  259   36   3     6    n      3 |   0   0   0  [None, 0]     0
+  271  135   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  273   12   2    12    n      2 |   0   0   0  [None, 0]     0
+  273   12   2    12    n      2 |   0   0   0  [None, 0]     0
+  277   92   1     3    y      1 |   0   0   0  [None, 0]     0
+  283   94   1     3    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  291   48   2     4    n      2 |   0   0   0  [None, 0]     0
+  307  102   2     3    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  313  156   2     2    y      2 |   0   0   0  [None, 0]     0
+  331   30   2    11    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  337   21   0    16    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  349  348   2     1    y      2 |   1   1   0  [None, 0]     0
+  367  183   0     2    n      - | no 3-torsion in F(2^d)*: nothing to confine
+  373  372   2     1    y      2 |   1   1   0  [None, 0]     0
+  379  378   4     1    y      0 | symmetric values in fields with no 3-torsion: trivially confined
+  397   44   1     9    y      1 |   0   0   0  [None, 0]     0
+  421  420   2     1    y      2 |   0   0   0  [None, 0]     0
+  541  540   4     1    y      4 |   0   0   0  [None, 0]     0
+  613  612   3     1    y      3 |   0   0   0  [None, 0]     0

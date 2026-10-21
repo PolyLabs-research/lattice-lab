@@ -1,0 +1,8 @@
+37: NR (2, 5), QR (1, 16) identity holds at 1368 characters, fails at 0
+   (where, chi(al be) or -, d_NR, d_QR) counts: {('off', 1, 0, 1): 324, ('off', 1, 0, 2): 324, ('diag', 0, 1): 36, ('off', -1, 0, 0): 648, ('diag', 0, 2): 36}
+37: NR (5, 6), QR (12, 7) identity holds at 1368 characters, fails at 0
+   (where, chi(al be) or -, d_NR, d_QR) counts: {('off', 1, 0, 1): 324, ('off', 1, 0, 2): 324, ('diag', 0, 1): 36, ('off', -1, 0, 0): 648, ('diag', 0, 2): 36}
+13: NR (2, 1), QR (1, 6) identity holds at 168 characters, fails at 0
+   (where, chi(al be) or -, d_NR, d_QR) counts: {('off', 1, 0, 2): 36, ('off', 1, 0, 1): 36, ('diag', 1, 1): 12, ('off', -1, 0, 0): 72, ('diag', 2, 2): 12}
+13: NR (5, 4), QR (3, 8) identity holds at 168 characters, fails at 0
+   (where, chi(al be) or -, d_NR, d_QR) counts: {('off', 1, 0, 2): 36, ('off', 1, 0, 1): 36, ('diag', 1, 1): 12, ('off', -1, 0, 0): 72, ('diag', 2, 2): 12}

@@ -1,0 +1,727 @@
+[
+ {
+  "rule": "f_{23,2}",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = -1 -> ninth-confined (NR twist class)",
+  "computed": true,
+  "construct": {
+   "kind": "hex",
+   "p": 23,
+   "q": 2
+  },
+  "result": 29127,
+  "agrees": true,
+  "terms": 2284
+ },
+ {
+  "rule": "f_{21,34}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 21,
+   "q": 34
+  }
+ },
+ {
+  "rule": "f_{22,19}",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = -1 -> ninth-confined (NR twist class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 22,
+   "q": 19
+  }
+ },
+ {
+  "rule": "f_{24,23}",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = -1 -> ninth-confined (NR twist class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 24,
+   "q": 23
+  }
+ },
+ {
+  "rule": "f_{25,30}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 25,
+   "q": 30
+  }
+ },
+ {
+  "rule": "f_{26,9}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 26,
+   "q": 9
+  }
+ },
+ {
+  "rule": "f_{27,25}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 27,
+   "q": 25
+  }
+ },
+ {
+  "rule": "f_{29,20}",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = -1 -> ninth-confined (NR twist class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 29,
+   "q": 20
+  }
+ },
+ {
+  "rule": "f_{31,22}",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = -1 -> ninth-confined (NR twist class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 31,
+   "q": 22
+  }
+ },
+ {
+  "rule": "f_{33,27}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 33,
+   "q": 27
+  }
+ },
+ {
+  "rule": "f_{36,21}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 36,
+   "q": 21
+  }
+ },
+ {
+  "rule": "f_{38,16}",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-16p mod 37; chi_37(p) = +1 -> cube only (QR class)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 38,
+   "q": 16
+  }
+ },
+ {
+  "rule": "f_{24,38}",
+  "m": 13,
+  "predicted_odd_part": 21,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, same parity -> cube-confined",
+  "computed": true,
+  "construct": {
+   "kind": "hex",
+   "p": 24,
+   "q": 38
+  },
+  "result": 21,
+  "agrees": true,
+  "terms": 1744
+ },
+ {
+  "rule": "f_{21,35}",
+  "m": 13,
+  "predicted_odd_part": 21,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, same parity -> cube-confined",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 21,
+   "q": 35
+  }
+ },
+ {
+  "rule": "f_{21,22}",
+  "m": 13,
+  "predicted_odd_part": 63,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, opposite parity -> generic",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 21,
+   "q": 22
+  }
+ },
+ {
+  "rule": "f_{23,31}",
+  "m": 13,
+  "predicted_odd_part": 63,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = +1, same parity -> generic",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 23,
+   "q": 31
+  }
+ },
+ {
+  "rule": "f_{24,25}",
+  "m": 13,
+  "predicted_odd_part": 63,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, opposite parity -> generic",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 24,
+   "q": 25
+  }
+ },
+ {
+  "rule": "f_{28,38}",
+  "m": 13,
+  "predicted_odd_part": 21,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, same parity -> cube-confined",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 28,
+   "q": 38
+  }
+ },
+ {
+  "rule": "f_{28,27}",
+  "m": 13,
+  "predicted_odd_part": 63,
+  "tier": "T0: consequence of the proved reduction theorem plus the finite verification at this size (classification by k = ind_2(p) mod e and parity, step 8); tests the proof and the arithmetic",
+  "reasoning": "q = +-6p mod 13; chi_13(p) = -1, opposite parity -> generic",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 28,
+   "q": 27
+  }
+ },
+ {
+  "rule": "f_{2,7}  (61 = 7^2 + 3*2^2, the 4850 analogue)",
+  "m": 61,
+  "predicted_odd_part": 1073741823,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "symmetric field F(2^30); C fails at 1 of 5 T-orbits",
+  "computed": true,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 7
+  },
+  "result": 1073741823,
+  "agrees": true,
+  "terms": 56
+ },
+ {
+  "rule": "f_{5,13}",
+  "m": 61,
+  "predicted_odd_part": 1073741823,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "another member at 61",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 5,
+   "q": 13
+  }
+ },
+ {
+  "rule": "f_{2,13} (181 = 13^2 + 12)",
+  "m": 181,
+  "predicted_odd_part": 1237940039285380274899124223,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "symmetric field F(2^90); 15 free T-orbits, 6 satisfy C(1)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 13
+  }
+ },
+ {
+  "rule": "f_{6,1}  (109 = 1 + 3*6^2)",
+  "m": 109,
+  "predicted_odd_part": 262143,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "same field as 37 (F(2^18)), 2 of index 3 mod 109",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 6,
+   "q": 1
+  }
+ },
+ {
+  "rule": "f_{4,7}  (97 = 7^2 + 3*4^2)",
+  "m": 97,
+  "predicted_odd_part": 16777215,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "symmetric field F(2^24)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 4,
+   "q": 7
+  }
+ },
+ {
+  "rule": "f_{8,1}  (193 = 1 + 3*8^2)",
+  "m": 193,
+  "predicted_odd_part": 281474976710655,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "symmetric field F(2^48)",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 8,
+   "q": 1
+  }
+ },
+ {
+  "rule": "f_{1,21} (q = 21 p mod 111 = 3*37)",
+  "m": 111,
+  "predicted_odd_part": 68719476735,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "reduces to a QR member at 37; mixed characters (F(2^36)) unconfined",
+  "computed": true,
+  "construct": {
+   "kind": "hex",
+   "p": 1,
+   "q": 21
+  },
+  "result": 68719476735,
+  "agrees": true,
+  "terms": 84
+ },
+ {
+  "rule": "f_{2,69} (q = 21*2*... mod 111; NR mod 37)",
+  "m": 111,
+  "predicted_odd_part": 68719476735,
+  "tier": "T1: other size; the 3-adic part follows from step 3 (the engine found no member of the family confined at this size), the non-3 part assumes the eigenvalue orders are otherwise generic (lcm = 2^e - 1)",
+  "reasoning": "NR member at 37 (its 37-part is ninth-confined) but mixed characters unconfined",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 69
+  }
+ },
+ {
+  "rule": "f_{19,29} (q = 201 p mod 481 = 13*37; NR mod 13 and mod 37, same parity)",
+  "m": 481,
+  "predicted_odd_part": 262143,
+  "tier": "T2: held-out size, not run through the engine; heuristic from step 6b (no mechanism beyond 13 and 37): mixed characters of a multiple of 37 behave generically",
+  "reasoning": "2^18 = -1 mod 481 so symmetric values lie in F(2^18); the 13- and 37-subtori are confined (21, 29127) but the mixed characters are not",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 19,
+   "q": 29
+  }
+ },
+ {
+  "rule": "f_{23,35} (q = 243 p mod 703 = 19*37; NR mod 37, same parity)",
+  "m": 703,
+  "predicted_odd_part": 68719476735,
+  "tier": "T2: held-out size, not run through the engine; heuristic from step 6b (no mechanism beyond 13 and 37): mixed characters of a multiple of 37 behave generically",
+  "reasoning": "-1 not in <2> mod 703: symmetric values in F(2^36); 37-subtorus ninth-confined, mixed characters generic",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 23,
+   "q": 35
+  }
+ },
+ {
+  "rule": "even-rep (hex(3) + L3(21))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 3 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     3,
+     3
+    ],
+    [
+     21,
+     26
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(4) + L3(28))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 4 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     4,
+     4
+    ],
+    [
+     28,
+     10
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(7) + L3(12))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 7 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     7,
+     7
+    ],
+    [
+     12,
+     36
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(9) + L3(26))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 9 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     9,
+     9
+    ],
+    [
+     26,
+     4
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(10) + L3(33))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 10 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     10,
+     10
+    ],
+    [
+     33,
+     25
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(11) + L3(3))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 11 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     11,
+     11
+    ],
+    [
+     3,
+     9
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(12) + L3(10))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 12 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     12,
+     12
+    ],
+    [
+     10,
+     30
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(16) + L3(1))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 16 is a QR mod 37 -> ninth",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     16,
+     16
+    ],
+    [
+     1,
+     3
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(2) + L3(14))/s",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 2 is a NR mod 37 -> cube only",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     2,
+     2
+    ],
+    [
+     14,
+     5
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (hex(5) + L3(35))/s",
+  "m": 37,
+  "predicted_odd_part": 87381,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "A = 5 is a NR mod 37 -> cube only",
+  "computed": false,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     5,
+     5
+    ],
+    [
+     35,
+     31
+    ]
+   ]
+  }
+ },
+ {
+  "rule": "even-rep (L3(2) + L6(5))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "computed in step 12",
+  "computed": true,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     2,
+     6
+    ],
+    [
+     5,
+     30
+    ]
+   ]
+  },
+  "result": 29127,
+  "agrees": true,
+  "terms": 912
+ },
+ {
+  "rule": "even-rep (hex(1) + L3(7))/s",
+  "m": 37,
+  "predicted_odd_part": 29127,
+  "tier": "T3: two-orbit numerators at 37 (step 9 found W(c) + W_3(7c) and W_3(2c) + W_6(5c) ninth-level relative to pi), diagonal removed by even representatives (step 12); the twist rule A -> A s multiplies the 3-adic log by 2^ind(s)",
+  "reasoning": "computed in step 12",
+  "computed": true,
+  "construct": {
+   "kind": "even_sum",
+   "parts": [
+    [
+     1,
+     1
+    ],
+    [
+     7,
+     21
+    ]
+   ]
+  },
+  "result": 29127,
+  "agrees": true,
+  "terms": 1040
+ },
+ {
+  "rule": "f_{2,201}",
+  "m": 709,
+  "predicted_odd_part": "2^354 - 1 (3-part 3^2)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 709; ~59 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 201
+  }
+ },
+ {
+  "rule": "f_{2,110}",
+  "m": 757,
+  "predicted_odd_part": "2^378 - 1 (3-part 3^4)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 757; ~63 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 110
+  }
+ },
+ {
+  "rule": "f_{2,327}",
+  "m": 829,
+  "predicted_odd_part": "2^414 - 1 (3-part 3^3)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 829; ~69 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 327
+  }
+ },
+ {
+  "rule": "f_{2,253}",
+  "m": 877,
+  "predicted_odd_part": "2^438 - 1 (3-part 3^2)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 877; ~73 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 253
+  }
+ },
+ {
+  "rule": "f_{2,343}",
+  "m": 1213,
+  "predicted_odd_part": "2^606 - 1 (3-part 3^2)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 1213; ~101 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 343
+  }
+ },
+ {
+  "rule": "f_{2,43}",
+  "m": 1861,
+  "predicted_odd_part": "2^930 - 1 (3-part 3^2)",
+  "tier": "T4: the closest analogues of 37 (prime, 2 primitive, m = 13 mod 24, rule 90 cube-confined, 9 | 2^e - 1), not computed: no hexagon-family member is confined.  Registered quantity: the 3-part of the odd part of f_{2,q} (q^2 = -12 mod m) equals the 3-part of 2^e - 1 (exact odd part conjectured to be 2^e - 1)",
+  "reasoning": "rule 90 level >=1 at 1861; ~155 independent T-orbit conditions",
+  "computed": false,
+  "construct": {
+   "kind": "hex",
+   "p": 2,
+   "q": 43
+  }
+ }
+]
