@@ -35,7 +35,7 @@ const STAGES = [
     name: "Agents", tool: "Claude Code sessions",
     what: "A fresh agent gets a problem card, the Lean library and generic tools, in a container that holds nothing to look the answer up in. It proposes a mechanism, checks it numerically and writes the proof. A judge, not the agent, decides whether it counts.",
     guards: "Taking a model's account of its own work as evidence.",
-    example: "Six pilots, six proofs accepted in the judge's first round. In the third the agent found its law from data; in the fourth it answered an open question, in the fifth part of a harder one, and in the sixth the question the fifth's registered test raised. Their conditions held at every claim the judge checked.",
+    example: "Seven pilots, seven proofs accepted: six in the judge's first round, and the seventh in its second, after its Lean file failed to build in the first. In the third the agent found its law from data; in the fourth it answered an open question, in the fifth part of a harder one, in the sixth the question the fifth's registered test raised, and in the seventh four of five ninth-power rules at m = 37. Their conditions held at every claim the judge checked.",
     href: "#pilots", link: "The agents, step by step",
   },
 ];

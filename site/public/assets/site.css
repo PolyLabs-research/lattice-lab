@@ -125,6 +125,9 @@ a.card:hover { border-color: var(--cell); }
 .card h3 { font-size: 1.12rem; }
 .card p { margin: 0; font-size: 0.97rem; }
 .card .status { justify-self: start; }
+/* a card that closes the grid: it takes the whole last row, at any column count */
+.card.wide { grid-column: 1 / -1; }
+.card.wide p { max-width: 72ch; }
 
 /* figures */
 .figure {
@@ -146,7 +149,8 @@ select, input[type="number"], textarea {
   font-family: var(--mono); font-size: 0.9rem; color: var(--ink); background: var(--paper);
   border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; min-width: 0; max-width: 100%;
 }
-input[type="range"] { width: 100%; accent-color: var(--cell); }
+input[type="range"] { width: 100%; margin-inline: 0; accent-color: var(--cell); }
+input[type="number"] { width: 7em; }
 button {
   font-family: var(--mono); font-size: 0.86rem; color: var(--ink); background: var(--paper);
   border: 1px solid var(--line); border-radius: 4px; padding: 7px 12px; cursor: pointer;

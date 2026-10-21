@@ -1,8 +1,9 @@
 // The linear atlas: the eigenvalue map, the identities, the census, and m = 37.
 const SITE = window.SITE, RULES = SITE.rules;
+RULES.r4850 = { label: "Square family rule 4850 (ninth powers at 37)", lattice: "square", terms: familyRule(4850) };
 
 // ---------------- eigenvalue map ----------------
-const EV_RULES = ["m1", "m2", "m3", "m4", "m5", "m6", "ctrl", "xor", "n4", "n4self", "h1", "triE", "triEVOVS", "vot13", "cube", "dil"];
+const EV_RULES = ["m1", "m2", "m3", "m4", "m5", "m6", "r4850", "ctrl", "xor", "n4", "n4self", "h1", "triE", "triEVOVS", "vot13", "cube", "dil"];
 const ev = { rule: "ctrl", m: 37, mode: "cube", map: null };
 const evRule = $("ev-rule"), evM = $("ev-m"), evCanvas = $("ev-canvas");
 for (const key of EV_RULES) evRule.add(new Option(RULES[key].label, key));
@@ -86,6 +87,19 @@ $("open-ctrl").addEventListener("click", () => showEv("ctrl", 37, "cube"));
 
 // ---------------- identities ----------------
 const R90 = (dx, dy) => [[dx, dy], [-dx, -dy]];
+// The D4 orbit O(a, b): the cells (±a, ±b) and (±b, ±a).
+function orbit(a, b) {
+  const cells = new Set();
+  for (const [p, q] of [[a, b], [b, a]]) for (const sp of [1, -1]) for (const sq of [1, -1]) cells.add(`${sp * p},${sq * q}`);
+  return [...cells].map(k => k.split(",").map(Number));
+}
+// A rule of the square family by its number: bit i selects the i-th orbit O(a, b) with
+// 0 <= b <= a <= 4, in the order (0,0), (1,0), (1,1), (2,0), ..., (4,4).
+function familyRule(n) {
+  const orbits = [];
+  for (let a = 0; a <= 4; a++) for (let b = 0; b <= a; b++) orbits.push([a, b]);
+  return orbits.filter((_, i) => (n >> i) & 1).flatMap(([a, b]) => orbit(a, b));
+}
 const IDENTS = [
   {
     name: "Splitting: two hexagon steps are three passes of rule 90",
@@ -129,7 +143,20 @@ const IDENTS = [
       return `<span class="badge ${same ? "ok" : "bad"}">${same ? "unchanged by ×6 mod 37" : "changed by ×6 mod 37"}</span>`;
     },
   },
+  {
+    name: "Rule 4850 at m = 37: two hexagons",
+    text: "Found in the deep dive on rule 4850 of the square family, whose every nonzero eigenvalue at m = 37 is a ninth power. Multiplied by x + 1/x + y + 1/y, its 40 cells collapse to 12: the hexagon (±4, 0), (±2, ±5) and its mirror image (0, ±4), (±5, ±2). This holds at every size. Mod 37 the twelve cells are also fixed by the map (x, y) ↦ (18x − 8y, −8x + 18y), of order 3, which exists only because 5² + 3 · 2² = 37. That symmetry, with a norm formula in Gauss periods, makes every eigenvalue a ninth power.",
+    left: [["rule 4850", familyRule(4850)], ["x + 1/x + y + 1/y", RULES.n4.terms]],
+    right: [["(±4, 0), (0, ±4), (±5, ±2), (±2, ±5)", orbit(4, 0).concat(orbit(5, 2))]],
+    extra(R) {
+      const red = T => new Set(T.map(([x, y]) => `${((x % 37) + 37) % 37},${((y % 37) + 37) % 37}`));
+      const a = red(R), b = red(R.map(([x, y]) => [18 * x - 8 * y, -8 * x + 18 * y]));
+      const same = a.size === b.size && [...a].every(k => b.has(k));
+      return `<span class="badge ${same ? "ok" : "bad"}">${same ? "unchanged by the order-3 map mod 37" : "changed by the order-3 map mod 37"}</span>`;
+    },
+  },
 ];
+const identIx = prefix => IDENTS.findIndex(d => d.name.startsWith(prefix));
 const mechPick = $("mech-pick");
 IDENTS.forEach((d, i) => mechPick.add(new Option(d.name, String(i))));
 function stencilSvg(terms) {
@@ -198,14 +225,16 @@ function drawCensus() {
   svg.onpointerleave = () => cursor.setAttribute("opacity", "0");
 }
 
-// ---------------- the fourth pilot ----------------
+// ---------------- m = 37: the fourth pilot, and rule 4850 ----------------
 const p37 = SITE.pilot37;
 if (p37 && p37.html) {
   $("m37-pilot").innerHTML = p37.html;
   if (p37.eyebrow) $("m37-eyebrow").textContent = p37.eyebrow;
 }
 const identBtn = document.getElementById("m37-identity");
-if (identBtn) identBtn.addEventListener("click", () => showIdentity(IDENTS.length - 1));
+if (identBtn) identBtn.addEventListener("click", () => showIdentity(identIx("Half-Frobenius")));
+$("m37-hexagon").addEventListener("click", () => showIdentity(identIx("Rule 4850")));
+$("m37-ninth").addEventListener("click", () => showEv("r4850", 37, "order"));
 
 evRule.value = ev.rule; evM.value = String(ev.m);
 evCompute();

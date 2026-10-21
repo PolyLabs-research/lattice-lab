@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Linear atlas · PolyLabs Research</title>
-<meta name="description" content="Periods of 502 linear cellular automata, three registered rounds, the eigenvalues that decide them, and the open question at m = 37.">
+<meta name="description" content="Periods of 502 linear cellular automata, three registered rounds, the eigenvalues that decide them, and the cubes and ninth powers at m = 37.">
 <meta property="og:title" content="Linear atlas · PolyLabs Research">
-<meta property="og:description" content="Periods of 502 linear cellular automata, three registered rounds, the eigenvalues that decide them, and the open question at m = 37.">
+<meta property="og:description" content="Periods of 502 linear cellular automata, three registered rounds, the eigenvalues that decide them, and the cubes and ninth powers at m = 37.">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -35,6 +35,7 @@
       <a href="atlas.html">Linear atlas</a>
       <a href="settling.html">Settling time</a>
       <a href="proofs.html">Proofs</a>
+      <a href="codes.html">Quantum codes</a>
     </nav>
   </div>
 </header>
@@ -159,8 +160,8 @@
   </section>
 
   <section class="open" id="m37" aria-labelledby="open-title">
-    <div class="eyebrow" id="m37-eyebrow">answered in the fourth pilot</div>
-    <h2 id="open-title">The cubes at m = 37</h2>
+    <div class="eyebrow" id="m37-eyebrow">answered by agents, from the fourth pilot on</div>
+    <h2 id="open-title">Cubes and ninth powers at m = 37</h2>
     <p>At <em class="var">m</em> = 37 the full bound is 2<sup>18</sup> − 1 = 262,143 =
       3 × 87,381. Six rules that none of the four mechanisms touches have <strong>every
       eigenvalue a cube</strong> there, and period 87,381, which is rule 90's own period at 37:</p>
@@ -186,6 +187,38 @@
         Lean. Its general condition made 633 claims at 94 sizes, 180 of them at sizes it never
         saw, and none was false.</p>
     </div>
+    <h3>Ninth powers, and rule 4850</h3>
+    <p>Some rules at 37 go further: every nonzero eigenvalue is a <strong>ninth power</strong>,
+      and the odd part of the period is 29,127 = (2<sup>18</sup> − 1)/9. The first noticed was
+      rule 4850 of the square family, one of seven rules the sixth pilot had put down to chance.
+      A registered census of the 2,064,384 new rules of radius 5 then found five more that no
+      known mechanism explains, against 0.0066 expected, so it is not chance. One is 4850 times
+      a rule whose values are ninth powers at 37; the other four are neither multiples nor images
+      of it.</p>
+    <p>The seventh pilot's agent, on Claude Fable, explained those four. Each is line units times
+      one of the fourth pilot's cores, and counting each unit's exponent exactly, where the
+      fourth pilot had bounded it, gives the extra factor of 3. Its condition made 1,715 claims,
+      none false, and its proof built in Lean in a second round. It did not explain 4850.</p>
+    <p>A multi-agent deep dive then explained 4850 itself. Multiplied by x + 1/x + y + 1/y, its
+      40 cells become 12: a hexagon and its mirror image. Mod 37 those twelve are fixed by a map
+      of order 3, which exists only because 5<sup>2</sup> + 3 · 2<sup>2</sup> = 37. Off the
+      diagonals that gives a closed form, each eigenvalue a fourth power over two rule-90 values,
+      λ = W<sup>4</sup>/(t<sub>α</sub>t<sub>β</sub>). A norm formula in Gauss periods then puts
+      each eigenvalue's norm to F(2<sup>6</sup>) in F(2<sup>3</sup>), which is exactly the
+      condition for a ninth power. Three independent checkers found that the proof stands, with
+      repairs, which they supplied, and the orchestrator rechecked its final chain by machine.</p>
+    <p>The same argument covers the family 4850 belongs to, the hexagon family: at 37 its members
+      of the right type give ninth powers when p is a quadratic non-residue, and only cubes when
+      p is a residue. A registered held-out test of that classification found 35 of 35 tested
+      predictions correct; the six at the largest sizes were not tested.</p>
+    <div class="row">
+      <button id="m37-hexagon" class="primary" type="button">Multiply out 4850's hexagon identity</button>
+      <button id="m37-ninth" type="button">Show rule 4850 at 37</button>
+    </div>
+    <p class="note">Still open: the proof as one document, and in Lean; why 37's coset data are
+      (4, 3, 5), the input specific to 37; which eigenvalues are also 27th powers, which the norm
+      argument cannot tell; and why nothing similar happens at other sizes, which is computed,
+      not derived.</p>
   </section>
 
   <p class="note">Rule names are the atlas's neighbour shells: N4 the four nearest cells, D4 the
@@ -201,7 +234,8 @@
       source. The studies, ledgers and Lean library are in lattice-lab, which is private for
       now.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
-      problem card. Their proofs count because Lean accepts them, not because they say so.</p>
+      problem card; the seventh pilot's second round ran over the API. Their proofs count because
+      Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
       <a href="model.html">How we work</a>

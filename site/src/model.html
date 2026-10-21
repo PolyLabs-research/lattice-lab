@@ -41,7 +41,7 @@
       <tbody>
         <tr><td>Direction</td><td>the lead researcher</td><td>which questions to pursue, and what is published</td></tr>
         <tr><td>Orchestrator</td><td>a Claude Code session working with the lead</td><td>designs the studies, writes problem cards, tools and judges, registers predictions, audits the agents</td></tr>
-        <tr><td>Proposer and prover</td><td>a fresh Claude Code session per pilot, with only a problem card</td><td>proposes a mechanism, checks it numerically, writes the Lean proof</td></tr>
+        <tr><td>Proposer and prover</td><td>a fresh Claude Code session per pilot, with only a problem card; the seventh ran on Claude Fable</td><td>proposes a mechanism, checks it numerically, writes the Lean proof</td></tr>
         <tr><td>Judges</td><td>LatticeLife, Kepler, the ledger, Lean and each pilot's <code>judge.py</code></td><td>whether anything counts</td></tr>
       </tbody>
     </table>
@@ -95,15 +95,22 @@
       in a cloud container that holds nothing else: an orphan branch with one commit, no write-ups
       and no hand proofs. It works alone. When it reports, the judge runs; if the judge rejects the
       work, only the judge's output goes back to the agent.</p>
-    <p>The chart shows every tool call the agents in pilots 2 to 6 made, read from the session
-      transcripts on the server, not from anything the agents wrote. In pilots 2 and 3 the agents
+    <p>The chart shows every tool call the agents in pilots 2 to 7 made in their cloud sessions,
+      read from the session transcripts on the server, not from anything the agents wrote. In
+      pilots 2 and 3 the agents
       wrote their whole proof within ten minutes, then waited half an hour or more for mathlib to
       compile in their fresh containers. In pilots 4 and 5, on open questions, the agents had
       their mechanisms after 23 minutes and spent the rest of their time checking and proving
       them; the fifth also spent it looking for more, and reported what it could not explain. The
-      sixth found its factorisation in 11 minutes and finished in 66.
-      Pilot 1's agent ran inside the orchestrator's container, so it has no separate
-      transcript.</p>
+      sixth found its factorisation in 11 minutes and finished in 66. Pilot 1's agent ran inside
+      the orchestrator's container, so it has no separate transcript.</p>
+    <p>The seventh, the first on Claude Fable, had four of its five rules explained within 40
+      minutes, and spent most of the next hour on the fifth, rule 4850. Its own sweeps kept the
+      cores busy, so its mathlib build had still not finished when it was asked to wrap up, for
+      cost, at about two hours; its Lean file had never been compiled. The judge's first round
+      found the file did not build. A second round, over the API and not in the chart, sent back
+      only the judge's reportable results and the build's errors, and the agent made the file
+      build in 11 minutes.</p>
   </section>
 
   <section class="figure" aria-labelledby="tl-title">
@@ -125,10 +132,11 @@
         <tr><td>4: m = 37</td><td>an open question and a census</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td><td id="p4-test">180 of 180 claims held at held-out sizes</td><td>nobody knew the answer</td></tr>
         <tr><td>5: m = 25</td><td>a harder open question, a census and a chance model</td><td>95 min, 108 calls</td><td><span class="badge ok">passed, round 1</span> 5 of 17 explained</td><td>414 of 414 claims held at held-out sizes; our own expectation <span class="badge bad">refuted</span></td><td>nobody knew the answer</td></tr>
         <tr><td>6: m = 37 again</td><td>a question the fifth pilot's registered test raised</td><td>66 min, 99 calls</td><td><span class="badge ok">passed, round 1</span> 12 of 19 explained</td><td>our expectation <span class="badge bad">refuted</span> at 3 of 17 sizes, by exactly the agent's nine rules, where it predicted them</td><td>nobody knew the answer</td></tr>
+        <tr><td>7: ninth powers at m = 37</td><td>an open question from a registered census, all seven mechanisms as tools, and a fast census at 37</td><td>2 hours 2 minutes, 121 calls, asked to stop for cost ($51.33 at list price); round 2, over the API: 11 min, 38 calls, $4.47</td><td><span class="badge bad">Lean failed, round 1</span> <span class="badge ok">passed, round 2</span> 4 of 5 explained, none of 1,715 claims false</td><td>the radius-6 census: a mechanism, as registered, with 37 unexplained against 0.70 expected; the agent computed it itself, so its 35 of the 37 is not a prediction</td><td>nobody knew the answer</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note" style="margin-top: 0.75rem">Pilot 1's agent ran as a subagent in the orchestrator's container; every later agent ran in its own container, which held only the sandbox, and its whole transcript was audited.</p>
+  <p class="note" style="margin-top: 0.75rem">Pilot 1's agent ran as a subagent in the orchestrator's container; every later agent ran in its own container, which held only the sandbox, and its whole transcript was audited. Pilot 7's second round ran over the API instead, in a copy of its first-round commit, with tools that could read, edit only its Lean file and scratch files, and build the file as the judge does.</p>
 
   <section class="prose" aria-labelledby="judge-title">
     <h2 id="judge-title">What the judge checks</h2>
@@ -158,8 +166,10 @@
       atlas's own tools could have found its key factor had anyone looked for factors shared
       between rules. Each library held close worked examples, and the agents said they followed
       them. The fifth pilot answered only part of its question, and left twelve cases unexplained.
-      The sixth pilot's answer was a factorisation we had listed as unchecked and not tried. Six
-      runs on six problems say little about how often the approach fails, or where it stops
-      working.</p>
+      The sixth pilot's answer was a factorisation we had listed as unchecked and not tried. The
+      seventh computed for itself the census that was meant to be held out from it, so its reach
+      there is not a prediction; it did not explain rule 4850, and its Lean built only in a second
+      round. Seven runs on seven problems say little about how often the approach fails, or where
+      it stops working.</p>
   </section>
 </main>

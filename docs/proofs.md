@@ -31,7 +31,16 @@ the pipeline. It covers:
 - **the cubes at m = 37**: six rules none of the atlas's first four mechanisms explains each have
   period dividing 87381 = (2^18 − 1)/3 on the 37 × 37 torus, so every eigenvalue is a cube in
   F(2^18), and rule 90's period there divides 87381 too. The fourth pilot's agent found the
-  mechanism, half-Frobenius confinement, and proved it.
+  mechanism, half-Frobenius confinement, and proved it;
+- **the cubes at m = 25**: five rules have period dividing 341 = (2^10 − 1)/3 on the 25 × 25
+  torus, two by cube certificates and three as twisted pairs. The fifth pilot's agent found and
+  proved this;
+- **unit times cube**: nine square-family rules f = U · g³ have period dividing 87381 at m = 37,
+  and three of them have period dividing (2^30 − 1)/3 at m = 61. The sixth pilot's agent found
+  and proved this;
+- **ninth powers at m = 37**: four radius-5 rules, line units times the fourth pilot's
+  half-Frobenius cores, have period dividing 29127 = (2^18 − 1)/9, so every nonzero eigenvalue is
+  a ninth power. The seventh pilot's agent found this, and proved it in its second round.
 
 Every result depends only on Lean's standard axioms (`propext`, `Quot.sound`, and for most of them
 `Classical.choice`), and none uses `sorry`.
@@ -453,6 +462,12 @@ ninth power.
 | Theorem | Statement |
 | --- | --- |
 | `period_r1968276_dvd`, `period_r985232_dvd`, `period_r1431278_dvd`, `period_r699738_dvd` | period 37 D ∣ 29127 = (2^18 − 1)/9 |
+
+The file holds 32 theorems, and the judge's round-2 build found all of them on the standard axioms
+only. The fifth ninth-power rule, 4850, is not covered. The deep dive that followed found a proof
+for it, which three independent checkers found stands with repairs
+([report](../examples/rule-4850/deep/REPORT.md)). It is not yet written as one document, and not
+formalised; section 7.3 of the report sets out a route to Lean.
 
 ## What is not
 - **Powers of 2.** At n = 2^v (m = 1) the XOR torus dies (Theorem 3 of xor-periods-proof.md).

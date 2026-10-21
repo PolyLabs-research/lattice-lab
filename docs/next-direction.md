@@ -61,13 +61,13 @@ this ring, and a quantity, k, that the instruments here already compute.
 
 1. **Rediscovery (registered: `examples/qec-bb`).**
    - **What it checks.** Compute k by the character method and by plain linear algebra over
-     GF(2), for twelve published entries (the five original bivariate bicycle codes and the
+     GF(2), for twelve published entries (five of the original bivariate bicycle codes and the
      coprime codes, two of them in two published versions) and for 3,000 random codes at 20
      sizes, half of them even.
    - **Predictions.** The two methods agree everywhere, and they reproduce every published k.
    - **Why it matters.** It decides whether the bridge is real, including the even sizes where
      each character carries a multiplicity. It costs only local computation.
-   **Result (run 2026-10-20, 8 seconds): both predictions hold.**
+   **Result (run 2026-10-20, 6 seconds from the run's start to its verdict): both predictions hold.**
    - **Method.** The two methods agree on all 3,000 random codes (1,500 of them at even sizes)
      and on all 12 published entries.
    - **Rediscovery.** Every published k is reproduced, including both versions of the two coprime

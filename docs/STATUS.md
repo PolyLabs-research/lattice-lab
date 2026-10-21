@@ -1,24 +1,33 @@
 # Where we're up to
 
-Written 2026-10-18, at the end of the session that ran the linear-rule atlas's third round. It is
-for whoever picks this up next: what exists, what has been established, what is open, and how to
-carry on.
+Written 2026-10-18, at the end of the session that ran the linear-rule atlas's third round, and
+last brought up to date on 2026-10-21, after the seventh pilot, the rule-4850 deep dive, the
+hexagon-family test and the quantum-codes test. It is for whoever picks this up next: what
+exists, what has been established, what is open, and how to carry on.
 
 ## The three repositories
 
-All three now live under **PolyLabs-research**, moved from `tripptytrip` on 2026-10-18. All work
-is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Nothing has been merged into a
-default branch and no pull request is open; merging is a decision for you.
+All three now live under **PolyLabs-research**, moved from `tripptytrip` on 2026-10-18. The work
+is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a decision for you.
+
+- **lattice-lab** has a `main` branch, the default, which carries the website's hosting commits.
+  They were merged into `ccr-ab9f0bb1-qb20sx`, which is ahead of `main`.
+- **kepler**: an earlier pull request (#8) from the working branch was merged into `main`, and the
+  working branch is ahead of it again.
+- **gameoflife_advanced**: `main` is behind the working branch.
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs (this repository) | private | 175 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 175 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
-| [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1028 |
+| [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1043 |
 
+- **The website.** [polylabs-research.net](https://polylabs-research.net) is built from `site/`
+  in lattice-lab; [site/README.md](../site/README.md) says how to rebuild and deploy it. While
+  lattice-lab is private, the site must not link into it on GitHub.
 - **Pins.** lattice-lab pins LatticeLife `256450b` and Kepler `0af9b28` (`pyproject.toml`,
-  `uv.lock`). Both are current for code: every later commit in those repositories changes only
-  the README.
+  `uv.lock`). Both are current for code: every later commit on those repositories' working
+  branches changes only the README.
 - **The move.** Links, the Kepler pin's URL and the lockfile point at PolyLabs-research. The
   study ledgers still record `tripptytrip` URLs in their provenance. That is deliberate: they are
   hash-chained records of what ran, and GitHub redirects the old URLs.
@@ -32,7 +41,7 @@ default branch and no pull request is open; merging is a decision for you.
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 132 tests
+uv sync && uv run pytest              # 175 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -62,13 +71,19 @@ before the runs that tested them.
 | Kepler finds the hexagon law itself, given 1D rule periods in its vocabulary | registered replay, 8 of 8 | [parity-lattices.md](parity-lattices.md#kepler-with-a-wider-vocabulary) |
 | Atlas, round 1: Kepler's laws for 42 shell-built linear rules (38 unstudied) | blind; all 34 rules with a law kept a registered one at 1,930 new pairs | [linear-atlas.md](linear-atlas.md) |
 | Atlas, round 2: the factorisation pattern | the 34 laws held at 624 harder pairs; the pattern was refuted on 116 new rules (7 of 113 failed); the failures showed cubes and dilations | [linear-atlas.md](linear-atlas.md#round-2-the-pattern-registered) |
-| Atlas, round 3: the refined statement as a procedure, on 344 new rules | 11,315 of 11,358 held; **refuted** by 43. Every dilation and power held; a third mechanism (twisted power) was found and its expectation matched all 34 sizes; small-field coincidences at m <= 25; one case at 37 open | [linear-atlas.md](linear-atlas.md#round-3-the-refined-statement-registered) |
+| Atlas, round 3: the refined statement as a procedure, on 344 new rules | 11,315 of 11,358 held; **refuted** by 43. Every dilation and power held; a third mechanism (twisted power) was found and its expectation matched all 34 sizes; small-field coincidences at m <= 25; one case at 37, since explained by the fourth pilot | [linear-atlas.md](linear-atlas.md#round-3-the-refined-statement-registered) |
 | Period = lcm of eigenvalue orders (odd tori); even sizes reduce to odd parts; round 2's cubes and dilation at every size; round 3's twisted power on the atlas's own torus | **proved in Lean**, standard axioms only; the torus models agree with the atlas's engines at every size checked | [proofs.md](proofs.md) |
 | B2/S34 settling time on the hexagon grows like log L | found by the loop; replicated to L = 1024; power law rejected | [settling-time.md](settling-time.md) |
 | Settling-time fluctuations: one shape and ratio across lattices (Gumbel values) | eight random rules on four lattice types; B2/S34's early miss was a low draw | [settling-time.md](settling-time.md) |
 | Cumulative births under B1357/S1357 are always even | found in data, then proved | [capabilities.md](capabilities.md) |
 | The cubes at m = 37: six rules have every eigenvalue a cube, because a dilation by 6 acts as half a Frobenius and combines with rule 90's own confinement | **answered by an LLM agent** in the fourth pilot, on a question the orchestrator could not answer; **proved in Lean** for all six, unconditionally; its general condition held at 633 claims, 180 at held-out sizes, none false | [llm-pilot.md](llm-pilot.md#pilot-4-the-cubes-at-m--37), [linear-atlas.md](linear-atlas.md#m--37-answered-by-the-fourth-pilot) |
+| The cubes at m = 25: five of seventeen rules have every eigenvalue a cube, two by cube certificates (f (t(x) t(y))^3 is invariant under the dilation by 7 = 2^5) and three as twisted pairs C(x, y) C(x^3, y^3) | **found and proved in Lean by an LLM agent** in the fifth pilot (`Cubes25.lean`); its condition held at 1,381 claims, 414 at held-out sizes, none false; twelve remain unexplained, and the registered census refuted the orchestrator's chance expectation at 6 of 14 held-out sizes | [llm-pilot.md](llm-pilot.md#pilot-5-the-cubes-at-m--25) |
+| Unit times cube: nine square-family rules are f = U g^3, with U a product of rule-90 or Psi_3 factors, so every eigenvalue is a cube at m = 37, and for three of them at 61 | **found and proved in Lean by an LLM agent** in the sixth pilot (`UnitCubes.lean`): 12 of its 19 targets, none of 1,547 claims false; the registered census at 17 new sizes found these nine at exactly the three sizes predicted, and nothing else unexplained | [llm-pilot.md](llm-pilot.md#pilot-6-the-square-family-at-m--37) |
 | Rule 90 at primes p = 5 (mod 8) with 2 a primitive root: confined to the cubes exactly when eps^h lies in Z[sqrt p]; then the pyramid rule at p = i^2 + 1 is too | **proposed by Claude Fable in a consultation**, with an argument that is a proof once Dirichlet's class number formula fills its one-line step; registered and confirmed at 405 primes from 302 to 20,000 and 4 pyramid primes, none wrong | [consultations.md](consultations.md) |
+| The ninth powers at m = 37: four of five rules with no known mechanism (699738, 985232, 1431278, 1968276) are line units times pilot 4's half-Frobenius cores, and the units' exact exponents add the third factor of 3 | chance first refuted by a registered radius-5 census (four independent such rules against 0.0066 expected); **found by an LLM agent (Claude Fable)** in the seventh pilot, its condition sound at all 1,715 claims, 533 at held-out sizes; its Lean failed to build in round 1 and was fixed in a second round over the API (`Ninth37.lean`) | [llm-pilot.md](llm-pilot.md#pilot-7-the-ninth-powers-at-m--37), [consultations.md](consultations.md#4-rule-4850s-ninth-powers-at-m--37-2026-10-20) |
+| Rule 4850, the fifth: (x + 1/x + y + 1/y) · 4850 is two hexagons; an order-3 symmetry that exists only at 37 (5² + 3·2² = 37) gives λ · t_α t_β = W⁴; a norm formula in Gauss periods puts every eigenvalue's norm to F64 in F8*, which is the ninth-power condition | **explained, with a proof**, by a multi-agent deep dive; three independent checkers found it stands with repairs, which they supplied, and the orchestrator rechecked the chain (`tests/test_rule4850_proof.py`); not yet one document, and not in Lean | [the deep dive's report](../examples/rule-4850/deep/REPORT.md) |
+| The hexagon family at m = 37: p a non-residue gives ninth powers, p a residue gives cubes | classified in the deep dive; **confirmed by a registered held-out test**: 35 of 35 tested predictions correct, at 37, 13 and eight other sizes; the six at the largest sizes (709 to 1861) were not tested, two over the 45-minute limit and four recorded as not run | [the deep dive's report](../examples/rule-4850/deep/REPORT.md#4-the-hexagon-family), `examples/hexagon-family` |
+| A bivariate bicycle quantum code's logical qubits k are read off the torus's characters | **confirmed by a registered rediscovery test**: the character method agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included; distance is not computed yet | [next-direction.md](next-direction.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
@@ -78,7 +93,7 @@ triangle a 2 x 2 matrix with M^2 = s I. At an odd part m, the odd part of its pe
 the multiplicative orders of its eigenvalues. Those are f evaluated at pairs of m-th roots of
 unity, and they lie in F(2^sord(m)), so the period divides the full bound 2^sord(m) - 1. The
 current statement is that the period **reaches the full bound unless something confines the
-eigenvalues**. Five mechanisms are known, each a theorem once its inputs are known:
+eigenvalues**. Eight mechanisms are known, each a theorem once its inputs are known:
 
 1. **one-dimensional splitting:** the eigenvalues are products of a 1D rule's (rounds 1 and 2);
 2. **an odd prime power** g^k: the eigenvalues are k-th powers (round 2);
@@ -90,10 +105,20 @@ eigenvalues**. Five mechanisms are known, each a theorem once its inputs are kno
    y^n) with n = 2^g mod m leaves a polynomial unchanged, its eigenvalues lie in F(2^g). At 37,
    2^9 ≡ −6, and each of six rules becomes such a polynomial after multiplying by rule-90 factors,
    whose eigenvalues are cubes there. So every eigenvalue is a cube. Without the rule-90 factors it
-   also explains 18 of the coincidences at m = 13. **The cube-certificate form** (the fifth pilot,
-   at m = 25): if f · M^E is such a polynomial and 3 divides E, every eigenvalue of f is a cube
-   whether or not M is confined, as long as f is checked on the lines where M vanishes. At 25,
-   2^5 ≡ 7 and f · (t(x) t(y))^3 is invariant under ×7 for two square rules.
+   also explains 18 of the coincidences at m = 13.
+6. **a cube certificate** (the fifth pilot, at m = 25): if f · M^E is invariant under such a
+   dilation and 3 divides E, every eigenvalue of f is a cube whether or not M is confined, as long as f is
+   checked on the lines where M vanishes. At 25, 2^5 ≡ 7 and f · (t(x) t(y))^3 is invariant under
+   ×7 for two square rules.
+7. **a unit times a power** (the sixth pilot, at m = 37 and 61): f = monomial × ∏ Φ_e(X_w)^k ×
+   h^q exactly, where each unit whose exponent q does not divide takes q-th-power values at m, by
+   rule 90's confinement or because e ≡ ±2^a. Nine square-family rules are U g³ this way.
+8. **exact exponents** (the seventh pilot, at m = 37): counting each line unit's exponent exactly,
+   instead of bounding it by rule 90's cube confinement, can find one more factor of 3. Four
+   radius-5 rules, line units times the cores of mechanism 5, are ninth powers this way.
+
+Rule 4850 at 37 is confined by none of these. The deep dive found its cause (see the open
+questions below).
 
 On top of these come **coincidences in small fields**. At m = 13, 15, 21 and 25, rules with only 3
 to 7 distinct eigenvalues sometimes have all of them in a subfield or in the cube subgroup. Above
@@ -102,7 +127,8 @@ m = 37, in 6,365 round-3 predictions, the only failures were the twisted power's
 13, and none at the 29 held-out sizes up to 333; [census-remainder.md](census-remainder.md) sorts
 them. Some of what looked like coincidence is not: the fifth pilot's cube certificates explain 16
 of those at 13 and 3 at 21, and its twisted pairs (mechanism 4 with d = 3, which the census had not
-tried) explain three square rules at 25, 29, 35, 53 and 55.
+tried) explain three square rules at 25, 29, 35, 53 and 55. The seventh pilot's condition covers
+27 of the 45, among them 10 that no earlier condition covered.
 
 **Tools.**
 - `examples/linear-atlas-3/eigen.py` computes the odd part from the eigenvalues in seconds. It
@@ -132,7 +158,10 @@ computes yet.
     is exactly the ninth-power condition.
 - **Checking.** Three independent checkers each found that the proof stands with repairs, and the
   orchestrator rechecked the final chain (`tests/test_rule4850_proof.py`).
-- **The relatives.** The two radius-6 relatives are exact Frobenius conjugates of 4850's rotation.
+- **The relatives.** All six are accounted for by exact identities: 482758, 8438150 and 43250486
+  are 4850 times ninth-power units, 10491524 is its 45° rotation, and the two radius-6 rules the
+  seventh pilot missed, 20982139 and 178279803, are Frobenius conjugates of that rotation, times a
+  ninth-power unit off the axes.
 - **The hexagon family.** It is classified at 37: p a non-residue gives ninth powers, p a residue
   gives cubes. A held-out registered test (`examples/hexagon-family`) confirmed it: 35 of 35
   tested predictions are correct, at 37, 13 and eight other sizes; the six largest sizes were
@@ -152,14 +181,14 @@ computes yet.
    called chance again. Still open with it: the family at m = 29 (13 unexplained against 7.85 with
    per-class rates) and at 25 (nine, and the three atlas rules). **Two corrections from the
    consultation benchmark** (consultations.md, section 3), both checked by machine: rule 4850, one
-   of pilot 6's seven, has every nonzero eigenvalue a *ninth* power at 37; and 17056 is 1112
-   under the exponent map (a, b) -> (a + b, a - b), so pilot 6's sixteen were fifteen
-   independent cases.
+   of pilot 6's seven, has every nonzero eigenvalue a *ninth* power at 37 (now explained, above);
+   and 17056 is 1112 under the exponent map (a, b) -> (a + b, a - b), so pilot 6's sixteen were
+   fifteen independent cases.
 2. **Round 4.** Compute the split step exactly (the m = 115 entry), and add the twisted-power,
-   half-Frobenius and hidden-symmetry steps to `atlas3.predict`. That needs a faster test than
-   Kronecker recombination for "f has a factor g with g(x^d, y^d) also a factor". Register it on
-   new rules, with `eigen.py` as the checker. Judge sizes below about 30 by the predicted chance of
-   a coincidence, not by exactness.
+   half-Frobenius, cube-certificate, unit-times-power, exact-exponent and hidden-symmetry steps to
+   `atlas3.predict`. That needs a faster test than Kronecker recombination for "f has a factor g
+   with g(x^d, y^d) also a factor". Register it on new rules, with `eigen.py` as the checker.
+   Judge sizes below about 30 by the predicted chance of a coincidence, not by exactness.
 3. **Proofs.** `proofs/` (Lean 4, mathlib v4.35.0; [proofs.md](proofs.md)) now formalises:
    - the 18 identities behind the mechanisms, generated from the atlas code;
    - the order lemma, and the cube and twisted-power mechanisms at the eigenvalue level;
@@ -205,9 +234,16 @@ computes yet.
    - **unit times cube** (`UnitCubes.lean`, found and proved by the sixth pilot's agent): nine
      square-family rules f = U g^3, with U a product of rule-90 or Psi_3 factors, have period
      dividing 87381 at m = 37, and the three with U = (a + 1)(b + 1) also divide (2^30 - 1)/3 at
-     61, where 3 = 2^6.
+     61, where 3 = 2^6;
+   - **ninth powers at m = 37** (`Ninth37.lean`, found by the seventh pilot's agent and proved in
+     its second round): four radius-5 rules, line units times the fourth pilot's half-Frobenius
+     cores W and V, have period dividing 29127 = (2^18 - 1)/9 at 37, so every nonzero eigenvalue
+     is a ninth power. The units' exact exponents give the third factor of 3.
 
-   They rest on Lean's standard axioms only. Next:
+   They rest on Lean's standard axioms only; `proofs/Axioms.lean` prints the axioms of every main
+   theorem. Next:
+   - rule 4850 at 37, which the deep dive proved but nobody has formalised; its report (section
+     7.3) sets out a route, `Rule4850.lean`;
    - one-dimensional tori, for the comparison with rule 90 in the hexagon theorem (R(m));
    - then, as research:
    - the rule-150 analogues of Vadali and Turner's theorem and of the hexagon theorem: square
@@ -215,15 +251,17 @@ computes yet.
      unproved.
    - Why a non-confined rule reaches the full bound. At present it is a heuristic: generic
      elements generate.
-4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Six pilots
+4. **The LLM-central loop** ([llm-pilot.md](llm-pilot.md), `examples/llm-pilot*`). Seven pilots
    have worked: fresh agents proved the hexagon and triangle laws' 2-parts from a card, found
    VO + T13's law from data and proved it, in the fourth answered the open m = 37 question and
    proved the answer, in the fifth explained and proved 5 of the 17 cube confinements at
-   m = 25, and in the sixth 12 of the 19 at m = 37 and 61 (unit times cube, `UnitCubes.lean`),
-   judged by Lean and, for the mechanism, by its claims at held-out sizes (none false in either).
+   m = 25, in the sixth 12 of the 19 at m = 37 and 61 (unit times cube, `UnitCubes.lean`), and
+   in the seventh, the first on Claude Fable, 4 of the 5 ninth-power rules at 37, its Lean
+   fixed in a second round over the API (`Ninth37.lean`). Each was judged by Lean and, for the
+   mechanism, by its claims at held-out sizes (none false in any of the last four).
    The sixth's registered census found its nine rules at exactly the three new sizes it
-   predicted, and nothing else unexplained. The last five ran in their own cloud sessions, whose containers cloned only an orphan
-   sandbox branch, and their transcripts were audited. Next:
+   predicted, and nothing else unexplained. The last six ran in their own cloud sessions, whose
+   containers cloned only an orphan sandbox branch, and their transcripts were audited. Next:
    - the corrected chance model (item 1), and the rest at 25 and 29;
    - a law that is not one division away in the data, such as a rule round 3 left unexplained.
 
@@ -236,12 +274,13 @@ computes yet.
 
    Each pilot leaves two branches (`pilot-sandbox-*`, `pilot-*-submission`) that this session's
    git proxy would not delete; each pilot's `branches.bundle` holds everything on them, so they
-   can be deleted on GitHub.
+   can be deleted on GitHub. Pilot 7's are in `examples/llm-pilot-37c/branches.bundle` too, with
+   its second round's branch, `pilot-37c-round-2`.
 5. **A specialist's view.**
    - The literature search was brief, and specialists in linear cellular automata may know parts
      of this.
-   - lattice-lab is private, so links to it from Kepler's public README will not open for
-     outsiders.
+   - lattice-lab is private, so Kepler's and LatticeLife's public READMEs point to the website,
+     polylabs-research.net, and not into it.
 6. **Remaining machine checks.** The square and triangle odd parts beyond 999, and the ten odd
    parts below 999 whose check is incomplete.
 7. **Settling time.** `identify` cannot yet name the Gumbel class at the current error bars;
@@ -258,6 +297,10 @@ computes yet.
   slowest first so the cheap ones finish fast at the end.
 - **Cost.** An exact check of a triangle rule at n = 280 takes about 30 seconds by matrix powers;
   `eigen.py` does the same odd part in well under a second.
+- **A pilot on Fable costs real money.** Pilot 7's cloud session cost $51.33 at list price for
+  two hours, $8.02 of it re-caching a 640K-token context after a 10-minute wait. Its second
+  round over the API (`round2.py`, narrow tools, a $30 cap) cost $4.47
+  (`examples/llm-pilot-37c/log.md`).
 - **The stop hook** asks for a commit whenever files are uncommitted. During a long run that
   means committing snapshots of `records.jsonl`, which is harmless: `verify` checks records by
   offset and hash.

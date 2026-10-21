@@ -35,6 +35,7 @@
       <a href="atlas.html">Linear atlas</a>
       <a href="settling.html">Settling time</a>
       <a href="proofs.html">Proofs</a>
+      <a href="codes.html">Quantum codes</a>
     </nav>
   </div>
 </header>
@@ -42,10 +43,11 @@
   <header class="prose">
     <div class="eyebrow">Lean 4 · mathlib · standard axioms only</div>
     <h1>What is proved</h1>
-    <p class="lede">The proof library turns the atlas's patterns into theorems. It is about 4,900
+    <p class="lede">The proof library turns the atlas's patterns into theorems. It is about 5,300
       lines of Lean, built against mathlib. Every result rests on Lean's standard axioms
-      alone, and none uses <code>sorry</code>. Six of its files were written by AI agents, and
-      are in the library as they wrote them, because Lean accepted them.</p>
+      alone, and none uses <code>sorry</code>. Seven of its files were written by AI agents, and
+      are in the library as they wrote them, because Lean accepted them: three verbatim, and four
+      with only their namespaces renamed.</p>
   </header>
 
   <section class="figure" aria-labelledby="lib-title">
@@ -83,6 +85,7 @@
         <tr><td>The cubes at m = 37</td><td>Each of the six rules that puzzled the atlas has period dividing 87,381 = (2<sup>18</sup> − 1)/3 at m = 37, and so does rule 90</td><td><code>period_w_dvd_87381</code>, …, <code>period_r90_dvd</code></td><td>pilot 4's agent</td></tr>
         <tr><td>The cubes at m = 25</td><td>Five of the seventeen rules a census left unexplained have period dividing 341 = (2<sup>10</sup> − 1)/3 at m = 25: two by cube certificates, three as twisted pairs</td><td><code>period_r3096_dvd</code>, …, <code>period_r32184_dvd</code></td><td>pilot 5's agent</td></tr>
         <tr><td>Unit times cube</td><td>Nine rules that are a unit times a cube have period dividing 87,381 at m = 37, and three of them dividing (2<sup>30</sup> − 1)/3 at m = 61</td><td><code>period_r1112_dvd_37</code>, …, <code>period_r18246_dvd_61</code></td><td>pilot 6's agent</td></tr>
+        <tr><td>Ninth powers at m = 37</td><td>Four radius-5 rules, line units times the fourth pilot's half-Frobenius cores, have period dividing 29,127 = (2<sup>18</sup> − 1)/9 at m = 37, so every nonzero eigenvalue is a ninth power</td><td><code>period_r1968276_dvd</code>, …, <code>period_r699738_dvd</code></td><td>pilot 7's agent, in its second round</td></tr>
         <tr><td>VO + T13's law</td><td>2<sup>v+1</sup>P(m) for m ≥ 3, and n/2 at n = 2<sup>v</sup>; the agent found the law from data first</td><td><code>atlasTriPeriod_triVOT13_law</code></td><td>pilot 3's agent</td></tr>
       </tbody>
     </table>
@@ -97,6 +100,10 @@
         hand, but not yet in Lean.</li>
       <li><strong>Why a rule with no confinement reaches the full bound.</strong> At present it is a
         heuristic: generic elements generate.</li>
+      <li><strong>Rule 4850 at m = 37.</strong> That every nonzero eigenvalue is a ninth power
+        has a proof from a multi-agent deep dive, which three independent checkers found stands,
+        with repairs, and whose final chain the orchestrator rechecked by machine. It is not yet
+        written up as one document, and not in Lean.</li>
       <li><strong>The rule-150 analogues.</strong> Square D4 + A4 + self has rule 150's period and
         hexagon H2 + H3 + self twice it. Both are confirmed by registered tests, and unproved.</li>
     </ul>
@@ -121,7 +128,8 @@
       source. The studies, ledgers and Lean library are in lattice-lab, which is private for
       now.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
-      problem card. Their proofs count because Lean accepts them, not because they say so.</p>
+      problem card; the seventh pilot's second round ran over the API. Their proofs count because
+      Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
       <a href="model.html">How we work</a>

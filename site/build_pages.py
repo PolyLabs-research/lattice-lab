@@ -34,7 +34,7 @@ PAGES = {
     "atlas": (
         "Linear atlas · PolyLabs Research",
         "Periods of 502 linear cellular automata, three registered rounds, the eigenvalues that "
-        "decide them, and the open question at m = 37.",
+        "decide them, and the cubes and ninth powers at m = 37.",
     ),
     "settling": (
         "Settling time · PolyLabs Research",
@@ -45,6 +45,11 @@ PAGES = {
         "Proofs · PolyLabs Research",
         "The Lean 4 library behind the results: what is proved, by whom, and on which axioms.",
     ),
+    "codes": (
+        "Quantum codes · PolyLabs Research",
+        "How the ring of these rules carries over to bivariate bicycle quantum codes: logical "
+        "qubits read off the torus's characters, checked by a registered test and in your browser.",
+    ),
     "404": ("Not found · PolyLabs Research", "This page does not exist."),
 }
 
@@ -54,6 +59,7 @@ NAV = [
     ("atlas", "Linear atlas"),
     ("settling", "Settling time"),
     ("proofs", "Proofs"),
+    ("codes", "Quantum codes"),
 ]
 
 MARK = """<svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
@@ -105,7 +111,8 @@ FOOT = """<footer class="site-foot gutter">
       source. The studies, ledgers and Lean library are in lattice-lab, which is private for
       now.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
-      problem card. Their proofs count because Lean accepts them, not because they say so.</p>
+      problem card; the seventh pilot's second round ran over the API. Their proofs count because
+      Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
       <a href="model.html">How we work</a>

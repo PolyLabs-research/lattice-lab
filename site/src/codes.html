@@ -1,0 +1,278 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Next direction · one registered test so far</div>
+    <h1>Quantum codes</h1>
+    <p class="lede">Every linear result on this site is about one object: polynomials in x and y over
+      GF(2), on a torus. A pair of them is a bivariate bicycle code, the family of IBM's
+      [[144,12,12]] gross code. A registered test found that the instruments built for periods
+      count these codes' logical qubits: they agreed with plain linear algebra on 3,000 of 3,000
+      random codes and reproduced all 12 published values. Distance, which decides whether a code
+      is any use, is not computed here yet.</p>
+  </header>
+
+  <section class="prose" aria-labelledby="ring-title">
+    <h2 id="ring-title">One object, two uses</h2>
+    <p>A linear rule on the <em class="var">l</em> × <em class="var">m</em> torus is a polynomial
+      in x and y, taken mod x<sup><em class="var">l</em></sup> − 1 and
+      y<sup><em class="var">m</em></sup> − 1. Each monomial x<sup>p</sup>y<sup>q</sup> is a
+      translation, and the rule adds, mod 2, the cells its translations reach. These polynomials
+      form a ring, the group ring of the torus.</p>
+    <p>On an odd torus a rule acts diagonally. Its eigenvalues are its values at the torus's
+      characters, in a finite field F(2<sup>d</sup>). The orders of the nonzero eigenvalues set the
+      rule's period, as <a href="atlas.html">the linear atlas</a> shows. A quantum code's logical
+      qubits are set by the zero eigenvalues: the characters a rule wipes out.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="qec-title">
+    <h2 id="qec-title">What a quantum code is</h2>
+    <p>Qubits are noisy. A quantum error-correcting code spreads <em class="var">k</em> logical
+      qubits over <em class="var">n</em> physical ones, and measures parity checks. Each check
+      reports the parity of a few qubits, which reveals errors without reading the information
+      stored. There are two kinds of check, for the two kinds of error a qubit suffers: bit flips
+      and phase flips.</p>
+    <p>A code is written [[<em class="var">n</em>, <em class="var">k</em>, <em class="var">d</em>]].
+      Its <strong>distance</strong> <em class="var">d</em> is the weight of its smallest logical
+      error: the fewest qubits an error must touch to change the stored information while every
+      check stays silent. An error on fewer than <em class="var">d</em> qubits is either caught by
+      a check or does no harm.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="bb-title">
+    <h2 id="bb-title">Two rules make the gross code</h2>
+    <p>A bivariate bicycle code (Bravyi et al., 2024) takes two polynomials A and B on the
+      <em class="var">l</em> × <em class="var">m</em> torus, and two copies of the torus, left and
+      right, with a qubit on every cell: <em class="var">n</em> = 2<em class="var">lm</em>. Its
+      checks are H<sub>X</sub> = [A | B] and H<sub>Z</sub> = [B<sup>T</sup> | A<sup>T</sup>]. The X
+      check at cell (<em class="var">i</em>, <em class="var">j</em>) reads, on the left copy, the
+      cells (<em class="var">i</em> − <em class="var">p</em>, <em class="var">j</em> −
+      <em class="var">q</em>) for each monomial x<sup>p</sup>y<sup>q</sup> of A, and on the right
+      the same for B. The Z check reads (<em class="var">i</em> + <em class="var">p</em>,
+      <em class="var">j</em> + <em class="var">q</em>): B's monomials on the left, and A's on the
+      right.</p>
+    <p>IBM's gross code is A = x<sup>3</sup> + y + y<sup>2</sup> and B = y<sup>3</sup> + x +
+      x<sup>2</sup> on the 12 × 6 torus, so <em class="var">n</em> = 144.</p>
+  </section>
+
+  <section class="figure" id="checks" aria-labelledby="chk-title">
+    <div class="figure-head">
+      <h3 id="chk-title">The checks of the gross code</h3>
+      <span class="eyebrow">click a cell to move the check</span>
+    </div>
+    <div class="figure-body split">
+      <div class="canvas-box"><canvas id="chk-canvas" tabindex="0" aria-label="The gross code's two copies of the 12 by 6 torus, with the qubits one check reads. The arrow keys move the check."></canvas></div>
+      <div class="controls">
+        <div class="row">
+          <div class="field">Check
+            <div class="seg" role="group" aria-label="Kind of check">
+              <button id="chk-x" type="button" aria-pressed="true">X check</button>
+              <button id="chk-z" type="button" aria-pressed="false">Z check</button>
+            </div>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div class="kv"><span class="k">check</span><span class="v" id="chk-at"></span></div>
+          <div class="kv"><span class="k">matrix row</span><span class="v" id="chk-row"></span></div>
+          <div class="kv"><span class="k">left qubits</span><span class="v" id="chk-left"></span></div>
+          <div class="kv"><span class="k">right qubits</span><span class="v" id="chk-right"></span></div>
+        </div>
+        <div class="legend">
+          <span><i class="swatch sq" style="background: var(--cell)"></i>read on the left copy</span>
+          <span><i class="swatch sq" style="background: var(--gold)"></i>read on the right copy</span>
+          <span><i class="swatch sq" style="border: 2px solid var(--ink)"></i>the check's cell</span>
+          <span><i class="swatch sq" style="border: 1px dashed var(--ink)"></i>reached across an edge</span>
+        </div>
+        <p class="note">Each check reads six qubits, three on each copy, and each qubit is read by
+          three X checks and three Z checks. The checks are sparse, and local on the torus. The
+          arrow keys move the check too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="k-title">
+    <h2 id="k-title">Logical qubits from the characters</h2>
+    <p>The number of logical qubits is <em class="var">k</em> = <em class="var">n</em> − rank
+      H<sub>X</sub> − rank H<sub>Z</sub> = 2 dim(ker A ∩ ker B): twice the number of independent
+      patterns that A and B both wipe out.</p>
+    <p>That count can be read off the characters. The ring is a Frobenius algebra, so
+      dim(ker A ∩ ker B) = dim R/(A, B), and R splits over the characters of the torus's odd
+      part. At odd sizes, <em class="var">k</em> is twice the number of characters where A and B
+      both vanish: zero eigenvalues, which this project's instruments already compute.</p>
+    <p>At even sizes, write <em class="var">l</em> = 2<sup>a</sup><em class="var">l</em>′ and
+      <em class="var">m</em> = 2<sup>b</sup><em class="var">m</em>′ with <em class="var">l</em>′
+      and <em class="var">m</em>′ odd. Each common zero on the <em class="var">l</em>′ ×
+      <em class="var">m</em>′ odd part then counts with its multiplicity in the 2-part: the same
+      split of a torus into odd part and 2-part as the library's even-size reduction.</p>
+  </section>
+
+  <section class="figure" id="count" aria-labelledby="count-title">
+    <div class="figure-head">
+      <h3 id="count-title">A code's logical qubits, two ways</h3>
+      <span class="eyebrow">computed here</span>
+    </div>
+    <div class="figure-body split">
+      <div class="canvas-box"><canvas id="code-canvas" aria-label="The characters of the torus's odd part, marked where A and B vanish"></canvas></div>
+      <div class="controls">
+        <label class="field" for="code-pick">Code
+          <select id="code-pick"></select>
+        </label>
+        <div class="row">
+          <label class="field" for="code-l">l, along x
+            <input type="number" id="code-l" min="1" max="32" value="12">
+          </label>
+          <label class="field" for="code-m">m, along y
+            <input type="number" id="code-m" min="1" max="32" value="6">
+          </label>
+        </div>
+        <label class="field" for="code-a">A
+          <textarea id="code-a" rows="1" cols="26" spellcheck="false" autocomplete="off">x^3 + y + y^2</textarea>
+        </label>
+        <label class="field" for="code-b">B
+          <textarea id="code-b" rows="1" cols="26" spellcheck="false" autocomplete="off">y^3 + x + x^2</textarea>
+        </label>
+        <div class="readout" aria-live="polite">
+          <div id="code-error"></div>
+          <div class="kv"><span class="k">code</span><span class="v" id="code-code"></span></div>
+          <div class="kv"><span class="k">monomials</span><span class="v" id="code-mons"></span></div>
+          <div class="kv"><span class="k">qubits n</span><span class="v" id="code-n"></span></div>
+          <div class="kv"><span class="k">k by ranks</span><span class="v" id="code-lin"></span></div>
+          <div class="kv"><span class="k">k by characters</span><span class="v" id="code-chars"></span></div>
+          <div class="kv"><span class="k">both ways</span><span class="v" id="code-agree"></span></div>
+          <div class="kv"><span class="k">published</span><span class="v" id="code-pub"></span></div>
+          <div class="kv"><span class="k">odd part</span><span class="v" id="code-parts"></span></div>
+          <div class="kv"><span class="k">pointer</span><span class="v" id="code-hover">point at a square</span></div>
+        </div>
+        <div class="legend">
+          <span><i class="swatch sq" style="background: var(--gold)"></i>A and B both vanish; the number is its multiplicity</span>
+          <span><i class="swatch sq" style="background: var(--cell-soft)"></i>only A vanishes</span>
+          <span><i class="swatch sq" style="background: var(--gold-soft)"></i>only B vanishes</span>
+          <span><i class="swatch sq" style="background: var(--line)"></i>neither</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button id="code-random" type="button">Test 150 random codes at this size</button>
+      <span id="code-random-out" aria-live="polite"></span>
+    </div>
+    <p class="note">Each square is one character χ = (<em class="var">u</em>, <em class="var">v</em>)
+      of the odd part: row <em class="var">u</em> for x, column <em class="var">v</em> for y.
+      Write A and B as sums of monomials, such as <code>x^3 + y + y^2</code>, or <code>1 + π + π^2</code> with π = xy;
+      <code>0</code> is the zero polynomial. Exponents are taken mod <em class="var">l</em> and
+      <em class="var">m</em>, and a repeated monomial cancels, as it does mod 2. Your browser
+      computes the ranks over GF(2), and the characters in the same field F(2<sup>d</sup>) as the
+      project's code, so the squares carry the labels of its records. The random test draws codes
+      of the registered test's two kinds. Distance is not computed.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="test-title">
+    <h2 id="test-title">The registered test</h2>
+    <p>Before anything was built on the character count, it was tested, with its predictions
+      written to a hash-chained ledger before the run. It compared <em class="var">k</em> from the
+      characters with <em class="var">k</em> from ranks over GF(2), and with the published
+      <em class="var">k</em>. Development used only tori with <em class="var">l</em>,
+      <em class="var">m</em> ≤ 4, and none of those was tested. Both predictions held.</p>
+  </section>
+
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Prediction</th><th>Tested on</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>k from the characters equals k from ranks over GF(2)</td><td>3,000 random codes at 20 sizes, 150 at each and 1,500 at even sizes: 100 per size in the published trinomial form, A = x<sup>a</sup> + y<sup>b</sup> + y<sup>c</sup> and B = y<sup>d</sup> + x<sup>e</sup> + x<sup>f</sup>, and 50 with two to six random terms; and the 12 published entries</td><td><span class="badge ok">held</span> 3,000 of 3,000 random codes and 12 of 12 entries agree</td></tr>
+        <tr><td>k from the characters equals the published k</td><td>12 published entries: five of the original bivariate bicycle codes and the coprime codes, two of them in two published versions</td><td><span class="badge ok">12 of 12</span> every published k reproduced, the gross code's among them, and both versions of the two coprime codes whose published polynomials disagree</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="why-title">
+    <h2 id="why-title">What the characters show</h2>
+    <p>The [[72,12,6]], [[144,12,12]] and [[288,12,18]] codes share <em class="var">k</em> = 12
+      because the same four characters of their 3 × 3 odd part carry it, two of them with
+      multiplicity 2 in the 2-part. The coprime codes each take <em class="var">k</em> from one
+      Frobenius orbit of common zeros, so <em class="var">k</em> is twice the orbit's size: the
+      orbit {1, 2, 4} mod 7 for [[42,6,6]], and an orbit of six characters of the 7 × 9 torus for
+      [[126,12,10]]. Pick them in <a href="#count">the figure above</a> to see it.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="sym-title">
+    <h2 id="sym-title">Symmetries: equivalent codes, and cheap gates</h2>
+    <p>A map of the torus sends a code to an equivalent code: the same code with its qubits
+      relabelled. The image test that shrank this project's censuses, by maps in GL2(Z/m), is a
+      code-equivalence test, and it can shrink a search for codes the same way.</p>
+    <p>A symmetry of the torus that maps a code to itself is an automorphism of the code.
+      Automorphisms are being studied as fault-tolerant logical gates, done by permuting qubits.
+      The fourth pilot's half-Frobenius mechanism is exactly invariance under a dilation
+      (x, y) → (x<sup>c</sup>, y<sup>c</sup>), by c = 6 at m = 37. Neither use has been tried on codes yet.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="dict-title">
+    <h2 id="dict-title">What carries over</h2>
+  </section>
+
+  <div class="table-box">
+    <table>
+      <thead><tr><th>In this project</th><th>In quantum codes</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>A linear rule: a polynomial on the torus</td><td>The polynomial A or B of a bivariate bicycle code</td><td><span class="badge ok">the same object</span></td></tr>
+        <tr><td>The <em class="var">l</em> × <em class="var">m</em> torus</td><td><em class="var">n</em> = 2<em class="var">lm</em> qubits, one on each cell of two copies</td><td><span class="badge ok">the same object</span></td></tr>
+        <tr><td>Zero eigenvalues: the characters a rule wipes out</td><td>Logical qubits: at odd sizes, <em class="var">k</em> is twice the number of characters where A and B both vanish</td><td><span class="badge ok">tested</span> 3,000 of 3,000 random codes, 12 of 12 published</td></tr>
+        <tr><td>The 2-part at even sizes</td><td>The multiplicity of each common zero</td><td><span class="badge ok">tested</span> 1,500 random codes at even sizes</td></tr>
+        <tr><td>Maps of the torus in GL2(Z/m), and the image test</td><td>Equivalent codes, which a search can skip</td><td><span class="badge gold">carries over, untried</span></td></tr>
+        <tr><td>Invariance under a dilation: the fourth pilot's half-Frobenius mechanism</td><td>Code automorphisms, candidate logical gates done by permuting qubits</td><td><span class="badge gold">carries over, untried</span></td></tr>
+        <tr><td>The Lean bridge from a polynomial to its eigenvalues</td><td>A certified <em class="var">k</em>, and certified symmetries</td><td><span class="badge muted">planned</span></td></tr>
+        <tr><td>Registered tests, and a judge on held-out cases</td><td>Checks of any code an agent proposes: <em class="var">k</em> exactly, distance independently</td><td><span class="badge muted">planned</span></td></tr>
+        <tr><td>Periods, and the cubes and ninth powers at m = 37</td><td>No direct role: the theorems themselves have no application</td><td><span class="badge muted">does not carry over</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="path-title">
+    <h2 id="path-title">The path</h2>
+    <ol class="steps">
+      <li><span><strong>Rediscovery.</strong> Done: the registered test above passed.</span></li>
+      <li><span><strong>A census of code families.</strong> Sweep polynomial pairs at many sizes
+        for high <em class="var">k</em>, using the classes and symmetries to prune. Then measure
+        distance, the hard and expensive part, with established tools: exact integer programming
+        for small codes, randomised information-set methods for larger ones, and circuit-noise
+        simulation (stim, BP-OSD decoders) for the logical error rates practitioners care about.
+        This is where the compute goes.</span></li>
+      <li><span><strong>Pilots on codes.</strong> Point the agent loop at structural questions with
+        a payoff for codes. For example: which conditions on (A, B) force many logical qubits and a
+        torus automorphism at once? The judge checks <em class="var">k</em> exactly and distance
+        independently, on held-out sizes registered in advance, as in the seven pilots so
+        far.</span></li>
+      <li><span><strong>Certificates.</strong> Extend the Lean bridge to <em class="var">k</em> and
+        to automorphisms. Distance will mostly stay outside Lean, but a certified
+        <em class="var">k</em> and certified symmetries with independently checked distances are a
+        stronger claim than most code-search papers make.</span></li>
+    </ol>
+    <p>The plan names two weaker leads for the same algebra. Linear cellular automata are standard
+      test-pattern generators in chip testing, where a short cycle is a defect, and the mechanisms
+      here predict exactly when the cycle collapses. In fracton and fractal spin models
+      (Newman–Moore is built on the triangle rule), ground-state counts and recurrence times are
+      given by the same algebra. The codes are the strongest of the three: a live field, an
+      industrial roadmap built on exactly this ring, and a quantity, <em class="var">k</em>, that
+      the instruments here already compute.</p>
+  </section>
+
+  <section class="open" aria-labelledby="caveat-title">
+    <div class="eyebrow">what this does not show</div>
+    <h2 id="caveat-title">Caveats</h2>
+    <p><strong>Distance.</strong> Distance decides whether a code is useful, and nothing in the
+      project computes it yet. Counting <em class="var">k</em> says how much a code stores, not
+      how well it protects it.</p>
+    <p><strong>Competition.</strong> Bivariate bicycle code search is active, with groups searching
+      by brute force, by covering-graph constructions, and already with LLM-guided search. What
+      this project would bring is its method (machine-checked structure, and held-out tests
+      registered in advance) and any new families it finds, not a head start.</p>
+    <p><strong>Sources.</strong> The published codes were transcribed from search summaries of the
+      papers, because arXiv was not reachable from the environment the work runs in, and are still
+      to be checked against the papers. A disagreement with a published <em class="var">k</em>
+      would first be a question about the transcription.</p>
+  </section>
+
+  <p class="note">Sources: the original bivariate bicycle codes, the gross code among them, are
+    from Bravyi et al., Nature 627, 778 (2024),
+    <a href="https://arxiv.org/abs/2308.07915">arXiv:2308.07915</a>. The coprime codes are from Wang and Mueller,
+    <a href="https://arxiv.org/abs/2408.10001">arXiv:2408.10001</a>, its QCE 2024 poster and its
+    version in Quantum. The plan this page summarises is the project's next-direction note, in
+    lattice-lab, which is private for now.</p>
+</main>

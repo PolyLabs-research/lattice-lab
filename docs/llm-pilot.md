@@ -1,8 +1,8 @@
 # The LLM-central pilots: three period laws and four open questions, worked by agents
 
 **Result: in all seven pilots so far, a fresh agent, given only a problem card and the Lean
-library, passed the judge in its first round or, in the seventh, its second. In the third it also found the law itself, from
-data. In the fourth, on a question nobody had answered, it found the mechanism, proved it in
+library, passed the judge in its first round or, in the seventh, its second. In the third it
+also found the law itself, from data. In the fourth, on a question nobody had answered, it found the mechanism, proved it in
 Lean, and its general condition held at every one of 633 claims, 180 of them at held-out sizes
 registered before it started. In the fifth, on a harder open question, it explained and proved
 5 of 17 cases, said plainly that it could not explain the rest, and its condition held at all
@@ -615,8 +615,8 @@ verify` finds no problems):
 
 ## What the pilots show, and what they do not
 
-**They show that the loop's mechanics work end to end, six times, with real isolation in the
-last five, and that the loop can answer a question its orchestrator could not.** A precise card,
+**They show that the loop's mechanics work end to end, seven times, with real isolation in the
+last six, and that the loop can answer a question its orchestrator could not.** A precise card,
 a sandbox and an automatic judge were enough. Acceptance was decided by Lean, the pinned
 statements and the axioms, not by the model's description of its work.
 
@@ -657,8 +657,9 @@ statements and the axioms, not by the model's description of its work.
 - Pilot 6's answer is elementary: a factorisation that the orchestrator's pre-check listed as
   unchecked and did not attempt. The agent's computations at three held-out sizes, after its
   first condition, prompted one change to it, so its result at 111 is not blind.
-- Six runs, each on a different problem, each passed in the judge's first round. That says
-  little about the failure rate, or about where the approach stops working.
+- Seven runs, each on a different problem. Six passed in the judge's first round; the seventh's
+  Lean did not build until a second round. That says little about the failure rate, or about
+  where the approach stops working.
 
 ## Next
 

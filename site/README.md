@@ -9,8 +9,10 @@ site/
   build_pages.py    wraps each body in src/ in the shared head, header and footer
   src/*.html        the page bodies
   public/           what gets deployed
-    index.html, model.html, parity.html, atlas.html, settling.html, proofs.html, 404.html
-    assets/site.css, assets/lib.js (shared maths, SHA-256, charts), assets/js/<page>.js
+    index.html, model.html, parity.html, atlas.html, settling.html, proofs.html, codes.html,
+    404.html
+    assets/site.css, assets/lib.js (shared maths, SHA-256, charts)
+    assets/js/<page>.js: index.js, model.js, parity.js, atlas.js, settling.js, proofs.js, codes.js
   firebase.json     Firebase Hosting configuration
 ```
 
@@ -21,8 +23,11 @@ uv run --no-sync python site/build_data.py     # after new records, pilots or pr
 uv run --no-sync python site/build_pages.py    # after editing site/src/ or the header/footer
 ```
 
-Then commit `site/public/` and deploy. `build_data.py` reads only this repository. The fourth
-pilot's status on the site is the `PILOT37` dictionary in `build_data.py`, edited by hand.
+Then commit `site/public/` and deploy. `build_data.py` reads only this repository. The state of
+the m = 37 question on the site (the home page's card, the fourth pilot's row on the model page
+and its account on the atlas page) is the `PILOT37` dictionary in `build_data.py`, edited by
+hand. The rest of the m = 37 section, on the seventh pilot and rule 4850, is in
+`src/atlas.html`.
 
 Before deploying, check the pages locally:
 

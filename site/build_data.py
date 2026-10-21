@@ -164,6 +164,23 @@ def _target(command: str) -> str:
     return f": {Path(m.group(0)).name}" if m else ""
 
 
+_QUOTED = re.compile(r"\"[^\"]*\"|'[^']*'")
+# A call that waits: a sleep loop, or a command that starts with a sleep. What it waits on is the
+# loop's condition, or the first command after the sleep.
+_WAIT = re.compile(
+    r"\b(?:until|while)\b(?P<on>[^;]*);\s*do\s+sleep\b|^\s*sleep\s+\S+\s*;?(?P<then>[^;&]*)"
+)
+_LEAN_WORDS = re.compile(r"setup\.log|lake|lean|mathlib", re.I)
+
+
+def _wait(command: str) -> str | None:
+    m = _WAIT.search(command)
+    if not m:
+        return None
+    on = m.group("on") or m.group("then") or ""
+    return "wait for the Lean build" if _LEAN_WORDS.search(on) else "wait for a background job"
+
+
 def _category(call: dict) -> tuple[str, str]:
     tool, given = call["tool"], call.get("input", {})
     if tool in ("Write", "Edit"):
@@ -174,12 +191,16 @@ def _category(call: dict) -> tuple[str, str]:
     if tool in ("Monitor", "ScheduleWakeup"):
         return "wait", "wait for the Lean build"
     command = given.get("command", "")
-    if "lake build" in command or "lake env lean" in command:
+    # "lake build" inside quotes is a pattern for pkill, pgrep or grep, not a build
+    bare = _QUOTED.sub('""', command)
+    if "lake build" in bare or "lake env lean" in bare:
         return "lean", "compile Lean" + _target(command.replace("lakefile.toml", ""))
     if "git commit" in command or "git push" in command:
         return "commit", "commit and push"
-    if "until " in command or "sleep " in command:
-        return "wait", "wait for the Lean build"
+    # a short sleep after starting a Python job is not a wait (the seventh pilot did this often)
+    waiting = _wait(command)
+    if waiting:
+        return "wait", waiting
     if "setup.sh" in command:
         return "setup", "start setup: setup.sh"
     if "python" in command:
@@ -196,6 +217,8 @@ def timelines() -> list[dict]:
         ("Pilot 4: the cubes at m = 37", EX / "llm-pilot-37", "2026-10-19T06:40:26Z"),
         ("Pilot 5: the cubes at m = 25", EX / "llm-pilot-25", "2026-10-19T16:42:17Z"),
         ("Pilot 6: the square family at m = 37", EX / "llm-pilot-37b", "2026-10-19T21:51:40Z"),
+        # round 1 only: the second round ran over the API, not in a cloud session (round2.py)
+        ("Pilot 7: the ninth powers at m = 37", EX / "llm-pilot-37c", "2026-10-20T14:12:24Z"),
     ]
     out = []
     for name, d, start in pilots:
@@ -248,17 +271,22 @@ def proofs() -> dict:
     return out
 
 
-# The fourth pilot's state, as the site shows it. Edited by hand as the pilot moves on.
+# The m = 37 question's state, as the site shows it: the home page's card (status, card), the
+# fourth pilot's row on the model page (time, judge, test) and the atlas page's m = 37 section
+# (eyebrow, and html, the fourth pilot's account). Edited by hand as the work moves on.
 PILOT37 = {
-    "status": "answered by an agent",
+    "status": "answered by agents",
     "card": "Six rules that none of the known mechanisms touches had every eigenvalue a cube at "
-    "m = 37, far beyond chance. In the fourth pilot an agent found why within 23 minutes, on a "
-    "question nobody had answered, and proved it in Lean. Its condition made 633 claims at 94 "
-    "sizes, 180 of them at held-out sizes registered before it started, and none was false.",
+    "m = 37, far beyond chance. In the fourth pilot an agent found why and proved it in Lean; its "
+    "condition made 633 claims, none false. Five more there, rule 4850 and four rules of radius 5, "
+    "have every nonzero eigenvalue a ninth power, which no known mechanism explained. The seventh "
+    "pilot's agent explained the four, and proved them in Lean. A multi-agent deep dive explained "
+    "the fifth, rule 4850, with a proof that three independent checkers found stands, with "
+    "repairs. That proof is not yet in Lean.",
     "time": "95 min, 131 calls; a follow-up took 6 more",
     "judge": '<span class="badge ok">passed, round 1</span>',
     "test": "180 of 180 claims held at held-out sizes",
-    "eyebrow": "answered in the fourth pilot",
+    "eyebrow": "answered by agents, from the fourth pilot on",
     "html": """<p>The fourth pilot set an agent on this question, in its own container, with the
       census up to <em class="var">m</em> = 161 and the Lean library. Nobody knew the answer, the
       orchestrator included. Ten minutes in, it found that three of the six are the first one
