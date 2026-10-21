@@ -54,9 +54,9 @@
       <h2 id="board-title">Registered tests, misses included</h2>
       <span class="eyebrow">predictions written before the runs</span>
     </div>
-    <p class="note" style="font-size: 0.95rem">Six of these tests refuted what we registered. We
-      count that as the method working: each miss pointed at something real, and where a
-      corrected claim followed, it was registered and tested again.</p>
+    <p class="note" style="font-size: 0.95rem">Seven of these tests refuted something we
+      registered. We count that as the method working: each miss pointed at something real, and
+      where a corrected claim followed, it was registered and tested again.</p>
     <div class="table-box">
       <table>
         <thead><tr><th>Claim</th><th>Tested at</th><th>Outcome</th></tr></thead>
@@ -80,6 +80,7 @@
           <tr><td>That rule 4850's ninth powers at m = 37 are a coincidence, in a test Claude Fable proposed</td><td>all 2,064,384 new rules of radius 5</td><td><span class="badge bad">refuted</span> 5 unexplained against 0.0066 expected; four of them are neither multiples nor images of 4850</td></tr>
           <tr><td>A mechanism, not chance, behind more ninth powers at m = 37, among radius-6 rules the seventh agent was not given</td><td>all 266,338,304 rules that use an orbit of radius 6</td><td><span class="badge ok">held</span> 37 unexplained against 0.70 expected. The agent's condition covers 35, but it had computed this census itself, so that is not a prediction; none of its 533 claims at held-out sizes was false</td></tr>
           <tr><td>A quantum code's logical qubits, read off the torus's characters</td><td>3,000 random bivariate bicycle codes at 20 sizes, and 12 published entries (ten codes, two in two versions), IBM's gross code among them</td><td><span class="badge ok">3,000 of 3,000</span> agree with plain linear algebra, and all 12 published values are reproduced</td></tr>
+          <tr><td>The same 12 codes' published distances, computed blind by an exhaustive search and an integer program</td><td>12 published entries, up to 288 qubits; method checks on 200 random, 14 toric and 9 new codes</td><td><span class="badge ok">12 of 12</span> reproduced, d = 18 for the largest in 3 minutes. <span class="badge bad">method check failed</span> once: the solver reported a wrong optimum on 1 of 200 random codes</td></tr>
           <tr><td>The deep dive's classification of rule 4850's family, the hexagon family</td><td>41 held-out predictions of period odd parts, at sizes from 13 to 1,861</td><td><span class="badge ok">35 of 35 tested</span> the six at the largest sizes, 709 to 1,861, were not tested: two ran out of time, and four were recorded as not run</td></tr>
         </tbody>
       </table>
@@ -142,12 +143,13 @@
         Lean against mathlib.</p>
     </a>
     <a class="card wide" href="codes.html">
-      <span class="badge ok status">rediscovery test passed</span>
+      <span class="badge ok status">k and d reproduced</span>
       <h3>Quantum codes</h3>
       <p>Every linear rule here lives in one ring, and it is the ring of bivariate bicycle quantum
         codes, IBM's gross code among them. A code's logical qubits are read off the same
         characters. A registered test agreed with plain linear algebra on 3,000 of 3,000 random
-        codes and reproduced all 12 published values. Nothing here computes distance yet.</p>
+        codes and reproduced all 12 published values, and a second reproduced all 12 published
+        distances, by a search written here.</p>
     </a>
   </div>
 </main>

@@ -1,7 +1,8 @@
 # Next direction: from periods on the torus to quantum error-correcting codes
 
-**Status: a plan; its first step, a registered rediscovery test (`examples/qec-bb`), passed.** Written 2026-10-20, after
-the seventh pilot.
+**Status: a plan. Its first step, a registered rediscovery test of k (`examples/qec-bb`), passed. The first part of step 2,
+a registered rediscovery of the published distances (`examples/qec-distance`, [code-distances.md](code-distances.md)),
+reproduced all twelve.** Written 2026-10-20, after the seventh pilot.
 
 ## What the project has actually built
 
@@ -79,8 +80,17 @@ this ring, and a quantity, k, that the instruments here already compute.
      twice the orbit's size: {1, 2, 4} mod 7 for [[42,6,6]], and an orbit of six characters of
      the 7 × 9 torus for [[126,12,10]].
 2. **A census of code families.** Sweep polynomial pairs at many sizes for high k, using the
-   classes and symmetries to prune. Then measure distance, the hard and expensive part, with
-   established tools:
+   classes and symmetries to prune. Then measure distance, the hard and expensive part.
+   **Distance, first part (registered: `examples/qec-distance`; [code-distances.md](code-distances.md)).**
+   - **Result.** An exhaustive search written here reproduced all 12 published distances
+     exactly, [[288,12,18]] in 3 minutes and the gross code in 0.2 s. An integer program
+     solved by SCIP agreed on 11 and bracketed the twelfth.
+   - **A failed method check.** The registered method check failed once: on 1 of 200 random
+     codes SCIP reported a wrong optimum. That happens only with its dual reductions on and the
+     program's translation row present. The program's lower bounds need that fixed, and
+     retested, before they are trusted.
+
+   Established tools for later:
    - exact integer programming for small codes;
    - randomized information-set methods for larger ones;
    - circuit-noise simulation (stim, BP-OSD decoders) for the logical error rates practitioners
@@ -101,8 +111,9 @@ this ring, and a quantity, k, that the instruments here already compute.
   by covering-graph constructions, and already with LLM-guided search. The contribution here
   would be the method (machine-checked structure, registered held-out tests), and any new
   families, not a head start.
-- **Distance.** Distance decides whether a code is useful, and nothing in the project yet
-  computes it.
+- **Distance.** Distance decides whether a code is useful. The project now computes it exactly
+  for codes like the published ones (code-distances.md). Its search can stall without a good
+  starting bound, and its integer program needs a solver fault fixed.
 - **Sources.** The published codes in step 1 were transcribed from search summaries of the
   papers, because arXiv is not reachable from this environment (`examples/qec-bb/codes.json`
   says so). A disagreement with a published k is first a question about the transcription.

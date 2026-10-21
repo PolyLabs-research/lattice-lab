@@ -18,7 +18,7 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 175 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 195 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1043 |
 
@@ -41,7 +41,7 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 175 tests
+uv sync && uv run pytest              # 195 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -83,7 +83,8 @@ before the runs that tested them.
 | The ninth powers at m = 37: four of five rules with no known mechanism (699738, 985232, 1431278, 1968276) are line units times pilot 4's half-Frobenius cores, and the units' exact exponents add the third factor of 3 | chance first refuted by a registered radius-5 census (four independent such rules against 0.0066 expected); **found by an LLM agent (Claude Fable)** in the seventh pilot, its condition sound at all 1,715 claims, 533 at held-out sizes; its Lean failed to build in round 1 and was fixed in a second round over the API (`Ninth37.lean`) | [llm-pilot.md](llm-pilot.md#pilot-7-the-ninth-powers-at-m--37), [consultations.md](consultations.md#4-rule-4850s-ninth-powers-at-m--37-2026-10-20) |
 | Rule 4850, the fifth: (x + 1/x + y + 1/y) · 4850 is two hexagons; an order-3 symmetry that exists only at 37 (5² + 3·2² = 37) gives λ · t_α t_β = W⁴; a norm formula in Gauss periods puts every eigenvalue's norm to F64 in F8*, which is the ninth-power condition | **explained, with a proof**, by a multi-agent deep dive; three independent checkers found it stands with repairs, which they supplied, and the orchestrator rechecked the chain (`tests/test_rule4850_proof.py`); not yet one document, and not in Lean | [the deep dive's report](../examples/rule-4850/deep/REPORT.md) |
 | The hexagon family at m = 37: p a non-residue gives ninth powers, p a residue gives cubes | classified in the deep dive; **confirmed by a registered held-out test**: 35 of 35 tested predictions correct, at 37, 13 and eight other sizes; the six at the largest sizes (709 to 1861) were not tested, two over the 45-minute limit and four recorded as not run | [the deep dive's report](../examples/rule-4850/deep/REPORT.md#4-the-hexagon-family), `examples/hexagon-family` |
-| A bivariate bicycle quantum code's logical qubits k are read off the torus's characters | **confirmed by a registered rediscovery test**: the character method agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included; distance is not computed yet | [next-direction.md](next-direction.md) |
+| A bivariate bicycle quantum code's logical qubits k are read off the torus's characters | **confirmed by a registered rediscovery test**: the character method agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included | [next-direction.md](next-direction.md) |
+| The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum (with its dual reductions and the program's translation row), so the program's lower bounds are not trusted until fixed and retested | [code-distances.md](code-distances.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
@@ -145,8 +146,13 @@ tried) explain three square rules at 25, 29, 35, 53 and 55. The seventh pilot's 
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
 logical qubits are read off the same characters. Its first step, a registered rediscovery test
 against linear algebra and twelve published codes (`examples/qec-bb`), passed: 3,000 of 3,000
-random codes agree and all 12 published k are reproduced. Next: distances, which nothing here
-computes yet.
+random codes agree and all 12 published k are reproduced. Step 2's first part, the published
+distances (`examples/qec-distance`, [code-distances.md](code-distances.md)), reproduced all twelve
+with an exhaustive search; its integer program failed one method check through a SCIP fault.
+Next:
+- fix both instruments (SCIP without dual reductions; the search with iterative deepening) and
+  register them again on fresh codes;
+- then the census of code families.
 
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
@@ -315,6 +321,10 @@ computes yet.
   from source in about 50 minutes; see [proofs.md](proofs.md#building-it-here). A new session
   starts without `proofs/.lake`, so it pays that again.
 - **uv** prints a warning about `UV_NATIVE_TLS` on every call; it is harmless.
+- **Code distances.** `uv sync --group qec` installs SCIP (pyscipopt). The search
+  (`examples/qec-distance/search.c`) needs a C compiler as `cc`. Trust the search's exact values
+  and every checked witness. Do not trust the program's "optimal" alone: it was wrong once
+  (code-distances.md).
 - **Consultations: read `served_by`.** Fable's cyber classifier declines GF(2) arithmetic as a
   false positive (6 of 12 benchmark calls, 5 of 6 on pilot 4's question), and the server-side
   fallback answers with Claude Opus 4.8. The record says so; any comparison of models must
