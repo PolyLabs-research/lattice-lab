@@ -32,14 +32,20 @@ rank H_Z (bb.k_linalg).
   presolve (which turns the parity rows into its XOR constraints and adds its own symmetry
   handling), its branch and bound, its floating-point LP solver within its tolerances, and its
   conclusion that the objective is integral, all applied to the formulation in `distance_ilp`,
-  whose soundness is argued there. It also rests on `logical_basis` (numpy elimination) being
-  complete: with fewer than k logicals the program would miss some Z-logicals, and its optimum
-  and dual bound could exceed d_Z. The program records the basis's size as k, and the study
-  compares it with bb.k_linalg at run time. Nothing in the program certifies a lower bound
-  independently. Where the enumeration is feasible (`distance_brute`, dim ker H_X at most
-  BRUTE_CAP), it gives the exact value by a route that shares no code with the program but bb's
-  matrices; where the search completes (`distance_search`, a C program), so does it, with
-  integer arithmetic only, no LP and no floating point.
+  whose soundness is argued there. SCIP 10.0 was found to be wrong on this formulation: its
+  presolving of the XOR constraints cut off every optimal solution of some programs with fixed
+  variables, and its "optimal" was then too high, with a witness that passes the check. The
+  program therefore runs with XOR presolving and rapid learning off (SCIP_FIX, recorded in
+  every result's settings; `distance_ilp` gives the fault and the evidence for the fix). The
+  lower bound then rests on those two being the routes by which that presolving reaches the
+  answer; the fault's place in SCIP's code was not found. It also rests on `logical_basis`
+  (numpy elimination) being complete: with fewer than k logicals the program would miss some
+  Z-logicals, and its optimum and dual bound could exceed d_Z. The program records the basis's
+  size as k, and the study compares it with bb.k_linalg at run time. Nothing in the program
+  certifies a lower bound independently. Where the enumeration is feasible (`distance_brute`,
+  dim ker H_X at most BRUTE_CAP), it gives the exact value by a route that shares no code with
+  the program but bb's matrices; where the search completes (`distance_search`, a C program),
+  so does it, with integer arithmetic only, no LP and no floating point.
 """
 
 from __future__ import annotations
@@ -63,6 +69,10 @@ import bb  # noqa: E402
 
 KINDS = ("Z", "X")
 SEED = 0  # SCIP's randomization/randomseedshift
+# Against SCIP 10.0's fault in presolving XOR constraints (distance_ilp's docstring): no XOR
+# presolving in the main SCIP, and no rapid learning, whose sub-SCIP presolves with SCIP's
+# defaults. Neither changes the program or its optimum.
+SCIP_FIX = {"constraints/xor/maxprerounds": 0, "separating/rapidlearning/freq": -1}
 # SCIP's limits/memory, in MB. It bounds SCIP's own estimate of its memory, which SCIP's
 # parameter documentation says is lower than real use, not the process's RSS; 3000 leaves four
 # runs at once a margin of about 3 GB below 15 GB for that difference.
@@ -201,6 +211,7 @@ def distance_ilp(
     seed: int = SEED,
     translation: bool = True,
     configure=None,
+    scip_fix: bool = True,
 ) -> dict:
     """The least weight of a logical of the given kind ("Z": H_X c = 0, c not in the rowspace
     of H_Z; "X": the same with H_X and H_Z exchanged), by one integer program solved by SCIP.
@@ -222,6 +233,38 @@ def distance_ilp(
     Z-logical satisfying the row. The constrained optimum is therefore d_Z, and a lower bound for
     the constrained program is a lower bound for d_Z. (For kind X the same holds with A* and B*.)
 
+    SCIP's fault, and the settings against it. SCIP's presolve turns the parity rows into its XOR
+    constraints, and in SCIP 10.0 their presolving can cut off every optimal solution of a program
+    in which some variables are already fixed, or declare it infeasible. SCIP makes such fixings
+    itself (reduced-cost fixing, once a heuristic has found a solution), and the wrong conclusion
+    reaches the answer by two routes: rapid learning, which solves a copy of the program in a
+    sub-SCIP whose presolving it first resets to SCIP's defaults, and passes back a dual bound,
+    conflicts or bound changes; and the main SCIP's own presolve after a restart. The registered
+    test (examples/qec-distance) met it on a 4 x 5 code with d_X = 2: d_X = 3, status optimal, at
+    seeds 0, 2 and 4. A hunt over 2,476 development codes (n = 8 to 50, both kinds, seeds 0 to 19)
+    then found 292 wrong optima in 99,040 runs, on 48 (code, kind) programs of 37 codes, every one
+    too high, by 1 or 2, at d from 2 to 4 (the range that hunt met, not a bound: a later one, over
+    2,058 development codes with n = 8 to 156, found the defaults wrong at d = 5 too), and every one
+    with a witness that passes verify_witness: only the lower bound was wrong. With `scip_fix` (the
+    default) the program runs with SCIP_FIX, XOR presolving off (constraints/xor/maxprerounds 0) and
+    rapid learning off (separating/rapidlearning/freq -1), both recorded in the settings. Neither
+    changes the program. Under them the 48 programs and the 4 x 5 code gave the right d at every
+    seed from 0 to 19 (1,000 runs), the whole hunt gave no wrong answer at seeds 0 to 9 (49,520
+    runs), and 16 runs at d = 12 to 16 took 2,359 s in all against the defaults' 2,968 s (single
+    runs on a shared machine). Turning off SCIP's dual reductions, the fix first proposed, gave the
+    right d on those programs but not on one of 2,760 variants with further fixings, and about
+    doubled the time. The XOR constraints and their propagation stay. In SCIP's source the XOR
+    handler's presolving routines (applyFixings, and its pairwise, hash and clique presolving) run
+    only in presolving. Its propagation stays on, the Gauss propagator among it
+    (constraints/xor/gausspropfreq 5), which runs from propagation, reads the current fixings, fixes
+    variables and can cut off a node; it was tested under stress: on 119 programs (those of the
+    hunt's failures and of high k) with 30 variants each that fix further variables, SCIP_FIX gave
+    no wrong answer in 10,710 solves, with the Gauss propagator or without it, where the defaults
+    gave 23, and the later hunts' 33,682 runs under SCIP_FIX gave none. That the two routes are the
+    only ones rests on reading SCIP's source (its other sub-SCIPs presolve nothing, or only propose
+    solutions, which the main SCIP checks); the faulty statement itself was not found.
+    scip_fix=False gives SCIP's defaults, the registered test's settings.
+
     Returns a dict: k (the number of logicals logical_basis found: the program is sound only if
     it is the code's k); status (SCIP's: "optimal", "timelimit", "memlimit", ..., or
     "no_logicals" when k = 0); d (the optimum, when optimal); upper (the best solution's weight,
@@ -230,12 +273,13 @@ def distance_ilp(
     8.000000000000002, and can only weaken the bound, by one, for a dual bound less than 1e-4
     above an integer);
     witness (the best solution's support: a least-weight logical when optimal); seconds (wall
-    clock, building the program included); nodes; the SCIP version; seed; the parameters set
-    here; and every parameter that differs from SCIP's defaults. SCIP's time limit is wall clock
-    (timing/clocktype 2). SCIP runs on one thread, its randomness comes from the fixed seed
-    (randomization/randomseedshift), and a run with the same inputs and parameters is
-    deterministic up to where a limit stops it. `configure`, if given, is called with the SCIP
-    model before solving (for development; whatever it changes is recorded with the rest).
+    clock, building the program included); nodes; the SCIP version; seed; scip_fix; the
+    parameters set here (settings, SCIP_FIX among them); and every parameter that differs from
+    SCIP's defaults (parameters). SCIP's time limit is wall clock (timing/clocktype 2). SCIP runs
+    on one thread, its randomness comes from the fixed seed (randomization/randomseedshift), and
+    a run with the same inputs and parameters is deterministic up to where a limit stops it.
+    `configure`, if given, is called with the SCIP model before solving (for development;
+    whatever it changes is recorded in parameters, not in settings).
     """
     from pyscipopt import Model, quicksum
 
@@ -249,14 +293,15 @@ def distance_ilp(
     model = Model(f"distance-{kind}")
     model.hideOutput()
     settings = {"limits/time": float(time_limit), "limits/memory": float(memory_mb),
-                "timing/clocktype": 2, "randomization/randomseedshift": int(seed)}  # fmt: skip
+                "timing/clocktype": 2, "randomization/randomseedshift": int(seed),
+                **(SCIP_FIX if scip_fix else {})}  # fmt: skip
     for name, value in settings.items():
         model.setParam(name, value)
     if configure is not None:
         configure(model)
     out = {"kind": kind, "l": ell, "m": m, "n": n, "k": len(detectors), "time_limit": time_limit,
            "memory_mb": memory_mb, "seed": seed, "translation": translation,
-           "solver": scip_version(), "settings": settings,
+           "scip_fix": scip_fix, "solver": scip_version(), "settings": settings,
            "parameters": _non_default(model)}  # fmt: skip
     if not len(detectors):
         return {**out, "status": "no_logicals", "d": None, "upper": None, "lower": None,
@@ -447,27 +492,44 @@ def distance_search(
     bound: int = SEARCH_BOUND,
     anchors=None,
     time_limit: float = 1200.0,
+    deepen: bool = True,
 ) -> dict:
     """The least weight of a logical of the given kind, if it is below `bound`, by an exhaustive
-    check-driven search (search.c). It shares nothing with distance_ilp but bb's matrices: the
-    checks are bb's bitmask rows, a vector c with H_X c = 0 (kind Z) is nontrivial exactly when
-    L·c = 1 for some L of a basis of the X-logicals modulo the rowspace of H_X found by bitmask
-    elimination (`_logicals_bits`, whose size must be bb.k_linalg), and the search uses integer
-    arithmetic only. For kind X, H_X and H_Z exchange.
+    check-driven search (search.c) whose bound is raised one at a time. It shares nothing with
+    distance_ilp but bb's matrices: the checks are bb's bitmask rows, a vector c with H_X c = 0
+    (kind Z) is nontrivial exactly when L·c = 1 for some L of a basis of the X-logicals modulo the
+    rowspace of H_X found by bitmask elimination (`_logicals_bits`, whose size must be
+    bb.k_linalg), and the search uses integer arithmetic only. For kind X, H_X and H_Z exchange.
 
-    The search. For each anchor a it grows a set S from {a}: while S has a nonzero syndrome it
-    branches over the qubits above a of one unsatisfied check, each branch excluding the earlier
-    ones; a set with zero syndrome is a leaf, kept when nontrivial and lighter than the best so
-    far; a branch stops when |S| + ceil(u / maxcol) reaches the best so far (u unsatisfied
-    checks, each qubit in at most maxcol checks). Every leaf kept is a logical, so the best is an
-    upper bound with its witness. It is exact below the bound: let c be a least-weight logical,
-    of weight w < bound, whose least qubit is an anchor a. Some branch keeps S inside the support
-    of c and its excluded qubits outside it, since c meets each check evenly and so meets the
-    chosen unsatisfied one outside S, above a; the first such qubit in the check is a branch with
-    that property. Its syndrome becomes zero only at S = c: an S strictly inside c with zero
-    syndrome would make S and c + S codewords lighter than c, one of them nontrivial. It is not
-    cut while the best exceeds w, since the qubits of c outside S must clear the u unsatisfied
-    checks, so |S| + ceil(u / maxcol) <= w. So the best ends at w.
+    A pass with bound b. For each anchor a it grows a set S from {a}: while S has a nonzero
+    syndrome it branches over the qubits above a of one unsatisfied check, each branch excluding
+    the earlier ones; a set with zero syndrome is a leaf, kept when nontrivial and lighter than
+    the best so far (b at the start); a branch stops when |S| + ceil(u / maxcol) reaches the best
+    so far (u unsatisfied checks, each qubit in at most maxcol checks). Every leaf kept is a
+    logical, so the best is an upper bound with its witness. The pass is exhaustive below b: let
+    c be a least-weight logical, of weight w < b, whose least qubit is an anchor a. Some branch
+    keeps S inside the support of c and its excluded qubits outside it, since c meets each check
+    evenly and so meets the chosen unsatisfied one outside S, above a; the first such qubit in the
+    check is a branch with that property. Its syndrome becomes zero only at S = c: an S strictly
+    inside c with zero syndrome would make S and c + S codewords lighter than c, one of them
+    nontrivial. It is not cut while the best exceeds w, since the qubits of c outside S must clear
+    the u unsatisfied checks, so |S| + ceil(u / maxcol) <= w. So a pass keeps a leaf whenever
+    some logical is lighter than b (c itself, if it keeps none before), and one that runs to its
+    end ends with the best at w. A pass that keeps no leaf shows that no logical is lighter
+    than b.
+
+    The passes. Write d for the least weight of a logical of the kind. With `deepen` (the
+    default) the passes run with b = 2, 3, ..., `bound` in turn, and the search stops at its
+    first leaf kept. Pass b runs only after pass b - 1 kept none, so d >= b - 1 (d >= 1 before
+    pass 2: a logical is nonzero). If d >= b, pass b keeps no leaf (each would be a logical
+    lighter than b), and ends having shown d >= b. If d < b, then d = b - 1, and pass b keeps a
+    leaf, whose weight w has b - 1 <= d <= w < b: w = d. So the first logical found has weight
+    exactly d, and the passes before it show that nothing is lighter. A time-out stops a pass,
+    not the argument: each pass that ended without a leaf still shows d >= its b, so the largest
+    such b is a lower bound. Without `deepen` there is one pass, with b = `bound`, which runs to
+    its end (unless it keeps a leaf of weight 1, which nothing can be lighter than): the search
+    that study.py registered, which reaches d by lowering its bound from `bound` to each leaf
+    kept, and so can go very deep before it meets a logical.
 
     `anchors`: None searches from every qubit, so every logical has its least qubit among them.
     (0, lm) is enough too, by distance_ilp's translation argument: a least-weight logical moved
@@ -477,8 +539,10 @@ def distance_search(
 
     Returns a dict: status ("complete", "timelimit" when stopped after `time_limit` seconds of
     wall clock, or "no_logicals" when k = 0); d (exact, when complete and below the bound);
-    lower (d, or the bound when complete with nothing below it; None otherwise); upper and
-    witness (the lightest logical found, None if none); nodes (when complete); k; bound;
+    lower (d; or the bound, when complete with nothing below it; at a time-out the largest b of
+    a pass that ended without a leaf, None if there is none); upper and witness (the lightest
+    logical found, None if none); nodes (of every pass, when complete); passes (for each pass
+    that ended without a leaf, in order: its bound, nodes and seconds); deepen; k; bound;
     anchors; seconds; and the compiler. Requires a C compiler as `cc`."""
     if kind not in KINDS:
         raise ValueError(kind)
@@ -492,14 +556,17 @@ def distance_search(
     starts = list(range(n)) if anchors is None else [int(a) for a in anchors]
     binary, compiler = _search_binary()
     out = {"kind": kind, "l": ell, "m": m, "n": n, "k": len(labels), "bound": bound,
-           "anchors": "all" if anchors is None else starts, "time_limit": time_limit,
-           "compiler": compiler}  # fmt: skip
+           "deepen": deepen, "anchors": "all" if anchors is None else starts,
+           "time_limit": time_limit, "compiler": compiler}  # fmt: skip
     if not labels:
         return {**out, "status": "no_logicals", "d": None, "lower": None, "upper": None,
-                "witness": None, "nodes": 0, "seconds": round(time.time() - start, 3)}  # fmt: skip
+                "witness": None, "nodes": 0, "passes": [],
+                "seconds": round(time.time() - start, 3)}  # fmt: skip
     if not 1 <= bound <= SEARCH_BOUND or len(labels) > 128 or n > 2048 or len(checks) > 1024:
         raise ValueError("beyond search.c's limits")
-    lines = [f"{n} {len(checks)} {len(labels)} {bound} {len(starts)}", " ".join(map(str, starts))]
+    first = min(2, bound) if deepen else bound
+    header = f"{n} {len(checks)} {len(labels)} {first} {bound} {len(starts)}"
+    lines = [header, " ".join(map(str, starts))]
     for row in checks:
         support = [t for t in range(n) if row >> t & 1]
         lines.append(" ".join(map(str, [len(support), *support])))
@@ -517,19 +584,30 @@ def distance_search(
         status = "timelimit"
     if status == "complete" and proc.returncode:
         raise RuntimeError(f"search.c failed: {stderr.strip()}")
-    witness, nodes = None, None
+    witness, nodes, passes = None, None, []
     for words in map(str.split, stdout.splitlines()):
         if words[:1] == ["best"] and len(words) >= 2 and len(words) == int(words[1]) + 2:
             witness = [int(q) for q in words[2:]]
+        elif words[:1] == ["pass"] and len(words) == 4:
+            b, count, ms = map(int, words[1:])
+            passes.append({"bound": b, "nodes": count, "seconds": ms / 1000})
         elif words[:1] == ["done"] and len(words) == 2:
             nodes = int(words[1])
     if status == "complete" and nodes is None:
         raise RuntimeError("search.c ended without finishing")
     upper = len(witness) if witness else None
+    proven = passes[-1]["bound"] if passes else None
+    if upper is not None and proven is not None and upper < proven:
+        raise RuntimeError(f"search.c found weight {upper} after a pass with bound {proven}")
+    if status == "complete" and upper is None and proven != bound:
+        raise RuntimeError(f"search.c ended without a pass at its bound {bound}")
     exact = status == "complete" and upper is not None
-    lower = (upper if exact else bound) if status == "complete" else None
+    if status == "complete":
+        lower = upper if exact else bound
+    else:
+        lower = proven
     return {**out, "status": status, "d": upper if exact else None, "lower": lower,
-            "upper": upper, "witness": witness, "nodes": nodes,
+            "upper": upper, "witness": witness, "nodes": nodes, "passes": passes,
             "seconds": round(time.time() - start, 3)}  # fmt: skip
 
 

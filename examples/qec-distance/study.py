@@ -72,6 +72,15 @@ a record, a failed one included: a failure is recorded as not tested, and is not
 limits are wall clock, so other load on the machine weakens the bounds of whatever stops at a
 limit: run the study when no other heavy computation shares the machine.
 
+**Reproducing the run.** distance.py changed after this test ran (examples/qec-distance-2):
+distance_ilp now runs SCIP with distance.SCIP_FIX by default, and distance_search deepens its
+bound and, at a time-out, reports a lower bound where the run's search reported none (which
+`interval` counts as 1). The jobs here call both with their defaults, so reproducing a record
+of the run needs scip_fix=False and deepen=False. The run's search.c (search_c_sha256 in the
+ledger, 02d5133b...) is in git history (the run started at commit e51556f, clean); the current
+search.c with deepen=False is its single pass, and gave the same status, d, nodes, witness and
+bounds on 600 of 600 development runs.
+
 **Time.** Development timings (on other codes, four runs at once; see excluded_seen): d = 10
 at n = 98 to 216 in 6 to 10 s; d = 12 at n = 162 to 288 in 35 s to 5 min; d = 14 at n = 162
 to 216 in 3.5 to 5 min; d = 16 at n = 162 and 216 in 17 to 18 min; the toric code, d = 16

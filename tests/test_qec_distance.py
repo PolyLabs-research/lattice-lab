@@ -1,9 +1,12 @@
 """Exact distances of bivariate bicycle codes (examples/qec-distance/distance.py). Random codes
 are drawn only at development sizes: of no published torus type, and none of the sizes
-registered for examples/qec-distance/study.py. The toric code, whose distance min(l, m) is a
-classical theorem, is used at any size."""
+registered for examples/qec-distance/study.py or examples/qec-distance-2/study.py
+(tests/test_qec_distance_2.py checks the second). The toric code, whose distance min(l, m) is a
+classical theorem, is used at any size, and the codes of examples/qec-distance-2/fault_cases.json
+and the two codes the registered search stalled on are known answers."""
 
 import importlib.util
+import json
 import random
 import shutil
 import sys
@@ -21,6 +24,14 @@ import distance as D  # noqa: E402
 
 SIZES = [(2, 2), (2, 3), (2, 4), (3, 3), (2, 5), (2, 6), (4, 4)]
 TORIC = [[(0, 0), (1, 0)], [(0, 0), (0, 1)]]
+CASES = ROOT / "examples" / "qec-distance-2" / "fault_cases.json"
+FAULT = [(1, 2), (3, 2)], [(2, 3), (3, 3)], 4, 5  # the registered test's failing code, d_X = 2
+# the codes on which the registered search stalled (study.py, part 1 (c), 6x18 #1 and #2):
+# A, B, k and d
+STALLED = [
+    ([(2, 0), (0, 15), (0, 8)], [(0, 0), (4, 0), (5, 0)], 4, 4),
+    ([(1, 0), (0, 14), (0, 15)], [(0, 6), (4, 0), (2, 0)], 8, 6),
+]
 needs_cc = pytest.mark.skipif(shutil.which("cc") is None, reason="the search needs cc")
 
 
@@ -164,23 +175,95 @@ def test_the_search_agrees_with_enumeration():
             brute = D.distance_brute(A, B, ell, m, kind)["d"]
             every = D.distance_search(A, B, ell, m, kind)
             anchored = D.distance_search(A, B, ell, m, kind, anchors=(0, lm))
-            assert every["status"] == anchored["status"] == "complete" and every["k"] == k
-            assert every["d"] == anchored["d"] == brute == len(every["witness"]), (A, B, ell, m)
-            assert D.verify_witness(A, B, ell, m, kind, every["witness"])["logical"]
+            single = D.distance_search(A, B, ell, m, kind, anchors=(0, lm), deepen=False)
+            for r in (every, anchored, single):
+                assert r["status"] == "complete" and r["k"] == k
+                assert r["d"] == r["lower"] == brute == len(r["witness"]), (A, B, ell, m)
+                assert D.verify_witness(A, B, ell, m, kind, r["witness"])["logical"]
+            # the passes below d ended without a logical, and the next found one of weight d
+            assert [p["bound"] for p in every["passes"]] == list(range(2, brute + 1))
+            assert [p["bound"] for p in anchored["passes"]] == list(range(2, brute + 1))
+            assert single["passes"] == [] and single["deepen"] is False
             # with the bound at d, it proves that nothing lighter exists
-            below = D.distance_search(A, B, ell, m, kind, bound=brute)
-            assert below["status"] == "complete" and below["d"] is None
-            assert below["lower"] == brute and below["witness"] is None
+            for deepen in (True, False):
+                below = D.distance_search(A, B, ell, m, kind, bound=brute, deepen=deepen)
+                assert below["status"] == "complete" and below["d"] is None
+                assert below["lower"] == brute and below["witness"] is None
+                assert below["passes"][-1]["bound"] == brute
 
 
 @needs_cc
 def test_the_search_on_toric_codes():
     for ell, m in [(2, 5), (3, 6), (5, 6), (6, 8), (10, 10)]:
-        r = D.distance_search(*TORIC, ell, m, "Z")
-        assert r["status"] == "complete" and r["k"] == 2 and r["d"] == min(ell, m), (ell, m)
-        assert D.verify_witness(*TORIC, ell, m, "Z", r["witness"])["logical"]
+        for deepen in (True, False):
+            r = D.distance_search(*TORIC, ell, m, "Z", deepen=deepen)
+            assert r["status"] == "complete" and r["k"] == 2 and r["d"] == min(ell, m), (ell, m)
+            assert D.verify_witness(*TORIC, ell, m, "Z", r["witness"])["logical"]
     A, B = [(0, 0)], [(1, 0), (0, 1)]  # k = 0
     assert D.distance_search(A, B, 3, 3)["status"] == "no_logicals"
+
+
+@needs_cc
+def test_the_search_finds_the_distances_it_stalled_on():
+    # part 1 (c) of study.py, 6x18 #1 and #2: the single pass from bound 64 found no logical in
+    # 30 minutes, from every qubit or from (0, lm); the program found d = 4 and 6 at once
+    for A, B, k, d in STALLED:
+        for kind in D.KINDS:
+            for anchors in (None, (0, 6 * 18)):
+                r = D.distance_search(A, B, 6, 18, kind, anchors=anchors, time_limit=60)
+                assert r["status"] == "complete" and r["k"] == k and r["d"] == d
+                assert [p["bound"] for p in r["passes"]] == list(range(2, d + 1))
+                assert D.verify_witness(A, B, 6, 18, kind, r["witness"])["logical"]
+
+
+def test_the_program_on_the_codes_the_search_stalled_on():
+    pytest.importorskip("pyscipopt")
+    for A, B, k, d in STALLED:
+        r = D.distance_ilp(A, B, 6, 18, "Z", time_limit=60)
+        assert r["status"] == "optimal" and r["k"] == k and r["d"] == d
+        assert D.verify_witness(A, B, 6, 18, "Z", r["witness"])["logical"]
+
+
+def test_the_program_is_right_where_scips_defaults_were_wrong():
+    # with SCIP_FIX (the default) the program gives the right d on the programs where SCIP
+    # 10.0's defaults gave a wrong optimum (distance_ilp's docstring): the registered test's 4x5
+    # code at seeds 0 to 7, and each program of fault_cases.json at up to 3 of its failing seeds
+    pytest.importorskip("pyscipopt")
+    for seed in range(8):
+        r = D.distance_ilp(*FAULT, "X", time_limit=60, seed=seed)
+        assert r["status"] == "optimal" and r["d"] == r["lower"] == 2, seed
+        assert D.verify_witness(*FAULT, "X", r["witness"])["logical"]
+    cases = json.loads(CASES.read_text())["codes"]
+    assert len(cases) == 38 and sum(bool(s) for c in cases for s in c["wrong"].values()) == 49
+    for c in cases:
+        for kind, seeds in c["wrong"].items():
+            for seed in seeds[:3]:
+                r = D.distance_ilp(c["A"], c["B"], c["l"], c["m"], kind, time_limit=60, seed=seed)
+                assert r["status"] == "optimal" and r["d"] == c["d"], (c["id"], kind, seed)
+                assert r["k"] == c["k"]
+
+
+def test_scips_defaults_were_wrong_on_the_4x5_code():
+    # the test above can see the fault: without SCIP_FIX, the SCIP that the fault was found in
+    # gives d_X = 3 at some seeds
+    pytest.importorskip("pyscipopt")
+    if D.scip_version() != "SCIP 10.0 (pyscipopt 6.3.0)":
+        pytest.skip("the fault was found in SCIP 10.0 through pyscipopt 6.3.0")
+    found = [D.distance_ilp(*FAULT, "X", 60, seed=s, scip_fix=False)["d"] for s in range(8)]
+    assert 3 in found and set(found) == {2, 3}
+
+
+@needs_cc
+def test_the_search_reports_a_lower_bound_at_its_time_limit():
+    # the toric code at 20x20 (d = 20) takes the search far more than a second: the passes that
+    # ended before the limit give d >= the last one's bound
+    r = D.distance_search(*TORIC, 20, 20, "Z", time_limit=1)
+    assert r["status"] == "timelimit" and r["d"] is None and r["witness"] is None
+    assert 2 <= r["lower"] < 20 and r["nodes"] is None
+    assert [p["bound"] for p in r["passes"]] == list(range(2, r["lower"] + 1))
+    # the single pass, stopped, has no lower bound
+    single = D.distance_search(*TORIC, 20, 20, "Z", time_limit=1, deepen=False)
+    assert single["status"] == "timelimit" and single["d"] is None and single["lower"] is None
 
 
 def test_the_search_logical_basis_is_independent_and_complete():
@@ -205,6 +288,14 @@ def test_the_program_records_its_solver_and_settings():
     assert r["parameters"]["limits/memory"] == D.MEMORY_MB
     assert r["parameters"]["randomization/randomseedshift"] == 3
     assert r["nodes"] >= 1 and r["seconds"] >= 0
+    # the settings against SCIP's fault are on by default, and recorded
+    assert r["scip_fix"] is True
+    assert D.SCIP_FIX == {"constraints/xor/maxprerounds": 0, "separating/rapidlearning/freq": -1}
+    for name, value in D.SCIP_FIX.items():
+        assert r["settings"][name] == r["parameters"][name] == value
+    off = D.distance_ilp(*TORIC, 3, 4, "X", time_limit=30, scip_fix=False)
+    assert off["scip_fix"] is False and off["d"] == r["d"] == 3
+    assert not set(D.SCIP_FIX) & (set(off["settings"]) | set(off["parameters"]))
 
 
 def _row(status, lower, upper, logical=True, k=4, k_linalg=4):
