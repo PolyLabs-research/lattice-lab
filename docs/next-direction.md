@@ -90,6 +90,13 @@ this ring, and a quantity, k, that the instruments here already compute.
      With it and rapid learning off, and the search deepening its bound, a second registered
      test on fresh codes (`examples/qec-distance-2`) found both instruments hold.
 
+   **The census, stage 1 (`examples/qec-census`; [code-census.md](code-census.md)).**
+   - **Scope.** Every code of the published form on 116 tori with n ≤ 200, the held-out tori
+     untouched: 3,330 classes with k > 0, all with exact distances.
+   - **Results.** The gross code has the highest k d²/n; an exact criterion says which tori have
+     codes at all.
+   - **Next.** A registered stage 2 on the held-out tori.
+
    Established tools for later:
    - exact integer programming for small codes;
    - randomized information-set methods for larger ones;

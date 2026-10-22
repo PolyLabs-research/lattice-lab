@@ -84,6 +84,7 @@ before the runs that tested them.
 | Rule 4850, the fifth: (x + 1/x + y + 1/y) · 4850 is two hexagons; an order-3 symmetry that exists only at 37 (5² + 3·2² = 37) gives λ · t_α t_β = W⁴; a norm formula in Gauss periods puts every eigenvalue's norm to F64 in F8*, which is the ninth-power condition | **explained, with a proof**, by a multi-agent deep dive; three independent checkers found it stands with repairs, which they supplied, and the orchestrator rechecked the chain (`tests/test_rule4850_proof.py`); not yet one document, and not in Lean | [the deep dive's report](../examples/rule-4850/deep/REPORT.md) |
 | The hexagon family at m = 37: p a non-residue gives ninth powers, p a residue gives cubes | classified in the deep dive; **confirmed by a registered held-out test**: 35 of 35 tested predictions correct, at 37, 13 and eight other sizes; the six at the largest sizes (709 to 1861) were not tested, two over the 45-minute limit and four recorded as not run | [the deep dive's report](../examples/rule-4850/deep/REPORT.md#4-the-hexagon-family), `examples/hexagon-family` |
 | A bivariate bicycle quantum code's logical qubits k are read off the torus's characters | **confirmed by a registered rediscovery test**: the character method agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included | [next-direction.md](next-direction.md) |
+| Codes of the published form on every stage-1 torus (n ≤ 200): which tori have codes, their k, and exact distances | **stage 1 of a census, exploratory**: 3,330 classes on 35 of 116 tori, every d exact by the search, 297 cross-checked by the program with none disagreeing, independently rechecked; the gross code has the highest k d²/n; an exact criterion for which tori have codes is proved by hand and matches all 116; stage 2, registered on the held-out tori, is next | [code-census.md](code-census.md) |
 | The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum. The fault (SCIP's XOR presolving) was then fixed, the search made faster, and a second registered test on fresh codes found both instruments hold (`examples/qec-distance-2`) | [code-distances.md](code-distances.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
@@ -152,7 +153,21 @@ with an exhaustive search; its integer program failed one method check through a
 The fault was traced to SCIP 10.0's XOR presolving and fixed (distance.SCIP_FIX), the search
 was given iterative deepening, and a second registered test on fresh codes
 (`examples/qec-distance-2`) found that both instruments hold. Its control, SCIP's unfixed
-defaults, was wrong on 3 fresh codes. Next: the census of code families.
+defaults, was wrong on 3 fresh codes.
+
+**The census, stage 1** (`examples/qec-census`, [code-census.md](code-census.md); exploratory, not
+registered):
+- **What ran.** Every code of the published form on 116 tori with n ≤ 200, the held-out tori
+  untouched. There are 3,330 classes with k > 0, on 35 tori. Each has an exact d by the search;
+  297 were cross-checked by the program (284 agree, 13 consistent), and an independent recheck
+  found no difference.
+- **The published codes.** The gross code has the highest k d²/n of all. [[90,8,10]] and
+  [[108,8,10]] are best at their n; [[72,12,6]] is second at 72, behind a [[72,8,8]].
+- **Structure.** Proved: an exact criterion for which tori have codes, and formulas for the
+  maximum k. Patterns: a linear distance law for some character types, and the fact that the best
+  codes reduce mod 3 to one [[18,8,2]] base code.
+- **Next.** Register stage 2 on the held-out tori from the report's candidate predictions, and
+  record the exposure it lists.
 
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
