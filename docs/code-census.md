@@ -50,7 +50,10 @@ Z_m and e ≠ f in Z_l. This is the form of Bravyi et al.'s codes (`examples/qec
 - **That leaves 116 tori.** The orientation m x l adds nothing, because exchanging x and y and then
   swapping A and B is an equivalence.
 
-`census.py`'s `guard` refuses every held-out and refused torus before any computation. The
+`census.py`'s `guard` refuses every held-out and refused torus before any computation. One omission came to light later: examples/qec-distance-2 had computed the toric
+code at 8x11 (in held_out_random) and 10x13 (in held_out_extrapolation) before holdout.json was
+fixed, and holdout.json's list of development sizes leaves them out. The family has no code with
+k > 0 on either, and stage 2 treats both as exposed. The
 recheck confirmed that `data/` holds exactly the 116 allowed tori, and the run's log shows one run
 of 116 tori, with no refusals and no failures.
 
@@ -478,7 +481,13 @@ the maximum have k = 8 for types (3,5) and (5,3), and k = 12 for (3,7) and (7,3)
 | 5x6, 5x9, 5x12, 5x15, 5x18 | (5,3) | 4, 3, 14, 11, 24 | 4, 6, 8, 10, 12 | 4, 6, 8, 10, 12 |
 | 7x9, 7x12 | (7,3) | 2, 13 | 6, 8 | 6, 8 |
 
-- **The miss is 3x15.** It has a single (3,5) class, with k = 24 and d = 2.
+- **The miss is 3x15, and it is a matter of reading.** Judged by class representatives, it has a
+  single (3,5) class, with k = 24 and d = 2. But on tori where gcd(l, m) > 1 the torus's
+  automorphisms mix the factors, so whether a class has a zero of a given type can depend on
+  which of its codes is asked. On 3x15, classes 10 and 16 (k = 8, d = 6 = 2m/q) contain codes with
+  a (3,5) zero although their representatives have only (3,15) zeros. Judged by any code of the
+  class, 3x15 meets the law too (found while building stage 2; the registered stage 2 keeps the
+  representative reading).
 - **In the larger instances, most of the k = 8 classes reach the bound:** 10 of 13 on 3x25, 14 of
   21 on 5x18, 10 of 18 on 3x20.
 - **The largest m/q tested is 6.**

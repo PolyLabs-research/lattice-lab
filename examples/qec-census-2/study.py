@@ -84,18 +84,19 @@ a distance on any torus (the tests check it with every such primitive stubbed to
 
 **Exposure.** These are computed and reported beside the verdict, which rests on the others:
 the tori of holdout.json's exposed_extrapolation, each with what the earlier studies record
-computing there (rules.DEVELOPMENT_ON_EXPOSED: k of this family's codes on most, distances of
-named codes of the family on 6x18, 6x24, 7x15, 9x12 and 12x12); those docs/code-census.md's
-exposure section names (12x12, 8x18, 6x24, 9x16, and 2x48 and 3x29 for (L)'s records on their
-groups); and 8x11 and 10x13, where examples/qec-distance-2 computed the toric code's distance,
-which holdout.json missed. That is 25 tori in all (rules.exposure, with each one's reasons in the
-question). (L)'s list of [[n,k,d]] up to n = 200 also covers the n of the held-out random tori;
-it is recorded (rules.L_LIST_EXPOSURE), and those tori are judged as clean. 18 held-out tori are
-isomorphic as groups to an exposed one (3x36 to 9x12, 3x42 to 6x21, 3x45 to 9x15, 3x35 and 5x21
-to 7x15, 5x30 to 10x15, 7x18 to 9x14, and 11 without codes; rules.ISOMORPHIC_NOTE says what was
-computed on each twin). What was seen on the exposed torus concerns particular codes there, most
-of whose images are not of this family's form, so these are judged with the clean tori; every
-part is also reported on the strictly clean tori ("strict").
+computing there (rules.DEVELOPMENT_ON_EXPOSED: k of this family's codes on most; distances or
+the program's bounds of particular codes of the family on 6x18, 6x24, 7x15, 9x12 and 12x12);
+those docs/code-census.md's exposure section names (12x12, 8x18, 6x24, 9x16, and 2x48 and 3x29
+for (L)'s records on their groups); and 8x11 and 10x13, where examples/qec-distance-2 computed
+the toric code's distance, which holdout.json missed. That is 25 tori in all (rules.exposure,
+with each one's reasons in the question). (L)'s list of [[n,k,d]] up to n = 200 also covers the
+n of the held-out random tori; it is recorded (rules.L_LIST_EXPOSURE), and those tori are judged
+as clean. 18 held-out tori are isomorphic as groups to an exposed one (3x36 to 9x12, 3x42 to
+6x21, 3x45 to 9x15, 3x35 and 5x21 to 7x15, 5x30 to 10x15, 7x18 to 9x14, and 11 without codes;
+rules.ISOMORPHIC_NOTE says what was computed on each twin). What was seen on the exposed torus
+concerns particular codes there, most of whose images are not of this family's form, so these
+are judged with the clean tori; every part is also reported on the strictly clean tori
+("strict").
 
 **The instruments.** Every distance is distance_search of kind Z from the anchors (0, lm) (its
 argument, its code and the translation argument; d = d_Z for these codes), with its witness
@@ -109,7 +110,7 @@ runs:
 - **d2** (every class of every torus): the deepening search with bound 3, 60 s.
 - **scan** (every class of an H8/H9 torus, in 4 jobs per torus): the deepening search, bound
   min(64, the class's checked structural upper bound), 3 s. In the calibration (below) it gave
-  an exact d on 236 of 253 classes of 3x33 and 674 of 680 of 6x15.
+  an exact d on 237 of 253 classes of 3x33 and 676 of 680 of 6x15.
 - **probe**: one pass (deepen=False) with bound b, 20 s: it finds any logical lighter than b if
   it runs to its end, and keeps the lightest it found when stopped. In development, with b near
   1.3 to 1.5 d it found a weight-d logical within 3 to 10 s on classes with d = 16 to 18 that the
@@ -173,9 +174,9 @@ timeout is at most 55 minutes, and execute starts a job only if its timeout fits
 of a window of 115 minutes from its start (QEC_CENSUS2_WINDOW sets it, in seconds; 0 for none);
 when nothing more fits and nothing runs, it stops with a StudyError, before the observations, and
 resume continues in a new window. A frontier torus's chain (its torus job and scans, 4 rounds,
-its cross-check) then takes at most 3 windows if every round uses its budget, about 6 hours with
-the stops. The limits are wall clock, so other load weakens what stops at a limit: run it when
-nothing else heavy shares the machine.
+its cross-check) then fits in 3 windows when every round uses its budget and a worker is free
+for each job, about 6 hours with the stops. The limits are wall clock, so other load weakens
+what stops at a limit: run it when nothing else heavy shares the machine.
 
 **The verdict** (VERDICT_RULE, in the registration): fail when the instruments fail (H6 finds a
 problem, a run was not made by the registered protocol, a job has two records, an H7 instance
@@ -204,15 +205,16 @@ classes' about 0.55 m.
   V = 20 (3x50, 5x30) by the extrapolation; and two programs per instance, up to 10 minutes each
   at d >= 16. About 2 to 4 CPU hours; at most 19 x 55 minutes if every job used its whole budget.
 - **H8 and H9:** the calibration on stage-1 tori took 5 minutes per torus without programs at
-  n = 180 to 198 (3x33: scan 218 s, one round of 6 probes in 80 s; 6x15: 247 s and 65 s; both
-  found stage 1's best). At n = 216 to 252 the best's d is expected near 18 to 20 (22 s to
-  4 minutes per deep search), and the k = 4 classes' near 20 to 23, which the 3-s scan leaves
-  open, so each needs a probe, and a deep search where its probe finds nothing light enough:
+  n = 180 to 198 (with these rounds and limits: 3x33, scan 215 s, then one round of 5 probes in
+  69 s; 6x15, 235 s, then 4 probes in 53 s; both found stage 1's best). At n = 216 to 252 the
+  best's d is expected near 18 to 20 (22 s to 4 minutes per deep search), and the k = 4
+  classes' near 20 to 23, which the 3-s scan leaves open, so each needs a probe, and a deep
+  search where its probe finds nothing light enough:
   about 1 to 2 CPU hours per large torus (3x36, 6x18, 6x21, 3x42 by stage-1 analogues of 400 to
   1,400 classes), less for 3x21, 3x39, 9x12, 7x18 and 9x14, plus up to 40 minutes of programs
   each: about 6 to 12 CPU hours; at most 9 x (4 x 50 + 40) minutes = 36 CPU hours.
 - **In all** about 9 to 18 CPU hours: 3 to 5 hours of wall clock with 4 workers, 2 or 3 windows.
-  If every budget were used, about 60 CPU hours, some 9 windows. Expect resumes; a resumed job
+  If every budget were used, about 65 CPU hours, some 10 windows. Expect resumes; a resumed job
   starts again from its beginning.
 
 **Why n <= 252.** H8 and H9 need every candidate for a torus's best resolved. With the corrected
@@ -763,9 +765,7 @@ def _next_action(state: dict, cands: list[int], skip: set, big_l: float):
         b = _probe_bound(state, i, big_l)
         if b is not None:
             return i, "probe", b
-    deep = [
-        i for i in open_ if not any(r.get("instrument") == "deep" for r in state[i]["runs"])
-    ]
+    deep = [i for i in open_ if not any(r.get("instrument") == "deep" for r in state[i]["runs"])]
     if not deep:
         return None
     i = min(deep, key=lambda i: (-scores[i][0], -state[i]["k"], i))
@@ -1254,11 +1254,7 @@ def execute(path: Path, workers: int, run=None, window: float | None = None, clo
         while todo or running:
             while len(running) < slots:
                 ready = next(
-                    (
-                        j
-                        for j in todo
-                        if all(a in done for a in j.get("after", [])) and fits(j)
-                    ),
+                    (j for j in todo if all(a in done for a in j.get("after", [])) and fits(j)),
                     None,
                 )
                 if ready is None:
@@ -1289,8 +1285,9 @@ SOURCES = {
     "H4": "docs/code-census.md, Structure, result 4, proved; 18 of 18",
     "H5": "docs/code-census.md, Structure, result 7: 'if' proved, 'only if' 3,330 of 3,330",
     "H6": "docs/code-census.md, Structure, results 6, 8 and 9, proved",
-    "H7": "docs/code-census.md, Patterns, 'A linear distance law': 16 of 17 stage-1 instances; "
-    "result 9 proves the upper bound for odd m/q",
+    "H7": "docs/code-census.md, Patterns, 'A linear distance law': 16 of 17 stage-1 instances "
+    "by representatives, 13 of the 14 with m/q > 1 (3x15 the miss, an artefact of the "
+    "representative: module docstring); result 9 proves the upper bound for odd m/q",
     "H8": "docs/code-census.md, Patterns, 'The best codes reduce to one small code': 20 of 20 "
     "classes on 13 tori",
     "H9": "docs/code-census.md, Patterns, 'What the best codes look like': 10 of 10 n, 2 of "
@@ -1306,23 +1303,47 @@ HASHED = {
     "holdout_json": census.HOLDOUT,
     "summary_json": census.SUMMARY,
     "rules_py": HERE / "rules.py",
+    "study_py": HERE / "study.py",
+    "tests_py": ROOT / "tests" / "test_qec_census_2.py",
 }
+VERDICT_RULE = (
+    "fail when the instruments fail (H6 finds a problem; a run was not made by the registered "
+    "protocol, settings or bound rules; a job has two records; an H7 instance is a fault) or a "
+    "part fails; hold when every part holds or is not applicable, every registered job has a "
+    "record, no job failed (an error row, or a failed earlier job named in a record's "
+    "prior_errors), and the pinned files are those registered; incomplete otherwise. A part "
+    "over its judged items (not exposed): fails if one fails, holds if every one holds (and "
+    "there is one), incomplete otherwise; H6 over every torus with codes, exposed ones included, "
+    "'not tested' if none was tested; H7 by its registered threshold. 'instruments' is fail as "
+    "above, hold when H6 holds, and otherwise H6's outcome (not tested, or incomplete)."
+)
 # From stage-1 timings and the development calibration (module docstring, "Cost")
 COST_ESTIMATE = {
-    "basis": "stage 1's search from (0, lm): about 0.2 s at d = 14, 2 s at 16, 22 s at 18 "
-    "(n = 144 to 198), x10 per +2 in d, scaled by (n / 198)^5.6 above n = 198 from "
-    "[[288,12,18]]'s 3 minutes; the program 26 to 47 s at d = 12, 121 to 299 s at 14, its 600 s "
-    "limit at d >= 16; best d of a k = 8 class on 3 x m about m/2 in stage 1",
-    "calibration": "the H8/H9 pipeline without programs on stage-1 tori: 3x27 51 s (all exact "
-    "after the scan), 3x33 307 s (scan 218 s, 6 probes), 6x15 323 s (scan 247 s, 6 probes), each "
-    "finding stage 1's best; law_record on 7 stage-1 instances, 0.6 to 154 s each with programs",
+    "basis": "stage 1's search from (0, lm), medians by d and n: 0.03 s at d = 12, 0.2 s at 14, "
+    "2 s at 16, 22 s at 18, flat in n from 144 to 198; the current search.c (sha256 "
+    "d353ead3..., stage 1's) takes 18 s on [[288,12,18]] at n = 288 (docs/code-distances.md; "
+    "the 3 minutes there were the search before examples/qec-distance-2's fix); so about x10 "
+    "per +2 in d with no sign of growth in n, extrapolated to about 4 minutes at d = 20, 40 at "
+    "22 and 6 hours at 24; the program 28 to 44 s at d = 12, 113 to 314 s at 14 (medians), its "
+    "600 s limit at d >= 16 (13 of 13); best d of a k = 8 class on 3 x m from 0.67 m down to "
+    "0.48 m (m = 9 to 33), of a k = 4 class about 0.55 m",
+    "calibration": "the H8/H9 pipeline without programs on stage-1 tori, with these rounds and "
+    "limits: 3x33 292 s (scan 215 s, one round of 5 probes), 6x15 297 s (scan 235 s, 4 probes), "
+    "each finding stage 1's best (with the earlier round order: 3x27 51 s, all exact after the "
+    "scan); law_record on 7 stage-1 instances, 0.6 to 154 s each with programs",
     "H1-H6 torus jobs": "about 0.5 CPU hours (38.3 million raw codes; 15 to 30 ms per class)",
-    "H7 law jobs": "about 2 to 5 CPU hours; at most 19 x 1.8 hours; at V = 20 and n = 300 a "
-    "search to V may take about 35 minutes, so 3x50 (3,5) and 5x30 (5,3) may stay unresolved",
-    "H8/H9 scans, rounds and cross-checks": "about 6 to 12 CPU hours on the 9 tori with n <= 252",
-    "n = 270 and 288": "best d expected near 20 to 22 and 22 to 24: 21 minutes to 3.5 hours, and "
-    "5 to 50 hours, per deep search; excluded from H8 and H9",
-    "total": "about 9 to 18 CPU hours: 3 to 5 hours of wall clock with 4 workers",
+    "H7 law jobs": "about 2 to 4 CPU hours; at most 19 x 55 minutes; at V = 20 (3x50 (3,5), "
+    "5x30 (5,3)) a search with bound V + 1 about 4 to 6 minutes by the extrapolation",
+    "H8/H9 scans, rounds and cross-checks": "about 6 to 12 CPU hours on the 9 tori with "
+    "n <= 252; at most 9 x (4 x 50 + 40) minutes, 36 CPU hours, if every budget is used",
+    "n = 270 and 288 (not judged)": "best d expected near 20 to 24, 4 minutes to 6 hours per "
+    "deep search; six more frontier chains, up to about 24 CPU hours (module docstring, 'Why "
+    "n <= 252')",
+    "total": "about 9 to 18 CPU hours, 3 to 5 hours of wall clock with 4 workers (2 or 3 "
+    "windows); about 65 CPU hours, some 10 windows, if every budget were used",
+    "windows": "every job's timeout at most 55 minutes; a job starts only if its timeout fits in "
+    "the 115-minute window; a frontier torus's chain fits in 3 windows when every round uses "
+    "its budget and a worker is free for each job",
 }
 EXCLUDED_SEEN = [
     "nothing was computed on any held-out torus or on the 8 refused stage-1 tori: no code, k, "
@@ -1348,12 +1369,24 @@ EXCLUDED_SEEN = [
     "6x15, and crosscheck_record on 3x27 (stopped by a 19-minute shell limit during its "
     "programs); law_record on 3x15 (3,5), 3x20 (3,5), 3x25 (3,5) and (3,25), 5x18 (5,3), "
     "7x12 (7,3) and 3x30 (3,5), with their programs",
+    "the review (another agent, before registration): its own derivation of the rules on "
+    "stage-1 data (data/ headers) and on the held-out l and m (arithmetic only); its own class "
+    "conditions, GF(2) checks of the quotient and forced vectors and base test on all 3,330 "
+    "stage-1 classes, and verify_witness on 300 stage-1 witnesses; decide on synthetic records "
+    "and frontier_round with a stand-in search and clock, the computing primitives stubbed",
+    "applying the review: stage-1 search and program times tabulated by d and n from data/; "
+    "on the stage-1 tori 3x15, 5x15 and 3x30, census.classes' raw codes and canonical keys and "
+    "bb.local_terms at every raw code with k > 0, to see whether a zero of type (3,5) or (5,3) "
+    "is a class invariant (it is not: rules.type_is_class_invariant), no distance computed; and "
+    "the H8/H9 pipeline (torus job, 4 scans, rounds; no programs) rerun on 3x33 and 6x15 with "
+    "the new round order and limits",
     "tests/test_qec_census_2.py: stage-1 data and summary.json (the rules); torus_record on 3x9; "
     "the H8/H9 pipeline on 3x12; law_record on 3x10 (3,5), 5x6 (5,3) and 3x15 (3,5); bb.Field's "
     "roots of unity for q <= 25; synthetic records for decide, the scheduler and the frontier "
-    "round (with a stand-in search and classes); the permit with temporary ledgers and every "
-    "computing primitive stubbed to raise; the worker process on a 3x9 spec, which the permit "
-    "refuses before computing anything",
+    "round (with a stand-in search and classes); search() on 3x9 with its instruments stubbed; "
+    "the permit with temporary ledgers; the worker process on a 3x9 spec, which the permit "
+    "refuses before computing anything; every computing primitive stubbed to raise wherever a "
+    "held-out name appears",
     "census.py's guard gained the Stage2Permit exception after stage 1 ran; stage 1's files "
     "record the census.py they were made with (sha256 5f652666...)",
 ]
@@ -1362,9 +1395,16 @@ KNOWN_LIMITATIONS = [
     "d rests on distance_search from (0, lm) (its argument, its code and the translation "
     "argument) where it completes; upper bounds rest on witnesses checked by verify_witness; the "
     "program's lower bounds rest on SCIP with SCIP_FIX; at d >= 16 the program brackets at best",
-    "every limit is wall clock, so other load on the machine weakens what stops at a limit",
-    "H8 and H9 are judged only on the tori with n <= 252 (cost), and H9 is contested only at "
-    "n = 252; H7 extrapolates to m/q = 10 where stage 1 reached 6",
+    "every limit is wall clock, so other load on the machine weakens what stops at a limit; the "
+    "limits are set from stage-1 timings extrapolated to d = 20 to 24, not timed on any "
+    "held-out torus",
+    "H8 and H9 are judged only on the tori with n <= 252 (a choice of run length), and H9 is "
+    "contested only at n = 126 (by stage 1's 7x9) and 252; on the strictly clean tori H8 covers "
+    "only 3x21 and 3x39 and H9 is contested only at 126; H7 extrapolates to m/q = 10 where "
+    "stage 1 reached 6",
+    "H7 reads a class's type at its representative, as stage 1 did; where gcd(l, m) > 1 that "
+    "depends on the representative (rules.type_is_class_invariant), and stage 1's one miss, "
+    "3x15, is of this kind; 5 of the 15 judged instances are on such tori",
     "the tori isomorphic to an exposed torus are judged with the clean ones; each part is also "
     "reported on the strictly clean tori",
     "the proofs behind H1 to H6 are by hand (docs/code-census.md), not formalised",
@@ -1398,8 +1438,8 @@ def question() -> dict:
         "census.guard refuses them, and Stage2Permit opens only the registered tori",
         "rules": {part: {"source": SOURCES[part]} for part in SOURCES},
         "rules_code": "rules.py (hashed below): criterion, admissible, orbit_size, min_k, "
-        "max_k, kset_rule, forced_types, condition_i, condition_ii, quotient_bound, "
-        "forced_bounds, reduces_to_base",
+        "max_k, kset_rule, forced_types, type_is_class_invariant, stage1_at, condition_i, "
+        "condition_ii, quotient_bound, forced_bounds, reduces_to_base",
         "instruments": {
             "k": "census.ranks (census.c): rank H_X of every raw code, k = 2lm - 2 rank H_X",
             "zeros": "bb.local_terms at each class's representative; 2 Σ terms must be k",
@@ -1419,6 +1459,8 @@ def question() -> dict:
             "quotient, forced": "the explicit logicals of results 8 and 9, checked by "
             "verify_witness",
             "witnesses": "every witness is checked by distance.verify_witness",
+            "even": "the ranking and the outcomes round a lower bound up to an even number "
+            "(result 6); H6 checks the raw bounds",
         },
         "limits": {
             "round_budget": ROUND_BUDGET,
@@ -1427,31 +1469,49 @@ def question() -> dict:
             "probes_per_class": PROBES_PER_CLASS,
             "law_budget": LAW_BUDGET,
             "crosscheck_bests": CROSSCHECK_BESTS,
+            "program_brackets_at": PROGRAM_BRACKETS_AT,
             "sample_fraction": SAMPLE_FRACTION,
             "sample_max": SAMPLE_MAX,
             "sample_seed": SAMPLE_SEED,
             "timeouts": TIMEOUTS,
+            "window": WINDOW,
         },
         "protocol": PROTOCOL,
         "scip_fix": distance.SCIP_FIX,
         "solver": distance.scip_version(),
         "search_compiler": distance._search_binary()[1],
         "memory_limit_mb": distance.MEMORY_MB,
-        "sha256": {key: _sha256_file(path) for key, path in HASHED.items()},
+        "sha256": code_hashes(),
         "exposure": {_name(*t): why for t, why in rules.exposure().items()},
+        "exposure_of_random_n": rules.L_LIST_EXPOSURE,
         "isomorphic_to_exposed": {
             _name(*t): [_name(*e) for e in es] for t, es in rules.isomorphic_to_exposed().items()
         },
+        "isomorphic_note": rules.ISOMORPHIC_NOTE,
         "exposure_rule": "exposed tori are computed and reported beside the verdict, which rests "
         "on the other tori; tori isomorphic to an exposed torus are judged with the clean ones, "
-        "and each part is also reported on the strictly clean tori",
+        "and each part is also reported on the strictly clean tori ('strict'), where H8 covers "
+        "only 3x21 and 3x39 and H9 is contested only at n = 126",
         "frontier_plan": plan,
         "law_instances": law_instances(),
         "jobs": len(jobs()),
+        "verdict_rule": VERDICT_RULE,
         "cost_estimate": COST_ESTIMATE,
         "excluded_seen": EXCLUDED_SEEN,
         "known_limitations": KNOWN_LIMITATIONS,
     }
+
+
+H7_RULE = (
+    "on the instances not exposed and not proved (m/q > 1): fails if any instance is above, or "
+    "any instance (proved ones included) is a fault; otherwise inconclusive if fewer than "
+    "resolved_fraction of them resolve (equal or below; an instance whose job failed or has no "
+    "record, or that is not tested, counts as unresolved); otherwise holds when at least "
+    "equal_fraction of the resolved ones are equal, and fails if not. A proved instance (m/q = 1) "
+    "must be equal: resolved otherwise, it is a fault. A fault is also: the torus job and the "
+    "law job disagree on the classes of the type, or, where gcd(l, m) = 1, no class has the "
+    "type; where gcd(l, m) > 1 and no representative has the type, the instance is not tested"
+)
 
 
 def predictions() -> list[dict]:
@@ -1505,11 +1565,15 @@ def predictions() -> list[dict]:
             "part": "H6",
             "kind": "proved, decisive; tests the instruments",
             "source": SOURCES["H6"],
+            "tori": [_name(*t) for t in coded],
             "predicted": "on every class of every torus: every exact d is even; no lower bound "
             "exceeds the quotient bound or a proved forced bound, whose explicit logicals pass "
             "verify_witness; every witness passes; every instrument finds k logicals; all of a "
             "class's intervals meet (a disagreement, the program's included, fails the "
             "instruments)",
+            "outcomes": "per torus with codes: fails (a problem), not tested (no torus job "
+            "record), unresolved (a registered job on it missing or failed, or a run that "
+            "raised), holds; the part holds when every torus holds",
             "protocol": PROTOCOL,
         },
         {
@@ -1517,18 +1581,16 @@ def predictions() -> list[dict]:
             "kind": "risky, quantitative",
             "source": SOURCES["H7"],
             "instances": law_instances(),
-            "predicted": "on each instance, the largest d over the classes with a common zero of "
-            "its type equals its value 2m/q",
+            "predicted": "on each instance, the largest d over the classes whose representative "
+            "has a common zero of its type equals its value 2m/q",
             "outcomes": "equal (a class has lower bound >= value and every class an upper bound "
             "<= value), above (a class has lower bound > value), below (every class has an upper "
-            "bound < value), unresolved",
+            "bound < value), unresolved, not tested, fault (H7_RULE); lower bounds rounded up to "
+            "even",
             "threshold": {
                 "equal_fraction": H7_EQUAL,
                 "resolved_fraction": H7_RESOLVED,
-                "rule": "fails if any instance is above; otherwise inconclusive if fewer "
-                "than resolved_fraction of the instances resolve; otherwise holds when "
-                "at least equal_fraction of the resolved instances are equal, and fails "
-                "if not; on the instances not exposed",
+                "rule": H7_RULE,
             },
             "protocol": PROTOCOL,
         },
@@ -1550,12 +1612,20 @@ def predictions() -> list[dict]:
             "kind": "pattern, judged where affordable",
             "source": SOURCES["H9"],
             "sizes": plan["h9"],
-            "predicted": "at each n, the best k d^2/n over the held-out tori with codes at that n "
-            "is on a torus with 3 | l and 3 | m (ties count as on it)",
+            "predicted": "at each n, the best k d^2/n over the tori with codes at that n, held "
+            "out (three, other) or stage 1's (stage1, exact scores looked up), is on a torus with "
+            "3 | l and 3 | m (ties count as on it)",
             "outcomes": "holds (the best lower score on such tori >= every upper score on the "
             "others; 'uncontested' when no other torus at that n has codes), fails (an other "
             "torus's lower score exceeds every upper score on such tori), unresolved",
             "protocol": PROTOCOL,
+        },
+        {
+            "part": "protocol",
+            "kind": "the registered procedure (not a prediction): what decide judges by",
+            "jobs": jobs(),
+            "sha256": code_hashes(),
+            "verdict_rule": VERDICT_RULE,
         },
     ]
 
@@ -1566,11 +1636,39 @@ SEARCH_STATUSES = ("complete", "timelimit")
 PROGRAM_STATUSES = ("optimal", "timelimit", "memlimit")
 
 
-def protocol_failures(rec: dict, spec: dict | None, protocol: dict) -> list[str]:
-    """Why a record was not made by the registered protocol: its l and m are not its job's, or a
-    run of it did not use its instrument's settings (deepening or one pass, from (0, lm), with
-    the registered limit; the program under SCIP_FIX at the registered seed). [] for an error
-    row."""
+def _rule_bounds(name: str, rec: dict, c: dict, structural: dict | None):
+    """The bounds a search run of instrument `name` on class row `c` of record `rec` may have
+    by its registered rule, where the record (and the torus job's structural runs, `structural`:
+    class -> runs) fixes it; None where it does not (a probe's threshold, a deep search's bound,
+    which deep_bound_failures checks, or a scan without its torus job's record)."""
+    if name == "d2":
+        return {D2_BOUND}
+    if name == "scan":
+        if structural is None or c["class"] not in structural:
+            return None
+        return {_bound_for(structural[c["class"]])}
+    if name in ("law scan", "law probe", "law deep"):
+        value = rec.get("value")
+        if not isinstance(value, int):
+            return None
+        if name == "law probe":
+            return {value + 1}
+        if name == "law deep":
+            return {value, value + 1}
+        own = [r for r in c.get("runs", []) if r.get("instrument") in STRUCTURAL]
+        up = interval(own)[1]
+        return {max(2, min(BOUND, int(up) if up <= value else value + 1))}
+    return None
+
+
+def protocol_failures(
+    rec: dict, spec: dict | None, protocol: dict, structural: dict | None = None
+) -> list[str]:
+    """Why a record was not made by the registered protocol: it is not a registered job, its l
+    and m are not its job's, or a run of it did not use its instrument's settings (deepening or
+    one pass, from (0, lm), with the registered limit; the program under SCIP_FIX at the
+    registered seed), or a search's bound is outside 2..64, below its own lower bound, or not
+    its rule's (_rule_bounds). [] for an error row."""
     if "error" in rec:
         return []
     out = []
@@ -1605,21 +1703,54 @@ def protocol_failures(rec: dict, spec: dict | None, protocol: dict) -> list[str]
                     f"class {c['class']} {name}: deepen {r.get('deepen')}, anchors "
                     f"{r.get('anchors')}"
                 )
-            if "bound" in want and r.get("bound") != want["bound"]:
-                out.append(f"class {c['class']} {name}: bound {r.get('bound')}")
+            bound = r.get("bound")
+            if not isinstance(bound, int) or not 2 <= bound <= BOUND:
+                out.append(f"class {c['class']} {name}: bound {bound}")
+                continue
+            if r.get("lower") is not None and r["lower"] > bound:
+                out.append(f"class {c['class']} {name}: lower {r['lower']} above its bound {bound}")
+            if "bound" in want and bound != want["bound"]:
+                out.append(f"class {c['class']} {name}: bound {bound}")
+                continue
+            allowed = _rule_bounds(name, rec, c, structural)
+            if allowed is not None and bound not in allowed:
+                out.append(f"class {c['class']} {name}: bound {bound}, rule {sorted(allowed)}")
+    return out
+
+
+def deep_bound_failures(recs: list[dict]) -> dict[str, list[str]]:
+    """A torus's deep searches whose bound is not min(64, the class's checked upper bound) from
+    the runs the round saw before it (the torus job, the scans, the earlier rounds and its own
+    earlier actions on the class), by record key."""
+    order = [r for r in recs if r.get("test") in ("torus", "scan") and "error" not in r]
+    rounds = [r for r in recs if r.get("test") == "frontier" and "error" not in r]
+    order += sorted(rounds, key=lambda r: r.get("round", 0))
+    seen: dict[int, list[dict]] = {}
+    out: dict[str, list[str]] = {}
+    for rec in order:
+        for c in rec.get("classes", []):
+            runs = seen.setdefault(c["class"], [])
+            for r in c.get("runs", []):
+                if r.get("instrument") == "deep" and r.get("status") != "error":
+                    want = _bound_for(runs)
+                    if r.get("bound") != want:
+                        out.setdefault(rec.get("key"), []).append(
+                            f"class {c['class']} deep: bound {r.get('bound')}, rule {want}"
+                        )
+                runs.append(r)
     return out
 
 
 def run_problems(state: dict, structure_rows: dict) -> dict[int, list[str]]:
-    """H6's checks on a torus's classes (merge's state; the torus job's rows by class): each
-    class's intervals meet; every exact d is even; every search's and program's witness passes
-    verify_witness and each finds k logicals; no lower bound exceeds the quotient bound or a
-    proved forced bound, and their explicit logicals pass with the bound's weight; 2 Σ terms is
-    k and k is constant on the class; the class's rep and k agree across records."""
+    """H6's checks on a torus's classes (merge's state; the torus job's rows by class), on the
+    raw bounds: each class's intervals meet; every exact d is even; every search's and program's
+    witness passes verify_witness and each finds k logicals; no lower bound exceeds the quotient
+    bound or a proved forced bound, and their explicit logicals pass with the bound's weight;
+    2 Σ terms is k and k is constant on the class; the class's rep and k agree across records."""
     out: dict[int, list[str]] = {}
     for i, s in state.items():
         found = list(s["conflicts"])
-        lo, up = interval(s["runs"])
+        lo, up = interval(s["runs"], even=False)
         if lo > up:
             found.append(f"DISAGREEMENT: the intervals meet nowhere, [{lo}, {up}]")
         if lo == up and lo % 2:
@@ -1659,29 +1790,29 @@ def _errors(state: dict) -> int:
     return sum(r.get("status") == "error" for s in state.values() for r in s["runs"])
 
 
+def _over(vals: list[str]) -> str:
+    """A part's outcome over its items' outcomes: fails if one fails, holds if every one holds
+    (and there is one), incomplete otherwise ("not applicable" when there is none)."""
+    if any(v == "fails" for v in vals):
+        return "fails"
+    if vals and all(v == "holds" for v in vals):
+        return "holds"
+    return "incomplete" if vals else "not applicable"
+
+
 def _part(items: dict[str, str], tori_of=None) -> dict:
     """A part's outcome over items (torus or n -> "holds", "fails", "unresolved" or "not
     tested"), apart by exposure: "judged" (not exposed: the verdict), "strict" (clean only) and
-    "exposed" (reported beside it). Over a set: fails if an item fails, holds if every item
-    holds (and there is one), incomplete otherwise."""
+    "exposed" (reported beside it), each by _over."""
     tori_of = tori_of or (lambda key: [key])
-
-    def over(keys):
-        vals = [items[k] for k in keys]
-        if any(v == "fails" for v in vals):
-            return "fails"
-        if vals and all(v == "holds" for v in vals):
-            return "holds"
-        return "incomplete" if vals else "not applicable"
-
     status = {k: [exposure_status(*_torus(t)) for t in tori_of(k)] for k in items}
     judged = [k for k in items if "exposed" not in status[k]]
     strict = [k for k in judged if all(s == "clean" for s in status[k])]
     exposed = [k for k in items if "exposed" in status[k]]
     return {
-        "outcome": over(judged),
-        "strict": over(strict),
-        "exposed": over(exposed),
+        "outcome": _over([items[k] for k in judged]),
+        "strict": _over([items[k] for k in strict]),
+        "exposed": _over([items[k] for k in exposed]),
         "items": items,
         "counts": dict(Counter(items[k] for k in judged)),
         "exposed_items": {k: items[k] for k in exposed},
@@ -1689,7 +1820,8 @@ def _part(items: dict[str, str], tori_of=None) -> dict:
 
 
 def _law_outcome(state: dict, classes: list[int], value: int) -> str:
-    """H7's outcome for one instance from its classes' intervals."""
+    """H7's outcome for one instance from its classes' intervals (lower bounds rounded up to
+    even)."""
     ivs = [interval(state[i]["runs"]) for i in classes if i in state]
     if not ivs:
         return "not tested"
@@ -1702,17 +1834,22 @@ def _law_outcome(state: dict, classes: list[int], value: int) -> str:
     return "unresolved"
 
 
-def _law_verdict(outcomes: dict[str, str]) -> str:
-    """H7's registered threshold over a set of instances (module docstring)."""
+def _law_verdict(outcomes: dict[str, str], threshold: dict, proved=()) -> str:
+    """H7's registered threshold (H7_RULE) over a set of instances: `outcomes` by key, the
+    keys in `proved` (m/q = 1) left out of the fractions."""
     vals = list(outcomes.values())
     if not vals:
         return "not applicable"
-    if "above" in vals:
+    if "above" in vals or "fault" in vals:
         return "fails"
-    resolved = [v for v in vals if v in ("equal", "below")]
-    if len(resolved) < H7_RESOLVED * len(vals):
+    judged = [v for key, v in outcomes.items() if key not in set(proved)]
+    if not judged:
+        return "not applicable"
+    resolved = [v for v in judged if v in ("equal", "below")]
+    if len(resolved) < threshold["resolved_fraction"] * len(judged):
         return "inconclusive"
-    return "holds" if sum(v == "equal" for v in resolved) >= H7_EQUAL * len(resolved) else "fails"
+    equal = sum(v == "equal" for v in resolved)
+    return "holds" if equal >= threshold["equal_fraction"] * len(resolved) else "fails"
 
 
 def _frontier_outcome(state: dict) -> dict:
@@ -1746,22 +1883,67 @@ def _scores(state: dict) -> tuple[float, float]:
     return rank["L"], rank["U"]
 
 
+def _h7(preds: dict, records: dict, state: dict, structure_rows: dict) -> tuple[dict, dict]:
+    """H7's outcome per instance (H7_RULE), and why where it is a fault or not tested for want
+    of a class."""
+    h7, why = {}, {}
+    for x in preds["H7"]["instances"]:
+        key = x["key"]
+        rec = records.get(key)
+        if rec is None or "error" in rec:
+            h7[key] = "not tested"
+            why[key] = "no record" if rec is None else "the job failed"
+            continue
+        classes = sorted(c["class"] for c in rec["classes"])
+        rows_t = structure_rows.get(x["torus"])
+        typed = None
+        if rows_t is not None:
+            typed = sorted(
+                i
+                for i, c in rows_t.items()
+                if rules.has_type(c["structure"]["zeros"], *x["type"], x["l"], x["m"])
+            )
+        if typed is not None and typed != classes:
+            h7[key], why[key] = "fault", "the torus job and the law job disagree on its classes"
+            continue
+        if not classes:
+            if x["type_invariant"]:
+                h7[key] = "fault"
+                why[key] = (
+                    "no class has a zero of this admissible type, which some code has (result "
+                    "1's converse) and every code of its class then has (gcd(l, m) = 1)"
+                )
+            else:
+                h7[key] = "not tested"
+                why[key] = "no representative has a zero of the type (gcd(l, m) > 1)"
+            continue
+        out = _law_outcome(state.get(x["torus"], {}), classes, x["value"])
+        if x["proved"] and out in ("above", "below"):
+            h7[key], why[key] = "fault", f"{out}, where d = 2 is proved"
+            continue
+        h7[key] = out
+    return h7, why
+
+
 def decide(rows: list[dict], registered: list[dict]) -> dict:
     preds = {p["part"]: p for p in registered}
     protocol = preds["H5"]["protocol"]
-    specs = {j["key"]: j for j in jobs()}
+    reg = preds["protocol"]
+    specs = {j["key"]: j for j in reg["jobs"]}
     records, duplicates = {}, []
     for r in rows:
         if r.get("key") in records:
             duplicates.append(r.get("key"))
         records[r.get("key")] = r
     missing = [key for key in specs if key not in records]
-    failed_jobs = [key for key, r in records.items() if "error" in r]
-    off_protocol = {
-        key: f
-        for key, r in records.items()
-        if (f := protocol_failures(r, specs.get(key), protocol))
-    }
+    failed_jobs = sorted(key for key, r in records.items() if "error" in r)
+    prior_failed = sorted(
+        {e for r in records.values() if "error" not in r for e in r.get("prior_errors") or []}
+    )
+    now = code_hashes()
+    code_changed = sorted(
+        key for key in set(reg["sha256"]) | set(now) if reg["sha256"].get(key) != now.get(key)
+    )
     torus_rec = {}
     for r in records.values():
         if r.get("test") == "torus" and "error" not in r:
@@ -1772,6 +1954,29 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
             by_torus.setdefault(_name(r["l"], r["m"]), []).append(r)
     state = {name: merge(recs, *_torus(name)) for name, recs in by_torus.items()}
     structure_rows = {name: {c["class"]: c for c in r["classes"]} for name, r in torus_rec.items()}
+    structural = {
+        name: {
+            i: [x for x in c["runs"] if x.get("instrument") in STRUCTURAL]
+            for i, c in by_class.items()
+        }
+        for name, by_class in structure_rows.items()
+    }
+    off_protocol = {}
+    for key, r in records.items():
+        torus = _name(r["l"], r["m"]) if "l" in r and "m" in r else None
+        f = protocol_failures(r, specs.get(key), protocol, structural.get(torus))
+        if f:
+            off_protocol[key] = f
+    for recs in by_torus.values():
+        for key, f in deep_bound_failures(recs).items():
+            off_protocol.setdefault(key, []).extend(f)
+    # a torus is complete when every registered job on it has a record that is not an error row
+    # and names no failed earlier job
+    unfinished = set()
+    for key, spec in specs.items():
+        r = records.get(key)
+        if r is None or "error" in r or r.get("prior_errors"):
+            unfinished.add(_name(spec["l"], spec["m"]))
 
     # H1: codes exist
     h1 = {}
@@ -1847,38 +2052,55 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
         }
     for name in preds["H5"]["tori"]:
         h5.setdefault(name, "not tested" if name not in torus_rec else "holds")
-    # H6: the proved bounds and the instruments
+    # H6: the proved bounds and the instruments, on every torus with codes
+    h6_tori = sorted(
+        set(preds["H6"]["tori"]) | {name for name, r in torus_rec.items() if r["classes"]},
+        key=lambda t: (_torus(t)[0] * _torus(t)[1], _torus(t)),
+    )
     h6, h6_problems = {}, {}
-    for name, st in state.items():
+    for name in h6_tori:
+        st = state.get(name, {})
         probs = run_problems(st, structure_rows.get(name, {}))
         if probs:
             h6_problems[name] = probs
-        h6[name] = "fails" if probs else ("unresolved" if _errors(st) else "holds")
+            h6[name] = "fails"
+        elif name not in torus_rec:
+            h6[name] = "not tested"
+        elif name in unfinished or _errors(st):
+            h6[name] = "unresolved"
+        else:
+            h6[name] = "holds"
+    h6_all = list(h6.values())
+    if "fails" in h6_all:
+        h6_outcome = "fails"
+    elif h6_all and all(v == "holds" for v in h6_all):
+        h6_outcome = "holds"
+    elif all(v == "not tested" for v in h6_all):
+        h6_outcome = "not tested"
+    else:
+        h6_outcome = "incomplete"
     # H7: the linear law
-    h7 = {}
-    for x in preds["H7"]["instances"]:
-        rec = records.get(x["key"])
-        if rec is None or "error" in rec:
-            h7[x["key"]] = "not tested"
-            continue
-        classes = [c["class"] for c in rec["classes"]]
-        typed = [
-            i
-            for i, c in structure_rows.get(x["torus"], {}).items()
-            if rules.has_type(c["structure"]["zeros"], *x["type"], x["l"], x["m"])
-        ]
-        if x["torus"] in structure_rows and sorted(typed) != sorted(classes):
-            h7[x["key"]] = "fails"  # the two jobs disagree on the type's classes
-            continue
-        h7[x["key"]] = _law_outcome(state.get(x["torus"], {}), classes, x["value"])
+    h7, h7_why = _h7(preds, records, state, structure_rows)
+    thr = preds["H7"]["threshold"]
     status7 = {x["key"]: exposure_status(x["l"], x["m"]) for x in preds["H7"]["instances"]}
+    proved = sorted(x["key"] for x in preds["H7"]["instances"] if x["proved"])
+    faults = sorted(key for key, v in h7.items() if v == "fault")
+
+    def law(keep):
+        return _law_verdict({k: v for k, v in h7.items() if keep(status7[k])}, thr, proved)
+
     h7_part = {
-        "outcome": _law_verdict({k: v for k, v in h7.items() if status7[k] != "exposed"}),
-        "strict": _law_verdict({k: v for k, v in h7.items() if status7[k] == "clean"}),
-        "exposed": _law_verdict({k: v for k, v in h7.items() if status7[k] == "exposed"}),
+        "outcome": law(lambda s: s != "exposed"),
+        "strict": law(lambda s: s == "clean"),
+        "exposed": law(lambda s: s == "exposed"),
         "items": h7,
-        "counts": dict(Counter(v for k, v in h7.items() if status7[k] != "exposed")),
-        "threshold": preds["H7"]["threshold"],
+        "why": h7_why,
+        "proved": {k: h7[k] for k in proved},
+        "faults": faults,
+        "counts": dict(
+            Counter(v for k, v in h7.items() if status7[k] != "exposed" and k not in proved)
+        ),
+        "threshold": thr,
     }
     # H8: the best classes reduce to the base
     h8, h8_detail = {}, {}
@@ -1902,17 +2124,19 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
         d = _frontier_outcome(st)
         h8_detail[name] = d
         h8[name] = d["outcome"]
-    # H9: the best at n is on a torus with 3 | l and 3 | m
+    # H9: the best at n is on a torus with 3 | l and 3 | m (stage-1 tori: exact, looked up)
     h9, h9_detail = {}, {}
     for n, at in preds["H9"]["sizes"].items():
         tori = at["three"] + at["other"]
         if any(t not in torus_rec for t in tori):
             h9[n] = "not tested"
             continue
+        stage1 = at.get("stage1", {})
 
-        def scores(names):
+        def scores(names, kind, stage1=stage1):
             ls = [_scores(state.get(t, {})) for t in names if state.get(t)]
-            return max((a for a, _ in ls), default=0), max((b for _, b in ls), default=0)
+            ls += [(v["score"], v["score"]) for v in stage1.values() if v["kind"] == kind]
+            return max((a for a, _ in ls), default=0), max((b for _, b in ls), default=0), ls
 
         out = {}
         for label, keep in (
@@ -1922,13 +2146,13 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
         ):
             three = [t for t in at["three"] if keep(t)]
             other = [t for t in at["other"] if keep(t)]
-            (l3, u3), (lo_, uo) = scores(three), scores(other)
-            if not any(state.get(t) for t in three):
+            l3, u3, s3 = scores(three, "three")
+            lo_, uo, so = scores(other, "other")
+            if not s3:
                 out[label] = {"outcome": "not applicable"}
                 continue
-            if not any(state.get(t) for t in other):
-                verdict = "holds"
-                out[label] = {"outcome": verdict, "uncontested": True, "L3": l3, "U3": u3}
+            if not so:
+                out[label] = {"outcome": "holds", "uncontested": True, "L3": l3, "U3": u3}
                 continue
             verdict = "holds" if l3 >= uo else ("fails" if lo_ > u3 else "unresolved")
             out[label] = {
@@ -1963,39 +2187,41 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
         "H5": {**_part(h5), "detail": h5_detail},
         "H6": {
             **_part(h6),
+            "outcome": h6_outcome,
             "problems": h6_problems,
-            "note": "judged on every torus, exposed ones included: it tests the "
+            "note": "judged on every torus with codes, exposed ones included: it tests the "
             "instruments, which exposure does not bear on",
         },
         "H7": h7_part,
         "H8": {**_part(h8), "detail": h8_detail},
         "H9": h9_part,
     }
-    h6_all = list(h6.values())
-    parts["H6"]["outcome"] = (
-        "fails"
-        if "fails" in h6_all
-        else "holds"
-        if all(v == "holds" for v in h6_all)
-        else "incomplete"
-    )
-    instruments_fail = bool(h6_problems or off_protocol or duplicates)
+    instruments_fail = bool(h6_problems or off_protocol or duplicates or faults)
+    if instruments_fail:
+        instruments = "fail"
+    else:
+        instruments = {"holds": "hold", "not tested": "not tested"}.get(h6_outcome, "incomplete")
     outcomes = {p: v["outcome"] for p, v in parts.items()}
     if instruments_fail or "fails" in outcomes.values():
         overall = "fail"
-    elif all(v in ("holds", "not applicable") for v in outcomes.values()) and not missing:
+    elif all(v in ("holds", "not applicable") for v in outcomes.values()) and not (
+        missing or failed_jobs or prior_failed or code_changed
+    ):
         overall = "hold"
     else:
         overall = "incomplete"
     return {
         "verdict": overall,
         "parts": outcomes,
-        "instruments": "fail" if instruments_fail else "hold",
+        "instruments": instruments,
         "missing": missing,
         "failed_jobs": failed_jobs,
+        "prior_failed": prior_failed,
+        "code_changed": code_changed,
         "duplicates": duplicates,
         "protocol_failures": off_protocol,
         "detail": parts,
+        "verdict_rule": reg["verdict_rule"],
         "exposed_note": "exposed tori are reported beside the verdict (each part's 'exposed'); "
         "tori isomorphic to an exposed torus are judged, and each part's 'strict' leaves them "
         "out",
