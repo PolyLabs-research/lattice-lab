@@ -212,4 +212,10 @@ unfinished job.
 
 1. **Done:** both instruments fixed and retested (above).
 2. **The census of code families** (step 2 of next-direction.md), with the search for exact
-   distances, the program as a cross-check, and both together where a code is hard.
+   distances, the program as a cross-check, and both together where a code is hard. Stage 1 is
+   done ([code-census.md](code-census.md)), and stage 2 is being registered.
+3. **The open distances of larger published codes**, the next target after stage 2. As
+   remembered and not yet checked against the paper, Bravyi et al. list [[360,12,≤24]] and
+   [[756,16,≤34]] with upper bounds only. First confirm the table and the codes' polynomials
+   from the paper, then register a prediction and try the search. d = 24 at n = 360 may be in
+   reach; d = 34 at n = 756 likely needs better methods. STATUS.md has the details.

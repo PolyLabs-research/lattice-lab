@@ -169,6 +169,21 @@ registered):
 - **Next.** Register stage 2 on the held-out tori from the report's candidate predictions, and
   record the exposure it lists.
 
+**The next target after stage 2: the open distances of larger published codes.**
+- **What to check first.** As remembered, and not yet checked against the paper, Bravyi et
+  al.'s table lists two larger bivariate bicycle codes with only upper bounds on their
+  distance: [[360,12,≤24]] and [[756,16,≤34]]. arXiv was unreachable here, so the claim, and the
+  codes' polynomials, must come from the paper or a reliable copy of it before anything else.
+- **Why it matters.** If a distance there is still open, settling it exactly with the search (and
+  bounding it independently where possible) would be a contribution outside this project.
+- **Cost.**
+  - The deepening search took 18 s at [[288,12,18]], and its cost grew roughly fivefold per 2
+    added to d at n of 160 to 220. So d = 24 at n = 360 may be within reach, while d = 34 at
+    n = 756 likely needs better methods.
+  - Both tori, l m = 180 and 378, lie outside the census's hold-out.
+- **The usual discipline.** Register a prediction (the upper bound is the value), state the
+  instruments and limits, and run blind to any later literature value.
+
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
 - **A multi-agent deep dive then explained 4850 itself, with a proof.**
