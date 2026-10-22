@@ -85,10 +85,10 @@ this ring, and a quantity, k, that the instruments here already compute.
    - **Result.** An exhaustive search written here reproduced all 12 published distances
      exactly, [[288,12,18]] in 3 minutes and the gross code in 0.2 s. An integer program
      solved by SCIP agreed on 11 and bracketed the twelfth.
-   - **A failed method check.** The registered method check failed once: on 1 of 200 random
-     codes SCIP reported a wrong optimum. That happens only with its dual reductions on and the
-     program's translation row present. The program's lower bounds need that fixed, and
-     retested, before they are trusted.
+   - **A failed method check, then a fix.** The registered method check failed once: on 1 of
+     200 random codes SCIP reported a wrong optimum. The cause is SCIP 10.0's XOR presolving.
+     With it and rapid learning off, and the search deepening its bound, a second registered
+     test on fresh codes (`examples/qec-distance-2`) found both instruments hold.
 
    Established tools for later:
    - exact integer programming for small codes;
@@ -112,8 +112,8 @@ this ring, and a quantity, k, that the instruments here already compute.
   would be the method (machine-checked structure, registered held-out tests), and any new
   families, not a head start.
 - **Distance.** Distance decides whether a code is useful. The project now computes it exactly
-  for codes like the published ones (code-distances.md). Its search can stall without a good
-  starting bound, and its integer program needs a solver fault fixed.
+  for codes like the published ones, by two instruments retested after fixes
+  (code-distances.md). Distance alone does not give performance under realistic noise.
 - **Sources.** The published codes in step 1 were transcribed from search summaries of the
   papers, because arXiv is not reachable from this environment (`examples/qec-bb/codes.json`
   says so). A disagreement with a published k is first a question about the transcription.

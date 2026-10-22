@@ -18,7 +18,7 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 195 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 214 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1043 |
 
@@ -41,7 +41,7 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 git checkout ccr-ab9f0bb1-qb20sx
 
 # lattice-lab
-uv sync && uv run pytest              # 195 tests
+uv sync && uv run pytest              # 214 tests
 for d in examples/*/; do [ -f "$d/ledger.jsonl" ] && uv run lattice-lab verify --lab "$d"; done
 
 # working against local checkouts of the libraries instead of the pins
@@ -84,7 +84,7 @@ before the runs that tested them.
 | Rule 4850, the fifth: (x + 1/x + y + 1/y) · 4850 is two hexagons; an order-3 symmetry that exists only at 37 (5² + 3·2² = 37) gives λ · t_α t_β = W⁴; a norm formula in Gauss periods puts every eigenvalue's norm to F64 in F8*, which is the ninth-power condition | **explained, with a proof**, by a multi-agent deep dive; three independent checkers found it stands with repairs, which they supplied, and the orchestrator rechecked the chain (`tests/test_rule4850_proof.py`); not yet one document, and not in Lean | [the deep dive's report](../examples/rule-4850/deep/REPORT.md) |
 | The hexagon family at m = 37: p a non-residue gives ninth powers, p a residue gives cubes | classified in the deep dive; **confirmed by a registered held-out test**: 35 of 35 tested predictions correct, at 37, 13 and eight other sizes; the six at the largest sizes (709 to 1861) were not tested, two over the 45-minute limit and four recorded as not run | [the deep dive's report](../examples/rule-4850/deep/REPORT.md#4-the-hexagon-family), `examples/hexagon-family` |
 | A bivariate bicycle quantum code's logical qubits k are read off the torus's characters | **confirmed by a registered rediscovery test**: the character method agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included | [next-direction.md](next-direction.md) |
-| The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum (with its dual reductions and the program's translation row), so the program's lower bounds are not trusted until fixed and retested | [code-distances.md](code-distances.md) |
+| The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum. The fault (SCIP's XOR presolving) was then fixed, the search made faster, and a second registered test on fresh codes found both instruments hold (`examples/qec-distance-2`) | [code-distances.md](code-distances.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 
 ## The atlas, where it stands
@@ -149,10 +149,10 @@ against linear algebra and twelve published codes (`examples/qec-bb`), passed: 3
 random codes agree and all 12 published k are reproduced. Step 2's first part, the published
 distances (`examples/qec-distance`, [code-distances.md](code-distances.md)), reproduced all twelve
 with an exhaustive search; its integer program failed one method check through a SCIP fault.
-Next:
-- fix both instruments (SCIP without dual reductions; the search with iterative deepening) and
-  register them again on fresh codes;
-- then the census of code families.
+The fault was traced to SCIP 10.0's XOR presolving and fixed (distance.SCIP_FIX), the search
+was given iterative deepening, and a second registered test on fresh codes
+(`examples/qec-distance-2`) found that both instruments hold. Its control, SCIP's unfixed
+defaults, was wrong on 3 fresh codes. Next: the census of code families.
 
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
@@ -322,9 +322,11 @@ Next:
   starts without `proofs/.lake`, so it pays that again.
 - **uv** prints a warning about `UV_NATIVE_TLS` on every call; it is harmless.
 - **Code distances.** `uv sync --group qec` installs SCIP (pyscipopt). The search
-  (`examples/qec-distance/search.c`) needs a C compiler as `cc`. Trust the search's exact values
-  and every checked witness. Do not trust the program's "optimal" alone: it was wrong once
-  (code-distances.md).
+  (`examples/qec-distance/search.c`) needs a C compiler as `cc`. Every checked witness is an
+  upper bound. Run the program only with `distance.SCIP_FIX` (its default): SCIP 10.0's own
+  defaults return wrong optima on these programs, about 0.3% of runs on small high-k codes
+  (code-distances.md). Where it matters, run both instruments and require their intervals to
+  meet.
 - **Consultations: read `served_by`.** Fable's cyber classifier declines GF(2) arithmetic as a
   false positive (6 of 12 benchmark calls, 5 of 6 on pilot 4's question), and the server-side
   fallback answers with Claude Opus 4.8. The record says so; any comparison of models must

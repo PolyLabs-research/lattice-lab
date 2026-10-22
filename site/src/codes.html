@@ -180,7 +180,8 @@
         <tr><td>k from the characters equals k from ranks over GF(2)</td><td>3,000 random codes at 20 sizes, 150 at each and 1,500 at even sizes: 100 per size in the published trinomial form, A = x<sup>a</sup> + y<sup>b</sup> + y<sup>c</sup> and B = y<sup>d</sup> + x<sup>e</sup> + x<sup>f</sup>, and 50 with two to six random terms; and the 12 published entries</td><td><span class="badge ok">held</span> 3,000 of 3,000 random codes and 12 of 12 entries agree</td></tr>
         <tr><td>k from the characters equals the published k</td><td>12 published entries: five of the original bivariate bicycle codes and the coprime codes, two of them in two published versions</td><td><span class="badge ok">12 of 12</span> every published k reproduced, the gross code's among them, and both versions of the two coprime codes whose published polynomials disagree</td></tr>
         <tr><td>The distance d equals the published d, by two exact instruments: an exhaustive search written here and an integer program solved by SCIP</td><td>the same 12 entries, with up to 90 minutes per instrument</td><td><span class="badge ok">12 of 12</span> the search gave every published d exactly: the gross code's 12 in 0.2 s, and [[288,12,18]]'s 18 in 3 minutes. The program agreed on 11 and bracketed the twelfth between 13 and 18</td></tr>
-        <tr><td>The program's distances agree with exhaustive enumeration, on random codes, and on both kinds of logical</td><td>200 random codes at 8 small sizes, n up to 50</td><td><span class="badge bad">failed once</span> at 1 of 200, SCIP reported a wrong optimum (3 for a distance of 2). It needs both its dual reductions and the program's translation row, so the program's lower bounds wait on a fix and a new test</td></tr>
+        <tr><td>The program's distances agree with exhaustive enumeration, on random codes, and on both kinds of logical</td><td>200 random codes at 8 small sizes, n up to 50</td><td><span class="badge bad">failed once</span> at 1 of 200, SCIP reported a wrong optimum (3 for a distance of 2). The cause, found afterwards, is SCIP's presolving of the parity constraints it builds itself</td></tr>
+        <tr><td>Both instruments as fixed (that presolving and SCIP's rapid learning off; the search raising its bound step by step) hold on codes nobody had looked at</td><td>fresh codes against enumeration, against each other and on the toric code; the 38 known fault codes; 142 fresh codes where the fault lives, with SCIP's unfixed defaults alongside as a control</td><td><span class="badge ok">held</span> no failure in any part; the unfixed defaults went wrong on 3 of the fresh codes, so the test could see the fault</td></tr>
       </tbody>
     </table>
   </div>
@@ -235,7 +236,7 @@
       <li><span><strong>A census of code families.</strong> Sweep polynomial pairs at many sizes
         for high <em class="var">k</em>, using the classes and symmetries to prune. Then measure
         distance, the hard and expensive part: the exhaustive search for exact values, the
-        integer program for bounds once its solver fault is fixed, randomised information-set
+        integer program as a cross-check and for bounds, randomised information-set
         methods for larger codes, and circuit-noise
         simulation (stim, BP-OSD decoders) for the logical error rates practitioners care about.
         This is where the compute goes.</span></li>
@@ -262,10 +263,10 @@
     <div class="eyebrow">what this does not show</div>
     <h2 id="caveat-title">Caveats</h2>
     <p><strong>Distance.</strong> Distance decides whether a code is useful. The project now
-      computes it exactly for codes like the published ones. But the search can stall when it
-      finds no good bound early (it did on 2 of 9 test codes), and the integer program's lower
-      bounds are not trusted until a solver fault is fixed. Distance also says nothing about how
-      a code does under realistic noise, which needs simulation.</p>
+      computes it exactly for codes like the published ones, with two instruments that were
+      fixed after a registered test caught a solver fault, and then passed a second registered
+      test. Distance says nothing about how a code does under realistic noise, which needs
+      simulation.</p>
     <p><strong>Competition.</strong> Bivariate bicycle code search is active, with groups searching
       by brute force, by covering-graph constructions, and already with LLM-guided search. What
       this project would bring is its method (machine-checked structure, and held-out tests

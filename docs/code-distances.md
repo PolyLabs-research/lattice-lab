@@ -8,6 +8,15 @@ are reproduced.**
   solved by SCIP, reported a wrong optimum. So the program alone is not trusted as a proof of a
   lower bound, and the published distances rest on the search.
 
+**Then both instruments were fixed and a second registered test (`examples/qec-distance-2`, run
+2026-10-22) passed in full.**
+- **The fault.** It is in SCIP 10.0's presolving of the XOR constraints it builds from the
+  program's parity rows. The fix turns that presolving and SCIP's rapid learning off.
+- **The search** now deepens its bound step by step, so it no longer stalls.
+- **The re-test.** On fresh codes at sizes no development touched, both fixed instruments held
+  on every registered part. SCIP's unfixed defaults, run beside them as a control, were wrong on
+  3 fresh codes.
+
 This is step 2 of [next-direction.md](next-direction.md), which began with distance: nothing in
 the project computed it before.
 
@@ -115,23 +124,92 @@ weight-2 logical above meets it. So this is a wrong answer from the solver, not 
 formulation. Without an independent certificate a program's "optimal" was always a claim about
 SCIP. This test shows the claim can be false, which is what the registered method check was for.
 
+### What it turned out to be
+
+A wider hunt and a reading of SCIP's source (distance.py's `distance_ilp` docstring) found the
+cause, and showed that the account above was incomplete.
+- **The hunt.**
+  - It covered 2,476 development codes (n = 8 to 50, both kinds, seeds 0 to 19): 99,040 runs.
+  - SCIP's defaults returned a wrong "optimal" in 292 of them (0.29%), on 48 programs of 37
+    codes.
+  - Every wrong value was too high, by 1 or 2. Every one came with a genuine logical as its
+    witness, so the witness check cannot catch it: only the lower bound is wrong.
+  - Later hunts found it at d = 5 as well.
+- **The cause.**
+  - SCIP turns the program's parity rows into XOR constraints. On a program where some variables
+    are already fixed, its presolving of those constraints can wrongly conclude that the program
+    is infeasible, or cut off every optimum.
+  - The wrong conclusion reaches the answer by two routes. One is rapid learning, which solves a
+    copy of the problem in a sub-SCIP and passes back bounds and conflicts. The other is the main
+    presolve after a restart.
+  - A reduced reproduction, with dual reductions and rapid learning both off, still declares a
+    feasible program infeasible in presolve.
+- **Why the switches above seemed to fix it.** Turning off dual reductions or the translation row
+  changes which fixings happen. It does not remove the fault.
+  - Without the translation row, SCIP was still wrong on 3 programs.
+  - With dual reductions off, stress tests that add fixings while keeping a lightest logical
+    feasible still produced a false "infeasible".
+- **Why no single presolver was to blame.** Turning one off in the main SCIP did not reach rapid
+  learning's sub-SCIP, which resets presolving to SCIP's defaults.
+
+**The fix** (`distance.SCIP_FIX`, now distance_ilp's default and recorded in every result):
+constraints/xor/maxprerounds = 0 and separating/rapidlearning/freq = -1.
+- **The evidence.** No wrong answer:
+  - on the 48 programs and the registered code at 20 seeds;
+  - in 5,520 stress solves;
+  - in a re-run of the whole hunt at 10 seeds (49,520 runs);
+  - in an independent verifier's hunt of 33,682 runs and 10,710 stress solves.
+- **The cost.** It was no slower: 0.79 times the defaults' total time on 16 hard runs (d = 12 to
+  16).
+
+**The search.** It now runs passes with bound 2, 3, 4, ... in one process and stops at the first
+logical found, whose weight is then d.
+- **Speed.** The two stalled codes take 0.13 s, and [[288,12,18]] 18 s (180 s before). From (0, lm),
+  two sets of hard development codes took 10 and 33 times less time in total, and every code
+  finished where the old search had timed out on 17. From every qubit it can cost up to about
+  1.35 times the single pass.
+- **A lower bound.** A run stopped at its limit now has one: the last bound whose pass completed
+  with nothing found.
+
+## The re-test (`examples/qec-distance-2`)
+
+Registered and pushed before it ran, on codes, sizes and seeds that no development had touched.
+The verdict: **the instruments hold**, with no failure in any part.
+
+| Part | What | Result |
+| --- | --- | --- |
+| (a) against enumeration | 50 fresh codes at 2x13 and 3x9: both kinds of d, the program at 5 seeds, the search from every qubit and from (0, lm) | 50 of 50 |
+| (b) the known faults (a regression) | the 38 fault codes, both kinds, 20 seeds each | 38 of 38 right |
+| (c) program against search | 14 fresh trinomial codes at 7 sizes, n = 96 to 210, d = 4 to 16 | 12 agree, 2 consistent (the program at its 20-minute limit with 13 ≤ d ≤ 16, both searches 16), 0 disagree; both searches completed on all 14 |
+| (d) known answers (not blind) | the 12 published codes and the 2 codes the old search stalled on | 14 of 14 reproduced ([[288,12,18]] by the search in 18 s; the program at its 60-minute limit with 13 ≤ d ≤ 18) |
+| (e) the toric code | 6 new sizes, n = 90 to 510, three instruments | 6 of 6 |
+| (f) power against the fault | 142 fresh high-k codes, n = 56 to 80, of the families where the fault lives; the program at 20 seeds under the fix, and under SCIP's defaults as an unjudged control | 142 of 142 right under the fix; the defaults were wrong on 3 codes in 20 of 5,680 runs (3 for d = 2, 6 for d = 5, 5 for d = 4) |
+
+Part (f) shows that the test could see the fault, on codes nobody had looked at, and that the fix
+removed it there. The run was interrupted once by a container restart; resume rerun the one
+unfinished job.
+
 ## What this establishes
 
 - **The published distances.** All twelve, including d = 18 for [[288,12,18]], hold by an exact
   method built here and checked independently, run blind to the published values. The gross
   code's distance takes the search 0.2 s.
-- **The tools.** The search is the fast instrument on codes like these. The program is useful for
-  upper bounds and, with the fault fixed and retested, for lower bounds where the search stalls.
-- **Not established.** The search's lower bounds rest on its argument and its code, which part 1
-  checked against other methods but which nothing certifies independently. And the codes.json
-  entries are still transcriptions from search summaries of the papers, now consistent with
-  both their published k and their published d.
+- **The tools.** Both instruments, as fixed, passed a registered test on fresh codes.
+  - The search is the fast one on codes like these.
+  - The program, with SCIP_FIX, gives exact values and checked bounds. Its lower bound still rests
+    on SCIP, now on a setting tested hard against the fault.
+  - Where the two run together, their intervals must meet, which guards each against the other's
+    errors.
+- **Not established.**
+  - The search's lower bounds rest on its argument and its code. Two registered tests checked them
+    against other methods, but nothing certifies them independently.
+  - SCIP's fault is fixed for this program by switching features off, not repaired in SCIP; a
+    different program might meet another fault.
+  - The codes.json entries are still transcriptions from search summaries of the papers, now
+    consistent with both their published k and their published d.
 
 ## Next
 
-1. **Fix both instruments, then register them again on fresh codes.**
-   - The program: run SCIP without dual reductions. That gave the right answer at every seed on
-     the failing code; its cost on large codes is to be measured.
-   - The search: iterative deepening of its bound.
+1. **Done:** both instruments fixed and retested (above).
 2. **The census of code families** (step 2 of next-direction.md), with the search for exact
-   distances and the program for bounds.
+   distances, the program as a cross-check, and both together where a code is hard.
