@@ -37,7 +37,11 @@ none either; k is invariant, so no code of the family with k > 0 on those four i
 a code of the family there. Only 6 x 11 overlaps: x -> x'y'^11, y -> y'^2 carries Z_6 x Z_11
 onto Z_3 x Z_22, and the family's codes with a, e and f even onto codes of the family on the
 held-out 3 x 22. Refusing all 8 remains the default; torus_type's rule argues for it whenever
-stage 2 may test codes beyond this form.
+stage 2 may test codes beyond this form. Stage 2 (examples/qec-census-2) computes on the
+held-out tori through one narrow exception, added after stage 1 ran (stage 1's files record the
+census.py they were made with): `Stage2Permit`, which opens a registered held-out torus to guard
+only inside stage 2's job function, and only while stage 2's ledger holds its registration and a
+run that has started. Nothing else changed here; the 8 refused tori stay refused.
 
 **k** (`ranks`, census.c). k = 2lm - rank H_X - rank H_Z, by Gaussian elimination on bitset rows
 in C, over every raw code of a torus in one call. rank H_Z = rank H_X for every bivariate
@@ -304,15 +308,98 @@ def guard(ell: int, m: int, allow_isomorphic: bool = False) -> None:
     (l <= m), and, unless allow_isomorphic, a stage-1 torus isomorphic to a held-out one. Every
     function here that computes on a torus's codes calls it first (raw_count, torus_file and
     ilp_selection, which count, name a file or choose among rows, compute nothing on codes), and
-    summarize calls it on every file's torus."""
+    summarize calls it on every file's torus. The one exception is a held-out torus, in
+    holdout.json's l <= m orientation, inside a Stage2Permit (below): stage 2's registered run."""
     ell, m = int(ell), int(m)
     if (ell, m) in held_out_tori():
+        if (ell, m) in _STAGE2_OPEN:
+            return
         raise HeldOut(f"{ell}x{m} is held out of stage 1 (holdout.json)")
     if (ell, m) not in set(stage1_tori()):
         raise HeldOut(f"{ell}x{m} is not a stage-1 torus (holdout.json's stage1_tori, l <= m)")
     if not allow_isomorphic and isomorphic_held_out(ell, m):
         names = ", ".join(f"{a}x{b}" for a, b in isomorphic_held_out(ell, m))
         raise HeldOut(f"{ell}x{m} is isomorphic to the held-out {names} (allow_isomorphic)")
+
+
+# ---------------------------------------------------------------- stage 2's permit
+
+STAGE2 = HERE.parent / "qec-census-2"
+STAGE2_STUDY = STAGE2 / "study.py"
+STAGE2_LEDGER = STAGE2 / "ledger.jsonl"
+STAGE2_ID = "qec-census-stage2"
+_STAGE2_OPEN: frozenset = frozenset()  # the held-out tori a Stage2Permit has opened
+
+
+def stage2_registration_problem(tori, ledger_path: Path | None = None) -> str | None:
+    """Why stage 2's ledger does not permit computing on `tori`, or None when it does: the
+    ledger's hash chain verifies, and it holds stage 2's registration (a question with id
+    STAGE2_ID, then its predictions) followed by run_started and nothing but run_resumed
+    entries (a run that has started and has not yet written its observations), and every torus
+    of `tori` is a held-out torus (l <= m) listed in the question's "tori"."""
+    from lattice_lab.ledger import Ledger, LedgerError
+
+    path = Path(ledger_path) if ledger_path is not None else STAGE2_LEDGER
+    if not path.is_file():
+        return f"{path} does not exist: stage 2 is not registered"
+    try:
+        ledger = Ledger(path)
+    except LedgerError as exc:
+        return f"{path} is not a ledger: {exc}"
+    if ledger.verify():
+        return f"{path} does not verify: {ledger.verify()[:3]}"
+    kinds = [e["kind"] for e in ledger.entries]
+    if "run_started" not in kinds:
+        return f"{path} has no run_started: the registered run has not started"
+    start = kinds.index("run_started")
+    if (start < 2 or kinds[:start] != ["question"] + ["prediction"] * (start - 1)
+            or any(k != "run_resumed" for k in kinds[start + 1 :])):  # fmt: skip
+        return f"{path} is not a registration with a run in progress: {kinds}"
+    question = ledger.entries[0]["body"]
+    if question.get("id") != STAGE2_ID:
+        return f"{path}'s question is not {STAGE2_ID}"
+    registered = {(int(a), int(b)) for a, b in question.get("tori", [])}
+    held = {t for t in held_out_tori() if t[0] <= t[1]}
+    for t in tori:
+        if t not in held:
+            return f"{t[0]}x{t[1]} is not a held-out torus in holdout.json's orientation"
+        if t not in registered:
+            return f"{t[0]}x{t[1]} is not among the registered tori"
+    return None
+
+
+class Stage2Permit:
+    """The one way to compute on a held-out torus: `with Stage2Permit([(l, m)]):` opens those
+    tori to `guard` until the block ends, and only when (1) the `with` statement is in a function
+    named `job` defined in examples/qec-census-2/study.py (the registered study's job, which its
+    worker processes call), and (2) stage2_registration_problem finds nothing (stage 2 registered,
+    its run started, these tori registered). Otherwise it raises HeldOut and opens nothing. The
+    tori stay in holdout.json's l <= m orientation; the other orientation, and every refused or
+    non-stage-1 torus, stay refused. The check of the caller is by its code object's name and
+    file: it keeps anything else here from computing on a held-out torus by accident, and is not
+    a defence against code written to get round it. Permits do not nest."""
+
+    def __init__(self, tori):
+        self.tori = frozenset((int(a), int(b)) for a, b in tori)
+
+    def __enter__(self):
+        global _STAGE2_OPEN
+        caller = sys._getframe(1).f_code
+        if caller.co_name != "job" or Path(caller.co_filename).resolve() != STAGE2_STUDY:
+            raise HeldOut("a Stage2Permit is for examples/qec-census-2/study.py's job only, not "
+                          f"{caller.co_name} in {caller.co_filename}")  # fmt: skip
+        if _STAGE2_OPEN:
+            raise HeldOut("a Stage2Permit is already open")
+        problem = stage2_registration_problem(self.tori)
+        if problem:
+            raise HeldOut(f"no Stage2Permit: {problem}")
+        _STAGE2_OPEN = self.tori
+        return self
+
+    def __exit__(self, *exc) -> bool:
+        global _STAGE2_OPEN
+        _STAGE2_OPEN = frozenset()
+        return False
 
 
 def census_tori(allow_isomorphic: bool = False) -> list[tuple[int, int]]:
