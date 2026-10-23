@@ -40,15 +40,18 @@ search's.
   passes up to 24 find nothing, within the budget: d = 24. Fails on a lighter logical (window or
   search), or a window least weight above 24 (24 not reached); incomplete when the search's
   budget ends before its pass at 24 finishes.
-- H2 ([[756,16]], upper bound): the window's least weight is 34. Fails otherwise (a lighter
-  logical would improve the published bound; a heavier least means the window did not reach it).
+- H2 ([[756,16]], upper bound): the window's least weight is 34. Fails otherwise, and on any
+  logical lighter than 34 that the search finds (a lighter logical would improve the published
+  bound; a heavier least means the window did not reach it).
 - H3 ([[756,16]], lower bound, reported and not judged): the search's passes find nothing below
   34, and the largest finished pass is estimated at 18 to 24, from the growth of the passes'
   work on [[288,12,18]] (about 11 times per 2 of bound, with n larger here). A find is reported
   as d exactly, and would fail H2 too, being lighter than 34.
 - H4 (the instruments): every witness passes verify_witness; each code's k is the source's; the
   search's passes are consecutive from 2 and no pass's least weight is below an earlier pass's
-  bound; and every record was made by the registered settings.
+  bound; and every record was made by the registered settings (the window's seeds and seconds,
+  the search's parts, depth, anchors and budget, and the sha256 of window.c and search_parts.c
+  that each record carries).
 
 **The verdict.** "hold" when H1, H2 and H4 pass; "fail" when any fails; "incomplete" when
 nothing fails and H1 is incomplete or a job is missing.
@@ -108,6 +111,7 @@ WINDOW_SECONDS = 1800.0
 PARTS = 16
 DEPTH = 6
 SEARCH_BUDGET = {"360": 36000.0, "756": 28800.0}
+SEARCH_SETTINGS = {"kind": "Z", "parts": PARTS, "depth": DEPTH, "anchors": "(0, lm)"}
 SETTINGS = {"kind": KIND, "window_seeds": list(WINDOW_SEEDS), "window_seconds": WINDOW_SECONDS,
             "parts": PARTS, "depth": DEPTH, "search_budget": SEARCH_BUDGET,
             "anchors": "(0, lm)"}  # fmt: skip
@@ -225,10 +229,12 @@ def execute(path: Path, workers: int, budget: dict | None = None, seconds=None) 
         done = [r for r in rows if r["job"] == "pass" and r["code"] == key]
         used = sum(r["seconds"] for r in done)
         first = done[-1]["bound"] + 1 if done else 2
-        last = upper if upper is not None else distance.SEARCH_BOUND
+        last = min(upper or distance.SEARCH_BOUND, distance.SEARCH_BOUND)
 
         def on_pass(entry, key=key):
-            append_records(path, [{"job": "pass", "code": key, "id": ID, **entry}])
+            append_records(path, [{"job": "pass", "code": key, "id": ID,
+                                   "settings": SEARCH_SETTINGS, "search_parts_c_sha256":
+                                   parts.sha256(parts.SEARCH_C), **entry}])  # fmt: skip
 
         if done and done[-1]["found"]:
             result = {"status": "complete"}
@@ -241,6 +247,7 @@ def execute(path: Path, workers: int, budget: dict | None = None, seconds=None) 
         summary = {key2: result.get(key2) for key2 in ("status", "seconds", "compiler",
                                                         "search_parts_c_sha256")}  # fmt: skip
         append_records(path, [{"job": "search_end", "code": key, "id": ID, "first": first,
+                               "settings": SEARCH_SETTINGS,
                                "last": last, "budget": budget[key], "used_before": used,
                                **summary}])  # fmt: skip
         rows = _rows(path)
@@ -271,6 +278,16 @@ def summarise(rows: list[dict], key: str) -> dict:
     if window and (window["runs"] and [x["seed"] for x in window["runs"]] != list(WINDOW_SEEDS)
                    or window["seconds"] != WINDOW_SECONDS):  # fmt: skip
         problems.append(f"{key}: the window was not run with the registered settings")
+    hashes = code_hashes()
+    if window and window.get("window_c_sha256") != hashes["window_c"]:
+        problems.append(f"{key}: the window ran another window.c")
+    ran = [*passes, *([end] if end and end.get("search_parts_c_sha256") else [])]
+    if any(r.get("search_parts_c_sha256") != hashes["search_parts_c"] for r in ran):
+        problems.append(f"{key}: the search ran another search_parts.c")
+    if end and end.get("budget") != SEARCH_BUDGET[key]:
+        problems.append(f"{key}: the search's budget is not the registered one")
+    if any(r.get("settings", SEARCH_SETTINGS) != SEARCH_SETTINGS for r in [*passes, end] if r):
+        problems.append(f"{key}: the search ran with other settings")
     upper = window["upper"] if window else None
     lower = max((p["bound"] for p in passes if not p["found"]), default=None)
     found = next((p["least"] for p in passes if p["found"]), None)
@@ -304,7 +321,9 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
     else:
         h1 = "incomplete"
     b = s["756"]
-    if b["window_upper"] is None:
+    if b["upper"] is not None and b["upper"] < 34:
+        h2 = "fail"  # a lighter logical, by the window or the search
+    elif b["window_upper"] is None:
         h2 = "incomplete"
     else:
         h2 = "pass" if b["window_upper"] == 34 else "fail"

@@ -129,6 +129,7 @@ def test_execute_and_decide_on_the_gross_code(tmp_path, monkeypatch):
     monkeypatch.setitem(S.CODES, "360", gross)
     monkeypatch.setitem(S.CODES, "756", gross)
     monkeypatch.setattr(S, "WINDOW_SECONDS", 2.0)
+    monkeypatch.setattr(S, "SEARCH_BUDGET", {"360": 300.0, "756": 0.001})
     path = tmp_path / "records.jsonl"
     S.execute(path, 4, budget={"360": 300.0, "756": 0.001}, seconds=2.0)
     rows = S._rows(path)
@@ -149,17 +150,21 @@ def test_execute_and_decide_on_the_gross_code(tmp_path, monkeypatch):
 
 def _pass(code, b, found=False, least=None):
     return {"job": "pass", "code": code, "bound": b, "found": found, "least": least,
-            "witness": None, "seconds": 1.0, "parts": [{}] * S.PARTS}  # fmt: skip
+            "witness": None, "seconds": 1.0, "parts": [{}] * S.PARTS,
+            "settings": S.SEARCH_SETTINGS,
+            "search_parts_c_sha256": S.code_hashes()["search_parts_c"]}  # fmt: skip
 
 
 def _window(code, upper):
     return {"job": "window", "code": code, "upper": upper, "witness": None,
             "k": S.CODES[code]["k"], "seconds": S.WINDOW_SECONDS,
-            "runs": [{"seed": s} for s in S.WINDOW_SEEDS]}  # fmt: skip
+            "runs": [{"seed": s} for s in S.WINDOW_SEEDS],
+            "window_c_sha256": S.code_hashes()["window_c"]}  # fmt: skip
 
 
 def _end(code):
-    return {"job": "search_end", "code": code, "status": "bound"}
+    return {"job": "search_end", "code": code, "status": "bound", "budget": S.SEARCH_BUDGET[code],
+            "settings": S.SEARCH_SETTINGS}  # fmt: skip
 
 
 def test_decide_rules():
@@ -182,3 +187,16 @@ def test_decide_rules():
     # a gap in the passes
     gap = [r for r in rows if not (r["job"] == "pass" and r["code"] == "756" and r["bound"] == 5)]
     assert S.decide(gap, [])["H4"] == "fail"
+    # a search find on 756 below 34 fails H2, whatever the window found
+    find = [r for r in rows if r["job"] != "search_end" or r["code"] != "756"]
+    find += [_pass("756", 22, True, 21), _end("756")]
+    out = S.decide(find, [])
+    assert out["H2"] == "fail" and out["verdict"] == "fail" and out["H3"]["found_below_34"]
+    # records from other code or settings fail H4
+    other = [dict(r, search_parts_c_sha256="0" * 64) if r["job"] == "pass" else r for r in rows]
+    assert S.decide(other, [])["H4"] == "fail"
+    other = [dict(r, budget=1.0) if r["job"] == "search_end" else r for r in rows]
+    assert S.decide(other, [])["H4"] == "fail"
+    other = [dict(r, settings={**S.SEARCH_SETTINGS, "depth": 3}) if r["job"] == "pass" else r
+             for r in rows]  # fmt: skip
+    assert S.decide(other, [])["H4"] == "fail"
