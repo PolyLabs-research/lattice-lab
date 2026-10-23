@@ -208,14 +208,55 @@ unfinished job.
   - The codes.json entries are still transcriptions from search summaries of the papers, now
     consistent with both their published k and their published d.
 
+## The open distances (`examples/qec-open-distance`)
+
+**Result (registered, run 2026-10-23): [[360,12]] has distance exactly 24, and [[756,16]] has
+24 <= d <= 34.** Bravyi et al. give both distances only as upper bounds, [[360,12,<=24]] and
+[[756,16,<=34]].
+
+- **The codes.**
+  - [[360,12]]: l = 30, m = 6, A = x^9 + y + y^2, B = y^3 + x^25 + x^26.
+  - [[756,16]]: l = 21, m = 18, A = x^3 + y^10 + y^17, B = y^5 + x^3 + x^19.
+  - They were read from several text copies of the paper's table, since the paper was not
+    reachable from here. Their k (12 and 16) was the only thing computed on them before
+    registration.
+- **The instruments**, both new and both checked against enumeration on small codes first.
+  - **The window.** Random information sets give light logicals, so it yields upper bounds, each
+    with a witness checked independently.
+  - **The split search.** The exhaustive search above, with each pass shared among 16 processes
+    on 4 cores by a hash of the search node. A pass at bound b with no find proves d >= b.
+- **[[360,12]]: d = 24.**
+  - All 4 window seeds reached weight 24 in 30 minutes, and none went lower.
+  - The search's passes up to bound 24 found nothing, in 1.9 hours. The pass at 24 alone took
+    70 minutes and 2.5 x 10^11 nodes.
+  - So no logical is lighter than 24, and a checked one weighs 24.
+- **[[756,16]]: 24 <= d <= 34.**
+  - Three of the four window seeds reached 34, the fourth 36, and none went lower. That gives a
+    checked witness for the published bound, but no improvement.
+  - The search proved d >= 24 in 2.4 hours. Its pass at 25 [DRAFT: still running] within the 8-hour
+    budget. (d is even for codes of this form, as proved in the census, so d >= 23 already gives
+    d >= 24.)
+- **Against the predictions.** H1 (d = 24 for [[360,12]]) and H2 (the window's least is 34 for
+  [[756,16]]) hold. H3 estimated the [[756,16]] lower bound at 18 to 24; it reached 24.
+- **What is not new.**
+  - Later work claims d = 24 for [[360,12]], and a lower bound of 30 for [[756,16]], by methods
+    not used here. Both claims were seen secondhand before registration, so ours is an
+    independent confirmation of the first, by an exhaustive search and a checked witness.
+  - Our lower bound for [[756,16]] is below that claim, and so adds no new bound.
+- **What it rests on.** The lower bounds rest on the search's argument and code, the
+  translation argument behind the anchors (0, lm), and the split's coverage. The tests check the
+  split against enumeration, and check that the parts add up to the unsplit pass.
+
 ## Next
 
 1. **Done:** both instruments fixed and retested (above).
 2. **The census of code families** (step 2 of next-direction.md), with the search for exact
    distances, the program as a cross-check, and both together where a code is hard. Stage 1 is
    done ([code-census.md](code-census.md)), and stage 2 is being registered.
-3. **The open distances of larger published codes**, the next target after stage 2. As
-   remembered and not yet checked against the paper, Bravyi et al. list [[360,12,≤24]] and
-   [[756,16,≤34]] with upper bounds only. First confirm the table and the codes' polynomials
-   from the paper, then register a prediction and try the search. d = 24 at n = 360 may be in
-   reach; d = 34 at n = 756 likely needs better methods. STATUS.md has the details.
+3. **Done: the open distances of larger published codes** (below): [[360,12]] has d = 24;
+   [[756,16]] has 24 <= d <= 34.
+4. **[[756,16]] beyond 24.** The search's next pass (bound 25, which would show d >= 26, d being
+   even) needs about 7 hours on 4 cores, and the cost grows about tenfold per 2 of bound, so the
+   pass at 29 (which would show d >= 30) would take about a month. A stronger lower-bound method would need
+   more of the code's symmetry than the translations the anchors (0, lm) use, or a different
+   method altogether.

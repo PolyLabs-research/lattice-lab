@@ -174,20 +174,17 @@ registered):
   - Stage 2's own registered verdict stays "incomplete"
     ([code-census.md](code-census.md#stage-2-the-registered-test)).
 
-**The next target after stage 2: the open distances of larger published codes.**
-- **What to check first.** As remembered, and not yet checked against the paper, Bravyi et
-  al.'s table lists two larger bivariate bicycle codes with only upper bounds on their
-  distance: [[360,12,≤24]] and [[756,16,≤34]]. arXiv was unreachable here, so the claim, and the
-  codes' polynomials, must come from the paper or a reliable copy of it before anything else.
-- **Why it matters.** If a distance there is still open, settling it exactly with the search (and
-  bounding it independently where possible) would be a contribution outside this project.
-- **Cost.**
-  - The deepening search took 18 s at [[288,12,18]], and its cost grew roughly fivefold per 2
-    added to d at n of 160 to 220. So d = 24 at n = 360 may be within reach, while d = 34 at
-    n = 756 likely needs better methods.
-  - Both tori, l m = 180 and 378, lie outside the census's hold-out.
-- **The usual discipline.** Register a prediction (the upper bound is the value), state the
-  instruments and limits, and run blind to any later literature value.
+**The open distances of two larger published codes** ([code-distances.md](code-distances.md#the-open-distances-examplesqec-open-distance), registered, run 2026-10-23).
+- **[[360,12]]: d = 24 exactly.** Bravyi et al. give only d <= 24.
+  - A random-information-set window found a checked weight-24 logical.
+  - The split exhaustive search proved nothing is lighter, in 1.9 hours on 4 cores.
+  - Later work claims the same value (seen secondhand before registration), so this confirms it
+    independently.
+- **[[756,16]]: 24 <= d <= 34.**
+  - The window found a checked weight-34 logical, matching the published bound, and nothing
+    lighter.
+  - The search proved d >= 24 within its 8-hour budget. Reaching the claimed d >= 30 this way
+    would take about a month.
 
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
