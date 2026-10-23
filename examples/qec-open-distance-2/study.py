@@ -22,10 +22,12 @@ unpacked search on 24 codes up to d = 12.
   (kind Z), and the packing search, deepening from 2, from (0, lm) and from every qubit, with
   A_PARTS parts. Prediction: both searches give the enumeration's d.
 - **A2, against the unpacked search (registered, decisive).** A2_PER_SIZE fresh codes of the
-  published trinomial form at each size of A2_SIZES, k > 0. For each: the packing search and the
-  unpacked search (study 1's search_parts.c), both deepening from 2 from (0, lm), with a limit of
-  A2_LIMIT each. Prediction: their intervals meet, and where both complete they give the same d;
-  reported apart, how often both complete, and the packing search's speedup.
+  published trinomial form at each size of A2_SIZES, k > 0, with every exponent nonzero and
+  terms whose differences generate the torus (`generates`: no disjoint copies of a smaller
+  code). For each: the packing search and the unpacked search (study 1's search_parts.c),
+  both deepening from 2 from (0, lm), with a limit of A2_LIMIT each. Prediction: their
+  intervals meet, and where both complete they give the same d; reported apart, how often both
+  complete, and the packing search's speedup.
 - **B, known answers (not blind).** The gross code [[144,12,12]] and [[288,12,18]] (published,
   d known), and [[360,12]] (d = 24, study 1), each by the packing search from (0, lm) with
   PARTS parts: passes deepening from 2 find their first logical at weight 12 and 18, and for
@@ -90,7 +92,7 @@ KIND = "Z"
 A1_SIZES = [(2, 6), (2, 7), (3, 5)]  # Z2xZ2xZ3, Z14, Z15: no development torus
 A1_PER_SIZE = 30
 A_PARTS = 4
-A2_SIZES = [(6, 12), (6, 15), (9, 12), (9, 10), (7, 12)]
+A2_SIZES = [(6, 12), (6, 15), (9, 12), (9, 10), (10, 12)]
 A2_PER_SIZE = 4
 A2_LIMIT = 1200.0
 PARTS = 16
@@ -168,15 +170,32 @@ def a1_codes() -> list[dict]:
     return out
 
 
+def generates(A, B, ell: int, m: int) -> bool:
+    """True when the differences of A's terms and of B's terms generate Z_l x Z_m, so that the
+    code is not a disjoint union of copies of a code on a smaller torus."""
+    steps = {((p[0] - q[0]) % ell, (p[1] - q[1]) % m) for P in (A, B) for p in P for q in P}
+    reached, frontier = {(0, 0)}, [(0, 0)]
+    while frontier:
+        x = frontier.pop()
+        for g in steps:
+            y = ((x[0] + g[0]) % ell, (x[1] + g[1]) % m)
+            if y not in reached:
+                reached.add(y)
+                frontier.append(y)
+    return len(reached) == ell * m
+
+
 def a2_codes() -> list[dict]:
     out = []
     for ell, m in A2_SIZES:
         rng, found, seen = random.Random(_seed(f"A2:{ell}x{m}")), [], set()
         while len(found) < A2_PER_SIZE:
-            a, e, f = (rng.randrange(ell) for _ in range(3))
-            b, c, d = (rng.randrange(m) for _ in range(3))
+            a, e, f = (rng.randrange(1, ell) for _ in range(3))
+            b, c, d = (rng.randrange(1, m) for _ in range(3))
             A, B = [(a, 0), (0, b), (0, c)], [(0, d), (e, 0), (f, 0)]
             if len(set(A)) < 3 or len(set(B)) < 3 or (tuple(A), tuple(B)) in seen:
+                continue
+            if not generates(A, B, ell, m):
                 continue
             k = bb.k_linalg(A, B, ell, m)
             if k == 0:

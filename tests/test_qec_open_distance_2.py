@@ -78,6 +78,10 @@ def test_fresh_codes():
         assert c["l"] * c["m"] + c["k"] // 2 <= D.BRUTE_CAP
     for c in a2:
         assert c["k"] > 0 and c["A"][0][1] == 0 and c["B"][0][0] == 0
+        assert all(x != 0 for x in (c["A"][0][0], c["A"][1][1], c["A"][2][1], c["B"][0][1],
+                                    c["B"][1][0], c["B"][2][0]))  # fmt: skip
+        assert S.generates(S._poly(c["A"]), S._poly(c["B"]), c["l"], c["m"])
+    assert not S.generates([(7, 0), (0, 10), (0, 0)], [(0, 0), (7, 0), (2, 0)], 9, 12)
     dev = {D.torus_type(*t) for t in DEVELOPMENT + [(6, 3), (6, 9), (5, 12), (4, 15)]}
     for ell, m in S.A1_SIZES + S.A2_SIZES:
         assert D.torus_type(ell, m) not in dev
