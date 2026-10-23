@@ -41,13 +41,22 @@ stage 2 may test codes beyond this form. Stage 2 (examples/qec-census-2) compute
 held-out tori through one narrow exception, added after stage 1 ran (stage 1's files record the
 census.py they were made with): `Stage2Permit`, which opens a registered held-out torus to guard
 only inside stage 2's job function, and only while stage 2's ledger holds its registration and a
-run that has started. Nothing else changed here; the 8 refused tori stay refused.
+run that has started. Nothing else changed here; the 8 refused tori stay refused. Its
+registered continuation (examples/qec-census-2b, below) is the one other study the permit admits,
+on the same terms: inside its own job function, while its own ledger holds its registration and
+a run that has started, on the tori it registered.
 
 **k** (`ranks`, census.c). k = 2lm - rank H_X - rank H_Z, by Gaussian elimination on bitset rows
 in C, over every raw code of a torus in one call. rank H_Z = rank H_X for every bivariate
 bicycle code (H_Z = P H_X Φ, distance.py's docstring), so the census computes rank H_X only and
 k = 2lm - 2 rank H_X; the tests compute both ranks on every raw code of several tori and compare
-k with bb.k_linalg and bb.k_characters on random raw codes.
+k with bb.k_linalg and bb.k_characters on random raw codes. **Capacity.** census.c holds
+lm <= MAXLM = 160 (2lm bits in WORDS = 5 words of 64), and refuses a larger torus with a message
+naming its lm and MAXLM, which `ranks` raises with. Stage 1 and stage 2's registered run used
+MAXLM = 128 (WORDS = 4), so stage 2's tori with lm >= 129 were refused before anything was
+computed on them; the capacity was then raised, nothing else changed (examples/qec-census-2b's
+docstring: the old census.c is the new one with that patch reversed, and both give the same k on
+every raw code of the 116 stage-1 tori). Stage 1's files record the old census.c's sha256.
 
 **A lemma: where l or m is a power of 2, every code of the family has k = 0.** k is
 2 Σ dim L/(A_χ, B_χ), summed over the characters χ of the torus's odd part (bb.local_terms), and
@@ -328,15 +337,28 @@ STAGE2 = HERE.parent / "qec-census-2"
 STAGE2_STUDY = STAGE2 / "study.py"
 STAGE2_LEDGER = STAGE2 / "ledger.jsonl"
 STAGE2_ID = "qec-census-stage2"
+# stage 2's registered continuation: the jobs its run could not do (census.c's capacity)
+STAGE2B = HERE.parent / "qec-census-2b"
+STAGE2B_STUDY = STAGE2B / "study.py"
+STAGE2B_LEDGER = STAGE2B / "ledger.jsonl"
+STAGE2B_ID = "qec-census-stage2b"
 _STAGE2_OPEN: frozenset = frozenset()  # the held-out tori a Stage2Permit has opened
 
 
-def stage2_registration_problem(tori, ledger_path: Path | None = None) -> str | None:
-    """Why stage 2's ledger does not permit computing on `tori`, or None when it does: the
-    ledger's hash chain verifies, and it holds stage 2's registration (a question with id
-    STAGE2_ID, then its predictions) followed by run_started and nothing but run_resumed
-    entries (a run that has started and has not yet written its observations), and every torus
-    of `tori` is a held-out torus (l <= m) listed in the question's "tori"."""
+def _permitted() -> dict:
+    """The studies whose job may enter a Stage2Permit: study file -> (ledger, question id)."""
+    return {STAGE2_STUDY: (STAGE2_LEDGER, STAGE2_ID), STAGE2B_STUDY: (STAGE2B_LEDGER, STAGE2B_ID)}
+
+
+def stage2_registration_problem(
+    tori, ledger_path: Path | None = None, study_id: str | None = None
+) -> str | None:
+    """Why stage 2's ledger (or the ledger and question id given, its continuation's) does not
+    permit computing on `tori`, or None when it does: the ledger's hash chain verifies, and it
+    holds the study's registration (a question with id STAGE2_ID, or `study_id`, then its
+    predictions) followed by run_started and nothing but run_resumed entries (a run that has
+    started and has not yet written its observations), and every torus of `tori` is a held-out
+    torus (l <= m) listed in the question's "tori"."""
     from lattice_lab.ledger import Ledger, LedgerError
 
     path = Path(ledger_path) if ledger_path is not None else STAGE2_LEDGER
@@ -356,8 +378,9 @@ def stage2_registration_problem(tori, ledger_path: Path | None = None) -> str | 
             or any(k != "run_resumed" for k in kinds[start + 1 :])):  # fmt: skip
         return f"{path} is not a registration with a run in progress: {kinds}"
     question = ledger.entries[0]["body"]
-    if question.get("id") != STAGE2_ID:
-        return f"{path}'s question is not {STAGE2_ID}"
+    study_id = study_id or STAGE2_ID
+    if question.get("id") != study_id:
+        return f"{path}'s question is not {study_id}"
     registered = {(int(a), int(b)) for a, b in question.get("tori", [])}
     held = {t for t in held_out_tori() if t[0] <= t[1]}
     for t in tori:
@@ -372,8 +395,9 @@ class Stage2Permit:
     """The one way to compute on a held-out torus: `with Stage2Permit([(l, m)]):` opens those
     tori to `guard` until the block ends, and only when (1) the `with` statement is in a function
     named `job` defined in examples/qec-census-2/study.py (the registered study's job, which its
-    worker processes call), and (2) stage2_registration_problem finds nothing (stage 2 registered,
-    its run started, these tori registered). Otherwise it raises HeldOut and opens nothing. The
+    worker processes call) or in examples/qec-census-2b/study.py (its registered continuation's),
+    and (2) stage2_registration_problem finds nothing in that study's own ledger (registered, its
+    run started, these tori registered by it). Otherwise it raises HeldOut and opens nothing. The
     tori stay in holdout.json's l <= m orientation; the other orientation, and every refused or
     non-stage-1 torus, stay refused. The check of the caller is by its code object's name and
     file: it keeps anything else here from computing on a held-out torus by accident, and is not
@@ -385,12 +409,15 @@ class Stage2Permit:
     def __enter__(self):
         global _STAGE2_OPEN
         caller = sys._getframe(1).f_code
-        if caller.co_name != "job" or Path(caller.co_filename).resolve() != STAGE2_STUDY:
-            raise HeldOut("a Stage2Permit is for examples/qec-census-2/study.py's job only, not "
+        permitted = _permitted()
+        study = Path(caller.co_filename).resolve()
+        if caller.co_name != "job" or study not in permitted:
+            raise HeldOut("a Stage2Permit is for examples/qec-census-2/study.py's or "
+                          "examples/qec-census-2b/study.py's job only, not "
                           f"{caller.co_name} in {caller.co_filename}")  # fmt: skip
         if _STAGE2_OPEN:
             raise HeldOut("a Stage2Permit is already open")
-        problem = stage2_registration_problem(self.tori)
+        problem = stage2_registration_problem(self.tori, *permitted[study])
         if problem:
             raise HeldOut(f"no Stage2Permit: {problem}")
         _STAGE2_OPEN = self.tori
@@ -459,7 +486,11 @@ def ranks(ell: int, m: int, check: bool = False, allow_isomorphic: bool = False)
     an array of shape (count, 2) holding rank H_X and rank H_Z."""
     guard(ell, m, allow_isomorphic)
     args = [_census_binary(), "k", str(ell), str(m)] + (["check"] if check else [])
-    out = subprocess.run(args, check=True, capture_output=True).stdout
+    proc = subprocess.run(args, capture_output=True)
+    if proc.returncode:  # census.c's capacity (lm <= MAXLM), or another refusal: say which
+        raise RuntimeError(f"census.c refused {ell}x{m} (exit {proc.returncode}): "
+                           f"{proc.stderr.decode(errors='replace').strip()}")  # fmt: skip
+    out = proc.stdout
     r = np.frombuffer(out, dtype=np.uint8).astype(np.int64)
     width = 2 if check else 1
     if len(r) != width * raw_count(ell, m):

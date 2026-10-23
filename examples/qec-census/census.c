@@ -11,7 +11,7 @@
  *     each monomial x^p y^q, repeated monomials cancelling (A = x^0 + y^0 + y^c is y^c). With
  *     "check" it writes two bytes per code, rank H_X and rank H_Z, H_Z = [B^T | A^T] (row (i, j)
  *     of A^T has its 1s in columns (i + p, j + q)). k = 2LM - rank H_X - rank H_Z.
- *     The rank is Gaussian elimination on bitset rows of 2LM <= 256 bits: each row is reduced by
+ *     The rank is Gaussian elimination on bitset rows of 2LM <= 320 bits: each row is reduced by
  *     its leading bit against the pivots kept so far, and kept when something remains.
  *
  *   census canon L M
@@ -32,8 +32,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXLM 128
-#define WORDS 4 /* 2 LM <= 256 bits */
+#define MAXLM 160
+#define WORDS 5 /* 2 LM <= 320 bits */
+_Static_assert(64 * WORDS >= 2 * MAXLM, "WORDS must hold 2 MAXLM bits");
 
 static int L, M, LM, W;
 
@@ -198,7 +199,10 @@ int main(int argc, char **argv) {
     L = atoi(argv[2]);
     M = atoi(argv[3]);
     LM = L * M;
-    if (L < 1 || M < 1 || LM > MAXLM) return fprintf(stderr, "census: size out of range\n"), 1;
+    if (L < 1 || M < 1 || LM > MAXLM)
+        return fprintf(stderr, "census: size out of range: %d x %d has lm = %d, census.c holds "
+                       "lm <= MAXLM = %d (WORDS = %d words of 64 bits for 2 lm bits)\n",
+                       L, M, LM, MAXLM, WORDS), 1;
     W = (2 * LM + 63) / 64;
     if (!strcmp(argv[1], "k")) return k_mode(argc > 4 && !strcmp(argv[4], "check"));
     if (!strcmp(argv[1], "canon")) return canon_mode();
