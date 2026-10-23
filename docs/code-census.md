@@ -1,8 +1,15 @@
-# A census of bivariate bicycle codes: stage 1
+# A census of bivariate bicycle codes: stages 1 and 2
 
-**Status: stage 1 is done. It is exploratory, not a registered test (run 2026-10-22,
-`examples/qec-census`). Stage 2, a registered test on the held-out tori, has not been registered;
-the predictions below are candidates for it.**
+**Status.**
+- **Stage 1** (`examples/qec-census`, run 2026-10-22) is exploratory, not a registered test.
+- **Stage 2** (`examples/qec-census-2`, with its continuation `examples/qec-census-2b`) is a
+  registered test, on 122 held-out tori, of the findings below. It ran 2026-10-22 to 23.
+  - **H1 to H7 and H9 hold.** That includes the risky linear distance law, exact at all 19
+    instances, up to d = 20 at n = 300.
+  - **H8 does not hold as a general rule.** The pattern that the best codes reduce to the
+    [[18,8,2]] base fails on 6 x 18.
+
+  [Stage 2](#stage-2-the-registered-test) has the details.
 
 **Result: every code of the published form on 116 tori with n ≤ 200 was computed, and every one of
 its 3,330 classes with k > 0 has an exact distance. The published codes are at or near the top.**
@@ -567,6 +574,62 @@ But some sources read during the analysis or while drafting this report concern 
   tori are in `exposed_extrapolation`. The values are not repeated here.
 - **(L) has one record each on groups isomorphic to the held-out random tori 2 x 48 and 3 x 29.**
   (L)'s list of weight-6 [[n,k,d]] up to n = 200 also includes the n of held-out tori.
+
+## Stage 2: the registered test
+
+**What was registered** (`examples/qec-census-2/ledger.jsonl`, committed and pushed before any
+computation on a held-out torus).
+- **The predictions** were computed only from l, m and stage-1 data, as candidates S1 to S9 above
+  (H1 to H9).
+- **The tori:** all 122 held-out ones.
+- **Exposure.** Exposed tori (earlier development, or a source read during stage 1) were computed
+  but judged apart, and tori isomorphic to an exposed one were also reported in a "strict"
+  version.
+- **Thresholds.** They were fixed in advance, H7's among them: it fails if any instance is above
+  its value, and holds if at least 80% of the resolved instances are exactly equal.
+
+**A tool fault, and the continuation.** The registered run ended "incomplete".
+- **What went wrong.** census.c held lm ≤ 128 (stage 1 needed only 100), so the 54 jobs on tori
+  with lm ≥ 129 failed before computing anything. Neither the builder nor the reviewer caught the
+  limit.
+- **That verdict stands.** Stage 2's registered verdict remains "incomplete".
+- **The fix.** census.c's capacity was raised to 160, a change to capacity only: the old and new
+  binaries give identical k on all 5,472,121 stage-1 raw codes.
+- **The continuation.** `examples/qec-census-2b` re-registered stage 2's own predictions,
+  verbatim, for exactly the failed jobs, before running them. Its verdict is **hold**.
+- **The combined judgement.** It judges each part by stage 2's registered rules, over stage 2's
+  successful records and the continuation's.
+
+| Part | Prediction | Result (combined, judged tori) |
+| --- | --- | --- |
+| H1 | which tori have a code with k > 0 (criterion 1) | **holds** on all 97 judged tori, and on the exposed ones; 29 held-out tori have codes |
+| H2 | max k (proved formula, or the bound where the value was open) | **holds**, 18 of 18 |
+| H3 | min k = twice the smallest admissible orbit | **holds**, 18 of 18 |
+| H4 | k-sets of tori with one even side | **holds**, 9 of 9 |
+| H5 | d = 2 exactly when (i) or (ii) of result 7 holds | **holds**: 11,915 classes on 29 tori, 518 with d = 2, no mismatch |
+| H6 | the proved bounds (d even, the quotient and forced bounds), every witness checked, intervals meeting across instruments | **holds** on every torus with codes, exposed ones included |
+| H7 | the linear law, max d = 2m/q over classes of each forced type | **holds: 19 of 19 instances exactly equal**, among them d = 20 on 3 x 50 and 5 x 30 (n = 300) and d = 18 on 3 x 45 |
+| H8 | the best classes reduce mod (3,3) to the [[18,8,2]] base (tori with n ≤ 252) | **not established**: holds on 3 x 21, 3 x 36 and 3 x 39; unresolved on 3 x 42 (judged); and on the exposed 6 x 18 it **fails** |
+| H9 | the best k d²/n at each n is on a torus with 3 \| l, 3 \| m (n ≤ 252) | **holds** at all 4 sizes |
+
+**H8 fails on 6 x 18.** All seven classes at the best k d²/n there, [[216,8,16]] with
+k d² = 2,048, fail to reduce to the base. 6 x 18 is exposed: development had computed some codes
+there. Exposure bears on whether the test was blind, not on the mathematics, so the pattern is
+false as a general rule. The best codes on 3 x m in stage 1 and stage 2 do reduce to the base.
+On 3 x 42, 6 x 21 and 9 x 12 the ranking stopped at its limits, with the best not yet pinned
+down.
+
+**What stage 2 establishes.**
+- **Proved results confirmed.** Criterion 1 and the k formulas held on new tori up to n = 300.
+- **The d = 2 rule.** Its unproved half held on 11,915 more classes.
+- **The linear law.** It held exactly at every instance, extrapolated from m/q ≤ 6 in stage 1 to
+  m/q = 10. It now stands as a well-tested conjecture, not a theorem.
+- **The mod-3 pattern.** It is not a law of the family.
+- **The instruments.** H6 held on every torus.
+
+The new best codes found on held-out tori include [[216,8,16]], [[234,8,16]], [[252,8,18]] and
+[[300,8,20]] (k d²/n 9.48, 8.75, 10.29 and 10.67). For the larger of these, d ≥ 16 rests on the
+deepening search, as in stage 1.
 
 ## What this does not establish
 

@@ -166,8 +166,13 @@ registered):
 - **Structure.** Proved: an exact criterion for which tori have codes, and formulas for the
   maximum k. Patterns: a linear distance law for some character types, and the fact that the best
   codes reduce mod 3 to one [[18,8,2]] base code.
-- **Next.** Register stage 2 on the held-out tori from the report's candidate predictions, and
-  record the exposure it lists.
+- **Stage 2** (registered, `examples/qec-census-2` plus the continuation `examples/qec-census-2b`
+  after a capacity fault in census.c):
+  - H1 to H7 and H9 hold on the 122 held-out tori. That includes the linear distance law, exact
+    at all 19 instances, up to d = 20 at n = 300.
+  - H8, the mod-3 base pattern, fails on 6 x 18.
+  - Stage 2's own registered verdict stays "incomplete"
+    ([code-census.md](code-census.md#stage-2-the-registered-test)).
 
 **The next target after stage 2: the open distances of larger published codes.**
 - **What to check first.** As remembered, and not yet checked against the paper, Bravyi et
