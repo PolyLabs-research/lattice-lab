@@ -233,14 +233,17 @@ unfinished job.
 - **[[756,16]]: 24 <= d <= 34.**
   - Three of the four window seeds reached 34, the fourth 36, and none went lower. That gives a
     checked witness for the published bound, but no improvement.
-  - The search proved d >= 24 in 2.4 hours. Its pass at 25 [DRAFT: still running] within the 8-hour
-    budget. (d is even for codes of this form, as proved in the census, so d >= 23 already gives
-    d >= 24.)
-- **Against the predictions.** H1 (d = 24 for [[360,12]]) and H2 (the window's least is 34 for
-  [[756,16]]) hold. H3 estimated the [[756,16]] lower bound at 18 to 24; it reached 24.
+  - The search proved d >= 24 in 2.4 hours. Its pass at 25 ran for the remaining 5.6 hours of
+    its 8-hour budget without finishing, so it shows nothing. (d is even for codes of this form,
+    as proved in the census, so d >= 23 already gives d >= 24.)
+- **The verdict: hold.** H1 (d = 24 for [[360,12]]) and H2 (the window's least is 34 for
+  [[756,16]]) hold. H4 (every witness checked, k as published, passes consecutive, every
+  record made by the registered settings and code) holds. H3, reported and not judged, estimated
+  the [[756,16]] lower bound at 18 to 24; it reached 24. `lattice-lab verify` finds the ledger
+  sound.
 - **What is not new.**
-  - Later work claims d = 24 for [[360,12]], and a lower bound of 30 for [[756,16]], by methods
-    not used here. Both claims were seen secondhand before registration, so ours is an
+  - Later work claims d = 24 for [[360,12]], and a lower bound of 30 for [[756,16]], with other
+    tools. Both claims were seen secondhand before registration, so ours is an
     independent confirmation of the first, by an exhaustive search and a checked witness.
   - Our lower bound for [[756,16]] is below that claim, and so adds no new bound.
 - **What it rests on.** The lower bounds rest on the search's argument and code, the
