@@ -1,0 +1,55 @@
+{
+ "decision": {
+  "A1": "pass",
+  "A1_problems": [],
+  "A2": "pass",
+  "A2_problems": [],
+  "A2_report": {
+   "both_complete": 20,
+   "of": 20,
+   "speedups": [
+    1.1,
+    1.0,
+    1.0,
+    1.0,
+    0.8,
+    1.1,
+    1.0,
+    2.5,
+    3.8,
+    4.5,
+    2.1,
+    1.1,
+    1.2,
+    1.2,
+    1.0,
+    1.0,
+    1.0,
+    1.3,
+    1.0,
+    1.3
+   ]
+  },
+  "B": "pass",
+  "B_problems": [],
+  "C": {
+   "C1": "pass",
+   "C2": "pass",
+   "d": null,
+   "d_at_least": 30,
+   "largest_pass_without_find": 29,
+   "passes": 28,
+   "problems": [],
+   "seconds": 25143.0,
+   "status": null
+  },
+  "C1": "pass",
+  "C2": "pass",
+  "H": "pass",
+  "H_problems": [],
+  "verdict": "hold"
+ },
+ "ledger_last_entry": "3e449774ca571d98360bbff9f4986a3b8154fca60d82ec65957d096a08db2ca0",
+ "note": "decide() applied to records.jsonl after the run stopped; not a ledger verdict (see STOPPED.md)",
+ "records_lines": 141
+}

@@ -180,11 +180,15 @@ registered):
   - The split exhaustive search proved nothing is lighter, in 1.9 hours on 4 cores.
   - Later work claims the same value (seen secondhand before registration), so this confirms it
     independently.
-- **[[756,16]]: 24 <= d <= 34.**
-  - The window found a checked weight-34 logical, matching the published bound, and nothing
-    lighter.
-  - The search proved d >= 24 within its 8-hour budget. Reaching the claimed d >= 30 this way
-    would take about a month.
+- **[[756,16]]: 30 <= d <= 34.**
+  - The window found a checked weight-34 logical, matching the published bound.
+  - A Fable consultation ($1.12, every claim checked by machine) showed that the code has no
+    symmetry beyond its translations. It also proposed a packing cut for the search, which a
+    second registered study tested on fresh codes and known distances.
+  - With the cut, the search proved d >= 30 in 7 hours on 4 cores. That independently confirms a
+    lower bound claimed elsewhere ([code-distances.md](code-distances.md#the-packing-cut-examplesqec-open-distance-2)).
+  - The run stopped during a pass that could not change the result. Its rules give "hold" on
+    every part, but the ledger has no verdict entry (disclosed in STOPPED.md).
 
 **Rule 4850 at m = 37: explained** ([the deep dive's report](../examples/rule-4850/deep/REPORT.md)).
 - **The seventh pilot** explained four of the five unexplained ninth-power rules at 37 (`Ninth37.lean`).
