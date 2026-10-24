@@ -38,6 +38,26 @@ cd site/public && python3 -m http.server 8000     # then open http://localhost:8
 Nothing on the site may link into lattice-lab on GitHub while that repository is private; those
 links would 404 for visitors. Kepler and LatticeLife are public and are linked.
 
+## The contact form
+
+`contact.html` posts its form to a Google Apps Script web app, `apps-script/Code.gs`, which
+emails each message to contact@polylabs-research.net with Reply-To set to the sender. It runs in
+the Google Workspace account, not in the Cloud project, and costs nothing. It ignores forms with
+the hidden `website` field filled in or sent within 3 seconds of the page opening, and sends at
+most 30 emails an hour.
+
+To set it up, or after changing `Code.gs`:
+
+1. Signed in as contact@polylabs-research.net, open https://script.google.com, make a new
+   project, and paste in `Code.gs` (replacing what is there).
+2. **Deploy**, then **New deployment**, type **Web app**: execute as **Me**, access **Anyone**.
+   Authorise it to send email as you.
+3. Put the web app's address (`https://script.google.com/macros/s/…/exec`) in the form's
+   `data-endpoint` in `src/contact.html`, rebuild the pages and deploy.
+
+After a later change to `Code.gs`, use **Manage deployments** and edit the existing deployment
+to a new version, so the address stays the same.
+
 ## Deploying on Google Cloud
 
 ### In use: Firebase Hosting
@@ -64,7 +84,8 @@ The CLI signs in with `firebase login`, or uses gcloud's application-default cre
 release history, and one click rolls back.
 
 The fonts (IBM Plex Mono, STIX Two Text) are served from `public/assets/fonts/`, not Google
-Fonts, so a visit makes no third-party requests.
+Fonts, so a visit makes no third-party requests. The one exception is sending the contact form,
+which posts to Google Apps Script.
 
 #### The domain
 

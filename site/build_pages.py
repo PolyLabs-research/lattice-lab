@@ -50,6 +50,10 @@ PAGES = {
         "How the ring of these rules carries over to bivariate bicycle quantum codes: logical "
         "qubits read off the torus's characters, checked by a registered test and in your browser.",
     ),
+    "contact": (
+        "Contact · PolyLabs Research",
+        "Write to PolyLabs Research: questions about the results, the proofs or the pilots.",
+    ),
     "404": ("Not found · PolyLabs Research", "This page does not exist."),
 }
 
@@ -60,6 +64,7 @@ NAV = [
     ("settling", "Settling time"),
     ("proofs", "Proofs"),
     ("codes", "Quantum codes"),
+    ("contact", "Contact"),
 ]
 
 MARK = """<svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
@@ -117,6 +122,7 @@ FOOT = """<footer class="site-foot gutter">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
       <a href="model.html">How we work</a>
       <a href="proofs.html">What is proved</a>
+      <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>
 </footer>

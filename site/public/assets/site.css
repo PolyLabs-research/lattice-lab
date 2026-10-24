@@ -145,7 +145,7 @@ a.card:hover { border-color: var(--cell); }
 .controls { display: grid; gap: 14px; min-width: 0; }
 .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 label.field, .field { display: grid; gap: 4px; font-family: var(--mono); font-size: var(--step--1); color: var(--muted); min-width: 0; }
-select, input[type="number"], textarea {
+select, input[type="number"], input[type="text"], input[type="email"], textarea {
   font-family: var(--mono); font-size: 0.9rem; color: var(--ink); background: var(--paper);
   border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; min-width: 0; max-width: 100%;
 }
@@ -177,6 +177,8 @@ button.primary { background: var(--cell); color: var(--panel); border-color: var
 .badge.gold { color: var(--gold); }
 .badge.muted { color: var(--muted); }
 .note { font-size: var(--step--1); color: var(--muted); margin: 0; }
+.note.ok { color: var(--ok); }
+.note.bad { color: var(--bad); }
 
 /* charts */
 .chart-box { width: 100%; overflow-x: auto; }
@@ -242,4 +244,12 @@ textarea.body { width: 100%; min-height: 220px; font-size: 0.78rem; line-height:
 .steps { counter-reset: step; display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; max-width: 66ch; }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: 10px; }
 .steps li::before { content: counter(step); font-family: var(--mono); color: var(--cell); font-weight: 500; }
+
+/* contact */
+.contact-form { max-width: 640px; gap: 14px; }
+.contact-form h2 { font-size: var(--step-1); }
+.contact-form input, .contact-form textarea { width: 100%; font-size: 0.95rem; padding: 8px 10px; }
+.contact-form textarea { min-height: 180px; resize: vertical; line-height: 1.45; }
+.contact-form button:disabled { opacity: 0.6; cursor: progress; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
