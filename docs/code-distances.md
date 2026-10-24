@@ -211,7 +211,7 @@ unfinished job.
 ## The open distances (`examples/qec-open-distance`)
 
 **Result (registered, run 2026-10-23): [[360,12]] has distance exactly 24, and [[756,16]] has
-24 <= d <= 34.** Bravyi et al. give both distances only as upper bounds, [[360,12,<=24]] and
+24 <= d <= 34**, since raised to 30 <= d <= 34 (the packing cut, below). Bravyi et al. give both distances only as upper bounds, [[360,12,<=24]] and
 [[756,16,<=34]].
 
 - **The codes.**
@@ -250,16 +250,50 @@ unfinished job.
   translation argument behind the anchors (0, lm), and the split's coverage. The tests check the
   split against enumeration, and check that the parts add up to the unsplit pass.
 
+## The packing cut (`examples/qec-open-distance-2`)
+
+**Result (registered, run 2026-10-23 to 24): [[756,16]] has 30 <= d <= 34.** That confirms, by
+an independent exhaustive search, the lower bound of 30 claimed elsewhere (seen secondhand, one
+engine, not cross-validated).
+
+- **How we got there.** We asked Claude Fable whether symmetry could speed the search up
+  (`consultations/2026-10-23-756-symmetry`, one call, $1.12). Its answer, checked by machine:
+  - The code's automorphism group is just its 378 translations, which the search already uses.
+    Our own scan of the torus maps, done before reading the answer, agrees. So symmetry gives
+    nothing.
+  - It proposed a stronger cut instead. Unsatisfied checks whose candidate qubits are pairwise
+    disjoint each need a qubit of their own from the logical, so a branch with
+    |S| + packing >= best can be dropped. The argument is the one behind the existing cut
+    (search_pack.c's docstring).
+  - Its other main suggestion, a Brouwer-Zimmermann bound reaching 30 in days, was wrong. The
+    code has fewer than two disjoint information sets, not the 16 it assumed.
+- **The registered test**, all parts passing:
+  - **A1.** On 90 fresh small codes, the packing search, from (0, lm) and from every qubit,
+    gave the exhaustive enumeration's d every time.
+  - **A2.** On 20 fresh codes of the published form (d 6 to 18), the packing and unpacked
+    searches both finished, with the same d. The cut's speedup there ranged from 0.8 (a
+    little slower, on easy codes) to 4.5, the most at the largest d.
+  - **B.** The packing search gave d = 12 for the gross code and 18 for [[288,12,18]], and found
+    nothing below 24 for [[360,12]], in 8 minutes against study 1's 1.9 hours.
+  - **C.** On [[756,16]], passes up to 29 found nothing, in 7 hours on 4 cores. So d >= 29, and
+    d >= 30 since d is even. Study 1's search needed 2.4 hours for d >= 24. The packing search
+    reached 24 in under 3 minutes. Its passes grew at almost the same rate per bound (about 2.8,
+    against 2.9 at bounds 21 to 24), so the cut's gain is a roughly constant factor, about 50.
+- **The run stopped early, disclosed.** A restart of the session's worker ended the run during the
+  pass at 30. That pass cannot change the result (d is even), so it was not resumed. The study's
+  rules, applied to the records, give "hold" on every part (`judged-after-stop.json`). The ledger
+  itself has no verdict entry (`STOPPED.md`).
+- **What it rests on.** The search's argument and code, the translation argument, the split's
+  coverage, and the packing argument. A1, A2 and B test the cut on codes it was not developed on.
+
 ## Next
 
 1. **Done:** both instruments fixed and retested (above).
 2. **The census of code families** (step 2 of next-direction.md), with the search for exact
    distances, the program as a cross-check, and both together where a code is hard. Stage 1 is
    done ([code-census.md](code-census.md)), and stage 2 is being registered.
-3. **Done: the open distances of larger published codes** (below): [[360,12]] has d = 24;
-   [[756,16]] has 24 <= d <= 34.
-4. **[[756,16]] beyond 24.** The search's next pass (bound 25, which would show d >= 26, d being
-   even) needs about 7 hours on 4 cores, and the cost grows about tenfold per 2 of bound, so the
-   pass at 29 (which would show d >= 30) would take about a month. A stronger lower-bound method would need
-   more of the code's symmetry than the translations the anchors (0, lm) use, or a different
-   method altogether.
+3. **Done: the open distances of larger published codes** (above): [[360,12]] has d = 24;
+   [[756,16]] has 30 <= d <= 34.
+4. **[[756,16]] beyond 30.** The packing search's pass at 31 (which would show d >= 32, or find a
+   weight-30 logical and settle d = 30) is estimated at about 33 hours on 4 cores, and the pass
+   at 33 (for d = 34) at about ten times that.

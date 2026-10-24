@@ -16,3 +16,6 @@ calls, 12,066 output tokens, $1.12. The scripts are in `checks/` (development, n
 | 3b: meet in the middle | not checked | not pursued |
 | 3c: the quotient torus is not a bound as stated | agrees with our own view | agreed |
 | P3: Brouwer-Zimmermann with 16 information sets, enumeration to weight 5-6, certifies d >= 30 in days | greedy disjoint information sets of ker H_X have ranks 386, 362, 8: under two. With two, d >= 30 needs enumeration to about weight 26 in each; and ker H_X holds the weight-6 stabilizers, so a coset version is needed first | **refuted** |
+
+**Outcome.** The packing cut was registered and tested in `examples/qec-open-distance-2`: it held
+on every part, and it took [[756,16]] to d >= 30 (docs/code-distances.md, "The packing cut").
