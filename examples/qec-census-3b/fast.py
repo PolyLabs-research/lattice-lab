@@ -14,8 +14,10 @@ stage 3a's, and the tests check that on stage-1 tori. Class sizes are not comput
 **The frontier driver** (`frontier`). The predictions need, for each k, the best exact d, not
 every class's d. For each class an upper bound comes first: the window (random information
 sets, examples/qec-open-distance/window.c) with a fixed seed and WINDOW_SECONDS. Then, for each k,
-the classes in decreasing order of that bound are run through the exact search (stage 3a's
-deep_distance) until the best exact d found is at least the next class's bound. A class skipped
+the classes in decreasing order of that bound are taken in groups of `workers`: once a best
+exists, each class whose bound is above it gets a second, longer window (WINDOW_RETRY), and
+those still above go to the exact search (stage 3a's deep_distance). This goes on until the best
+exact d found is at least the next class's bound. A class skipped
 there has d <= its bound <= the best, so it cannot raise the best. Each skipped class keeps its
 checked upper bound. Exact runs that time out are reported, and they make the best for that k
 incomplete when their lower bound does not settle it.
@@ -33,7 +35,8 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-WINDOW_SECONDS = 2.0
+WINDOW_SECONDS = 0.25  # the first bound, for every class
+WINDOW_RETRY = 3.0  # a second, for a class whose bound is still above the best
 WINDOW_SEED = 0
 
 
@@ -169,6 +172,21 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
                 if top is not None and ub is not None and ub <= top:
                     break  # every class from here on has d <= its bound <= top
                 todo = idx[pos : pos + workers]
+                if top is not None:  # a longer window first: it may bring the bound to <= top
+                    retry = [j for j in todo if j not in exact and rows[j]["upper"] is not None
+                             and not rows[j].get("retried")]  # fmt: skip
+                    with ThreadPoolExecutor(max_workers=workers) as pool:
+                        for j, ub2 in zip(retry, pool.map(lambda j: window_bound(
+                                rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY), retry)):  # fmt: skip
+                            rows[j] = rows[j] | {"upper": min(rows[j]["upper"], ub2),
+                                                 "retried": True}  # fmt: skip
+                    todo = [j for j in todo if j in exact or rows[j]["upper"] is None
+                            or rows[j]["upper"] > top]  # fmt: skip
+                    if not todo:
+                        pos += workers
+                        idx[pos:] = sorted(idx[pos:], key=lambda i: -(rows[i]["upper"] if
+                                           rows[i]["upper"] is not None else 10**6))  # fmt: skip
+                        continue
                 need = [j for j in todo if j not in exact]
                 with ThreadPoolExecutor(max_workers=workers) as pool:
                     for j, res in pool.map(run, need):
@@ -178,10 +196,11 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
                         top = exact[j]["d"] if top is None else max(top, exact[j]["d"])
                     else:
                         unresolved.append(j)
-                pos += len(todo)
+                pos += workers
             # settled unless an unfinished class could still exceed the best
             settled = top is not None and all(
-                rows[j]["upper"] is not None and rows[j]["upper"] <= top for j in unresolved)
+                rows[j]["upper"] is not None and rows[j]["upper"] <= top for j in unresolved
+            )
             best[k] = {"d": top, "settled": settled, "unresolved": len(unresolved)}
         result[label] = best
     for i, res in exact.items():
