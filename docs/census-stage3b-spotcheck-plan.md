@@ -1,9 +1,9 @@
 # Census stage 3b: independent spot-check of the frontier distances (plan)
 
-**Status: a plan, committed before any of it runs (amended before any of it runs, to add C5 and
-C6 and the tiers below).** It is not part of stage 3b's registered
-verdict. It is reported beside it, and its sample rule and pass criteria are fixed here so that
-the sample cannot be chosen after the fact.
+**Status: a plan, committed before any of it runs, and amended before any of it ran to add C5,
+C6 and the tiers.** It is not part of stage 3b's registered verdict. It is reported beside it, and
+its sample rule and pass criteria are fixed here so that the sample cannot be chosen after the
+fact.
 
 ## Why
 
@@ -46,7 +46,6 @@ For each sampled code (A, B on its torus):
   different matrix.
 - **C4, a long window** (random information sets, 8 seeds of 15 minutes, kind Z and X). It must
   find no logical lighter than d. A lighter one would refute the search's lower bound outright.
-
 - **C5, another implementation, two methods: DistQLDPC** (github.com/guluchen/DistQLDPC, at the
   commit cloned when the check starts, recorded). Its matrices are built from our A and B in its
   input format (Hx, Hz, logical bases), with the code's k checked on the way in. Two engines, each
