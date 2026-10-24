@@ -124,7 +124,8 @@ def tori() -> dict[str, list[tuple[int, int]]]:
     extra = [tuple(t) for t in h["held_out_extrapolation"] if tuple(t) not in exposed]
     key = lambda t: (t[0] * t[1], t)  # noqa: E731
     return {"random": sorted((tuple(t) for t in h["held_out_random"]), key=key),
-            "extrapolation": sorted(extra, key=key), "exposed": sorted(exposed, key=key)}  # fmt: skip
+            "extrapolation": sorted(extra, key=key),
+            "exposed": sorted(exposed, key=key)}  # fmt: skip
 
 
 def group_of(ell: int, m: int) -> str:
@@ -262,7 +263,7 @@ def judge_torus(rec: dict) -> dict:
     ks = sorted(best)
     ds = [best[k]["d"] for k in ks]
     known = [(k, best[k]["d"]) for k in ks if best[k]["settled"]]
-    mono = all(a[1] >= b[1] for a, b in zip(known, known[1:]))
+    mono = all(a[1] >= b[1] for a, b in zip(known, known[1:], strict=False))
     out["P1"] = "fail" if not mono else ("pass" if settled else "incomplete")
     n = rec["n"]
     cap = 2 * math.floor(P2_CONSTANT * math.sqrt(n) / 2)

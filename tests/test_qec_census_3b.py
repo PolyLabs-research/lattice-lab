@@ -87,7 +87,8 @@ def test_tori():
 def _rec(best, n=200, group="random", classes=5, crit=True, lm=(4, 25)):
     return {"l": lm[0], "m": lm[1], "n": n, "group": group, "classes": classes,
             "criterion_e": crit, "k_sample": {"sampled": 50, "disagree": 0},
-            "best": {"connected": {str(k): {"d": d, "settled": s} for k, (d, s) in best.items()}}}  # fmt: skip
+            "best": {"connected": {str(k): {"d": d, "settled": s}
+                                   for k, (d, s) in best.items()}}}  # fmt: skip
 
 
 def test_judging_rules():

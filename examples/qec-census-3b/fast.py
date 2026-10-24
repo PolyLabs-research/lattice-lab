@@ -63,7 +63,6 @@ def poly_orbits(ell: int, m: int, pairs: np.ndarray) -> np.ndarray:
     """For each polynomial 1 + u + v (pairs[i] = (u, v)), the least index of a polynomial in its
     orbit under the automorphisms and translations of the torus."""
     guard(ell, m)
-    lm = ell * m
     index = {(int(u), int(v)): i for i, (u, v) in enumerate(pairs)}
     auts = census.automorphisms(ell, m)
     orbit = np.arange(len(pairs))
@@ -175,9 +174,11 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
                 if top is not None:  # a longer window first: it may bring the bound to <= top
                     retry = [j for j in todo if j not in exact and rows[j]["upper"] is not None
                              and not rows[j].get("retried")]  # fmt: skip
+                    def longer(j):
+                        return window_bound(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY)
+
                     with ThreadPoolExecutor(max_workers=workers) as pool:
-                        for j, ub2 in zip(retry, pool.map(lambda j: window_bound(
-                                rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY), retry)):  # fmt: skip
+                        for j, ub2 in zip(retry, pool.map(longer, retry), strict=True):
                             rows[j] = rows[j] | {"upper": min(rows[j]["upper"], ub2),
                                                  "retried": True}  # fmt: skip
                     todo = [j for j in todo if j in exact or rows[j]["upper"] is None
