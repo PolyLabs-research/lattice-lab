@@ -631,6 +631,94 @@ The new best codes found on held-out tori include [[216,8,16]], [[234,8,16]], [[
 [[300,8,20]] (k d²/n 9.48, 8.75, 10.29 and 10.67). For the larger of these, d ≥ 16 rests on the
 deepening search, as in stage 1.
 
+## Stage 3a: every weight-6 code (`examples/qec-census-3`)
+
+**Result (exploratory, run 2026-10-24): all 36,496 classes of weight-6 codes on the 116 stage-1
+tori have exact distances.**
+- **The family.** A and B are any three distinct monomials, not only the published trinomial
+  form. Of these, 20.5 million raw codes have k > 0, in 36,496 classes.
+- **How the distances were computed.** 36,494 classes were done by the packing search (from
+  examples/qec-open-distance-2, registered and tested there). The other 2 have k > 128, beyond
+  the search's labels, and went to an exact small-weight enumeration, which agrees with the
+  search wherever both run. The whole run took 1.3 hours on 4 cores.
+- **Wider than stage 1.** The family beats stage 1's trinomial frontier at 18 (n, k) pairs, and is
+  never below it. Examples: [[90,12,6]] against 2, [[120,8,12]] against 8, [[126,12,10]] against
+  6, [[144,4,16]] against 14, and [[180,12,10]] against 4.
+- **The gross code [[144,12,12]] still has the highest k d^2 / n (12.0) for n <= 200.** That is
+  over the connected classes of the tori covered. Next comes [[180,8,16]], at 11.4.
+
+**How k > 0 is found.** k = 2 sum over characters chi of dim L/(A_chi, B_chi), and a term is
+nonzero exactly when A and B both vanish at chi. So the census evaluates every A = 1 + u + v at
+every character once, and pairs A with B only when their zero sets meet. Of the 306 million raw
+codes, 93% have k = 0, and the bitmask AND rules each of them out without a rank computation. On
+every raw code of five small tori (61,000 codes) the rule
+agrees exactly with bb.k_linalg.
+
+**Checks.**
+- **Lin and Pryadko's catalog** (abelian two-block codes, n <= 100, 3 + 3 terms), compared by
+  (group order, k):
+  - 43 of the 44 comparable pairs are equal, and the census is never higher.
+  - At (96, 16) the census has d = 4 and the catalog 6. The catalog's best may be on a group of
+    order 48 that needs three generators, which no torus is; this was not checked.
+  - Two catalog pairs (n = 14, 62) need a 1 x p torus, which stage 1 does not include.
+- **The community leaderboard** (unitaryfoundation/qldpc-challenge, read in stage 1). Seven of
+  its weight-6 BB records with 100 < n <= 200 give the same [[n,k,d]] as the census:
+  [[120,8,12]], [[126,6,14]], [[144,4,16]], [[154,6,16]], [[162,8,14]], [[180,8,16]] and
+  [[182,6,18]]. The leaderboard gives those d as upper bounds. Here they are exact, and each is
+  the best d any code in this family reaches on the tori covered.
+  - Its [[168,16,10]], [[168,14,10]], [[168,24,6]] and its two-block [[144,4,16]] are not
+    abelian. Rebuilt from their published check rows, one block of each fails A A^T = A^T A,
+    which holds for every element of an abelian group algebra. They are outside this family, and
+    the census's lower d at those (n, k) is no contradiction. The distances of the three at n = 168,
+    recomputed here from those rows (searching from every qubit), equal their listed values: 10,
+    10 and 6.
+  - Its [[192,8,16]] (a twisted-torus code of Liang et al.) is on Z_2 x Z_48, a held-out torus
+    group (2 x 48 is held out, and 6 x 16 is isomorphic to it). So it is not in stage 3a, and
+    belongs to stage 3b.
+- **Tests** (tests/test_qec_census_3.py): the zero rule against bb.k_linalg; classes invariant
+  under the group; distances against enumeration; the published form as a subfamily; the guard;
+  and the small-weight enumeration against the search.
+
+**The Pareto fronts above n = 100** (connected codes, d >= 6; the torus is where one example
+lies):
+
+| n | Codes |
+| --- | --- |
+| 102 | [[102,4,12]] |
+| 108 | [[108,8,10]], [[108,4,12]] |
+| 112 | [[112,6,12]] |
+| 114 | [[114,4,14]] |
+| 120 | [[120,16,6]], [[120,8,12]], [[120,4,14]] |
+| 124 | [[124,10,10]] |
+| 126 | [[126,12,10]], [[126,6,14]] |
+| 138 | [[138,4,14]] |
+| 144 | [[144,12,12]], [[144,4,16]] |
+| 150 | [[150,16,8]], [[150,8,12]], [[150,4,16]] |
+| 154 | [[154,6,16]] |
+| 162 | [[162,8,14]], [[162,4,16]] |
+| 168 | [[168,20,6]], [[168,14,10]], [[168,10,12]], [[168,8,14]], [[168,6,16]], [[168,4,18]] |
+| 170 | [[170,16,10]] |
+| 180 | [[180,12,10]], [[180,8,16]], [[180,4,18]] |
+| 182 | [[182,6,18]] |
+| 192 | [[192,16,8]], [[192,12,12]], [[192,4,18]] |
+| 196 | [[196,18,8]], [[196,6,18]] |
+| 198 | [[198,8,16]], [[198,4,18]] |
+
+Polynomials, tori and witnesses are in `examples/qec-census-3/data/` and `summary.json`.
+
+**What it does not establish.**
+- Optimality is within this family (3 + 3 terms) and on the tori covered. Groups needing three
+  generators, non-abelian groups and other weights are outside it, and at some (n, k) codes
+  outside it are better.
+- The 8 stage-1 tori isomorphic to a held-out torus were refused, so some groups of a given order
+  are missing (Z_2 x Z_48 at n = 192, for one).
+- The lower bounds rest on the packing search's argument and code. That search was tested in a
+  registered study, but nothing certifies the bounds independently.
+- **Provenance.** The torus files record census3.py's sha256 at the time each was written. The
+  first 39 carry the version before formatting (never committed), 72 the formatted one (the
+  same code), and the last 5 (3 x 33 on) the version with the small-weight fallback. Nothing
+  else changed in the computation.
+
 ## What this does not establish
 
 - **One family, one form.** Other weight-6 forms do better at several n: at n = 30, 42, 60 and 84
@@ -659,17 +747,14 @@ deepening search, as in stage 1.
 
 ## Next
 
-1. **Register stage 2.** Choose among S1 to S10, write the per-torus values and thresholds from l
-   and m before anything is computed, name the instrument behind each d, and record the exposure
-   above.
-2. **An independent lower bound at d ≥ 16.** The program does not finish there within 600 s, and
-   190 frontier classes rest on search.c alone.
-3. **Widen the family** to the weight-6 forms that beat this one at n = 30, 42, 60 and 84, with the
-   same classes, instruments and hold-out.
-4. **Formalise** criterion 1 and the k formulas, building on the Lean bridge from polynomials to
-   eigenvalues.
-5. **Read the literature properly** when arXiv is reachable, and test the frontier codes for
-   equivalence against published polynomials.
+1. **Stage 3b: register predictions from stage 3a and test them on the held-out tori.** These
+   are the tori where only the trinomial family has been computed. Z_2 x Z_48 is among them,
+   with Liang et al.'s [[192,8,16]] (an upper bound there).
+2. **An independent lower bound** for the frontier codes at d >= 16. All rest on one method, the
+   check-driven search.
+3. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
+   bridge.
+4. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
 
 ## Reproducing
 

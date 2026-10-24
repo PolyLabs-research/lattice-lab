@@ -174,6 +174,20 @@ registered):
   - Stage 2's own registered verdict stays "incomplete"
     ([code-census.md](code-census.md#stage-2-the-registered-test)).
 
+**Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
+- **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
+  on 4 cores.
+- **Method.** A common-zero rule for k > 0 rules out 93% of the 306 million raw codes without a
+  rank computation. Distances come from the packing search.
+- **Checks.** The census matches Lin and Pryadko's catalog at 43 of 44 comparable (n, k) pairs
+  and is never higher.
+- **Results.**
+  - It beats the trinomial form at 18 (n, k) pairs. The gross code still has the best k d^2 / n.
+  - Seven leaderboard codes with 100 < n <= 200, listed there with upper bounds only, have the
+    same d here exactly, and no code in this family does better on the tori covered.
+  - The leaderboard's codes that do better at n = 144 and 168 are non-abelian.
+- **Next.** Register stage 3b on the held-out tori.
+
 **The open distances of two larger published codes** ([code-distances.md](code-distances.md#the-open-distances-examplesqec-open-distance), registered, run 2026-10-23).
 - **[[360,12]]: d = 24 exactly.** Bravyi et al. give only d <= 24.
   - A random-information-set window found a checked weight-24 logical.
