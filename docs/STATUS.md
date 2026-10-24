@@ -178,15 +178,17 @@ registered):
 - **[[360,12]]: d = 24 exactly.** Bravyi et al. give only d <= 24.
   - A random-information-set window found a checked weight-24 logical.
   - The split exhaustive search proved nothing is lighter, in 1.9 hours on 4 cores.
-  - Later work claims the same value (seen secondhand before registration), so this confirms it
-    independently.
+  - The value was already established (Crocker, 13 Oct 2026; DistQLDPC), so this is an
+    independent recomputation.
 - **[[756,16]]: 30 <= d <= 34.**
   - The window found a checked weight-34 logical, matching the published bound.
   - A Fable consultation ($1.12, every claim checked by machine) showed that the code has no
     symmetry beyond its translations. It also proposed a packing cut for the search, which a
     second registered study tested on fresh codes and known distances.
-  - With the cut, the search proved d >= 30 in 7 hours on 4 cores. That independently confirms a
-    lower bound claimed elsewhere ([code-distances.md](code-distances.md#the-packing-cut-examplesqec-open-distance-2)).
+  - With the cut, the search proved d >= 30 in 7 hours on 4 cores. That matches the public lower
+    bound (DistQLDPC, 22 Oct 2026, one implementation) without going beyond it. Ours is a second
+    implementation of the same kind of search, not a different method
+    ([code-distances.md](code-distances.md#what-the-literature-shows-checked-2026-10-24-after-both-studies)).
   - The run stopped during a pass that could not change the result. Its rules give "hold" on
     every part, but the ledger has no verdict entry (disclosed in STOPPED.md).
 
