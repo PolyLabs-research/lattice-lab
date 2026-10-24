@@ -16,8 +16,8 @@ sys.path.insert(0, str(ROOT / "examples" / "qec-distance"))
 import bb  # noqa: E402
 import distance as D  # noqa: E402
 
-spec = importlib.util.spec_from_file_location("spotcheck_sat",
-                                              ROOT / "examples/qec-census-3b/spotcheck/sat.py")  # fmt: skip
+SAT_PY = ROOT / "examples" / "qec-census-3b" / "spotcheck" / "sat.py"
+spec = importlib.util.spec_from_file_location("spotcheck_sat", SAT_PY)
 SAT = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SAT)
 
