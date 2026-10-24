@@ -52,8 +52,12 @@ def test_classes_are_invariant_under_the_group():
     rng = random.Random(3)
     for c in rng.sample(out["classes"], 10):
         A, B = [tuple(t) for t in c["A"]], [tuple(t) for t in c["B"]]
-        (g0, g1), (h0, h1) = rng.choice(auts)
-        f = lambda P: [((p * g0 + q * h0) % ell, (p * g1 + q * h1) % m) for p, q in P]  # noqa: E731
+        aut = rng.choice(auts)
+
+        def f(P, aut=aut):
+            (g0, g1), (h0, h1) = aut
+            return [((p * g0 + q * h0) % ell, (p * g1 + q * h1) % m) for p, q in P]
+
         A2 = _translate(f(A), (rng.randrange(ell), rng.randrange(m)), ell, m)
         B2 = _translate(f(B), (rng.randrange(ell), rng.randrange(m)), ell, m)
         if rng.random() < 0.5:
