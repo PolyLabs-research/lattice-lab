@@ -294,7 +294,7 @@ primary data are two public repositories, cloned and read as data.
 
 - **[[756,16]].**
   - **Lower bound 30, from DistQLDPC** (github.com/guluchen/DistQLDPC, v1.0 of 14 Oct 2026).
-    Its rename log (`data/matrices/README.md`) records:
+    Its rename log (`data/matrices/README.md`, at commit e52d15ba of 2026-10-23) records:
     - lb 28 on 2026-10-21: "single canonical search, not cross-validated by a second method";
     - lb 30 on 2026-10-22: "reproduced with relabeled seeds ... same algorithm, not a second
       method". Its report (GH-138) calls the bound "PLAUSIBLE pending PI review".
