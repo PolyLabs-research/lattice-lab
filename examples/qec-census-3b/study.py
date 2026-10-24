@@ -43,12 +43,13 @@ dividing the exponent of the odd part, mu_e holds an a != 1 with 1 + a in mu_e
   every RANDOM torus, and at most 13.5 on every EXTRAPOLATION torus.
 - **P4, [[192,8,16]] (decisive).** On 2 x 48 (Z_2 x Z_48, the group of Liang et al.'s
   twisted-torus [[192,8,16]]), the settled best d of a connected code with k = 8 is 16.
-- **Reported:** the frontier by (n, k), stage 2's trinomial frontier against it, and the
-  EXPOSED tori.
+- **Reported:** the frontier by (n, k) (`frontier_by_nk`) and the EXPOSED tori; the comparison
+  with stage 2's trinomial frontier is left to the write-up.
 
 **The verdict.** "hold" when P0 to P4 pass; "fail" when any fails; "incomplete" when a needed
-best d is not settled, or a job is missing, and nothing has failed. A prediction that cannot be
-judged for want of a settled value makes it incomplete, not failed.
+best d is not settled, or a job is missing, and nothing has failed. An unsettled best d (the
+exact d of some class) is a lower bound on the best: it can prove a failure of P1 to P4, never a
+pass. Errors in a job fail P0 and leave the torus's other predictions incomplete.
 
 **The guard.** Stage 1's census.guard refuses every held-out torus. Here it is replaced, in this
 study's run process only and only while `execute` runs (after the harness has checked that the
@@ -101,6 +102,9 @@ HASHED = {
     "fast_py": HERE / "fast.py",
     "census3_py": HERE.parent / "qec-census-3" / "census3.py",
     "census_py": HERE.parent / "qec-census" / "census.py",
+    "holdout_json": HERE.parent / "qec-census" / "holdout.json",
+    "parts_py": HERE.parent / "qec-open-distance" / "parts.py",
+    "pack_py": HERE.parent / "qec-open-distance-2" / "pack.py",
     "census_c": census.CENSUS_C,
     "search_pack_c": c3.pack.SEARCH_C,
     "window_c": c3.pack.plain.WINDOW_C,
@@ -249,36 +253,63 @@ def _bests(rec: dict) -> dict[int, dict]:
 
 
 def judge_torus(rec: dict) -> dict:
-    """Each prediction on one torus: 'pass', 'fail' or 'incomplete', with the values used."""
-    out = {}
+    """Each prediction on one torus: 'pass', 'fail' or 'incomplete', with the values used. A
+    settled best d is exact; an unsettled one (an exact d of some class) is a lower bound on the
+    best, so it can prove a failure but not a pass."""
     if "error" in rec:
-        return {"P0": "fail", "error": True}
+        out = {"P0": "fail", "P1": "incomplete", "P2": "incomplete", "P3": "incomplete",
+               "error": True}  # fmt: skip
+        if (rec["l"], rec["m"]) == P4_TORUS:
+            out["P4"] = "incomplete"
+        return out
+    out = {}
     has = rec["classes"] > 0
-    p0 = rec["criterion_e"] == has and rec["k_sample"]["disagree"] == 0
-    out["P0"] = "pass" if p0 else "fail"
+    out["P0"] = "pass" if rec["criterion_e"] == has and rec["k_sample"]["disagree"] == 0 \
+        else "fail"  # fmt: skip
     best = _bests(rec)
-    if not best:
-        return out | {"P1": "pass", "P2": "pass", "P3": "pass"}
-    settled = all(v["settled"] for v in best.values())
-    ks = sorted(best)
-    ds = [best[k]["d"] for k in ks]
-    known = [(k, best[k]["d"]) for k in ks if best[k]["settled"]]
-    mono = all(a[1] >= b[1] for a, b in zip(known, known[1:], strict=False))
-    out["P1"] = "fail" if not mono else ("pass" if settled else "incomplete")
     n = rec["n"]
+    ks = sorted(best)
+    settled = all(best[k]["settled"] for k in ks)
+    low = {k: best[k]["d"] for k in ks if best[k]["d"] is not None}  # lower bounds (or exact)
+    exact = {k: best[k]["d"] for k in ks if best[k]["settled"]}
+
+    def verdict(failed: bool) -> str:
+        return "fail" if failed else ("pass" if settled else "incomplete")
+
+    # P1: a settled best at k1 below a lower bound at a larger k2 is a proven violation
+    out["P1"] = verdict(any(exact[k1] < low[k2] for k1 in exact for k2 in low if k2 > k1))
     cap = 2 * math.floor(P2_CONSTANT * math.sqrt(n) / 2)
-    dmax = max(d for d in ds if d is not None)
-    out["P2"] = "fail" if dmax > cap else ("pass" if settled else "incomplete")
+    dmax = max(low.values(), default=None)
+    out["P2"] = verdict(dmax is not None and dmax > cap)
     out["P2_values"] = {"d_max": dmax, "cap": cap}
-    score = max(k * best[k]["d"] ** 2 / n for k in ks if best[k]["d"] is not None)
+    score = max((k * d * d / n for k, d in low.items()), default=None)
     limit = P3_RANDOM if rec["group"] == "random" else P3_EXTRAPOLATION
-    out["P3"] = "fail" if score > limit + 1e-9 else ("pass" if settled else "incomplete")
-    out["P3_values"] = {"score": round(score, 4), "limit": limit}
+    out["P3"] = verdict(score is not None and score > limit + 1e-9)
+    out["P3_values"] = {"score": None if score is None else round(score, 4), "limit": limit}
     if (rec["l"], rec["m"]) == P4_TORUS:
         b = best.get(P4_K)
-        out["P4"] = ("incomplete" if b is None or not b["settled"]
-                     else "pass" if b["d"] == P4_D else "fail")  # fmt: skip
+        if b is None:
+            out["P4"] = "fail"  # no connected class with k = 8 at all
+        elif b["d"] is not None and b["d"] > P4_D:
+            out["P4"] = "fail"
+        elif b["settled"]:
+            out["P4"] = "pass" if b["d"] == P4_D else "fail"
+        else:
+            out["P4"] = "incomplete"
         out["P4_values"] = b
+    return out
+
+
+def frontier_by_nk(rows: list[dict]) -> dict:
+    """Reported: the best connected d by (n, k) over the judged tori, and whether settled."""
+    out: dict[str, dict] = {}
+    for r in rows:
+        if r.get("job") != "torus" or "error" in r or r["group"] == "exposed":
+            continue
+        for k, v in _bests(r).items():
+            key = f"{r['n']},{k}"
+            if v["d"] is not None and (key not in out or v["d"] > out[key]["d"]):
+                out[key] = {"d": v["d"], "settled": v["settled"], "torus": f"{r['l']}x{r['m']}"}
     return out
 
 
@@ -291,7 +322,7 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
                 if x in judged]  # fmt: skip
         missing = sum(1 for g in ("random", "extrapolation") for x in t[g] if x not in judged)
         parts[p] = ("fail" if "fail" in vals else "incomplete" if missing or "incomplete" in vals
-                    else "pass")  # fmt: skip
+                    or None in vals else "pass")  # fmt: skip
     p4 = judged.get(P4_TORUS, {}).get("P4")
     parts["P4"] = p4 or "incomplete"
     problems = []
@@ -311,6 +342,7 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
     exposed = {f"{x[0]}x{x[1]}": judged[x] for x in t["exposed"] if x in judged}
     return {"verdict": verdict, **parts, "problems": problems,
             "per_torus": {f"{a}x{b}": v for (a, b), v in judged.items()},
+            "frontier": frontier_by_nk(rows),
             "exposed": exposed}  # fmt: skip
 
 

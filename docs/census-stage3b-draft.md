@@ -40,7 +40,7 @@ and e = 7 qualify; e = 5, 25, 11, 13, 17 and 19 do not.
 - **P1, monotonicity (decisive).** On every held-out torus with connected codes, the best exact d
   is non-increasing in k.
 - **P2, the envelope (decisive).** On every held-out torus, the best d of a connected code is at
-  most the largest even number <= 1.40 sqrt(n): 24 at n = 300, 20 at n = 202.
+  most the largest even number <= 1.40 sqrt(n): 24 at n = 300, 18 at n = 202.
 - **P3, no new record below the published one (decisive).**
   - No connected code on a random held-out torus (n <= 200) has k d^2/n above 12.0 (the gross
     code).

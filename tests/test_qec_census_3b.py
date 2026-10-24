@@ -105,3 +105,21 @@ def test_judging_rules():
     p4 = S.judge_torus(_rec({8: (16, True)}, n=192, lm=S.P4_TORUS))
     assert p4["P4"] == "pass"
     assert S.judge_torus(_rec({8: (14, True)}, n=192, lm=S.P4_TORUS))["P4"] == "fail"
+
+
+def test_judging_edge_cases():
+    # no exact d anywhere: incomplete, not a crash
+    r = S.judge_torus(_rec({4: (None, False)}))
+    assert r["P1"] == r["P2"] == r["P3"] == "incomplete"
+    # an unsettled lower bound can prove a failure
+    assert S.judge_torus(_rec({4: (12, True), 8: (14, False)}))["P1"] == "fail"
+    assert S.judge_torus(_rec({8: (18, False)}, n=192, lm=S.P4_TORUS))["P4"] == "fail"
+    # 2 x 48 without any connected k = 8 class fails P4
+    assert S.judge_torus(_rec({4: (16, True)}, n=192, lm=S.P4_TORUS))["P4"] == "fail"
+    # an error record leaves P1 to P3 incomplete
+    e = S.judge_torus({"l": 4, "m": 25, "error": "x"})
+    assert e["P0"] == "fail" and e["P1"] == "incomplete"
+    # the cap at n = 202 is 18
+    assert (
+        S.judge_torus(_rec({4: (18, True)}, n=202, group="extrapolation"))["P2_values"]["cap"] == 18
+    )

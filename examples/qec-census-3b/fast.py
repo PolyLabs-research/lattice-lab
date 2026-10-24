@@ -154,6 +154,9 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
         r = rows[i]
         return i, c3.deep_distance(r["A"], r["B"], ell, m, limit)
 
+    def longer(j):
+        return window_bound(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY)
+
     # the connected classes decide the predictions; all classes are reported as well
     result = {}
     for label, pick in (("connected", lambda r: r["connected"]), ("all", lambda r: True)):
@@ -174,8 +177,6 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
                 if top is not None:  # a longer window first: it may bring the bound to <= top
                     retry = [j for j in todo if j not in exact and rows[j]["upper"] is not None
                              and not rows[j].get("retried")]  # fmt: skip
-                    def longer(j):
-                        return window_bound(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY)
 
                     with ThreadPoolExecutor(max_workers=workers) as pool:
                         for j, ub2 in zip(retry, pool.map(longer, retry), strict=True):
@@ -198,6 +199,12 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = 1800.0, log=prin
                     else:
                         unresolved.append(j)
                 pos += workers
+            # an unfinished class gets the longer window too, if it has not had it
+            late = [j for j in unresolved if rows[j]["upper"] is not None
+                    and not rows[j].get("retried")]  # fmt: skip
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for j, ub2 in zip(late, pool.map(longer, late), strict=True):
+                    rows[j] = rows[j] | {"upper": min(rows[j]["upper"], ub2), "retried": True}
             # settled unless an unfinished class could still exceed the best
             settled = top is not None and all(
                 rows[j]["upper"] is not None and rows[j]["upper"] <= top for j in unresolved
