@@ -90,3 +90,17 @@ def test_guard_refuses_held_out():
     held = sorted(C.census.held_out_tori())[0]
     with pytest.raises(C.census.HeldOut):
         C.zero_masks(*held)
+
+
+def test_small_weight_matches_the_search():
+    for ell, m in ((3, 6), (6, 9)):
+        for c in C.classes(ell, m)["classes"]:
+            A, B = [tuple(t) for t in c["A"]], [tuple(t) for t in c["B"]]
+            s = C.small_weight(A, B, ell, m)
+            if c["k"] > 128:
+                continue
+            d = C.deep_distance(A, B, ell, m, 60)["d"]
+            if d <= 4:
+                assert s["status"] == "complete" and s["d"] == d
+            else:
+                assert s["status"] == "lower" and s["lower"] == 5

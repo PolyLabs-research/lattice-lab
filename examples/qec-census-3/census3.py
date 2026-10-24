@@ -169,10 +169,65 @@ def classes(ell: int, m: int) -> dict:
             "classes": out, "seconds": round(time.time() - start, 2)}  # fmt: skip
 
 
+def small_weight(A, B, ell: int, m: int, wmax: int = 4) -> dict:
+    """For codes beyond search_pack.c's 128 logical labels: the least weight w <= wmax of a
+    Z-logical, by enumeration. A set of qubits has zero syndrome when its columns of H_X sum to
+    zero; w = 1 needs a zero column, w = 2 two equal columns, w = 3 a pair whose column sum is a
+    third column, w = 4 two pairs with equal sums. Each zero-syndrome set found is tested against
+    every X-logical (distance._logicals_bits: nontrivial when some L has odd overlap) and checked
+    by verify_witness; d is exact when one is found, else d > wmax (status "lower")."""
+    guard(ell, m)
+    n = 2 * ell * m
+    hx, hz = distance._bit_rows(A, B, ell, m)
+    logicals = distance._logicals_bits(hz, hx, n)  # X-logicals: ker H_Z mod rowspace H_X
+    col = [sum(((row >> q) & 1) << i for i, row in enumerate(hx)) for q in range(n)]
+
+    def nontrivial(qs):
+        c = sum(1 << q for q in qs)
+        return any((c & L).bit_count() & 1 for L in logicals)
+
+    def found(qs):
+        qs = sorted(qs)
+        check = distance.verify_witness(A, B, ell, m, "Z", qs)
+        if not check["logical"]:
+            raise RuntimeError(f"{ell}x{m}: a bad small-weight witness for {A}, {B}")
+        return {"d": len(qs), "lower": len(qs), "status": "complete", "witness": qs}
+
+    t0 = time.time()
+    for q in range(n):
+        if col[q] == 0 and nontrivial([q]):
+            return found([q]) | {"seconds": round(time.time() - t0, 3), "method": "small"}
+    pairs: dict[int, list[tuple[int, int]]] = {}
+    for a in range(n):
+        for b in range(a + 1, n):
+            pairs.setdefault(col[a] ^ col[b], []).append((a, b))
+    for a, b in pairs.get(0, []):
+        if nontrivial([a, b]):
+            return found([a, b]) | {"seconds": round(time.time() - t0, 3), "method": "small"}
+    if wmax >= 3:
+        for q in range(n):
+            for a, b in pairs.get(col[q], []):
+                if q not in (a, b) and nontrivial([a, b, q]):
+                    return found([a, b, q]) | {"seconds": round(time.time() - t0, 3),
+                                               "method": "small"}  # fmt: skip
+    if wmax >= 4:
+        for group in pairs.values():
+            for i, (a, b) in enumerate(group):
+                for c, e in group[i + 1 :]:
+                    qs = {a, b, c, e}
+                    if len(qs) == 4 and nontrivial(qs):
+                        return found(qs) | {"seconds": round(time.time() - t0, 3),
+                                            "method": "small"}  # fmt: skip
+    return {"d": None, "lower": wmax + 1, "status": "lower", "witness": None,
+            "seconds": round(time.time() - t0, 3), "method": "small"}  # fmt: skip
+
+
 def deep_distance(A, B, ell: int, m: int, limit: float = LIMIT) -> dict:
     """The packing search, deepening from 2 from (0, lm), in one process (search_pack.c's
     passes): exact d when it completes, else the lower bound of its last empty pass."""
     guard(ell, m)
+    if bb.k_linalg(A, B, ell, m) > 128:
+        return small_weight(A, B, ell, m)
     n, r, k, rows, marks = pack.packed._code(A, B, ell, m, "Z")
     exe, _ = pack.packed.binary(str(pack.SEARCH_C))
     text = "\n".join([f"{n} {r} {k} 2 {distance.SEARCH_BOUND} 2", f"0 {ell * m}", *rows,
