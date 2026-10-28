@@ -36,20 +36,31 @@ BRANCH = "ccr-ab9f0bb1-qb20sx"
 REPO = "github.com/PolyLabs-research/lattice-lab.git"
 SECRET = "lattice_lab_github_token"
 
-START = f"""set -e
-export DEBIAN_FRONTEND=noninteractive
-apt-get update -q && apt-get install -yq git ca-certificates
+START = f"""export DEBIAN_FRONTEND=noninteractive
+fail() {{
+  echo "POD START FAILED: $*"; echo "(the pod waits here; stop or delete it with launch.py)"
+  sleep infinity
+}}
+apt-get update -q && apt-get install -yq git ca-certificates || fail "apt-get could not install git"
+GH_TOKEN=$(printf %s "$GH_TOKEN" | tr -d '[:space:]')
 case "$GH_TOKEN" in
-  "{{{{"*|"") echo "GH_TOKEN is not set: create the RunPod secret {SECRET}"; sleep infinity;;
+  "{{{{"*|"") fail "GH_TOKEN is not set: create the RunPod secret {SECRET}";;
 esac
-mkdir -p /workspace && cd /workspace
+URL="https://x-access-token:$GH_TOKEN@{REPO}"
+if ! out=$(git ls-remote --heads "$URL" {BRANCH} 2>&1); then
+  fail "the token cannot read {REPO}: $(echo "$out" | sed "s/$GH_TOKEN/***/g" | tail -3)"
+fi
+[ -n "$out" ] || fail "branch {BRANCH} not found on {REPO}"
+mkdir -p /workspace && cd /workspace || fail "no /workspace"
 if [ -d lattice-lab/.git ]; then
   git -C lattice-lab pull -q --rebase --autostash origin {BRANCH} \\
     || {{ echo "UPDATE FAILED: running the pod-run.sh already on the volume"; \\
-         git -C lattice-lab rebase --abort 2>/dev/null; true; }}
+         git -C lattice-lab rebase --abort 2>/dev/null; }}
 else
-  git clone -q --branch {BRANCH} "https://x-access-token:$GH_TOKEN@{REPO}" lattice-lab
+  git clone -q --branch {BRANCH} "$URL" lattice-lab 2>&1 | sed "s/$GH_TOKEN/***/g"
+  [ -d lattice-lab/.git ] || fail "git clone failed"
 fi
+echo "pod start: cloned, running pod-run.sh"
 exec bash lattice-lab/examples/qec-census-3c/runpod/pod-run.sh
 """
 
