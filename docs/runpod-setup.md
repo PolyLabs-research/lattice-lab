@@ -6,6 +6,42 @@ lost about 23 hours twice. This note moves the run to a pod that stays up. Nothi
 study changes: it is the same code, the same settings and `--workers 4`. The run resumes from the
 committed records with `study.py resume`, which starts 2 x 75 again from the beginning.
 
+## The automated route (what Claude runs)
+
+Two scripts in `examples/qec-census-3c/runpod/` do everything below without a shell on the pod:
+
+- `launch.py` creates, lists, inspects, stops and deletes the pod through RunPod's REST API. It
+  only touches pods named `lattice-lab-census-3c`, so other pods on the account are left alone.
+- `pod-run.sh` runs on the pod at every start. It does steps 1–6 below: packages, venv,
+  self-test, hardware record, `resume --workers 4`, and committing records as they arrive. A pod
+  restart resumes the run by itself.
+
+What it needs from you, once:
+
+1. **A RunPod secret named `lattice_lab_github_token`** (RunPod console → Secrets) holding a
+   fine-grained GitHub token for **PolyLabs-research/lattice-lab** only, with *Contents: read and
+   write*. RunPod substitutes it into the pod as `GH_TOKEN` when the pod boots
+   (`{{ RUNPOD_SECRET_lattice_lab_github_token }}`). It never passes through the Claude session.
+2. **RunPod API access in the Claude environment**: `rest.runpod.io` allowed, and the RunPod
+   API key as an environment variable `RUNPOD_API_KEY` (or a network secret for that host).
+   Both take effect in a new session.
+
+Then, in a session on this branch:
+
+```bash
+python3 examples/qec-census-3c/runpod/launch.py create        # prints the pod id
+python3 examples/qec-census-3c/runpod/launch.py status POD_ID
+```
+
+Progress shows up on the branch: `examples/qec-census-3c/runpod-status.txt` holds the phase
+(`selftest`, `running`, `done` or `failed`), the torus in progress and the record count, and it is
+committed each time the torus changes. Records and ledger entries are committed within 2 minutes
+of being written. The full logs are on the pod's volume (`/workspace/pod-run.log`,
+`/workspace/s3c-run.log`), visible in the RunPod console's log view. When the status says
+`done`, the pod idles until `launch.py stop` (or `delete`) ends the billing.
+
+The manual steps below do the same thing by hand.
+
 ## The pod
 
 | Setting | Choice | Why |
