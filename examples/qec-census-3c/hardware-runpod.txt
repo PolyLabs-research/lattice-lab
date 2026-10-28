@@ -1,0 +1,13 @@
+2026-10-28T15:15:39Z
+pod: tyamwcto2avfbz
+8
+Model name:                              AMD EPYC 9575F 64-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      64
+Socket(s):                               1
+CPU(s) scaling MHz:                      62%
+CPU max MHz:                             5008.0068
+CPU min MHz:                             1500.0000
+               total        used        free      shared  buff/cache   available
+Mem:             503          53         278           0         175         449
+cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
