@@ -19,7 +19,8 @@ D=examples/qec-census-3c
 BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/s3c-run.log
-exec >>"$W/pod-run.log" 2>&1
+# the RunPod console shows the container output, so the log goes there as well as to the volume
+exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
 
 export DEBIAN_FRONTEND=noninteractive
@@ -31,13 +32,20 @@ cd "$R" || exit 1
 git config user.name "${POD_GIT_NAME:-lattice-lab census pod}"
 git config user.email "${POD_GIT_EMAIL:-census-pod@users.noreply.github.com}"
 
-push() {
-  for t in 2 4 8 16; do git push -q -u origin "$BRANCH" && return 0; sleep "$t"; done
-  echo "push failed"; return 1
+push() {  # after a refused push, rebase onto the branch: the pod's commits touch only its own files
+  for t in 2 4 8 16; do
+    git push -q -u origin "$BRANCH" && return 0
+    git pull -q --rebase --autostash origin "$BRANCH" || git rebase --abort 2>/dev/null
+    sleep "$t"
+  done
+  echo "PUSH FAILED: commits stay on the volume until the next successful push"; return 1
 }
 
 commit() {  # commit the given paths if they changed, then push
-  local msg=$1; shift
+  local msg=$1 f; shift
+  for f in "$@"; do  # a file being appended to is committed only once it ends in a whole line
+    [ -s "$f" ] && [ "$(tail -c1 "$f" | od -An -c | tr -d ' ')" != '\n' ] && return 0
+  done
   git add -- "$@"
   if ! git diff --cached --quiet; then
     git commit -q -m "$msg
@@ -66,7 +74,7 @@ hold() {  # stay up without working, so a stop through the API is the only thing
 }
 
 # 1. packages and uv
-apt-get update -q && apt-get install -yq build-essential git tmux curl zlib1g-dev ca-certificates python3 \
+apt-get update -q && apt-get install -yq build-essential git tmux curl zlib1g-dev ca-certificates python3 procps \
   || { echo "apt failed"; hold "apt"; }
 command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | env INSTALLER_NO_MODIFY_PATH=1 sh
 command -v uv >/dev/null || { status failed "uv did not install"; hold "uv"; }
@@ -102,10 +110,10 @@ fi
 hw=$(mktemp)
 { nproc; lscpu | grep -E 'Model name|MHz|Thread|Core|Socket'; free -g | head -2; cc --version | head -1; } > "$hw"
 model=$(grep 'Model name' "$hw")
-last=$(ls "$D"/hardware-runpod*.txt 2>/dev/null | tail -1)
-if [ -z "$last" ] || ! grep -qF "$model" "$last"; then
+[ -n "$model" ] || model="nproc $(nproc) $(uname -m)"
+if ! grep -qlF "$model" "$D"/hardware-runpod*.txt 2>/dev/null; then
   out=$D/hardware-runpod.txt
-  [ -n "$last" ] && out=$D/hardware-runpod-$(date -u +%Y%m%dT%H%M).txt
+  [ -e "$out" ] && out=$D/hardware-runpod-$(date -u +%Y%m%dT%H%M).txt
   { date -u +%FT%TZ; echo "pod: ${RUNPOD_POD_ID:-?}"; cat "$hw"; } > "$out"
   commit "Census stage 3c: hardware of the RunPod machine the run resumes on" "$out"
 fi
@@ -114,9 +122,15 @@ fi
 status running "study.py resume --workers 4"
 ( cd "$R" && .venv/bin/python -u "$D/study.py" resume --workers 4 >> "$RUNLOG" 2>&1 ) &
 run=$!
+on_stop() {  # a pod stop: commit what is written, then end the run
+  commit "Census stage 3c: records ($(wc -l < "$D/records.jsonl") tori), pod stopping" \
+    "$D/records.jsonl" "$D/ledger.jsonl"
+  kill "$run" 2>/dev/null; exit 0
+}
+trap on_stop TERM INT
 seen=""
 while kill -0 "$run" 2>/dev/null; do
-  sleep 120
+  sleep 120 & wait $!  # in the background, so a stop's TERM reaches the trap at once
   torus=$(grep -E '^[0-9]+x[0-9]+: ' "$RUNLOG" 2>/dev/null | tail -1 | cut -d: -f1)
   commit "Census stage 3c: records ($(wc -l < "$D/records.jsonl") tori)" "$D/records.jsonl" "$D/ledger.jsonl"
   [ "$torus" != "$seen" ] && { seen=$torus; status running "study.py resume --workers 4"; }

@@ -36,8 +36,8 @@ python3 examples/qec-census-3c/runpod/launch.py status POD_ID
 Progress shows up on the branch: `examples/qec-census-3c/runpod-status.txt` holds the phase
 (`selftest`, `running`, `done` or `failed`), the torus in progress and the record count, and it is
 committed each time the torus changes. Records and ledger entries are committed within 2 minutes
-of being written. The full logs are on the pod's volume (`/workspace/pod-run.log`,
-`/workspace/s3c-run.log`), visible in the RunPod console's log view. When the status says
+of being written. The pod's log (`/workspace/pod-run.log`) is also the container output, so the RunPod
+console's log view shows it; the census's own log stays on the volume (`/workspace/s3c-run.log`). When the status says
 `done`, the pod idles until `launch.py stop` (or `delete`) ends the billing.
 
 The manual steps below do the same thing by hand.

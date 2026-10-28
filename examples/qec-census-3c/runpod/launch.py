@@ -42,8 +42,9 @@ case "$GH_TOKEN" in
 esac
 cd /workspace
 if [ -d lattice-lab/.git ]; then
-  git -C lattice-lab fetch -q origin {BRANCH} \\
-    && git -C lattice-lab merge -q --ff-only origin/{BRANCH} || true
+  git -C lattice-lab pull -q --rebase --autostash origin {BRANCH} \\
+    || {{ echo "UPDATE FAILED: running the pod-run.sh already on the volume"; \\
+         git -C lattice-lab rebase --abort 2>/dev/null; true; }}
 else
   git clone -q --branch {BRANCH} "https://x-access-token:$GH_TOKEN@{REPO}" lattice-lab
 fi
