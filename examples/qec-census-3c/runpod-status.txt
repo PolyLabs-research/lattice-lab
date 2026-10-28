@@ -1,6 +1,6 @@
 phase: running
 detail: study.py resume --workers 4
-updated: 2026-10-28T19:12:17Z
+updated: 2026-10-28T19:14:21Z
 pod: tyamwcto2avfbz
-records: 32
-torus: 9x12
+records: 33
+torus: 7x16
