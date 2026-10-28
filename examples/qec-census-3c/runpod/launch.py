@@ -12,9 +12,11 @@ sent without one, for a proxy that adds it. It only acts on pods named NAME: `li
 those, and `status`, `stop` and `delete` refuse any other pod, so a pod of yours running something
 else is never touched.
 
-The pod: a CPU pod, compute-optimized (cpu5c, then cpu3c), on-demand in Secure Cloud, with a
-20 GB volume at /workspace. Its start command installs git, clones the branch onto the volume (or
-fast-forwards it), and runs pod-run.sh, at every start. The GitHub token reaches the pod as the
+The pod: a CPU pod, compute-optimized (cpu5c, then cpu3c), on-demand in Secure Cloud. RunPod
+gives CPU pods no pod volume (volumeInGb comes back 0), so /workspace is on the container disk and
+a restart clones afresh; the records survive because they are pushed within 2 minutes.
+Its start command installs git, clones the branch (or rebases an existing clone onto it), and runs
+pod-run.sh, at every start. The GitHub token reaches the pod as the
 RunPod secret `lattice_lab_github_token`, which RunPod substitutes when the pod boots; this script
 never sees it.
 """
@@ -40,7 +42,7 @@ apt-get update -q && apt-get install -yq git ca-certificates
 case "$GH_TOKEN" in
   "{{{{"*|"") echo "GH_TOKEN is not set: create the RunPod secret {SECRET}"; sleep infinity;;
 esac
-cd /workspace
+mkdir -p /workspace && cd /workspace
 if [ -d lattice-lab/.git ]; then
   git -C lattice-lab pull -q --rebase --autostash origin {BRANCH} \\
     || {{ echo "UPDATE FAILED: running the pod-run.sh already on the volume"; \\
@@ -123,7 +125,7 @@ def main() -> None:
         if a.action == "status":
             print(json.dumps(brief(call("GET", f"/pods/{a.pod_id}")), indent=2))
         elif a.action == "stop":
-            print(json.dumps(call("POST", f"/pods/{a.pod_id}/stop"), indent=2))
+            print(json.dumps(brief(call("POST", f"/pods/{a.pod_id}/stop")), indent=2))
         else:
             call("DELETE", f"/pods/{a.pod_id}")
             print(f"deleted {a.pod_id}")

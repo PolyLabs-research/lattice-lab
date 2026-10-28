@@ -51,7 +51,7 @@ The manual steps below do the same thing by hand.
 | Size | **8 vCPU, 16 GB RAM** (4 vCPU / 8 GB is enough for the census alone) | The census uses 4 cores (`--workers 4`, as registered); the other 4 run the spot-check. The census needs about 1–2 GB. |
 | Billing | **On-demand, Secure Cloud** (not spot or interruptible) | A pre-empted pod brings back the restart problem. |
 | Image | Ubuntu 24.04 base (any recent Ubuntu with `apt`) | |
-| Storage | **Volume disk of 20 GB mounted at `/workspace`** | Survives a pod stop or restart; the container disk does not. Put everything under it. |
+| Storage | Container disk, 20 GB | RunPod gives CPU pods no pod volume, so a restart starts from a fresh clone. The records survive because they are pushed within 2 minutes. |
 
 ## 1. Packages, and keeping everything on the volume
 
