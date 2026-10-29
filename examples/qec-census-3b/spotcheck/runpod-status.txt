@@ -1,0 +1,7 @@
+phase: building
+detail: CaDiCaL, drat-trim, DistQLDPC
+updated: 2026-10-29T01:45:15Z
+pod: u702ojn0vbtqf6
+records: 0
+log: 0 started, 0 done, 0 died (all starts on this disk)
+disk:  652M  300G
