@@ -36,9 +36,10 @@ import urllib.request
 
 API = "https://rest.runpod.io/v1"
 JOBS = {
-    "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20,
+    "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20, "volume": 20,
                   "script": "examples/qec-census-3c/runpod/pod-run.sh"},
-    "spotcheck": {"name": "lattice-lab-spotcheck", "vcpu": 32, "disk": 400,
+    # cpu5c allows 15 GB of disk per vCPU, cpu3c 10: 300 GB fits both at 32 vCPU
+    "spotcheck": {"name": "lattice-lab-spotcheck", "vcpu": 32, "disk": 300, "volume": None,
                   "script": "examples/qec-census-3b/spotcheck/pod-run.sh"},
 }  # fmt: skip
 NAMES = {j["name"] for j in JOBS.values()}
@@ -91,12 +92,10 @@ def body(job: str, vcpu: int | None = None) -> dict:
         "interruptible": False,
         "imageName": "ubuntu:24.04",
         "containerDiskInGb": j["disk"],
-        "volumeInGb": 20,
-        "volumeMountPath": "/workspace",
         "ports": [],
         "env": {"GH_TOKEN": f"{{{{ RUNPOD_SECRET_{SECRET} }}}}"},
         "dockerStartCmd": ["bash", "-c", start(job)],
-    }
+    } | ({"volumeInGb": j["volume"], "volumeMountPath": "/workspace"} if j["volume"] else {})
 
 
 def call(method: str, path: str, data: dict | None = None):

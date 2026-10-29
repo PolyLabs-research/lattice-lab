@@ -16,9 +16,13 @@ a bivariate bicycle code by SAT, with the solver's UNSAT proof checked by drat-t
   qubit 0 or qubit lm (distance_ilp's translation argument, distance.py). It changes nothing
   about the claim's truth, and cuts the search a great deal.
 
-**The certificate.** CaDiCaL writes a DRAT proof of UNSAT, and drat-trim checks it against the
-CNF. The claim then rests on the encoding above (tested against enumeration in
-tests/test_qec_census_3b_spotcheck.py), the translation argument, and drat-trim.
+**The certificate.** CaDiCaL writes a DRAT proof of UNSAT (binary DRAT, half the size of the
+text form; drat-trim detects it), and drat-trim checks it against the CNF. Both run under their
+own time limits (CaDiCaL's -t, drat-trim's -t) as well as Python's, so neither outlives a job
+that dies. A proof larger than PROOF_CAP bytes is not checked (drat-trim holds it in memory):
+the claim is then "unverified", which concludes nothing. A verified claim rests on the encoding
+above (tested against enumeration in tests/test_qec_census_3b_spotcheck.py), the translation
+argument, and drat-trim.
 
 When the formula is SAT, the model is a Z-logical of weight <= w. It is checked by
 distance.verify_witness, and it is an upper bound.
@@ -38,6 +42,7 @@ TOOLS = Path(os.environ.get("SPOTCHECK_TOOLS",
                             "scratchpad/tools"))  # fmt: skip
 CADICAL = TOOLS / "cadical" / "build" / "cadical"
 DRAT_TRIM = TOOLS / "drat-trim" / "drat-trim"
+PROOF_CAP = int(os.environ.get("SPOTCHECK_PROOF_CAP", 40 * 10**9))
 
 
 class CNF:
@@ -123,25 +128,38 @@ def certify(hx, logicals, n: int, w: int, anchors=None, limit: float = 14400.0) 
         f.write_text(cnf.dimacs())
         t0 = time.time()
         try:
-            run = subprocess.run([str(CADICAL), "-q", "--no-binary", str(f), str(proof)],
-                                 capture_output=True, text=True, timeout=limit)  # fmt: skip
+            run = subprocess.run([str(CADICAL), "-q", "-t", str(int(limit)), str(f), str(proof)],
+                                 capture_output=True, text=True, timeout=limit + 300)  # fmt: skip
         except subprocess.TimeoutExpired:
-            return {"status": "timelimit", "w": w, "seconds": round(time.time() - t0, 1),
-                    "vars": cnf.nvars, "clauses": len(cnf.clauses)}  # fmt: skip
+            run = None
         solve_s = time.time() - t0
+        base = {"w": w, "seconds": round(solve_s, 1), "vars": cnf.nvars,
+                "clauses": len(cnf.clauses)}  # fmt: skip
+        if run is None or run.returncode == 0:  # 0: CaDiCaL stopped at its limit, unknown
+            return {"status": "timelimit", **base}
         if run.returncode == 10:  # SAT
             model = {int(v) for line in run.stdout.splitlines() if line.startswith("v")
                      for v in line[1:].split() if int(v) > 0}  # fmt: skip
             support = [q for q in range(n) if x[q] in model]
-            return {"status": "sat", "w": w, "support": support, "seconds": round(solve_s, 1),
-                    "vars": cnf.nvars, "clauses": len(cnf.clauses)}  # fmt: skip
+            return {"status": "sat", "support": support, **base}
         if run.returncode != 20:
             raise RuntimeError(f"cadical returned {run.returncode}: {run.stderr[-500:]}")
+        size = proof.stat().st_size
+        if size > PROOF_CAP:
+            return {"status": "unverified", "reason": f"proof of {size} bytes not checked",
+                    "proof_bytes": size, **base}  # fmt: skip
         t1 = time.time()
-        check = subprocess.run([str(DRAT_TRIM), str(f), str(proof)], capture_output=True,
-                               text=True, timeout=max(limit, 3600))  # fmt: skip
-        verified = "s VERIFIED" in check.stdout
-        return {"status": "verified" if verified else "unverified", "w": w,
-                "seconds": round(solve_s, 1), "check_seconds": round(time.time() - t1, 1),
-                "proof_bytes": proof.stat().st_size, "vars": cnf.nvars,
-                "clauses": len(cnf.clauses)}  # fmt: skip
+        check_limit = max(limit, 3600)
+        try:
+            argv = [str(DRAT_TRIM), str(f), str(proof), "-t", str(int(check_limit))]
+            check = subprocess.run(argv, capture_output=True, text=True,
+                                   timeout=check_limit + 300)  # fmt: skip
+            verified = "s VERIFIED" in check.stdout
+            reason = None if verified else (check.stdout[-300:] or f"exit {check.returncode}")
+        except subprocess.TimeoutExpired:
+            verified, reason = False, "drat-trim did not finish"
+        out = {"status": "verified" if verified else "unverified", **base,
+               "check_seconds": round(time.time() - t1, 1), "proof_bytes": size}  # fmt: skip
+        if reason:
+            out["reason"] = reason
+        return out

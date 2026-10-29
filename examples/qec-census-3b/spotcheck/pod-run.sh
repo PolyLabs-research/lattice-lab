@@ -5,13 +5,17 @@
 # safe to repeat.
 #
 #  1. packages, uv, and the tools: CaDiCaL and drat-trim at the commits the encoding was tested
-#     with, DistQLDPC at the commit cloned now (the plan: recorded, in tools-runpod.txt)
+#     with; DistQLDPC at its head when first cloned (the plan), recorded in distqldpc-commit.txt
+#     and checked out again at every later start
 #  2. the venv (uv sync --frozen, with pyscipopt)
 #  3. self-test: the spot-check tests, every check once on [[72,12,6]]
 #  4. the hardware and tool commits, committed once per machine
 #  5. run.py run --workers $(nproc), with records committed as they arrive; then run.py judge
 #
-# Progress is pushed to the branch: spotcheck/records.jsonl and spotcheck/runpod-status.txt.
+# run.py appends to /workspace/spotcheck-records.jsonl, outside the repository; whole lines of
+# it are copied into spotcheck/records.jsonl before each commit, so a rebase never meets a file
+# being written. Progress is pushed to the branch: spotcheck/records.jsonl and
+# spotcheck/runpod-status.txt.
 set -uo pipefail
 
 W=/workspace
@@ -20,6 +24,8 @@ D=examples/qec-census-3b/spotcheck
 BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/spotcheck-run.log
+RUNREC=$W/spotcheck-records.jsonl
+MIN_DISK_GB=${SPOTCHECK_MIN_DISK_GB:-200}
 T=$W/tools
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
@@ -59,7 +65,15 @@ Claude-Session: https://claude.ai/code/session_01LBDpbJNXFaJgMYrZEKJamq"
   fi
 }
 
-records() { [ -f "$D/records.jsonl" ] && wc -l < "$D/records.jsonl" || echo 0; }
+records() { if [ -f "$D/records.jsonl" ]; then wc -l < "$D/records.jsonl"; else echo 0; fi; }
+
+sync_records() {  # the whole lines of run.py's file into the repository's copy
+  [ -f "$RUNREC" ] || return 0
+  python3 -c 'import sys; b = open(sys.argv[1], "rb").read(); open(sys.argv[2], "wb").write(b[:b.rfind(b"\n") + 1])' \
+    "$RUNREC" "$D/records.jsonl"
+}
+
+count() { local c; c=$(grep -c "$1" "$RUNLOG" 2>/dev/null); echo "${c:-0}"; }
 
 status() {  # phase [detail]: write and commit runpod-status.txt
   {
@@ -68,7 +82,7 @@ status() {  # phase [detail]: write and commit runpod-status.txt
     echo "updated: $(date -u +%FT%TZ)"
     echo "pod: ${RUNPOD_POD_ID:-?}"
     echo "records: $(records)"
-    echo "running: $(grep -c '^start ' "$RUNLOG" 2>/dev/null || echo 0) started, $(grep -c '^done ' "$RUNLOG" 2>/dev/null || echo 0) done this start"
+    echo "log: $(count '^start ') started, $(count '^done ') done, $(count '^died ') died (all starts on this disk)"
     echo "disk: $(df -h --output=used,avail "$W" 2>/dev/null | tail -1)"
   } > "$STATUS"
   commit "Spot-check: pod status ($1)" "$STATUS"
@@ -86,6 +100,14 @@ command -v uv >/dev/null || { status failed "uv did not install"; hold "uv"; }
 
 git fetch -q origin "$BRANCH" && [ -n "$(git log "origin/$BRANCH..HEAD" --oneline)" ] && push
 
+# leftovers of jobs killed by an earlier stop (proofs, compiled programs)
+rm -rf "$TMPDIR"/spotcheck-* "$TMPDIR"/qec-parts-* 2>/dev/null
+avail=$(df -BG --output=avail "$TMPDIR" | tail -1 | tr -dc 0-9)
+if [ "${avail:-0}" -lt "$MIN_DISK_GB" ]; then
+  status failed "only ${avail}G free under $TMPDIR (need ${MIN_DISK_GB}G for the DRAT proofs)"
+  hold "disk"
+fi
+
 build() {  # name url commit(or "") make-command
   local name=$1 url=$2 rev=$3 cmd=$4
   [ -d "$T/$name/.git" ] || git clone -q "$url" "$T/$name" || return 1
@@ -99,9 +121,15 @@ status building "CaDiCaL, drat-trim, DistQLDPC"
 [ -x "$T/drat-trim/drat-trim" ] || build drat-trim https://github.com/marijnheule/drat-trim \
   2e3b2dc0ecf938addbd779d42877b6ed69d9a985 "make" \
   || { status failed "drat-trim build"; hold "drat-trim"; }
+DQ_PIN=$D/distqldpc-commit.txt
+dq_rev=$(cat "$DQ_PIN" 2>/dev/null || true)
 [ -x "$T/DistQLDPC/bin/distqldpc" ] || build DistQLDPC https://github.com/guluchen/DistQLDPC \
-  "" "make -j$(nproc)" \
+  "$dq_rev" "make -j$(nproc)" \
   || { status failed "DistQLDPC build (see /workspace/build-DistQLDPC.log)"; hold "distqldpc"; }
+if [ -z "$dq_rev" ]; then
+  git -C "$T/DistQLDPC" rev-parse HEAD > "$DQ_PIN"
+  commit "Spot-check: DistQLDPC commit, cloned at the first start" "$DQ_PIN"
+fi
 
 # 2. the venv
 uv python install 3.13 && uv sync --frozen --group dev --group qec \
@@ -129,28 +157,44 @@ if ! grep -qlF "$model" "$D"/hardware-runpod*.txt 2>/dev/null; then
   commit "Spot-check: hardware and tool commits of the RunPod machine" "$out"
 fi
 
-# 5. run, committing records as they arrive
+# 5. run, committing records as they arrive (run.py again, up to 3 times, if it fails)
+[ -f "$RUNREC" ] || { [ -f "$D/records.jsonl" ] && cp "$D/records.jsonl" "$RUNREC"; }
 workers=${SPOTCHECK_WORKERS:-$(nproc)}
-status running "run.py run --workers $workers"
-( cd "$R" && .venv/bin/python -u "$D/run.py" run --workers "$workers" >> "$RUNLOG" 2>&1 ) &
-run=$!
-on_stop() {
+run=""
+on_stop() {  # a pod stop: run.py ends its jobs' process groups; commit what is written
+  [ -n "$run" ] && kill -TERM "$run" 2>/dev/null
+  sync_records
   commit "Spot-check: records ($(records) jobs), pod stopping" "$D/records.jsonl"
-  pkill -TERM -P "$run" 2>/dev/null; kill "$run" 2>/dev/null; exit 0
+  exit 0
 }
 trap on_stop TERM INT
-while kill -0 "$run" 2>/dev/null; do
-  sleep 300 & wait $!
-  [ -f "$D/records.jsonl" ] && commit "Spot-check: records ($(records) jobs)" "$D/records.jsonl"
-  status running "run.py run --workers $workers"
+code=1
+for attempt in 1 2 3; do
+  status running "run.py run --workers $workers (attempt $attempt)"
+  .venv/bin/python -u "$D/run.py" run --workers "$workers" --out "$RUNREC" >> "$RUNLOG" 2>&1 &
+  run=$!
+  while kill -0 "$run" 2>/dev/null; do
+    sleep 300 & wait $!
+    sync_records
+    [ -f "$D/records.jsonl" ] && commit "Spot-check: records ($(records) jobs)" "$D/records.jsonl"
+    status running "run.py run --workers $workers (attempt $attempt)"
+  done
+  wait "$run"; code=$?
+  run=""
+  sync_records
+  [ -f "$D/records.jsonl" ] && commit "Spot-check: records ($(records) jobs), run ended" "$D/records.jsonl"
+  [ "$code" = 0 ] && break
+  echo "run.py exited with $code (attempt $attempt)"
 done
-wait "$run"; code=$?
-[ -f "$D/records.jsonl" ] && commit "Spot-check: records ($(records) jobs), run ended" "$D/records.jsonl"
 if [ "$code" = 0 ]; then
-  .venv/bin/python "$D/run.py" judge > "$D/judge.json" 2>> "$RUNLOG"
-  commit "Spot-check: judged" "$D/judge.json"
-  status done "run.py exited 0; see judge.json"
+  if .venv/bin/python "$D/run.py" judge --out "$D/records.jsonl" > "$W/judge.json" 2>> "$RUNLOG"; then
+    cp "$W/judge.json" "$D/judge.json"
+    commit "Spot-check: judged" "$D/judge.json"
+    status done "run.py exited 0; see judge.json"
+  else
+    status failed "run.py judge failed (see /workspace/spotcheck-run.log)"
+  fi
 else
-  status failed "run.py exited with $code (see /workspace/spotcheck-run.log)"
+  status failed "run.py exited with $code three times (see /workspace/spotcheck-run.log)"
 fi
 hold "end"

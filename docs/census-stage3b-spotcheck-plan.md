@@ -160,9 +160,17 @@ C6 runs on the 3 sampled codes with d <= 16 and on 8 frontier codes with 12 <= d
 | C5 | — | DistQLDPC, cc and maxsat engines | — | 2 h each |
 | C6 | — | sat.certify at weight d − 1 | anchors (0, lm); the census's witness of weight d checked by verify_witness | 4 h for CaDiCaL, then drat-trim |
 
-- **C5's DistQLDPC commit.** The pod clones its current head and records the commit in
-  `spotcheck/hardware-runpod*.txt`, as the plan says. The commit the runner was tested with is
-  e52d15baa7a430104329d20467c12375fe60f0f2.
+- **C5's DistQLDPC commit.** The pod clones DistQLDPC's current head at its first start, as the
+  plan says. It records the commit in `spotcheck/distqldpc-commit.txt` and checks that commit out
+  at every later start. The runner was tested with e52d15baa7a430104329d20467c12375fe60f0f2.
+- **C5's bounds.** These are DistQLDPC's last `c d_lb:` and `c d_ub:` lines. When the cc engine
+  withdraws its bounds, they count as none. Any exit other than 0 (solved) or 1 (stopped) is an
+  error.
+- **C6's proofs.** CaDiCaL writes binary DRAT. Both CaDiCaL and drat-trim run under their own
+  time limits. A proof over 40 GB is not checked (drat-trim holds it in memory), so the claim is
+  "unverified".
+- **The logical counts.** C1 and C6 check that the number of logicals they use equals the
+  code's k.
 
 **What counts, made exact** (`run.py assess`):
 
@@ -170,22 +178,27 @@ C6 runs on the 3 sampled codes with d <= 16 and on 8 frontier codes with 12 <= d
 |---|---|---|---|
 | C4 | its lightest logical has weight ≥ d | it finds a lighter logical | never |
 | C2, C3 | an unfinished run's lower bound is ≤ d | a finished run returns a d other than d | a finished run returns d |
-| C1 | [lower, upper] contains d | the interval excludes d, or an optimal value other than d | SCIP's optimal value is d |
+| C1 | [lower, upper] contains d | the interval excludes d (with SCIP's solution a verified logical), an optimal value other than d, or "infeasible" (the census's witness is feasible) | SCIP's optimal value is d |
 | C5 | [lower, upper] contains d | the interval excludes d, or an exact value other than d | an exact value equal to d |
 | C6 | — | the SAT model is a verified logical of weight ≤ d − 1, or the census's witness fails | a drat-trim-verified UNSAT plus the witness verified at weight d |
 
 - **C6 with no conclusion.** A time limit, or a proof drat-trim does not verify (including
   drat-trim running out of time or memory), concludes nothing either way.
 - **Errors.** A job that errors is reported, and is not counted as agreement.
+- **Agreement overall** needs all three: a record for every job, no errors, and no
+  contradiction.
+- **A fault in a tool is not evidence about d.** If SCIP's solution is not a logical, or a SAT
+  model is not a logical, that job concludes nothing. It is flagged in the judge's notes.
 - **The tiers** are as above.
 
-**The machine.** A RunPod CPU pod: compute-optimized, 32 vCPU, on-demand, with a 400 GB container
+**The machine.** A RunPod CPU pod: compute-optimized, 32 vCPU, on-demand, with a 300 GB container
 disk for the DRAT proofs. It runs `examples/qec-census-3b/spotcheck/pod-run.sh`, which commits
 records to the branch.
 
 - **Concurrency.** Up to 32 jobs run at once. At most 6 are integer programs (memory) and at
-  most 4 are SAT claims (proof disk).
+  most 3 are SAT claims (proof disk).
 - **Isolation.** Each job runs in its own process. A process that dies without a result, out of
-  memory say, is run again up to twice, then recorded as an error.
+  memory say, is run again up to twice, then recorded as an error. Each job has its own process
+  group, which is killed when the job ends, so no tool outlives its job.
 - **Speed matters.** The limits are wall-clock, so a faster machine finishes more runs. The
   write-up gives the hardware.

@@ -188,7 +188,7 @@ sets. The runner is `examples/qec-census-3b/spotcheck/run.py` (`sample`, `run --
 The spot-check gets a pod of its own, after the census finished:
 
 ```bash
-python3 examples/qec-census-3c/runpod/launch.py create --job spotcheck   # 32 vCPU, 400 GB disk
+python3 examples/qec-census-3c/runpod/launch.py create --job spotcheck   # 32 vCPU, 300 GB disk
 ```
 
 That pod runs `examples/qec-census-3b/spotcheck/pod-run.sh`. It builds the three tools, runs the

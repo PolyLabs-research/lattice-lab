@@ -119,20 +119,35 @@ def test_assess():
         assert a(rec(c, {"status": "complete", "d": 22, "lower": 22}))["consistent"] is False
         assert a(rec(c, {"status": "timelimit", "d": None, "lower": 19}))["consistent"]
         assert a(rec(c, {"status": "timelimit", "d": None, "lower": 21}))["consistent"] is False
-    ilp = {"status": "timelimit", "d": None, "lower": 9, "upper": 24}
+    W = {"witness_check": {"logical": True}}
+    ilp = {"status": "timelimit", "d": None, "lower": 9, "upper": 24, **W}
     assert a(rec("C1", ilp)) == {"consistent": True, "reaches": None}
     assert a(rec("C1", {**ilp, "upper": 18}))["consistent"] is False
-    assert a(rec("C1", {"status": "optimal", "d": 20, "lower": 20, "upper": 20}))["reaches"]
+    assert (
+        a(rec("C1", {**ilp, "upper": 18, "witness_check": {"logical": False}}))["consistent"]
+        is None
+    )  # SCIP's own fault, not evidence about d
+    assert (
+        a(rec("C1", {**ilp, "status": "infeasible", "lower": None, "upper": None}))["consistent"]
+        is False
+    )
+    assert a(rec("C1", {"status": "optimal", "d": 20, "lower": 20, "upper": 20, **W}))["reaches"]
     dq = {"lower": 12, "d": None, "upper": 26}
     assert a(rec("C5", dq, engine="cc"))["consistent"]
     assert a(rec("C5", {**dq, "d": 20}, engine="cc"))["reaches"] == "exact"
     assert a(rec("C5", {**dq, "d": 18, "upper": 18}, engine="cc"))["consistent"] is False
     good = {"logical": True, "weight": 20}
+    bad = {"logical": False, "weight": 20}
     assert a(rec("C6", {"status": "verified", "witness_check": good}))["reaches"] == "certified"
+    assert a(rec("C6", {"status": "verified", "witness_check": bad}))["consistent"] is False
     assert a(rec("C6", {"status": "timelimit", "witness_check": good}))["consistent"] is None
+    assert a(rec("C6", {"status": "timelimit", "witness_check": bad}))["consistent"] is False
     assert a(rec("C6", {"status": "unverified", "witness_check": good}))["consistent"] is None
     lighter = {"status": "sat", "witness_check": good, "support_check": {"logical": True}}
     assert a(rec("C6", lighter))["consistent"] is False
+    junk = {**lighter, "support_check": {"logical": False}}
+    assert a(rec("C6", junk))["consistent"] is None
+    assert a(rec("C6", {**junk, "witness_check": bad}))["consistent"] is False
     assert a({"check": "C1", "code": code72(), "error": "x"})["consistent"] is None
 
 
@@ -146,7 +161,8 @@ def test_tiers():
     dq = rec("C5", {"lower": 20, "d": 20, "upper": 20}, engine="cc")
     assert R.tier([dq]) == "second implementation"
     assert R.tier([{**dq, "engine": "maxsat"}]) == "second method"
-    ilp = rec("C1", {"status": "optimal", "d": 20, "lower": 20, "upper": 20})
+    ilp = rec("C1", {"status": "optimal", "d": 20, "lower": 20, "upper": 20,
+                     "witness_check": {"logical": True}})  # fmt: skip
     assert R.tier([dq, ilp]) == "second method"
     cert = rec("C6", {"status": "verified", "witness_check": {"logical": True, "weight": 20}})
     assert R.tier([dq, ilp, cert]) == "certified"
@@ -233,3 +249,49 @@ def test_a_dying_job_is_retried_then_recorded(tmp_path, monkeypatch):
     assert set(recs) == {j["key"] for j in js}
     assert "error" not in recs[js[0]["key"]]
     assert "died 3 times" in recs[js[1]["key"]]["error"]
+
+
+def test_judge_needs_every_job_and_no_error(tmp_path, monkeypatch):
+    js = [{"check": "C4", "kind": "Z", "seed": s, "code": code72()} for s in (0, 1)]
+    for j in js:
+        j["key"] = R.key(j)
+    monkeypatch.setattr(R, "jobs", lambda s: js)
+    monkeypatch.setattr(R, "sample", lambda: {"codes": [], "c6_extra": []})
+    out = tmp_path / "records.jsonl"
+    ok = [{**j, "result": {"upper": 6}} for j in js]
+    stray = {**ok[0], "key": "C4:not-a-job"}
+    out.write_text(json.dumps(ok[0]) + "\n" + json.dumps(stray) + "\n")
+    v = R.judge(out)
+    assert v["done"] == 1 and not v["agreement"]  # a job missing
+    with out.open("a") as fh:
+        fh.write(json.dumps({**js[1], "error": "boom"}) + "\n")
+    v = R.judge(out)
+    assert v["done"] == 2 and v["errors"] and not v["agreement"]
+    with out.open("a") as fh:  # the job run again: its last record counts
+        fh.write(json.dumps(ok[1]) + "\n" + '{"key": "cut sh')
+    v = R.judge(out)
+    assert v["agreement"] and not v["errors"] and R.done_keys(out) >= {j["key"] for j in js}
+
+
+@pytest.mark.skipif(not tools_ready(), reason="spot-check tools or pyscipopt missing")
+def test_distq_reads_bounds_when_it_stops_early():
+    # [[300,4,24]] on 3 x 50 does not finish in 10 s; its bounds must still be read
+    distq = R._instruments()[2]
+    A, B = [(0, 0), (1, 1), (2, 3)], [(0, 0), (1, 4), (2, 14)]
+    for engine in ("cc", "maxsat"):
+        r = distq.run(A, B, 3, 50, engine=engine, limit=10)
+        assert r["d"] is None and r["returncode"] == 1
+        assert r["upper"] is not None and r["upper"] >= 24
+        assert r["lower"] is not None and r["lower"] <= 24
+
+
+@pytest.mark.skipif(not tools_ready(), reason="spot-check tools or pyscipopt missing")
+def test_sat_proof_cap(monkeypatch):
+    sat = R._instruments()[1]
+    D = R._instruments()[0].distance
+    A, B = R._ab(code72())
+    hx, hz = D._bit_rows(A, B, 6, 6)
+    logicals = D._logicals_bits(hz, hx, 72)
+    monkeypatch.setattr(sat, "PROOF_CAP", 0)
+    r = sat.certify(hx, logicals, 72, 5, anchors=(0, 36), limit=60)
+    assert r["status"] == "unverified" and "not checked" in r["reason"]

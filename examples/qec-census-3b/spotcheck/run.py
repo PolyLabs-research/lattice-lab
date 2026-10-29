@@ -42,6 +42,7 @@ import multiprocessing.connection
 import os
 import platform
 import random
+import signal
 import socket
 import subprocess
 import sys
@@ -62,7 +63,7 @@ AMENDED = [((3, 49), 10, 20), ((7, 21), 10, 20), ((3, 48), 8, 22), ((4, 36), 12,
 WINDOW_SEEDS, WINDOW_SECONDS = tuple(range(8)), 900.0
 LIMITS = {"C1": 7200.0, "C2": 7200.0, "C3": 7200.0, "C5": 7200, "C6": 14400.0}
 ORDER = ("C4", "C3", "C6", "C5", "C1", "C2")  # the plan's order when time is short
-SCIP_CAP, SAT_CAP = 6, 4
+SCIP_CAP, SAT_CAP = 6, 3
 RETRIES = 2
 
 
@@ -241,6 +242,10 @@ def execute(j: dict) -> dict:
                                time_limit=LIMITS["C2"])  # fmt: skip
         elif j["check"] == "C1":
             r = pack.distance.distance_ilp(A, B, ell, m, "Z", time_limit=LIMITS["C1"])
+            if r["k"] != c["k"]:
+                raise RuntimeError(f"distance_ilp found {r['k']} logicals, k = {c['k']}")
+            if r.get("witness") is not None:
+                r["witness_check"] = pack.distance.verify_witness(A, B, ell, m, "Z", r["witness"])
         elif j["check"] == "C5":
             r = distq.run(A, B, ell, m, engine=j["engine"], limit=LIMITS["C5"])
             r["distqldpc_commit"] = _git_head(distq.DISTQ)
@@ -248,6 +253,8 @@ def execute(j: dict) -> dict:
             D = pack.distance
             hx, hz = D._bit_rows(A, B, ell, m)
             logicals = D._logicals_bits(hz, hx, 2 * lm)  # X-logicals
+            if len(logicals) != c["k"]:
+                raise RuntimeError(f"{len(logicals)} X-logicals, k = {c['k']}")
             r = sat.certify(hx, logicals, 2 * lm, c["d"] - 1, anchors=(0, lm),
                             limit=LIMITS["C6"])  # fmt: skip
             if r.get("support") is not None:
@@ -292,10 +299,21 @@ def code_hashes() -> dict[str, str]:
     return {k: hashlib.sha256(p.read_bytes()).hexdigest() for k, p in files.items()}
 
 
-def done_keys(path: Path = OUT) -> set[str]:
+def read(path: Path = OUT) -> list[dict]:
+    """The records in `path`; a last line cut short (a write interrupted) is skipped."""
     if not path.exists():
-        return set()
-    return {json.loads(line)["key"] for line in path.read_text().splitlines() if line.strip()}
+        return []
+    out = []
+    for line in path.read_text().splitlines():
+        try:
+            out.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return out
+
+
+def done_keys(path: Path = OUT) -> set[str]:
+    return {r["key"] for r in read(path)}
 
 
 def capped(j: dict, running: list[dict]) -> bool:
@@ -305,7 +323,17 @@ def capped(j: dict, running: list[dict]) -> bool:
 
 
 def _child(j: dict, out: str) -> None:
-    Path(out).write_text(json.dumps(execute(j), sort_keys=True))
+    os.setsid()  # its own process group, so the tools it starts can be killed with it
+    tmp = Path(out + ".part")
+    tmp.write_text(json.dumps(execute(j), sort_keys=True))
+    tmp.rename(out)  # the result appears whole or not at all
+
+
+def _kill_group(proc) -> None:
+    try:
+        os.killpg(proc.pid, signal.SIGKILL)
+    except (ProcessLookupError, PermissionError):
+        pass
 
 
 def run(workers: int, path: Path = OUT, retries: int = RETRIES) -> None:
@@ -318,6 +346,13 @@ def run(workers: int, path: Path = OUT, retries: int = RETRIES) -> None:
     ctx = multiprocessing.get_context("fork")
     running: dict = {}  # sentinel -> (process, result file, job)
     deaths: dict[str, int] = {}
+
+    def stop(signum, frame):  # a pod stop: end every job's process group, then exit
+        for proc, _, _ in running.values():
+            _kill_group(proc)
+        sys.exit(128 + signum)
+
+    signal.signal(signal.SIGTERM, stop)
     with tempfile.TemporaryDirectory(prefix="spotcheck-run-") as tmp:
         while todo or running:
             while len(running) < workers:
@@ -334,10 +369,15 @@ def run(workers: int, path: Path = OUT, retries: int = RETRIES) -> None:
             for s in multiprocessing.connection.wait(list(running)):
                 proc, out, j = running.pop(s)
                 proc.join()
+                _kill_group(proc)  # anything the job left running
+                rec = None
                 if out.exists():
-                    rec = json.loads(out.read_text())
-                    out.unlink()
-                else:
+                    try:
+                        rec = json.loads(out.read_text())
+                    except (OSError, json.JSONDecodeError):
+                        rec = None
+                    out.unlink(missing_ok=True)
+                if rec is None:
                     deaths[j["key"]] = deaths.get(j["key"], 0) + 1
                     print(f"died  {j['key']} (exit {proc.exitcode})", flush=True)
                     if deaths[j["key"]] <= retries:
@@ -368,7 +408,13 @@ def assess(rec: dict) -> dict:
             return {"consistent": r["d"] == d, "reaches": "exact" if r["d"] == d else None}
         return {"consistent": r["lower"] is None or r["lower"] <= d, "reaches": None}
     if check == "C1":
-        ok = (r["lower"] is None or r["lower"] <= d) and (r["upper"] is None or r["upper"] >= d)
+        if r["status"] in ("infeasible", "unbounded", "inforunbd"):
+            # the program is feasible (the census's witness satisfies it): a wrong conclusion
+            return {"consistent": False, "reaches": None, "note": r["status"]}
+        upper = r["upper"]
+        if upper is not None and not r["witness_check"]["logical"]:
+            return {"consistent": None, "reaches": None, "note": "SCIP's solution is no logical"}
+        ok = (r["lower"] is None or r["lower"] <= d) and (upper is None or upper >= d)
         if r["status"] == "optimal":
             ok = ok and r["d"] == d
             return {"consistent": ok, "reaches": "exact" if ok else None}
@@ -382,17 +428,17 @@ def assess(rec: dict) -> dict:
     if check == "C6":
         witness = rec["result"]["witness_check"]
         good_witness = witness["logical"] and witness["weight"] == d
+        if not good_witness:
+            return {"consistent": False, "reaches": None, "note": "the census's witness fails"}
         if r["status"] == "sat":
-            lighter = r["support_check"]["logical"]
-            return {
-                "consistent": not lighter,
-                "reaches": None,
-                "note": "a lighter logical" if lighter else "a SAT model that is no logical",
-            }
+            if r["support_check"]["logical"]:
+                return {"consistent": False, "reaches": None, "note": "a lighter logical"}
+            # an encoding fault, not evidence about d: no conclusion, flagged
+            return {"consistent": None, "reaches": None, "note": "a SAT model that is no logical"}
         if r["status"] == "verified":
-            return {"consistent": good_witness, "reaches": "certified" if good_witness else None}
-        # a time limit, or a proof drat-trim rejected: no conclusion either way
-        return {"consistent": None if good_witness else False, "reaches": None, "note": r["status"]}
+            return {"consistent": True, "reaches": "certified"}
+        # a time limit, or a proof drat-trim did not verify: no conclusion either way
+        return {"consistent": None, "reaches": None, "note": r["status"]}
     raise ValueError(check)
 
 
@@ -411,9 +457,11 @@ def tier(recs: list[dict]) -> str:
 
 
 def judge(path: Path = OUT) -> dict:
-    recs = [json.loads(line) for line in path.read_text().splitlines() if line.strip()] \
-        if path.exists() else []  # fmt: skip
+    """Agreement holds only when every expected job has a record, none errored, and none
+    contradicts d. Records outside the job list are ignored; a key's last record counts."""
     expected = {j["key"] for j in jobs(sample())}
+    last = {r["key"]: r for r in read(path) if r["key"] in expected}
+    recs = list(last.values())
     by_code: dict[str, list[dict]] = {}
     for r in recs:
         by_code.setdefault(_name(r["code"]), []).append(r)
@@ -421,9 +469,12 @@ def judge(path: Path = OUT) -> dict:
     errors = [r["key"] for r in recs if "error" in r]
     finished = {c: sum(assess(r)["reaches"] is not None for r in recs if r["check"] == c)
                 for c in ("C1", "C2", "C3", "C5", "C6")}  # fmt: skip
-    return {"jobs": len(expected), "done": len(expected & {r["key"] for r in recs}),
-            "agreement": not contradictions, "contradictions": contradictions,
-            "errors": errors, "reached_d": finished,
+    notes = {r["key"]: assess(r)["note"] for r in recs if assess(r).get("note")}
+    done = len(recs)
+    return {"jobs": len(expected), "done": done,
+            "agreement": not contradictions and not errors and done == len(expected),
+            "contradictions": contradictions, "errors": errors, "notes": notes,
+            "reached_d": finished,
             "tiers": {name: tier(rs) for name, rs in by_code.items()}}  # fmt: skip
 
 
@@ -431,6 +482,7 @@ def main() -> None:
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[1])
     p.add_argument("action", choices=("sample", "run", "judge"))
     p.add_argument("--workers", type=int, default=os.cpu_count() or 4)
+    p.add_argument("--out", type=Path, default=OUT, help="the records file (default: %(default)s)")
     a = p.parse_args()
     if a.action == "sample":
         s = sample()
@@ -441,9 +493,9 @@ def main() -> None:
             print(f"{'':42s} {_name(c)}")
         print(f"{len(jobs(s))} jobs on {platform.node()}")
     elif a.action == "run":
-        run(a.workers)
+        run(a.workers, a.out)
     else:
-        print(json.dumps(judge(), indent=2))
+        print(json.dumps(judge(a.out), indent=2))
 
 
 if __name__ == "__main__":
