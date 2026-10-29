@@ -1,4 +1,4 @@
-# Running stage 3c (and the spot-check) on a RunPod CPU pod
+# Running stage 3c (and the spot-check) on RunPod CPU pods
 
 Stage 3c (`examples/qec-census-3c`) was stopped on 2026-10-28 after 24 of its 49 tori, because
 the cloud session's container kept restarting. Each restart threw away the torus in progress: 2 x 75
@@ -182,5 +182,16 @@ uv run --no-sync pytest -q tests/test_qec_census_3b_spotcheck.py   # 13 tests; s
 ```
 
 `sat.py` reads the tools from `$SPOTCHECK_TOOLS` and `distq.py` from `$DISTQLDPC`, which step 1
-sets. The runner that draws the sample and runs C1–C6 isn't written yet. I'll add it to the branch
-before you start this part. It will run at most 4 jobs at once, so it never takes the census's cores.
+sets. The runner is `examples/qec-census-3b/spotcheck/run.py` (`sample`, `run --workers N`,
+`judge`).
+
+The spot-check gets a pod of its own, after the census finished:
+
+```bash
+python3 examples/qec-census-3c/runpod/launch.py create --job spotcheck   # 32 vCPU, 400 GB disk
+```
+
+That pod runs `examples/qec-census-3b/spotcheck/pod-run.sh`. It builds the three tools, runs the
+spot-check tests (every check once on [[72,12,6]]), records the hardware and tool commits, and
+then runs `run.py run` on every core. It commits `spotcheck/records.jsonl` and
+`spotcheck/runpod-status.txt` every 5 minutes, and `spotcheck/judge.json` at the end.

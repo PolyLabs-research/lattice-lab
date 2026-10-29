@@ -1,7 +1,8 @@
 # Census stage 3b: independent spot-check of the frontier distances (plan)
 
-**Status: a plan, committed before any of it runs, and amended before any of it ran to add C5,
-C6 and the tiers.** It is not part of stage 3b's registered verdict. It is reported beside it, and
+**Status: a plan, committed before any of it runs, and amended twice before any of it ran: first
+to add C5, C6 and the tiers, then (2026-10-29, after the census's results, see the end) to fix
+the sample rules exactly and add four codes.** It is not part of stage 3b's registered verdict. It is reported beside it, and
 its sample rule and pass criteria are fixed here so that the sample cannot be chosen after the
 fact.
 
@@ -95,3 +96,96 @@ Each frontier distance in the sample is reported at the highest tier its checks 
   C6 follows, because it gives certificates, then C5, then C1 and C2.
 - **Outputs:** records go to `examples/qec-census-3b/spotcheck/`. The write-up reports them
   beside the registered verdict.
+
+## Amendment 2 (2026-10-29): exact rules, four added codes, the machine
+
+Written after stage 3b/3c's results were known (docs/code-census.md) and before any check ran.
+The runner is `examples/qec-census-3b/spotcheck/run.py` (`sample`, `run`, `judge`), tested in
+`tests/test_qec_census_3b_spotcheck_run.py`.
+
+**The rules, made exact.** The text above left some choices open. They are fixed as follows,
+and the runner applies them.
+
+- **Records and order.** Stage 3b's records, then stage 3c's, in file order. Judged tori are
+  those in groups random and extrapolation that have codes and no error.
+- **A code's value.** It is the code's own exact distance, meaning the search finished on that
+  class (exact.status "complete"). This holds whether or not the torus's frontier was settled.
+- **The d_max code.** At the torus's smallest connected k, take the first class in record order
+  whose exact d equals the torus's best connected d at that k.
+- **Rule 2.** The P2 counterexamples are now 7 tori. These fall into 4 isomorphism classes of
+  Z_l x Z_m:
+  - Z_102: 2 x 51 and 3 x 34;
+  - Z_120: 3 x 40, 5 x 24 and 8 x 15;
+  - Z_123: 3 x 41;
+  - Z_3 x Z_48: 3 x 48.
+
+  "Up to 4 in all" is applied as one torus per class, the first in record order. That gives
+  2 x 51, 3 x 40, 3 x 41 and 3 x 48.
+- **Rule 3.** The frontier entries are each (torus, k) with best connected d >= 14, in record
+  order and then by k. Each entry's code is the first complete class with that d. Entries whose
+  code is already drawn are dropped. Then `random.Random("qec-census-3b spot-check").sample`
+  draws 6 of them.
+- **Rule 1 redundancy, disclosed.** The 6 largest-n tori include 2 x 75, 3 x 50 and 6 x 25,
+  which are all Z_150. The rule was fixed beforehand, so they stay in the sample.
+
+**Four codes added (rule 4).** These are the codes the write-up leans on:
+
+- the two P3 counterexamples, [[294,10,20]] on 3 x 49 and on 7 x 21;
+- the two highest extrapolation scores on 288 qubits, [[288,8,22]] on 3 x 48 and [[288,12,18]]
+  on 4 x 36.
+
+They were chosen after the results, for that reason. They add to the sample and replace
+nothing.
+
+**The sample this gives** (`run.py sample`): 20 codes, all of their d's settled by the search.
+- 6 largest n: [[300,4,24]] on 2 x 75, 3 x 50, 5 x 30 and 6 x 25; [[294,4,22]] on 3 x 49;
+  [[294,4,24]] on 7 x 21;
+- P2: [[204,4,20]] on 2 x 51; [[240,4,22]] on 3 x 40; [[246,4,22]] on 3 x 41; [[288,4,24]] on
+  3 x 48;
+- random: [[192,8,16]] on 2 x 48; [[210,10,16]] on 5 x 21; [[282,4,22]] on 3 x 47;
+  [[270,8,20]] on 5 x 27; [[240,8,18]] on 8 x 15; [[252,10,16]] on 2 x 63;
+- added: the four above.
+
+C6 runs on the 3 sampled codes with d <= 16 and on 8 frontier codes with 12 <= d <= 16 from the
+6 smallest judged tori. In all there are 431 jobs.
+
+**How each check is run.**
+
+| Check | Kinds | Instrument | Settings | Limit |
+|---|---|---|---|---|
+| C4 | Z and X | window.c | seeds 0–7, one job per (kind, seed) | 900 s each |
+| C3 | X | packing search | from (0, lm), 1 part | 2 h |
+| C2 | Z | search_parts.c (no cut) | every qubit as anchor, 1 part | 2 h |
+| C1 | Z | distance_ilp | translation row, SCIP_FIX | 2 h |
+| C5 | — | DistQLDPC, cc and maxsat engines | — | 2 h each |
+| C6 | — | sat.certify at weight d − 1 | anchors (0, lm); the census's witness of weight d checked by verify_witness | 4 h for CaDiCaL, then drat-trim |
+
+- **C5's DistQLDPC commit.** The pod clones its current head and records the commit in
+  `spotcheck/hardware-runpod*.txt`, as the plan says. The commit the runner was tested with is
+  e52d15baa7a430104329d20467c12375fe60f0f2.
+
+**What counts, made exact** (`run.py assess`):
+
+| Check | Consistent with d when | Contradicts d when | Reaches d when |
+|---|---|---|---|
+| C4 | its lightest logical has weight ≥ d | it finds a lighter logical | never |
+| C2, C3 | an unfinished run's lower bound is ≤ d | a finished run returns a d other than d | a finished run returns d |
+| C1 | [lower, upper] contains d | the interval excludes d, or an optimal value other than d | SCIP's optimal value is d |
+| C5 | [lower, upper] contains d | the interval excludes d, or an exact value other than d | an exact value equal to d |
+| C6 | — | the SAT model is a verified logical of weight ≤ d − 1, or the census's witness fails | a drat-trim-verified UNSAT plus the witness verified at weight d |
+
+- **C6 with no conclusion.** A time limit, or a proof drat-trim does not verify (including
+  drat-trim running out of time or memory), concludes nothing either way.
+- **Errors.** A job that errors is reported, and is not counted as agreement.
+- **The tiers** are as above.
+
+**The machine.** A RunPod CPU pod: compute-optimized, 32 vCPU, on-demand, with a 400 GB container
+disk for the DRAT proofs. It runs `examples/qec-census-3b/spotcheck/pod-run.sh`, which commits
+records to the branch.
+
+- **Concurrency.** Up to 32 jobs run at once. At most 6 are integer programs (memory) and at
+  most 4 are SAT claims (proof disk).
+- **Isolation.** Each job runs in its own process. A process that dies without a result, out of
+  memory say, is run again up to twice, then recorded as an error.
+- **Speed matters.** The limits are wall-clock, so a faster machine finishes more runs. The
+  write-up gives the hardware.

@@ -1,16 +1,20 @@
 """
-Create, inspect and stop the stage 3c census pod through RunPod's REST API (docs/runpod-setup.md).
+Create, inspect and stop the census and spot-check pods through RunPod's REST API
+(docs/runpod-setup.md).
 
-    python examples/qec-census-3c/runpod/launch.py create [--vcpu 8] [--dry-run]
+    python examples/qec-census-3c/runpod/launch.py create [--job JOB] [--vcpu N] [--dry-run]
     python examples/qec-census-3c/runpod/launch.py list
     python examples/qec-census-3c/runpod/launch.py status POD_ID
     python examples/qec-census-3c/runpod/launch.py stop POD_ID
     python examples/qec-census-3c/runpod/launch.py delete POD_ID
 
 The API key comes from the environment (RUNPOD_API_KEY) when it is set; otherwise the request is
-sent without one, for a proxy that adds it. It only acts on pods named NAME: `list` shows only
+sent without one, for a proxy that adds it. It only acts on pods named in JOBS: `list` shows only
 those, and `status`, `stop` and `delete` refuse any other pod, so a pod of yours running something
 else is never touched.
+
+The jobs: `census-3c` (stage 3c, pod-run.sh here) and `spotcheck` (the stage 3b/3c spot-check,
+examples/qec-census-3b/spotcheck/pod-run.sh, with a large container disk for the DRAT proofs).
 
 The pod: a CPU pod, compute-optimized (cpu5c, then cpu3c), on-demand in Secure Cloud. RunPod
 gives CPU pods no pod volume (volumeInGb comes back 0), so /workspace is on the container disk and
@@ -31,12 +35,18 @@ import urllib.error
 import urllib.request
 
 API = "https://rest.runpod.io/v1"
-NAME = "lattice-lab-census-3c"
+JOBS = {
+    "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20,
+                  "script": "examples/qec-census-3c/runpod/pod-run.sh"},
+    "spotcheck": {"name": "lattice-lab-spotcheck", "vcpu": 32, "disk": 400,
+                  "script": "examples/qec-census-3b/spotcheck/pod-run.sh"},
+}  # fmt: skip
+NAMES = {j["name"] for j in JOBS.values()}
 BRANCH = "ccr-ab9f0bb1-qb20sx"
 REPO = "github.com/PolyLabs-research/lattice-lab.git"
 SECRET = "lattice_lab_github_token"
 
-START = f"""export DEBIAN_FRONTEND=noninteractive
+START = """export DEBIAN_FRONTEND=noninteractive
 fail() {{
   echo "POD START FAILED: $*"; echo "(the pod waits here; stop or delete it with launch.py)"
   sleep infinity
@@ -61,26 +71,31 @@ else
   [ -d lattice-lab/.git ] || fail "git clone failed"
 fi
 echo "pod start: cloned, running pod-run.sh"
-exec bash lattice-lab/examples/qec-census-3c/runpod/pod-run.sh
+exec bash lattice-lab/{SCRIPT}
 """
 
 
-def body(vcpu: int) -> dict:
+def start(job: str) -> str:
+    return START.format(SECRET=SECRET, REPO=REPO, BRANCH=BRANCH, SCRIPT=JOBS[job]["script"])
+
+
+def body(job: str, vcpu: int | None = None) -> dict:
+    j = JOBS[job]
     return {
-        "name": NAME,
+        "name": j["name"],
         "computeType": "CPU",
         "cpuFlavorIds": ["cpu5c", "cpu3c"],
         "cpuFlavorPriority": "custom",
-        "vcpuCount": vcpu,
+        "vcpuCount": vcpu or j["vcpu"],
         "cloudType": "SECURE",
         "interruptible": False,
         "imageName": "ubuntu:24.04",
-        "containerDiskInGb": 20,
+        "containerDiskInGb": j["disk"],
         "volumeInGb": 20,
         "volumeMountPath": "/workspace",
         "ports": [],
         "env": {"GH_TOKEN": f"{{{{ RUNPOD_SECRET_{SECRET} }}}}"},
-        "dockerStartCmd": ["bash", "-c", START],
+        "dockerStartCmd": ["bash", "-c", start(job)],
     }
 
 
@@ -101,8 +116,9 @@ def call(method: str, path: str, data: dict | None = None):
 
 def ours(pod_id: str) -> dict:
     pod = call("GET", f"/pods/{pod_id}")
-    if pod.get("name") != NAME:
-        sys.exit(f"pod {pod_id} is named {pod.get('name')!r}, not {NAME!r}: not touching it")
+    if pod.get("name") not in NAMES:
+        sys.exit(f"pod {pod_id} is named {pod.get('name')!r}, not one of {sorted(NAMES)}: "
+                 "not touching it")  # fmt: skip
     return pod
 
 
@@ -116,18 +132,20 @@ def main() -> None:
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[1])
     p.add_argument("action", choices=("create", "list", "status", "stop", "delete"))
     p.add_argument("pod_id", nargs="?")
-    p.add_argument("--vcpu", type=int, default=8)
+    p.add_argument("--job", choices=sorted(JOBS), default="census-3c")
+    p.add_argument("--vcpu", type=int, help="default: the job's (census-3c 8, spotcheck 32)")
     p.add_argument("--dry-run", action="store_true", help="print the create request, send nothing")
     a = p.parse_args()
     if a.action == "create":
         if a.dry_run:
-            print(json.dumps(body(a.vcpu), indent=2))
+            print(json.dumps(body(a.job, a.vcpu), indent=2))
             return
-        if any(x.get("name") == NAME for x in call("GET", "/pods")):
-            sys.exit(f"a pod named {NAME} exists already (see `list`)")
-        print(json.dumps(brief(call("POST", "/pods", body(a.vcpu))), indent=2))
+        name = JOBS[a.job]["name"]
+        if any(x.get("name") == name for x in call("GET", "/pods")):
+            sys.exit(f"a pod named {name} exists already (see `list`)")
+        print(json.dumps(brief(call("POST", "/pods", body(a.job, a.vcpu))), indent=2))
     elif a.action == "list":
-        pods = [brief(x) for x in call("GET", "/pods") if x.get("name") == NAME]
+        pods = [brief(x) for x in call("GET", "/pods") if x.get("name") in NAMES]
         print(json.dumps(pods, indent=2))
     else:
         if not a.pod_id:
