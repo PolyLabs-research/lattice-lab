@@ -25,7 +25,7 @@ BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/spotcheck-run.log
 RUNREC=$W/spotcheck-records.jsonl
-MIN_DISK_GB=${SPOTCHECK_MIN_DISK_GB:-200}
+MIN_DISK_GB=${SPOTCHECK_MIN_DISK_GB:-120}  # 3 SAT claims at ~27 GB of binary proof each
 T=$W/tools
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
