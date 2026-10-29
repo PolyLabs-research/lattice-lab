@@ -1,6 +1,6 @@
-phase: selftest
-detail: 
-updated: 2026-10-29T01:46:35Z
+phase: running
+detail: run.py run --workers 32 (attempt 1)
+updated: 2026-10-29T01:47:30Z
 pod: u702ojn0vbtqf6
 records: 0
 log: 0 started, 0 done, 0 died (all starts on this disk)
