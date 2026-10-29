@@ -184,6 +184,7 @@
         <tr><td>Both instruments as fixed (that presolving and SCIP's rapid learning off; the search raising its bound step by step) hold on codes nobody had looked at</td><td>fresh codes against enumeration, against each other and on the toric code; the 38 known fault codes; 142 fresh codes where the fault lives, with SCIP's unfixed defaults alongside as a control</td><td><span class="badge ok">held</span> no failure in any part; the unfixed defaults went wrong on 3 of the fresh codes, so the test could see the fault</td></tr>
         <tr><td>Two larger published codes whose distance was given only as an upper bound: d = 24 for [[360,12,≤24]], and a least weight of 34 for [[756,16,≤34]]</td><td>a random-information-set search for checked upper bounds, and the exhaustive search split across 4 cores for lower bounds, with 10 and 8 hours</td><td><span class="badge ok">held</span> [[360,12]] has d = 24 exactly: a checked weight-24 logical, and nothing lighter, in 1.9 hours. For [[756,16]], 24 ≤ d ≤ 34: a checked weight-34 logical, and nothing below 24</td></tr>
         <tr><td>A stronger cut keeps the exhaustive search exact and takes [[756,16]] to d ≥ 30 within 30 hours</td><td>90 fresh small codes against enumeration, 20 fresh codes against the uncut search, three known distances, then [[756,16]] on 4 cores</td><td><span class="badge ok">held</span> every check agreed, and [[756,16]] has 30 ≤ d ≤ 34: nothing below 30, in 7 hours. That matches the public lower bound of 30 (the DistQLDPC tool), with a second implementation of the same kind of search. The run then stopped during a pass that could not change this, and its ledger has no verdict entry</td></tr>
+        <tr><td>Every weight-6 code on 122 sizes held back from the census (up to 300 qubits): k exactly where a proved rule says, the best distance never rising with k, staying under 1.40 √n, and no code above the published record k d²/n = 13.5</td><td>253,370 classes on 122 tori, registered before any was computed; 4 cores, then an 8-core pod after the cloud session kept restarting</td><td><span class="badge bad">failed</span> the rule held on all 122 tori, but [[294,10,20]] scores 13.6, the best distance reaches 1.42 √n, and at one group it rises with k. Liang et al.'s [[192,8,16]] is the best of its kind, as predicted</td></tr>
       </tbody>
     </table>
   </div>
@@ -241,12 +242,17 @@
         integer program as a cross-check and for bounds, randomised information-set
         methods for larger codes, and circuit-noise
         simulation (stim, BP-OSD decoders) for the logical error rates practitioners care about.
-        This is where the compute goes. <strong>Stage 1 is done</strong>, as an exploratory
-        survey: every code of the published form on 116 tori up to 200 qubits, 3,330 distinct
-        classes with an exact distance each, and some sizes held back untouched. The gross code
-        has the best ratio k d²/n of all of them, and an exact rule, proved by hand, says which
-        tori have codes at all. A registered test of predictions on the held-back sizes comes
-        next.</span></li>
+        This is where the compute goes. <strong>Stage 1</strong>, an exploratory survey, found
+        every code of the published form on 116 tori up to 200 qubits: 3,330 distinct classes, each
+        with an exact distance. The gross code has the best ratio k d²/n of all of them, and an
+        exact rule, proved by hand, says which tori have codes at all. <strong>Stage 2</strong>
+        tested predictions on 122 sizes held back from stage 1. It confirmed the rule and a linear
+        distance law up to 300 qubits. <strong>Stage 3</strong> widened the family to every
+        weight-6 code: about 290,000 classes. Its registered predictions on the held-back sizes
+        failed where it mattered most. At 294 qubits the census finds a [[294,10,20]] code, with
+        k d²/n = 13.6, above the published [[288,12,18]]'s 13.5. That distance is exact by this
+        project's search, with a checked witness. An independent check with other methods (SAT
+        proofs, the DistQLDPC tool) is under way.</span></li>
       <li><span><strong>Pilots on codes.</strong> Point the agent loop at structural questions with
         a payoff for codes. For example: which conditions on (A, B) force many logical qubits and a
         torus automorphism at once? The judge checks <em class="var">k</em> exactly and distance

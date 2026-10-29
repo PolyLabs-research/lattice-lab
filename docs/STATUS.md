@@ -174,6 +174,24 @@ registered):
   - Stage 2's own registered verdict stays "incomplete"
     ([code-census.md](code-census.md#stage-2-the-registered-test)).
 
+**Census stage 3b/3c: every weight-6 code on the 122 held-out tori** ([code-census.md](code-census.md#stage-3b3c-every-weight-6-code-on-the-held-out-tori-registered), registered 2026-10-24, run to 2026-10-28). **Verdict: fail.**
+- **P3, the decisive prediction, fails.** [[294,10,20]] (on 3 x 49 and 7 x 21) has k d^2/n =
+  13.61, above the published [[288,12,18]]'s 13.5. Close behind are [[288,8,22]] (13.44) and
+  [[288,12,18]] on the unexposed 4 x 36.
+- **P1 and P2 fail.** The best d is not always non-increasing in k (Z_105 tori, and one class pair
+  on 7 x 21). The best d reaches 1.42 sqrt(n), beyond the 1.40 envelope.
+- **P0 and P4 hold.** Criterion E held on 122 of 122 tori and the k sample on 6,100 codes. On
+  2 x 48, Liang et al.'s [[192,8,16]] is the best code at k = 8.
+- **Deviations, disclosed.**
+  - Stage 3b hung at 2 x 67 in a trial-division routine. Stage 3c continued it with stage 3b's
+    predictions verbatim and two registered in-process fixes.
+  - Four cloud restarts lost the work on the tori in progress, and the last 25 tori ran on a
+    RunPod CPU pod.
+  - Its faster CPU settles more searches inside the 30-minute wall-clock limit. No verdict depends
+    on the machine, and isomorphic tori agree across both machines.
+- **Not yet independent.** Every d is exact by this project's search, with checked witnesses.
+  The spot-check with other methods (SAT/DRAT, DistQLDPC, SCIP) is next.
+
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
   on 4 cores.
@@ -186,7 +204,7 @@ registered):
   - Seven leaderboard codes with 100 < n <= 200, listed there with upper bounds only, have the
     same d here exactly, and no code in this family does better on the tori covered.
   - The leaderboard's codes that do better at n = 144 and 168 are non-abelian.
-- **Next.** Register stage 3b on the held-out tori.
+- **Next.** Done: stage 3b/3c, above.
 
 **The open distances of two larger published codes** ([code-distances.md](code-distances.md#the-open-distances-examplesqec-open-distance), registered, run 2026-10-23).
 - **[[360,12]]: d = 24 exactly.** Bravyi et al. give only d <= 24.

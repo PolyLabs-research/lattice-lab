@@ -1,4 +1,4 @@
-# A census of bivariate bicycle codes: stages 1 and 2
+# A census of bivariate bicycle codes: stages 1 to 3
 
 **Status.**
 - **Stage 1** (`examples/qec-census`, run 2026-10-22) is exploratory, not a registered test.
@@ -719,13 +719,163 @@ Polynomials, tori and witnesses are in `examples/qec-census-3/data/` and `summar
   same code), and the last 5 (3 x 33 on) the version with the small-weight fallback. Nothing
   else changed in the computation.
 
+## Stage 3b/3c: every weight-6 code on the held-out tori (registered)
+
+**Result: verdict fail.** Three of the five predictions fail, the decisive P3 among them.
+- **P3 fails.** On 3 x 49 and 7 x 21 the census finds a [[294,10,20]] code. Its k d^2/n is
+  13.61, above the 13.5 that P3 allowed for n = 202 to 300. 13.5 is the published [[288,12,18]]'s
+  score.
+- **P1 and P2 fail.** The best d is not always non-increasing in k (P1). The envelope
+  d <= 1.40 sqrt(n) is exceeded, by up to 1.42 sqrt(n) on judged tori (P2).
+- **P0 and P4 hold.**
+  - Criterion E decided correctly on all 122 tori.
+  - The k sample agreed on all 6,100 codes, and no job failed.
+  - On 2 x 48 the best connected code at k = 8 has d = 16 exactly: Liang et al.'s [[192,8,16]]
+    exists in the family and nothing beats it there.
+
+**What was registered** (`examples/qec-census-3b/ledger.jsonl`, 2026-10-24 13:03 UTC, before any
+weight-6 code on a held-out torus was computed). The draft is `docs/census-stage3b-draft.md`.
+- **The family and instruments** are stage 3a's: every weight-6 code, k by the common-zero rule,
+  and exact distances by the packing search.
+- **One registered change.** Classes come from orbit representatives of single polynomials
+  (`examples/qec-census-3b/fast.py`), which gives stage 3a's classes on all 116 stage-1 tori.
+- **The search per torus.** For each k, every class first gets a window bound (0.25 s, with a
+  3 s retry). Classes are then searched exactly, in decreasing order of that bound, at 30 minutes
+  each, until the best exact d reaches the next bound.
+- **"Settled."** A best d is settled when no unfinished class could exceed it. An unsettled d is
+  a lower bound, so it can prove a failure but never a pass.
+
+| Part | Prediction | Result |
+| --- | --- | --- |
+| P0 | Criterion E decides k > 0; k by the zero rule agrees with bb.k_linalg on 50 random codes per torus; no job fails | **holds**: 122 of 122 tori, 0 of 6,100 disagree, no errors |
+| P1 | best connected d non-increasing in k | **fails** on 3 x 35, 5 x 21 and 7 x 21 |
+| P2 | best connected d <= the largest even number <= 1.40 sqrt(n) | **fails** on 7 tori: 2 x 51, 3 x 34, 3 x 40, 5 x 24, 8 x 15, 3 x 41, 3 x 48 |
+| P3 | k d^2/n <= 12.0 on random tori, <= 13.5 on extrapolation tori | **fails** on 3 x 49 and 7 x 21 ([[294,10,20]], 13.61); holds on all 22 random tori (best 10.67) |
+| P4 | on 2 x 48, the best d at k = 8 is 16 | **holds**, settled |
+| H | the code and settings are as registered | **holds** |
+
+The tori were 22 random ones (n <= 200), 79 extrapolation ones (n 202 to 300), and 21 exposed ones,
+reported apart. Of the 122, 82 have codes with k > 0, in 253,370 classes. The other 40 have none,
+exactly as criterion E says.
+
+**What the failures say.**
+- **P3: the frontier keeps rising past the published record at n ~ 290.**
+  - [[294,10,20]] is reached by 4 classes on 3 x 49 and 1 on 7 x 21. An example on 3 x 49:
+    A = 1 + xy + x^2 y^3, B = 1 + xy^3 + x^2 y^22.
+  - Close behind, all settled:
+    - [[288,12,18]] (13.50) appears on the unexposed 4 x 36 as well as on the exposed 12 x 12;
+    - [[288,8,22]] (13.44) on 3 x 48, with A = 1 + y + y^8, B = 1 + xy^3 + x^2 y^27;
+    - [[248,10,18]] (13.06) on 4 x 31;
+    - [[300,8,22]] (12.91) on 2 x 75, 3 x 50, 5 x 30 and 6 x 25.
+  - The d = 20 of [[294,10,20]] rests on this project's search alone, with a checked weight-20
+    witness. The independent spot-check (`docs/census-stage3b-spotcheck-plan.md`) is aimed first
+    at these codes.
+- **P1: k is not a clean dial for d.**
+  - On the three tori of group Z_105 (3 x 35, 5 x 21 and the exposed 7 x 15) the best d is 10 at
+    k = 12 and 12 at k = 14. That is a real reversal, among few classes.
+  - On 7 x 21 the reversal comes from single classes at k = 24 (d = 2) and k = 30 (d = 4). The
+    k = 24 class has B = 1 + y^7 + y^14, which uses one direction only.
+- **P2: the envelope constant was too tight.** 1.40 sat just above stage 3a's observed 1.389.
+  - At n = 240 the best d is 22, which is 1.42 sqrt(n), on 3 x 40, 5 x 24 and 8 x 15.
+  - At n = 246 it is 1.403, and at n = 204, 288 and 294 it is 1.40 to 1.414.
+  - On the exposed 9 x 13 it is 1.438.
+  - The best d for a weight-6 code here grows like about 1.4 to 1.44 sqrt(n), not below 1.40.
+
+**The Pareto fronts, n = 202 to 300** (connected codes, d >= 6, unexposed tori; "+" marks a lower
+bound, not settled):
+
+| n | Codes |
+| --- | --- |
+| 204 | [[204,4,20]] |
+| 210 | [[210,4,20]], [[210,6,18]], [[210,10,16]], [[210,14,12]] |
+| 216 | [[216,4,20]], [[216,8,18]] |
+| 222 | [[222,4,20]] |
+| 224 | [[224,6,20]], [[224,12,12]], [[224,18,6]] |
+| 228 | [[228,4,20]] |
+| 234 | [[234,4,20]], [[234,8,18]] |
+| 238 | [[238,6,20]] |
+| 240 | [[240,4,22]], [[240,8,18]], [[240,16,12]] |
+| 246 | [[246,4,22]] |
+| 248 | [[248,10,18]], [[248,20,10]] |
+| 252 | [[252,4,22]], [[252,6,20]], [[252,8,18]], [[252,12,16]], [[252,14,12]], [[252,16,8]] |
+| 258 | [[258,4,22]] |
+| 264 | [[264,4,22]], [[264,8,20]] |
+| 266 | [[266,6,22]] |
+| 270 | [[270,4,22+]], [[270,8,20]], [[270,12,16]], [[270,16,6]] |
+| 276 | [[276,4,22+]] |
+| 280 | [[280,6,22]], [[280,12,14]] |
+| 282 | [[282,4,22+]] |
+| 288 | [[288,4,24]], [[288,8,22]], [[288,12,18]], [[288,16,12]] |
+| 292 | [[292,18,8]] |
+| 294 | [[294,4,24]], [[294,6,22]], [[294,10,20]], [[294,12,14]], [[294,22,10]] |
+| 300 | [[300,4,24]], [[300,8,22]], [[300,16,14]] |
+
+**How the run went (disclosed deviations).**
+- **Stage 3b hung at 2 x 67** after 73 tori (all 22 random and 51 extrapolation).
+  - **The cause.** bb._irreducible looks for the field polynomial of GF(2^66) by trial division,
+    about 2^34 divisions per candidate.
+  - **What it left.** Nothing had been computed on 2 x 67, and stage 3b's ledger ends at
+    run_started, with no observations and no verdict.
+- **Stage 3c continued it** (`examples/qec-census-3c`, registered 2026-10-24 21:57 UTC).
+  - **The predictions.** Stage 3b's, copied verbatim, for the 49 tori without a record.
+  - **Two in-process changes, both registered.**
+    - bb._irreducible is replaced by Ben-Or's test. It gives the same smallest irreducible
+      polynomial, tested equal for degrees 2 to 26.
+    - census3.zero_masks is replaced by a version that holds field elements in two 64-bit words.
+      The int64 version would have overflowed at GF(2^66). The adversarial review before
+      registration caught this, and the replacement gives identical masks on the stage-1 tori.
+  - **The verdict** is stage 3b's decide over both studies' records (73 + 49).
+  - **Checks.** decide also checks that stage 3c's code, stage 3b's cited records (by offset and
+    sha256) and the tori list are as registered. None changed.
+- **The cloud session restarted four times** during stage 3c. A restart kills the torus in
+  progress, so the work on it is lost, but no record is touched; each resume is a run_resumed
+  ledger entry. 2 x 75, the largest torus (10,257 classes), was cut off after 33 minutes and
+  again after about 23 hours, then stopped by hand after 8.5 hours when the run was moved.
+- **The run moved machines** after 24 of stage 3c's 49 tori.
+  - **Where it ran.** The rest resumed on a RunPod CPU pod (`examples/qec-census-3c/runpod/`)
+    with the same code, settings and --workers 4.
+  - **The machines.**
+    - Stage 3b's 73 records and stage 3c's first 24 came from a 4-vCPU cloud session (Intel Xeon,
+      2.1 GHz).
+    - Stage 3c's last 25 came from an 8-vCPU AMD EPYC 9575F pod at up to 5.0 GHz
+      (`hardware-runpod.txt`).
+  - **Why it matters.** The 30-minute limit is wall-clock time, so the faster machine settles more.
+    - Unsettled best-d entries: 10 of 37 in the cloud part of stage 3c, 2 of 67 on the pod, and 0
+      of 100 in stage 3b, whose tori were smaller.
+    - The n ~ 270 to 282 tori that the cloud left at d >= 22 are cloud records. The n = 300 tori
+      that settled at d = 24 are pod records.
+  - **What it does not change.** No verdict depends on the machine: every failure above is
+    settled.
+  - **Isomorphic tori agree.** The 23 groups with more than one torus give identical settled best
+    d at every k, with no lower bound above a settled value. 10 of these groups have tori on both
+    machines.
+  - **Incomplete.** 9 extrapolation tori are "incomplete" for P1 to P3 (one unsettled k each):
+    3 x 45, 5 x 27, 2 x 69, 3 x 46, 6 x 23, 3 x 47, 2 x 72, 4 x 36 and 3 x 49.
+
+**What it does not establish.**
+- **The distances are exact by this project's search, not certified.** Every d has a checked
+  witness, and every settled lower bound comes from a completed search. The packing search was
+  tested in a registered study, but the bounds have no independent certificate yet. The
+  spot-check plan adds SCIP, an unpruned search, the other logical type, long windows, DistQLDPC
+  and SAT/DRAT proofs.
+- **One family.** These are 3 + 3-term codes on two-generator tori. P3's failure says this family
+  beats [[288,12,18]] at n = 294. It says nothing about other forms.
+- **Classes are an upper bound on inequivalent codes.**
+
+**Reproducing.**
+
+    uv run --no-sync lattice-lab verify --lab examples/qec-census-3c
+    uv run --no-sync python examples/qec-census-3c/study.py resume --workers 4   (a stopped run)
+    python3 examples/qec-census-3c/runpod/launch.py create                      (the pod route; docs/runpod-setup.md)
+
 ## What this does not establish
 
 - **One family, one form.** Other weight-6 forms do better at several n: at n = 30, 42, 60 and 84
   by a wide margin. The census says nothing about them.
   - Examples of such forms are coprime codes, mixed monomials, twisted tori and general two-block
     group-algebra codes.
-- **Only n ≤ 200, on 116 tori.** The 22 held-out random tori, the 100 at 100 < lm ≤ 150 and the 8
+- **Stages 1 to 3a: only n ≤ 200, on 116 tori.** (Stage 3b/3c then covered the 122 held-out tori
+  for the weight-6 family.) The 22 held-out random tori, the 100 at 100 < lm ≤ 150 and the 8
   refused tori are untouched.
 - **Classes are an upper bound on inequivalent codes.** A tie of several classes may still be one
   code. For example, the published [[108,8,10]] shares rank 1 with one other class.
@@ -747,14 +897,16 @@ Polynomials, tori and witnesses are in `examples/qec-census-3/data/` and `summar
 
 ## Next
 
-1. **Stage 3b: register predictions from stage 3a and test them on the held-out tori.** These
-   are the tori where only the trinomial family has been computed. Z_2 x Z_48 is among them,
-   with Liang et al.'s [[192,8,16]] (an upper bound there).
-2. **An independent lower bound** for the frontier codes at d >= 16. All rest on one method, the
-   check-driven search.
-3. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
+1. **The independent spot-check** of stage 3b/3c's frontier
+   (`docs/census-stage3b-spotcheck-plan.md`): SCIP, an unpruned search, the other logical type,
+   long windows, DistQLDPC, and SAT/DRAT certificates. The P3 counterexample [[294,10,20]] and
+   [[288,8,22]] come first.
+2. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
    bridge.
-4. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
+3. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
+4. **Instruments that don't depend on the machine.** Budget the search in CPU-seconds or nodes
+   rather than wall-clock time, and keep every core busy. Then a faster machine changes how fast a
+   result arrives, but not what it is.
 
 ## Reproducing
 
