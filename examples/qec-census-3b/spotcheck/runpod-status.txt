@@ -1,7 +1,7 @@
 phase: running
 detail: run.py run --workers 32 (attempt 1)
-updated: 2026-10-29T09:12:05Z
+updated: 2026-10-29T09:17:09Z
 pod: u702ojn0vbtqf6
-records: 425
-log: 431 started, 425 done, 0 died (all starts on this disk)
-disk:  3.5G  297G
+records: 426
+log: 431 started, 426 done, 0 died (all starts on this disk)
+disk:  1.7G  299G
