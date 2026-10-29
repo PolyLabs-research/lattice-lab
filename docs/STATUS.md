@@ -189,8 +189,12 @@ registered):
     RunPod CPU pod.
   - Its faster CPU settles more searches inside the 30-minute wall-clock limit. No verdict depends
     on the machine, and isomorphic tori agree across both machines.
-- **Not yet independent.** Every d is exact by this project's search, with checked witnesses.
-  The spot-check with other methods (SAT/DRAT, DistQLDPC, SCIP) is next.
+- **Spot-check (2026-10-29): agreement.** A fixed sample of 20 frontier codes went through 431
+  jobs with other tools: SAT/DRAT, DistQLDPC's two engines, SCIP, an unpruned search, the other
+  logical type and long windows. No contradiction and no error.
+  - 1 sampled code is certified by a checked DRAT proof, as are 8 smaller ones.
+  - 9 are confirmed by a second method, including both [[294,10,20]] and [[288,8,22]].
+  - 10 are confirmed by a second implementation (DistQLDPC's cluster engine).
 
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours

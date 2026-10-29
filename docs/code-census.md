@@ -767,9 +767,9 @@ exactly as criterion E says.
     - [[288,8,22]] (13.44) on 3 x 48, with A = 1 + y + y^8, B = 1 + xy^3 + x^2 y^27;
     - [[248,10,18]] (13.06) on 4 x 31;
     - [[300,8,22]] (12.91) on 2 x 75, 3 x 50, 5 x 30 and 6 x 25.
-  - The d = 20 of [[294,10,20]] rests on this project's search alone, with a checked weight-20
-    witness. The independent spot-check (`docs/census-stage3b-spotcheck-plan.md`) is aimed first
-    at these codes.
+  - The d = 20 of [[294,10,20]], on both tori, is confirmed by a second method: DistQLDPC's
+    MaxSAT engine reached exactly 20, as did its cluster engine and the unpruned search (the
+    spot-check, below).
 - **P1: k is not a clean dial for d.**
   - On the three tori of group Z_105 (3 x 35, 5 x 21 and the exposed 7 x 15) the best d is 10 at
     k = 12 and 12 at k = 14. That is a real reversal, among few classes.
@@ -853,11 +853,9 @@ bound, not settled):
     3 x 45, 5 x 27, 2 x 69, 3 x 46, 6 x 23, 3 x 47, 2 x 72, 4 x 36 and 3 x 49.
 
 **What it does not establish.**
-- **The distances are exact by this project's search, not certified.** Every d has a checked
-  witness, and every settled lower bound comes from a completed search. The packing search was
-  tested in a registered study, but the bounds have no independent certificate yet. The
-  spot-check plan adds SCIP, an unpruned search, the other logical type, long windows, DistQLDPC
-  and SAT/DRAT proofs.
+- **Most distances rest on this project's search.** Every d has a checked witness, and every
+  settled lower bound comes from a completed search. The spot-check (below) confirmed a fixed
+  sample of 20 frontier codes with independent tools, but certified only one of them.
 - **One family.** These are 3 + 3-term codes on two-generator tori. P3's failure says this family
   beats [[288,12,18]] at n = 294. It says nothing about other forms.
 - **Classes are an upper bound on inequivalent codes.**
@@ -867,6 +865,65 @@ bound, not settled):
     uv run --no-sync lattice-lab verify --lab examples/qec-census-3c
     uv run --no-sync python examples/qec-census-3c/study.py resume --workers 4   (a stopped run)
     python3 examples/qec-census-3c/runpod/launch.py create                      (the pod route; docs/runpod-setup.md)
+
+## The spot-check of stage 3b/3c (independent methods, 2026-10-29)
+
+The plan is `docs/census-stage3b-spotcheck-plan.md`. It was committed before the stage 3b run, and
+its second amendment was committed before any check ran.
+- **Records.** They are in `examples/qec-census-3b/spotcheck/` (`records.jsonl`, `judge.json`).
+  `run.py` draws the sample and judges it, and is tested in
+  `tests/test_qec_census_3b_spotcheck_run.py`.
+- **The sample.** 20 codes, drawn by the plan's fixed rules:
+  - the d_max codes of the 6 largest tori;
+  - the P2 counterexamples, one per group;
+  - 6 random frontier entries with d >= 14;
+  - 4 codes added after the results, disclosed as such: both [[294,10,20]], [[288,8,22]] and
+    [[288,12,18]].
+- **Extra SAT claims.** 8 frontier codes with 12 <= d <= 16 from the smallest tori, checked by
+  SAT only.
+- **How it ran.** 431 jobs on one RunPod pod (AMD EPYC 9965, 32 vCPU, about 9 hours). Every
+  limit was wall-clock time.
+
+**Verdict: agreement.**
+- Every one of the 431 jobs finished with a result. None errored and none contradicts the
+  census's d.
+- No check found a logical lighter than d.
+- Every check that finished returned exactly d.
+
+| Check | Finished at exactly d | Unfinished runs |
+|---|---|---|
+| C4, long windows (8 seeds × 15 min, kinds Z and X) | none can finish (it is a search for light logicals) | all 320 found a logical of weight exactly d, never lighter |
+| C3, packing search for X-logicals | 20 of 20 | — |
+| C5, DistQLDPC's cluster engine (commit 8fe913e) | 20 of 20, the slowest in 267 s | — |
+| C5, DistQLDPC's MaxSAT engine | 10 of 20 | the other 10 (the k = 4 codes, d 22–24) stopped at [18, d] |
+| C2, unpruned search from every qubit | 9 of 20 | lower bounds 20–21 on the others (d 22–24) |
+| C1, SCIP | 3 of 20 | dual bounds 12–13 |
+| C6, SAT with a drat-trim-checked DRAT proof | 9 of 11 claims | [[192,8,16]] and [[252,10,16]] hit the 4-hour limit |
+
+**Tiers** (the highest each code reaches, by the plan's rules):
+
+| Tier | Codes |
+|---|---|
+| Certified (DRAT proof checked by drat-trim, plus a verified weight-d witness) | [[210,10,16]] on 5 x 21 from the sample, and the 8 small-torus codes: [[112,6,12]], [[126,6,12]], [[126,4,14]], [[132,4,14]] (2 x 33 and 3 x 22), [[140,6,14]], [[144,8,12]], [[144,4,14]] |
+| Confirmed by a second method (DistQLDPC's MaxSAT, or SCIP) | 9: [[294,10,20]] on 3 x 49 and 7 x 21, [[288,8,22]], [[288,12,18]], [[270,8,20]], [[240,8,18]], [[204,4,20]], [[192,8,16]], [[252,10,16]] |
+| Confirmed by a second implementation (DistQLDPC's cluster engine) | 10: the four [[300,4,24]], [[294,4,24]] on 7 x 21, [[294,4,22]] on 3 x 49, [[288,4,24]], [[282,4,22]], [[246,4,22]], [[240,4,22]] |
+| Search only | none |
+
+**What it shows.**
+- **The P3 counterexample stands.** [[294,10,20]] is confirmed on both tori by a second method
+  and two other implementations. So is [[288,8,22]].
+- **DistQLDPC's cluster engine is far faster here than this project's search.** It settled every
+  sampled code in under 5 minutes, while the census gave each class up to 30 minutes and left
+  some unsettled. A census rerun with it, on the unsettled tori, is the obvious next step.
+
+**What it does not show.**
+- **The k = 4 codes at d 22–24 rest on two implementations of one kind of method,** a
+  cluster-style search. No other method, and no certificate, reached them within the limits.
+- **It is a sample.** 20 codes for 146 (torus, k) frontier entries on the judged tori. Agreement
+  on them is evidence about the instruments, not a check of every entry.
+- **The run was on a slower machine than the census's last 25 tori** (3.7 GHz against 5 GHz), and
+  every limit was wall-clock. More runs would finish on a faster one. No verdict here depends on
+  that.
 
 ## What this does not establish
 
@@ -879,7 +936,9 @@ bound, not settled):
   refused tori are untouched.
 - **Classes are an upper bound on inequivalent codes.** A tie of several classes may still be one
   code. For example, the published [[108,8,10]] shares rank 1 with one other class.
-- **d is exact by these instruments, not certified independently.**
+- **d is exact by these instruments, and mostly not certified independently.** (For stage 3b/3c,
+  the spot-check above confirmed a fixed sample of 20 codes with other tools, and certified 9
+  distances with SAT proofs.)
   - Every d comes from a completed search with a verified witness.
   - The program agrees wherever it finished, which is every class with d ≤ 14 it ran on.
   - For 190 frontier classes, including the bests at n = 180, 196 and 198, the lower bound rests
@@ -897,10 +956,9 @@ bound, not settled):
 
 ## Next
 
-1. **The independent spot-check** of stage 3b/3c's frontier
-   (`docs/census-stage3b-spotcheck-plan.md`): SCIP, an unpruned search, the other logical type,
-   long windows, DistQLDPC, and SAT/DRAT certificates. The P3 counterexample [[294,10,20]] and
-   [[288,8,22]] come first.
+1. **Settle the unsettled tori with DistQLDPC's cluster engine.** The spot-check found it settles
+   frontier codes in minutes. A registered rerun of the 9 incomplete tori would turn P1–P3's
+   "incomplete" into pass or fail.
 2. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
    bridge.
 3. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
