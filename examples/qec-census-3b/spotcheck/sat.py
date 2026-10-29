@@ -17,12 +17,12 @@ a bivariate bicycle code by SAT, with the solver's UNSAT proof checked by drat-t
   about the claim's truth, and cuts the search a great deal.
 
 **The certificate.** CaDiCaL writes a DRAT proof of UNSAT (binary DRAT, half the size of the
-text form; drat-trim detects it), and drat-trim checks it against the CNF. Both run under their
-own time limits (CaDiCaL's -t, drat-trim's -t) as well as Python's, so neither outlives a job
-that dies. A proof larger than PROOF_CAP bytes is not checked (drat-trim holds it in memory):
-the claim is then "unverified", which concludes nothing. A verified claim rests on the encoding
-above (tested against enumeration in tests/test_qec_census_3b_spotcheck.py), the translation
-argument, and drat-trim.
+text form; drat-trim is told so with -i), and drat-trim checks it against the CNF. Both run
+under their own time limits (CaDiCaL's -t, drat-trim's -t) as well as Python's, so neither
+outlives a job that dies. A proof larger than PROOF_CAP bytes is not checked (drat-trim holds it
+in memory): the claim is then "unverified", which concludes nothing. A verified claim rests on
+the encoding above (tested against enumeration in tests/test_qec_census_3b_spotcheck.py), the
+translation argument, and drat-trim.
 
 When the formula is SAT, the model is a Z-logical of weight <= w. It is checked by
 distance.verify_witness, and it is an upper bound.
@@ -42,7 +42,7 @@ TOOLS = Path(os.environ.get("SPOTCHECK_TOOLS",
                             "scratchpad/tools"))  # fmt: skip
 CADICAL = TOOLS / "cadical" / "build" / "cadical"
 DRAT_TRIM = TOOLS / "drat-trim" / "drat-trim"
-PROOF_CAP = int(os.environ.get("SPOTCHECK_PROOF_CAP", 40 * 10**9))
+PROOF_CAP = int(os.environ.get("SPOTCHECK_PROOF_CAP", 8 * 10**9))  # drat-trim: ~2-4x in RAM
 
 
 class CNF:
@@ -151,7 +151,7 @@ def certify(hx, logicals, n: int, w: int, anchors=None, limit: float = 14400.0) 
         t1 = time.time()
         check_limit = max(limit, 3600)
         try:
-            argv = [str(DRAT_TRIM), str(f), str(proof), "-t", str(int(check_limit))]
+            argv = [str(DRAT_TRIM), str(f), str(proof), "-i", "-t", str(int(check_limit))]
             check = subprocess.run(argv, capture_output=True, text=True,
                                    timeout=check_limit + 300)  # fmt: skip
             verified = "s VERIFIED" in check.stdout

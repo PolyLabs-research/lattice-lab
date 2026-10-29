@@ -323,6 +323,7 @@ def capped(j: dict, running: list[dict]) -> bool:
 
 
 def _child(j: dict, out: str) -> None:
+    signal.signal(signal.SIGTERM, signal.SIG_DFL)  # not the parent's handler
     os.setsid()  # its own process group, so the tools it starts can be killed with it
     tmp = Path(out + ".part")
     tmp.write_text(json.dumps(execute(j), sort_keys=True))
@@ -411,6 +412,8 @@ def assess(rec: dict) -> dict:
         if r["status"] in ("infeasible", "unbounded", "inforunbd"):
             # the program is feasible (the census's witness satisfies it): a wrong conclusion
             return {"consistent": False, "reaches": None, "note": r["status"]}
+        if r["lower"] is not None and r["lower"] > d:
+            return {"consistent": False, "reaches": None, "note": "dual bound above d"}
         upper = r["upper"]
         if upper is not None and not r["witness_check"]["logical"]:
             return {"consistent": None, "reaches": None, "note": "SCIP's solution is no logical"}
@@ -419,6 +422,8 @@ def assess(rec: dict) -> dict:
             ok = ok and r["d"] == d
             return {"consistent": ok, "reaches": "exact" if ok else None}
         return {"consistent": ok, "reaches": None}
+    if check == "C5" and "returncode" in r and r["returncode"] is None:
+        return {"consistent": None, "reaches": None, "note": "killed at the limit + 600 s"}
     if check == "C5":
         ok = (r["lower"] is None or r["lower"] <= d) and (r["upper"] is None or r["upper"] >= d)
         if r["d"] is not None:

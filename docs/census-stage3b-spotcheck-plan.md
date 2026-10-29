@@ -167,7 +167,7 @@ C6 runs on the 3 sampled codes with d <= 16 and on 8 frontier codes with 12 <= d
   withdraws its bounds, they count as none. Any exit other than 0 (solved) or 1 (stopped) is an
   error.
 - **C6's proofs.** CaDiCaL writes binary DRAT. Both CaDiCaL and drat-trim run under their own
-  time limits. A proof over 40 GB is not checked (drat-trim holds it in memory), so the claim is
+  time limits. A proof over 8 GB is not checked (drat-trim holds it in memory), so the claim is
   "unverified".
 - **The logical counts.** C1 and C6 check that the number of logicals they use equals the
   code's k.

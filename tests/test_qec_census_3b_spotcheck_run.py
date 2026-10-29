@@ -275,12 +275,15 @@ def test_judge_needs_every_job_and_no_error(tmp_path, monkeypatch):
 
 @pytest.mark.skipif(not tools_ready(), reason="spot-check tools or pyscipopt missing")
 def test_distq_reads_bounds_when_it_stops_early():
-    # [[300,4,24]] on 3 x 50 does not finish in 10 s; its bounds must still be read
+    # [[300,4,24]] on 3 x 50 is not expected to finish in 3 s; its bounds must still be read
     distq = R._instruments()[2]
     A, B = [(0, 0), (1, 1), (2, 3)], [(0, 0), (1, 4), (2, 14)]
     for engine in ("cc", "maxsat"):
-        r = distq.run(A, B, 3, 50, engine=engine, limit=10)
-        assert r["d"] is None and r["returncode"] == 1
+        r = distq.run(A, B, 3, 50, engine=engine, limit=3)
+        if r["d"] is not None:  # a fast machine finished: then it must be right
+            assert r["d"] == 24 and r["returncode"] == 0
+            continue
+        assert r["returncode"] == 1
         assert r["upper"] is not None and r["upper"] >= 24
         assert r["lower"] is not None and r["lower"] <= 24
 
