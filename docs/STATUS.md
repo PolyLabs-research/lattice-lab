@@ -195,6 +195,12 @@ registered):
   - 1 sampled code is certified by a checked DRAT proof, as are 8 smaller ones.
   - 9 are confirmed by a second method, including both [[294,10,20]] and [[288,8,22]].
   - 10 are confirmed by a second implementation (DistQLDPC's cluster engine).
+- **Stage 3d (2026-10-30, registered): pass.** The 154 classes left unfinished on the 9
+  "incomplete" tori all have d = 24, by DistQLDPC's cluster engine, with verified witnesses. The
+  parity of d predicted this at registration.
+  - P2 now fails on those tori except 3 x 49: [[n,4,24]] for n from 270 to 288, above the cap
+    of 22.
+  - No stage 3b/3c torus is left incomplete. The combined verdict stays fail.
 
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours

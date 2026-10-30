@@ -850,7 +850,9 @@ bound, not settled):
     d at every k, with no lower bound above a settled value. 10 of these groups have tori on both
     machines.
   - **Incomplete.** 9 extrapolation tori are "incomplete" for P1 to P3 (one unsettled k each):
-    3 x 45, 5 x 27, 2 x 69, 3 x 46, 6 x 23, 3 x 47, 2 x 72, 4 x 36 and 3 x 49.
+    3 x 45, 5 x 27, 2 x 69, 3 x 46, 6 x 23, 3 x 47, 2 x 72, 4 x 36 and 3 x 49. Stage 3d (below)
+    settled them: P2 fails on the first 8, and every other outcome on them passes, except P3 on
+    3 x 49, which was already a fail.
 
 **What it does not establish.**
 - **Most distances rest on this project's search.** Every d has a checked witness, and every
@@ -865,6 +867,46 @@ bound, not settled):
     uv run --no-sync lattice-lab verify --lab examples/qec-census-3c
     uv run --no-sync python examples/qec-census-3c/study.py resume --workers 4   (a stopped run)
     python3 examples/qec-census-3c/runpod/launch.py create                      (the pod route; docs/runpod-setup.md)
+
+## Stage 3d: the 9 incomplete tori settled (registered, 2026-10-30)
+
+`examples/qec-census-3d` (study.py, ledger, records). Registered before the run.
+- **The gap.** On the 9 incomplete tori, 154 connected classes had not finished their exact
+  search inside 30 minutes: 153 at k = 4, and 1 at k = 6 on 3 x 49. Every one had a search lower
+  bound of 23 and a verified window upper bound of 24.
+- **Known at registration.** d is even for this family (Proved, 6), so 23 <= d <= 24 already
+  meant d = 24. Stage 3b's registered judge used only finished classes, so it scored these tori
+  "incomplete" when the bounds already decided them. The registration says so. The run measured
+  each d again, with an instrument from outside this project.
+- **Calibration.** Before registration, DistQLDPC ran on three of the classes to set the limit
+  (4 hours per class). This too is disclosed in the question.
+- **The job.** Each class went to DistQLDPC's cluster engine (commit 8fe913e). A witness came
+  from window.c, checked by distance.verify_witness.
+- **The machine.** One RunPod pod, an AMD EPYC 4564P with 32 vCPU. It took 37 minutes.
+
+**Verdict: pass.**
+- **D1.** All 154 classes have d = 24. DistQLDPC returned exactly 24 every time, with a median of
+  155 s and a maximum of 410 s. A verified weight-24 Z-logical was found every time.
+- **T.** Stage 3b's judge, given these distances, settles all 9 tori as registered:
+
+| Torus | n | d_max | P1 | P2 (cap) | P3 |
+|---|---|---|---|---|---|
+| 3 x 45, 5 x 27 | 270 | 24 | pass | **fail** (22) | pass |
+| 2 x 69, 3 x 46, 6 x 23 | 276 | 24 | pass | **fail** (22) | pass |
+| 3 x 47 | 282 | 24 | pass | **fail** (22) | pass |
+| 2 x 72, 4 x 36 | 288 | 24 | pass | **fail** (22) | pass |
+| 3 x 49 | 294 | 24 | pass | pass (24) | **fail** (13.61, the [[294,10,20]]) |
+
+**What it adds.**
+- **No torus of stage 3b/3c is left incomplete.** P2 now fails on 15 registered tori, not 7.
+  Every unexposed extrapolation torus from n = 270 to 288 carries a [[n,4,24]] code, above the
+  1.40 √n cap. The combined verdict was already fail, and it stays fail.
+- **The census's lower bounds are confirmed.** All 154 lower bounds of 23 from stage 3b's search
+  are confirmed by a second implementation. So is the window's upper bound of 24.
+
+**What it does not add.** DistQLDPC's cluster engine is a second implementation of the same kind
+of method, a cluster-style search, not a certificate. The parity argument and the instrument
+agree; neither one alone is a proof checked by machine.
 
 ## The spot-check of stage 3b/3c (independent methods, 2026-10-29)
 
@@ -956,9 +998,9 @@ its second amendment was committed before any check ran.
 
 ## Next
 
-1. **Settle the unsettled tori with DistQLDPC's cluster engine.** The spot-check found it settles
-   frontier codes in minutes. A registered rerun of the 9 incomplete tori would turn P1–P3's
-   "incomplete" into pass or fail.
+1. **Use the parity of d in the census's own settling rule.** d is always even for this family,
+   so a lower bound of 2j - 1 is a lower bound of 2j. Stage 3b's frontier left 154 classes open
+   that this rule would have closed (stage 3d).
 2. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
    bridge.
 3. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
