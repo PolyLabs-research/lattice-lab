@@ -1,5 +1,5 @@
-phase: selftest
-detail: 
-updated: 2026-10-30T12:38:35Z
+phase: running
+detail: study.py run --workers 32 (attempt 1)
+updated: 2026-10-30T12:39:27Z
 pod: hkx558vg4tt4l7
 records: 0 of 154 classes
