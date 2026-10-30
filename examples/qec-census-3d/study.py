@@ -12,8 +12,10 @@ with a second implementation (DistQLDPC's cluster engine), and those tori judged
 classes at one k (k = 4; and k = 6 on 3 x 49) did not finish their exact search within 30
 minutes. 154 such classes are listed in the question, by their records. Every one has a search
 lower bound of 23 and a verified window upper bound of 24. The spot-check
-(docs/census-stage3b-spotcheck-plan.md) found DistQLDPC's cluster engine settles codes like these
-in minutes.
+(docs/census-stage3b-spotcheck-plan.md) found DistQLDPC's cluster engine settled 20 frontier
+codes in under 5 minutes each. These classes are harder (they beat stage 3b's 30-minute
+search): of three run before registration, two took 3 and 6 minutes and one had not finished
+after 500 s, so the limit is 4 hours per class.
 
 **Known at registration** (the question says so). For this family d is even (A and B have odd
 weight, so the all-ones vector lies in the row space of H_X: docs/code-census.md, "Proved", 6).
@@ -25,7 +27,7 @@ at registration and are prediction T.
 
 **The job, per class.**
 - DistQLDPC (env DISTQLDPC, at the commit pinned in DISTQLDPC_COMMIT, checked before the run)
-  with -engine=cc and a 2-hour limit, through examples/qec-census-3b/spotcheck/distq.py.
+  with -engine=cc and a 4-hour limit (LIMIT), through examples/qec-census-3b/spotcheck/distq.py.
 - A witness: window.c (examples/qec-open-distance/parts.py) for kind Z, seeds 0 and 1, 120 s
   each; if neither reaches weight 24, seeds 2-9 for 900 s each. Its lightest logical is checked by
   distance.verify_witness.
@@ -86,7 +88,7 @@ from lattice_lab.study import Study, append_records, main  # noqa: E402
 ID = "qec-census-stage3d"
 TORI = [(3, 45), (5, 27), (2, 69), (3, 46), (6, 23), (3, 47), (2, 72), (4, 36), (3, 49)]
 DISTQLDPC_COMMIT = "8fe913e2ca79bda37cb755975b06b1b60416a418"  # the spot-check's
-LIMIT = 7200
+LIMIT = 14400  # per class; calibrated before registration (question's seen_before)
 D_EXPECTED = 24
 WINDOW_FIRST = ((0, 1), 120.0)
 WINDOW_MORE = (tuple(range(2, 10)), 900.0)
@@ -182,6 +184,13 @@ def question() -> dict:
                                      "each d with DistQLDPC and a witness, independently of "
                                      "the parity argument. The spot-check ran DistQLDPC on 20 "
                                      "other frontier codes beforehand, all in agreement.",
+            "seen_before": "before registration, to set LIMIT, DistQLDPC (cc) ran on three "
+                           "listed classes on a 4-core cloud machine: 3x49 k=4 "
+                           "(A=[[0,0],[1,1],[2,3]], B=[[0,0],[1,3],[2,11]]) d=24 in 175 s; 3x49 "
+                           "k=6 (A=[[0,0],[0,1],[1,5]], B=[[0,0],[1,24],[2,9]]) d=24 in 352 s; "
+                           "the first listed 3x45 k=4 class: lower 22, upper 24 at a 500 s "
+                           "limit (the review), then a full-length run lost to a container "
+                           "restart. The run computes all 154 afresh.",
             "distqldpc_commit": DISTQLDPC_COMMIT, "limit": LIMIT,
             "window": {"first": WINDOW_FIRST, "more": WINDOW_MORE},
             "sha256": code_hashes()}  # fmt: skip
