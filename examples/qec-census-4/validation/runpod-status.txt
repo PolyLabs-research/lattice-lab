@@ -1,5 +1,5 @@
-phase: running
-detail: validate4.py run --workers 32; last: (2, 75): 670.5 s, 158 exact runs
-updated: 2026-10-30T19:17:48Z
+phase: done
+detail: recheck-compare.json written
+updated: 2026-10-30T19:17:53Z
 pod: 816unmz42xx36q
 records: 2 of 16 tori
