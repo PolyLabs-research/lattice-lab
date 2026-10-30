@@ -37,7 +37,10 @@ this registration, fast4.py reran 16 stage 3b/3c tori: all five n = 300 tori, 3 
 - All 528 classes both instruments finished agree on d. No class was left unverified.
 - Each torus took 1 to 16 minutes (3 x 49: 14 minutes, against about 50 core-hours of exact
   search in stage 3b). The peak memory of any process was 151 MB.
-- The third window was added afterwards (fast4.py's docstring), and is not part of that run.
+- Three changes came after that run, and are not part of it: the third window; the rolling
+  schedule; and the witness for a DistQLDPC d by longer windows (in the run, the first window's
+  witness always had weight d, so that path was never needed). They were checked again before
+  registration on 3 x 49 and 2 x 75 (validation/recheck.jsonl), and by the tests.
 
 **Cost, and what it means for the predictions.** DistQLDPC's time per class grew about 8 times
 for each +2 in d in the validation: a median of 4 s at d = 20, 29 s at d = 22, and 4 minutes at
@@ -47,7 +50,16 @@ half at d = 30. The fits put the best d at n = 350 to 400 around 26 to 28. So, w
 - many classes at d = 28, and every class at d = 30, will not finish. A torus whose best is not
   settled leaves E and S2 "incomplete" there.
 - G and S1 need only a code that is found, so they can still pass.
-The expected run is several days on one 32-vCPU pod.
+Exact runs are scheduled rolling (fast4.py), so one long class does not hold up the others.
+With 53 tori that can have codes, the run is expected to take between several days and a couple
+of weeks on one 32-vCPU pod. **Stop rule:** no torus is started more than STOP_DAYS = 14 days
+after run_started. Tori not reached by then are missing, so the predictions that need them are
+"incomplete".
+
+**What E and S2 can conclude, in practice.** They are universal claims and need every judged
+torus settled. At the largest n that is unlikely within the limits, so E and S2 will most likely
+end either "fail" (a found code above the cap or ceiling proves it) or "incomplete", and a
+"hold" verdict for the whole study is unlikely. G and S1 can pass outright.
 
 **The predictions**, fitted by fits.py on stages 3a-3d (157 tori with codes, n <= 300). Each
 is judged on FRESH.
@@ -91,6 +103,7 @@ import random
 import subprocess
 import sys
 import traceback
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -116,6 +129,7 @@ from lattice_lab.ledger import record_lines  # noqa: E402
 from lattice_lab.study import Study, append_records, main  # noqa: E402
 
 ID = "qec-census-stage4"
+STOP_DAYS = 14  # no torus is started more than this long after run_started
 LIMIT = 14400  # 4 h per class: d = 24 took 4 min, and each +2 in d about 8 times longer
 K_SAMPLE = 50
 B, C_ENV = 0.6074, 0.8011
@@ -241,27 +255,61 @@ def distqldpc_commit() -> str | None:
 CHECKPOINT = HERE / "exact-checkpoint.jsonl"
 
 
-def _checkpoint(ell: int, m: int) -> dict:
-    """The exact results already found on this torus by this run (a stopped run's work)."""
+def _run_started() -> tuple[str | None, str | None]:
+    """The run_started entry's hash and time."""
+    from lattice_lab.ledger import Ledger
+
+    starts = [e for e in Ledger(HERE / "ledger.jsonl").entries if e["kind"] == "run_started"]
+    return (starts[-1]["hash"], starts[-1]["time"]) if starts else (None, None)
+
+
+def _checkpoint(ell: int, m: int, run: str | None) -> dict:
+    """The exact results this run (its run_started hash) already found on this torus: a stopped
+    run's work. Results with an error are not kept (they are retried), and every complete one's
+    witness is checked again."""
     out = {}
-    if CHECKPOINT.exists():
-        for line in CHECKPOINT.read_text().splitlines():
-            try:
-                c = json.loads(line)
-            except json.JSONDecodeError:
-                continue  # a line cut short by a stop
-            if (c["l"], c["m"]) == (ell, m) and c.get("sha256") == code_hashes():
-                out[c["key"]] = c["exact"]
+    if run is None or not CHECKPOINT.exists():
+        return out
+    hashes = code_hashes()
+    for line in CHECKPOINT.read_text().splitlines():
+        try:
+            c = json.loads(line)
+        except json.JSONDecodeError:
+            continue  # a line cut short by a stop
+        if (c["l"], c["m"]) != (ell, m) or c.get("run") != run or c.get("sha256") != hashes:
+            continue
+        e = c["exact"]
+        if e.get("status") == "complete" and e.get("witness") is not None:
+            A, B_ = [tuple(t) for t in c["A"]], [tuple(t) for t in c["B"]]
+            check = c3.distance.verify_witness(A, B_, ell, m, "Z", e["witness"])
+            if not check["logical"] or check["weight"] != e["d"]:
+                raise RuntimeError(f"{ell}x{m}: a checkpointed witness does not check")
+        out[c["key"]] = e
     return out
 
 
-def _save(ell: int, m: int, key: str, res: dict) -> None:
-    line = {"l": ell, "m": m, "key": key, "exact": res, "sha256": code_hashes()}
-    with CHECKPOINT.open("a") as fh:
-        fh.write(json.dumps(line, sort_keys=True) + "\n")
+def _saver(ell: int, m: int, run: str | None):
+    hashes = code_hashes()
+
+    def save(key: str, res: dict, row: dict) -> None:
+        if "error" in res or run is None:
+            return  # a failure is retried after a restart, not remembered
+        A, B_ = row["A"], row["B"]
+        line = {"l": ell, "m": m, "key": key, "A": A, "B": B_, "exact": res, "run": run,
+                "sha256": hashes}  # fmt: skip
+        with CHECKPOINT.open("a+") as fh:
+            fh.seek(0, 2)
+            if fh.tell() and (fh.seek(fh.tell() - 1) or fh.read(1) != "\n"):
+                fh.write("\n")  # end a line a stop cut short, so this one stands alone
+            fh.write(json.dumps(line, sort_keys=True) + "\n")
+
+    return save
 
 
 def execute(path: Path, workers: int) -> None:
+    run, started = _run_started()
+    deadline = None if started is None else \
+        datetime.fromisoformat(started) + timedelta(days=STOP_DAYS)  # fmt: skip
     commit = distqldpc_commit()
     if commit != DISTQLDPC_COMMIT:
         raise RuntimeError(f"DistQLDPC at {commit}, registered {DISTQLDPC_COMMIT}")
@@ -271,18 +319,22 @@ def execute(path: Path, workers: int) -> None:
         for ell, m in order:
             if (ell, m) in done:
                 continue
+            if deadline is not None and datetime.now(UTC) > deadline:
+                print(f"stop rule: {STOP_DAYS} days since run_started; no more tori", flush=True)
+                break
             rec = {"job": "torus", "id": ID, "l": ell, "m": m, "n": 2 * ell * m,
                    "group": group_of(ell, m), "settings": SETTINGS, "distqldpc_commit": commit,
                    "sha256": {k: v for k, v in code_hashes().items()
                               if k in ("study_py", "fast4_py", "census4_c")}}  # fmt: skip
+            save = _saver(ell, m, run)
             try:
                 rec["criterion_e"] = s3b.criterion_e(ell, m)
                 rec["k_sample"] = k_sample(ell, m)
                 f = fast4.frontier(ell, m, workers=workers, limit=LIMIT,
                                    log=lambda s: print(s, flush=True),
-                                   cache=_checkpoint(ell, m),
-                                   on_exact=lambda key, res, t=(ell, m): _save(*t, key,
-                                                                               res))  # fmt: skip
+                                   cache=_checkpoint(ell, m, run), on_exact=save)  # fmt: skip
+                rec["class_errors"] = sum(1 for r in f["classes"]
+                                          if "error" in (r.get("exact") or {}))  # fmt: skip
                 rec |= {"classes": len(f["classes"]), "best": f["best"],
                         "rows": [{k: r.get(k) for k in ("key", "A", "B", "k", "connected",
                                                         "upper", "exact")}
@@ -303,7 +355,7 @@ def judge_torus(rec: dict) -> dict:
                 "error": True}  # fmt: skip
     has = rec["classes"] > 0
     out = {"P0": "pass" if rec["criterion_e"] == has and rec["k_sample"]["disagree"] == 0
-           else "fail"}  # fmt: skip
+           and not rec.get("class_errors") else "fail"}  # fmt: skip
     best = s3b._bests(rec)
     n = rec["n"]
     settled = all(v["settled"] for v in best.values())
@@ -345,7 +397,7 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
     problems = []
     hashes = code_hashes()
     for r in rows:
-        if r.get("settings") != SETTINGS:
+        if r.get("settings") != json.loads(json.dumps(SETTINGS)):
             problems.append(f"{r.get('l')}x{r.get('m')}: other settings")
         for k, v in r.get("sha256", {}).items():
             if v != hashes[k]:

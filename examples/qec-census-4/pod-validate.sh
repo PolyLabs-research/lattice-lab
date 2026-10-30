@@ -14,6 +14,13 @@ D=examples/qec-census-4/validation
 BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/s4v-run.log
+# "recheck": 3x49 and 2x75 again with the code as it is now, into recheck.jsonl
+if [ "${1:-full}" = recheck ]; then
+  VARGS="--tori 3x49,2x75 --out examples/qec-census-4/validation/recheck.jsonl"
+  REC=recheck.jsonl; CMP=recheck-compare.json
+else
+  VARGS=""; REC=records.jsonl; CMP=compare.json
+fi
 DQ_COMMIT=8fe913e2ca79bda37cb755975b06b1b60416a418
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
@@ -57,7 +64,7 @@ Claude-Session: https://claude.ai/code/session_01LBDpbJNXFaJgMYrZEKJamq"
   fi
 }
 
-records() { if [ -f "$D/records.jsonl" ]; then wc -l < "$D/records.jsonl"; else echo 0; fi; }
+records() { if [ -f "$D/$REC" ]; then wc -l < "$D/$REC"; else echo 0; fi; }
 last_kind() { tail -1 "$D/ledger.jsonl" | python3 -c 'import json,sys; print(json.load(sys.stdin)["kind"])'; }
 
 status() {
@@ -81,7 +88,7 @@ command -v uv >/dev/null || { status failed "uv did not install"; hold "uv"; }
 git fetch -q origin "$BRANCH" && [ -n "$(git log "origin/$BRANCH..HEAD" --oneline)" ] && push
 
 mkdir -p "$D"
-[ -f "$D/compare.json" ] && { status done "compare.json written"; hold "done"; }
+[ -f "$D/$CMP" ] && { status done "$CMP written"; hold "done"; }
 
 # 1. DistQLDPC at the pinned commit
 if [ ! -x "$DISTQLDPC/bin/distqldpc" ]; then
@@ -116,25 +123,25 @@ fi
 workers=${S4_WORKERS:-$(nproc)}
 run=""
 on_stop() {
-  commit "Census stage 4 validation: records ($(records) tori), pod stopping" "$D/records.jsonl"
+  commit "Census stage 4 validation: records ($(records) tori), pod stopping" "$D/$REC"
   [ -n "$run" ] && kill "$run" 2>/dev/null; exit 0
 }
 trap on_stop TERM INT
 status running "validate4.py run --workers $workers"
-.venv/bin/python -u examples/qec-census-4/validate4.py run --workers "$workers" >> "$RUNLOG" 2>&1 &
+.venv/bin/python -u examples/qec-census-4/validate4.py run --workers "$workers" $VARGS >> "$RUNLOG" 2>&1 &
 run=$!
 while kill -0 "$run" 2>/dev/null; do
   sleep 120 & wait $!
-  commit "Census stage 4 validation: records ($(records) tori)" "$D/records.jsonl"
+  commit "Census stage 4 validation: records ($(records) tori)" "$D/$REC"
   status running "validate4.py run --workers $workers; last: $(tail -1 "$RUNLOG" | cut -c1-120)"
 done
 wait "$run"; code=$?
 run=""
-commit "Census stage 4 validation: records ($(records) tori), run ended" "$D/records.jsonl"
-if [ "$code" = 0 ] && .venv/bin/python examples/qec-census-4/validate4.py compare > "$W/compare.json" 2>> "$RUNLOG"; then
-  cp "$W/compare.json" "$D/compare.json"
-  commit "Census stage 4 validation: compared with stage 3b/3c" "$D/compare.json"
-  status done "compare.json written"
+commit "Census stage 4 validation: records ($(records) tori), run ended" "$D/$REC"
+if [ "$code" = 0 ] && .venv/bin/python examples/qec-census-4/validate4.py compare $VARGS > "$W/compare.json" 2>> "$RUNLOG"; then
+  cp "$W/compare.json" "$D/$CMP"
+  commit "Census stage 4 validation: compared with stage 3b/3c ($CMP)" "$D/$CMP"
+  status done "$CMP written"
 else
   status failed "validate4.py exited with $code, or compare failed (see /workspace/s4v-run.log)"
 fi

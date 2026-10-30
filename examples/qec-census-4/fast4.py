@@ -5,9 +5,12 @@ DistQLDPC as the exact engine, the parity of d used throughout, and room for lm 
 **What is stage 3b's, unchanged.** The classes (fast.classes: orbit representatives, census.c's
 canonical keys, k by bb.k_linalg, connectedness), the first window bound for every class
 (WINDOW_SECONDS, seed WINDOW_SEED) and the longer one (WINDOW_RETRY), and the order of work: for
-each k, classes by decreasing bound, `workers` at a time, until the best exact d is at least the
-next bound. Stage 3c's two in-process changes are applied too (bb._irreducible by Ben-Or's test,
-census3.zero_masks in two 64-bit words), through examples/qec-census-3c/study.py's `patched`.
+each k, classes by decreasing bound until the best exact d is at least the next bound. Stage 3b
+took them in groups of `workers` and waited for each group; here up to `workers` run at once and
+the next starts as soon as one ends (a class's longer window runs when it starts, against the
+best found by then), so one long class no longer holds the others back. Stage 3c's two in-
+process changes are applied too (bb._irreducible by Ben-Or's test, census3.zero_masks in two
+64-bit words), through examples/qec-census-3c/study.py's `patched`.
 
 **What changes.**
 - **census4.c** is census.c with MAXLM = 200 and WORDS = 7 (2lm <= 448 bits), set as
@@ -48,7 +51,7 @@ import importlib.util
 import sys
 import time
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -75,7 +78,7 @@ c3, census, bb, distance, pack = fast.c3, fast.census, fast.bb, fast.distance, f
 WINDOW_SECONDS, WINDOW_RETRY, WINDOW_SEED = fast.WINDOW_SECONDS, fast.WINDOW_RETRY, fast.WINDOW_SEED
 WINDOW_LONG = 60.0  # a third window, for a class still above the best after WINDOW_RETRY
 LIMIT = 14400  # DistQLDPC's limit per class, seconds; the study sets its own
-WITNESS_WINDOWS = (((1, 2), 120.0), (tuple(range(3, 11)), 300.0))  # (seeds, seconds) rounds
+WITNESS_WINDOWS = [[[1, 2], 120.0], [list(range(3, 11)), 300.0]]  # [seeds, seconds] rounds
 
 
 def even_down(u: int | None) -> int | None:
@@ -176,7 +179,7 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
     """Stage 3b's frontier (fast.frontier), with `exact` as the engine and bounds compared after
     rounding to even (module docstring). Same return shape; each exact result keeps its witness.
     `cache` maps a class key (json of row["key"]) to an exact result found before; `on_exact`
-    is called with (key, result) for each new one."""
+    is called with (key, result, row) for each new one."""
     import json
 
     cache = cache or {}
@@ -201,7 +204,7 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
             return i, cache[key]
         res = exact(rows[i], ell, m, limit)
         if on_exact is not None:
-            on_exact(key, res)
+            on_exact(key, res, rows[i])
         return i, res
 
     def longer(j, top=None):
@@ -232,35 +235,51 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
         best = {}
         for k, idx in per_k.items():
             idx.sort(key=lambda i: -(ub(i) if ub(i) is not None else 10**6))
-            top, unresolved, pos = None, [], 0
-            while pos < len(idx):
-                u = ub(idx[pos])
-                if top is not None and u is not None and u <= top:
-                    break  # every class from here on has d <= its rounded bound <= top
-                todo = idx[pos : pos + workers]
-                if top is not None:
-                    retry = [j for j in todo if j not in done and rows[j]["upper"] is not None
-                             and not rows[j].get("retried")]  # fmt: skip
-                    with ThreadPoolExecutor(max_workers=workers) as pool:
-                        found = pool.map(lambda j, t=top: longer(j, t), retry)
-                        for j, (u2, w2) in zip(retry, found, strict=True):
-                            improve(j, u2, w2)
-                    todo = [j for j in todo if j in done or ub(j) is None or ub(j) > top]
-                    if not todo:
-                        pos += workers
-                        idx[pos:] = sorted(idx[pos:], key=lambda i: -(ub(i) if ub(i) is not None
-                                                                     else 10**6))  # fmt: skip
-                        continue
-                need = [j for j in todo if j not in done]
-                with ThreadPoolExecutor(max_workers=workers) as pool:
-                    for j, res in pool.map(run, need):
-                        done[j] = res
-                for j in todo:
-                    if done[j]["status"] == "complete":
-                        top = done[j]["d"] if top is None else max(top, done[j]["d"])
-                    else:
-                        unresolved.append(j)
-                pos += workers
+            state = {"top": None}
+            unresolved, pos = [], 0
+
+            def job(j, state=state):
+                """A longer window first when a best exists (it may bring the bound to <= the
+                best, and then no exact run is needed), then the exact run."""
+                top = state["top"]
+                if j not in done and top is not None and rows[j]["upper"] is not None \
+                        and not rows[j].get("retried"):  # fmt: skip
+                    improve(j, *longer(j, top))
+                    if ub(j) is not None and state["top"] is not None and ub(j) <= state["top"]:
+                        return j, None  # skipped: d <= its bound <= the best
+                return run(j)
+
+            def take(j, res, state=state, unresolved=unresolved):
+                if res is None:
+                    return
+                done[j] = res
+                if res["status"] == "complete":
+                    state["top"] = res["d"] if state["top"] is None else max(state["top"], res["d"])
+                else:
+                    unresolved.append(j)
+
+            # rolling: up to `workers` classes at once, the next submitted as soon as one ends,
+            # in decreasing order of bound, until the next bound is <= the best found
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                running = set()
+                while True:
+                    while len(running) < workers and pos < len(idx):
+                        j, u = idx[pos], ub(idx[pos])
+                        if state["top"] is not None and u is not None and u <= state["top"]:
+                            pos = len(idx)  # every class from here on has d <= its bound <= top
+                            break
+                        pos += 1
+                        if j in done:  # found in the connected pass (or the checkpoint)
+                            take(j, done[j])
+                            continue
+                        running.add(pool.submit(job, j))
+                    if not running:
+                        break
+                    finished, running = wait(running, return_when=FIRST_COMPLETED)
+                    for f in finished:
+                        take(*f.result())
+            top = state["top"]
+            # an unfinished class gets the longer windows too, if it has not had them
             late = [j for j in unresolved if rows[j]["upper"] is not None
                     and not rows[j].get("retried")]  # fmt: skip
             with ThreadPoolExecutor(max_workers=workers) as pool:

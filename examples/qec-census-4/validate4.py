@@ -63,11 +63,11 @@ def read(path: Path = OUT) -> list[dict]:
     return [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
 
 
-def run(workers: int) -> None:
+def run(workers: int, tori=None, out: Path = OUT) -> None:
     F = _load("qec_census_stage4_fast", HERE / "fast4.py")
-    OUT.parent.mkdir(exist_ok=True)
-    done = {(r["l"], r["m"]) for r in read()}
-    for t in TORI:
+    out.parent.mkdir(exist_ok=True)
+    done = {(r["l"], r["m"]) for r in read(out)}
+    for t in tori or TORI:
         if t in done:
             continue
         rec = {"l": t[0], "m": t[1], "n": 2 * t[0] * t[1], "limit": LIMIT, "workers": workers}
@@ -91,7 +91,7 @@ def run(workers: int) -> None:
         for x in rec.get("rows", []):
             b = x["exact"].get("by") or x["exact"]["status"]
             rec["by"][b] = rec["by"].get(b, 0) + 1
-        with OUT.open("a") as fh:
+        with out.open("a") as fh:
             fh.write(json.dumps(rec, sort_keys=True) + "\n")
         print(f"{t}: {rec['seconds']} s, {rec.get('exact_runs')} exact runs"
               f"{' ERROR' if 'error' in rec else ''}", flush=True)  # fmt: skip
@@ -141,11 +141,14 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("action", choices=("run", "compare"))
     p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--tori", help="e.g. 3x49,2x75 (default: TORI)")
+    p.add_argument("--out", type=Path, default=OUT)
     a = p.parse_args()
+    tori = [tuple(int(x) for x in t.split("x")) for t in a.tori.split(",")] if a.tori else None
     if a.action == "run":
-        run(a.workers)
+        run(a.workers, tori, a.out)
     else:
-        print(json.dumps(compare(), indent=1))
+        print(json.dumps(compare(a.out), indent=1))
 
 
 if __name__ == "__main__":

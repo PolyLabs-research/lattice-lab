@@ -64,7 +64,7 @@ def test_exact_finds_a_witness_when_the_window_has_none(monkeypatch):
     A, B = [[3, 0], [0, 1], [0, 2]], [[0, 3], [1, 0], [2, 0]]
     fake = {"d": 6, "lower": 6, "upper": 6, "returncode": 0, "withdrawn": False, "seconds": 1}
     monkeypatch.setattr(F.distq, "run", lambda *a, **k: fake)
-    monkeypatch.setattr(F, "WITNESS_WINDOWS", (((1, 2), 5.0),))
+    monkeypatch.setattr(F, "WITNESS_WINDOWS", [[[1, 2], 5.0]])
     for row in ({"A": A, "B": B, "k": 12, "upper": 8, "witness": None},
                 {"A": A, "B": B, "k": 12, "upper": None, "witness": None}):  # fmt: skip
         r = F.exact(row, 6, 6)
@@ -98,10 +98,10 @@ def test_frontier_matches_stage3b(torus):
     seen = {}
     with F.opened([torus]):
         c = F.frontier(*torus, workers=4, limit=300, log=lambda s: None,
-                       on_exact=lambda key, res: seen.setdefault(key, res))  # fmt: skip
+                       on_exact=lambda key, res, row: seen.setdefault(key, res))  # fmt: skip
         calls = []
         d = F.frontier(*torus, workers=4, limit=300, log=lambda s: None, cache=seen,
-                       on_exact=lambda key, res: calls.append(key))  # fmt: skip
+                       on_exact=lambda key, res, row: calls.append(key))  # fmt: skip
     assert c["best"] == d["best"] == a["best"] and not calls
     for r in a["classes"]:
         if "exact" in r and r["exact"]["status"] == "complete":

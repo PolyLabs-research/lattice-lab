@@ -55,3 +55,42 @@ def test_judge_torus():
     assert j["S1"] == "yes" and j["S2"] == "pass"
     assert S.judge_torus(rec(320, {16: 20}))["S2"] == "fail"  # 20.0
     assert S.judge_torus({"error": "x"})["P0"] == "fail"
+
+
+def test_decide_h_passes_on_json_round_tripped_records(monkeypatch):
+    import json
+
+    r = rec(400, {4: 30, 10: 24}) | {"settings": S.SETTINGS, "sha256": {}, "group": "fresh"}
+    r = json.loads(json.dumps(r))
+    v = S.decide([r], [])
+    assert v["H"] == "pass" and not v["problems"]
+
+
+def test_checkpoint_round_trip(tmp_path, monkeypatch):
+    import json
+
+    monkeypatch.setattr(S, "CHECKPOINT", tmp_path / "cp.jsonl")
+    A, B = [[3, 0], [0, 1], [0, 2]], [[0, 3], [1, 0], [2, 0]]
+    row = {"A": A, "B": B}
+    good = {"status": "complete", "d": 6, "witness": [0, 5, 4, 1, 21, 23]}
+    save = S._saver(6, 6, "run-1")
+    save("k1", good, row)
+    save("k2", {"status": "timelimit", "error": "boom"}, row)  # not remembered
+    S.CHECKPOINT.write_text(S.CHECKPOINT.read_text() + '{"cut sh')  # a stop mid-write
+    save("k3", good, row)  # starts its own line
+    got = S._checkpoint(6, 6, "run-1")
+    assert set(got) == {"k1", "k3"} and got["k1"]["d"] == 6
+    assert S._checkpoint(6, 6, "another run") == {}
+    assert S._checkpoint(6, 6, None) == {}
+    bad = json.loads(S.CHECKPOINT.read_text().splitlines()[0])
+    bad["exact"]["witness"] = [0, 1]
+    S.CHECKPOINT.write_text(json.dumps(bad) + "\n")
+    import pytest
+
+    with pytest.raises(RuntimeError):
+        S._checkpoint(6, 6, "run-1")
+
+
+def test_p0_counts_class_errors():
+    r = rec(400, {4: 20}) | {"class_errors": 1}
+    assert S.judge_torus(r)["P0"] == "fail"

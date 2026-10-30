@@ -41,6 +41,8 @@ JOBS = {
                   "script": "examples/qec-census-3c/runpod/pod-run.sh"},
     "census-4": {"name": "lattice-lab-census-4", "vcpu": 32, "disk": 60, "volume": None,
                  "script": "examples/qec-census-4/pod-run.sh"},
+    "census-4-recheck": {"name": "lattice-lab-census-4-validate", "vcpu": 32, "disk": 40,
+                         "volume": None, "script": "examples/qec-census-4/pod-validate.sh recheck"},
     "census-4-validate": {"name": "lattice-lab-census-4-validate", "vcpu": 32, "disk": 40,
                           "volume": None, "script": "examples/qec-census-4/pod-validate.sh"},
     "census-3d": {"name": "lattice-lab-census-3d", "vcpu": 32, "disk": 40, "volume": None,
