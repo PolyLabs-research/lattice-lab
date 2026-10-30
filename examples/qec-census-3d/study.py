@@ -39,8 +39,9 @@ at registration and are prediction T.
   by the maximum of the recorded best and this run's d's (and settled when every listed class at
   that k is exact), gives the outcomes in T_EXPECTED.
 
-The verdict passes when both pass. Stage 3b/3c's registered verdict is not changed; this study
-reports beside it.
+The verdict passes when both pass; it is "invalid" if the code, the cited records or the
+DistQLDPC commit differ from the registration. Stage 3b/3c's registered verdict is not changed;
+this study reports beside it.
 """
 
 from __future__ import annotations
@@ -55,6 +56,7 @@ import subprocess
 import sys
 import time
 import traceback
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -263,8 +265,12 @@ def execute(path: Path, workers: int) -> None:
     done = _done(path)
     todo = [c for c in classes() if key(c) not in done]
     print(f"{len(todo)} classes to run, {workers} at once", flush=True)
-    with multiprocessing.get_context("fork").Pool(workers, maxtasksperchild=1) as pool:
-        for rec in pool.imap_unordered(job, todo):
+    # a worker killed outright (out of memory) raises BrokenProcessPool here rather than hanging;
+    # the pod script then resumes, which skips every class already recorded
+    ctx = multiprocessing.get_context("fork")
+    with ProcessPoolExecutor(max_workers=workers, mp_context=ctx) as pool:
+        for future in as_completed([pool.submit(job, c) for c in todo]):
+            rec = future.result()
             append_records(path, [rec])
             print(f"{rec['key']}: d={rec.get('distqldpc', {}).get('d')} "
                   f"witness={rec.get('witness_check', {}) and rec['witness_check']['weight']}"
@@ -272,16 +278,19 @@ def execute(path: Path, workers: int) -> None:
 
 
 def assess(rec: dict) -> str:
-    """'24' (exact 24 with a verified weight-24 witness), 'contradiction', or 'open'."""
-    if "error" in rec:
+    """'24' (exact 24 with a verified weight-24 witness), 'contradiction', or 'open'. A
+    DistQLDPC result that excludes 24 is a contradiction even if the witness step then failed."""
+    r, w = rec.get("distqldpc"), rec.get("witness_check")
+    if r is None:
         return "open"
-    r, w = rec["distqldpc"], rec.get("witness_check")
     lighter = w is not None and w["logical"] and w["weight"] < D_EXPECTED
     excluded = (r["d"] is not None and r["d"] != D_EXPECTED) or \
         (r["lower"] is not None and r["lower"] > D_EXPECTED) or \
         (r["upper"] is not None and r["upper"] < D_EXPECTED)  # fmt: skip
     if lighter or excluded:
         return "contradiction"
+    if "error" in rec:
+        return "open"
     if r["d"] == D_EXPECTED and r["returncode"] == 0 and w and w["logical"] \
             and w["weight"] == D_EXPECTED:  # fmt: skip
         return "24"
@@ -309,7 +318,9 @@ def decide(rows: list[dict], registered: list[dict]) -> dict:
     got = rejudge(ds)
     expected_t = next(p["expected"] for p in registered if p["id"] == "T")
     t = "pass" if got == expected_t else ("incomplete" if open_ and not contradictions else "fail")
-    verdict = "fail" if "fail" in (d1, t) or problems else (
+    # a deployment problem (changed code or records, another DistQLDPC) makes the run invalid,
+    # which is not the same as a refutation
+    verdict = "invalid" if problems else "fail" if "fail" in (d1, t) else (
         "pass" if d1 == t == "pass" else "incomplete")  # fmt: skip
     return {"D1": d1, "T": t, "verdict": verdict, "per_torus": got,
             "contradictions": contradictions, "open": open_, "problems": problems,

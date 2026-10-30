@@ -70,6 +70,15 @@ def test_decide_contradiction(registered):
     assert v["D1"] == "fail" and v["verdict"] == "fail" and v["contradictions"] == [S.key(cs[0])]
     rows = [fake(c) for c in cs[1:]] + [fake(cs[0], d=24, w=22)]
     assert S.decide(rows, registered)["D1"] == "fail"
+    # DistQLDPC excludes 24, then the witness step errors: still a contradiction
+    broken = {**fake(cs[0], d=22), "error": "window.c did not stop", "witness_check": None}
+    assert S.decide([fake(c) for c in cs[1:]] + [broken], registered)["D1"] == "fail"
+
+
+def test_decide_invalid_on_a_deployment_problem(monkeypatch):
+    monkeypatch.setattr(S, "consistency", lambda: ["the code differs from the registration"])
+    v = S.decide([fake(c) for c in S.classes()], S.predictions())
+    assert v["verdict"] == "invalid" and v["D1"] == "pass"
 
 
 def test_decide_incomplete(registered):
@@ -84,10 +93,12 @@ def test_decide_incomplete(registered):
 @pytest.mark.skipif(not S.distq.BINARY.exists(), reason="DistQLDPC not built")
 def test_job_on_a_small_code(monkeypatch):
     monkeypatch.setattr(S, "WINDOW_FIRST", ((0,), 5.0))
+    monkeypatch.setattr(S, "WINDOW_MORE", ((1, 2), 20.0))
     monkeypatch.setattr(S, "D_EXPECTED", 6)
     c = {"torus": [6, 6], "n": 72, "k": 12, "A": [[3, 0], [0, 1], [0, 2]],
          "B": [[0, 3], [1, 0], [2, 0]], "lower": 5, "upper": 6, "best_recorded": 4}  # fmt: skip
     rec = S.job(c)
     assert "error" not in rec, rec.get("error")
     assert rec["distqldpc"]["d"] == 6 and rec["witness_check"]["logical"]
+    assert rec["distqldpc"]["commit"] == S.DISTQLDPC_COMMIT
     assert rec["witness_check"]["weight"] == 6 and S.assess(rec) == "24"  # i.e. "the expected d"

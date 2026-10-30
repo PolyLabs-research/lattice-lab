@@ -32,7 +32,9 @@ git config user.email "${POD_GIT_EMAIL:-census-pod@users.noreply.github.com}"
 push() {
   for t in 2 4 8 16; do
     git push -q -u origin "$BRANCH" && return 0
-    git pull -q --rebase --autostash origin "$BRANCH" || git rebase --abort 2>/dev/null
+    # a merge, not a rebase: it leaves the files study.py is appending to untouched (no stash),
+    # since nothing else commits to examples/qec-census-3d
+    git pull -q --no-rebase --no-edit origin "$BRANCH" || git merge --abort 2>/dev/null
     sleep "$t"
   done
   echo "PUSH FAILED: commits stay on the pod until the next successful push"; return 1
@@ -99,34 +101,50 @@ fi
 cat "$W/selftest.log"
 grep -q SKIPPED "$W/selftest.log" && { status failed "a stage 3d test was skipped"; hold "skips"; }
 
-# 3. the hardware
-out=$D/hardware-runpod.txt
-if [ ! -e "$out" ]; then
+# the registration as committed, and DistQLDPC at its commit, before run_started is written
+problems=$(uv run --no-sync python -c "import importlib.util as u
+s = u.spec_from_file_location('s3d', '$D/study.py'); m = u.module_from_spec(s); s.loader.exec_module(m)
+p = m.consistency(); c = m.distqldpc_commit()
+print(p + ([] if c == m.DISTQLDPC_COMMIT else ['DistQLDPC at ' + str(c)]))")
+[ "$problems" = "[]" ] || { status failed "consistency: $problems"; hold "consistency"; }
+
+# 3. the hardware, a new file when the machine changes
+model=$(lscpu | grep 'Model name')
+if ! grep -qlF "$model" "$D"/hardware-runpod*.txt 2>/dev/null; then
+  out=$D/hardware-runpod.txt
+  [ -e "$out" ] && out=$D/hardware-runpod-$(date -u +%Y%m%dT%H%M).txt
   { date -u +%FT%TZ; echo "pod: ${RUNPOD_POD_ID:-?}"; nproc
     lscpu | grep -E 'Model name|MHz|Thread|Core|Socket'; free -g | head -2; cc --version | head -1
     echo "DistQLDPC $(git -C "$DISTQLDPC" rev-parse HEAD)"; } > "$out"
   commit "Census stage 3d: hardware of the RunPod machine" "$out"
 fi
 
-# 4. run or resume
-step=run
-grep -q '"kind": *"run_started"' "$D/ledger.jsonl" && step=resume
+# 4. run, or resume (also after a crash of study.py, up to 3 attempts in all)
 workers=${S3D_WORKERS:-$(nproc)}
-status running "study.py $step --workers $workers"
-.venv/bin/python -u "$D/study.py" "$step" --workers "$workers" >> "$RUNLOG" 2>&1 &
-run=$!
+run=""
 on_stop() {
   commit "Census stage 3d: records ($(records) classes), pod stopping" "$D/records.jsonl" "$D/ledger.jsonl"
-  kill "$run" 2>/dev/null; exit 0
+  [ -n "$run" ] && kill "$run" 2>/dev/null; exit 0
 }
 trap on_stop TERM INT
-while kill -0 "$run" 2>/dev/null; do
-  sleep 120 & wait $!
-  [ -f "$D/records.jsonl" ] && commit "Census stage 3d: records ($(records) classes)" "$D/records.jsonl" "$D/ledger.jsonl"
-  status running "study.py $step --workers $workers"
+code=1
+for attempt in 1 2 3; do
+  step=run
+  grep -q '"kind": *"run_started"' "$D/ledger.jsonl" && step=resume
+  status running "study.py $step --workers $workers (attempt $attempt)"
+  .venv/bin/python -u "$D/study.py" "$step" --workers "$workers" >> "$RUNLOG" 2>&1 &
+  run=$!
+  while kill -0 "$run" 2>/dev/null; do
+    sleep 120 & wait $!
+    commit "Census stage 3d: records ($(records) classes)" "$D/records.jsonl" "$D/ledger.jsonl"
+    status running "study.py $step --workers $workers (attempt $attempt)"
+  done
+  wait "$run"; code=$?
+  run=""
+  commit "Census stage 3d: records ($(records) classes), run ended" "$D/records.jsonl" "$D/ledger.jsonl"
+  [ "$(last_kind)" = verdict ] && break
+  echo "study.py exited with $code (attempt $attempt)"
 done
-wait "$run"; code=$?
-commit "Census stage 3d: records ($(records) classes), run ended" "$D/records.jsonl" "$D/ledger.jsonl"
 if [ "$(last_kind)" = verdict ]; then
   status done "verdict written"
 else
