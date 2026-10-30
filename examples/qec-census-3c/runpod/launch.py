@@ -13,7 +13,8 @@ sent without one, for a proxy that adds it. It only acts on pods named in JOBS: 
 those, and `status`, `stop` and `delete` refuse any other pod, so a pod of yours running something
 else is never touched.
 
-The jobs: `census-3c` (stage 3c, pod-run.sh here) and `spotcheck` (the stage 3b/3c spot-check,
+The jobs: `census-3c` (stage 3c, pod-run.sh here), `census-3d` (stage 3d,
+examples/qec-census-3d/pod-run.sh) and `spotcheck` (the stage 3b/3c spot-check,
 examples/qec-census-3b/spotcheck/pod-run.sh, with a large container disk for the DRAT proofs).
 
 The pod: a CPU pod, compute-optimized (cpu5c, then cpu3c), on-demand in Secure Cloud. RunPod
@@ -39,6 +40,8 @@ JOBS = {
     "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20, "volume": 20,
                   "script": "examples/qec-census-3c/runpod/pod-run.sh"},
     # cpu5c allows 15 GB of disk per vCPU, cpu3c 10: 300 GB fits both at 32 vCPU
+    "census-3d": {"name": "lattice-lab-census-3d", "vcpu": 32, "disk": 40, "volume": None,
+                  "script": "examples/qec-census-3d/pod-run.sh"},
     "spotcheck": {"name": "lattice-lab-spotcheck", "vcpu": 32, "disk": 300, "volume": None,
                   "script": "examples/qec-census-3b/spotcheck/pod-run.sh"},
 }  # fmt: skip
