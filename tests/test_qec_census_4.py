@@ -59,6 +59,34 @@ def test_exact_parity_path(monkeypatch):
         F.exact(row, 6, 6)
 
 
+def test_exact_finds_a_witness_when_the_window_has_none(monkeypatch):
+    # DistQLDPC says d = 6; the first window found nothing of weight 6: longer windows must
+    A, B = [[3, 0], [0, 1], [0, 2]], [[0, 3], [1, 0], [2, 0]]
+    fake = {"d": 6, "lower": 6, "upper": 6, "returncode": 0, "withdrawn": False, "seconds": 1}
+    monkeypatch.setattr(F.distq, "run", lambda *a, **k: fake)
+    monkeypatch.setattr(F, "WITNESS_WINDOWS", (((1, 2), 5.0),))
+    for row in ({"A": A, "B": B, "k": 12, "upper": 8, "witness": None},
+                {"A": A, "B": B, "k": 12, "upper": None, "witness": None}):  # fmt: skip
+        r = F.exact(row, 6, 6)
+        assert r["status"] == "complete" and r["by"] == "distqldpc" and len(r["witness"]) == 6
+
+
+def test_exact_survives_a_distqldpc_failure(monkeypatch):
+    A, B = [[3, 0], [0, 1], [0, 2]], [[0, 3], [1, 0], [2, 0]]
+
+    def boom(*a, **k):
+        raise RuntimeError("distqldpc exited -9")
+
+    monkeypatch.setattr(F.distq, "run", boom)
+    r = F.exact({"A": A, "B": B, "k": 12, "upper": 8, "witness": None}, 6, 6)
+    assert r["status"] == "timelimit" and "exited -9" in r["error"]
+    killed = {"engine": "cc", "k": 12, "lower": None, "d": None, "upper": None, "seconds": 1,
+              "returncode": None, "tail": "killed"}  # fmt: skip
+    monkeypatch.setattr(F.distq, "run", lambda *a, **k: killed)
+    assert F.exact({"A": A, "B": B, "k": 12, "upper": 8, "witness": None}, 6, 6)["status"] == \
+        "timelimit"  # fmt: skip
+
+
 @pytest.mark.skipif(not F.distq.BINARY.exists(), reason="DistQLDPC not built")
 @pytest.mark.parametrize("torus", [(2, 28), (3, 21)])
 def test_frontier_matches_stage3b(torus):
@@ -66,6 +94,15 @@ def test_frontier_matches_stage3b(torus):
         a = F.frontier(*torus, workers=4, limit=300, log=lambda s: None)
         b = F.fast.frontier(*torus, workers=4, limit=300, log=lambda s: None)
     assert a["best"] == b["best"]
+    # a rerun from the checkpoint gives the same, with no new exact run
+    seen = {}
+    with F.opened([torus]):
+        c = F.frontier(*torus, workers=4, limit=300, log=lambda s: None,
+                       on_exact=lambda key, res: seen.setdefault(key, res))  # fmt: skip
+        calls = []
+        d = F.frontier(*torus, workers=4, limit=300, log=lambda s: None, cache=seen,
+                       on_exact=lambda key, res: calls.append(key))  # fmt: skip
+    assert c["best"] == d["best"] == a["best"] and not calls
     for r in a["classes"]:
         if "exact" in r and r["exact"]["status"] == "complete":
             check = F.distance.verify_witness([tuple(t) for t in r["A"]],

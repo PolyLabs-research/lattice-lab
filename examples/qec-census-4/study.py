@@ -10,7 +10,13 @@ n = 302 to 400.
 **The family** is stage 3a's: A and B each three distinct monomials of Z_l x Z_m.
 
 **The tori.** Every l x m with 2 <= l <= m and 150 < lm <= 200 (n = 302 to 400): 110 tori.
-- FRESH: the 104 that no earlier work mentions. Nothing has been computed on them.
+- FRESH: the 104 that no earlier work mentions. No code's d has been computed on them. Stage
+  2b computed k for every raw trinomial code on 3 x 51 and 2 x 80 (examples/qec-census-2b), so
+  their k > 0 classes, and 10 x 16's (the group of 2 x 80), are known; that bears on P0 only.
+  Only 53 of the 104 can have codes at all (both odd parts > 1), in 37 distinct groups. Six
+  share a group with an EXPOSED torus (2 x 77 and 7 x 22 with 11 x 14; 3 x 52 and 4 x 39 with
+  12 x 13; 2 x 91 and 7 x 26 with 13 x 14); 2 x 77, 2 x 91 and 4 x 39 have no codes. Codes on
+  isomorphic tori are the same codes, but nothing was computed on the exposed tori either.
 - EXPOSED: 6, reported and not judged. 11 x 14, 12 x 13, 13 x 13, 13 x 14 and 14 x 14 are
   named in holdout.json's development_sizes_mentioned. 6 x 30 is the torus of the published
   [[360,12,<=24]] (examples/qec-open-distance).
@@ -40,6 +46,9 @@ is judged on FRESH.
   about 15 at n = 350.
 - **S2, a ceiling (decisive).** No torus has a connected code with k d^2 / n > S_CEILING = 17.0.
   That is the band-maxima line at n = 400 (16.0), plus 1.
+
+**E and G together.** Both can hold only if some torus reaches d = cap(n) exactly, where cap(n)
+> 1.4606 sqrt(n). That is possible on 50 of the tori, with one even d each.
 
 **Settled and unsettled.** A best d that the instrument did not settle is a lower bound on the
 torus's best, as in stage 3b. It can prove E or S2 false and G or S1 true, never the other way.
@@ -93,7 +102,7 @@ K_SAMPLE = 50
 B, C_ENV = 0.6074, 0.8011
 G_RECORD, S_RECORD, S_CEILING = 1.4606, 13.6054, 17.0
 EXPOSED = [(6, 30), (11, 14), (12, 13), (13, 13), (13, 14), (14, 14)]
-SETTINGS = {"limit": LIMIT, "witness_limit": fast4.WITNESS_LIMIT, "k_sample": K_SAMPLE,
+SETTINGS = {"limit": LIMIT, "witness_windows": fast4.WITNESS_WINDOWS, "k_sample": K_SAMPLE,
             "window_seconds": fast4.WINDOW_SECONDS, "window_retry": fast4.WINDOW_RETRY,
             "window_seed": fast4.WINDOW_SEED}  # fmt: skip
 HASHED = {"study_py": HERE / "study.py", "fast4_py": HERE / "fast4.py", "fits_py": HERE / "fits.py",
@@ -106,7 +115,11 @@ HASHED = {"study_py": HERE / "study.py", "fast4_py": HERE / "fast4.py", "fits_py
           "parts_py": HERE.parent / "qec-open-distance" / "parts.py",
           "pack_py": HERE.parent / "qec-open-distance-2" / "pack.py",
           "distance_py": Path(c3.distance.__file__), "bb_py": Path(bb.__file__),
-          "tests_py": ROOT / "tests" / "test_qec_census_4.py"}  # fmt: skip
+          "tests_py": ROOT / "tests" / "test_qec_census_4.py",
+          "tests_study_py": ROOT / "tests" / "test_qec_census_4_study.py",
+          "window_c": fast4.pack.plain.WINDOW_C, "search_pack_c": fast4.pack.SEARCH_C,
+          "holdout_json": fast4.census.HOLDOUT,
+          "retest_py": HERE.parent / "qec-distance-2" / "study.py"}  # fmt: skip
 DISTQLDPC_COMMIT = "8fe913e2ca79bda37cb755975b06b1b60416a418"
 
 
@@ -149,6 +162,7 @@ def question() -> dict:
             "settings": SETTINGS, "sha256": code_hashes(), "distqldpc_commit": DISTQLDPC_COMMIT,
             "fits": fits.fit(),
             "seen_before": ["stages 1-3d's data and write-ups (docs/code-census.md)",
+                            "stage 2b's k for every raw trinomial code on 3x51 and 2x80",
                             "the published [[360,12,<=24]] on 6 x 30 (exposed)",
                             "validate4.py's run of fast4.py on 16 stage 3b/3c tori "
                             "(validation/), nothing on a stage 4 torus"]}  # fmt: skip
@@ -192,11 +206,39 @@ def consistency() -> list[str]:
 
 
 def distqldpc_commit() -> str | None:
+    """DistQLDPC's commit, or None if its checkout has local changes or cannot be read."""
     try:
-        argv = ["git", "-C", str(fast4.distq.DISTQ), "rev-parse", "HEAD"]
-        return subprocess.run(argv, capture_output=True, text=True, check=True).stdout.strip()
+        git = ["git", "-C", str(fast4.distq.DISTQ)]
+        status = git + ["status", "--porcelain", "--untracked-files=no"]
+        dirty = subprocess.run(status, capture_output=True, text=True, check=True).stdout.strip()
+        head = subprocess.run(git + ["rev-parse", "HEAD"], capture_output=True, text=True,
+                              check=True).stdout.strip()  # fmt: skip
+        return None if dirty else head
     except Exception:
         return None
+
+
+CHECKPOINT = HERE / "exact-checkpoint.jsonl"
+
+
+def _checkpoint(ell: int, m: int) -> dict:
+    """The exact results already found on this torus by this run (a stopped run's work)."""
+    out = {}
+    if CHECKPOINT.exists():
+        for line in CHECKPOINT.read_text().splitlines():
+            try:
+                c = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # a line cut short by a stop
+            if (c["l"], c["m"]) == (ell, m) and c.get("sha256") == code_hashes():
+                out[c["key"]] = c["exact"]
+    return out
+
+
+def _save(ell: int, m: int, key: str, res: dict) -> None:
+    line = {"l": ell, "m": m, "key": key, "exact": res, "sha256": code_hashes()}
+    with CHECKPOINT.open("a") as fh:
+        fh.write(json.dumps(line, sort_keys=True) + "\n")
 
 
 def execute(path: Path, workers: int) -> None:
@@ -217,7 +259,10 @@ def execute(path: Path, workers: int) -> None:
                 rec["criterion_e"] = s3b.criterion_e(ell, m)
                 rec["k_sample"] = k_sample(ell, m)
                 f = fast4.frontier(ell, m, workers=workers, limit=LIMIT,
-                                   log=lambda s: print(s, flush=True))  # fmt: skip
+                                   log=lambda s: print(s, flush=True),
+                                   cache=_checkpoint(ell, m),
+                                   on_exact=lambda key, res, t=(ell, m): _save(*t, key,
+                                                                               res))  # fmt: skip
                 rec |= {"classes": len(f["classes"]), "best": f["best"],
                         "rows": [{k: r.get(k) for k in ("key", "A", "B", "k", "connected",
                                                         "upper", "exact")}

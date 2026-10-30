@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import resource
 import sys
 import time
 import traceback
@@ -82,6 +83,14 @@ def run(workers: int) -> None:
         except Exception:
             rec["error"] = traceback.format_exc()[-2000:]
         rec["seconds"] = round(time.time() - t0, 1)
+        # the largest resident memory of any finished child (DistQLDPC, window.c), in MB
+        rec["child_max_rss_mb"] = round(
+            resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss / 1024
+        )
+        rec["by"] = {}
+        for x in rec.get("rows", []):
+            b = x["exact"].get("by") or x["exact"]["status"]
+            rec["by"][b] = rec["by"].get(b, 0) + 1
         with OUT.open("a") as fh:
             fh.write(json.dumps(rec, sort_keys=True) + "\n")
         print(f"{t}: {rec['seconds']} s, {rec.get('exact_runs')} exact runs"

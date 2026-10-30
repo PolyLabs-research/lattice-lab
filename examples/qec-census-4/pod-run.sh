@@ -120,10 +120,10 @@ if ! grep -qlF "$model" "$D"/hardware-runpod*.txt 2>/dev/null; then
 fi
 
 # 4. run, or resume (also after a crash of study.py, up to 3 attempts in all)
-workers=${S3D_WORKERS:-$(nproc)}
+workers=${S4_WORKERS:-$(nproc)}
 run=""
 on_stop() {
-  commit "Census stage 4: records ($(records) tori), pod stopping" "$D/records.jsonl" "$D/ledger.jsonl"
+  commit "Census stage 4: records ($(records) tori), pod stopping" "$D/records.jsonl" "$D/ledger.jsonl" "$D/exact-checkpoint.jsonl"
   [ -n "$run" ] && kill "$run" 2>/dev/null; exit 0
 }
 trap on_stop TERM INT
@@ -136,12 +136,12 @@ for attempt in 1 2 3; do
   run=$!
   while kill -0 "$run" 2>/dev/null; do
     sleep 120 & wait $!
-    commit "Census stage 4: records ($(records) tori)" "$D/records.jsonl" "$D/ledger.jsonl"
+    commit "Census stage 4: records ($(records) tori)" "$D/records.jsonl" "$D/ledger.jsonl" "$D/exact-checkpoint.jsonl"
     status running "study.py $step --workers $workers (attempt $attempt)"
   done
   wait "$run"; code=$?
   run=""
-  commit "Census stage 4: records ($(records) tori), run ended" "$D/records.jsonl" "$D/ledger.jsonl"
+  commit "Census stage 4: records ($(records) tori), run ended" "$D/records.jsonl" "$D/ledger.jsonl" "$D/exact-checkpoint.jsonl"
   [ "$(last_kind)" = verdict ] && break
   echo "study.py exited with $code (attempt $attempt)"
 done

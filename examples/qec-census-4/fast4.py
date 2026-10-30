@@ -20,15 +20,20 @@ census3.zero_masks in two 64-bit words), through examples/qec-census-3c/study.py
 - **The exact engine** (`exact`). DistQLDPC's cluster engine (-engine=cc, through
   examples/qec-census-3b/spotcheck/distq.py) with a wall-clock limit:
   - it returns d: the class is "complete" with that d, once a Z-logical of weight d is found and
-    checked by distance.verify_witness: the window's witness if it has weight d, else the packing
-    search run at that one weight (first = last = d, from (0, lm));
+    checked by distance.verify_witness: the window's witness if it has weight d, else longer
+    windows (WITNESS_WINDOWS: seeds 1-2 for 120 s each, then seeds 3-10 for 300 s each, stopping at
+    the first of weight d);
   - it stops first: its lower bound, rounded up to even, is kept. When that reaches the class's
     verified upper bound, the class is "complete" with d = that bound and the window's witness
     (status "complete", by "parity");
   - a d from DistQLDPC with no witness of that weight found is "unverified": it counts as
     unfinished, with DistQLDPC's d as its lower bound.
+  - DistQLDPC killed at its limit + 600 s, or failing in any other way, leaves the class
+    unfinished ("timelimit", with the error kept), never the torus failed.
   For k > 128 (beyond window.c's and DistQLDPC's use here) stage 3a's small_weight decides, as in
   stage 3b.
+- **Checkpoints.** `frontier` takes the exact results already found (`cache`, by class key) and
+  reports each new one (`on_exact`), so a stopped run loses only the classes in progress.
 - **The guard.** `opened(tori)` lets exactly the given tori through census.guard, for this
   process's run, and nothing else.
 """
@@ -65,7 +70,7 @@ c3, census, bb, distance, pack = fast.c3, fast.census, fast.bb, fast.distance, f
 
 WINDOW_SECONDS, WINDOW_RETRY, WINDOW_SEED = fast.WINDOW_SECONDS, fast.WINDOW_RETRY, fast.WINDOW_SEED
 LIMIT = 3600  # DistQLDPC's limit per class, seconds; the study sets its own
-WITNESS_LIMIT = 1800.0  # the packing search's limit when it looks for a witness of weight d
+WITNESS_WINDOWS = (((1, 2), 120.0), (tuple(range(3, 11)), 300.0))  # (seeds, seconds) rounds
 
 
 def even_down(u: int | None) -> int | None:
@@ -89,11 +94,13 @@ def opened(tori):
         original_guard(ell, m, allow_isomorphic)
 
     census.guard, census.CENSUS_C = guard, CENSUS4_C
+    census._census_binary.cache_clear()  # never a binary compiled from census.c before this
     try:
         with s3c.patched():
             yield
     finally:
         census.guard, census.CENSUS_C = original_guard, original_c
+        census._census_binary.cache_clear()
 
 
 def window(A, B, ell: int, m: int, seconds: float) -> tuple[int | None, list | None]:
@@ -106,11 +113,13 @@ def window(A, B, ell: int, m: int, seconds: float) -> tuple[int | None, list | N
 
 
 def _witness_at(A, B, ell: int, m: int, d: int) -> list | None:
-    """A verified Z-logical of weight d by the packing search at that one weight, or None."""
-    r = pack.search(A, B, ell, m, "Z", anchors=(0, ell * m), first=d, last=d, parts=1,
-                    workers=1, time_limit=WITNESS_LIMIT)  # fmt: skip
-    if r["status"] == "complete" and r["d"] == d:
-        return r["witness"]
+    """A Z-logical of weight d from longer windows (WITNESS_WINDOWS), or None. window() checks
+    every witness it returns."""
+    for seeds, seconds in WITNESS_WINDOWS:
+        for seed in seeds:
+            w = pack.plain.window(A, B, ell, m, "Z", seeds=(seed,), seconds=seconds, workers=1)
+            if w["witness"] is not None and len(w["witness"]) == d:
+                return w["witness"]
     return None
 
 
@@ -122,8 +131,13 @@ def exact(row: dict, ell: int, m: int, limit: float = LIMIT) -> dict:
     if row["k"] > 128:
         return c3.small_weight(A, B, ell, m) | {"engine": "small_weight"}
     upper, witness = row["upper"], row.get("witness")
-    r = distq.run(A, B, ell, m, engine="cc", limit=int(limit))
-    out = {"engine": "distqldpc-cc", "distqldpc": {k: r[k] for k in
+    try:
+        r = distq.run(A, B, ell, m, engine="cc", limit=int(limit))
+    except Exception as exc:  # a crash leaves the class unfinished, not the torus failed
+        return {"engine": "distqldpc-cc", "d": None, "lower": None, "status": "timelimit",
+                "witness": None, "error": repr(exc)[-500:],
+                "seconds": round(time.time() - t0, 3)}  # fmt: skip
+    out = {"engine": "distqldpc-cc", "distqldpc": {k: r.get(k) for k in
                                                    ("d", "lower", "upper", "returncode",
                                                     "withdrawn", "seconds")}}  # fmt: skip
     if r["d"] is not None:
@@ -152,10 +166,15 @@ def exact(row: dict, ell: int, m: int, limit: float = LIMIT) -> dict:
                   "seconds": round(time.time() - t0, 3)}  # fmt: skip
 
 
-def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print) -> dict:
+def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print,
+             cache: dict | None = None, on_exact=None) -> dict:  # fmt: skip
     """Stage 3b's frontier (fast.frontier), with `exact` as the engine and bounds compared after
-    rounding to even (module docstring). Same return shape, plus each class's witness when it
-    has one."""
+    rounding to even (module docstring). Same return shape; each exact result keeps its witness.
+    `cache` maps a class key (json of row["key"]) to an exact result found before; `on_exact`
+    is called with (key, result) for each new one."""
+    import json
+
+    cache = cache or {}
     c = fast.classes(ell, m)
     rows = c["classes"]
     log(f"{ell}x{m}: {len(rows)} classes from {c['orbit_reps']} orbit representatives "
@@ -172,7 +191,13 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
     done: dict[int, dict] = {}
 
     def run(i):
-        return i, exact(rows[i], ell, m, limit)
+        key = json.dumps(rows[i]["key"])
+        if key in cache:
+            return i, cache[key]
+        res = exact(rows[i], ell, m, limit)
+        if on_exact is not None:
+            on_exact(key, res)
+        return i, res
 
     def longer(j):
         u, w = window(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY)
