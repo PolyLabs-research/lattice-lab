@@ -21,14 +21,33 @@ n = 302 to 400.
   named in holdout.json's development_sizes_mentioned. 6 x 30 is the torus of the published
   [[360,12,<=24]] (examples/qec-open-distance).
 
-**The instrument** is fast4.py, checked against stage 3b on stage 3b's tori before this
-registration (validate4.py; its records and comparison are in validation/):
-- stage 3b's classes and window bounds;
+**The instrument** is fast4.py:
+- stage 3b's classes and window bounds, plus a third, longer window before any exact run;
 - DistQLDPC's cluster engine as the exact engine, with a witness of weight d checked by
   distance.verify_witness for every exact d;
 - the parity of d (d is even for this family) in every comparison of bounds;
 - census4.c for lm <= 200.
 LIMIT is DistQLDPC's limit per class.
+
+**Validation** (validate4.py, on 32-vCPU pods; records and compare.json in validation/). Before
+this registration, fast4.py reran 16 stage 3b/3c tori: all five n = 300 tori, 3 x 49, 7 x 21,
+2 x 72, 4 x 36, 3 x 48, the P2 tori and four random ones.
+- Every best d equals stage 3b/3c's, and every entry is settled, including the formerly
+  incomplete ones.
+- All 528 classes both instruments finished agree on d. No class was left unverified.
+- Each torus took 1 to 16 minutes (3 x 49: 14 minutes, against about 50 core-hours of exact
+  search in stage 3b). The peak memory of any process was 151 MB.
+- The third window was added afterwards (fast4.py's docstring), and is not part of that run.
+
+**Cost, and what it means for the predictions.** DistQLDPC's time per class grew about 8 times
+for each +2 in d in the validation: a median of 4 s at d = 20, 29 s at d = 22, and 4 minutes at
+d = 24. Extrapolated, that is about 35 minutes at d = 26, 4.5 hours at d = 28 and a day and a
+half at d = 30. The fits put the best d at n = 350 to 400 around 26 to 28. So, with LIMIT =
+4 hours:
+- many classes at d = 28, and every class at d = 30, will not finish. A torus whose best is not
+  settled leaves E and S2 "incomplete" there.
+- G and S1 need only a code that is found, so they can still pass.
+The expected run is several days on one 32-vCPU pod.
 
 **The predictions**, fitted by fits.py on stages 3a-3d (157 tori with codes, n <= 300). Each
 is judged on FRESH.
@@ -97,13 +116,14 @@ from lattice_lab.ledger import record_lines  # noqa: E402
 from lattice_lab.study import Study, append_records, main  # noqa: E402
 
 ID = "qec-census-stage4"
-LIMIT = 3600
+LIMIT = 14400  # 4 h per class: d = 24 took 4 min, and each +2 in d about 8 times longer
 K_SAMPLE = 50
 B, C_ENV = 0.6074, 0.8011
 G_RECORD, S_RECORD, S_CEILING = 1.4606, 13.6054, 17.0
 EXPOSED = [(6, 30), (11, 14), (12, 13), (13, 13), (13, 14), (14, 14)]
 SETTINGS = {"limit": LIMIT, "witness_windows": fast4.WITNESS_WINDOWS, "k_sample": K_SAMPLE,
             "window_seconds": fast4.WINDOW_SECONDS, "window_retry": fast4.WINDOW_RETRY,
+            "window_long": fast4.WINDOW_LONG,
             "window_seed": fast4.WINDOW_SEED}  # fmt: skip
 HASHED = {"study_py": HERE / "study.py", "fast4_py": HERE / "fast4.py", "fits_py": HERE / "fits.py",
           "census4_c": fast4.CENSUS4_C, "fast_py": HERE.parent / "qec-census-3b" / "fast.py",

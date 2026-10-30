@@ -12,6 +12,10 @@ census3.zero_masks in two 64-bit words), through examples/qec-census-3c/study.py
 **What changes.**
 - **census4.c** is census.c with MAXLM = 200 and WORDS = 7 (2lm <= 448 bits), set as
   census.CENSUS_C inside `opened` only. Nothing else in it differs.
+- **A third window.** A class whose bound is still above the best after WINDOW_RETRY gets a
+  WINDOW_LONG window before any exact run. Like the others it only lowers a bound, with a checked
+  witness, so it changes which classes need DistQLDPC, never a settled result. It was added
+  after the validation run (validate4.py), to save exact runs at d >= 26.
 - **The parity of d.** For this family d is even (A and B have odd weight, so the all-ones vector
   is in the row space of H_X and every Z-logical has even weight: docs/code-census.md, Proved 6).
   So an upper bound u gives d <= u - (u mod 2), and a lower bound l gives d >= l + (l mod 2).
@@ -69,7 +73,8 @@ distq = _load("spotcheck_distq", EX / "qec-census-3b" / "spotcheck" / "distq.py"
 c3, census, bb, distance, pack = fast.c3, fast.census, fast.bb, fast.distance, fast.pack
 
 WINDOW_SECONDS, WINDOW_RETRY, WINDOW_SEED = fast.WINDOW_SECONDS, fast.WINDOW_RETRY, fast.WINDOW_SEED
-LIMIT = 3600  # DistQLDPC's limit per class, seconds; the study sets its own
+WINDOW_LONG = 60.0  # a third window, for a class still above the best after WINDOW_RETRY
+LIMIT = 14400  # DistQLDPC's limit per class, seconds; the study sets its own
 WITNESS_WINDOWS = (((1, 2), 120.0), (tuple(range(3, 11)), 300.0))  # (seeds, seconds) rounds
 
 
@@ -199,8 +204,13 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
             on_exact(key, res)
         return i, res
 
-    def longer(j):
+    def longer(j, top=None):
+        """WINDOW_RETRY, then WINDOW_LONG if the bound is still above the best: the lighter."""
         u, w = window(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_RETRY)
+        if top is not None and u is not None and even_down(u) > top:
+            u2, w2 = window(rows[j]["A"], rows[j]["B"], ell, m, WINDOW_LONG)
+            if u2 is not None and u2 < u:
+                u, w = u2, w2
         return u, w
 
     def ub(i):  # the rounded upper bound; None (k > 128) sorts first
@@ -232,7 +242,8 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
                     retry = [j for j in todo if j not in done and rows[j]["upper"] is not None
                              and not rows[j].get("retried")]  # fmt: skip
                     with ThreadPoolExecutor(max_workers=workers) as pool:
-                        for j, (u2, w2) in zip(retry, pool.map(longer, retry), strict=True):
+                        found = pool.map(lambda j, t=top: longer(j, t), retry)
+                        for j, (u2, w2) in zip(retry, found, strict=True):
                             improve(j, u2, w2)
                     todo = [j for j in todo if j in done or ub(j) is None or ub(j) > top]
                     if not todo:
@@ -253,7 +264,8 @@ def frontier(ell: int, m: int, workers: int = 4, limit: float = LIMIT, log=print
             late = [j for j in unresolved if rows[j]["upper"] is not None
                     and not rows[j].get("retried")]  # fmt: skip
             with ThreadPoolExecutor(max_workers=workers) as pool:
-                for j, (u2, w2) in zip(late, pool.map(longer, late), strict=True):
+                for j, (u2, w2) in zip(late, pool.map(lambda j, t=top: longer(j, t), late),
+                                       strict=True):  # fmt: skip
                     improve(j, u2, w2)
             settled = top is not None and all(ub(j) is not None and ub(j) <= top
                                               for j in unresolved)  # fmt: skip
