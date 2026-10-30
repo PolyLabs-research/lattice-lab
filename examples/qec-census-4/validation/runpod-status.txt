@@ -1,5 +1,5 @@
-phase: selftest
-detail: 
-updated: 2026-10-30T16:22:17Z
+phase: running
+detail: validate4.py run --workers 32
+updated: 2026-10-30T16:24:22Z
 pod: f92rtoh9nmcif7
 records: 0 of 16 tori
