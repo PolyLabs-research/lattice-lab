@@ -1,6 +1,6 @@
-phase: building
-detail: DistQLDPC 8fe913e2ca79bda37cb755975b06b1b60416a418
-updated: 2026-10-30T19:42:12Z
+phase: selftest
+detail: 
+updated: 2026-10-30T19:42:31Z
 pod: ufct7hotf093ha
 records: 0 of 110 tori
 torus: 
