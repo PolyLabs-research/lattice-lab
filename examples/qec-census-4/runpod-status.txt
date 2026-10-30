@@ -1,6 +1,6 @@
 phase: running
 detail: study.py run --workers 32 (attempt 1)
-updated: 2026-10-30T20:36:15Z
+updated: 2026-10-30T20:38:18Z
 pod: ufct7hotf093ha
-records: 8 of 110 tori
-torus: 2x78
+records: 9 of 110 tori
+torus: 3x52
