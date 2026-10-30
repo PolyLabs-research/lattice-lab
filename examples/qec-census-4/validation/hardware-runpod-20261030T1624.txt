@@ -1,0 +1,14 @@
+2026-10-30T16:24:20Z
+pod: f92rtoh9nmcif7
+32
+Model name:                              AMD EPYC 7713 64-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      64
+Socket(s):                               2
+CPU(s) scaling MHz:                      57%
+CPU max MHz:                             3720.7029
+CPU min MHz:                             1500.0000
+               total        used        free      shared  buff/cache   available
+Mem:            1007         125         213           0         674         882
+cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+DistQLDPC 8fe913e2ca79bda37cb755975b06b1b60416a418
