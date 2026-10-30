@@ -1,5 +1,5 @@
 phase: running
-detail: validate4.py run --workers 32; last: 2x72: 4658 classes from 45 orbit representatives (7.23 s)
-updated: 2026-10-30T17:59:44Z
+detail: validate4.py run --workers 32; last: 4x36: 1047 classes from 18 orbit representatives (20.82 s)
+updated: 2026-10-30T18:01:47Z
 pod: f92rtoh9nmcif7
-records: 7 of 16 tori
+records: 8 of 16 tori
