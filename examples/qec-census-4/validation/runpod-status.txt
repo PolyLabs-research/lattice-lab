@@ -1,5 +1,5 @@
-phase: running
-detail: validate4.py run --workers 32; last: 2x75: 10257 classes from 44 orbit representatives (4.87 s)
-updated: 2026-10-30T16:16:26Z
-pod: e2zh61jrf9ykxr
+phase: building
+detail: DistQLDPC 8fe913e2ca79bda37cb755975b06b1b60416a418
+updated: 2026-10-30T16:21:52Z
+pod: f92rtoh9nmcif7
 records: 0 of 16 tori
