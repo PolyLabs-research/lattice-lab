@@ -39,6 +39,8 @@ API = "https://rest.runpod.io/v1"
 JOBS = {
     "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20, "volume": 20,
                   "script": "examples/qec-census-3c/runpod/pod-run.sh"},
+    "census-4-validate": {"name": "lattice-lab-census-4-validate", "vcpu": 32, "disk": 40,
+                          "volume": None, "script": "examples/qec-census-4/pod-validate.sh"},
     "census-3d": {"name": "lattice-lab-census-3d", "vcpu": 32, "disk": 40, "volume": None,
                   "script": "examples/qec-census-3d/pod-run.sh"},
     # cpu5c allows 15 GB of disk per vCPU, cpu3c 10: 300 GB fits both at 32 vCPU
