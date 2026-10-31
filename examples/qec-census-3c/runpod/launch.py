@@ -39,6 +39,8 @@ API = "https://rest.runpod.io/v1"
 JOBS = {
     "census-3c": {"name": "lattice-lab-census-3c", "vcpu": 8, "disk": 20, "volume": 20,
                   "script": "examples/qec-census-3c/runpod/pod-run.sh"},
+    "check-310": {"name": "lattice-lab-check-310", "vcpu": 8, "disk": 80, "volume": None,
+                  "script": "examples/qec-census-4/check-310/pod-run.sh"},
     "census-4": {"name": "lattice-lab-census-4", "vcpu": 32, "disk": 60, "volume": None,
                  "script": "examples/qec-census-4/pod-run.sh"},
     "census-4-recheck": {"name": "lattice-lab-census-4-validate", "vcpu": 32, "disk": 40,

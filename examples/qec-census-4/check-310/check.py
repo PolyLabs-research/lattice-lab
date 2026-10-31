@@ -5,6 +5,7 @@ tier). Stage 4 found its d with DistQLDPC's cluster engine (10.8 s) and a witnes
 distance.verify_witness. Run after that result was known; not part of stage 4's registration.
 
     python examples/qec-census-4/check-310/check.py [--limit SECONDS] [--workers N] [--only C6,...]
+        [--out FILE]   (records-long.jsonl: the pod's rerun of the unfinished checks, 24 h limits)
 
 The checks:
 - **C1** SCIP (a second method);
@@ -86,13 +87,15 @@ def main() -> None:
     p.add_argument("--limit", type=float, default=3600.0)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--only")
+    p.add_argument("--out", type=Path, default=OUT, help="records file (a longer rerun: its own)")
     a = p.parse_args()
-    done = {json.loads(x)["key"] for x in OUT.read_text().splitlines()} if OUT.exists() else set()
+    out = a.out
+    done = {json.loads(x)["key"] for x in out.read_text().splitlines()} if out.exists() else set()
     todo = [j for j in jobs() if j["key"] not in done
             and (not a.only or j["check"] in a.only.split(","))]  # fmt: skip
     with ProcessPoolExecutor(a.workers) as pool:
         for rec in pool.map(execute, todo, [a.limit] * len(todo)):
-            with OUT.open("a") as fh:
+            with out.open("a") as fh:
                 fh.write(json.dumps(rec, sort_keys=True) + "\n")
             res = rec.get("result") or {}
             print(
