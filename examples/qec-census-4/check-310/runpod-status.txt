@@ -1,5 +1,5 @@
-phase: building
-detail: DistQLDPC, CaDiCaL, drat-trim
-updated: 2026-10-31T13:02:45Z
+phase: selftest
+detail: 
+updated: 2026-10-31T13:03:24Z
 pod: cm64g3o65wh34m
 records: 0 of 6 jobs
