@@ -1,0 +1,12 @@
+2026-10-31T13:03:51Z
+pod: cm64g3o65wh34m
+8
+Model name:                              AMD EPYC 9575F 64-Core Processor
+CPU(s) scaling MHz:                      51%
+CPU max MHz:                             5008.0068
+CPU min MHz:                             1500.0000
+               total        used        free      shared  buff/cache   available
+Mem:             503          38         164           0         305         464
+DistQLDPC 8fe913e2ca79bda37cb755975b06b1b60416a418
+cadical c60730422e758ef1cebe7aeddf2dda31c996bf04
+drat-trim 2e3b2dc0ecf938addbd779d42877b6ed69d9a985
