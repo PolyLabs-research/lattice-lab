@@ -11,6 +11,7 @@ BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/check-run.log
 REC=records-long.jsonl
+DQ_COMMIT=8fe913e2ca79bda37cb755975b06b1b60416a418
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
 
