@@ -1,5 +1,5 @@
 phase: running
-detail: check.py --limit 86400; last: C2:5x31:[[310,10,22]]:[[0, 0], [0, 1], [ {'status': 'complete', 'd': 22, 'lower': 22, 'upper': 22}
-updated: 2026-11-01T01:19:46Z
+detail: check.py --limit 86400; last: C5:5x31:[[310,10,22]]:[[0, 0], [0, 1], [ {'status': None, 'd': 22, 'lower': 22, 'upper': 22}
+updated: 2026-11-01T13:05:02Z
 pod: cm64g3o65wh34m
-records: 1 of 6 jobs
+records: 5 of 6 jobs
