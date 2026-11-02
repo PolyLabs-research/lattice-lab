@@ -180,7 +180,7 @@ class Census:
             c = r["class"]
             key = (tuple(c["torus"]), c["k"], json.dumps(c["A"]), json.dumps(c["B"]))
             out[key] = {"d": r["distqldpc"]["d"], "witness": r["witness"], "line": line,
-                        "seconds": r["seconds"], "ok": r["witness_check"]["logical"]
+                        "seconds": r["distqldpc"]["seconds"], "ok": r["witness_check"]["logical"]
                         and r["witness_check"]["weight"] == r["distqldpc"]["d"]}  # fmt: skip
         return out
 
@@ -275,7 +275,9 @@ class Census:
                 engine = ENGINE[e.get("engine") or e.get("method")]
                 if e["status"] == "complete":
                     self.hist[(*key, "exact", e["d"])] += 1
-                    self.runs[(stage, engine, e["d"])].append(e["seconds"])
+                    # an engine's own time: DistQLDPC's, without the window search for a witness
+                    secs = e["distqldpc"]["seconds"] if e.get("distqldpc") else e["seconds"]
+                    self.runs[(stage, engine, e["d"])].append(secs)
                     if y.get("upper") is not None:
                         self.gaps[(stage, y["upper"] - e["d"])] += 1
                     continue
@@ -719,6 +721,112 @@ def population_fits(tori: list[dict], bulk_rows: list[dict]) -> list[dict]:
     return rows
 
 
+VALIDATION = EX / "qec-census-4" / "validation"
+STATUS_FILE = EX / "qec-census-4" / "runpod-status.txt"
+HARDWARE_FILE = EX / "qec-census-4" / "hardware-runpod.txt"
+
+
+def checks() -> list[dict]:
+    """Every independent check of a census distance, one row per job: the spot-check of stages
+    3b/3c, the checks of [[310,10,22]], stage 3d's reruns and the stage 4 instrument's
+    validation. status: 'reached d' (an independent method found d itself), 'consistent' (its
+    bounds agree with d without reaching it), 'unfinished' (no conclusion: a time limit),
+    'contradicts' or 'error'."""
+    run = _load("qec_census_3b_spotcheck_run", EX / "qec-census-3b" / "spotcheck" / "run.py")
+    rows = []
+
+    def status(a: dict) -> str:
+        if a.get("note") == "error":
+            return "error"
+        if a["consistent"] is False:
+            return "contradicts"
+        if a["consistent"] is None:
+            return "unfinished"
+        return "reached d" if a["reaches"] else "consistent"
+
+    sources = [("spot-check", SPOT)] + [("[[310,10,22]] check", p) for p in CHECK310]
+    for source, path in sources:
+        if not path.exists():
+            continue
+        last = {r["key"]: r for _, r in _read_jsonl(path)}  # a key's last record counts
+        for r in last.values():
+            c, a = r["code"], run.assess(r)
+            variant = r["key"].split(":")[-1] if r["key"].count(":") > 4 else ""
+            rows.append({"key": f"{source}:{path.name}:{r['key']}", "source": source,
+                         "code": f"[[{c['n']},{c['k']},{c['d']}]]",
+                         "torus": f"{c['torus'][0]}x{c['torus'][1]}", "n": c["n"], "k": c["k"],
+                         "d": c["d"], "check": r["check"], "engine": r.get("engine") or "",
+                         "variant": variant, "status": status(a), "note": a.get("note") or "",
+                         "seconds": round(r.get("seconds") or 0, 1)})  # fmt: skip
+    for line, r in _read_jsonl(S3D):
+        c = r["class"]
+        ok = r["distqldpc"]["d"] == 24 and r["witness_check"]["logical"]
+        rows.append({"key": f"stage 3d:{r['key']}", "source": "stage 3d",
+                     "code": f"[[{c['n']},{c['k']},24]]",
+                     "torus": f"{c['torus'][0]}x{c['torus'][1]}",
+                     "n": c["n"], "k": c["k"], "d": 24, "check": "D1", "engine": "cc",
+                     "variant": f"line {line}", "status": "reached d" if ok else "contradicts",
+                     "note": "", "seconds": round(r["seconds"], 1)})  # fmt: skip
+    cmp_path = VALIDATION / "compare.json"
+    if cmp_path.exists():
+        report = json.loads(cmp_path.read_text())
+        for torus, x in report["report"].items():
+            bad = [p for p in report["problems"] if p.startswith(torus + ":")]
+            ell, m = map(int, torus.split("x"))
+            rows.append({"key": f"validation:{torus}", "source": "stage 4 validation",
+                         "code": torus, "torus": torus, "n": 2 * ell * m, "k": None, "d": None,
+                         "check": "V", "engine": "", "variant": f"{x['agree']} of "
+                         f"{x['classes_both_exact']} classes agree",
+                         "status": "contradicts" if bad else "reached d", "note": "; ".join(bad),
+                         "seconds": x["seconds"]})  # fmt: skip
+    tier = tiers()
+    for r in rows:
+        hit = tier.get((r["torus"], r["k"], r["d"])) if r["k"] else None
+        r["tier"] = hit["tier"] if hit else None
+        r["code_key"] = f"{r['source']}|{r['torus']}|{r['code']}"
+    return rows
+
+
+def cost_fits(rc: list[dict]) -> list[dict]:
+    """Exploratory: the median exact-run time against d, as a factor per +2 in d (a fit of
+    log time = log a + (d / 2) log f over each engine's medians at d >= 16)."""
+    out = []
+    for engine, stage in (("packing search", "3b/3c"), ("DistQLDPC cluster", "4")):
+        pts = [(r["d"], r["median_s"]) for r in rc if r["engine"] == engine and r["stage"] == stage
+               and r["d"] and r["d"] >= 16 and r["median_s"]]  # fmt: skip
+        if len(pts) < 3:
+            continue
+        a, b = power_fit([math.e ** (d / 2) for d, _ in pts], [t for _, t in pts])
+        factor = math.exp(b)
+        out.append({"id": f"cost_{stage}", "label": f"{engine} (stage {stage}): about "
+                    f"{factor:.1f}× per +2 in d", "kind": "exploratory",
+                    "study": "this dashboard (least squares on log time, d ≥ 16)", "part": "",
+                    "a": round(a, 6), "b": round(factor, 4), "c": None, "outcome": "",
+                    "interim": False, "decided_by": None, "status": "exploratory",
+                    "formula": f"{a:.3g}·{factor:.2f}^(d/2) s"})  # fmt: skip
+    return out
+
+
+def runstatus() -> list[dict]:
+    """The pod's last status line and its hardware, as key-value rows."""
+    rows = []
+    if STATUS_FILE.exists():
+        for line in STATUS_FILE.read_text().splitlines():
+            if ":" in line:
+                k, v = line.split(":", 1)
+                rows.append({"key": k.strip(), "value": v.strip()})
+    if HARDWARE_FILE.exists():
+        text = HARDWARE_FILE.read_text()
+        cpu = re.search(r"Model name:\s+(.+)", text)
+        mem = re.search(r"Mem:\s+(\d+)", text)
+        lines = text.splitlines()
+        vcpus = next((x.strip() for x in lines[2:3] if x.strip().isdigit()), None)
+        rows += [{"key": "cpu", "value": cpu.group(1).strip() if cpu else ""},
+                 {"key": "vcpus", "value": vcpus or ""},
+                 {"key": "memory", "value": f"{mem.group(1)} GB" if mem else ""}]  # fmt: skip
+    return rows
+
+
 def build() -> dict[str, list[dict]]:
     c = Census()
     tier = tiers()
@@ -774,9 +882,12 @@ def build() -> dict[str, list[dict]]:
     bulk_rows = bulk(c)
     return {"frontier": frontier, "tori": tori, "published": pub, "class_hist": class_hist(c),
             "run_cost": run_cost(c), "progress": progress(),
-            "fits": fits(c) + population_fits(tori, bulk_rows),
+            "fits": fits(c) + population_fits(tori, bulk_rows) + cost_fits(run_cost(c)),
             "summary": summary(c, frontier, tori, pub), "groups": groups(tori),
-            "stencils": stencils(frontier), "bulk": bulk_rows,
+            "stencils": stencils(frontier), "bulk": bulk_rows, "checks": checks(),
+            "runstatus": runstatus(),
+            **dict(zip(("studies", "predictions"), _load("census_dashboards_studies",
+                       HERE / "studies.py").build(EX, interim4(c)), strict=True)),
             "tightness": tightness(c)}  # fmt: skip
 
 

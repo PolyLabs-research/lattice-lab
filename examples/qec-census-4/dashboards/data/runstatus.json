@@ -1,0 +1,1 @@
+[{"key":"phase","value":"running"},{"key":"detail","value":"study.py run --workers 32 (attempt 1)"},{"key":"updated","value":"2026-11-02T20:42:21Z"},{"key":"pod","value":"ufct7hotf093ha"},{"key":"records","value":"84 of 110 tori"},{"key":"torus","value":"6x32"},{"key":"cpu","value":"AMD EPYC 9575F 64-Core Processor"},{"key":"vcpus","value":"32"},{"key":"memory","value":"251 GB"}]

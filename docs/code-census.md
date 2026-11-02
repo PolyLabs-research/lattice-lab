@@ -898,7 +898,10 @@ bound, not settled):
 | 3 x 49 | 294 | 24 | pass | pass (24) | **fail** (13.61, the [[294,10,20]]) |
 
 **What it adds.**
-- **No torus of stage 3b/3c is left incomplete.** P2 now fails on 15 registered tori, not 7.
+- **No judged torus of stage 3b/3c is left incomplete.** P2 now fails on 15 registered tori,
+  not 7. Two exposed tori, reported beside the verdict but not judged, keep a lower bound at
+  k = 4, because stage 3d reran only judged tori: 9 x 15 (d >= 22, but its isomorphic twin
+  3 x 45 carries the same codes and is settled at 24) and 6 x 24 (d >= 22).
   Every unexposed extrapolation torus from n = 270 to 288 carries a [[n,4,24]] code, above the
   1.40 √n cap. The combined verdict was already fail, and it stays fail.
 - **The census's lower bounds are confirmed.** All 154 lower bounds of 23 from stage 3b's search

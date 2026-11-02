@@ -113,6 +113,19 @@
   #dash-root .cr-gal-cap { font-size: var(--cds-font-size-caption); line-height: 1.35; margin-top: 4px; }
   #dash-root .cr-gal-cap b { font-weight: 600; }
   #dash-root .cr-gal-cap span { color: var(--color-fg-muted); }
+  /* confidence, predictions, operations */
+  #dash-root .cr-chip { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+  #dash-root .cr-chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--cds-chart-muted); }
+  #dash-root .cr-chip-reached::before { background: var(--color-ok); }
+  #dash-root .cr-chip-consistent::before { background: none; border: 1.5px solid var(--color-ok); width: 6px; height: 6px; }
+  #dash-root .cr-chip-unfinished::before { background: none; border: 1.5px dashed var(--color-fg-muted); width: 6px; height: 6px; }
+  #dash-root .cr-chip-contradicts::before, #dash-root .cr-chip-error::before { background: var(--color-bad); border-radius: 1px; transform: rotate(45deg); }
+  #dash-root .cr-chip-none { color: var(--color-fg-muted); }
+  #dash-root .cr-chip-none::before { display: none; }
+  #dash-root .cr-pill-mixed::before { background: linear-gradient(90deg, var(--color-ok) 50%, var(--color-bad) 50%); }
+  #dash-root .cr-pill-incomplete::before, #dash-root .cr-pill-not-tested::before { background: none; border: 1.5px dashed var(--color-fg-muted); width: 6px; height: 6px; }
+  #dash-root .cr-pill-no-verdict::before { background: none; border: 1.5px solid var(--color-fg-muted); width: 6px; height: 6px; }
+  #dash-root .cr-wrap { white-space: normal; min-width: 14rem; }
   /* code card */
   #dash-root .cr-code-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--cds-gap-xs) var(--cds-gap-md); }
   #dash-root .cr-card h2.cr-code-name { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.6); margin: 0; }
@@ -134,6 +147,9 @@
       <button class="cr-tab" role="tab" id="tab-frontier" aria-controls="frontier" aria-selected="false">Frontier</button>
       <button class="cr-tab" role="tab" id="tab-structure" aria-controls="structure" aria-selected="false">Structure</button>
       <button class="cr-tab" role="tab" id="tab-populations" aria-controls="populations" aria-selected="false">Populations</button>
+      <button class="cr-tab" role="tab" id="tab-confidence" aria-controls="confidence" aria-selected="false">Confidence</button>
+      <button class="cr-tab" role="tab" id="tab-predictions" aria-controls="predictions" aria-selected="false">Predictions</button>
+      <button class="cr-tab" role="tab" id="tab-operations" aria-controls="operations" aria-selected="false">Operations</button>
       <button class="cr-tab" role="tab" id="tab-code" aria-controls="code" aria-selected="false">Code card</button>
     </nav>
   </header>
@@ -409,6 +425,138 @@
     </div>
   </section>
 
+  <!-- ============================================================ CONFIDENCE -->
+  <section class="cr-page" id="confidence" role="tabpanel" aria-labelledby="tab-confidence" hidden>
+    <p class="cr-lede">How sure we are of each number. A census distance comes from the census's own instrument; the checks below are independent methods run on chosen codes afterwards, and a code's tier is the strongest of them that reached its d.</p>
+    <div class="cr-card cr-wide" id="cf-tiers-card">
+      <h2>Checked codes and their tiers</h2>
+      <p class="cr-note">One row per checked code; one column per kind of check. A filled dot means the check found d itself; a ring means its bounds agree with d without reaching it; a dashed ring means it ended without a conclusion (a time limit). A red diamond marks a contradiction. C1 is an integer program, C2 the unpruned search, C3 the other logical kind, C4 random windows, C5 DistQLDPC (cluster engine and MaxSAT) and C6 a SAT proof.</p>
+      <div class="cr-table-box">
+        <table data-source="check_matrix" data-row-key="code_key" id="cf-matrix">
+          <thead><tr>
+            <th data-field="code">Code</th><th data-field="torus">Torus</th><th data-field="tier">Tier</th>
+            <th data-field="C1">C1</th><th data-field="C2">C2</th><th data-field="C3">C3</th><th data-field="C4">C4</th><th data-field="C5">C5</th><th data-field="C6">C6</th>
+            <th data-field="source" class="cr-hide-narrow">Source</th>
+          </tr></thead>
+          <tbody data-draw="cf-matrix"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card" id="cf-runs-card">
+        <h2>Instrument reruns</h2>
+        <p class="cr-note">Stage 3d reran every class that stages 3b/3c left unfinished with DistQLDPC; before stage 4, its new instrument was run on stage 3b/3c tori and compared class by class with the old one.</p>
+        <div class="cr-table-box">
+          <table data-source="rerun_summary" data-row-key="key" id="cf-reruns">
+            <thead><tr><th data-field="source">Check</th><th data-field="torus">Torus</th><th data-field="jobs" class="cr-num">Runs</th><th data-field="result">Result</th></tr></thead>
+            <tbody data-draw="cf-reruns"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cr-card" id="cf-unsettled-card">
+        <h2>Unsettled entries</h2>
+        <p class="cr-note">Frontier entries whose d is only a lower bound. Where an isomorphic torus, which carries the same codes, settled the entry, that is shown too.</p>
+        <div class="cr-table-box">
+          <table data-source="frontier" data-row-key="id" id="cf-unsettled">
+            <thead><tr><th data-field="code">Code (d at least)</th><th data-field="torus">Torus</th><th data-field="study_group">Study group</th><th data-field="iso_settled_torus">Settled on</th><th data-field="iso_settled_d" class="cr-num">d there</th></tr></thead>
+            <tbody data-draw="cf-unsettled"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PREDICTIONS -->
+  <section class="cr-page" id="predictions" role="tabpanel" aria-labelledby="tab-predictions" hidden>
+    <p class="cr-lede">Every registered study in the lab: what it predicted before its data existed, and what happened. A candidate is one of several rival laws or mechanisms registered to be tested against each other, so a rejected candidate is the test working, not a failed prediction.</p>
+    <div class="cr-filters" role="group" aria-label="Studies shown">
+      <label>Area<select class="pr-area" aria-label="Area"><option value="all">All studies</option><option value="codes">Codes</option><option value="Code census">Code census</option><option value="Code distances">Code distances</option><option value="Periods and laws">Periods and laws</option><option value="LLM pilots">LLM pilots</option><option value="Settling times">Settling times</option></select></label>
+    </div>
+    <div class="cr-card cr-wide" id="pr-studies-card">
+      <h2>Scorecard</h2>
+      <p class="cr-note">One row per study, oldest first. Click a study for its predictions below.</p>
+      <div class="cr-table-box">
+        <table data-source="studies" data-row-key="study" id="pr-studies">
+          <thead><tr>
+            <th data-field="title">Study</th><th data-field="outcome">Outcome</th>
+            <th data-field="claims_held" class="cr-num">Held</th><th data-field="claims_failed" class="cr-num">Failed</th><th data-field="claims_other" class="cr-num cr-hide-narrow">Other</th>
+            <th data-field="candidates_rejected" class="cr-num cr-hide-narrow">Candidates rejected</th>
+            <th data-field="registered" class="cr-hide-narrow">Registered (UTC)</th><th data-field="summary" class="cr-hide-narrow">Verdict</th>
+          </tr></thead>
+          <tbody data-draw="pr-studies"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cr-card cr-wide" id="pr-preds-card">
+      <h2>Predictions of <span data-draw="pr-study-name" data-source="studies" data-field="title">—</span></h2>
+      <p class="cr-note">Each registered prediction with its role and outcome, and the note its verdict gives.</p>
+      <div class="cr-table-box">
+        <table data-source="predictions" data-row-key="key" id="pr-preds">
+          <thead><tr><th data-field="label">Prediction</th><th data-field="role">Role</th><th data-field="outcome">Outcome</th><th data-field="note" class="cr-hide-narrow">Note</th><th data-field="text" class="cr-hide-narrow">What was predicted</th></tr></thead>
+          <tbody data-draw="pr-preds"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cr-card" id="pr-laws-card">
+      <h2>The census laws against the data that tested them</h2>
+      <p class="cr-note">Each registered law with the tori it was judged on. Points that break it are ringed. Exposed tori, seen before registration, are left out, as the verdicts leave them out. In the last panel the lower line is S1's record and the upper line S2's ceiling.</p>
+      <div class="cr-small-multiples" data-draw="pr-laws" data-source="frontier fits"></div>
+    </div>
+    <div class="cr-card" id="pr-timeline-card">
+      <h2>Timeline</h2>
+      <p class="cr-note">Each study from registration to verdict. The dot at the end is the verdict's outcome; a study still running ends at the build time.</p>
+      <div class="cr-chart" data-draw="pr-timeline" data-source="studies summary"></div>
+      <div class="cr-legend"><span class="cr-key"><span class="cr-pill cr-pill-held"></span>held</span><span class="cr-key"><span class="cr-pill cr-pill-mixed"></span>mixed</span><span class="cr-key"><span class="cr-pill cr-pill-failed"></span>failed</span><span class="cr-key"><span class="cr-pill cr-pill-incomplete"></span>incomplete or pending</span><span class="cr-key"><span class="cr-pill cr-pill-no-verdict"></span>no verdict</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ OPERATIONS -->
+  <section class="cr-page" id="operations" role="tabpanel" aria-labelledby="tab-operations" hidden>
+    <p class="cr-lede">The running census and what its runs cost in time. Money is not recorded: if wanted, launches can log each pod's rate and its start and stop times from now on.</p>
+    <div class="cr-grid2">
+      <div class="cr-card" id="op-pod-card">
+        <h2>The pod</h2>
+        <p class="cr-note">From the status file the pod pushes as it runs, and the hardware it recorded at start.</p>
+        <dl class="cr-facts">
+          <dt>Phase</dt><dd data-draw="op-phase" data-source="runstatus" data-field="value" data-where="key=phase">—</dd>
+          <dt>Working on</dt><dd data-draw="op-torus" data-source="runstatus" data-field="value" data-where="key=torus">—</dd>
+          <dt>Records</dt><dd data-draw="op-records" data-source="runstatus" data-field="value" data-where="key=records">—</dd>
+          <dt>Last status</dt><dd data-draw="op-updated" data-source="runstatus" data-field="value" data-where="key=updated">—</dd>
+          <dt>Pod</dt><dd data-draw="op-pod" data-source="runstatus" data-field="value" data-where="key=pod">—</dd>
+          <dt>Command</dt><dd data-draw="op-detail" data-source="runstatus" data-field="value" data-where="key=detail">—</dd>
+          <dt>CPU</dt><dd data-draw="op-cpu" data-source="runstatus" data-field="value" data-where="key=cpu">—</dd>
+          <dt>vCPUs</dt><dd data-draw="op-vcpus" data-source="runstatus" data-field="value" data-where="key=vcpus">—</dd>
+          <dt>Memory</dt><dd data-draw="op-mem" data-source="runstatus" data-field="value" data-where="key=memory">—</dd>
+        </dl>
+      </div>
+      <div class="cr-card" id="op-burn-card">
+        <h2>Stage 4 progress</h2>
+        <p class="cr-note">Tori done against time, from the records commits, up to the registered stop rule.</p>
+        <div class="cr-chart cr-mid" data-draw="ov-burnup" data-source="progress summary"></div>
+      </div>
+    </div>
+    <div class="cr-card" id="op-cost-card">
+      <h2>What an exact distance costs</h2>
+      <p class="cr-note">The time of one exact run against the d it found, on a log scale: the median of each d, with a band from the 10th to the 90th percentile. DistQLDPC's own time is shown; its window search for a witness comes on top. Dashed lines are exploratory fits.</p>
+      <div class="cr-chart cr-mid" data-draw="op-cost" data-source="run_cost fits"></div>
+      <div class="cr-legend" data-draw="op-cost-legend" data-source="fits"></div>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card" id="op-torus-card">
+        <h2>Compute per torus</h2>
+        <p class="cr-note">The summed time of every exact run on each torus, on a log scale. It is compute time across all workers, not wall time.</p>
+        <div class="cr-chart cr-mid" data-draw="op-torus-time" data-source="tori"></div>
+        <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-c0"></span>Stage 3a</span><span class="cr-key"><span class="cr-sw cr-c1"></span>Stages 3b/3c</span><span class="cr-key"><span class="cr-sw cr-c2"></span>Stage 4</span></div>
+      </div>
+      <div class="cr-card" id="op-checks-card">
+        <h2>How long the checks take</h2>
+        <p class="cr-note">Each check job's time, by kind, on a log scale. Jobs that hit their time limit sit at the limit.</p>
+        <div class="cr-chart cr-mid" data-draw="op-checks" data-source="checks"></div>
+        <div class="cr-legend"><span class="cr-key"><span class="cr-chip cr-chip-reached"></span>reached d</span><span class="cr-key"><span class="cr-chip cr-chip-consistent"></span>consistent with d</span><span class="cr-key"><span class="cr-chip cr-chip-unfinished"></span>no conclusion</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================ CODE CARD -->
   <section class="cr-page" id="code" role="tabpanel" aria-labelledby="tab-code" hidden>
     <div class="cr-picker">
@@ -473,3 +621,6 @@
 <script src="code.js"></script>
 <script src="structure.js"></script>
 <script src="populations.js"></script>
+<script src="confidence.js"></script>
+<script src="predictions.js"></script>
+<script src="operations.js"></script>

@@ -1,17 +1,22 @@
 {
  "dashboard": "https://claude.ai/artifact/N1DG4GEYdYuqVZqDUpNmdY",
  "datasets": {
-  "summary": "/_blob/4b44d6d04a8293556ecbe3b1747a8faf",
+  "summary": "/_blob/5504e3f5c72ff32a762ec3bc40ef1f7f",
   "frontier": "/_blob/26018359ae29d23caee2da3beff7c9bd",
   "published": "/_blob/1cc3e47a741c6a378d7f64f4ae59f13c",
-  "fits": "/_blob/060fb32bc7768746affac6e31ea2c5ea",
+  "fits": "/_blob/be6c8b64fd2effd9b6d355c1158cc238",
   "progress": "/_blob/bae0b294c3d7b89537e4ed487435c9f4",
   "tori": "/_blob/6c0e69a52acf4bb7dc69709fe07a09ab",
   "class_hist": "/_blob/e9dcde7e0bb463cb29e551df6d83308d",
   "groups": "/_blob/4bb6d668b88ff4dc604ef31690c3450e",
   "stencils": "/_blob/0a4fef6987fb4b47d96fc43a8c365c54",
   "bulk": "/_blob/989c9b72cd7ba1ea213f861d661f7014",
-  "tightness": "/_blob/312d291e94f388a7667246ba9a25fc21"
+  "tightness": "/_blob/312d291e94f388a7667246ba9a25fc21",
+  "run_cost": "/_blob/100f38b8c474027491a2632c4f6a0808",
+  "checks": "/_blob/db78f89af8577288628e76d8c5c3340d",
+  "predictions": "/_blob/16c048f5cd6664e55b4874c76a43df75",
+  "runstatus": "/_blob/b9704887f858d48d1e8389769b433264",
+  "studies": "/_blob/5949656df01c332788d03a2170b941fb"
  },
- "updated": "2026-11-02T20:32:37Z"
+ "updated": "2026-11-02T20:44:37Z"
 }
