@@ -180,10 +180,10 @@
     return w;
   };
   // A frame with axes: margins come from the widest tick label as drawn.
-  CR.frame = (el, { height = 300, x, y, xFormat, yFormat, xTicks, yTicks, xLabel, yLabel, label }) => {
+  CR.frame = (el, { height = 300, x, y, xFormat, yFormat, xTicks, xValues, yTicks, yValues, xLabel, yLabel, label }) => {
     const width = Math.max(260, el.clientWidth || 600);
     const svg = CR.svg(el, width, height, label);
-    const yt = y.ticks(yTicks || Math.max(3, Math.round(height / 60)));
+    const yt = yValues || y.ticks(yTicks || Math.max(3, Math.round(height / 60)));
     const yLabels = yt.map(yFormat || String);
     const left = Math.ceil(CR.measure(svg, yLabels)) + 10 + (yLabel ? 16 : 0);
     const m = { top: 12, right: 14, bottom: 30 + (xLabel ? 16 : 0), left };
@@ -191,11 +191,18 @@
     y.range([height - m.bottom, m.top]);
     // x ticks: the most that fit side by side, measured as drawn
     const inner = width - m.left - m.right;
+    const fits = (ts) => ts.reduce((s, t) => s + CR.measure(svg, [(xFormat || String)(t)]) + 12, 0) <= inner;
     let xt = [];
-    for (let c = xTicks || 14; c >= 2; c--) {
-      xt = x.ticks(c);
-      const used = xt.reduce((s, t) => s + CR.measure(svg, [(xFormat || String)(t)]) + 12, 0);
-      if (used <= inner) break;
+    if (xValues) {
+      for (let step = 1; step <= xValues.length; step++) {
+        xt = xValues.filter((_, i) => i % step === 0);
+        if (fits(xt)) break;
+      }
+    } else {
+      for (let c = xTicks || 14; c >= 2; c--) {
+        xt = x.ticks(c);
+        if (fits(xt)) break;
+      }
     }
     const gGrid = svg.append('g').attr('class', 'cr-grid');
     gGrid

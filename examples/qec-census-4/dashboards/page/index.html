@@ -103,6 +103,16 @@
   #dash-root .cr-facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 0; font-size: var(--cds-font-size-caption); }
   #dash-root .cr-facts dt { color: var(--color-fg-muted); }
   #dash-root .cr-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  /* structure and populations */
+  #dash-root .cr-sw-hollow { background: none !important; border: 1.5px solid var(--color-fg-muted); border-radius: 2px; width: 7px; height: 7px; }
+  #dash-root .cr-sw-dot { width: 4px; height: 4px; background: var(--cds-chart-muted); }
+  #dash-root .cr-sw-warn { background: var(--color-warn); border-radius: 2px; }
+  #dash-root .cr-gallery { display: grid; gap: var(--cds-gap-sm); grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); }
+  #dash-root .cr-gal-item { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-sm); cursor: pointer; background: var(--color-panel); text-align: left; font: inherit; color: inherit; }
+  #dash-root .cr-gal-item:hover, #dash-root .cr-gal-item:focus-visible { border-color: var(--color-fg-muted); }
+  #dash-root .cr-gal-cap { font-size: var(--cds-font-size-caption); line-height: 1.35; margin-top: 4px; }
+  #dash-root .cr-gal-cap b { font-weight: 600; }
+  #dash-root .cr-gal-cap span { color: var(--color-fg-muted); }
   /* code card */
   #dash-root .cr-code-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--cds-gap-xs) var(--cds-gap-md); }
   #dash-root .cr-card h2.cr-code-name { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.6); margin: 0; }
@@ -122,6 +132,8 @@
     <nav class="cr-tabs" role="tablist" aria-label="Pages">
       <button class="cr-tab" role="tab" id="tab-overview" aria-controls="overview" aria-selected="true">Overview</button>
       <button class="cr-tab" role="tab" id="tab-frontier" aria-controls="frontier" aria-selected="false">Frontier</button>
+      <button class="cr-tab" role="tab" id="tab-structure" aria-controls="structure" aria-selected="false">Structure</button>
+      <button class="cr-tab" role="tab" id="tab-populations" aria-controls="populations" aria-selected="false">Populations</button>
       <button class="cr-tab" role="tab" id="tab-code" aria-controls="code" aria-selected="false">Code card</button>
     </nav>
   </header>
@@ -174,7 +186,7 @@
       </div>
       <div class="cr-card" id="ov-run">
         <h2>Stage 4 run</h2>
-        <p class="cr-note">Tori done against time, from the records commits the pod pushes. The run stops taking new tori at the registered stop rule, 14 days after it started.</p>
+        <p class="cr-note">Tori done against time, from the records commits the pod pushes. The run stops taking new tori at the registered stop rule.</p>
         <div class="cr-meter" aria-hidden="true"><div class="cr-meter-fill" data-draw="ov-meter" data-source="summary"></div></div>
         <dl class="cr-facts">
           <dt>Done</dt><dd><span data-draw="ov-done" data-source="summary" data-field="value" data-where="metric=stage4_done">—</span> of <span data-draw="ov-total" data-source="summary" data-field="value" data-where="metric=stage4_total">—</span> tori</dd>
@@ -188,7 +200,7 @@
     <div class="cr-card cr-wide" id="ov-new">
       <h2>New frontier entries</h2>
       <p class="cr-note">Entries whose torus first reached the records on or after the date below, best k·d²/n first. Click one for its code card.</p>
-      <div class="cr-table-tools"><label class="cr-picker">Since <input type="date" class="cr-since" min="2026-01-01" max="2099-12-31" aria-label="Since"></label><button type="button" class="cr-button cr-since-reset">Last 7 days</button></div>
+      <div class="cr-table-tools"><label class="cr-picker">Since <input type="date" class="cr-since" min="2026-01-01" max="2099-12-31" aria-label="Since"></label><button type="button" class="cr-button cr-since-reset">Last week</button></div>
       <div class="cr-table-box">
         <table data-source="frontier" data-row-key="id" id="ov-new-table">
           <thead><tr><th data-field="code">Code</th><th data-field="torus">Torus</th><th data-field="score" class="cr-num">k·d²/n</th><th data-field="ratio" class="cr-num cr-hide-narrow">d/√n</th><th data-field="tier" class="cr-hide-narrow">Checks</th><th data-field="first_seen">First seen (UTC)</th></tr></thead>
@@ -202,7 +214,7 @@
   <section class="cr-page" id="frontier" role="tabpanel" aria-labelledby="tab-frontier" hidden>
     <p class="cr-lede">The census frontier: for each torus Z_l × Z_m and each k, the largest distance d of a connected code. Published codes are drawn as diamonds. The filters apply to every chart and table on this page.</p>
     <div class="cr-filters" role="group" aria-label="Filters" id="fr-filters">
-      <label>Stage<select class="f-stage" aria-label="Stage"><option value="all">All</option><option value="3a">3a (lm ≤ 100)</option><option value="3b/3c">3b/3c (lm ≤ 150)</option><option value="4">4 (lm ≤ 200)</option></select></label>
+      <label>Stage<select class="f-stage" aria-label="Stage"><option value="all">All</option><option value="3a">3a</option><option value="3b/3c">3b/3c</option><option value="4">4</option></select></label>
       <label>k<select data-draw="f-k" class="f-k" data-source="frontier" aria-label="k"></select></label>
       <label>Group<select class="f-gtype" aria-label="Group type"><option value="all">All</option><option value="cyclic">Cyclic</option><option value="non-cyclic">Non-cyclic</option><option value="Z3×Z3 part">With a Z3×Z3 part</option></select></label>
       <label>n from<input type="number" class="f-nmin" min="0" max="1000" step="2" aria-label="n from"></label>
@@ -236,7 +248,7 @@
 
     <div class="cr-card" id="fr-heat-card">
       <h2>Best d for every n and k</h2>
-      <p class="cr-note">One cell per (n, k) with a code; empty cells have none. Cells outlined in black match or beat a published code with the same n and k. Bands across are the k layers; gaps down are values of n where no code exists.</p>
+      <p class="cr-note">One cell per (n, k) with a code; empty cells have none. Outlined cells match or beat a published code with the same n and k. Bands across are the k layers; gaps down are values of n where no code exists.</p>
       <div class="cr-controls">
         <span class="cr-seg" role="radiogroup" aria-label="Cell colour">
           <label><input type="radio" name="cr-heat" value="d"> d</label>
@@ -250,7 +262,7 @@
 
     <div class="cr-card" id="fr-trade-card">
       <h2>The trade-off: k against d/√n</h2>
-      <p class="cr-note">On these axes a curve of constant k·d²/n does not depend on n, so codes of every size can be compared with the same curves. One panel per 100 qubits.</p>
+      <p class="cr-note">On these axes a curve of constant k·d²/n does not depend on n, so codes of every size can be compared with the same curves. One panel per band of n.</p>
       <div class="cr-small-multiples" data-draw="fr-trade" data-source="frontier published fits"></div>
       <div class="cr-legend" data-draw="fr-trade-legend" data-source="frontier published fits"></div>
     </div>
@@ -258,12 +270,12 @@
     <div class="cr-grid2">
       <div class="cr-card" id="fr-resid-edge-card">
         <h2>The top edge, with its trend removed</h2>
-        <p class="cr-note">The best d at each n, minus the exploratory edge 2⌊0.617·√(n ln n)/2⌋. Zero is on the fit; steps of 2 are one even step of d.</p>
+        <p class="cr-note">The best d at each n, minus the exploratory edge fit <span data-draw="fr-f-edge" data-source="fits" data-field="formula" data-where="id=edge">—</span>. Zero is on the fit; each step is one even step of d.</p>
         <div class="cr-chart cr-mid" data-draw="fr-resid-edge" data-source="frontier"></div>
       </div>
       <div class="cr-card" id="fr-resid-layer-card">
         <h2>Every entry against the k-layer fit</h2>
-        <p class="cr-note">d minus the exploratory fit 2.31·n^0.443 − k, which was fitted on n ≤ 300. Points above zero beat the layer they sit in.</p>
+        <p class="cr-note">d minus the exploratory fit <span data-draw="fr-f-layer" data-source="fits" data-field="formula" data-where="id=layer">—</span>. Points above zero beat the layer they sit in.</p>
         <div class="cr-chart cr-mid" data-draw="fr-resid-layer" data-source="frontier"></div>
       </div>
     </div>
@@ -286,6 +298,113 @@
           </tr></thead>
           <tbody data-draw="fr-board"></tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ STRUCTURE -->
+  <section class="cr-page" id="structure" role="tabpanel" aria-labelledby="tab-structure" hidden>
+    <p class="cr-lede">Why the frontier looks as it does: which tori the census covers and which have codes, the arithmetic that decides where codes exist, the groups behind the tori, and the shapes of the codes.</p>
+
+    <div class="cr-card" id="st-map-card">
+      <h2>The census map</h2>
+      <p class="cr-note">Every torus Z_l × Z_m the census covers, l down the side and m across. The dashed curves are lm = <span data-draw="st-bounds">—</span>, where stages 3a, 3b/3c and 4 end. Hover for a torus; click for its best code.</p>
+      <div class="cr-controls">
+        <span class="cr-seg" role="radiogroup" aria-label="Colour the map by">
+          <label><input type="radio" name="cr-stmap" value="status"> Status</label>
+          <label><input type="radio" name="cr-stmap" value="dmax"> Best d</label>
+        </span>
+      </div>
+      <div class="cr-chart cr-mid" data-draw="st-map" data-source="tori"></div>
+      <div class="cr-legend" id="st-map-status"><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c0"></span>Settled</span><span class="cr-key"><span class="cr-sw cr-sw-warn"></span>Unsettled: some d is a lower bound</span><span class="cr-key"><span class="cr-sw cr-sw-dot"></span>No codes (criterion E)</span><span class="cr-key"><span class="cr-sw cr-sw-hollow"></span>Stage 4, not yet run</span></div>
+      <div class="cr-legend" data-draw="st-map-ramp" data-source="tori" hidden></div>
+    </div>
+
+    <div class="cr-card" id="st-skeleton-card">
+      <h2>The arithmetic skeleton</h2>
+      <p class="cr-note">Each n with codes, coloured by the divisor of lm that lets codes exist there (criterion E; the legend names them). Above each n, the k values found there; a ring marks the k of that column's best d. Hollow marks are n that stage 4 has not reached.</p>
+      <div class="cr-chart cr-mid" data-draw="st-skeleton" data-source="tori frontier"></div>
+      <div class="cr-legend" data-draw="st-skel-legend" data-source="tori"></div>
+    </div>
+
+    <div class="cr-card cr-wide" id="st-groups-card">
+      <h2>Groups</h2>
+      <p class="cr-note">One row per group Z_g × Z_h that has codes. Isomorphic tori carry exactly the same codes, so they share a row. The gross code's family lives in groups with a Z3×Z3 part.</p>
+      <div class="cr-table-tools"><input type="search" class="st-search" placeholder="Search groups or tori" aria-label="Search the groups"></div>
+      <div class="cr-table-box">
+        <table data-source="groups" data-row-key="iso_key" id="st-groups">
+          <thead><tr>
+            <th data-field="group_name"><button type="button">Group</button></th>
+            <th data-field="tori"><button type="button">Tori</button></th>
+            <th data-field="n" class="cr-num"><button type="button">n</button></th>
+            <th data-field="d_max" class="cr-num"><button type="button">Best d</button></th>
+            <th data-field="k_values" class="cr-hide-narrow"><button type="button">k values</button></th>
+            <th data-field="best_score" class="cr-num" aria-sort="descending"><button type="button">Best k·d²/n</button></th>
+            <th data-field="group_type" class="cr-hide-narrow"><button type="button">Type</button></th>
+          </tr></thead>
+          <tbody data-draw="st-groups"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cr-card" id="st-gallery-card">
+      <h2>Stencil gallery</h2>
+      <p class="cr-note">Each code drawn as a code on the plane: A's three monomials (circles) and B's (squares), lifted to Z² by the map onto the torus that makes them smallest. The diameter is the largest spread of either shape. A small stencil means a local 2D code, folded onto the torus.</p>
+      <div class="cr-controls">
+        <span class="cr-seg" role="radiogroup" aria-label="Show">
+          <label><input type="radio" name="cr-stsort" value="score"> Best by k·d²/n</label>
+          <label><input type="radio" name="cr-stsort" value="ratio"> by d/√n</label>
+        </span>
+        <label>Group <select class="st-gtype" aria-label="Group type"><option value="all">All</option><option value="cyclic">Cyclic</option><option value="non-cyclic">Non-cyclic</option><option value="Z3×Z3 part">With a Z3×Z3 part</option></select></label>
+      </div>
+      <div class="cr-gallery" data-draw="st-gallery" data-source="stencils"></div>
+      <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-c0"></span>A</span><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c1"></span>B</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ POPULATIONS -->
+  <section class="cr-page" id="populations" role="tabpanel" aria-labelledby="tab-populations" hidden>
+    <p class="cr-lede">How rare the best codes are: the distribution of d over every code class on a torus, how many classes reach the top, and how the bulk grows against the edge.</p>
+    <div class="cr-filters" role="group" aria-label="Torus and k" id="po-filters">
+      <label>Torus<select data-draw="po-torus" data-source="tori" aria-label="Torus"></select></label>
+      <label>k<select data-draw="po-k" data-source="class_hist" aria-label="k"></select></label>
+      <label class="cr-check"><input type="checkbox" class="po-conn"> Connected codes only</label>
+      <label class="cr-check"><input type="checkbox" class="po-weight"> Count codes, not classes (stage 3a)</label>
+    </div>
+    <div class="cr-card" id="po-hist-card">
+      <h2>The distribution on one torus</h2>
+      <p class="cr-note">Stage 3a ran every class exactly. Later stages bound every class with a window search and ran exactly only those that could reach the best, so their bars show both: the window bound of every class, and the exact d where one was run. The lines mark the best d and two below it.</p>
+      <div class="cr-chart cr-mid" data-draw="po-hist" data-source="class_hist tori"></div>
+      <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c0"></span>Exact d</span><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c1"></span>Window bound (an upper bound on d)</span></div>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card" id="po-classes-card">
+        <h2>Classes per torus</h2>
+        <p class="cr-note">The number of code classes on each torus with codes, on a log scale, with an exploratory power-law fit. More classes means more chances at a high d.</p>
+        <div class="cr-chart cr-mid" data-draw="po-classes" data-source="tori fits"></div>
+        <div class="cr-legend" data-draw="po-classes-legend" data-source="fits"></div>
+      </div>
+      <div class="cr-card" id="po-depth-card">
+        <h2>The depth of the top</h2>
+        <p class="cr-note">On each torus, the connected classes that reach its best d, and those two below it. Few classes at the top means the record is a lottery win; many means a hard edge. After stage 3a the second count is a lower bound.</p>
+        <div class="cr-chart cr-mid" data-draw="po-depth" data-source="tori"></div>
+        <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-c0"></span>Classes at the best d</span><span class="cr-key"><span class="cr-sw cr-c1"></span>Two below the best</span></div>
+      </div>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card" id="po-bulk-card">
+        <h2>The bulk against the edge</h2>
+        <p class="cr-note">Over every connected class of stage 3a, where every d is exact: the median, the 90th percentile and the largest d at each n, with exploratory power-law fits. Stage 3a covers stage 1's tori only, so some n rest on a single torus: the dip at n = 170 is 5×17, with 3 classes.</p>
+        <div class="cr-chart cr-mid" data-draw="po-bulk" data-source="bulk fits"></div>
+        <div class="cr-legend" data-draw="po-bulk-legend" data-source="fits"></div>
+      </div>
+      <div class="cr-card" id="po-tight-card">
+        <h2>How tight the window bound is</h2>
+        <p class="cr-note">For classes run exactly after a window search: the bound minus the exact d, as a share of each stage's classes. Below, the share of each torus's classes that needed an exact run.</p>
+        <div class="cr-chart" data-draw="po-tight" data-source="tightness"></div>
+        <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c0"></span>Stages 3b/3c</span><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c1"></span>Stage 4</span></div>
+        <div class="cr-chart cr-mid" data-draw="po-share" data-source="tori"></div>
       </div>
     </div>
   </section>
@@ -352,3 +471,5 @@
 <script src="overview.js"></script>
 <script src="frontier.js"></script>
 <script src="code.js"></script>
+<script src="structure.js"></script>
+<script src="populations.js"></script>

@@ -166,6 +166,7 @@ class Census:
         self.weight: Counter = Counter()  # the same key -> sum of class sizes (stage 3a)
         self.runs: defaultdict = defaultdict(list)  # (stage, engine, d or None) -> seconds
         self.timelimits: Counter = Counter()  # (stage, engine) -> runs that hit the limit
+        self.gaps: Counter = Counter()  # (stage, window bound - exact d) -> classes
         self.s3d = self._stage3d()
         self._stage3a()
         for path, stage in ((S3B, "3b/3c"), (S3C, "3b/3c"), (S4, "4")):
@@ -275,11 +276,15 @@ class Census:
                 if e["status"] == "complete":
                     self.hist[(*key, "exact", e["d"])] += 1
                     self.runs[(stage, engine, e["d"])].append(e["seconds"])
+                    if y.get("upper") is not None:
+                        self.gaps[(stage, y["upper"] - e["d"])] += 1
                     continue
                 self.timelimits[(stage, engine)] += 1
                 hit = self.s3d.get(((ell, m), y["k"], json.dumps(y["A"]), json.dumps(y["B"])))
                 if hit:
                     self.hist[(*key, "exact", hit["d"])] += 1
+                    if y.get("upper") is not None:
+                        self.gaps[(stage, y["upper"] - hit["d"])] += 1
                     self.runs[("3d", "DistQLDPC cluster", hit["d"])].append(hit["seconds"])
                     if y["connected"]:
                         s3d_hit[y["k"]].append({**hit, "row": y})
@@ -556,9 +561,161 @@ def fits(c: Census) -> list[dict]:
          "study": "regularity analysis", "part": "", "a": LAYER_A, "b": LAYER_B, "c": None,
          "outcome": "", "interim": False, "decided_by": None},
     ]  # fmt: skip
+    formulas = {"p2": "d ≤ largest even ≤ 1.4·√n", "p3": "k·d²/n ≤ 13.5",
+                "e": "d ≤ largest even ≤ 0.8011·n^0.6074", "g": "d/√n > 1.4606",
+                "s1": "k·d²/n > 13.6054", "s2": "k·d²/n ≤ 17", "edge": "2·⌊0.617·√(n ln n) / 2⌋",
+                "power": "0.78·n^0.613", "affine": "1.75·√n − 4.6",
+                "layer": "2.31·n^0.443 − k"}  # fmt: skip
+    for r in rows:
+        r["formula"] = formulas[r["id"]]
     for r in rows:
         r["status"] = (r["outcome"] + (" (verdict pending)" if r["interim"] else "")
                        if r["outcome"] else "exploratory")  # fmt: skip
+    return rows
+
+
+STENCIL = EX / "qec-census-4" / "regularity" / "scripts" / "verify-theory-3" / "stencil.py"
+
+
+def _lift(shapes, phi, ell: int, m: int, steps) -> list[list[int]]:
+    """The first shape {0, u, v} in Z^2 that phi maps onto the two steps of a polynomial."""
+    (g1x, g1y), (g2x, g2y) = phi
+
+    def at(a: int, b: int) -> tuple[int, int]:
+        return (a * g1x + b * g2x) % ell, (a * g1y + b * g2y) % m
+
+    for u0, u1, v0, v1 in shapes:
+        if at(u0, u1) == tuple(steps[0]) and at(v0, v1) == tuple(steps[1]):
+            return [[0, 0], [u0, u1], [v0, v1]]
+    raise ValueError("no lift")
+
+
+def embedding(ell: int, m: int, A, B, dmax: int = 6) -> dict | None:
+    """The smallest stencil: a homomorphism phi: Z^2 -> Z_l x Z_m and lifts of A's and B's
+    monomials (each relative to its first) to Z^2 whose l-inf diameter is smallest, preferring a
+    surjective phi at that diameter (the regularity analysis's verify-theory-3/stencil.py)."""
+    import numpy as np
+
+    st = _load("regularity_stencil", STENCIL)
+    sa, sb = st.steps(A, ell, m), st.steps(B, ell, m)
+    surj = st.surj_mask(ell, m)
+    for D in range(1, dmax + 1):
+        S = st.shapes(D)
+        PA = st.phiset(S, ell, m, sa[0], sa[1])
+        if not PA.any():
+            continue
+        X = PA & st.phiset(S, ell, m, sb[0], sb[1])
+        if not X.any():
+            continue
+        onto = bool((X & surj).any())
+        r, col = (np.argwhere(X & surj) if onto else np.argwhere(X))[0]
+        g1x, g2x = divmod(int(r), ell)
+        g1y, g2y = divmod(int(col), m)
+
+        phi = ((g1x, g1y), (g2x, g2y))
+        return {"D": D, "surjective": onto, "phi": [list(phi[0]), list(phi[1])],
+                "A_lift": _lift(S.tolist(), phi, ell, m, sa),
+                "B_lift": _lift(S.tolist(), phi, ell, m, sb)}  # fmt: skip
+    return None
+
+
+def stencils(frontier: list[dict], out: Path = OUT) -> list[dict]:
+    """The smallest stencil of every frontier entry on a primary torus (cached by code)."""
+    cache_path = out / "stencil_cache.json"
+    cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+    rows = []
+    for e in frontier:
+        if not e["primary"] or not e["A"]:
+            continue
+        key = f"{e['l']}x{e['m']}:{e['A']}:{e['B']}"
+        if key not in cache:
+            A = [tuple(t) for t in json.loads(e["A"])]
+            B = [tuple(t) for t in json.loads(e["B"])]
+            cache[key] = embedding(e["l"], e["m"], A, B)
+        emb = cache[key]
+        rows.append({"id": e["id"], "code": e["code"], "torus": e["torus"], "n": e["n"],
+                     "k": e["k"], "d": e["d"], "score": e["score"], "ratio": e["ratio"],
+                     "group_type": e["group_type"],
+                     "diameter": emb["D"] if emb else None,
+                     "surjective": emb["surjective"] if emb else None,
+                     "phi": json.dumps(emb["phi"]) if emb else None,
+                     "A_lift": json.dumps(emb["A_lift"]) if emb else None,
+                     "B_lift": json.dumps(emb["B_lift"]) if emb else None})  # fmt: skip
+    out.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(cache, sort_keys=True, separators=(",", ":")) + "\n")
+    return rows
+
+
+def groups(tori: list[dict]) -> list[dict]:
+    """One row per group (isomorphism class of tori) that has codes."""
+    by: dict[str, list[dict]] = defaultdict(list)
+    for t in tori:
+        if t["status"] not in ("pending", "no codes", "error"):
+            by[t["iso_key"]].append(t)
+    rows = []
+    for key, ts in by.items():
+        p = next(t for t in ts if t["primary"])
+        rows.append({"iso_key": key, "group_name": p["group_name"], "group_type": p["group_type"],
+                     "n": p["n"], "g": p["g"], "tori": ", ".join(t["torus"] for t in ts),
+                     "copies": len(ts), "primary": p["torus"], "d_max": p["d_max"],
+                     "k_values": p["k_values"], "best_score": p["best_score"],
+                     "e_divisors": p["e_divisors"], "k_top_theory": p["k_top_theory"],
+                     "settled": all(t["status"] == "settled" for t in ts)})  # fmt: skip
+    return sorted(rows, key=lambda r: (r["n"], r["iso_key"]))
+
+
+def bulk(c: Census) -> list[dict]:
+    """Stage 3a (every class exact): the median, 90th percentile and largest d of connected
+    classes at each n, counting each class once."""
+    at: dict[int, Counter] = defaultdict(Counter)
+    for (torus, stage, _k, connected, kind, value), count in c.hist.items():
+        if stage == "3a" and connected and kind == "exact":
+            ell, m = map(int, torus.split("x"))
+            at[2 * ell * m][value] += count
+    rows = []
+    for n, cnt in sorted(at.items()):
+        xs = sorted(cnt.elements())
+        rows.append({"n": n, "classes": len(xs), "median": statistics.median(xs),
+                     "p90": _quantile(xs, 0.9), "max": xs[-1]})  # fmt: skip
+    return rows
+
+
+def tightness(c: Census) -> list[dict]:
+    return [{"stage": stage, "gap": gap, "classes": count}
+            for (stage, gap), count in sorted(c.gaps.items())]  # fmt: skip
+
+
+def power_fit(xs, ys) -> tuple[float, float]:
+    """Least squares on log y = log a + b log x."""
+    lx = [math.log(x) for x in xs]
+    ly = [math.log(y) for y in ys]
+    mx, my = statistics.fmean(lx), statistics.fmean(ly)
+    b = sum((p - mx) * (q - my) for p, q in zip(lx, ly, strict=True)) / \
+        sum((p - mx) ** 2 for p in lx)  # fmt: skip
+    return math.exp(my - b * mx), b
+
+
+def population_fits(tori: list[dict], bulk_rows: list[dict]) -> list[dict]:
+    with_codes = [t for t in tori if t.get("classes")]
+    a, b = power_fit([t["n"] for t in with_codes], [t["classes"] for t in with_codes])
+    rows = [{"id": "classes", "label": f"Classes per torus ≈ {a:.3g}·n^{b:.2f}",
+             "kind": "exploratory", "study": "this dashboard (least squares on log-log, every "
+             "torus with codes)", "part": "", "a": round(a, 6), "b": round(b, 3), "c": None,
+             "outcome": "", "interim": False, "decided_by": None,
+             "status": "exploratory", "formula": f"{a:.3g}·n^{b:.2f}"}]  # fmt: skip
+    big = [r for r in bulk_rows if r["n"] >= 30]
+    for col, name in (
+        ("median", "Median d"),
+        ("p90", "90th percentile of d"),
+        ("max", "Largest d"),
+    ):
+        a, b = power_fit([r["n"] for r in big], [r[col] for r in big])
+        rows.append({"id": f"bulk_{col}", "label": f"{name} over stage 3a's classes ≈ "
+                     f"{a:.2f}·n^{b:.2f}", "kind": "exploratory",
+                     "study": "this dashboard (least squares on log-log, n ≥ 30)", "part": "",
+                     "a": round(a, 4), "b": round(b, 3), "c": None, "outcome": "",
+                     "interim": False, "decided_by": None, "status": "exploratory",
+                     "formula": f"{a:.2f}·n^{b:.2f}"})  # fmt: skip
     return rows
 
 
@@ -600,11 +757,27 @@ def build() -> dict[str, list[dict]]:
         t["first_seen"] = seen.get(t["torus"])
     for e in c.frontier:
         e["first_seen"] = seen.get(e["torus"])
+    # the depth of the top: connected classes at the torus's best d, and two below it (exact
+    # for stage 3a; for later stages a lower bound, since classes bounded below the best by
+    # the window search were not run exactly)
+    depth: dict[tuple[str, int], int] = Counter()
+    for (torus, _stage, _k, connected, kind, value), count in c.hist.items():
+        if connected and kind == "exact":
+            depth[(torus, value)] += count
+    for t in tori:
+        dmax = t.get("d_max")
+        t["top_count"] = depth.get((t["torus"], dmax), 0) if dmax else None
+        t["next_count"] = depth.get((t["torus"], dmax - 2), 0) if dmax else None
+        t["exact_share"] = round(t["exact_runs"] / t["classes"], 4) if t.get("classes") else None
     frontier = sorted(c.frontier, key=lambda e: (e["n"], e["l"], e["k"]))
     pub = published()
+    bulk_rows = bulk(c)
     return {"frontier": frontier, "tori": tori, "published": pub, "class_hist": class_hist(c),
-            "run_cost": run_cost(c), "progress": progress(), "fits": fits(c),
-            "summary": summary(c, frontier, tori, pub)}  # fmt: skip
+            "run_cost": run_cost(c), "progress": progress(),
+            "fits": fits(c) + population_fits(tori, bulk_rows),
+            "summary": summary(c, frontier, tori, pub), "groups": groups(tori),
+            "stencils": stencils(frontier), "bulk": bulk_rows,
+            "tightness": tightness(c)}  # fmt: skip
 
 
 def summary(c: Census, frontier: list[dict], tori: list[dict], pub: list[dict]) -> list[dict]:
@@ -703,6 +876,27 @@ def check(data: dict[str, list[dict]]) -> list[str]:
             problems.append(f"{e['id']}: odd d")
         if e["witness"] and len(json.loads(e["witness"])) != e["d"]:
             problems.append(f"{e['id']}: witness weight differs from d")
+    # every stencil maps back onto its code: phi sends each lift to A's and B's steps, and the
+    # diameter is the lifts' largest l-inf spread
+    st = _load("regularity_stencil", STENCIL)
+    codes = {e["id"]: e for e in fr}
+    for r in data.get("stencils", []):
+        if r["phi"] is None:
+            continue
+        e = codes[r["id"]]
+        (g1x, g1y), (g2x, g2y) = json.loads(r["phi"])
+        spread = 0
+        for poly, lift in ((e["A"], r["A_lift"]), (e["B"], r["B_lift"])):
+            want = st.steps([tuple(t) for t in json.loads(poly)], e["l"], e["m"])
+            pts = json.loads(lift)
+            got = [((a * g1x + b * g2x) % e["l"], (a * g1y + b * g2y) % e["m"]) for a, b in pts[1:]]
+            if got != [tuple(w) for w in want]:
+                problems.append(f"{r['id']}: stencil does not map onto the code")
+            spread = max(
+                spread, *(max(abs(p[0] - q[0]), abs(p[1] - q[1])) for p in pts for q in pts)
+            )
+        if spread != r["diameter"]:
+            problems.append(f"{r['id']}: stencil diameter {r['diameter']}, lifts span {spread}")
     # stage 4's torus list agrees with the study's count
     if sum(t["stage"] == "4" for t in tori) != len(S4_TORI):
         problems.append("stage 4 torus count")
