@@ -1,0 +1,10 @@
+misses of 2*floor(0.6175 sqrt(n ln n)/2): [(138, 14, 16), (306, 26, 24), (312, 24, 26)]
+a-interval per column; columns where the common interval breaks:
+   conflict at n = 234 running interval (np.float64(0.6135), np.float64(0.6136)) column (np.float64(0.6158), np.float64(0.6717))
+   conflict at n = 270 running interval (np.float64(0.6135), np.float64(0.6136)) column (np.float64(0.6173), np.float64(0.6687))
+   conflict at n = 306 running interval (np.float64(0.6135), np.float64(0.6136)) column (np.float64(0.6213), np.float64(0.6691))
+   conflict at n = 354 running interval (np.float64(0.6135), np.float64(0.6136)) column (np.float64(0.6143), np.float64(0.6582))
+final running interval (skipping conflicts): 0.6135 0.6136
+a sqrt(n ln n)  train exact 48/49 (7 tied params); test exact over tied params: min 12, max 12 of 14
+a n^b           train exact 49/49 (21 tied params); test exact over tied params: min 9, max 12 of 14
+a sqrt(n)+b     train exact 46/49 (2 tied params); test exact over tied params: min 10, max 11 of 14

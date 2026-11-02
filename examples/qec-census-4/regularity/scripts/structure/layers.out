@@ -1,0 +1,67 @@
+admissible orders t <= 199: [3, 7, 15, 31, 63, 73, 85, 127]
+orbit sizes ord_t(2): {3: 2, 7: 3, 15: 4, 31: 5, 63: 6, 73: 9, 85: 8, 127: 7}
+== staircase on n = 0 mod 6 (column top d):
+[(12, 2), (18, 4), (24, 4), (30, 6), (36, 6), (42, 6), (48, 8), (54, 8), (60, 8), (66, 10), (72, 10), (78, 10), (84, 10), (90, 12), (96, 12), (102, 12), (108, 12), (114, 14), (120, 14), (126, 14), (132, 14), (138, 14), (144, 16), (150, 16), (156, 16), (162, 16), (168, 18), (174, 18), (180, 18), (186, 18), (192, 18), (198, 18), (204, 20), (210, 20), (216, 20), (222, 20), (228, 20), (234, 22), (240, 22), (246, 22), (252, 22), (258, 22), (264, 22), (270, 24), (276, 24), (282, 24), (288, 24), (294, 24), (300, 24), (306, 26), (312, 24), (318, 26), (324, 26), (330, 26), (336, 26), (342, 26), (348, 26), (354, 28), (360, 28), (366, 28), (372, 28), (378, 28), (384, 28)]
+non-monotone steps: [(312, 26, 24)]
+first n reaching each d (step positions): {2: 12, 4: 18, 6: 30, 8: 48, 10: 66, 12: 90, 14: 114, 16: 144, 18: 168, 20: 204, 22: 234, 24: 270, 26: 306, 28: 354}
+columns per plateau: [(2, 1), (4, 2), (6, 3), (8, 3), (10, 4), (12, 4), (14, 5), (16, 4), (18, 6), (20, 5), (22, 6), (24, 7), (26, 7), (28, 6)]
+n_d / d^2: {2: 3.0, 4: 1.125, 6: 0.833, 8: 0.75, 10: 0.66, 12: 0.625, 14: 0.582, 16: 0.562, 18: 0.519, 20: 0.51, 22: 0.483, 24: 0.469, 26: 0.453, 28: 0.452}
+comb points with no data (stage 4 pending): [390, 396]
+
+== non-comb columns: top d vs neighbouring comb tops (k_min, orbit size)
+n= 28 k_min= 6 top= 4  comb neighbours 24:4 30:6  shortfall vs lower neighbour 0
+n= 56 k_min= 6 top= 8  comb neighbours 54:8 60:8  shortfall vs lower neighbour 0
+n= 70 k_min= 6 top= 8  comb neighbours 66:10 72:10  shortfall vs lower neighbour 2
+n= 98 k_min= 6 top=12  comb neighbours 96:12 102:12  shortfall vs lower neighbour 0
+n=112 k_min= 6 top=12  comb neighbours 108:12 114:14  shortfall vs lower neighbour 0
+n=124 k_min=10 top=10  comb neighbours 120:14 126:14  shortfall vs lower neighbour 4
+n=140 k_min= 6 top=14  comb neighbours 138:14 144:16  shortfall vs lower neighbour 0
+n=154 k_min= 6 top=16  comb neighbours 150:16 156:16  shortfall vs lower neighbour 0
+n=170 k_min=16 top=10  comb neighbours 168:18 174:18  shortfall vs lower neighbour 8
+n=182 k_min= 6 top=18  comb neighbours 180:18 186:18  shortfall vs lower neighbour 0
+n=196 k_min= 6 top=18  comb neighbours 192:18 198:18  shortfall vs lower neighbour 0
+n=224 k_min= 6 top=20  comb neighbours 222:20 228:20  shortfall vs lower neighbour 0
+n=238 k_min= 6 top=20  comb neighbours 234:22 240:22  shortfall vs lower neighbour 2
+n=248 k_min=10 top=18  comb neighbours 246:22 252:22  shortfall vs lower neighbour 4
+n=266 k_min= 6 top=22  comb neighbours 264:22 270:24  shortfall vs lower neighbour 0
+n=280 k_min= 6 top=22  comb neighbours 276:24 282:24  shortfall vs lower neighbour 2
+n=292 k_min=18 top= 8  comb neighbours 288:24 294:24  shortfall vs lower neighbour 16
+n=308 k_min= 6 top=24  comb neighbours 306:26 312:24  shortfall vs lower neighbour 2
+n=310 k_min=10 top=22  comb neighbours 306:26 312:24  shortfall vs lower neighbour 4
+n=322 k_min= 6 top=24  comb neighbours 318:26 324:26  shortfall vs lower neighbour 2
+n=340 k_min=16 top=18  comb neighbours 336:26 342:26  shortfall vs lower neighbour 8
+n=350 k_min= 6 top=26  comb neighbours 348:26 354:28  shortfall vs lower neighbour 0
+n=364 k_min= 6 top=26  comb neighbours 360:28 366:28  shortfall vs lower neighbour 2
+k_min=6: columns 17, shortfall vs lower comb neighbour: mean 0.71, values [0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 2, 0, 2]
+k_min=10: columns 3, shortfall vs lower comb neighbour: mean 4.00, values [4, 4, 4]
+k_min=16: columns 2, shortfall vs lower comb neighbour: mean 8.00, values [8, 8]
+k_min=18: columns 1, shortfall vs lower comb neighbour: mean 16.00, values [16]
+
+== layers: d(k) / d(k_min) within groups (3|N groups, k_min = 4)
+k= 6: groups  15  mean ratio 0.954 (n>=150: 0.950, sd 0.047, n=11)  sqrt(4/k)=0.816
+k= 8: groups  61  mean ratio 0.821 (n>=150: 0.857, sd 0.058, n=40)  sqrt(4/k)=0.707
+k=10: groups  17  mean ratio 0.760 (n>=150: 0.787, sd 0.065, n=13)  sqrt(4/k)=0.632
+k=12: groups  27  mean ratio 0.626 (n>=150: 0.648, sd 0.100, n=19)  sqrt(4/k)=0.577
+k=14: groups   8  mean ratio 0.601 (n>=150: 0.625, sd 0.059, n=7)  sqrt(4/k)=0.535
+k=16: groups  24  mean ratio 0.408 (n>=150: 0.440, sd 0.125, n=18)  sqrt(4/k)=0.500
+k=18: groups   1  mean ratio 0.417 (n>=150: 0.417, sd 0.000, n=1)  sqrt(4/k)=0.471
+k=20: groups   8  mean ratio 0.265 (n>=150: 0.282, sd 0.132, n=7)  sqrt(4/k)=0.447
+k=22: groups   1  mean ratio 0.417 (n>=150: 0.417, sd 0.000, n=1)  sqrt(4/k)=0.426
+k=24: groups   6  mean ratio 0.198 (n>=150: 0.198, sd 0.091, n=6)  sqrt(4/k)=0.408
+k=30: groups   1  mean ratio 0.167 (n>=150: 0.167, sd 0.000, n=1)  sqrt(4/k)=0.365
+k=32: groups   2  mean ratio 0.081 (n>=150: 0.081, sd 0.010, n=2)  sqrt(4/k)=0.354
+
+== k=8 layer by mechanism (3|N groups)
+  two 3-orbits                             groups 19  mean d8/d4 0.820  [(18, 0.5), (36, 0.6666666666666666), (54, 0.75), (72, 1.0), (108, 0.8333333333333334), (126, 0.7142857142857143), (144, 0.8571428571428571), (162, 0.875)]
+  term 2 (r2=2)                            groups 16  mean d8/d4 0.783  [(24, 0.5), (48, 0.6666666666666666), (72, 0.75), (96, 0.6666666666666666), (96, 0.5), (144, 0.8571428571428571), (168, 0.875), (192, 0.8888888888888888)]
+  15-orbit                                 groups 14  mean d8/d4 0.822  [(30, 0.6666666666666666), (60, 0.75), (90, 0.6666666666666666), (120, 0.8571428571428571), (150, 0.75), (150, 0.8571428571428571), (180, 0.8888888888888888), (210, 0.8)]
+  two 3-orbits + term 2 (r2=2)             groups  5  mean d8/d4 0.827  [(72, 0.75), (144, 0.8571428571428571), (216, 0.8), (288, 0.9090909090909091), (288, 0.8181818181818182)]
+  15-orbit + two 3-orbits                  groups  4  mean d8/d4 0.895  [(90, 1.0), (180, 0.8888888888888888), (270, 0.8333333333333334), (360, 0.8571428571428571)]
+  15-orbit + term 2 (r2=2)                 groups  3  mean d8/d4 0.919  [(120, 1.0), (240, 0.9), (360, 0.8571428571428571)]
+
+== dedup points per column by class
+3|N other  columns 43  mean points 3.14  single-point columns 20  [(12, 1), (18, 2), (24, 3), (36, 3), (48, 3), (54, 2), (66, 1), (72, 9), (78, 1), (96, 7), (102, 1), (108, 3), (114, 1), (132, 1), (138, 1), (144, 9), (156, 1), (162, 4), (174, 1), (186, 4), (192, 7), (198, 3), (204, 1), (216, 9), (222, 1), (228, 1), (234, 3), (246, 1), (258, 1), (264, 3), (276, 1), (282, 1), (288, 20), (306, 3), (312, 3), (318, 1), (324, 5), (342, 3), (348, 1), (354, 1), (366, 1), (372, 4), (384, 3)]
+7|N        columns 17  mean points 2.06  single-point columns 10  [(28, 1), (56, 3), (70, 1), (98, 3), (112, 3), (140, 1), (154, 1), (182, 1), (196, 4), (224, 7), (238, 1), (266, 1), (280, 3), (308, 1), (322, 1), (350, 2), (364, 1)]
+15|N       columns 11  mean points 4.82  single-point columns 0  [(30, 2), (60, 2), (90, 6), (120, 5), (150, 5), (180, 6), (240, 5), (270, 6), (300, 5), (330, 2), (360, 9)]
+21|N       columns  9  mean points 10.33  single-point columns 0  [(42, 4), (84, 4), (126, 12), (168, 13), (210, 7), (252, 12), (294, 13), (336, 13), (378, 15)]
+31/73/85   columns  6  mean points 1.33  single-point columns 5  [(124, 1), (170, 1), (248, 3), (292, 1), (310, 1), (340, 1)]

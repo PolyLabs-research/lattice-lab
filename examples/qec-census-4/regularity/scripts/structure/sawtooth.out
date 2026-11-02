@@ -1,0 +1,28 @@
+band maxima (50-wide), where attained:
+  (0,50]: max d/sqrt(n) 1.155 at [[48,4,8]]; max d/sqrt(n ln n) 0.594 at [[30,4,6]]
+  (50,100]: max d/sqrt(n) 1.265 at [[90,4,12]]; max d/sqrt(n ln n) 0.601 at [[66,4,10]]
+  (100,150]: max d/sqrt(n) 1.333 at [[144,4,16]]; max d/sqrt(n ln n) 0.603 at [[114,4,14]]
+  (150,200]: max d/sqrt(n) 1.389 at [[168,4,18]]; max d/sqrt(n ln n) 0.614 at [[168,4,18]]
+  (200,250]: max d/sqrt(n) 1.438 at [[234,4,22]]; max d/sqrt(n ln n) 0.616 at [[234,4,22]]
+  (250,300]: max d/sqrt(n) 1.461 at [[270,4,24]]; max d/sqrt(n ln n) 0.617 at [[270,4,24]]
+  (300,350]: max d/sqrt(n) 1.486 at [[306,4,26]]; max d/sqrt(n ln n) 0.621 at [[306,4,26]]
+  (350,400]: max d/sqrt(n) 1.488 at [[354,4,28]]; max d/sqrt(n ln n) 0.614 at [[354,4,28]]
+
+plateaus on the 6-comb: d, first n, last n, ratio first->last, drop
+  d= 2 n 12..12 (1 cols)  d/sqrt(n) 0.577 -> 0.577  drop 0.0%   d/sqrt(n ln n) 0.366 -> 0.366
+  d= 4 n 18..24 (2 cols)  d/sqrt(n) 0.943 -> 0.816  drop 13.4%   d/sqrt(n ln n) 0.555 -> 0.458
+  d= 6 n 30..42 (3 cols)  d/sqrt(n) 1.095 -> 0.926  drop 15.5%   d/sqrt(n ln n) 0.594 -> 0.479
+  d= 8 n 48..60 (3 cols)  d/sqrt(n) 1.155 -> 1.033  drop 10.6%   d/sqrt(n ln n) 0.587 -> 0.510
+  d=10 n 66..84 (4 cols)  d/sqrt(n) 1.231 -> 1.091  drop 11.4%   d/sqrt(n ln n) 0.601 -> 0.518
+  d=12 n 90..108 (4 cols)  d/sqrt(n) 1.265 -> 1.155  drop 8.7%   d/sqrt(n ln n) 0.596 -> 0.534
+  d=14 n 114..138 (5 cols)  d/sqrt(n) 1.311 -> 1.192  drop 9.1%   d/sqrt(n ln n) 0.603 -> 0.537
+  d=16 n 144..162 (4 cols)  d/sqrt(n) 1.333 -> 1.257  drop 5.7%   d/sqrt(n ln n) 0.598 -> 0.557
+  d=18 n 168..198 (6 cols)  d/sqrt(n) 1.389 -> 1.279  drop 7.9%   d/sqrt(n ln n) 0.614 -> 0.556
+  d=20 n 204..228 (5 cols)  d/sqrt(n) 1.400 -> 1.325  drop 5.4%   d/sqrt(n ln n) 0.607 -> 0.568
+  d=22 n 234..264 (6 cols)  d/sqrt(n) 1.438 -> 1.354  drop 5.9%   d/sqrt(n ln n) 0.616 -> 0.573
+  d=24 n 270..312 (7 cols)  d/sqrt(n) 1.461 -> 1.359  drop 7.0%   d/sqrt(n ln n) 0.617 -> 0.567
+  d=26 n 306..348 (7 cols)  d/sqrt(n) 1.486 -> 1.394  drop 6.2%   d/sqrt(n ln n) 0.621 -> 0.576
+  d=28 n 354..384 (6 cols)  d/sqrt(n) 1.488 -> 1.429  drop 4.0%   d/sqrt(n ln n) 0.614 -> 0.586
+
+quantum in ratio units 2/sqrt(n): n=150 0.163, n=300 0.115, n=400 0.100
+quantum relative to d: d=12 16.7%, d=20 10.0%, d=28 7.1%

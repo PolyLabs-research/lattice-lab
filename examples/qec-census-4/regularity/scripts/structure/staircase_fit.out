@@ -1,0 +1,12 @@
+a*sqrt(n)+b        6-comb (63 cols)         floor-to-even exact 58/63 at (np.float64(1.6925), np.float64(-3.6));  round-to-even exact 58/63 at (np.float64(1.6925), np.float64(-4.6))
+a*sqrt(n)+b        k_min 4 or 6 (80 cols)   floor-to-even exact 67/80 at (np.float64(1.5875), np.float64(-2.55));  round-to-even exact 67/80 at (np.float64(1.5875), np.float64(-3.55))
+a*sqrt(n ln n)+b   6-comb (63 cols)         floor-to-even exact 60/63 at (np.float64(0.618), np.float64(0.0));  round-to-even exact 60/63 at (np.float64(0.618), np.float64(-1.0))
+a*sqrt(n ln n)+b   k_min 4 or 6 (80 cols)   floor-to-even exact 71/80 at (np.float64(0.612), np.float64(-0.1));  round-to-even exact 71/80 at (np.float64(0.612), np.float64(-1.1))
+a*n^b              6-comb (63 cols)         floor-to-even exact 61/63 at (np.float64(0.772), np.float64(0.615));  round-to-even exact 60/63 at (np.float64(0.624), np.float64(0.645))
+a*n^b              k_min 4 or 6 (80 cols)   floor-to-even exact 72/80 at (np.float64(0.768), np.float64(0.613));  round-to-even exact 70/80 at (np.float64(0.622), np.float64(0.643))
+a*sqrt(n)          6-comb (63 cols)         floor-to-even exact 36/63 at (np.float64(1.4405), np.float64(0.0));  round-to-even exact 31/63 at (np.float64(1.402), np.float64(0.0))
+a*sqrt(n)          k_min 4 or 6 (80 cols)   floor-to-even exact 46/80 at (np.float64(1.406), np.float64(0.0));  round-to-even exact 38/80 at (np.float64(1.356), np.float64(0.0))
+a*sqrt(n ln n)     6-comb (63 cols)         floor-to-even exact 60/63 at (np.float64(0.6175), np.float64(0.0));  round-to-even exact 52/63 at (np.float64(0.5868), np.float64(0.0))
+a*sqrt(n ln n)     k_min 4 or 6 (80 cols)   floor-to-even exact 70/80 at (np.float64(0.6175), np.float64(0.0));  round-to-even exact 61/80 at (np.float64(0.5868), np.float64(0.0))
+
+baseline: predict each column by its left neighbour's top: 47 of 62

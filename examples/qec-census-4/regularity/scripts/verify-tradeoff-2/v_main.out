@@ -1,0 +1,102 @@
+
+===== BASE minK=4 kcap=999 nmax=999 drop_d2=False: 30 groups, n range 42-378
+ median CV:  d+k 0.072 | kd^2 0.392 | kd 0.265 | d 0.377
+ median log-sd (d-equivalent): log(d+k) 0.073 | log(kd^2)/2 0.292 | log(kd) 0.281
+ 1-param rms_d (median): d=C-k 1.70 | d=sqrt(S/k) 2.37 | d=S/k 3.86 | d=C 4.93
+   wins d=C-k vs sqrt(S/k): 25/30
+ 2-param rms_d (median): lin 1.27 | pow(logfit) 2.52 | pow(NLS d-space) 2.18 | sqrt-Singleton 1.25
+   lin beats pow(logfit) 28/30 ; lin beats pow(NLS) 28/30 ; lin beats sqrt-Singleton 13/30
+ median a=0.91 IQR 0.75-1.19 range 0.45-1.60; median gamma(NLS)=0.59
+ Spearman(n,a)=0.71 p=0.0000;  Spearman(n, a/D)=-0.67;  Spearman(n,cv_sum)=-0.19
+ LOO rms_d (median): lin 2.59 | pow 5.07 | d+k=C 2.21 | kd^2=S 2.96;  lin<pow LOO in 28/30, add<lin LOO 23/30
+ extrapolate largest k (median |err|, mean err): lin 2.93 (-1.76) | pow 5.33 (-5.51) | d+k=C 3.00 (-0.19) | kd^2=S 4.27 (-4.51)
+  n= 42 G=(1, 21) nk=4 a=0.50 D=8.5 cv_sum=0.133 rms lin/pow/sqs=0.50/0.84/0.31 k:d 4:6 6:6 10:4 12:2
+  n= 72 G=(6, 6) nk=4 a=0.45 D=10.0 cv_sum=0.168 rms lin/pow/sqs=0.84/1.21/0.62 k:d 4:8 8:6 12:6 16:2
+  n= 84 G=(1, 42) nk=4 a=0.80 D=13.9 cv_sum=0.056 rms lin/pow/sqs=0.59/1.14/0.45 k:d 4:10 6:10 10:6 12:4
+  n= 90 G=(3, 15) nk=4 a=0.70 D=14.0 cv_sum=0.102 rms lin/pow/sqs=1.10/2.02/0.72 k:d 4:10 8:10 12:6 16:2
+  n= 96 G=(4, 12) nk=4 a=0.60 D=13.0 cv_sum=0.132 rms lin/pow/sqs=1.34/0.66/1.60 k:d 4:12 8:6 12:6 16:4
+  n=126 G=(1, 63) nk=5 a=0.82 D=18.3 cv_sum=0.063 rms lin/pow/sqs=1.02/1.89/0.64 k:d 4:14 6:14 10:10 12:10 16:4
+  n=126 G=(3, 21) nk=7 a=0.75 D=16.5 cv_sum=0.076 rms lin/pow/sqs=0.76/1.48/1.11 k:d 4:14 6:12 8:10 10:10 12:6 14:6 20:2
+  n=144 G=(6, 12) nk=4 a=0.75 D=18.0 cv_sum=0.106 rms lin/pow/sqs=1.87/2.56/1.43 k:d 4:14 8:12 12:12 16:4
+  n=168 G=(2, 42) nk=9 a=0.66 D=18.8 cv_sum=0.101 rms lin/pow/sqs=0.99/1.69/1.83 k:d 4:16 6:16 8:14 10:12 12:10 14:10 16:6 20:6 24:4
+  n=168 G=(1, 84) nk=4 a=1.20 D=23.1 cv_sum=0.040 rms lin/pow/sqs=0.59/1.28/0.29 k:d 4:18 6:16 10:12 12:8
+  n=180 G=(3, 30) nk=4 a=1.20 D=24.0 cv_sum=0.064 rms lin/pow/sqs=1.10/2.75/2.08 k:d 4:18 8:16 12:10 16:4
+  n=186 G=(1, 93) nk=4 a=1.00 D=23.0 cv_sum=0.043 rms lin/pow/sqs=1.00/3.07/1.00 k:d 4:18 10:14 14:10 20:2
+  n=192 G=(4, 24) nk=4 a=0.75 D=20.0 cv_sum=0.074 rms lin/pow/sqs=1.22/1.01/1.36 k:d 4:18 8:12 12:12 16:8
+  n=210 G=(1, 105) nk=7 a=0.80 D=22.6 cv_sum=0.073 rms lin/pow/sqs=1.32/2.21/2.01 k:d 4:20 6:18 8:16 10:16 12:10 14:12 24:4
+  n=216 G=(6, 18) nk=4 a=1.15 D=25.0 cv_sum=0.037 rms lin/pow/sqs=0.55/2.04/0.31 k:d 4:20 8:16 12:12 16:6
+  n=224 G=(4, 28) nk=4 a=0.80 D=22.0 cv_sum=0.069 rms lin/pow/sqs=1.10/1.33/2.08 k:d 6:18 12:12 18:6 24:4
+  n=252 G=(1, 126) nk=5 a=1.09 D=26.8 cv_sum=0.049 rms lin/pow/sqs=1.21/2.19/0.80 k:d 4:22 6:20 10:16 12:16 16:8
+  n=252 G=(3, 42) nk=7 a=1.12 D=26.8 cv_sum=0.036 rms lin/pow/sqs=0.65/2.44/1.71 k:d 4:22 6:20 8:18 10:16 12:12 14:12 20:4
+  n=270 G=(3, 45) nk=4 a=1.45 D=31.0 cv_sum=0.098 rms lin/pow/sqs=1.64/3.40/0.57 k:d 4:24 8:20 12:16 16:6
+  n=288 G=(4, 36) nk=4 a=0.90 D=27.0 cv_sum=0.051 rms lin/pow/sqs=1.34/1.55/1.34 k:d 4:24 8:18 12:18 16:12
+  n=288 G=(6, 24) nk=4 a=1.15 D=28.0 cv_sum=0.063 rms lin/pow/sqs=1.52/2.89/0.81 k:d 4:22 8:20 12:16 16:8
+  n=288 G=(12, 12) nk=7 a=0.76 D=24.6 cv_sum=0.097 rms lin/pow/sqs=1.76/3.39/2.08 k:d 4:22 8:18 12:18 16:12 20:6 24:6 32:2
+  n=294 G=(1, 147) nk=4 a=1.20 D=30.1 cv_sum=0.058 rms lin/pow/sqs=1.53/2.16/1.31 k:d 4:24 6:24 10:20 12:14
+  n=294 G=(7, 21) nk=9 a=0.85 D=26.3 cv_sum=0.093 rms lin/pow/sqs=2.37/3.16/2.61 k:d 4:24 6:22 10:20 12:14 16:10 18:10 22:10 24:2 30:4
+  n=336 G=(2, 84) nk=9 a=0.91 D=29.1 cv_sum=0.058 rms lin/pow/sqs=1.66/2.31/2.20 k:d 4:26 6:24 8:24 10:18 12:16 14:18 16:12 20:12 24:8
+  n=336 G=(1, 168) nk=4 a=1.20 D=32.1 cv_sum=0.054 rms lin/pow/sqs=1.53/2.14/1.33 k:d 4:26 6:26 10:22 12:16
+  n=360 G=(3, 60) nk=4 a=1.60 D=36.0 cv_sum=0.115 rms lin/pow/sqs=2.19/4.04/1.09 k:d 4:28 8:24 12:20 16:8
+  n=372 G=(1, 186) nk=4 a=1.47 D=36.6 cv_sum=0.133 rms lin/pow/sqs=3.08/5.76/1.14 k:d 4:28 10:24 14:20 20:4
+  n=378 G=(3, 63) nk=10 a=1.07 D=33.5 cv_sum=0.072 rms lin/pow/sqs=2.25/4.94/1.20 k:d 4:28 6:28 8:24 10:24 12:22 14:18 16:18 20:12 24:2 32:2
+  n=378 G=(1, 189) nk=5 a=1.30 D=35.3 cv_sum=0.072 rms lin/pow/sqs=1.95/3.30/1.31 k:d 4:28 6:28 10:24 12:22 16:12
+
+===== >=3 k minK=3 kcap=999 nmax=999 drop_d2=False: 37 groups, n range 42-378
+ median CV:  d+k 0.072 | kd^2 0.381 | kd 0.275 | d 0.369
+ median log-sd (d-equivalent): log(d+k) 0.074 | log(kd^2)/2 0.249 | log(kd) 0.291
+ 1-param rms_d (median): d=C-k 1.73 | d=sqrt(S/k) 2.29 | d=S/k 3.82 | d=C 4.32
+   wins d=C-k vs sqrt(S/k): 28/37
+ 2-param rms_d (median): lin 1.21 | pow(logfit) 2.23 | pow(NLS d-space) 2.02 | sqrt-Singleton 1.14
+   lin beats pow(logfit) 33/37 ; lin beats pow(NLS) 33/37 ; lin beats sqrt-Singleton 17/37
+ median a=0.85 IQR 0.75-1.15 range 0.45-1.60; median gamma(NLS)=0.57
+ Spearman(n,a)=0.72 p=0.0000;  Spearman(n, a/D)=-0.57;  Spearman(n,cv_sum)=-0.40
+ LOO rms_d (median): lin 2.68 | pow 5.18 | d+k=C 2.21 | kd^2=S 3.08;  lin<pow LOO in 33/37, add<lin LOO 27/37
+ extrapolate largest k (median |err|, mean err): lin 3.20 (-1.26) | pow 5.07 (-4.96) | d+k=C 3.33 (+0.44) | kd^2=S 3.81 (-3.72)
+
+===== k<=20 minK=4 kcap=20 nmax=999 drop_d2=False: 29 groups, n range 42-378
+ median CV:  d+k 0.063 | kd^2 0.374 | kd 0.258 | d 0.353
+ median log-sd (d-equivalent): log(d+k) 0.064 | log(kd^2)/2 0.230 | log(kd) 0.280
+ 1-param rms_d (median): d=C-k 1.66 | d=sqrt(S/k) 2.21 | d=S/k 3.91 | d=C 4.24
+   wins d=C-k vs sqrt(S/k): 24/29
+ 2-param rms_d (median): lin 1.22 | pow(logfit) 2.43 | pow(NLS d-space) 2.14 | sqrt-Singleton 1.11
+   lin beats pow(logfit) 27/29 ; lin beats pow(NLS) 27/29 ; lin beats sqrt-Singleton 11/29
+ median a=1.00 IQR 0.75-1.20 range 0.45-1.60; median gamma(NLS)=0.54
+ Spearman(n,a)=0.75 p=0.0000;  Spearman(n, a/D)=-0.71;  Spearman(n,cv_sum)=-0.32
+ LOO rms_d (median): lin 2.31 | pow 4.08 | d+k=C 1.98 | kd^2=S 2.75;  lin<pow LOO in 27/29, add<lin LOO 24/29
+ extrapolate largest k (median |err|, mean err): lin 2.67 (-2.57) | pow 5.23 (-5.25) | d+k=C 2.00 (-1.00) | kd^2=S 3.83 (-3.93)
+
+===== n<=300 (stages 3 only) minK=4 kcap=999 nmax=300 drop_d2=False: 24 groups, n range 42-294
+ median CV:  d+k 0.071 | kd^2 0.392 | kd 0.256 | d 0.381
+ median log-sd (d-equivalent): log(d+k) 0.070 | log(kd^2)/2 0.292 | log(kd) 0.275
+ 1-param rms_d (median): d=C-k 1.66 | d=sqrt(S/k) 2.20 | d=S/k 3.49 | d=C 4.22
+   wins d=C-k vs sqrt(S/k): 19/24
+ 2-param rms_d (median): lin 1.10 | pow(logfit) 2.37 | pow(NLS d-space) 2.03 | sqrt-Singleton 1.21
+   lin beats pow(logfit) 22/24 ; lin beats pow(NLS) 22/24 ; lin beats sqrt-Singleton 12/24
+ median a=0.81 IQR 0.75-1.13 range 0.45-1.45; median gamma(NLS)=0.60
+ Spearman(n,a)=0.63 p=0.0009;  Spearman(n, a/D)=-0.67;  Spearman(n,cv_sum)=-0.43
+ LOO rms_d (median): lin 2.32 | pow 4.27 | d+k=C 2.21 | kd^2=S 2.72;  lin<pow LOO in 22/24, add<lin LOO 17/24
+ extrapolate largest k (median |err|, mean err): lin 2.67 (-1.21) | pow 4.81 (-4.61) | d+k=C 2.58 (+0.69) | kd^2=S 4.05 (-3.97)
+
+===== drop d=2 points minK=4 kcap=999 nmax=999 drop_d2=True: 26 groups, n range 84-378
+ median CV:  d+k 0.064 | kd^2 0.375 | kd 0.252 | d 0.359
+ median log-sd (d-equivalent): log(d+k) 0.064 | log(kd^2)/2 0.233 | log(kd) 0.271
+ 1-param rms_d (median): d=C-k 1.66 | d=sqrt(S/k) 2.50 | d=S/k 4.16 | d=C 5.10
+   wins d=C-k vs sqrt(S/k): 23/26
+ 2-param rms_d (median): lin 1.33 | pow(logfit) 2.46 | pow(NLS d-space) 2.20 | sqrt-Singleton 1.32
+   lin beats pow(logfit) 24/26 ; lin beats pow(NLS) 24/26 ; lin beats sqrt-Singleton 12/26
+ median a=0.96 IQR 0.80-1.20 range 0.60-1.60; median gamma(NLS)=0.55
+ Spearman(n,a)=0.59 p=0.0014;  Spearman(n, a/D)=-0.60;  Spearman(n,cv_sum)=-0.02
+ LOO rms_d (median): lin 2.32 | pow 4.27 | d+k=C 2.18 | kd^2=S 3.03;  lin<pow LOO in 24/26, add<lin LOO 21/26
+ extrapolate largest k (median |err|, mean err): lin 2.52 (-2.11) | pow 5.33 (-5.47) | d+k=C 2.73 (-0.75) | kd^2=S 3.94 (-4.25)
+
+===== >=5 k minK=5 kcap=999 nmax=999 drop_d2=False: 11 groups, n range 126-378
+ median CV:  d+k 0.072 | kd^2 0.391 | kd 0.258 | d 0.380
+ median log-sd (d-equivalent): log(d+k) 0.074 | log(kd^2)/2 0.296 | log(kd) 0.278
+ 1-param rms_d (median): d=C-k 1.81 | d=sqrt(S/k) 2.31 | d=S/k 4.29 | d=C 5.64
+   wins d=C-k vs sqrt(S/k): 10/11
+ 2-param rms_d (median): lin 1.32 | pow(logfit) 3.06 | pow(NLS d-space) 2.31 | sqrt-Singleton 1.71
+   lin beats pow(logfit) 11/11 ; lin beats pow(NLS) 11/11 ; lin beats sqrt-Singleton 7/11
+ median a=0.85 IQR 0.78-1.08 range 0.66-1.30; median gamma(NLS)=0.59
+ Spearman(n,a)=0.64 p=0.0354;  Spearman(n, a/D)=-0.64;  Spearman(n,cv_sum)=-0.15
+ LOO rms_d (median): lin 2.04 | pow 4.08 | d+k=C 2.11 | kd^2=S 2.71;  lin<pow LOO in 11/11, add<lin LOO 6/11
+ extrapolate largest k (median |err|, mean err): lin 3.20 (+0.76) | pow 5.44 (-5.57) | d+k=C 3.33 (+1.72) | kd^2=S 4.48 (-5.09)

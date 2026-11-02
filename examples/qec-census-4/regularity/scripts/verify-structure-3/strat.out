@@ -1,0 +1,15 @@
+n=24 non-cyclic at cyclic top 3/3, cyclic 5/9, one-sided Fisher p=1.000
+n=36 non-cyclic at cyclic top 1/11, cyclic 5/15, one-sided Fisher p=0.165
+n=48 non-cyclic at cyclic top 0/17, cyclic 6/48, one-sided Fisher p=0.149
+n=56 non-cyclic at cyclic top 0/7, cyclic 3/22, one-sided Fisher p=0.421
+n=72 non-cyclic at cyclic top 0/108, cyclic 7/105, one-sided Fisher p=0.006
+n=90 non-cyclic at cyclic top 0/70, cyclic 1/132, one-sided Fisher p=0.653
+n=96 non-cyclic at cyclic top 10/134, cyclic 12/256, one-sided Fisher p=0.911
+n=108 non-cyclic at cyclic top 48/212, cyclic 100/315, one-sided Fisher p=0.014
+n=120 non-cyclic at cyclic top 0/152, cyclic 16/584, one-sided Fisher p=0.024
+n=150 non-cyclic at cyclic top 0/42, cyclic 16/570, one-sided Fisher p=0.316
+n=168 non-cyclic at cyclic top 0/353, cyclic 1/1376, one-sided Fisher p=0.796
+n=180 non-cyclic at cyclic top 7/818, cyclic 29/1800, one-sided Fisher p=0.084
+n=196 non-cyclic at cyclic top 1/121, cyclic 4/861, one-sided Fisher p=0.883
+n=198 non-cyclic at cyclic top 51/532, cyclic 154/1128, one-sided Fisher p=0.011
+strata 14 observed non-cyclic classes at cyclic top 121 expected under no-difference null 160.0 P(sim <= obs) = 0.0000

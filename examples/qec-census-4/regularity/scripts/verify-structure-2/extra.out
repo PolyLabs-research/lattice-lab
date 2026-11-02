@@ -1,0 +1,16 @@
+max |sqrt(n ln n) curve - 0.8346 n^0.6| over 12..400: 0.335 (in d units); rel 9.03%
+max |sqrt(n ln n) - 0.772 n^0.615|: 0.523
+1000 sqrt(n ln n):51.3  0.8346n^0.6:52.7  0.772n^0.615:54.0
+10000 sqrt(n ln n):187.4  0.8346n^0.6:209.6  0.772n^0.615:222.6
+local exponent at 30 0.647
+local exponent at 100 0.609
+local exponent at 300 0.588
+local exponent at 400 0.583
+corr(#groups with entries, top - raw curve) on comb: 0.069
+  n=138 groups=1 resid=-2.10
+  n=144 groups=4 resid=-0.52
+  n=306 groups=2 resid=+0.16
+  n=312 groups=2 resid=-2.14
+  n=336 groups=2 resid=-1.30
+  n=360 groups=3 resid=-0.43
+  n=384 groups=2 resid=-1.52

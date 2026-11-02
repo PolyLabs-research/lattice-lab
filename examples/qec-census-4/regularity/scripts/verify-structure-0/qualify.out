@@ -1,0 +1,17 @@
+qualifying odd e <= 199: [3, 7, 9, 15, 21, 27, 31, 33, 35, 39, 45, 49, 51, 57, 63, 69, 73, 75, 77, 81, 85, 87, 91, 93, 99, 105, 111, 117, 119, 123, 127, 129, 133, 135, 141, 147, 153, 155, 159, 161, 165, 171, 175, 177, 183, 189, 195]
+minimal qualifying: [3, 7, 31, 73, 85, 127]
+matches 'divisible by 3,7,31,73,85,127': True
+diff: []
+  e=3 t=ord_e(2)=2 #zeta=2
+  e=7 t=ord_e(2)=3 #zeta=6
+  e=31 t=ord_e(2)=5 #zeta=30
+  e=73 t=ord_e(2)=9 #zeta=18
+  e=85 t=ord_e(2)=8 #zeta=24
+  e=127 t=ord_e(2)=7 #zeta=126
+  e=5 t=4 qualifies=False #zeta=0
+  e=17 t=8 qualifies=False #zeta=0
+  e=89 t=11 qualifies=False #zeta=0
+  e=151 t=15 qualifies=False #zeta=0
+  e=23 t=11 qualifies=False #zeta=0
+  e=43 t=14 qualifies=False #zeta=0
+  e=127 t=7 qualifies=True #zeta=126
