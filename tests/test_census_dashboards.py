@@ -102,3 +102,32 @@ def test_summary_counts(data):
     assert s["tori_total"]["value"] == 348
     assert s["frontier_entries"]["value"] == len(data["frontier"])
     assert s["classes"]["value"] == sum(t["classes"] or 0 for t in data["tori"])
+
+
+def test_every_study_and_prediction(data):
+    studies, preds = data["studies"], data["predictions"]
+    assert len(studies) == 33 and len(preds) == sum(s["predictions"] for s in studies) == 1322
+    vocabulary = {"held", "failed", "not tested", "incomplete", "not applicable", "reported",
+                  "pending", "no verdict"}  # fmt: skip
+    assert {p["outcome"] for p in preds} <= vocabulary
+    assert len({p["key"] for p in preds}) == len(preds)
+    out = {(p["study"], p["label"]): p["outcome"] for p in preds}
+    # the census verdicts, as the write-ups give them
+    assert out[("qec-census-3c", "P2")] == out[("qec-census-3c", "P3")] == "failed"
+    assert out[("qec-census-3c", "P0")] == out[("qec-census-3c", "P4")] == "held"
+    assert out[("qec-census-3d", "D1")] == out[("qec-census-3d", "T")] == "held"
+    assert out[("qec-census-4", "E")] == out[("qec-census-4", "S2")] == "failed"  # interim
+    assert out[("qec-census-4", "G")] == out[("qec-census-4", "S1")] == "held"  # interim
+    by = {s["study"]: s for s in studies}
+    assert by["qec-open-distance-2"]["outcome"] == "no verdict"
+    assert by["qec-census-4"]["outcome"] == "pending" and by["qec-census-4"]["interim"]
+
+
+def test_checks(data):
+    from collections import Counter
+
+    c = Counter(r["source"] for r in data["checks"])
+    assert c == {"spot-check": 431, "[[310,10,22]] check": 16, "stage 3d": 154,
+                 "stage 4 validation": 16}  # fmt: skip
+    assert not [r for r in data["checks"] if r["status"] in ("contradicts", "error")]
+    assert len({r["key"] for r in data["checks"]}) == len(data["checks"])
