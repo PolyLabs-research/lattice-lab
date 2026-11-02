@@ -458,6 +458,15 @@
     }
   });
 
+  // the fits' formulas, where the notes name them
+  for (const [name, id] of [['fr-f-edge', 'edge'], ['fr-f-layer', 'layer']]) {
+    dash.draw(name, (el) => {
+      if (!CR.ready(el, ['fits'])) return;
+      const F = CR.rows('fits').find((r) => r.id === id);
+      el.textContent = F ? F.formula : '—';
+    });
+  }
+
   // ------------------------------------------------------------ residuals
   const residChart = (el, pts, yField, label, colorBy) => {
     const vals = pts.map((e) => +e[yField]);
