@@ -1,0 +1,354 @@
+<meta name="dash-one-writer">
+<style>
+  #dash-root .cr { font-family: var(--font-anthropic-sans); color: var(--color-fg); max-width: 1280px; margin-inline: auto; }
+  #dash-root .cr h1.cr-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0 0 var(--cds-gap-xs); }
+  #dash-root .cr-take { margin: 0 0 var(--cds-gap-xs); font-size: var(--cds-font-size-body); }
+  #dash-root .cr-take b, #dash-root .cr b { font-weight: 600; }
+  #dash-root .cr-fresh { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  #dash-root .cr-tabs { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); margin: var(--cds-gap-md) 0 var(--cds-gap-md); border-bottom: 1px solid var(--color-border-line); }
+  #dash-root .cr-tab { font: inherit; font-size: var(--cds-font-size-body); background: none; border: 0; border-bottom: 2px solid transparent; color: var(--color-fg-muted); padding: var(--cds-pad-sm) var(--cds-pad-md); cursor: pointer; margin-bottom: -1px; }
+  #dash-root .cr-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); }
+  #dash-root .cr-tab:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  #dash-root .cr-page { display: grid; gap: var(--cds-gap-md); }
+  #dash-root .cr-page[hidden] { display: none; }
+  #dash-root .cr-lede { margin: 0; font-size: var(--cds-font-size-body); color: var(--color-fg-muted); max-width: 72ch; }
+  #dash-root .cr-grid2 { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); }
+  #dash-root .cr-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+  #dash-root .cr-card h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 2px; }
+  #dash-root .cr-card .cr-note { margin: 0 0 var(--cds-gap-sm); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); max-width: 80ch; }
+  #dash-root .cr-section-title { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: var(--cds-gap-sm) 0 0; }
+  /* tiles */
+  #dash-root .cr-tiles { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); }
+  #dash-root .cr-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+  #dash-root .cr-tile-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-tile-value { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.5); line-height: 1.15; margin: 2px 0; }
+  #dash-root .cr-tile-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-tile-note b { color: var(--color-fg); font-weight: 600; }
+  /* filters */
+  #dash-root .cr-filters { display: flex; flex-wrap: wrap; align-items: end; gap: var(--cds-gap-sm) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-filters label { display: grid; gap: 2px; }
+  #dash-root .cr-filters label.cr-check { display: flex; align-items: center; gap: 6px; padding-bottom: 6px; }
+  #dash-root .cr select, #dash-root .cr input[type="number"], #dash-root .cr input[type="search"], #dash-root .cr input[type="date"] { font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 4px 6px; min-width: 0; }
+  #dash-root .cr input[type="number"] { width: 6.5em; }
+  #dash-root .cr-button { font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 5px 10px; cursor: pointer; }
+  #dash-root .cr-seg { display: inline-flex; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); overflow: hidden; }
+  #dash-root .cr-seg label { display: inline-flex; align-items: center; padding: 3px 9px; cursor: pointer; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-seg input { position: absolute; opacity: 0; pointer-events: none; }
+  #dash-root .cr-seg label:has(input:checked) { background: var(--cds-chart-grid); color: var(--color-fg); }
+  #dash-root .cr-seg label:has(input:focus-visible) { outline: 2px solid var(--color-fg); outline-offset: -2px; }
+  #dash-root .cr-controls { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); align-items: center; margin-bottom: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-controls .cr-check { display: inline-flex; gap: 5px; align-items: center; }
+  /* charts */
+  #dash-root .cr-chart { position: relative; min-height: 120px; }
+  #dash-root .cr-chart.cr-tall { min-height: 360px; }
+  #dash-root .cr-chart.cr-mid { min-height: 260px; }
+  #dash-root .cr-svg { display: block; overflow: visible; }
+  #dash-root .cr-svg text { font-family: var(--font-anthropic-sans); }
+  #dash-root .cr-tick, #dash-root .cr-axis text { font-size: var(--cds-font-size-caption); fill: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+  #dash-root .cr-axis .domain, #dash-root .cr-axis line { stroke: var(--cds-chart-axis); }
+  #dash-root .cr-grid line { stroke: var(--cds-chart-grid); stroke-width: 1; }
+  #dash-root .cr-axis-label { font-size: var(--cds-font-size-caption); fill: var(--color-fg-muted); }
+  #dash-root .cr-panel-label { font-size: var(--cds-font-size-caption); fill: var(--color-fg); font-weight: 500; }
+  #dash-root .cr-hover-ring { fill: none; stroke: var(--color-fg); stroke-width: 1.5; pointer-events: none; }
+  #dash-root .cr-law { fill: none; stroke-width: 1.5; }
+  #dash-root .cr-law-reg { stroke: var(--cds-chart-reference); }
+  #dash-root .cr-law-exp { stroke: var(--cds-chart-reference); stroke-dasharray: 5 4; }
+  #dash-root .cr-zero { stroke: var(--cds-chart-reference); stroke-width: 1; }
+  #dash-root .cr-tip { position: absolute; z-index: 5; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); max-width: 260px; }
+  #dash-root .cr-tip[hidden] { display: none; }
+  #dash-root .cr-tip-title { color: var(--cds-text-secondary); margin-bottom: 2px; }
+  #dash-root .cr-tip-row { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+  #dash-root .cr-tip-row b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  #dash-root .cr-tip-key { width: 10px; height: 3px; border-radius: 2px; flex: none; }
+  #dash-root .cr-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-legend span.cr-key { display: inline-flex; align-items: center; gap: 5px; }
+  #dash-root .cr-legend[hidden], #dash-root .cr-key[hidden] { display: none !important; }
+  #dash-root .cr-sw { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  #dash-root .cr-sw-sq { border-radius: 2px; }
+  #dash-root .cr-sw-dia { width: 8px; height: 8px; transform: rotate(45deg); border-radius: 1px; background: var(--color-fg); }
+  #dash-root .cr-sw-line { width: 16px; height: 0; border-top: 1.5px solid var(--cds-chart-reference); border-radius: 0; }
+  #dash-root .cr-sw-dash { width: 16px; height: 0; border-top: 1.5px dashed var(--cds-chart-reference); border-radius: 0; }
+  #dash-root .cr-ramp { display: inline-block; width: 120px; height: 8px; border-radius: 4px; vertical-align: middle; }
+  #dash-root .cr-small-multiples { display: grid; gap: var(--cds-gap-sm); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  /* status */
+  #dash-root .cr-fail { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: inherit; }
+  #dash-root .cr-fail-dot { width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+  #dash-root [data-dash-source-state="refreshing"] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  #dash-root .cr-pill { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  #dash-root .cr-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--cds-chart-muted); flex: none; }
+  #dash-root .cr-pill-held::before { background: var(--color-ok); }
+  #dash-root .cr-pill-failed::before { background: var(--color-bad); border-radius: 1px; transform: rotate(45deg); }
+  #dash-root .cr-pill-pending::before { background: none; border: 1.5px solid var(--color-warn); width: 6px; height: 6px; }
+  #dash-root .cr-pill-certified::before, #dash-root .cr-pill-second-method::before { background: var(--color-ok); }
+  #dash-root .cr-pill-second-implementation::before { background: none; border: 1.5px solid var(--color-ok); width: 6px; height: 6px; }
+  /* tables */
+  #dash-root .cr-table-box { max-height: 460px; overflow: auto; border-top: 1px solid var(--color-border-line); }
+  #dash-root .cr table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); }
+  #dash-root .cr th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  #dash-root .cr th button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  #dash-root .cr th[aria-sort="ascending"] button::after { content: " ↑"; }
+  #dash-root .cr th[aria-sort="descending"] button::after { content: " ↓"; }
+  #dash-root .cr td { padding: 5px 8px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+  #dash-root .cr td.cr-num, #dash-root .cr th.cr-num { text-align: right; font-variant-numeric: tabular-nums; }
+  #dash-root .cr tr.cr-clickable { cursor: pointer; }
+  #dash-root .cr tr.cr-clickable:hover td, #dash-root .cr tr.cr-clickable:focus-visible td { background: var(--cds-chart-grid); }
+  #dash-root .cr-table-tools { display: flex; gap: var(--cds-gap-sm); align-items: center; margin-bottom: var(--cds-gap-xs); }
+  #dash-root .cr-table-tools input[type="search"] { flex: 1 1 14rem; max-width: 22rem; }
+  #dash-root .cr-hide-narrow { }
+  @container (max-width: 520px) { #dash-root .cr-hide-narrow { display: none; } }
+  #dash-root .cr-card.cr-wide { container-type: inline-size; }
+  /* run status */
+  #dash-root .cr-meter { height: 8px; border-radius: 4px; background: var(--cds-chart-grid); overflow: hidden; margin: 6px 0 4px; }
+  #dash-root .cr-meter-fill { height: 100%; border-radius: 4px; }
+  #dash-root .cr-facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 0; font-size: var(--cds-font-size-caption); }
+  #dash-root .cr-facts dt { color: var(--color-fg-muted); }
+  #dash-root .cr-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  /* code card */
+  #dash-root .cr-code-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--cds-gap-xs) var(--cds-gap-md); }
+  #dash-root .cr-card h2.cr-code-name { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.6); margin: 0; }
+  #dash-root .cr-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--cds-gap-xs) 0 0; padding: 0; list-style: none; }
+  #dash-root .cr-chips li { border: 1px solid var(--color-border-line); border-radius: 999px; padding: 2px 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-chips li b { color: var(--color-fg); }
+  #dash-root .cr-poly { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--cds-font-size-body); }
+  #dash-root .cr-picker { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  #dash-root .cr-picker select { max-width: 100%; }
+</style>
+
+<div class="cr">
+  <header>
+    <h1 class="cr-title" id="top">Code census review</h1>
+    <p class="cr-take">Best code so far: <b data-draw="h-best-code" data-source="summary" data-field="text" data-where="metric=best_score">—</b> on <b data-draw="h-best-torus" data-source="summary" data-field="text" data-where="metric=best_score_torus">—</b>, with k·d²/n = <b data-draw="h-best-score" data-source="summary" data-field="value" data-where="metric=best_score">—</b>. Stage 4 has computed <b data-draw="h-s4-done" data-source="summary" data-field="value" data-where="metric=stage4_done">—</b> of its <b data-draw="h-s4-total" data-source="summary" data-field="value" data-where="metric=stage4_total">—</b> tori.</p>
+    <p class="cr-fresh">A snapshot of the census records at commit <span data-draw="h-commit" data-source="summary" data-field="text" data-where="metric=commit">—</span>, built <span data-draw="h-built" data-source="summary" data-field="text" data-where="metric=built_at">—</span>. Registered results and exploratory fits are labelled as such everywhere.</p>
+    <nav class="cr-tabs" role="tablist" aria-label="Pages">
+      <button class="cr-tab" role="tab" id="tab-overview" aria-controls="overview" aria-selected="true">Overview</button>
+      <button class="cr-tab" role="tab" id="tab-frontier" aria-controls="frontier" aria-selected="false">Frontier</button>
+      <button class="cr-tab" role="tab" id="tab-code" aria-controls="code" aria-selected="false">Code card</button>
+    </nav>
+  </header>
+
+  <!-- ============================================================ OVERVIEW -->
+  <section class="cr-page" id="overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="cr-tiles" id="ov-tiles">
+      <div class="cr-tile" id="tile-score">
+        <div class="cr-tile-label">Best k·d²/n in the census</div>
+        <div class="cr-tile-value" data-draw="t-score" data-source="summary" data-field="value" data-where="metric=best_score">—</div>
+        <div class="cr-tile-note"><b data-draw="t-score-code" data-source="summary" data-field="text" data-where="metric=best_score">—</b>. Best published at n ≤ <span data-draw="t-pub-n" data-source="summary" data-field="value" data-where="metric=published_best_at_or_below_n">—</span>: <span data-draw="t-pub-score" data-source="summary" data-field="value" data-where="metric=published_best_at_or_below">—</span>, <span data-draw="t-pub-name" data-source="summary" data-field="text" data-where="metric=published_best_at_or_below">—</span>.</div>
+      </div>
+      <div class="cr-tile" id="tile-ratio">
+        <div class="cr-tile-label">Best d/√n</div>
+        <div class="cr-tile-value" data-draw="t-ratio" data-source="summary" data-field="value" data-where="metric=best_ratio">—</div>
+        <div class="cr-tile-note"><b data-draw="t-ratio-code" data-source="summary" data-field="text" data-where="metric=best_ratio">—</b>, the top of the d-against-n edge.</div>
+      </div>
+      <div class="cr-tile" id="tile-entries">
+        <div class="cr-tile-label">Frontier entries, isomorphic tori merged</div>
+        <div class="cr-tile-value" data-draw="t-distinct" data-source="summary" data-field="value" data-where="metric=distinct_entries">—</div>
+        <div class="cr-tile-note"><span data-draw="t-entries" data-source="summary" data-field="value" data-where="metric=frontier_entries">—</span> before merging. An entry is the best connected code for one torus and one k.</div>
+      </div>
+      <div class="cr-tile" id="tile-tori">
+        <div class="cr-tile-label">Tori computed</div>
+        <div class="cr-tile-value" data-draw="t-tori" data-source="summary" data-field="value" data-where="metric=tori_computed">—</div>
+        <div class="cr-tile-note">of <span data-draw="t-tori-total" data-source="summary" data-field="value" data-where="metric=tori_total">—</span>; <span data-draw="t-tori-pending" data-source="summary" data-field="value" data-where="metric=tori_pending">—</span> still to run in stage 4.</div>
+      </div>
+      <div class="cr-tile" id="tile-settled">
+        <div class="cr-tile-label">Tori with codes, every entry settled</div>
+        <div class="cr-tile-value" data-draw="t-settled" data-source="summary" data-field="value" data-where="metric=settled_share">—</div>
+        <div class="cr-tile-note"><span data-draw="t-settled-n" data-source="summary" data-field="value" data-where="metric=tori_settled">—</span> of <span data-draw="t-codes-n" data-source="summary" data-field="value" data-where="metric=tori_with_codes">—</span>. Settled means d is exact, not a lower bound.</div>
+      </div>
+      <div class="cr-tile" id="tile-classes">
+        <div class="cr-tile-label">Code classes examined</div>
+        <div class="cr-tile-value" data-draw="t-classes" data-source="summary" data-field="value" data-where="metric=classes">—</div>
+        <div class="cr-tile-note"><span data-draw="t-runs" data-source="summary" data-field="value" data-where="metric=exact_runs">—</span> exact distance runs; every other class was bounded below the best by a window search.</div>
+      </div>
+    </div>
+
+    <div class="cr-grid2">
+      <div class="cr-card" id="ov-laws">
+        <h2>Registered laws on the frontier</h2>
+        <p class="cr-note">Predictions registered before their data was computed. Stage 4's verdict is recorded when its run ends, so its outcomes are what the records say so far.</p>
+        <div class="cr-table-box" style="max-height:none">
+          <table data-source="fits" data-row-key="id" id="ov-laws-table">
+            <thead><tr><th data-field="label">Prediction</th><th data-field="status">Outcome</th><th data-field="decided_by" class="cr-hide-narrow">Decided by</th></tr></thead>
+            <tbody data-draw="ov-laws"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cr-card" id="ov-run">
+        <h2>Stage 4 run</h2>
+        <p class="cr-note">Tori done against time, from the records commits the pod pushes. The run stops taking new tori at the registered stop rule, 14 days after it started.</p>
+        <div class="cr-meter" aria-hidden="true"><div class="cr-meter-fill" data-draw="ov-meter" data-source="summary"></div></div>
+        <dl class="cr-facts">
+          <dt>Done</dt><dd><span data-draw="ov-done" data-source="summary" data-field="value" data-where="metric=stage4_done">—</span> of <span data-draw="ov-total" data-source="summary" data-field="value" data-where="metric=stage4_total">—</span> tori</dd>
+          <dt>Started</dt><dd data-draw="ov-started" data-source="summary" data-field="text" data-where="metric=stage4_started">—</dd>
+          <dt>Stop rule</dt><dd data-draw="ov-stop" data-source="summary" data-field="text" data-where="metric=stage4_stop">—</dd>
+        </dl>
+        <div class="cr-chart cr-mid" data-draw="ov-burnup" data-source="progress summary"></div>
+      </div>
+    </div>
+
+    <div class="cr-card cr-wide" id="ov-new">
+      <h2>New frontier entries</h2>
+      <p class="cr-note">Entries whose torus first reached the records on or after the date below, best k·d²/n first. Click one for its code card.</p>
+      <div class="cr-table-tools"><label class="cr-picker">Since <input type="date" class="cr-since" min="2026-01-01" max="2099-12-31" aria-label="Since"></label><button type="button" class="cr-button cr-since-reset">Last 7 days</button></div>
+      <div class="cr-table-box">
+        <table data-source="frontier" data-row-key="id" id="ov-new-table">
+          <thead><tr><th data-field="code">Code</th><th data-field="torus">Torus</th><th data-field="score" class="cr-num">k·d²/n</th><th data-field="ratio" class="cr-num cr-hide-narrow">d/√n</th><th data-field="tier" class="cr-hide-narrow">Checks</th><th data-field="first_seen">First seen (UTC)</th></tr></thead>
+          <tbody data-draw="ov-new"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FRONTIER -->
+  <section class="cr-page" id="frontier" role="tabpanel" aria-labelledby="tab-frontier" hidden>
+    <p class="cr-lede">The census frontier: for each torus Z_l × Z_m and each k, the largest distance d of a connected code. Published codes are drawn as diamonds. The filters apply to every chart and table on this page.</p>
+    <div class="cr-filters" role="group" aria-label="Filters" id="fr-filters">
+      <label>Stage<select class="f-stage" aria-label="Stage"><option value="all">All</option><option value="3a">3a (lm ≤ 100)</option><option value="3b/3c">3b/3c (lm ≤ 150)</option><option value="4">4 (lm ≤ 200)</option></select></label>
+      <label>k<select data-draw="f-k" class="f-k" data-source="frontier" aria-label="k"></select></label>
+      <label>Group<select class="f-gtype" aria-label="Group type"><option value="all">All</option><option value="cyclic">Cyclic</option><option value="non-cyclic">Non-cyclic</option><option value="Z3×Z3 part">With a Z3×Z3 part</option></select></label>
+      <label>n from<input type="number" class="f-nmin" min="0" max="1000" step="2" aria-label="n from"></label>
+      <label>n to<input type="number" class="f-nmax" min="0" max="1000" step="2" aria-label="n to"></label>
+      <label class="cr-check"><input type="checkbox" class="f-merge"> Merge isomorphic tori</label>
+      <button type="button" class="cr-button f-reset">Reset</button>
+    </div>
+
+    <div class="cr-card" id="fr-scatter-card">
+      <h2>Distance against n</h2>
+      <p class="cr-note">Each point is one frontier entry; hover for its code, click for its code card. Grey lines are laws: solid for registered predictions, dashed for exploratory fits.</p>
+      <div class="cr-controls">
+        <span class="cr-seg" role="radiogroup" aria-label="Measure">
+          <label><input type="radio" name="cr-metric" value="d"> d</label>
+          <label><input type="radio" name="cr-metric" value="ratio"> d/√n</label>
+          <label><input type="radio" name="cr-metric" value="score"> k·d²/n</label>
+        </span>
+        <span class="cr-seg" role="radiogroup" aria-label="Colour by">
+          <label><input type="radio" name="cr-color" value="group"> Colour by group</label>
+          <label><input type="radio" name="cr-color" value="stage"> by stage</label>
+        </span>
+        <label class="cr-check"><input type="checkbox" class="f-laws"> Registered laws</label>
+        <label class="cr-check"><input type="checkbox" class="f-fits"> Exploratory fits</label>
+        <label class="cr-check"><input type="checkbox" class="f-pub"> Published codes</label>
+      </div>
+      <div class="cr-chart cr-tall" data-draw="fr-scatter" data-source="frontier published fits"></div>
+      <div class="cr-legend" id="fr-legend-group"><span class="cr-key"><span class="cr-sw cr-c0"></span>Cyclic group</span><span class="cr-key"><span class="cr-sw cr-c1"></span>Non-cyclic</span><span class="cr-key"><span class="cr-sw cr-c2"></span>With a Z3×Z3 part</span><span class="cr-key cr-key-pub"><span class="cr-sw cr-sw-dia"></span>Published code</span></div>
+      <div class="cr-legend" id="fr-legend-stage" hidden><span class="cr-key"><span class="cr-sw cr-c0"></span>Stage 3a</span><span class="cr-key"><span class="cr-sw cr-c1"></span>Stages 3b/3c</span><span class="cr-key"><span class="cr-sw cr-c2"></span>Stage 4</span><span class="cr-key cr-key-pub"><span class="cr-sw cr-sw-dia"></span>Published code</span></div>
+      <div class="cr-legend" data-draw="fr-law-legend" data-source="fits"></div>
+    </div>
+
+    <div class="cr-card" id="fr-heat-card">
+      <h2>Best d for every n and k</h2>
+      <p class="cr-note">One cell per (n, k) with a code; empty cells have none. Cells outlined in black match or beat a published code with the same n and k. Bands across are the k layers; gaps down are values of n where no code exists.</p>
+      <div class="cr-controls">
+        <span class="cr-seg" role="radiogroup" aria-label="Cell colour">
+          <label><input type="radio" name="cr-heat" value="d"> d</label>
+          <label><input type="radio" name="cr-heat" value="score"> k·d²/n</label>
+          <label><input type="radio" name="cr-heat" value="resid"> d against the k-layer fit</label>
+        </span>
+      </div>
+      <div class="cr-chart cr-mid" data-draw="fr-heat" data-source="frontier published"></div>
+      <div class="cr-legend" data-draw="fr-heat-legend" data-source="frontier"></div>
+    </div>
+
+    <div class="cr-card" id="fr-trade-card">
+      <h2>The trade-off: k against d/√n</h2>
+      <p class="cr-note">On these axes a curve of constant k·d²/n does not depend on n, so codes of every size can be compared with the same curves. One panel per 100 qubits.</p>
+      <div class="cr-small-multiples" data-draw="fr-trade" data-source="frontier published fits"></div>
+      <div class="cr-legend" data-draw="fr-trade-legend" data-source="frontier published fits"></div>
+    </div>
+
+    <div class="cr-grid2">
+      <div class="cr-card" id="fr-resid-edge-card">
+        <h2>The top edge, with its trend removed</h2>
+        <p class="cr-note">The best d at each n, minus the exploratory edge 2⌊0.617·√(n ln n)/2⌋. Zero is on the fit; steps of 2 are one even step of d.</p>
+        <div class="cr-chart cr-mid" data-draw="fr-resid-edge" data-source="frontier"></div>
+      </div>
+      <div class="cr-card" id="fr-resid-layer-card">
+        <h2>Every entry against the k-layer fit</h2>
+        <p class="cr-note">d minus the exploratory fit 2.31·n^0.443 − k, which was fitted on n ≤ 300. Points above zero beat the layer they sit in.</p>
+        <div class="cr-chart cr-mid" data-draw="fr-resid-layer" data-source="frontier"></div>
+      </div>
+    </div>
+
+    <div class="cr-card cr-wide" id="fr-board-card">
+      <h2>Leaderboard</h2>
+      <p class="cr-note">Every frontier entry under the filters. Sort by any column; search by code, torus or group. The Checks column is the strongest independent check of that d, where one was made.</p>
+      <div class="cr-table-tools"><input type="search" class="fr-search" placeholder="Search codes, tori, groups" aria-label="Search the leaderboard"></div>
+      <div class="cr-table-box">
+        <table data-source="frontier" data-row-key="id" id="fr-board">
+          <thead><tr>
+            <th data-field="code"><button type="button">Code</button></th>
+            <th data-field="torus"><button type="button">Torus</button></th>
+            <th data-field="group_name" class="cr-hide-narrow"><button type="button">Group</button></th>
+            <th data-field="score" class="cr-num" aria-sort="descending"><button type="button">k·d²/n</button></th>
+            <th data-field="ratio" class="cr-num"><button type="button">d/√n</button></th>
+            <th data-field="stage" class="cr-hide-narrow"><button type="button">Stage</button></th>
+            <th data-field="settled_by" class="cr-hide-narrow"><button type="button">Settled by</button></th>
+            <th data-field="tier"><button type="button">Checks</button></th>
+          </tr></thead>
+          <tbody data-draw="fr-board"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CODE CARD -->
+  <section class="cr-page" id="code" role="tabpanel" aria-labelledby="tab-code" hidden>
+    <div class="cr-picker">
+      <button type="button" class="cr-button cr-back">← Back</button>
+      <label>Code <select data-draw="c-pick" data-source="frontier" aria-label="Choose a code"></select></label>
+    </div>
+    <div class="cr-card">
+      <div class="cr-code-head">
+        <h2 class="cr-code-name" data-draw="c-name" data-source="frontier" data-field="code">—</h2>
+        <span>on the torus <b data-draw="c-torus" data-source="frontier" data-field="torus">—</b>, the group <b data-draw="c-group" data-source="frontier" data-field="group_name">—</b></span>
+      </div>
+      <ul class="cr-chips">
+        <li>k·d²/n <b data-draw="c-score" data-source="frontier" data-field="score">—</b></li>
+        <li>d/√n <b data-draw="c-ratio" data-source="frontier" data-field="ratio">—</b></li>
+        <li>Stage <b data-draw="c-stage" data-source="frontier" data-field="stage">—</b></li>
+        <li>Settled by <b data-draw="c-settled" data-source="frontier" data-field="settled_by">—</b></li>
+        <li>Checks <b data-draw="c-tier" data-source="frontier" data-field="tier">—</b></li>
+        <li>Study group <b data-draw="c-sgroup" data-source="frontier" data-field="study_group">—</b></li>
+      </ul>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card">
+        <h2>Polynomials and stencil</h2>
+        <p class="cr-note">A and B as polynomials in x and y, where x shifts the l direction and y the m direction. The grid is the torus: A's monomials are circles, B's are squares.</p>
+        <dl class="cr-facts">
+          <dt>A</dt><dd class="cr-poly" data-draw="c-A" data-source="frontier" data-field="A_text">—</dd>
+          <dt>B</dt><dd class="cr-poly" data-draw="c-B" data-source="frontier" data-field="B_text">—</dd>
+        </dl>
+        <div class="cr-chart" data-draw="c-stencil" data-source="frontier"></div>
+        <div class="cr-legend"><span class="cr-key"><span class="cr-sw cr-c0"></span>A</span><span class="cr-key"><span class="cr-sw cr-sw-sq cr-c1"></span>B</span></div>
+      </div>
+      <div class="cr-card">
+        <h2>A minimum-weight logical</h2>
+        <p class="cr-note">The support of a Z-logical of weight d that the census found and checked: the left block of qubits (A's columns) above, the right block (B's) below, each as the l × m torus.</p>
+        <div class="cr-chart" data-draw="c-witness" data-source="frontier"></div>
+      </div>
+    </div>
+    <div class="cr-grid2">
+      <div class="cr-card">
+        <h2>Distance against k on this torus</h2>
+        <p class="cr-note">Every frontier entry of the same torus; this code is ringed. Diamonds are published codes of the same n.</p>
+        <div class="cr-chart cr-mid" data-draw="c-profile" data-source="frontier published"></div>
+      </div>
+      <div class="cr-card">
+        <h2>Provenance</h2>
+        <p class="cr-note">Where this entry's numbers come from.</p>
+        <dl class="cr-facts">
+          <dt>Record</dt><dd><span data-draw="c-file" data-source="frontier" data-field="source_file">—</span>, line <span data-draw="c-line" data-source="frontier" data-field="source_line">—</span></dd>
+          <dt>Instrument</dt><dd data-draw="c-instr" data-source="frontier" data-field="instrument">—</dd>
+          <dt>First seen</dt><dd><span data-draw="c-seen" data-source="frontier" data-field="first_seen">—</span> UTC</dd>
+          <dt>Check</dt><dd data-draw="c-tsrc" data-source="frontier" data-field="tier_source">—</dd>
+          <dt>Group's primary torus</dt><dd data-draw="c-iso" data-source="frontier" data-field="iso_rep">—</dd>
+          <dt>Nearest published</dt><dd data-draw="c-near" data-source="published" data-field="name">—</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="lib.js"></script>
+<script src="overview.js"></script>
+<script src="frontier.js"></script>
+<script src="code.js"></script>

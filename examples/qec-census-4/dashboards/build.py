@@ -195,7 +195,8 @@ class Census:
                settled_by: str, witness, instrument: str, source: str) -> None:  # fmt: skip
         n = t["n"]
         self.frontier.append({
-            "id": f"{t['torus']}-k{k}", "torus": t["torus"], "l": t["l"], "m": t["m"], "n": n,
+            "id": f"{t['torus']}-k{k}", "code": f"[[{n},{k},{d}]]", "torus": t["torus"],
+            "l": t["l"], "m": t["m"], "n": n,
             "k": k, "d": d, "settled": settled, "settled_by": settled_by, "stage": t["stage"],
             "study_group": t["study_group"], "exposed": t["exposed"],
             "g": t["g"], "iso_key": t["iso_key"], "group_name": t["group_name"],
@@ -425,6 +426,48 @@ def progress() -> list[dict]:
     return sorted(rows, key=lambda r: (r["run"], r["time"]))
 
 
+TORUS_RE = re.compile(rb'"l": ?(\d+), ?"m": ?(\d+), ?"n": ?')
+
+
+def first_seen(out: Path = OUT) -> dict[str, str]:
+    """When each torus's record first reached the branch (UTC, to the minute): the first commit
+    of its records file that holds it (stages 3b to 4), or the commit that added its data file
+    (stage 3a). The tori in each commit are cached by commit in first_seen_cache.json."""
+    cache_path = out / "first_seen_cache.json"
+    cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+    seen: dict[str, dt.datetime] = {}
+
+    def note(torus: str, when: str) -> None:
+        t = dt.datetime.fromisoformat(when).astimezone(dt.UTC)
+        if torus not in seen or t < seen[torus]:
+            seen[torus] = t
+
+    when = None
+    log = _git("log", "--diff-filter=A", "--format=@%cI", "--name-only", "--",
+               "examples/qec-census-3/data")  # fmt: skip
+    for line in log.splitlines():
+        if line.startswith("@"):
+            when = line[1:]
+        elif line.strip().endswith(".jsonl"):
+            note(Path(line.strip()).stem, when)
+    for path in (S3B, S3C, S4):
+        relp = rel(path)
+        for x in _git("log", "--reverse", "--format=%H %cI", "--", relp).splitlines():
+            sha, when = x.split()
+            key = f"{sha}:{relp}"
+            if key not in cache:
+                blob = subprocess.run(["git", "-C", str(ROOT), "show", key], capture_output=True,
+                                      check=True).stdout  # fmt: skip
+                cache[key] = sorted(
+                    {f"{a.decode()}x{b.decode()}" for a, b in TORUS_RE.findall(blob)}
+                )
+            for torus in cache[key]:
+                note(torus, when)
+    out.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(cache, sort_keys=True, separators=(",", ":")) + "\n")
+    return {k: v.strftime("%Y-%m-%d %H:%M") for k, v in seen.items()}
+
+
 def interim4(c: Census) -> dict:
     """Stage 4's predictions so far, by the registered judge's rules (study.judge_torus) restated:
     E and S2 fail on any torus over the cap or ceiling; G and S1 hold on any torus past the
@@ -440,11 +483,11 @@ def interim4(c: Census) -> dict:
         if t["d_max"] > cap:
             out["E"].append(f"{t['torus']}: d = {t['d_max']} > cap {cap}")
         if t["best_score"] > S_CEILING + 1e-9:
-            out["S2"].append(f"{t['torus']}: k d^2/n = {t['best_score']}")
+            out["S2"].append(f"{t['torus']}: k·d²/n = {t['best_score']}")
         if t["d_max"] / math.sqrt(t["n"]) > G_RECORD + 1e-9:
-            out["G"].append(t["torus"])
+            out["G"].append(f"{t['torus']}: d/√n = {t['d_max'] / math.sqrt(t['n']):.4f}")
         if t["best_score"] > S_RECORD + 1e-9:
-            out["S1"].append(t["torus"])
+            out["S1"].append(f"{t['torus']}: k·d²/n = {t['best_score']}")
     return out
 
 
@@ -454,16 +497,36 @@ def fits(c: Census) -> list[dict]:
     if (f4["b"], f4["c"]) != (E_B, E_C):
         raise ValueError("stage 4's registered E constants differ from build.py's")
     i4 = interim4(c)
-    first = lambda xs: xs[0] if xs else ""  # noqa: E731
-    return [
+    first = lambda xs: xs[0] if xs else None  # noqa: E731
+    v3c = next(e for e in ledger("qec-census-3c") if e["kind"] == "verdict")["body"]
+    tori3 = {(t["torus"]): t for t in c.tori.values()}
+
+    # stage 3d rejudged its 9 tori on the amended records (its part T): those outcomes stand
+    v3d = next(e for e in ledger("qec-census-3d") if e["kind"] == "verdict")["body"]
+    per_torus = {**v3c["per_torus"], **{t: {**v3c["per_torus"][t], **v} for t, v in
+                                        v3d["per_torus"].items()}}  # fmt: skip
+
+    def failed_on(part: str) -> str:
+        """Judged tori only: the exposed ones are reported beside the verdict, not judged."""
+        bad = sorted((t for t, v in per_torus.items() if v[part] == "fail"),
+                     key=lambda t: (tori3[t]["n"], tori3[t]["l"]))  # fmt: skip
+        judged = [t for t in bad if t not in v3c["exposed"]]
+        exposed = len(bad) - len(judged)
+        return (f"fails on {len(judged)} judged tori (stage 3c, with stage 3d's), first "
+                f"{judged[0]}" + (f"; also exceeded on {exposed} exposed tori" if exposed else "")
+                ) if judged else ""  # fmt: skip
+
+    if (v3c["P2"], v3c["P3"]) != ("fail", "fail"):
+        raise ValueError("stage 3c's verdict on P2 and P3 is not what build.py states")
+    rows = [
         {"id": "p2", "label": "P2: best connected d ≤ largest even ≤ 1.4·√n", "kind": "registered",
          "study": "qec-census-3b", "part": "P2", "a": P2_C, "b": 0.5, "c": None,
          "outcome": "failed", "interim": False,
-         "decided_by": "stage 3c verdict: P2 fails (first at 2x51, [[204,4,20]])"},
+         "decided_by": failed_on("P2")},
         {"id": "p3", "label": "P3: max connected k·d²/n ≤ 13.5 (extrapolation tori)",
          "kind": "registered", "study": "qec-census-3b", "part": "P3", "a": 13.5, "b": None,
          "c": None, "outcome": "failed", "interim": False,
-         "decided_by": "stage 3c verdict: P3 fails"},
+         "decided_by": failed_on("P3")},
         {"id": "e", "label": "E: best connected d ≤ largest even ≤ 0.8011·n^0.6074",
          "kind": "registered", "study": "qec-census-4", "part": "E", "a": E_C, "b": E_B,
          "c": None, "outcome": "failed" if i4["E"] else "pending", "interim": True,
@@ -482,17 +545,21 @@ def fits(c: Census) -> list[dict]:
          "decided_by": first(i4["S2"])},
         {"id": "edge", "label": "Top edge: 2·⌊0.617·√(n ln n) / 2⌋", "kind": "exploratory",
          "study": "regularity analysis", "part": "", "a": EDGE_C, "b": None, "c": None,
-         "outcome": "", "interim": False, "decided_by": ""},
+         "outcome": "", "interim": False, "decided_by": None},
         {"id": "power", "label": "Top edge, power law: 0.78·n^0.613", "kind": "exploratory",
          "study": "regularity analysis", "part": "", "a": POWER_A, "b": POWER_B, "c": None,
-         "outcome": "", "interim": False, "decided_by": ""},
+         "outcome": "", "interim": False, "decided_by": None},
         {"id": "affine", "label": "Top edge, levelling off: 1.75·√n − 4.6",
          "kind": "exploratory", "study": "regularity analysis", "part": "", "a": AFFINE_A,
-         "b": AFFINE_B, "c": None, "outcome": "", "interim": False, "decided_by": ""},
+         "b": AFFINE_B, "c": None, "outcome": "", "interim": False, "decided_by": None},
         {"id": "layer", "label": "k layers: 2.31·n^0.443 − k", "kind": "exploratory",
          "study": "regularity analysis", "part": "", "a": LAYER_A, "b": LAYER_B, "c": None,
-         "outcome": "", "interim": False, "decided_by": ""},
+         "outcome": "", "interim": False, "decided_by": None},
     ]  # fmt: skip
+    for r in rows:
+        r["status"] = (r["outcome"] + (" (verdict pending)" if r["interim"] else "")
+                       if r["outcome"] else "exploratory")  # fmt: skip
+    return rows
 
 
 def build() -> dict[str, list[dict]]:
@@ -501,7 +568,7 @@ def build() -> dict[str, list[dict]]:
     for e in c.frontier:
         hit = tier.get((e["torus"], e["k"], e["d"]))
         e["tier"] = hit["tier"] if hit else "not checked"
-        e["tier_source"] = hit["source"] if hit else ""
+        e["tier_source"] = hit["source"] if hit else None
     # isomorphic tori: one primary torus per group, the computed one with the smallest (l, m)
     reps: dict[str, tuple[int, int]] = {}
     for key, t in sorted(c.tori.items()):
@@ -528,6 +595,11 @@ def build() -> dict[str, list[dict]]:
     for t in tori:
         t.setdefault("primary", True)
         t.setdefault("iso_rep", t["torus"])
+    seen = first_seen()
+    for t in tori:
+        t["first_seen"] = seen.get(t["torus"])
+    for e in c.frontier:
+        e["first_seen"] = seen.get(e["torus"])
     frontier = sorted(c.frontier, key=lambda e: (e["n"], e["l"], e["k"]))
     pub = published()
     return {"frontier": frontier, "tori": tori, "published": pub, "class_hist": class_hist(c),
@@ -552,7 +624,7 @@ def summary(c: Census, frontier: list[dict], tori: list[dict], pub: list[dict]) 
                       "examples/qec-census-4/records.jsonl"))  # fmt: skip
     code = lambda e: f"[[{e['n']},{e['k']},{e['d']}]]"  # noqa: E731
     rows = [
-        ("built_at", None, dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H:%MZ")),
+        ("built_at", None, dt.datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M UTC")),
         ("commit", None, commit[:10] + (" (records changed since)" if dirty else "")),
         ("tori_total", len(tori), None),
         ("tori_computed", len(computed), None),
