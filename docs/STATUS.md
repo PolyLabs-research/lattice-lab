@@ -200,7 +200,14 @@ registered):
   parity of d predicted this at registration.
   - P2 now fails on those tori except 3 x 49: [[n,4,24]] for n from 270 to 288, above the cap
     of 22.
-  - No stage 3b/3c torus is left incomplete. The combined verdict stays fail.
+  - No judged stage 3b/3c torus is left incomplete. The combined verdict stays fail.
+  - Two exposed tori, which the verdict reports but does not judge, keep a lower bound at
+    k = 4: 9 x 15 (d >= 22; its isomorphic twin 3 x 45, which carries the same codes, is
+    settled at 24) and 6 x 24 (d >= 22). Stage 3d reran only judged tori.
+- **Review dashboards (2026-11-02).** A private dashboard suite for reviewing the census:
+  frontier, structure, populations, confidence, every registered study's predictions, and
+  operations. Its data layer is `examples/qec-census-4/dashboards/build.py`, tested in
+  `tests/test_census_dashboards.py`; the plan is [census-dashboards-plan.md](census-dashboards-plan.md).
 
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
