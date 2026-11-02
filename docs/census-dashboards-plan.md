@@ -276,13 +276,13 @@ pods are needed. Everything runs on data already in the repository.
 - It changes nothing in any registered study.
 - It makes no claims of novelty until the literature check is done.
 
-## Decisions for you
+## Decisions (made 2026-11-02)
 
-1. **Platform.** The Dashboard type (recommended), or the hand-built explorer extended?
-2. **Checking.** May I render each page to check it? The Dashboard type asks me not to unless you
-   say so.
-3. **Scope of Predictions.** The 11 studies on codes, or all 33 registered studies in the lab?
-4. **Refresh.** Snapshots on demand (the default), or try reading live from the repository
-   through the GitHub connector, if your account's connector can read the private repo?
-5. **A public version for the site later?** It would carry aggregates only, with no links into
-   lattice-lab.
+1. **Platform:** the Dashboard type.
+2. **Checking:** pages may be rendered to check them. They are rendered locally with a stand-in
+   for the dashboard runtime (`examples/qec-census-4/dashboards/dev/`), which also runs the
+   runtime's own checks.
+3. **Scope of Predictions:** all 33 registered studies in the lab.
+4. **Refresh:** snapshots, rebuilt on request with `build.py`.
+5. **A public version:** yes, a summary version for the site, with aggregates only and no
+   links into lattice-lab. It comes after stage 4's verdict, so it carries final numbers.
