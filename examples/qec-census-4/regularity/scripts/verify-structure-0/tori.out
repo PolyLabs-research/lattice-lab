@@ -1,0 +1,27 @@
+universe tori (2<=l<=m, lm<=200): 356
+distinct lm: 153  composite 4..200: 153  equal: True
+lm with criterion E: 89  == divisible by 3,7,31,73,85: True
+n multiple of 6: 65 12 396  multiples of 14 (not 6): 18 [28, 56, 70, 98, 112, 140, 154, 182, 196, 224, 238, 266, 280, 308, 322, 350, 364, 392]  rest: [124, 170, 248, 292, 310, 340]
+multiples of 6 from 12..396 all present: True
+computed tori: 321  by stage: {'3a': 116, '3b': 73, '3c': 49, '4': 83}
+computed tori outside universe: []
+mismatch record criterion_e field vs mine: []  (records carrying the field: 205 )
+mismatch classes>0 vs mine: []
+rows != classes: [] 0
+tori with criterion E but no connected k>0 class: []
+tori with E: 211  without: 110
+uncomputed tori: 35
+stage-4 universe: 110  computed: 83
+uncomputed with lm<=150: [(2, 36), (3, 26), (4, 14), (5, 14), (6, 11), (6, 13), (6, 16), (7, 10)]  each isomorphic to a computed torus: True
+observed columns: 86
+observed not predicted: []
+predicted not observed: [390, 392, 396]
+   n=390 tori [(3, 65), (5, 39), (13, 15)] computed [] groups [(3, 5, 13)]
+   n=392 tori [(2, 98), (4, 49), (7, 28), (14, 14)] computed [] groups [(2, 2, 7, 7), (2, 2, 49), (4, 7, 7), (4, 49)]
+   n=396 tori [(2, 99), (3, 66), (6, 33), (9, 22), (11, 18)] computed [] groups [(2, 3, 3, 11), (2, 9, 11)]
+entry tori not in records: []
+columns observed but with some tori not yet computed: [(112, [(4, 14)]), (132, [(6, 11)]), (140, [(5, 14), (7, 10)]), (144, [(2, 36)]), (156, [(3, 26), (6, 13)]), (192, [(6, 16)]), (308, [(11, 14)]), (312, [(12, 13)]), (360, [(6, 30)]), (364, [(13, 14)]), (384, [(4, 48), (6, 32), (8, 24), (12, 16)])]
+stage-4 uncomputed tori with E: 20 [(2, 98), (2, 99), (3, 65), (3, 66), (4, 48), (4, 49), (5, 39), (6, 30), (6, 32), (6, 33), (7, 28), (8, 24), (9, 22), (11, 14), (11, 18), (12, 13), (12, 16), (13, 14), (13, 15), (14, 14)]
+  of which groups with no computed isomorphic torus: 10 [(2, 2, 3, 3, 5), (2, 2, 7, 7), (2, 2, 49), (2, 3, 3, 11), (2, 9, 11), (3, 4, 16), (3, 5, 13), (3, 8, 8), (4, 7, 7), (4, 49)]
+stage-4 uncomputed tori without E: [(2, 97), (2, 100), (4, 50), (5, 40), (8, 25), (10, 20), (13, 13)]
+distinct groups (lm<=200, l,m>=2) with E: 151  of 251

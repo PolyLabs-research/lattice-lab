@@ -105,7 +105,8 @@ tr.on { background: var(--bg) }
       <label class="chk"><input type="checkbox" id="st-3a" checked> 3a</label>
       <label class="chk"><input type="checkbox" id="st-3b" checked> 3b/3c</label>
       <label class="chk"><input type="checkbox" id="st-4" checked> 4</label>
-      <label class="chk"><input type="checkbox" id="laws" checked> laws</label>
+      <label class="chk"><input type="checkbox" id="laws" checked> registered laws</label>
+      <label class="chk"><input type="checkbox" id="fits" checked> fits</label>
       <label class="chk"><input type="checkbox" id="pub" checked> published</label>
     </div></div>
 </div>
@@ -132,6 +133,7 @@ tr.on { background: var(--bg) }
     <th data-s="ratio" class="num">d/√n</th><th data-s="score" class="num">k·d²/n</th><th data-s="stage">stage</th><th>A, B</th>
   </tr></thead><tbody></tbody></table></div>
   <p class="note">Stage 4 is still running (tori up to n = 400 are being added). "Group" is Z<sub>l</sub>×Z<sub>m</sub> written as Z<sub>g</sub>×Z<sub>lm/g</sub>, g = gcd(l, m): tori with the same group carry the same codes. Laws: stage 3b's registered cap 1.40√n (failed), stage 4's registered envelope 0.801·n<sup>0.607</sup> (failed at n = 306), and on the score view the published [[288,12,18]]'s 13.5 and stage 4's registered ceiling 17. The published [[360,12,24]] (Bravyi et al.; d = 24 by this project's registered study) is in the same family and scores 19.2.</p>
+  <p class="note">Fits (exploratory; examples/qec-census-4/regularity): the top edge is a k = 4 staircase on n divisible by 6, described by 0.617·√(n ln n) rounded down to even. Over n ≤ 400 it is indistinguishable from about 0.78·n<sup>0.613</sup>, and from n ≳ 90 from 1.75·√n − 4.6 (where d/√n levels off). Below the edge, each k layer follows about 2.31·n<sup>0.443</sup> − k (within one even step for 92–94% of stage-4 points, fitted on n ≤ 300). Choose a single k to see its layer.</p>
 </section>
 </div>
 
@@ -147,7 +149,7 @@ const kBins = [[2,2],[4,4],[6,6],[8,8],[10,12],[14,20],[24,1e9]];
 const kBinLabel = ['2','4','6','8','10–12','14–20','24+'];
 const kColour = k => `var(--k${kBins.findIndex(([a,b]) => k >= a && k <= b) + 1})`;
 const stageColour = s => s === '3a' ? 'var(--s1)' : s === '3b/3c' ? 'var(--s2)' : 'var(--s3)';
-const state = { metric: 'd', colour: 'k', k: 'all', stages: {'3a': true, '3b/3c': true, '4': true}, laws: true, pub: true, sel: null, sort: 'score', dir: -1 };
+const state = { metric: 'd', colour: 'k', k: 'all', stages: {'3a': true, '3b/3c': true, '4': true}, laws: true, fits: true, pub: true, sel: null, sort: 'score', dir: -1 };
 try { const s = JSON.parse(localStorage.getItem('census-explorer') || '{}'); if (s.metric) state.metric = s.metric; if (s.colour) state.colour = s.colour; } catch (e) {}
 const ks = [...new Set(D.entries.map(e => e.k))].sort((a, b) => a - b);
 const kf = document.getElementById('kfilter');
@@ -206,6 +208,21 @@ function draw() {
     if (state.metric === 'ratio') { curve(() => L.p2, '1.40 (3b cap)', 40); curve(n => L.env_c * n ** L.env_b / Math.sqrt(n), 'stage 4 envelope', 300); }
     if (state.metric === 'score') { curve(() => L.s3b_record, '13.5 · published [[288,12,18]]', 30); curve(() => L.s4_ceiling, '17 · stage 4 ceiling', 30); }
   }
+  if (state.fits && state.metric !== 'score') {
+    const fg = el('g', {class: 'law'}, svg);
+    const fit = (f, label, at, dash) => {
+      const g = state.metric === 'ratio' ? (n => f(n) / Math.sqrt(n)) : f;
+      let d = ''; for (let n = 24; n <= 400; n += 4) { const v = g(n); if (v > y1 || v < 0) continue; d += (d ? 'L' : 'M') + sx(n).toFixed(1) + ',' + sy(v).toFixed(1); }
+      el('path', {d, fill: 'none', stroke: 'var(--ink-2)', 'stroke-width': 1.5, 'stroke-dasharray': dash || 'none'}, fg);
+    };
+    if (state.k === 'all') {
+      fit(n => 0.617 * Math.sqrt(n * Math.log(n)));
+      fit(n => 1.75 * Math.sqrt(n) - 4.6, '', 0, '2 3');
+    } else {
+      const k = +state.k;
+      fit(n => 2.31 * n ** 0.443 - k);
+    }
+  }
   const pg = el('g', {}, svg);
   drawn = [];
   const sel = state.sel;
@@ -236,6 +253,13 @@ function legend() {
   if (state.colour === 'k') { const t = document.createElement('span'); t.textContent = 'k:'; lg.appendChild(t); kBinLabel.forEach((l, i) => item(`var(--k${i + 1})`, l)); }
   else { item('var(--s1)', 'stage 3a (n ≤ 200)'); item('var(--s2)', 'stage 3b/3c (n 202–300)'); item('var(--s3)', 'stage 4 (n 302–400)'); }
   if (state.pub) item(null, 'published code', true);
+  if (state.fits && state.metric !== 'score') {
+    const line = (dash, text) => { const s = document.createElement('span'); const i = document.createElement('i');
+      i.style.cssText = `width:18px;height:0;border-radius:0;border-top:1.5px ${dash} var(--ink-2);vertical-align:3px;background:none`;
+      s.appendChild(i); s.appendChild(document.createTextNode(text)); lg.appendChild(s); };
+    if (state.k === 'all') { line('solid', 'fit: edge ≈ 0.617·√(n ln n)'); line('dotted', 'fit: 1.75·√n − 4.6'); }
+    else line('solid', `fit: layer ≈ 2.31·n^0.443 − ${state.k}`);
+  }
 }
 function nearest(px, py) {
   let best = null, bd = 18 * 18;
@@ -318,6 +342,7 @@ seg('metric', 'metric'); seg('colour', 'colour');
 kf.addEventListener('change', () => { state.k = kf.value; draw(); });
 [['st-3a', '3a'], ['st-3b', '3b/3c'], ['st-4', '4']].forEach(([id, s]) => document.getElementById(id).addEventListener('change', ev => { state.stages[s] = ev.target.checked; draw(); }));
 document.getElementById('laws').addEventListener('change', ev => { state.laws = ev.target.checked; draw(); });
+document.getElementById('fits').addEventListener('change', ev => { state.fits = ev.target.checked; draw(); });
 document.getElementById('pub').addEventListener('change', ev => { state.pub = ev.target.checked; draw(); });
 state.sel = '5×31';
 draw(); profile();

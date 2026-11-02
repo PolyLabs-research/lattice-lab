@@ -1,0 +1,101 @@
+== (a) top of column: cyclic group vs best non-cyclic group of the same order
+{'tie': 26, 'cyclic higher': 12, 'non-cyclic higher': 1}
+[(48, 8, 6, 'cyclic higher'), (56, 8, 6, 'cyclic higher'), (72, 10, 8, 'cyclic higher'), (90, 12, 10, 'cyclic higher'), (120, 14, 12, 'cyclic higher'), (144, 16, 14, 'cyclic higher'), (150, 16, 14, 'cyclic higher'), (168, 18, 16, 'cyclic higher'), (234, 22, 20, 'cyclic higher'), (240, 22, 20, 'cyclic higher'), (248, 18, 16, 'cyclic higher'), (306, 24, 26, 'non-cyclic higher'), (350, 26, 24, 'cyclic higher')]
+column max attained by a cyclic group: {('cyclic exists', True): 81, ('no cyclic group', False): 4, ('cyclic exists', False): 1}
+
+== (b) per group type: shortfall of best d below the column max, #k values, best score
+cyc r2=0 r3=0          groups=  9 mean shortfall=0.00 at-top=100% mean #k=1.00 mean best score=10.50 max score=15.61
+cyc r2=0 r3=1          groups= 28 mean shortfall=0.07 at-top=96% mean #k=2.00 mean best score=8.39 max score=15.37
+cyc r2=1 r3=0          groups= 13 mean shortfall=0.00 at-top=100% mean #k=1.00 mean best score=9.24 max score=15.25
+cyc r2=1 r3=1          groups= 32 mean shortfall=0.00 at-top=100% mean #k=1.69 mean best score=7.96 max score=15.48
+noncyc r2=0 r3=0       groups=  2 mean shortfall=1.00 at-top=50% mean #k=2.00 mean best score=9.35 max score=9.87
+noncyc r2=0 r3=1       groups=  2 mean shortfall=1.00 at-top=50% mean #k=6.00 mean best score=10.64 max score=13.61
+noncyc r2=0 r3=2       groups= 12 mean shortfall=0.33 at-top=83% mean #k=3.42 mean best score=9.59 max score=15.37
+noncyc r2=1 r3=0       groups=  1 mean shortfall=0.00 at-top=100% mean #k=3.00 mean best score=9.92 max score=9.92
+noncyc r2=1 r3=1       groups=  1 mean shortfall=0.00 at-top=100% mean #k=3.00 mean best score=12.91 max score=12.91
+noncyc r2=1 r3=2       groups= 11 mean shortfall=0.55 at-top=73% mean #k=2.82 mean best score=9.85 max score=13.44
+noncyc r2=2 r3=0       groups=  6 mean shortfall=1.00 at-top=50% mean #k=2.33 mean best score=8.61 max score=10.71
+noncyc r2=2 r3=1       groups= 19 mean shortfall=0.63 at-top=68% mean #k=3.21 mean best score=9.52 max score=14.08
+noncyc r2=2 r3=2       groups=  5 mean shortfall=1.60 at-top=20% mean #k=4.60 mean best score=10.42 max score=13.50
+
+== (c) best k d^2/n in each multi-group column: carried by
+    6  noncyc r2=0 r3=2
+    6  noncyc r2=2 r3=1
+    4  cyc r2=1 r3=1 / noncyc r2=2 r3=1
+    4  noncyc r2=1 r3=2
+    3  cyc r2=1 r3=1
+    3  cyc r2=1 r3=0 / noncyc r2=2 r3=0
+    2  cyc r2=1 r3=1 / noncyc r2=1 r3=2
+    2  cyc r2=1 r3=0
+    2  cyc r2=0 r3=1 / noncyc r2=0 r3=1
+    2  cyc r2=0 r3=1 / noncyc r2=0 r3=2
+    1  cyc r2=0 r3=1
+    1  noncyc r2=2 r3=2
+    1  cyc r2=1 r3=0 / noncyc r2=1 r3=0
+    1  noncyc r2=2 r3=1 / noncyc r2=2 r3=2
+    1  cyc r2=1 r3=1 / noncyc r2=1 r3=1
+    1  cyc r2=0 r3=0
+
+== top 25 (group, k) cells by k d^2/n
+   15.61 [[310,10,22]] G=Z1xZ155  cyc r2=0 r3=0
+   15.48 [[372,10,24]] G=Z1xZ186  cyc r2=1 r3=1
+   15.37 [[378,12,22]] G=Z3xZ63  noncyc r2=0 r3=2
+   15.37 [[378,12,22]] G=Z1xZ189  cyc r2=0 r3=1
+   15.25 [[340,16,18]] G=Z1xZ170  cyc r2=1 r3=0
+   15.24 [[378,10,24]] G=Z3xZ63  noncyc r2=0 r3=2
+   15.24 [[378,10,24]] G=Z1xZ189  cyc r2=0 r3=1
+   15.05 [[372,14,20]] G=Z1xZ186  cyc r2=1 r3=1
+   14.40 [[336,10,22]] G=Z1xZ168  cyc r2=1 r3=1
+   14.08 [[384,8,26]] G=Z2xZ96  noncyc r2=2 r3=1
+   13.96 [[330,8,24]] G=Z1xZ165  cyc r2=0 r3=1
+   13.71 [[378,16,18]] G=Z3xZ63  noncyc r2=0 r3=2
+   13.71 [[336,8,24]] G=Z2xZ84  noncyc r2=2 r3=1
+   13.61 [[294,10,20]] G=Z7xZ21  noncyc r2=0 r3=1
+   13.61 [[294,10,20]] G=Z1xZ147  cyc r2=0 r3=1
+   13.50 [[336,14,18]] G=Z2xZ84  noncyc r2=2 r3=1
+   13.50 [[288,12,18]] G=Z12xZ12  noncyc r2=2 r3=2
+   13.50 [[288,12,18]] G=Z4xZ36  noncyc r2=2 r3=1
+   13.44 [[288,8,22]] G=Z3xZ48  noncyc r2=1 r3=2
+   13.33 [[360,12,20]] G=Z3xZ60  noncyc r2=1 r3=2
+   13.06 [[248,10,18]] G=Z1xZ124  cyc r2=1 r3=0
+   12.91 [[300,8,22]] G=Z5xZ30  noncyc r2=1 r3=1
+   12.91 [[300,8,22]] G=Z1xZ150  cyc r2=1 r3=1
+   12.80 [[360,8,24]] G=Z3xZ60  noncyc r2=1 r3=2
+   12.80 [[360,8,24]] G=Z2xZ90  noncyc r2=2 r3=1
+types among top 25: Counter({'noncyc r2=2 r3=1': 5, 'cyc r2=1 r3=1': 4, 'cyc r2=0 r3=1': 4, 'noncyc r2=0 r3=2': 3, 'noncyc r2=1 r3=2': 3, 'cyc r2=1 r3=0': 2, 'cyc r2=0 r3=0': 1, 'noncyc r2=0 r3=1': 1, 'noncyc r2=2 r3=2': 1, 'noncyc r2=1 r3=1': 1})
+base rate of types among groups: Counter({'cyc r2=1 r3=1': 32, 'cyc r2=0 r3=1': 28, 'noncyc r2=2 r3=1': 19, 'cyc r2=1 r3=0': 13, 'noncyc r2=0 r3=2': 12, 'noncyc r2=1 r3=2': 11, 'cyc r2=0 r3=0': 9, 'noncyc r2=2 r3=0': 6, 'noncyc r2=2 r3=2': 5, 'noncyc r2=0 r3=0': 2, 'noncyc r2=0 r3=1': 2, 'noncyc r2=1 r3=0': 1, 'noncyc r2=1 r3=1': 1})
+
+== (d) for each k, best ratio d/sqrt(n) (n >= 100) by type [count of groups having that k]
+k= 8: cyc r2=0 r3=1: 1.321 [4]; cyc r2=1 r3=1: 1.270 [5]; noncyc r2=0 r3=1: 0.980 [1]; noncyc r2=0 r3=2: 1.258 [9]; noncyc r2=1 r3=1: 1.270 [1]; noncyc r2=1 r3=2: 1.296 [9]; noncyc r2=2 r3=1: 1.327 [14]; noncyc r2=2 r3=2: 1.179 [4]
+k=10: cyc r2=0 r3=0: 1.250 [1]; cyc r2=0 r3=1: 1.234 [5]; cyc r2=1 r3=0: 1.143 [2]; cyc r2=1 r3=1: 1.244 [4]; noncyc r2=0 r3=1: 1.166 [1]; noncyc r2=0 r3=2: 1.234 [2]; noncyc r2=1 r3=2: 1.008 [1]; noncyc r2=2 r3=0: 1.016 [1]; noncyc r2=2 r3=1: 0.982 [2]
+k=12: cyc r2=0 r3=1: 1.132 [4]; cyc r2=1 r3=1: 1.008 [3]; noncyc r2=0 r3=1: 0.816 [1]; noncyc r2=0 r3=2: 1.132 [3]; noncyc r2=1 r3=0: 0.571 [1]; noncyc r2=1 r3=2: 1.054 [3]; noncyc r2=2 r3=0: 0.837 [4]; noncyc r2=2 r3=1: 1.061 [4]; noncyc r2=2 r3=2: 1.061 [4]
+k=14: cyc r2=0 r3=1: 0.828 [2]; cyc r2=1 r3=1: 1.037 [1]; noncyc r2=0 r3=2: 0.926 [2]; noncyc r2=1 r3=2: 0.756 [1]; noncyc r2=2 r3=1: 0.982 [2]
+k=16: cyc r2=0 r3=0: 0.767 [1]; cyc r2=0 r3=1: 0.617 [2]; cyc r2=1 r3=0: 0.976 [1]; cyc r2=1 r3=1: 0.504 [1]; noncyc r2=0 r3=1: 0.653 [2]; noncyc r2=0 r3=2: 0.926 [2]; noncyc r2=1 r3=1: 0.808 [1]; noncyc r2=1 r3=2: 0.422 [2]; noncyc r2=2 r3=1: 0.843 [7]; noncyc r2=2 r3=2: 0.707 [4]
+k=18: cyc r2=1 r3=0: 0.468 [1]; noncyc r2=0 r3=1: 0.583 [1]; noncyc r2=1 r3=0: 0.571 [1]; noncyc r2=2 r3=0: 0.401 [1]
+k=20: cyc r2=0 r3=1: 0.147 [1]; cyc r2=1 r3=1: 0.207 [1]; noncyc r2=0 r3=2: 0.617 [2]; noncyc r2=1 r3=2: 0.252 [1]; noncyc r2=2 r3=0: 0.635 [1]; noncyc r2=2 r3=1: 0.655 [2]; noncyc r2=2 r3=2: 0.354 [1]
+k=22: noncyc r2=0 r3=1: 0.583 [1]
+k=24: cyc r2=0 r3=1: 0.276 [1]; noncyc r2=0 r3=1: 0.117 [1]; noncyc r2=0 r3=2: 0.103 [1]; noncyc r2=2 r3=0: 0.267 [1]; noncyc r2=2 r3=1: 0.436 [2]; noncyc r2=2 r3=2: 0.354 [1]
+k=30: noncyc r2=0 r3=1: 0.233 [1]
+k=32: noncyc r2=0 r3=2: 0.103 [1]; noncyc r2=2 r3=2: 0.118 [1]
+
+== (e) k=12 cells, n>=120, sorted by score
+   15.37 n=378 d=22 Z3xZ63 noncyc r2=0 r3=2
+   15.37 n=378 d=22 Z1xZ189 cyc r2=0 r3=1
+   13.50 n=288 d=18 Z12xZ12 noncyc r2=2 r3=2
+   13.50 n=288 d=18 Z4xZ36 noncyc r2=2 r3=1
+   13.33 n=360 d=20 Z3xZ60 noncyc r2=1 r3=2
+   12.19 n=252 d=16 Z1xZ126 cyc r2=1 r3=1
+   12.00 n=144 d=12 Z6xZ12 noncyc r2=2 r3=2
+   11.38 n=270 d=16 Z3xZ45 noncyc r2=0 r3=2
+   10.67 n=288 d=16 Z6xZ24 noncyc r2=2 r3=2
+    9.52 n=126 d=10 Z1xZ63 cyc r2=0 r3=1
+    9.14 n=336 d=16 Z2xZ84 noncyc r2=2 r3=1
+    9.14 n=336 d=16 Z1xZ168 cyc r2=1 r3=1
+    9.00 n=192 d=12 Z4xZ24 noncyc r2=2 r3=1
+    8.40 n=280 d=14 Z2xZ70 noncyc r2=2 r3=0
+    8.00 n=294 d=14 Z7xZ21 noncyc r2=0 r3=1
+    8.00 n=294 d=14 Z1xZ147 cyc r2=0 r3=1
+    8.00 n=216 d=12 Z6xZ18 noncyc r2=2 r3=2
+    7.71 n=224 d=12 Z4xZ28 noncyc r2=2 r3=0
+    7.71 n=224 d=12 Z2xZ56 noncyc r2=2 r3=0
+    7.14 n=168 d=10 Z2xZ42 noncyc r2=2 r3=1

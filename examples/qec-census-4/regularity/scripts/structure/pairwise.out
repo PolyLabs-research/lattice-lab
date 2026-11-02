@@ -1,0 +1,7 @@
+r2 = 2 (two even sides)      vs cyclic group of same order (top d): {'tie': 17, 'lower': 13}  [(48, 'Z2xZ12', 6, 8), (56, 'Z2xZ14', 6, 8), (72, 'Z2xZ18', 8, 10), (72, 'Z6xZ6', 8, 10), (120, 'Z2xZ30', 12, 14), (144, 'Z2xZ36', 14, 16), (144, 'Z6xZ12', 14, 16), (168, 'Z2xZ42', 16, 18), (224, 'Z4xZ28', 18, 20), (240, 'Z2xZ60', 20, 22), (248, 'Z2xZ62', 16, 18), (288, 'Z12xZ12', 22, 24), (288, 'Z6xZ24', 22, 24)]
+r3 = 2 (Z3 x Z3 inside)      vs cyclic group of same order (top d): {'tie': 14, 'lower': 9, 'higher': 1}  [(72, 'Z3xZ12', 8, 10), (72, 'Z6xZ6', 8, 10), (90, 'Z3xZ15', 10, 12), (144, 'Z3xZ24', 14, 16), (144, 'Z6xZ12', 14, 16), (234, 'Z3xZ39', 20, 22), (288, 'Z12xZ12', 22, 24), (288, 'Z6xZ24', 22, 24), (306, 'Z3xZ51', 26, 24), (324, 'Z9xZ18', 24, 26)]
+other non-cyclic             vs cyclic group of same order (top d): {'lower': 2, 'tie': 3}  [(150, 'Z5xZ15', 14, 16), (350, 'Z5xZ35', 24, 26)]
+
+Spearman(#admissible orbits, #frontier k) = 0.61 (p=1.4e-15)
+Spearman(#admissible orbits, shortfall of top below column max) = 0.15 (p=0.07)
+Spearman(#admissible orbits, best k d^2/n) = 0.45 (p=0.00)

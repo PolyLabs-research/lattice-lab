@@ -1,0 +1,7 @@
+n = 360 rank HX = 174 rank HZ = 174 k = 12
+connected: True | group: Z6 x Z30
+score k d^2/n at d=24: 19.2
+witness weight: 24
+  ker HX, not in rowspace HZ: in kernel=False, outside stabiliser space=True
+  ker HZ, not in rowspace HX: in kernel=False, outside stabiliser space=True
+  convention i*m+j, M^T: witness in ker HX, nontrivial logical=True
