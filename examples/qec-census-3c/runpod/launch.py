@@ -49,6 +49,8 @@ JOBS = {
                           "volume": None, "script": "examples/qec-census-4/pod-validate.sh"},
     "census-3d": {"name": "lattice-lab-census-3d", "vcpu": 32, "disk": 40, "volume": None,
                   "script": "examples/qec-census-3d/pod-run.sh"},
+    "census-4d": {"name": "lattice-lab-census-4d", "vcpu": 32, "disk": 40, "volume": None,
+                  "script": "examples/qec-census-4d/pod-run.sh"},
     # cpu5c allows 15 GB of disk per vCPU, cpu3c 10: 300 GB fits both at 32 vCPU
     "spotcheck": {"name": "lattice-lab-spotcheck", "vcpu": 32, "disk": 300, "volume": None,
                   "script": "examples/qec-census-3b/spotcheck/pod-run.sh"},

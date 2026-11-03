@@ -1,0 +1,687 @@
+"""
+Census stage 4d: the classes stage 4 leaves unfinished at its registered 4-hour limit, rerun with
+DistQLDPC's cluster engine and no practical limit, and stage 4's frontier entries settled.
+
+    uv run --no-sync python examples/qec-census-4d/study.py register
+    uv run --no-sync python examples/qec-census-4d/study.py run --workers 32
+    uv run --no-sync python examples/qec-census-4d/study.py resume --workers 32  (after a stop)
+    uv run --no-sync lattice-lab verify --lab examples/qec-census-4d
+
+**Why.** Stage 4 (examples/qec-census-4, registered 2026-10-30) gives each class's exact search
+4 hours (its LIMIT, a registered setting). A class at the limit keeps only DistQLDPC's lower
+bound, and its frontier entry can stay a lower bound. Lifting the limit inside stage 4 would break
+its registration (its part H: every record made by the registered code and settings). This study
+reruns those classes instead, as stage 3d did for stage 3b/3c, and leaves stage 4's verdict as it
+is.
+
+**Registered while stage 4 runs.** The classes are selected by the rule below, from stage 4's own
+files as stage 4 writes them, so they are not listed at registration. The question records stage
+4's state when this study was registered (computed, not typed): its tori and exact runs so far,
+how many had reached the limit, its longest DistQLDPC run in its torus records, the commit the
+checkout was at, and the sizes and SHA-256 of its three files (records, checkpoint, ledger).
+
+**The selection.** Every class that stage 4's registered run (its run_started entry, named in the
+question as STAGE4_RUN) recorded with an exact status other than "complete":
+- "timelimit": DistQLDPC reached the limit (or failed) and left a lower bound;
+- "unverified": DistQLDPC gave an exact d, but no logical of that weight was found to check it.
+It reads both stage 4 files: the torus records (examples/qec-census-4/records.jsonl) and the
+checkpoint of exact results (exact-checkpoint.jsonl, lines with that run's hash), which has each
+result within minutes of its run. A class's torus record, once written, decides its status. The
+run takes connected classes on unsettled frontier entries first, then classes of tori still in
+progress, then the rest.
+
+**The job, per class.**
+- "timelimit": DistQLDPC (env DISTQLDPC, at DISTQLDPC_COMMIT, a clean checkout) with
+  -engine=cc and a CPU limit of LIMIT, 14 days, which no class is expected to reach (a d = 30
+  class should take one to two days at stage 4's rate of about 7 times per +2 in d).
+- "unverified": DistQLDPC is not run again; its d is stage 4's.
+- Then a witness of weight d: window.c (kind Z), seed by seed, seeds 0 and 1 for 600 s each,
+  then seeds 2 to 9 for 3,600 s each, stopping after the first seed whose lightest logical has
+  weight at most d. The lightest found is checked by distance.verify_witness.
+- A job that raised is tried again once (RETRIES in all); when the failed attempt already had
+  DistQLDPC's exact d, the retry keeps it and searches only for the witness.
+
+**Polling.** While stage 4 runs, the run takes each newly selected class as soon as it appears
+(the pod pulls the branch every minute), up to `workers` at once. Reads of stage 4's files hold a
+shared lock (env S4_SYNC_LOCK) that the pod's pulls take exclusively, so no read sees a file git
+is rewriting. The run ends when nothing is running and, on two polls in a row with stage 4's
+files unchanged, either stage 4's ledger holds its verdict and every selected class has a record
+here, or the stop rule has passed (no class is started more than STOP_DAYS after this run's
+run_started), or the run has halted: it starts no new class once consistency() reports a problem
+on two polls in a row. A poll that fails starts no class; once polls have failed for FAIL_SECONDS
+in a row and the running classes are recorded, the run stops, and the pod resumes it.
+
+**The predictions.**
+- **D1.** Every selected class is settled: an exact d (DistQLDPC's, exit 0) and a verified
+  Z-logical of weight d. It fails on a contradiction: a verified logical lighter than an exact d;
+  a d above stage 4's verified window bound for the class; DistQLDPC's lower bound here above
+  that window bound or above a verified logical; or DistQLDPC's upper bound here below stage 4's
+  lower bound rounded up to even. It is incomplete if a class lacks an exact d or a witness.
+- **B.** Every exact d found here is even, at least stage 4's recorded lower bound rounded up to
+  even, and at most stage 4's window bound for the class. It fails at the first exception, and
+  is incomplete while a class lacks an exact d.
+- **R (reported, not judged).** Each torus with a selected class, its frontier entries amended
+  with these d's (an unsettled entry rises to the largest d found and is settled when every
+  selected class at its k is), and stage 4's judge_torus on the amended record.
+
+The verdict: "not applicable" when no class is selected; "pass" when D1 and B pass; "fail" when
+either fails; "incomplete" otherwise; "invalid" if the code, a record's code, stage 4's run or
+DistQLDPC differ from the registration. Stage 4's registered verdict is not changed; this study
+reports beside it.
+"""
+
+from __future__ import annotations
+
+import contextlib
+import copy
+import datetime as dt
+import fcntl
+import hashlib
+import importlib.util
+import json
+import multiprocessing
+import os
+import re
+import subprocess
+import sys
+import time
+import traceback
+from concurrent.futures import ProcessPoolExecutor
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
+S4 = HERE.parent / "qec-census-4"
+S3B = HERE.parent / "qec-census-3b"
+
+
+def _load(name: str, path: Path):
+    if name in sys.modules:
+        return sys.modules[name]
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+s4 = _load("qec_census_stage4_study", S4 / "study.py")
+distq = _load("spotcheck_distq", S3B / "spotcheck" / "distq.py")
+parts = _load("qec_open_parts", HERE.parent / "qec-open-distance" / "parts.py")
+distance = parts.distance
+
+from lattice_lab.ledger import Ledger, record_lines  # noqa: E402
+from lattice_lab.study import Study, append_records, main  # noqa: E402
+
+ID = "qec-census-stage4d"
+STAGE4_RUN = "ba38b6d91c6d1481cc6d368a335cf7a98872d228584b2636964d4ff19a7a092d"
+DISTQLDPC_COMMIT = "8fe913e2ca79bda37cb755975b06b1b60416a418"  # stage 4's and stage 3d's
+LIMIT = 14 * 86400  # CPU seconds per class: no practical limit
+STOP_DAYS = 21
+POLL = 60.0
+RETRIES = 2  # a class whose job raised is tried this many times in all
+FAIL_SECONDS = 1800.0  # polls that fail for this long in a row stop the run (the pod resumes)
+UNFINISHED = ("timelimit", "unverified")
+WINDOW_FIRST = ((0, 1), 600.0)
+WINDOW_MORE = (tuple(range(2, 10)), 3600.0)
+S4_RECORDS = S4 / "records.jsonl"
+S4_CHECKPOINT = S4 / "exact-checkpoint.jsonl"
+S4_LEDGER = S4 / "ledger.jsonl"
+HASHED = {"study_py": HERE / "study.py", "tests_py": ROOT / "tests" / "test_qec_census_4d.py",
+          "distq_py": S3B / "spotcheck" / "distq.py", "parts_py": parts.__file__,
+          "window_c": parts.WINDOW_C, "distance_py": distance.__file__,
+          "bb_py": parts.bb.__file__, "s4_study_py": S4 / "study.py",
+          "s3b_study_py": S3B / "study.py"}  # fmt: skip
+
+
+def code_hashes() -> dict[str, str]:
+    return {k: hashlib.sha256(Path(p).read_bytes()).hexdigest() for k, p in HASHED.items()}
+
+
+def even_up(x: int | None) -> int | None:
+    return None if x is None else x + (x % 2)
+
+
+# -------------------------------------------------------------------- reading stage 4's files
+
+
+_HELD = [0]  # readers open in this process: only the outermost takes the lock
+
+
+@contextlib.contextmanager
+def _reading():
+    """A shared lock on S4_SYNC_LOCK, which the pod's pulls take exclusively (none when unset).
+    Re-entrant: a read inside another (consistency() inside decide()) takes no second lock."""
+    path = os.environ.get("S4_SYNC_LOCK")
+    with contextlib.ExitStack() as stack:
+        if path and not _HELD[0]:
+            fh = stack.enter_context(open(path, "a"))
+            fcntl.flock(fh, fcntl.LOCK_SH)
+            stack.callback(fcntl.flock, fh, fcntl.LOCK_UN)
+        _HELD[0] += 1
+        try:
+            yield
+        finally:
+            _HELD[0] -= 1
+
+
+def _lines(path: Path):
+    """Whole JSON lines; a line cut short (a write in progress, or a stop) is skipped."""
+    if not path.exists():
+        return
+    for line in path.read_text(errors="replace").splitlines():
+        try:
+            yield json.loads(line)
+        except json.JSONDecodeError:
+            continue
+
+
+def _stamp() -> tuple:
+    out = [STAGE4_RUN]
+    for p in (S4_CHECKPOINT, S4_RECORDS, S4_LEDGER):
+        st = p.stat() if p.exists() else None
+        out.append((str(p), st.st_mtime_ns if st else 0, st.st_size if st else 0))
+    return tuple(out)
+
+
+def key(c: dict) -> str:
+    return f"{c['torus'][0]}x{c['torus'][1]}:{c['class_key']}"
+
+
+def _d4(e: dict) -> int | None:
+    """Stage 4's exact d for an 'unverified' class: DistQLDPC's, which fast4 also keeps as the
+    class's lower bound."""
+    if e.get("status") != "unverified":
+        return None
+    return (e.get("distqldpc") or {}).get("d") or e.get("lower")
+
+
+_CACHE: dict = {}
+
+
+def _read_selection() -> list[dict]:
+    out: dict[str, dict] = {}
+    for c in _lines(S4_CHECKPOINT):
+        e = c.get("exact") or {}
+        if c.get("run") != STAGE4_RUN or e.get("status") not in UNFINISHED:
+            continue
+        item = {"torus": [c["l"], c["m"]], "n": 2 * c["l"] * c["m"], "k": None,
+                "A": c["A"], "B": c["B"], "class_key": c["key"], "status": e["status"],
+                "lower": e.get("lower"), "d4": _d4(e), "upper": None, "connected": None,
+                "entry_settled": None, "from": "checkpoint"}  # fmt: skip
+        out[key(item)] = item
+    for r in _lines(S4_RECORDS):
+        if r.get("job") != "torus":
+            continue
+        best = r.get("best", {}).get("connected", {})
+        for row in r.get("rows") or []:
+            e = row.get("exact") or {}
+            k = f"{r['l']}x{r['m']}:{json.dumps(row['key'])}"
+            if e.get("status") not in UNFINISHED:
+                out.pop(k, None)  # the torus record decides
+                continue
+            entry = best.get(str(row["k"]))
+            out[k] = {"torus": [r["l"], r["m"]], "n": r["n"], "k": row["k"], "A": row["A"],
+                      "B": row["B"], "class_key": json.dumps(row["key"]), "status": e["status"],
+                      "lower": e.get("lower"), "d4": _d4(e), "upper": row.get("upper"),
+                      "connected": row.get("connected"),
+                      "entry_settled": None if entry is None else entry["settled"],
+                      "from": "records"}  # fmt: skip
+    return [out[k] for k in sorted(out)]
+
+
+def _snapshot() -> tuple[list[dict], bool, tuple]:
+    """One view of stage 4's files, under the shared lock: the selection (read again only when a
+    file changed), whether stage 4's ledger ends with its verdict, and the files' stamp."""
+    with _reading():
+        stamp = _stamp()
+        if _CACHE.get("stamp") != stamp:
+            _CACHE.update(stamp=stamp, rows=_read_selection())
+        return _CACHE["rows"], _last_kind(S4_LEDGER) == "verdict", stamp
+
+
+def selected() -> list[dict]:
+    """The classes to rerun (module docstring, "The selection"), in a fixed order."""
+    return _snapshot()[0]
+
+
+def priority(c: dict) -> int:
+    """Connected classes on unsettled entries first, then tori in progress, then the rest."""
+    if c["from"] == "records" and c["connected"] and c["entry_settled"] is False:
+        return 0
+    return 1 if c["from"] == "checkpoint" else 2
+
+
+def _last_kind(path: Path) -> str | None:
+    """The kind of a ledger's last entry, from the end of the file: an entry's keys are sorted,
+    and "kind" follows its (possibly very long) body."""
+    if not path.exists():
+        return None
+    with open(path, "rb") as fh:
+        fh.seek(0, 2)
+        size = fh.tell()
+        fh.seek(max(0, size - 65536))
+        tail = fh.read().decode("utf-8", errors="replace").rstrip("\n")
+    last = tail.rsplit("\n", 1)[-1]
+    found = re.findall(r'"kind": *"([a-z_]+)"', last)
+    return found[-1] if found else None
+
+
+def stage4_ended() -> bool:
+    return _snapshot()[1]
+
+
+def _stage4_run() -> str | None:
+    """The hash of stage 4's run_started entry. It comes before its observations and verdict,
+    so the (very long) lines after it are never parsed."""
+    if not S4_LEDGER.exists():
+        return None
+    with open(S4_LEDGER, errors="replace") as fh:
+        for line in fh:
+            try:
+                e = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if e.get("kind") == "run_started":
+                return e.get("hash")
+    return None
+
+
+def stage4_state() -> dict:
+    """Stage 4's files as this study sees them: its counts, its unfinished classes, its longest
+    exact run, and each file's size and SHA-256 (the question records this at registration)."""
+    with _reading():
+        tori = runs = 0
+        statuses: dict[str, int] = {}
+        longest = 0.0
+        for r in _lines(S4_RECORDS):
+            if r.get("job") != "torus":
+                continue
+            tori += 1
+            for row in r.get("rows") or []:
+                e = row.get("exact")
+                if not e:
+                    continue
+                runs += 1
+                statuses[e["status"]] = statuses.get(e["status"], 0) + 1
+                longest = max(longest, (e.get("distqldpc") or {}).get("seconds") or 0.0)
+        files = {}
+        for p in (S4_RECORDS, S4_CHECKPOINT, S4_LEDGER):
+            data = p.read_bytes() if p.exists() else b""
+            files[p.name] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+        sel = _read_selection()
+
+    def git(*args: str) -> str:
+        try:
+            return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True,
+                                  text=True, check=True).stdout.strip()  # fmt: skip
+        except Exception:
+            return ""
+
+    names = [str(p.relative_to(ROOT)) for p in (S4_RECORDS, S4_CHECKPOINT, S4_LEDGER)
+             if p.is_relative_to(ROOT)]  # fmt: skip
+    return {"tori": tori, "exact_runs": runs, "statuses": statuses,
+            "longest_distqldpc_seconds": longest, "selected": [key(c) for c in sel],
+            "files": files, "commit": git("rev-parse", "HEAD"),
+            "files_clean": (not git("status", "--porcelain", "--", *names)) if names
+            else None}  # fmt: skip
+
+
+# -------------------------------------------------------------------- registration
+
+
+def question() -> dict:
+    st = stage4_state()
+    reached = sum(v for k, v in st["statuses"].items() if k in UNFINISHED)
+    return {"id": ID, "title": "Census stage 4d: the classes stage 4 leaves at its 4-hour limit, "
+                               "rerun with DistQLDPC and no practical limit",
+            "continues": ["examples/qec-census-4"], "stage4_run": STAGE4_RUN,
+            "selection": "every class stage 4's registered run (stage4_run) records with exact "
+                         "status 'timelimit' or 'unverified', from its torus records and its "
+                         "checkpoint; a torus record, once written, decides a class's status",
+            "stage4_at_registration": st,
+            "known_at_registration": f"stage 4 had {st['tori']} of its 110 tori and "
+                                     f"{st['exact_runs']} exact runs in its records, {reached} "
+                                     f"of them unfinished; its longest DistQLDPC run took "
+                                     f"{st['longest_distqldpc_seconds']:.0f} s; "
+                                     f"{len(st['selected'])} classes were selected. d is even "
+                                     "for this family (docs/code-census.md, Proved 6). Stage "
+                                     "4's rate is about 7 times per +2 in d (its records), so a "
+                                     "d = 30 class should take one to two days.",
+            "seen_before": "this study's instrument (DistQLDPC's cc engine at the commit below, "
+                           "window.c, verify_witness) is stage 4's and stage 3d's, run by stage "
+                           "4 on every class it computed; no class this study selects has been "
+                           "rerun by it",
+            "distqldpc_commit": DISTQLDPC_COMMIT, "limit": LIMIT, "stop_days": STOP_DAYS,
+            "window": {"first": WINDOW_FIRST, "more": WINDOW_MORE}, "retries": RETRIES,
+            "sha256": code_hashes()}  # fmt: skip
+
+
+def predictions() -> list[dict]:
+    return [{"id": "D1", "claim": "every selected class is settled: an exact d by DistQLDPC's cc "
+                                  "engine (exit 0; stage 4's for an 'unverified' class) and a "
+                                  "verified Z-logical of weight d",
+             "fails_if": "a verified logical is lighter than an exact d; a d above stage 4's "
+                         "verified window bound; DistQLDPC's lower bound here above that bound "
+                         "or above a verified logical; or DistQLDPC's upper bound here below "
+                         "stage 4's lower bound rounded up to even",
+             "incomplete_if": "a selected class lacks an exact d or a weight-d witness"},
+            {"id": "B", "claim": "every exact d is even, at least stage 4's recorded lower bound "
+                                 "rounded up to even, and at most stage 4's window bound"},
+            {"id": "R", "claim": "reported, not judged: each affected torus's amended "
+                                 "frontier entries and stage 4's judge_torus on its amended "
+                                 "record"}]  # fmt: skip
+
+
+def _registered() -> dict | None:
+    entries = Ledger(HERE / "ledger.jsonl").entries
+    return entries[0]["body"] if entries else None
+
+
+def distqldpc_commit() -> str | None:
+    """DistQLDPC's commit, or None if it cannot be read or the checkout has local changes."""
+    try:
+        head = ["git", "-C", str(distq.DISTQ), "rev-parse", "HEAD"]
+        dirty = ["git", "-C", str(distq.DISTQ), "status", "--porcelain", "--untracked-files=no"]
+        commit = subprocess.run(head, capture_output=True, text=True, check=True).stdout.strip()
+        changes = subprocess.run(dirty, capture_output=True, text=True, check=True).stdout.strip()
+        return None if changes else commit
+    except Exception:
+        return None
+
+
+def consistency() -> list[str]:
+    """Problems with the registration as deployed; a fault reading it is one too. It reads under
+    the lock, so a pull rewriting stage 4's ledger (or the code) is never seen midway."""
+    try:
+        with _reading():
+            return _problems()
+    except Exception as exc:
+        return [f"the registration could not be checked: {exc!r}"]
+
+
+def _problems() -> list[str]:
+    q = _registered()
+    if q is None:
+        return ["stage 4d is not registered"]
+    problems = []
+    if q["sha256"] != code_hashes():
+        problems.append("the code differs from the registration")
+    run4 = _stage4_run()
+    if run4 != STAGE4_RUN or q.get("stage4_run") != STAGE4_RUN:
+        problems.append(f"stage 4's run is {run4}, registered {q.get('stage4_run')}")
+    return problems
+
+
+# -------------------------------------------------------------------- the job
+
+
+def witness(A, B, ell: int, m: int, d: int, schedule=None) -> dict:
+    """window.c for a logical of weight at most d, seed by seed (module docstring); the lightest
+    found, checked."""
+    windows = []
+    for seeds, seconds in schedule or (WINDOW_FIRST, WINDOW_MORE):
+        reached = False
+        for seed in seeds:
+            w = parts.window(A, B, ell, m, "Z", seeds=(seed,), seconds=seconds, workers=1)
+            windows.append({"seed": seed, **{k: w[k] for k in ("upper", "witness", "runs",
+                                                                "seconds")}})  # fmt: skip
+            if w["upper"] is not None and w["upper"] <= d:
+                reached = True
+                break
+        if reached:
+            break
+    best = min((w for w in windows if w["witness"]), key=lambda w: w["upper"], default=None)
+    check = distance.verify_witness(A, B, ell, m, "Z", best["witness"]) if best else None
+    return {"window": windows, "witness": best["witness"] if best else None,
+            "witness_check": check}  # fmt: skip
+
+
+def job(c: dict, limit: int = LIMIT, schedule=None, prior: dict | None = None) -> dict:
+    """One class (module docstring, "The job"). `prior` is a failed attempt's DistQLDPC result
+    with an exact d, kept instead of running DistQLDPC again."""
+    A, B = [tuple(t) for t in c["A"]], [tuple(t) for t in c["B"]]
+    ell, m = c["torus"]
+    t0 = time.time()
+    out = {"key": key(c), "class": c, "study": ID, "sha256": code_hashes(),
+           "pod": os.environ.get("RUNPOD_POD_ID")}  # fmt: skip
+    try:
+        if c["status"] == "unverified" and c.get("d4"):
+            d = int(c["d4"])
+            out["d_from"] = "stage 4"
+        else:
+            if prior is not None:
+                r = prior
+                out["d_from"] = "DistQLDPC, kept from a failed attempt"
+            else:
+                r = distq.run(A, B, ell, m, engine="cc", limit=int(limit))
+                r["commit"] = distqldpc_commit()
+                out["d_from"] = "DistQLDPC"
+            out["distqldpc"] = r
+            d = r["d"] if r["returncode"] == 0 else None
+        out["d"] = d
+        if d is not None:
+            out |= witness(A, B, ell, m, d, schedule)
+    except Exception:
+        out["error"] = traceback.format_exc()[-2000:]
+    out["seconds"] = round(time.time() - t0, 1)
+    return out
+
+
+# -------------------------------------------------------------------- the run
+
+
+def _records(path: Path) -> list[dict]:
+    return [json.loads(x) for _, _, x in record_lines(path)] if path.exists() else []
+
+
+def _done(path: Path) -> set[str]:
+    """Classes finished here: a record without an error, or RETRIES records with one."""
+    ok, errors = set(), {}
+    for r in _records(path):
+        if "error" in r:
+            errors[r["key"]] = errors.get(r["key"], 0) + 1
+        else:
+            ok.add(r["key"])
+    return ok | {k for k, n in errors.items() if n >= RETRIES}
+
+
+def _prior(path: Path, k: str) -> dict | None:
+    """A failed attempt's DistQLDPC result with an exact d at the registered commit, if any."""
+    for r in reversed(_records(path)):
+        q = r.get("distqldpc") or {}
+        if r["key"] == k and "error" in r and q.get("returncode") == 0 and q.get("d") is not None \
+                and q.get("commit") == DISTQLDPC_COMMIT:  # fmt: skip
+            return q
+    return None
+
+
+def _started_at() -> float | None:
+    entries = Ledger(HERE / "ledger.jsonl").entries
+    t = next((e["time"] for e in entries if e["kind"] == "run_started"), None)
+    return None if t is None else dt.datetime.fromisoformat(t).timestamp()
+
+
+def execute(path: Path, workers: int, run_job=None, poll: float | None = None) -> None:
+    run_job = run_job or job
+    poll = POLL if poll is None else poll
+    problems = consistency()
+    if problems:
+        raise RuntimeError("; ".join(problems))
+    if distqldpc_commit() != DISTQLDPC_COMMIT:
+        raise RuntimeError(f"DistQLDPC at {distqldpc_commit()}, registered {DISTQLDPC_COMMIT}")
+    started = _started_at() or time.time()
+    deadline = started + STOP_DAYS * 86400
+    running: dict = {}
+    sel: list[dict] = []
+    ready_at = None  # stage 4's stamp at the last poll where the run looked finished
+    halted = False
+    flagged = False  # consistency() reported a problem on the last good poll
+    failing_since = None
+    # a worker killed outright (out of memory) raises BrokenProcessPool here rather than hanging;
+    # the pod script then resumes, which skips every class already recorded
+    ctx = multiprocessing.get_context("fork")
+    with ProcessPoolExecutor(max_workers=workers, mp_context=ctx) as pool:
+        while True:
+            fresh = True
+            try:
+                sel, ended, stamp = _snapshot()
+                problems = consistency()
+                if problems and flagged and not halted:
+                    halted = True
+                    print(f"starting no new class: {problems}", flush=True)
+                flagged = bool(problems)
+                failing_since = None
+            except Exception:  # a failed read: keep the last good selection, poll again
+                fresh = False
+                failing_since = failing_since or time.time()
+                print("a poll failed:", traceback.format_exc()[-500:], flush=True)
+            done = _done(path)
+            todo = sorted((c for c in sel if key(c) not in done and key(c) not in running),
+                          key=lambda c: (priority(c), key(c)))  # fmt: skip
+            if fresh and time.time() < deadline and not halted:
+                for c in todo[: max(0, workers - len(running))]:
+                    running[key(c)] = pool.submit(run_job, c, prior=_prior(path, key(c)))
+                    print(f"started {key(c)} ({c['status']}, lower {c['lower']})", flush=True)
+            for k in [k for k, f in running.items() if f.done()]:
+                rec = running.pop(k).result()
+                append_records(path, [rec])
+                w = rec.get("witness_check") or {}
+                print(f"{k}: d={rec.get('d')} witness={w.get('weight')}"
+                      f"{' ERROR' if 'error' in rec else ''}", flush=True)  # fmt: skip
+            if not fresh:
+                # failing this long: stop once the running classes are recorded (the pod resumes)
+                if not running and time.time() - failing_since > FAIL_SECONDS:
+                    raise RuntimeError(f"polls have failed for over {FAIL_SECONDS:.0f} s")
+                ready_at = None
+                time.sleep(poll)
+                continue
+            done = _done(path)
+            waiting = [c for c in sel if key(c) not in done]
+            finished = not running and (time.time() >= deadline or halted or
+                                        (ended and not waiting))  # fmt: skip
+            if finished and ready_at == stamp:
+                break  # the same state on two polls in a row
+            ready_at = stamp if finished else None
+            time.sleep(poll)
+
+
+# -------------------------------------------------------------------- the verdict
+
+
+def assess(rec: dict | None, c: dict) -> str:
+    """'settled', 'contradiction' or 'open' for one selected class."""
+    if rec is None:
+        return "open"
+    d, w = rec.get("d"), rec.get("witness_check")
+    r = rec.get("distqldpc") or {}
+    verified = w is not None and w["logical"]
+    lighter = verified and d is not None and w["weight"] < d
+    above = d is not None and c.get("upper") is not None and d > c["upper"]
+    lo, hi = r.get("lower"), r.get("upper")
+    lower_above = lo is not None and ((c.get("upper") is not None and lo > c["upper"]) or
+                                      (verified and lo > w["weight"]))  # fmt: skip
+    upper_below = hi is not None and c.get("lower") is not None and hi < even_up(c["lower"])
+    if lighter or above or lower_above or upper_below:
+        return "contradiction"
+    if "error" in rec or d is None:
+        return "open"
+    if verified and w["weight"] == d:
+        return "settled"
+    return "open"
+
+
+def in_bounds(d: int, c: dict) -> bool:
+    lo = even_up(c.get("lower"))
+    return d % 2 == 0 and (lo is None or d >= lo) and (c.get("upper") is None or d <= c["upper"])
+
+
+def amended(rec: dict, ds: dict[int, list[int | None]]) -> dict:
+    """Stage 4's torus record with each unsettled best entry raised to the largest d found here,
+    and settled when every selected class at that k has one."""
+    rec = copy.deepcopy(rec)
+    for k, v in rec["best"]["connected"].items():
+        got = ds.get(int(k))
+        if not v["settled"] and got:
+            known = [d for d in got if d is not None]
+            if known:
+                v["d"] = max([v["d"] or 0, *known])
+            if len(known) == len(got):
+                v.update(settled=True, unresolved=0)
+    return rec
+
+
+def report(sel: list[dict], last: dict[str, dict]) -> dict[str, dict]:
+    """R: each affected torus's amended frontier and stage 4's judge_torus on it."""
+    by_torus: dict[str, dict[int, list]] = {}
+    for c in sel:
+        if c.get("k") is None or not c.get("connected"):
+            continue
+        rec = last.get(key(c))
+        d = rec.get("d") if rec and assess(rec, c) == "settled" else None
+        name = f"{c['torus'][0]}x{c['torus'][1]}"
+        by_torus.setdefault(name, {}).setdefault(c["k"], []).append(d)
+    out = {}
+    for r in _lines(S4_RECORDS):
+        name = f"{r.get('l')}x{r.get('m')}"
+        if r.get("job") != "torus" or name not in by_torus:
+            continue
+        a = amended(r, by_torus[name])
+        j = s4.judge_torus(a)
+        out[name] = {"best": {k: {"d": v["d"], "settled": v["settled"]} for k, v in
+                              a["best"]["connected"].items()},
+                     "judge": {p: j[p] for p in ("P0", "E", "S2", "G", "S1")}}  # fmt: skip
+    return out
+
+
+def decide(rows: list[dict], registered: list[dict]) -> dict:
+    with _reading():  # one view of stage 4's files, no pull midway
+        problems = consistency()
+        hashes = code_hashes()
+        # a class's record without an error counts over its failed attempts
+        last: dict[str, dict] = {}
+        for r in rows:
+            if r["key"] not in last or "error" in last[r["key"]]:
+                last[r["key"]] = r
+            if r.get("sha256") != hashes:
+                problems.append(f"{r['key']}: made by other code")
+        sel = _read_selection()
+        stamp = _stamp()
+        states = {key(c): assess(last.get(key(c)), c) for c in sel}
+        commits = sorted({last[k]["distqldpc"].get("commit") for k in states
+                          if k in last and "distqldpc" in last[k]}, key=str)  # fmt: skip
+        if commits not in ([DISTQLDPC_COMMIT], []):
+            problems.append(f"DistQLDPC commits {commits}")
+        contradictions = [k for k, s in states.items() if s == "contradiction"]
+        open_ = [k for k, s in states.items() if s == "open"]
+        with_d = {key(c): c for c in sel if (last.get(key(c)) or {}).get("d") is not None}
+        outside = [k for k, c in with_d.items() if not in_bounds(last[k]["d"], c)]
+        if not sel:
+            d1 = b = "not applicable"
+        else:
+            d1 = "fail" if contradictions else ("incomplete" if open_ else "pass")
+            b = "fail" if outside else ("pass" if len(with_d) == len(sel) else "incomplete")
+        if problems:
+            verdict = "invalid"
+        elif not sel:
+            verdict = "not applicable"
+        elif "fail" in (d1, b):
+            verdict = "fail"
+        else:
+            verdict = "pass" if d1 == b == "pass" else "incomplete"
+        return {"D1": d1, "B": b, "verdict": verdict, "selected": [key(c) for c in sel],
+                "settled": sum(s == "settled" for s in states.values()),
+                "contradictions": contradictions, "open": open_, "outside_bounds": outside,
+                "R": report(sel, last), "problems": sorted(set(problems)),
+                "distqldpc_commits": commits, "stage4_ended": _last_kind(S4_LEDGER) == "verdict",
+                "stage4_files": {p[0].rsplit("/", 1)[-1]: {"mtime_ns": p[1], "bytes": p[2]}
+                                 for p in stamp[1:]},
+                "seconds_max": max((last[k]["seconds"] for k in states if k in last),
+                                   default=None)}  # fmt: skip
+
+
+STUDY = Study(directory=HERE, question=question, predictions=predictions, execute=execute,
+              decide=decide)  # fmt: skip
+
+if __name__ == "__main__":
+    main(STUDY)
