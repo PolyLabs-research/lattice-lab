@@ -123,6 +123,9 @@
           <tr><td>A quantum code's logical qubits, read off the torus's characters</td><td>3,000 random bivariate bicycle codes at 20 sizes, and 12 published entries (ten codes, two in two versions), IBM's gross code among them</td><td><span class="badge ok">3,000 of 3,000</span> agree with plain linear algebra, and all 12 published values are reproduced</td></tr>
           <tr><td>The same 12 codes' published distances, computed blind by an exhaustive search and an integer program</td><td>12 published entries, up to 288 qubits; method checks on 200 random, 14 toric and 9 new codes</td><td><span class="badge ok">12 of 12</span> reproduced, d = 18 for the largest in 3 minutes. <span class="badge bad">method check failed</span> once: the solver reported a wrong optimum on 1 of 200 random codes</td></tr>
           <tr><td>The distance tools, with the solver fault fixed, on codes nobody had looked at</td><td>fresh codes at reserved sizes; the known fault cases; 142 codes of the kinds where the fault lives, with the unfixed solver alongside</td><td><span class="badge ok">held</span> every part; the unfixed solver was wrong on 3 of the fresh codes</td></tr>
+          <tr><td>The open distances of two larger published codes, [[360,12,≤24]] and [[756,16,≤34]]</td><td>an exhaustive search split across 4 cores, with a stronger cut tested on fresh codes first, and checked logicals</td><td><span class="badge ok">held</span> [[360,12]] has d = 24 exactly; [[756,16]] has 30 ≤ d ≤ 34</td></tr>
+          <tr><td>A census's predictions for every weight-6 code on 122 sizes it held back, up to 300 qubits, among them that no code beats the published record k d²/n = 13.5</td><td>253,370 code classes, registered before any was computed</td><td><span class="badge bad">refuted</span> [[294,10,20]] scores 13.6, above the published [[288,12,18]]; an independent check of 20 frontier codes with other tools agreed everywhere</td></tr>
+          <tr><td>The 154 classes that run left unfinished have d = 24, as the parity of d predicted</td><td>154 classes on 9 tori, rerun with a second distance tool</td><td><span class="badge ok">154 of 154</span></td></tr>
           <tr><td>The deep dive's classification of rule 4850's family, the hexagon family</td><td>41 held-out predictions of period odd parts, at sizes from 13 to 1,861</td><td><span class="badge ok">35 of 35 tested</span> the six at the largest sizes, 709 to 1,861, were not tested: two ran out of time, and four were recorded as not run</td></tr>
         </tbody>
       </table>
@@ -191,7 +194,9 @@
         codes, IBM's gross code among them. A code's logical qubits are read off the same
         characters. A registered test agreed with plain linear algebra on 3,000 of 3,000 random
         codes and reproduced all 12 published values, and a second reproduced all 12 published
-        distances, by a search written here.</p>
+        distances, by a search written here. A census of every weight-6 code up to 300 qubits
+        then found [[294,10,20]], above the published [[288,12,18]] on k d²/n, and a fourth stage,
+        up to 400 qubits, is running.</p>
     </a>
   </div>
 </main>
