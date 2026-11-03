@@ -1,0 +1,6 @@
+phase: building
+detail: DistQLDPC 8fe913e2ca79bda37cb755975b06b1b60416a418
+updated: 2026-11-03T18:05:22Z
+pod: 2l7m76on8ziv5o
+records: 0 classes rerun
+failed polls: 0; halted: 0
