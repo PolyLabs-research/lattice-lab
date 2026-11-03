@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Census stage 4d on a RunPod CPU pod (launch.py --job census-4d). The start command clones the
 # branch and runs this script, at every start; a restart resumes the registered run. While stage
-# 4 runs, the loop pulls the branch every two minutes, so study.py sees the classes stage 4's pod
-# records at its limit as soon as they are pushed.
+# 4 runs, the loop pulls the branch every minute, so study.py sees the classes stage 4's pod
+# records at its limit as soon as they are pushed. Every pull holds an exclusive lock on
+# $S4_SYNC_LOCK, and study.py holds it shared while it reads stage 4's files, so no read sees a
+# file git is rewriting.
 #
 #  1. packages, uv; DistQLDPC built at the registered commit
 #  2. the venv; self-test (tests/test_qec_census_4d.py, including one job on [[72,12,6]])
@@ -18,6 +20,7 @@ BRANCH=ccr-ab9f0bb1-qb20sx
 STATUS=$D/runpod-status.txt
 RUNLOG=$W/s4d-run.log
 DQ_COMMIT=8fe913e2ca79bda37cb755975b06b1b60416a418
+export S4_SYNC_LOCK=$W/s4-sync.lock
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
 
@@ -36,7 +39,8 @@ push() {
     git push -q -u origin "$BRANCH" && return 0
     # a merge, not a rebase: it leaves the files study.py is appending to untouched (no stash),
     # since nothing else commits to examples/qec-census-4d
-    git pull -q --no-rebase --no-edit origin "$BRANCH" || git merge --abort 2>/dev/null
+    flock -x "$S4_SYNC_LOCK" git pull -q --no-rebase --no-edit origin "$BRANCH" \
+      || git merge --abort 2>/dev/null
     sleep "$t"
   done
   echo "PUSH FAILED: commits stay on the pod until the next successful push"; return 1
@@ -76,7 +80,7 @@ status() {
 
 hold() { echo "holding: $1"; sleep infinity; }
 
-apt-get update -q && apt-get install -yq build-essential git curl zlib1g-dev ca-certificates python3 procps \
+apt-get update -q && apt-get install -yq build-essential git curl zlib1g-dev ca-certificates python3 procps util-linux \
   || { echo "apt failed"; hold "apt"; }
 command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | env INSTALLER_NO_MODIFY_PATH=1 sh
 command -v uv >/dev/null || { status failed "uv did not install"; hold "uv"; }
@@ -137,10 +141,11 @@ for attempt in 1 2 3; do
   .venv/bin/python -u "$D/study.py" "$step" --workers "$workers" >> "$RUNLOG" 2>&1 &
   run=$!
   while kill -0 "$run" 2>/dev/null; do
-    sleep 120 & wait $!
+    sleep 60 & wait $!
     commit "Census stage 4d: records ($(records) classes)" "$D/records.jsonl" "$D/ledger.jsonl"
     # stage 4's new records and checkpoint lines; nothing else commits to examples/qec-census-4d
-    git pull -q --no-rebase --no-edit origin "$BRANCH" || git merge --abort 2>/dev/null
+    flock -x "$S4_SYNC_LOCK" git pull -q --no-rebase --no-edit origin "$BRANCH" \
+      || git merge --abort 2>/dev/null
     status running "study.py $step --workers $workers (attempt $attempt)"
   done
   wait "$run"; code=$?
