@@ -174,19 +174,70 @@ registered):
   - Stage 2's own registered verdict stays "incomplete"
     ([code-census.md](code-census.md#stage-2-the-registered-test)).
 
+**Census stage 3b/3c: every weight-6 code on the 122 held-out tori** ([code-census.md](code-census.md#stage-3b3c-every-weight-6-code-on-the-held-out-tori-registered), registered 2026-10-24, run to 2026-10-28). **Verdict: fail.**
+- **P3, the decisive prediction, fails.** [[294,10,20]] (on 3 x 49 and 7 x 21) has k d^2/n =
+  13.61, above the published [[288,12,18]]'s 13.5. Close behind are [[288,8,22]] (13.44) and
+  [[288,12,18]] on the unexposed 4 x 36.
+- **P1 and P2 fail.** The best d is not always non-increasing in k (Z_105 tori, and one class pair
+  on 7 x 21). The best d reaches 1.42 sqrt(n), beyond the 1.40 envelope.
+- **P0 and P4 hold.** Criterion E held on 122 of 122 tori and the k sample on 6,100 codes. On
+  2 x 48, Liang et al.'s [[192,8,16]] is the best code at k = 8.
+- **Deviations, disclosed.**
+  - Stage 3b hung at 2 x 67 in a trial-division routine. Stage 3c continued it with stage 3b's
+    predictions verbatim and two registered in-process fixes.
+  - Four cloud restarts lost the work on the tori in progress, and the last 25 tori ran on a
+    RunPod CPU pod.
+  - Its faster CPU settles more searches inside the 30-minute wall-clock limit. No verdict depends
+    on the machine, and isomorphic tori agree across both machines.
+- **Spot-check (2026-10-29): agreement.** A fixed sample of 20 frontier codes went through 431
+  jobs with other tools: SAT/DRAT, DistQLDPC's two engines, SCIP, an unpruned search, the other
+  logical type and long windows. No contradiction and no error.
+  - 1 sampled code is certified by a checked DRAT proof, as are 8 smaller ones.
+  - 9 are confirmed by a second method, including both [[294,10,20]] and [[288,8,22]].
+  - 10 are confirmed by a second implementation (DistQLDPC's cluster engine).
+- **Stage 3d (2026-10-30, registered): pass.** The 154 classes left unfinished on the 9
+  "incomplete" tori all have d = 24, by DistQLDPC's cluster engine, with verified witnesses. The
+  parity of d predicted this at registration.
+  - P2 now fails on those tori except 3 x 49: [[n,4,24]] for n from 270 to 288, above the cap
+    of 22.
+  - No judged stage 3b/3c torus is left incomplete. The combined verdict stays fail.
+  - Two exposed tori, which the verdict reports but does not judge, keep a lower bound at
+    k = 4: 9 x 15 (d >= 22; its isomorphic twin 3 x 45, which carries the same codes, is
+    settled at 24) and 6 x 24 (d >= 22). Stage 3d reran only judged tori.
+- **Review dashboards (2026-11-02).** A private dashboard suite for reviewing the census:
+  frontier, structure, populations, confidence, every registered study's predictions, and
+  operations. Its data layer is `examples/qec-census-4/dashboards/build.py`, tested in
+  `tests/test_census_dashboards.py`; the plan is [census-dashboards-plan.md](census-dashboards-plan.md).
+
+**Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
+- **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
+  on 4 cores.
+- **Method.** A common-zero rule for k > 0 rules out 93% of the 306 million raw codes without a
+  rank computation. Distances come from the packing search.
+- **Checks.** The census matches Lin and Pryadko's catalog at 43 of 44 comparable (n, k) pairs
+  and is never higher.
+- **Results.**
+  - It beats the trinomial form at 18 (n, k) pairs. The gross code still has the best k d^2 / n.
+  - Seven leaderboard codes with 100 < n <= 200, listed there with upper bounds only, have the
+    same d here exactly, and no code in this family does better on the tori covered.
+  - The leaderboard's codes that do better at n = 144 and 168 are non-abelian.
+- **Next.** Done: stage 3b/3c, above.
+
 **The open distances of two larger published codes** ([code-distances.md](code-distances.md#the-open-distances-examplesqec-open-distance), registered, run 2026-10-23).
 - **[[360,12]]: d = 24 exactly.** Bravyi et al. give only d <= 24.
   - A random-information-set window found a checked weight-24 logical.
   - The split exhaustive search proved nothing is lighter, in 1.9 hours on 4 cores.
-  - Later work claims the same value (seen secondhand before registration), so this confirms it
-    independently.
+  - The value was already established (Crocker, 13 Oct 2026; DistQLDPC), so this is an
+    independent recomputation.
 - **[[756,16]]: 30 <= d <= 34.**
   - The window found a checked weight-34 logical, matching the published bound.
   - A Fable consultation ($1.12, every claim checked by machine) showed that the code has no
     symmetry beyond its translations. It also proposed a packing cut for the search, which a
     second registered study tested on fresh codes and known distances.
-  - With the cut, the search proved d >= 30 in 7 hours on 4 cores. That independently confirms a
-    lower bound claimed elsewhere ([code-distances.md](code-distances.md#the-packing-cut-examplesqec-open-distance-2)).
+  - With the cut, the search proved d >= 30 in 7 hours on 4 cores. That matches the public lower
+    bound (DistQLDPC, 22 Oct 2026, one implementation) without going beyond it. Ours is a second
+    implementation of the same kind of search, not a different method
+    ([code-distances.md](code-distances.md#what-the-literature-shows-checked-2026-10-24-after-both-studies)).
   - The run stopped during a pass that could not change the result. Its rules give "hold" on
     every part, but the ledger has no verdict entry (disclosed in STOPPED.md).
 

@@ -1,0 +1,6 @@
+phase: done
+detail: verdict written
+updated: 2026-10-28T23:33:31Z
+pod: tyamwcto2avfbz
+records: 49
+torus: 10x15

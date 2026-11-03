@@ -1,0 +1,4 @@
+54
+all | pairs 54 | non-cyclic reaches cyclic top: 34 | expected if non-cyclic classes were draws from the cyclic population: [38.5, 46.2] | P(<= observed): 0.060 (p_lo) / 0.000 (p_hi)
+n<=200 | pairs 24 | non-cyclic reaches cyclic top: 12 | expected if non-cyclic classes were draws from the cyclic population: [18.9, 19.6] | P(<= observed): 0.000 (p_lo) / 0.000 (p_hi)
+n>200 | pairs 30 | non-cyclic reaches cyclic top: 22 | expected if non-cyclic classes were draws from the cyclic population: [19.6, 26.5] | P(<= observed): 0.938 (p_lo) / 0.001 (p_hi)

@@ -242,19 +242,19 @@ unfinished job.
   the [[756,16]] lower bound at 18 to 24; it reached 24. `lattice-lab verify` finds the ledger
   sound.
 - **What is not new.**
-  - Later work claims d = 24 for [[360,12]], and a lower bound of 30 for [[756,16]], with other
-    tools. Both claims were seen secondhand before registration, so ours is an
-    independent confirmation of the first, by an exhaustive search and a checked witness.
-  - Our lower bound for [[756,16]] is below that claim, and so adds no new bound.
+  - d = 24 for [[360,12]] was already established (Crocker, and DistQLDPC; "What the
+    literature shows" below). Ours is an independent recomputation.
+  - Our lower bound of 24 for [[756,16]] was below the public one of 30 (DistQLDPC).
 - **What it rests on.** The lower bounds rest on the search's argument and code, the
   translation argument behind the anchors (0, lm), and the split's coverage. The tests check the
   split against enumeration, and check that the parts add up to the unsplit pass.
 
 ## The packing cut (`examples/qec-open-distance-2`)
 
-**Result (registered, run 2026-10-23 to 24): [[756,16]] has 30 <= d <= 34.** That confirms, by
-an independent exhaustive search, the lower bound of 30 claimed elsewhere (seen secondhand, one
-engine, not cross-validated).
+**Result (registered, run 2026-10-23 to 24): [[756,16]] has 30 <= d <= 34.** That matches the
+public state, and does not go beyond it (see "What the literature shows"). Our lower bound comes
+from a second, independent implementation of the same kind of search, not from a different
+method.
 
 - **How we got there.** We asked Claude Fable whether symmetry could speed the search up
   (`consultations/2026-10-23-756-symmetry`, one call, $1.12). Its answer, checked by machine:
@@ -286,6 +286,38 @@ engine, not cross-validated).
 - **What it rests on.** The search's argument and code, the translation argument, the split's
   coverage, and the packing argument. A1, A2 and B test the cut on codes it was not developed on.
 
+## What the literature shows (checked 2026-10-24, after both studies)
+
+We read the sources directly only after both studies had run, so that the runs stayed blind. arXiv
+could not be reached from this session, so the papers were read through search summaries. The
+primary data are two public repositories, cloned and read as data.
+
+- **[[756,16]].**
+  - **Lower bound 30, from DistQLDPC** (github.com/guluchen/DistQLDPC, v1.0 of 14 Oct 2026).
+    Its rename log (`data/matrices/README.md`, at commit e52d15ba of 2026-10-23) records:
+    - lb 28 on 2026-10-21: "single canonical search, not cross-validated by a second method";
+    - lb 30 on 2026-10-22: "reproduced with relabeled seeds ... same algorithm, not a second
+      method". Its report (GH-138) calls the bound "PLAUSIBLE pending PI review".
+  - **Upper bound 34.** Witnesses come from Bravyi et al. and from Webster, Jacob and Higgott
+    (2026). DistQLDPC also verified one, on 2026-10-23.
+  - **No published lower bound** before DistQLDPC's, by DistQLDPC's own literature survey.
+  - **Webster, Jacob and Higgott** (arXiv:2603.22532; their `paper results` spreadsheets): every
+    exact method (Gurobi, SCIP, Magma, CLISAT, dist-m4ri's cluster search) ran out its 8-hour
+    limit on this code, and on [[360,12]], recording upper bounds only.
+- **[[360,12]].** d = 24 exact by C. Crocker (Zenodo, 13 Oct 2026, two programs) and by
+  DistQLDPC's cluster engine (about 1,700 s), before our study 1.
+- **How our result relates.**
+  - DistQLDPC's cluster engine is the same kind of search as ours: a check-driven cluster search,
+    level by level, from translation-orbit anchors.
+  - Its default rules already include the disjoint-check packing bound (`pack`, since
+    2026-10-15), which is our packing cut. Crocker and Lee (arXiv:2610.06820, 5 Oct 2026) use
+    one too. It also adds a parity rule (odd levels skipped: our "d is even") and a
+    stabilizer-overlap rule from Lee, which cut its time to lb 28 about fourfold.
+  - So our d >= 30 is a second, clean-room implementation of that method, with registered tests
+    on fresh codes. It is not a different method: a fault common to the method would affect both.
+  - Its value is to check DistQLDPC's code, which its own log says no second implementation had
+    done.
+
 ## Next
 
 1. **Done:** both instruments fixed and retested (above).
@@ -296,4 +328,5 @@ engine, not cross-validated).
    [[756,16]] has 30 <= d <= 34.
 4. **[[756,16]] beyond 30.** The packing search's pass at 31 (which would show d >= 32, or find a
    weight-30 logical and settle d = 30) is estimated at about 33 hours on 4 cores, and the pass
-   at 33 (for d = 34) at about ten times that.
+   at 33 (for d = 34) at about ten times that. DistQLDPC is working on this code too, with a
+   stronger rule set.

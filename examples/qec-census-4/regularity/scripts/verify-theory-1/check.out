@@ -1,0 +1,112 @@
+first-reach points (n>=48): [(48, 8), (66, 10), (90, 12), (114, 14), (144, 16), (168, 18), (204, 20), (234, 22), (270, 24), (306, 26), (354, 28)]
+strict-record points: [(48, 8), (66, 10), (90, 12), (114, 14), (144, 16), (168, 18), (204, 20), (234, 22), (270, 24), (306, 26), (354, 28)]
+counts: first-reach 11, staircase 66, all-n 79
+n with F(n) below running max (dropped by staircase): [(70, 8), (124, 10), (170, 10), (238, 20), (248, 18), (280, 22), (292, 8), (308, 24), (310, 22), (312, 24), (322, 24), (340, 18), (364, 26)]
+
+== STAIRCASE (theirs) N=66
+  c sqrt(n)            p=[1.3686] rms=1.331 max|res|=2.60  pred1000=43.3 pred2000=61.2
+  c sqrt(n ln n)       p=[0.5869] rms=0.700 max|res|=1.49  pred1000=48.8 pred2000=72.4
+  c n^b                p=[0.6318 0.6413] rms=0.599 max|res|=1.18  pred1000=53.0 pred2000=82.7
+  c n^(2/3)            p=[0.5494] rms=0.633 max|res|=1.29  pred1000=54.9 pred2000=87.2
+  c n^(3/4)            p=[0.3463] rms=1.044 max|res|=2.04  pred1000=61.6 pred2000=103.6
+  sqrt(n)(a+b ln n)    p=[0.3461 0.1874] rms=0.595 max|res|=1.18  pred1000=51.9 pred2000=79.2
+  c sqrt(n) (ln n)^g   p=[0.3929 0.7359] rms=0.594 max|res|=1.18  pred1000=51.5 pred2000=78.2
+
+== FIRST-REACH N=11
+  c sqrt(n)            p=[1.4132] rms=1.128 max|res|=1.79  pred1000=44.7 pred2000=63.2
+  c sqrt(n ln n)       p=[0.6121] rms=0.249 max|res|=0.38  pred1000=50.9 pred2000=75.5
+  c n^b                p=[0.7325 0.6225] rms=0.150 max|res|=0.29  pred1000=54.0 pred2000=83.1
+  c n^(2/3)            p=[0.5767] rms=0.412 max|res|=0.86  pred1000=57.7 pred2000=91.5
+  c n^(3/4)            p=[0.366] rms=1.091 max|res|=1.87  pred1000=65.1 pred2000=109.5
+  sqrt(n)(a+b ln n)    p=[0.5148 0.168 ] rms=0.136 max|res|=0.23  pred1000=53.0 pred2000=80.1
+  c sqrt(n) (ln n)^g   p=[0.4998 0.6206] rms=0.134 max|res|=0.22  pred1000=52.4 pred2000=78.7
+
+== ALL n>=48 (F(n)) N=79
+  c sqrt(n)            p=[1.3263] rms=2.505 max|res|=14.66  pred1000=41.9 pred2000=59.3
+  c sqrt(n ln n)       p=[0.5668] rms=2.303 max|res|=15.08  pred1000=47.1 pred2000=69.9
+  c n^b                p=[0.6588 0.6272] rms=2.290 max|res|=15.18  pred1000=50.2 pred2000=77.5
+  c n^(2/3)            p=[0.5294] rms=2.310 max|res|=15.30  pred1000=52.9 pred2000=84.0
+  c n^(3/4)            p=[0.3329] rms=2.464 max|res|=15.52  pred1000=59.2 pred2000=99.6
+  sqrt(n)(a+b ln n)    p=[0.4328 0.1628] rms=2.290 max|res|=15.18  pred1000=49.2 pred2000=74.7
+  c sqrt(n) (ln n)^g   p=[0.4312 0.6602] rms=2.291 max|res|=15.19  pred1000=48.8 pred2000=73.6
+
+residuals (fit-d) on first-reach points:
+  c sqrt(n)        [ 1.79  1.48  1.41  1.09  0.96  0.32  0.18 -0.38 -0.78 -1.28 -1.41]
+  c sqrt(n ln n)   [ 0.34  0.18  0.32  0.22  0.37 -0.04  0.16 -0.13 -0.2  -0.38 -0.1 ]
+  c n^b            [ 0.16 -0.06  0.06 -0.03  0.16 -0.21  0.07 -0.14 -0.1  -0.16  0.29]
+  c n^(3/4)        [-1.33 -1.52 -1.3  -1.23 -0.78 -0.92 -0.24 -0.1   0.38  0.78  1.87]
+
+shape spread max/min of sqrt(n ln n)/n^b on [50,400]:
+  b=0.5800 spread=4.79%  (=> best-c max rel dev ~ +-2.39%)
+  b=0.5900 spread=2.78%  (=> best-c max rel dev ~ +-1.39%)
+  b=0.6000 spread=1.40%  (=> best-c max rel dev ~ +-0.70%)
+  b=0.6030 spread=1.20%  (=> best-c max rel dev ~ +-0.60%)
+  b=0.6070 spread=1.70%  (=> best-c max rel dev ~ +-0.85%)
+  b=0.6100 spread=2.12%  (=> best-c max rel dev ~ +-1.06%)
+  b=0.6200 spread=3.81%  (=> best-c max rel dev ~ +-1.90%)
+  b=0.6300 spread=5.89%  (=> best-c max rel dev ~ +-2.94%)
+  b=0.6400 spread=8.11%  (=> best-c max rel dev ~ +-4.06%)
+  b=0.6413 spread=8.40%  (=> best-c max rel dev ~ +-4.20%)
+  b=0.6500 spread=10.38%  (=> best-c max rel dev ~ +-5.19%)
+local log-slope of sqrt(n ln n): n=50 0.628, n=100 0.609, n=200 0.594, n=400 0.583, n=1000 0.572
+
+separation using fits on STAIRCASE b=0.6413 
+  max |diff| in [50,400] = 0.74
+  1 step(s) (|diff|>=2) first at n=624
+  2 step(s) (|diff|>=4) first at n=958
+  3 step(s) (|diff|>=6) first at n=1285
+  5 step(s) (|diff|>=10) first at n=1941
+  n=400: sqrt(nlnn)=28.7 n^b=29.5 diff=0.7
+  n=600: sqrt(nlnn)=36.4 n^b=38.2 diff=1.9
+  n=1000: sqrt(nlnn)=48.8 n^b=53.0 diff=4.3
+  n=2000: sqrt(nlnn)=72.4 n^b=82.7 diff=10.4
+
+separation using fits on FIRST-REACH b=0.6225 
+  max |diff| in [50,400] = 0.56
+  1 step(s) (|diff|>=2) first at n=746
+  2 step(s) (|diff|>=4) first at n=1193
+  3 step(s) (|diff|>=6) first at n=1632
+  5 step(s) (|diff|>=10) first at n=2517
+  n=400: sqrt(nlnn)=30.0 n^b=30.5 diff=0.6
+  n=600: sqrt(nlnn)=37.9 n^b=39.3 diff=1.4
+  n=1000: sqrt(nlnn)=50.9 n^b=54.0 diff=3.1
+  n=2000: sqrt(nlnn)=75.5 n^b=83.1 diff=7.7
+
+separation using fits on ALL n b=0.6272 
+  max |diff| in [50,400] = 0.49
+  1 step(s) (|diff|>=2) first at n=763
+  2 step(s) (|diff|>=4) first at n=1209
+  3 step(s) (|diff|>=6) first at n=1649
+  5 step(s) (|diff|>=10) first at n=2534
+  n=400: sqrt(nlnn)=27.7 n^b=28.2 diff=0.5
+  n=600: sqrt(nlnn)=35.1 n^b=36.4 diff=1.3
+  n=1000: sqrt(nlnn)=47.1 n^b=50.2 diff=3.1
+  n=2000: sqrt(nlnn)=69.9 n^b=77.5 diff=7.6
+
+OUT-OF-SAMPLE: fit on n<=300, test on n>300 (stage 4, ~75% complete)
+  staircase train 52 test 14
+    c sqrt(n)            test rms=2.162 mean=-2.09  b=[1.329]
+    c sqrt(n ln n)       test rms=0.873 mean=-0.64  b=[0.582]
+    c n^b                test rms=0.713 mean=0.28  b=[0.598 0.652]
+    c n^(2/3)            test rms=0.842 mean=0.51  b=[0.554]
+    c n^(3/4)            test rms=1.949 mean=1.77  b=[0.356]
+    sqrt(n)(a+b ln n)    test rms=0.653 mean=0.14  b=[0.308 0.195]
+    c sqrt(n) (ln n)^g   test rms=0.642 mean=0.10  b=[0.378 0.76 ]
+  first-reach train 9 test 2
+    c sqrt(n)            test rms=2.012 mean=-2.01  b=[1.377]
+    c sqrt(n ln n)       test rms=0.398 mean=-0.37  b=[0.609]
+    c n^b                test rms=0.338 mean=0.23  b=[0.707 0.63 ]
+    c n^(2/3)            test rms=0.923 mean=0.85  b=[0.584]
+    c n^(3/4)            test rms=2.317 mean=2.24  b=[0.378]
+    sqrt(n)(a+b ln n)    test rms=0.242 mean=0.11  b=[0.49  0.173]
+    c sqrt(n) (ln n)^g   test rms=0.204 mean=0.04  b=[0.491 0.631]
+  all-n train 59 test 20
+    c sqrt(n)            test rms=2.888 mean=-2.03  b=[1.282]
+    c sqrt(n ln n)       test rms=2.153 mean=-0.76  b=[0.56]
+    c n^b                test rms=2.090 mean=-0.57  b=[0.733 0.606]
+    c n^(2/3)            test rms=2.012 mean=0.24  b=[0.532]
+    c n^(3/4)            test rms=2.406 mean=1.34  b=[0.341]
+    sqrt(n)(a+b ln n)    test rms=2.101 mean=-0.60  b=[0.571 0.135]
+    c sqrt(n) (ln n)^g   test rms=2.118 mean=-0.65  b=[0.523 0.54 ]
+
+bootstrap (first-reach, resample d-levels): b 2.5/50/97.5% = [0.612 0.623 0.635] ; log-exponent g = [0.582 0.622 0.675] ; sep@1000 = [2.19 3.15 4.54]

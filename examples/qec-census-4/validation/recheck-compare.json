@@ -1,0 +1,22 @@
+{
+ "tori": 2,
+ "problems": [],
+ "report": {
+  "3x49": {
+   "seconds": 539.3,
+   "exact_runs": 185,
+   "classes_both_exact": 30,
+   "agree": 30,
+   "unsettled": [],
+   "old_exact_seconds": 181671.7
+  },
+  "2x75": {
+   "seconds": 670.5,
+   "exact_runs": 158,
+   "classes_both_exact": 26,
+   "agree": 26,
+   "unsettled": [],
+   "old_exact_seconds": 6688.9
+  }
+ }
+}

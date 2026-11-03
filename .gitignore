@@ -11,3 +11,4 @@ __pycache__/
 
 # Firebase CLI deploy cache
 site/.firebase/
+examples/qec-census-3c/records.one

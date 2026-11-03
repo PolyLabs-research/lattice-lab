@@ -1,0 +1,72 @@
+entries 533 groups 141 tori 211
+isomorphic-torus conflicts: [((3, 45), 4, (24, True), 22, (9, 15))]
+unsettled entries: [(9, 15, 4, 22, '3b/3c'), (6, 24, 4, 22, '3b/3c')]
+
+== claim 1: group top vs column top (dedup by group)
+shortfall distribution (in d): {0: 120, 2: 21}
+groups more than one step below their column top: []
+
+== same (n,k), different groups: spread of d
+spread distribution: {0: 45, 2: 26, 4: 6, 6: 1, 8: 1}
+   (126, 12, [(6, 'Z3xZ21'), (10, 'Z63')])
+   (192, 8, [(12, 'Z4xZ24'), (16, 'Z2xZ48')])
+   (252, 12, [(12, 'Z3xZ42'), (16, 'Z126')])
+   (288, 8, [(18, 'Z12xZ12'), (18, 'Z4xZ36'), (20, 'Z2xZ72'), (20, 'Z6xZ24'), (22, 'Z3xZ48')])
+   (288, 16, [(8, 'Z6xZ24'), (12, 'Z12xZ12'), (12, 'Z4xZ36')])
+   (336, 10, [(18, 'Z2xZ84'), (22, 'Z168')])
+   (360, 16, [(8, 'Z3xZ60'), (16, 'Z2xZ90')])
+   (378, 16, [(12, 'Z189'), (18, 'Z3xZ63')])
+
+== claim 2: cyclic top vs best non-cyclic top, same order
+{'tie': 26, 'cyclic higher': 12, 'non-cyclic higher': 1} total 39
+   (18, 'no cyclic computed', ['Z3xZ3'])
+   (24, 'tie', 4, 4, ['Z2xZ6'])
+   (36, 'tie', 6, 6, ['Z3xZ6'])
+   (48, 'cyclic higher', 8, 6, ['Z2xZ12'])
+   (54, 'no cyclic computed', ['Z3xZ9'])
+   (56, 'cyclic higher', 8, 6, ['Z2xZ14'])
+   (72, 'cyclic higher', 10, 8, ['Z2xZ18', 'Z3xZ12', 'Z6xZ6'])
+   (90, 'cyclic higher', 12, 10, ['Z3xZ15'])
+   (96, 'tie', 12, 12, ['Z2xZ24', 'Z4xZ12'])
+   (98, 'no cyclic computed', ['Z7xZ7'])
+   (108, 'tie', 12, 12, ['Z3xZ18'])
+   (112, 'tie', 12, 12, ['Z2xZ28'])
+   (120, 'cyclic higher', 14, 12, ['Z2xZ30'])
+   (126, 'tie', 14, 14, ['Z3xZ21'])
+   (144, 'cyclic higher', 16, 14, ['Z3xZ24', 'Z6xZ12', 'Z2xZ36'])
+   (150, 'cyclic higher', 16, 14, ['Z5xZ15'])
+   (162, 'no cyclic computed', ['Z3xZ27', 'Z9xZ9'])
+   (168, 'cyclic higher', 18, 16, ['Z2xZ42'])
+   (180, 'tie', 18, 18, ['Z3xZ30'])
+   (192, 'tie', 18, 18, ['Z4xZ24', 'Z2xZ48'])
+   (196, 'tie', 18, 18, ['Z7xZ14'])
+   (198, 'tie', 18, 18, ['Z3xZ33'])
+   (216, 'tie', 20, 20, ['Z2xZ54', 'Z3xZ36', 'Z6xZ18'])
+   (224, 'tie', 20, 20, ['Z2xZ56', 'Z4xZ28'])
+   (234, 'cyclic higher', 22, 20, ['Z3xZ39'])
+   (240, 'cyclic higher', 22, 20, ['Z2xZ60'])
+   (248, 'cyclic higher', 18, 16, ['Z2xZ62'])
+   (252, 'tie', 22, 22, ['Z3xZ42'])
+   (264, 'tie', 22, 22, ['Z2xZ66'])
+   (270, 'tie', 24, 24, ['Z3xZ45'])
+   (280, 'tie', 22, 22, ['Z2xZ70'])
+   (288, 'tie', 24, 24, ['Z2xZ72', 'Z3xZ48', 'Z4xZ36', 'Z6xZ24', 'Z12xZ12'])
+   (294, 'tie', 24, 24, ['Z7xZ21'])
+   (300, 'tie', 24, 24, ['Z5xZ30'])
+   (306, 'non-cyclic higher', 24, 26, ['Z3xZ51'])
+   (312, 'tie', 24, 24, ['Z2xZ78'])
+   (324, 'tie', 26, 26, ['Z3xZ54', 'Z9xZ18'])
+   (336, 'tie', 26, 26, ['Z2xZ84'])
+   (342, 'tie', 26, 26, ['Z3xZ57'])
+   (350, 'cyclic higher', 26, 24, ['Z5xZ35'])
+   (360, 'tie', 28, 28, ['Z2xZ90', 'Z3xZ60'])
+   (378, 'tie', 28, 28, ['Z3xZ63'])
+   (384, 'tie', 28, 28, ['Z2xZ96'])
+
+== claim 2 at matched k: cyclic vs best non-cyclic at the same (n,k)
+{'tie': 44, 'cyclic higher': 18, 'non-cyclic higher': 4}
+non-cyclic higher at matched k: [(90, 8, 8, 10), (168, 12, 8, 10), (306, 4, 24, 26), (378, 16, 12, 18)]
+
+== k at which each group's top sits; k_min cyclic vs non-cyclic
+{('cyc', 'top at kmin'): 82, ('nc', 'top at kmin'): 59}
+non-cyclic groups whose k_min differs from the cyclic's: 0 []

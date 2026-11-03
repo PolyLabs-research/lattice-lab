@@ -1,0 +1,134 @@
+{
+ "tori": 16,
+ "problems": [],
+ "report": {
+  "2x75": {
+   "seconds": 928.0,
+   "exact_runs": 160,
+   "classes_both_exact": 25,
+   "agree": 25,
+   "unsettled": [],
+   "old_exact_seconds": 6688.9
+  },
+  "3x50": {
+   "seconds": 839.3,
+   "exact_runs": 160,
+   "classes_both_exact": 29,
+   "agree": 29,
+   "unsettled": [],
+   "old_exact_seconds": 6964.1
+  },
+  "5x30": {
+   "seconds": 492.7,
+   "exact_runs": 162,
+   "classes_both_exact": 29,
+   "agree": 29,
+   "unsettled": [],
+   "old_exact_seconds": 2642.8
+  },
+  "6x25": {
+   "seconds": 961.8,
+   "exact_runs": 160,
+   "classes_both_exact": 25,
+   "agree": 25,
+   "unsettled": [],
+   "old_exact_seconds": 14157.8
+  },
+  "10x15": {
+   "seconds": 516.5,
+   "exact_runs": 162,
+   "classes_both_exact": 29,
+   "agree": 29,
+   "unsettled": [],
+   "old_exact_seconds": 2974.5
+  },
+  "3x49": {
+   "seconds": 847.4,
+   "exact_runs": 191,
+   "classes_both_exact": 31,
+   "agree": 31,
+   "unsettled": [],
+   "old_exact_seconds": 181671.7
+  },
+  "7x21": {
+   "seconds": 571.4,
+   "exact_runs": 181,
+   "classes_both_exact": 45,
+   "agree": 45,
+   "unsettled": [],
+   "old_exact_seconds": 4649.4
+  },
+  "2x72": {
+   "seconds": 604.4,
+   "exact_runs": 230,
+   "classes_both_exact": 33,
+   "agree": 33,
+   "unsettled": [],
+   "old_exact_seconds": 31357.9
+  },
+  "4x36": {
+   "seconds": 323.3,
+   "exact_runs": 235,
+   "classes_both_exact": 36,
+   "agree": 36,
+   "unsettled": [],
+   "old_exact_seconds": 4142.6
+  },
+  "3x48": {
+   "seconds": 497.0,
+   "exact_runs": 197,
+   "classes_both_exact": 36,
+   "agree": 36,
+   "unsettled": [],
+   "old_exact_seconds": 2583.8
+  },
+  "2x51": {
+   "seconds": 48.6,
+   "exact_runs": 67,
+   "classes_both_exact": 11,
+   "agree": 11,
+   "unsettled": [],
+   "old_exact_seconds": 114.2
+  },
+  "3x40": {
+   "seconds": 377.9,
+   "exact_runs": 169,
+   "classes_both_exact": 30,
+   "agree": 30,
+   "unsettled": [],
+   "old_exact_seconds": 901.4
+  },
+  "2x48": {
+   "seconds": 146.1,
+   "exact_runs": 141,
+   "classes_both_exact": 21,
+   "agree": 21,
+   "unsettled": [],
+   "old_exact_seconds": 24.7
+  },
+  "3x35": {
+   "seconds": 70.4,
+   "exact_runs": 228,
+   "classes_both_exact": 49,
+   "agree": 49,
+   "unsettled": [],
+   "old_exact_seconds": 242.3
+  },
+  "5x21": {
+   "seconds": 73.4,
+   "exact_runs": 228,
+   "classes_both_exact": 49,
+   "agree": 49,
+   "unsettled": [],
+   "old_exact_seconds": 253.8
+  },
+  "8x15": {
+   "seconds": 368.8,
+   "exact_runs": 169,
+   "classes_both_exact": 30,
+   "agree": 30,
+   "unsettled": [],
+   "old_exact_seconds": 682.1
+  }
+ }
+}

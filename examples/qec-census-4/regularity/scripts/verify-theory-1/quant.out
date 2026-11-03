@@ -1,0 +1,15 @@
+admissible n in [48,400]: 79
+c sqrt(n ln n)   min #mismatches vs even staircase R(n): (5, [np.float64(0.6173)])
+c sqrt(n)        min #mismatches vs even staircase R(n): (33, [np.float64(1.4636), np.float64(1.4637), np.float64(1.4638)])
+c n^(3/4)        min #mismatches vs even staircase R(n): (38, [np.float64(0.3633), np.float64(0.3633), np.float64(0.3633)])
+c n^(2/3)        min #mismatches vs even staircase R(n): (15, [np.float64(0.5778), np.float64(0.5778), np.float64(0.5779)])
+c n^b            min #mismatches vs even staircase R(n): (3, (np.float64(0.6225), np.float64(0.738)))
+b values achieving the n^b minimum: 0.622 ... 0.624 (3 values)
+b values within +1 mismatches: 0.612..0.624
+b values within +2 mismatches: 0.596..0.630
+
+isomorphism classes with >1 torus: 46
+  INCONSISTENT best d within group Z_3 x Z_45: {(3, 45): 24, (9, 15): 22}
+  per-k mismatch ((3, 45), 4) {(3, 45): (24, True, '3b/3c'), (9, 15): (22, False, '3b/3c')}
+unsettled: [(9, 15, 4, 22), (6, 24, 4, 22)]
+distinct groups (dedup) per 50-band: Counter({150: 21, 250: 21, 300: 20, 200: 19, 50: 18, 100: 18, 350: 13, 0: 11})

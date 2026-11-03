@@ -1,0 +1,26 @@
+median CV of (d+k, kd^2, kd) on the real k-grids under synthetic truths:
+  obs                              0.072 0.392 0.265
+  truth kd^2=S (even-rounded)      0.093 0.077 0.252
+  truth d+k=C (even-rounded)       0.000 0.352 0.236
+  truth d=C const                  0.204 0.447 0.447
+
+shared-shape families (1 per-group scale + 1 global shape param), rms_d over 30 groups:
+  d=C-c*k            best shape=0.95  pooled rms=2.00 median rms=1.65
+      c=0.5: pooled rms=3.05  median CV(d+c k)=0.131
+      c=0.75: pooled rms=2.24  median CV(d+c k)=0.083
+      c=1.0: pooled rms=2.02  median CV(d+c k)=0.072
+      c=1.25: pooled rms=2.57  median CV(d+c k)=0.085
+      c=1.5: pooled rms=3.53  median CV(d+c k)=0.108
+  d=D(1-k/K)         best shape=28.00  pooled rms=1.97 median rms=1.68
+  d=D k^-g           best shape=0.55  pooled rms=2.78 median rms=2.41
+  d=D sqrt(1-k/K)    best shape=24.00  pooled rms=2.60 median rms=2.36
+  d=D exp(-k/K)      best shape=15.00  pooled rms=2.03 median rms=1.77
+
+per-group OLS slope a by n band:
+  n in (0,150]: groups=8 median a=0.72 range 0.45-0.82  median CV(d+k)=0.104  mean (d+k)(kmax)-(d+k)(kmin) = +3.50
+  n in (150,300]: groups=16 median a=1.04 range 0.66-1.45  median CV(d+k)=0.063  mean (d+k)(kmax)-(d+k)(kmin) = +0.75
+  n in (300,400]: groups=6 median a=1.25 range 0.91-1.60  median CV(d+k)=0.072  mean (d+k)(kmax)-(d+k)(kmin) = -3.00
+
+slope on k<=12 only: groups=27 median a=0.80 Spearman(n,a)=0.50 p=0.008
+quadratic coefficient sign: concave(<0) 19/30, median -0.043
+(d+k)(k_max)-(d+k)(k_min) distribution: [(np.int64(-8), 2), (np.int64(-6), 1), (np.int64(-4), 1), (np.int64(-2), 8), (np.int64(0), 2), (np.int64(2), 6), (np.int64(4), 6), (np.int64(6), 2), (np.int64(8), 2)]
