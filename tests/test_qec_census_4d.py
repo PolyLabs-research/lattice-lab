@@ -5,7 +5,6 @@ frontier, and jobs on [[72,12,6]] (skipped without DistQLDPC)."""
 import importlib.util
 import json
 import sys
-import threading
 import time
 from pathlib import Path
 
@@ -203,34 +202,91 @@ def stand_in(c, prior=None):
 
 
 def test_execute_polls_until_stage4_ends(stage4, tmp_path, monkeypatch):
+    """The run keeps polling while stage 4 runs, takes up the class stage 4 adds, and ends once
+    stage 4's verdict is in. One thread: stage 4's progress is written from inside a poll, and a
+    run that missed stage 4's end would stop at a one-minute stop rule instead of hanging."""
     monkeypatch.setattr(S, "consistency", lambda: [])
     monkeypatch.setattr(S, "distqldpc_commit", lambda: S.DISTQLDPC_COMMIT)
+    monkeypatch.setattr(S, "_started_at", lambda: None)  # not this checkout's ledger
+    monkeypatch.setattr(S, "STOP_DAYS", 60 / 86400)
     out = tmp_path / "4d.jsonl"
     stage4([], [cline(6, 33, A1, B0, "timelimit", lower=28)])
-    errors = []
-
-    def go():
-        try:
-            S.execute(out, 2, run_job=stand_in, poll=0.05)
-        except Exception as exc:
-            errors.append(exc)
-
-    t = threading.Thread(target=go)
-    t.start()
-    deadline = time.time() + 30
-    while not (out.exists() and out.read_text().strip()) and time.time() < deadline:
-        time.sleep(0.05)
-    time.sleep(0.5)
-    assert t.is_alive(), "the run ended while stage 4 was still running"
     # stage 4 finishes the torus (a second class at the limit) and writes its verdict
     recs = [torus(6, 33, [row(A1, B0, 4, "timelimit", lower=28, upper=30),
                           row(A2, B0, 4, "timelimit", lower=28, upper=28)],
                   {"4": {"d": 28, "settled": False, "unresolved": 2}})]  # fmt: skip
-    stage4(recs, [cline(6, 33, A1, B0, "timelimit", lower=28)], ended=True)
-    t.join(30)
-    assert not t.is_alive() and not errors
+    real, polls = S._snapshot, []
+
+    def snapshot():
+        if out.exists() and out.read_text().strip():
+            polls.append(time.time())
+            if len(polls) == 10:  # ten polls after the first record, stage 4 still running
+                stage4(recs, [cline(6, 33, A1, B0, "timelimit", lower=28)], ended=True)
+        return real()
+
+    monkeypatch.setattr(S, "_snapshot", snapshot)
+    t0 = time.time()
+    S.execute(out, 2, run_job=stand_in, poll=0.05)
+    assert len(polls) >= 10, "the run ended while stage 4 was still running"
+    assert time.time() - t0 < 30, "the run missed stage 4's end"
     keys = [json.loads(x)["key"] for x in out.read_text().splitlines()]
     assert sorted(keys) == sorted(S.key(c) for c in S.selected()) and len(keys) == 2
+
+
+def slow_stand_in(c, prior=None):
+    time.sleep(1.0)
+    return stand_in(c, prior)
+
+
+def test_failed_polls_stop_after_the_running_classes(stage4, tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "consistency", lambda: [])
+    monkeypatch.setattr(S, "distqldpc_commit", lambda: S.DISTQLDPC_COMMIT)
+    monkeypatch.setattr(S, "_started_at", lambda: None)
+    monkeypatch.setattr(S, "FAIL_SECONDS", 0.2)
+    out = tmp_path / "4d.jsonl"
+    stage4([], [cline(6, 33, A1, B0, "timelimit", lower=28),
+                cline(6, 33, A2, B0, "timelimit", lower=28)])  # fmt: skip
+    real, calls = S._snapshot, []
+
+    def snapshot():  # the first poll reads stage 4's files; every later one fails
+        calls.append(time.time())
+        if len(calls) > 1:
+            raise OSError("no space left on device")
+        return real()
+
+    monkeypatch.setattr(S, "_snapshot", snapshot)
+    with pytest.raises(RuntimeError, match="polls have failed"):
+        S.execute(out, 1, run_job=slow_stand_in, poll=0.05)
+    # the class running when the polls began to fail is recorded, and no other was started
+    assert len(out.read_text().splitlines()) == 1
+    assert calls[-1] - calls[0] >= 1.0
+
+
+def test_consistency_faults_and_the_lock(tmp_path, monkeypatch):
+    import fcntl
+
+    def broken():
+        raise OSError("disk")
+
+    monkeypatch.setattr(S, "_registered", broken)
+    assert S.consistency() == ["the registration could not be checked: OSError('disk')"]
+    lock = tmp_path / "s4-sync.lock"
+    monkeypatch.setenv("S4_SYNC_LOCK", str(lock))
+
+    def free():  # can a pull take the lock now?
+        with open(lock, "a") as fh:
+            try:
+                fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                return False
+            fcntl.flock(fh, fcntl.LOCK_UN)
+            return True
+
+    with S._reading():
+        with S._reading():  # re-entrant: no second lock, and the outer one is kept
+            assert not free()
+        assert not free()
+    assert free() and S._HELD == [0]
 
 
 def test_registration_shape(stage4):
