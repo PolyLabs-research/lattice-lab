@@ -209,6 +209,17 @@ registered):
   operations. Its data layer is `examples/qec-census-4/dashboards/build.py`, tested in
   `tests/test_census_dashboards.py`; the plan is [census-dashboards-plan.md](census-dashboards-plan.md).
 
+**Census stage 4: the 110 tori with n = 302 to 400** ([code-census.md](code-census.md#stage-4-and-stage-4d-registered-running), registered 2026-10-30, running).
+- **Method.** Every weight-6 class goes through DistQLDPC's cluster engine, with a registered
+  limit of 4 hours per class.
+- **Progress.** On 2026-11-03: 92 of 110 tori and 11,551 exact runs, all complete. The longest
+  run took 3.6 hours.
+- **Stage 4d** (`examples/qec-census-4d`, registered 2026-11-03).
+  - It reruns any class that stage 4 leaves at its limit, with no practical limit (14 days).
+    This keeps stage 4's registration intact.
+  - No class has reached the limit yet.
+  - A second pod starts when one does. If none ever does, the verdict is "not applicable".
+
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
   on 4 cores.

@@ -970,6 +970,31 @@ its second amendment was committed before any check ran.
   every limit was wall-clock. More runs would finish on a faster one. No verdict here depends on
   that.
 
+## Stage 4 and stage 4d (registered, running)
+
+`examples/qec-census-4` (registered 2026-10-30) takes the census to the 110 tori with
+150 < lm <= 200 (n = 302 to 400). It runs every weight-6 class through DistQLDPC's cluster engine,
+with a registered limit of 4 hours per class, and uses the parity of d. Its write-up will follow
+its verdict. On 2026-11-03 it had 92 of its 110 tori and 11,551 exact runs, all complete. The
+longest run took 12,845 s, 89% of the limit.
+
+`examples/qec-census-4d` (registered 2026-11-03) handles any class that does reach the limit. It
+was registered before any had. Lifting the limit inside stage 4 would break stage 4's
+registration, so stage 4d reruns those classes separately, as stage 3d did for stage 3b/3c.
+- **The selection** is a rule applied to stage 4's own files as they are written: every class
+  stage 4's registered run records as "timelimit" or "unverified".
+- **The job.** DistQLDPC's cluster engine at commit 8fe913e, with a 14-day limit. Then a witness
+  of weight d from window.c, checked by distance.verify_witness.
+- **The predictions.**
+  - D1: every selected class is settled, with no contradiction of stage 4's bounds.
+  - B: every d is even and within stage 4's bounds.
+  - R (reported, not judged): stage 4's frontier amended with these distances and judged by
+    stage 4's own judge.
+- **The pod** starts when the first class reaches the limit. It pulls stage 4's records every
+  minute and takes up each new class as it appears.
+- **If no class reaches the limit,** the verdict is "not applicable". Stage 4's own verdict
+  stands either way.
+
 ## What this does not establish
 
 - **One family, one form.** Other weight-6 forms do better at several n: at n = 30, 42, 60 and 84
