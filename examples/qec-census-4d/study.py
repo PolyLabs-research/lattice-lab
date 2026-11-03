@@ -17,7 +17,8 @@ is.
 **Registered while stage 4 runs.** The classes are selected by the rule below, from stage 4's own
 files as stage 4 writes them, so they are not listed at registration. The question records stage
 4's state when this study was registered (computed, not typed): its tori and exact runs so far,
-how many had reached the limit, its longest run, and the sizes and SHA-256 of its two files.
+how many had reached the limit, its longest DistQLDPC run in its torus records, the commit the
+checkout was at, and the sizes and SHA-256 of its three files (records, checkpoint, ledger).
 
 **The selection.** Every class that stage 4's registered run (its run_started entry, named in the
 question as STAGE4_RUN) recorded with an exact status other than "complete":
@@ -43,10 +44,12 @@ progress, then the rest.
 **Polling.** While stage 4 runs, the run takes each newly selected class as soon as it appears
 (the pod pulls the branch every minute), up to `workers` at once. Reads of stage 4's files hold a
 shared lock (env S4_SYNC_LOCK) that the pod's pulls take exclusively, so no read sees a file git
-is rewriting. The run ends when, on two polls in a row with stage 4's files unchanged, stage 4's
-ledger holds its verdict, every selected class has a record here and none is running; or at the
-stop rule: no class is started more than STOP_DAYS after this run's run_started. It starts no new
-class once consistency() reports a problem.
+is rewriting. The run ends when nothing is running and, on two polls in a row with stage 4's
+files unchanged, either stage 4's ledger holds its verdict and every selected class has a record
+here, or the stop rule has passed (no class is started more than STOP_DAYS after this run's
+run_started), or the run has halted: it starts no new class once consistency() reports a problem
+on two polls in a row. A poll that fails starts no class; once polls have failed for FAIL_SECONDS
+in a row and the running classes are recorded, the run stops, and the pod resumes it.
 
 **The predictions.**
 - **D1.** Every selected class is settled: an exact d (DistQLDPC's, exit 0) and a verified
@@ -117,6 +120,7 @@ LIMIT = 14 * 86400  # CPU seconds per class: no practical limit
 STOP_DAYS = 21
 POLL = 60.0
 RETRIES = 2  # a class whose job raised is tried this many times in all
+FAIL_SECONDS = 1800.0  # polls that fail for this long in a row stop the run (the pod resumes)
 UNFINISHED = ("timelimit", "unverified")
 WINDOW_FIRST = ((0, 1), 600.0)
 WINDOW_MORE = (tuple(range(2, 10)), 3600.0)
@@ -141,19 +145,24 @@ def even_up(x: int | None) -> int | None:
 # -------------------------------------------------------------------- reading stage 4's files
 
 
+_HELD = [0]  # readers open in this process: only the outermost takes the lock
+
+
 @contextlib.contextmanager
 def _reading():
-    """A shared lock on S4_SYNC_LOCK, which the pod's pulls take exclusively (none when unset)."""
+    """A shared lock on S4_SYNC_LOCK, which the pod's pulls take exclusively (none when unset).
+    Re-entrant: a read inside another (consistency() inside decide()) takes no second lock."""
     path = os.environ.get("S4_SYNC_LOCK")
-    if not path:
-        yield
-        return
-    with open(path, "a") as fh:
-        fcntl.flock(fh, fcntl.LOCK_SH)
+    with contextlib.ExitStack() as stack:
+        if path and not _HELD[0]:
+            fh = stack.enter_context(open(path, "a"))
+            fcntl.flock(fh, fcntl.LOCK_SH)
+            stack.callback(fcntl.flock, fh, fcntl.LOCK_UN)
+        _HELD[0] += 1
         try:
             yield
         finally:
-            fcntl.flock(fh, fcntl.LOCK_UN)
+            _HELD[0] -= 1
 
 
 def _lines(path: Path):
@@ -301,9 +310,21 @@ def stage4_state() -> dict:
             data = p.read_bytes() if p.exists() else b""
             files[p.name] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
         sel = _read_selection()
+
+    def git(*args: str) -> str:
+        try:
+            return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True,
+                                  text=True, check=True).stdout.strip()  # fmt: skip
+        except Exception:
+            return ""
+
+    names = [str(p.relative_to(ROOT)) for p in (S4_RECORDS, S4_CHECKPOINT, S4_LEDGER)
+             if p.is_relative_to(ROOT)]  # fmt: skip
     return {"tori": tori, "exact_runs": runs, "statuses": statuses,
             "longest_distqldpc_seconds": longest, "selected": [key(c) for c in sel],
-            "files": files}  # fmt: skip
+            "files": files, "commit": git("rev-parse", "HEAD"),
+            "files_clean": (not git("status", "--porcelain", "--", *names)) if names
+            else None}  # fmt: skip
 
 
 # -------------------------------------------------------------------- registration
@@ -370,6 +391,16 @@ def distqldpc_commit() -> str | None:
 
 
 def consistency() -> list[str]:
+    """Problems with the registration as deployed; a fault reading it is one too. It reads under
+    the lock, so a pull rewriting stage 4's ledger (or the code) is never seen midway."""
+    try:
+        with _reading():
+            return _problems()
+    except Exception as exc:
+        return [f"the registration could not be checked: {exc!r}"]
+
+
+def _problems() -> list[str]:
     q = _registered()
     if q is None:
         return ["stage 4d is not registered"]
@@ -485,24 +516,30 @@ def execute(path: Path, workers: int, run_job=None, poll: float | None = None) -
     sel: list[dict] = []
     ready_at = None  # stage 4's stamp at the last poll where the run looked finished
     halted = False
+    flagged = False  # consistency() reported a problem on the last good poll
+    failing_since = None
     # a worker killed outright (out of memory) raises BrokenProcessPool here rather than hanging;
     # the pod script then resumes, which skips every class already recorded
     ctx = multiprocessing.get_context("fork")
     with ProcessPoolExecutor(max_workers=workers, mp_context=ctx) as pool:
         while True:
+            fresh = True
             try:
                 sel, ended, stamp = _snapshot()
-                if not halted and consistency():
+                problems = consistency()
+                if problems and flagged and not halted:
                     halted = True
-                    print(f"starting no new class: {consistency()}", flush=True)
-            except Exception:  # a read that failed: keep the last good selection, poll again
+                    print(f"starting no new class: {problems}", flush=True)
+                flagged = bool(problems)
+                failing_since = None
+            except Exception:  # a failed read: keep the last good selection, poll again
+                fresh = False
+                failing_since = failing_since or time.time()
                 print("a poll failed:", traceback.format_exc()[-500:], flush=True)
-                time.sleep(poll)
-                continue
             done = _done(path)
             todo = sorted((c for c in sel if key(c) not in done and key(c) not in running),
                           key=lambda c: (priority(c), key(c)))  # fmt: skip
-            if time.time() < deadline and not halted:
+            if fresh and time.time() < deadline and not halted:
                 for c in todo[: max(0, workers - len(running))]:
                     running[key(c)] = pool.submit(run_job, c, prior=_prior(path, key(c)))
                     print(f"started {key(c)} ({c['status']}, lower {c['lower']})", flush=True)
@@ -512,6 +549,13 @@ def execute(path: Path, workers: int, run_job=None, poll: float | None = None) -
                 w = rec.get("witness_check") or {}
                 print(f"{k}: d={rec.get('d')} witness={w.get('weight')}"
                       f"{' ERROR' if 'error' in rec else ''}", flush=True)  # fmt: skip
+            if not fresh:
+                # failing this long: stop once the running classes are recorded (the pod resumes)
+                if not running and time.time() - failing_since > FAIL_SECONDS:
+                    raise RuntimeError(f"polls have failed for over {FAIL_SECONDS:.0f} s")
+                ready_at = None
+                time.sleep(poll)
+                continue
             done = _done(path)
             waiting = [c for c in sel if key(c) not in done]
             finished = not running and (time.time() >= deadline or halted or

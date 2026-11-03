@@ -2,9 +2,10 @@
 # Census stage 4d on a RunPod CPU pod (launch.py --job census-4d). The start command clones the
 # branch and runs this script, at every start; a restart resumes the registered run. While stage
 # 4 runs, the loop pulls the branch every minute, so study.py sees the classes stage 4's pod
-# records at its limit as soon as they are pushed. Every pull holds an exclusive lock on
-# $S4_SYNC_LOCK, and study.py holds it shared while it reads stage 4's files, so no read sees a
-# file git is rewriting.
+# records at its limit as soon as they are pushed. The fetch runs unlocked; the merge holds an
+# exclusive lock on $S4_SYNC_LOCK (flock -o, so no detached git process inherits it, and with
+# git's automatic maintenance off), and study.py holds it shared while it reads stage 4's files,
+# so no read sees a file git is rewriting.
 #
 #  1. packages, uv; DistQLDPC built at the registered commit
 #  2. the venv; self-test (tests/test_qec_census_4d.py, including one job on [[72,12,6]])
@@ -21,6 +22,7 @@ STATUS=$D/runpod-status.txt
 RUNLOG=$W/s4d-run.log
 DQ_COMMIT=8fe913e2ca79bda37cb755975b06b1b60416a418
 export S4_SYNC_LOCK=$W/s4-sync.lock
+git -C "$R" config gc.auto 0 2>/dev/null; git -C "$R" config maintenance.auto false 2>/dev/null
 exec > >(tee -a "$W/pod-run.log") 2>&1
 echo "=== pod start $(date -u +%FT%TZ) pod=${RUNPOD_POD_ID:-?}"
 
@@ -34,13 +36,18 @@ cd "$R" || exit 1
 git config user.name "${POD_GIT_NAME:-lattice-lab census pod}"
 git config user.email "${POD_GIT_EMAIL:-census-pod@users.noreply.github.com}"
 
+# the branch's new commits: a fetch (unlocked, with a stall timeout), then a merge under the lock
+sync() {
+  git -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=60 fetch -q origin "$BRANCH" || return 1
+  flock -x -o "$S4_SYNC_LOCK" sh -c 'git -c gc.auto=0 -c maintenance.auto=false merge -q --no-edit FETCH_HEAD || { git merge --abort; exit 1; }'
+}
+
 push() {
   for t in 2 4 8 16; do
     git push -q -u origin "$BRANCH" && return 0
     # a merge, not a rebase: it leaves the files study.py is appending to untouched (no stash),
     # since nothing else commits to examples/qec-census-4d
-    flock -x "$S4_SYNC_LOCK" git pull -q --no-rebase --no-edit origin "$BRANCH" \
-      || git merge --abort 2>/dev/null
+    sync
     sleep "$t"
   done
   echo "PUSH FAILED: commits stay on the pod until the next successful push"; return 1
@@ -65,6 +72,7 @@ Claude-Session: https://claude.ai/code/session_01LBDpbJNXFaJgMYrZEKJamq"
 }
 
 records() { if [ -f "$D/records.jsonl" ]; then wc -l < "$D/records.jsonl"; else echo 0; fi; }
+logged() { local n; n=$(grep -ac "$1" "$RUNLOG" 2>/dev/null); echo "${n:-0}"; }  # lines of the run log
 last_kind() { tail -1 "$D/ledger.jsonl" | python3 -c 'import json,sys; print(json.load(sys.stdin)["kind"])'; }
 
 status() {
@@ -74,6 +82,7 @@ status() {
     echo "updated: $(date -u +%FT%TZ)"
     echo "pod: ${RUNPOD_POD_ID:-?}"
     echo "records: $(records) classes rerun"
+    echo "failed polls: $(logged '^a poll failed'); halted: $(logged '^starting no new class')"
   } > "$STATUS"
   commit "Census stage 4d: pod status ($1)" "$STATUS"
 }
@@ -135,18 +144,24 @@ on_stop() {
 trap on_stop TERM INT
 code=1
 for attempt in 1 2 3; do
+  # a DistQLDPC run a dead worker left behind would compete with its own rerun
+  pkill -f "$DISTQLDPC/bin/distqldpc" 2>/dev/null
   step=run
   grep -q '"kind": *"run_started"' "$D/ledger.jsonl" && step=resume
   status running "study.py $step --workers $workers (attempt $attempt)"
   .venv/bin/python -u "$D/study.py" "$step" --workers "$workers" >> "$RUNLOG" 2>&1 &
   run=$!
+  i=0
   while kill -0 "$run" 2>/dev/null; do
     sleep 60 & wait $!
     commit "Census stage 4d: records ($(records) classes)" "$D/records.jsonl" "$D/ledger.jsonl"
     # stage 4's new records and checkpoint lines; nothing else commits to examples/qec-census-4d
-    flock -x "$S4_SYNC_LOCK" git pull -q --no-rebase --no-edit origin "$BRANCH" \
-      || git merge --abort 2>/dev/null
-    status running "study.py $step --workers $workers (attempt $attempt)"
+    sync
+    i=$((i + 1))
+    # the status every 10 minutes; a gc every 6 hours, outside the lock (it rewrites no file),
+    # with git's default threshold (the repository's gc.auto is 0, which would make it a no-op)
+    [ $((i % 10)) -eq 0 ] && status running "study.py $step --workers $workers (attempt $attempt)"
+    [ $((i % 360)) -eq 0 ] && git -c gc.auto=6700 -c gc.autoDetach=false gc --auto -q
   done
   wait "$run"; code=$?
   run=""
