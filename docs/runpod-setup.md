@@ -74,8 +74,9 @@ this step; it takes a minute. Everything under `/workspace` stays.
 
 ## 2. The repository
 
-lattice-lab is private. Create a fine-grained GitHub token limited to **PolyLabs-research/lattice-lab**
-with *Contents: read and write*, and use it only on this pod.
+lattice-lab is public, so cloning needs no token, but the pod pushes its records and so needs
+one. Create a fine-grained GitHub token limited to **PolyLabs-research/lattice-lab** with
+*Contents: read and write*, and use it only on this pod.
 
 ```bash
 cd /workspace

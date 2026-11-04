@@ -325,3 +325,17 @@ pushed.
 - **The prototype's traps** are regression tests (`tests/test_traps.py`): a zero starting
   constant must not vanish; a verdict must survive dropping the smallest sizes; an unsettled run
   must never count against a law.
+
+## Licence
+
+Copyright 2026 PolyLabs Research.
+
+- **Code** is under the [Apache License 2.0](LICENSE): `src/`, `tests/`, the Lean library in
+  `proofs/`, the site's build scripts, JavaScript and Apps Script, and every program in
+  `examples/` and `consultations/` (Python, shell, C and Lean files).
+- **Everything else** is under [Creative Commons Attribution 4.0](LICENSE-CC-BY-4.0): the
+  documentation, questions and consultations, the studies' ledgers, records, data, judgements,
+  logs and transcripts, and the website's text and figures. Credit "PolyLabs Research,
+  lattice-lab" with a link to this repository.
+- **The fonts** in `site/public/assets/fonts/` are under the SIL Open Font License 1.1, in the
+  `OFL-*.txt` files beside them.

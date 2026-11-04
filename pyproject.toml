@@ -3,6 +3,8 @@ name = "lattice-lab"
 version = "0.1.0"
 description = "A law-discovery loop over LatticeLife experiments and Kepler fits: pre-registered predictions, held-out tests, an append-only ledger."
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 # LatticeLife's own bound: its locked pygame and moderngl ship wheels for 3.12 and 3.13 only.
 requires-python = ">=3.12,<3.14"
 dependencies = [

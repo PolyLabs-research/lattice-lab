@@ -18,13 +18,15 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 
 | Repository | Role | Visibility | Tests |
 | --- | --- | --- | --- |
-| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | private | 214 |
+| [lattice-lab](https://github.com/PolyLabs-research/lattice-lab) | the questions, registered studies, ledgers, write-ups, Lean proofs, the website (this repository) | public | 214 |
 | [kepler](https://github.com/PolyLabs-research/kepler) | fitting, ranking and predicting laws; exact integer laws; known constants | public | 308 |
 | [gameoflife_advanced](https://github.com/PolyLabs-research/gameoflife_advanced) (LatticeLife) | the cellular automata, experiments and observables | public | 1043 |
 
 - **The website.** [polylabs-research.net](https://polylabs-research.net) is built from `site/`
-  in lattice-lab; [site/README.md](../site/README.md) says how to rebuild and deploy it. While
-  lattice-lab is private, the site must not link into it on GitHub.
+  in lattice-lab; [site/README.md](../site/README.md) says how to rebuild and deploy it. It
+  links into lattice-lab on GitHub, at `main`.
+- **Licences.** lattice-lab's code is under Apache-2.0 and everything else under CC BY 4.0
+  ([README](../README.md#licence)). Kepler and LatticeLife have no licence yet.
 - **Pins.** lattice-lab pins LatticeLife `256450b` and Kepler `0af9b28` (`pyproject.toml`,
   `uv.lock`). Both are current for code: every later commit on those repositories' working
   branches changes only the README.
@@ -374,18 +376,21 @@ registered):
    same cards, judged by the same checks: open problem cards, submissions as pull requests with
    the public half of the judge in CI, the held-out half run privately, held-out grids published
    as SHA-256 commitments before a card opens. Undecided: where contributors work (a new public
-   repository, opening this one, or invited collaborators), whether they may use AI tools, and a
-   licence; none of the repositories has one yet.
+   repository, pull requests to this one, or invited collaborators) and whether they may use AI
+   tools. lattice-lab now has a licence (Apache-2.0 for code, CC BY 4.0 for the rest); Kepler and
+   LatticeLife do not yet.
 
-   Each pilot leaves two branches (`pilot-sandbox-*`, `pilot-*-submission`) that this session's
-   git proxy would not delete; each pilot's `branches.bundle` holds everything on them, so they
-   can be deleted on GitHub. Pilot 7's are in `examples/llm-pilot-37c/branches.bundle` too, with
-   its second round's branch, `pilot-37c-round-2`.
+   The pilots' twelve branches (`pilot-sandbox-*`, `pilot-*-submission`) were deleted from
+   GitHub on 2026-11-03, before the repository went public. Each pilot's `branches.bundle` holds
+   everything that was on them; pilot 7's also holds its second round's branch,
+   `pilot-37c-round-2`. Now that lattice-lab is public, a pilot's held-out half waits in a private
+   repository until its submission is frozen
+   ([llm-pilot.md](llm-pilot.md#held-out-halves-now-that-lattice-lab-is-public)).
 5. **A specialist's view.**
    - The literature search was brief, and specialists in linear cellular automata may know parts
      of this.
-   - lattice-lab is private, so Kepler's and LatticeLife's public READMEs point to the website,
-     polylabs-research.net, and not into it.
+   - Kepler's and LatticeLife's READMEs point to the website, polylabs-research.net, and not into
+     lattice-lab, because it was private when they were written. They can link into it now.
 6. **Remaining machine checks.** The square and triangle odd parts beyond 999, and the ten odd
    parts below 999 whose check is incomplete.
 7. **Settling time.** `identify` cannot yet name the Gumbel class at the current error bars;

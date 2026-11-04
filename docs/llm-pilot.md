@@ -679,8 +679,60 @@ statements and the axioms, not by the model's description of its work.
     either;
   - the pilot branches cannot be deleted from the orchestrator's session (its git proxy refuses
     ref deletion), so each pilot leaves two branches behind. `branches.bundle` in each pilot's
-    directory holds everything they had;
+    directory holds everything they had. The twelve from pilots 2 to 7 were deleted from GitHub
+    on 2026-11-03; `git fetch examples/<pilot>/branches.bundle 'refs/*:refs/pilot/*'` restores
+    a pilot's locally;
   - the transcript audit's path check reads `sed` patterns, URLs and Lean comment markers as
     paths. Its flags need a person, which is fine at this scale;
   - a person can message the agent's session in the Claude app. Pilot 4's follow-up came that way.
     It is recorded in the transcript with its origin, and judged as a separate round.
+
+## Held-out halves, now that lattice-lab is public
+
+Pilots 1 to 7 ran while lattice-lab was private. Everything was committed and pushed to it before
+each launch: the card and sandbox, and the held-out half (the held-out grid, its registered
+predictions, and the parts of the judge that read them). The agent's container cloned only its
+sandbox branch and had no web access. With lattice-lab public, an agent with web access could
+read a held-out half from GitHub, so a future pilot splits in two:
+
+- **The public half** stays in lattice-lab: the card, tools and data, the sandbox and submission
+  branches, and the judge's checks that use only what the agent was given.
+- **The held-out half** waits in `PolyLabs-research/lattice-lab-heldout`, a private copy of
+  lattice-lab, until the agent's submission is frozen. The agent's session is never connected to
+  that repository.
+
+The steps:
+
+1. Bring the private copy up to date and branch there:
+
+   ```bash
+   git remote add heldout git@github.com:PolyLabs-research/lattice-lab-heldout.git   # once
+   git push heldout main
+   git checkout -b pilot-<name>-heldout main
+   ```
+
+2. Put the held-out files in `examples/llm-pilot-<name>/heldout/`, one flat folder with no
+   subfolders, register the held-out study,
+   and push the branch to the private copy (`git push -u heldout pilot-<name>-heldout`), so
+   `study.py`'s check that the registration is pushed passes against that remote.
+3. Commit to it with a random nonce, so the commitment cannot be found by guessing the grid. The
+   ledger's last hash after registration fixes the question and every prediction:
+
+   ```bash
+   cd examples/llm-pilot-<name>
+   openssl rand -hex 32 > heldout/nonce.txt
+   tail -1 ledger.jsonl | python3 -c 'import json, sys; print(json.load(sys.stdin)["hash"])' \
+     > heldout/registration.txt
+   (cd heldout && sha256sum $(ls | grep -v '^MANIFEST$') > MANIFEST && sha256sum MANIFEST)
+   ```
+
+   Commit and push these to the private branch too.
+4. On lattice-lab's `main`, commit the last command's hash as
+   `examples/llm-pilot-<name>/heldout.sha256` and push it **before the launch**. This is the
+   public timestamp; nobody else can see the private copy's history.
+5. Launch the agent on its public sandbox branch. The held-out study may run while it works;
+   the held-out judge runs only once its submission branch is frozen.
+6. Reveal by merging the private branch into lattice-lab's `main` and pushing. Anyone can then
+   check, in `heldout/`, that `sha256sum -c MANIFEST` passes and that `sha256sum MANIFEST`
+   matches `heldout.sha256`, and that the ledger holds the entry named in `registration.txt`;
+   `lattice-lab verify` checks the ledger's order as for any study.

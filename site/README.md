@@ -35,8 +35,10 @@ Before deploying, check the pages locally:
 cd site/public && python3 -m http.server 8000     # then open http://localhost:8000
 ```
 
-Nothing on the site may link into lattice-lab on GitHub while that repository is private; those
-links would 404 for visitors. Kepler and LatticeLife are public and are linked.
+lattice-lab is public, and the site links into it on GitHub at `main`: the footer on every page,
+the home page, the model page's ledger and pilot table, the proofs page's library and the codes
+page's sources. Moving or renaming a linked file on `main` breaks its link, so search `site/src/`
+and `build_pages.py` for its path first. Kepler and LatticeLife are public and are linked too.
 
 ## The contact form
 

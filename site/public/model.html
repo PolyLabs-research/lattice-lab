@@ -100,7 +100,10 @@
     <p>Edit an entry and the chain breaks there. A forger could recompute every later hash, and
       the Forge button does just that. This is why the ledger is pushed to GitHub before the run:
       the remote's history fixes every hash, so a rebuilt chain no longer matches what was
-      published.</p>
+      published. This ledger is <a href="https://github.com/PolyLabs-research/lattice-lab/blob/main/examples/llm-pilot-vot13/ledger.jsonl">on
+      GitHub</a>, with <a href="https://github.com/PolyLabs-research/lattice-lab/commits/main/examples/llm-pilot-vot13/ledger.jsonl">its
+      history</a>, and every other study's is in its folder under
+      <a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples">examples/</a>.</p>
   </section>
 
   <section class="figure" id="ledger" aria-labelledby="ledger-fig-title">
@@ -136,7 +139,9 @@
     <p>In each pilot a fresh agent gets a problem card, the Lean library and a few generic tools,
       in a cloud container that holds nothing else: an orphan branch with one commit, no write-ups
       and no hand proofs. It works alone. When it reports, the judge runs; if the judge rejects the
-      work, only the judge's output goes back to the agent.</p>
+      work, only the judge's output goes back to the agent. Each pilot's folder in lattice-lab,
+      linked from the table below, holds its card, judge, judgements, ledger and records, and
+      from pilot 2 on its transcript and audit.</p>
     <p>The chart shows every tool call the agents in pilots 2 to 7 made in their cloud sessions,
       read from the session transcripts on the server, not from anything the agents wrote. In
       pilots 2 and 3 the agents
@@ -168,13 +173,13 @@
     <table>
       <thead><tr><th>Pilot</th><th>Given</th><th>Time, tool calls</th><th>Judge</th><th>Registered test</th><th>Against the hand proof</th></tr></thead>
       <tbody>
-        <tr><td>1: hexagon law</td><td>the statement</td><td>15 min, 35</td><td><span class="badge ok">passed, round 1</span></td><td>15 of 15 sizes</td><td>a different route</td></tr>
-        <tr><td>2: triangle laws</td><td>the statements</td><td>41 min, 40</td><td><span class="badge ok">passed, round 1</span></td><td>40 of 40 predictions</td><td>the same route</td></tr>
-        <tr><td>3: VO + T13's law</td><td>a question and data</td><td>53 min, 42</td><td><span class="badge ok">passed, round 1</span></td><td>20 of 20, and the agent's own law 20 of 20</td><td>no proof existed for m = 1</td></tr>
-        <tr><td>4: m = 37</td><td>an open question and a census</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td><td id="p4-test">180 of 180 claims held at held-out sizes</td><td>nobody knew the answer</td></tr>
-        <tr><td>5: m = 25</td><td>a harder open question, a census and a chance model</td><td>95 min, 108 calls</td><td><span class="badge ok">passed, round 1</span> 5 of 17 explained</td><td>414 of 414 claims held at held-out sizes; our own expectation <span class="badge bad">refuted</span></td><td>nobody knew the answer</td></tr>
-        <tr><td>6: m = 37 again</td><td>a question the fifth pilot's registered test raised</td><td>66 min, 99 calls</td><td><span class="badge ok">passed, round 1</span> 12 of 19 explained</td><td>our expectation <span class="badge bad">refuted</span> at 3 of 17 sizes, by exactly the agent's nine rules, where it predicted them</td><td>nobody knew the answer</td></tr>
-        <tr><td>7: ninth powers at m = 37</td><td>an open question from a registered census, all seven mechanisms as tools, and a fast census at 37</td><td>2 hours 2 minutes, 121 calls, asked to stop for cost ($51.33 at list price); round 2, over the API: 11 min, 38 calls, $4.47</td><td><span class="badge bad">Lean failed, round 1</span> <span class="badge ok">passed, round 2</span> 4 of 5 explained, none of 1,715 claims false</td><td>the radius-6 census: a mechanism, as registered, with 37 unexplained against 0.70 expected; the agent computed it itself, so its 35 of the 37 is not a prediction</td><td>nobody knew the answer</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot">1: hexagon law</a></td><td>the statement</td><td>15 min, 35</td><td><span class="badge ok">passed, round 1</span></td><td>15 of 15 sizes</td><td>a different route</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-triangle">2: triangle laws</a></td><td>the statements</td><td>41 min, 40</td><td><span class="badge ok">passed, round 1</span></td><td>40 of 40 predictions</td><td>the same route</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-vot13">3: VO + T13's law</a></td><td>a question and data</td><td>53 min, 42</td><td><span class="badge ok">passed, round 1</span></td><td>20 of 20, and the agent's own law 20 of 20</td><td>no proof existed for m = 1</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-37">4: m = 37</a></td><td>an open question and a census</td><td id="p4-time">95 min, 131 calls; a follow-up took 6 more</td><td id="p4-judge"><span class="badge ok">passed, round 1</span></td><td id="p4-test">180 of 180 claims held at held-out sizes</td><td>nobody knew the answer</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-25">5: m = 25</a></td><td>a harder open question, a census and a chance model</td><td>95 min, 108 calls</td><td><span class="badge ok">passed, round 1</span> 5 of 17 explained</td><td>414 of 414 claims held at held-out sizes; our own expectation <span class="badge bad">refuted</span></td><td>nobody knew the answer</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-37b">6: m = 37 again</a></td><td>a question the fifth pilot's registered test raised</td><td>66 min, 99 calls</td><td><span class="badge ok">passed, round 1</span> 12 of 19 explained</td><td>our expectation <span class="badge bad">refuted</span> at 3 of 17 sizes, by exactly the agent's nine rules, where it predicted them</td><td>nobody knew the answer</td></tr>
+        <tr><td><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/llm-pilot-37c">7: ninth powers at m = 37</a></td><td>an open question from a registered census, all seven mechanisms as tools, and a fast census at 37</td><td>2 hours 2 minutes, 121 calls, asked to stop for cost ($51.33 at list price); round 2, over the API: 11 min, 38 calls, $4.47</td><td><span class="badge bad">Lean failed, round 1</span> <span class="badge ok">passed, round 2</span> 4 of 5 explained, none of 1,715 claims false</td><td>the radius-6 census: a mechanism, as registered, with 37 unexplained against 0.70 expected; the agent computed it itself, so its 35 of the 37 is not a prediction</td><td>nobody knew the answer</td></tr>
       </tbody>
     </table>
   </div>
@@ -221,8 +226,8 @@
       your browser from the rules themselves. Experiments run on
       <a href="https://github.com/PolyLabs-research/gameoflife_advanced">LatticeLife</a>; laws are
       fitted by <a href="https://github.com/PolyLabs-research/kepler">Kepler</a>; both are open
-      source. The studies, ledgers and Lean library are in lattice-lab, which is private for
-      now.</p>
+      source. The studies, with their ledgers and records, and the Lean library are in
+      <a href="https://github.com/PolyLabs-research/lattice-lab">lattice-lab</a>, which is open source too.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
       problem card; the seventh pilot's second round ran over the API. Their proofs count because
       Lean accepts them, not because they say so.</p>
