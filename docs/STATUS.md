@@ -190,8 +190,9 @@ registered):
   - Its faster CPU settles more searches inside the 30-minute wall-clock limit. No verdict depends
     on the machine, and isomorphic tori agree across both machines.
 - **Spot-check (2026-10-29): agreement.** A fixed sample of 20 frontier codes went through 431
-  jobs with other tools: SAT/DRAT, DistQLDPC's two engines, SCIP, an unpruned search, the other
-  logical type and long windows. No contradiction and no error.
+  jobs with other tools: SAT/DRAT, DistQLDPC's two engines (Chen, Jafari and Lai,
+  arXiv:2606.12445; github.com/guluchen/DistQLDPC, commit 8fe913e), SCIP, an unpruned search,
+  the other logical type and long windows. No contradiction and no error.
   - 1 sampled code is certified by a checked DRAT proof, as are 8 smaller ones.
   - 9 are confirmed by a second method, including both [[294,10,20]] and [[288,8,22]].
   - 10 are confirmed by a second implementation (DistQLDPC's cluster engine).
