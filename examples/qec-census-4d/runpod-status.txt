@@ -1,6 +1,6 @@
 phase: running
 detail: study.py run --workers 32 (attempt 1)
-updated: 2026-11-04T16:49:38Z
+updated: 2026-11-04T16:59:58Z
 pod: 2l7m76on8ziv5o
-records: 2 classes rerun
+records: 3 classes rerun
 failed polls: 0; halted: 0
