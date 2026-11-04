@@ -1,9 +1,12 @@
 # Draft reply to guluchen/DistQLDPC#150
 
-Draft only, for posting by hand. It answers guluchen's comment of 2026-10-28, the only reply on the
-issue as of 2026-11-04 (the issue is still open). Attach `docs/outreach/BB_756_16_passes.csv` to the
-comment (GitHub accepts .csv attachments) and fill in the credit line. Don't link lattice-lab: the
-repository is private. Replaces the unposted draft of 2026-10-28.
+Posted by hand on 2026-11-04, answering guluchen's comment of 2026-10-28, with
+`docs/outreach/BB_756_16_passes.csv` attached. guluchen replied the same day: thanks for the
+per-pass records and the larger study, and please cite Y.-F. Chen, S. M. R. Jafari and C.-Y. Lai,
+"SAT, MaxSAT, and SMT for QLDPC Distance Computation: A Large-Scale Empirical Study",
+arXiv:2606.12445 (2026), doi:10.48550/arXiv.2606.12445, keeping the repository URL and the exact
+commit alongside it. The write-ups and the site's codes page now do (commit 8fe913e). The text
+below is the draft as written, before the credit line was filled in.
 
 Sources for the numbers: the per-pass file itself; docs/code-census.md (the spot-check of stage
 3b/3c and stage 3d); examples/qec-census-4/study.py (validation); stage 4's torus records at 96 of

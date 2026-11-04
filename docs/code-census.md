@@ -769,7 +769,10 @@ exactly as criterion E says.
     - [[300,8,22]] (12.91) on 2 x 75, 3 x 50, 5 x 30 and 6 x 25.
   - The d = 20 of [[294,10,20]], on both tori, is confirmed by a second method: DistQLDPC's
     MaxSAT engine reached exactly 20, as did its cluster engine and the unpruned search (the
-    spot-check, below).
+    spot-check, below). DistQLDPC is Y.-F. Chen, S. M. R. Jafari and C.-Y. Lai's tool ("SAT,
+    MaxSAT, and SMT for QLDPC Distance Computation: A Large-Scale Empirical Study",
+    arXiv:2606.12445, 2026; github.com/guluchen/DistQLDPC). Every run of it here used commit
+    8fe913e.
 - **P1: k is not a clean dial for d.**
   - On the three tori of group Z_105 (3 x 35, 5 x 21 and the exposed 7 x 15) the best d is 10 at
     k = 12 and 12 at k = 14. That is a real reversal, among few classes.
@@ -880,8 +883,9 @@ bound, not settled):
   each d again, with an instrument from outside this project.
 - **Calibration.** Before registration, DistQLDPC ran on three of the classes to set the limit
   (4 hours per class). This too is disclosed in the question.
-- **The job.** Each class went to DistQLDPC's cluster engine (commit 8fe913e). A witness came
-  from window.c, checked by distance.verify_witness.
+- **The job.** Each class went to DistQLDPC's cluster engine (Chen, Jafari and Lai,
+  arXiv:2606.12445; github.com/guluchen/DistQLDPC, commit 8fe913e). A witness came from
+  window.c, checked by distance.verify_witness.
 - **The machine.** One RunPod pod, an AMD EPYC 4564P with 32 vCPU. It took 37 minutes.
 
 **Verdict: pass.**
@@ -973,9 +977,10 @@ its second amendment was committed before any check ran.
 ## Stage 4 and stage 4d (registered, running)
 
 `examples/qec-census-4` (registered 2026-10-30) takes the census to the 110 tori with
-150 < lm <= 200 (n = 302 to 400). It runs every weight-6 class through DistQLDPC's cluster engine,
-with a registered limit of 4 hours per class, and uses the parity of d. Its write-up will follow
-its verdict. On 2026-11-03 it had 92 of its 110 tori and 11,551 exact runs, all complete. The
+150 < lm <= 200 (n = 302 to 400). It runs every weight-6 class through DistQLDPC's cluster engine
+(Chen, Jafari and Lai, arXiv:2606.12445; github.com/guluchen/DistQLDPC, commit 8fe913e), with a
+registered limit of 4 hours per class, and uses the parity of d. Its write-up will follow its
+verdict. On 2026-11-03 it had 92 of its 110 tori and 11,551 exact runs, all complete. The
 longest run took 12,845 s, 89% of the limit.
 
 `examples/qec-census-4d` (registered 2026-11-03) handles any class that does reach the limit. It
@@ -983,8 +988,9 @@ was registered before any had. Lifting the limit inside stage 4 would break stag
 registration, so stage 4d reruns those classes separately, as stage 3d did for stage 3b/3c.
 - **The selection** is a rule applied to stage 4's own files as they are written: every class
   stage 4's registered run records as "timelimit" or "unverified".
-- **The job.** DistQLDPC's cluster engine at commit 8fe913e, with a 14-day limit. Then a witness
-  of weight d from window.c, checked by distance.verify_witness.
+- **The job.** DistQLDPC's cluster engine (Chen, Jafari and Lai, arXiv:2606.12445;
+  github.com/guluchen/DistQLDPC, commit 8fe913e), with a 14-day limit. Then a witness of weight
+  d from window.c, checked by distance.verify_witness.
 - **The predictions.**
   - D1: every selected class is settled, with no contradiction of stage 4's bounds.
   - B: every d is even and within stage 4's bounds.
