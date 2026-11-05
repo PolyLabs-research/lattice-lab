@@ -50,6 +50,11 @@ PAGES = {
         "How the ring of these rules carries over to bivariate bicycle quantum codes: logical "
         "qubits read off the torus's characters, checked by a registered test and in your browser.",
     ),
+    "census": (
+        "Code census · PolyLabs Research",
+        "Every weight-6 bivariate bicycle code up to 400 qubits: the best distance and the best "
+        "k d²/n at each size, and what was registered before each stage ran.",
+    ),
     "contact": (
         "Contact · PolyLabs Research",
         "Write to PolyLabs Research: questions about the results, the proofs or the pilots.",
@@ -64,6 +69,7 @@ NAV = [
     ("settling", "Settling time"),
     ("proofs", "Proofs"),
     ("codes", "Quantum codes"),
+    ("census", "Code census"),
     ("contact", "Contact"),
 ]
 

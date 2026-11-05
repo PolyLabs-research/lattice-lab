@@ -36,6 +36,7 @@
       <a href="settling.html">Settling time</a>
       <a href="proofs.html">Proofs</a>
       <a href="codes.html">Quantum codes</a>
+      <a href="census.html">Code census</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -228,6 +229,8 @@
         <tr><td>A stronger cut keeps the exhaustive search exact and takes [[756,16]] to d ≥ 30 within 30 hours</td><td>90 fresh small codes against enumeration, 20 fresh codes against the uncut search, three known distances, then [[756,16]] on 4 cores</td><td><span class="badge ok">held</span> every check agreed, and [[756,16]] has 30 ≤ d ≤ 34: nothing below 30, in 7 hours. That matches the public lower bound of 30 (the <a href="https://arxiv.org/abs/2606.12445">DistQLDPC</a> tool), with a second implementation of the same kind of search. The run then stopped during a pass that could not change this, and its ledger has no verdict entry</td></tr>
         <tr><td>Every weight-6 code on 122 sizes held back from the census (up to 300 qubits): k exactly where a proved rule says, the best distance never rising with k, staying under 1.40 √n, and no code above the published record k d²/n = 13.5</td><td>253,370 classes on 122 tori, registered before any was computed; 4 cores, then an 8-core pod after the cloud session kept restarting</td><td><span class="badge bad">failed</span> the rule held on all 122 tori, but [[294,10,20]] scores 13.6, the best distance reaches 1.42 √n, and at one group it rises with k. Liang et al.'s [[192,8,16]] is the best of its kind, as predicted</td></tr>
         <tr><td>The 154 classes that run left unfinished, on 9 of those sizes, all have d = 24, as the parity of d predicted</td><td>154 classes on 9 tori, registered before the rerun; a second distance tool, <a href="https://arxiv.org/abs/2606.12445">DistQLDPC</a>'s cluster engine, and a checked weight-24 logical for each</td><td><span class="badge ok">154 of 154</span> d = 24 exactly, in at most 11 minutes each. Those tori break the 1.40 √n envelope too: it now fails on 15 of the judged sizes, not 7</td></tr>
+        <tr><td>Every weight-6 code on 110 new sizes, from 302 to 400 qubits, against laws refitted on stage 3: the best distance under a fitted envelope; somewhere past stage 3's record d/√n; somewhere a new record k d²/n, but none above 17</td><td>633,390 classes on 110 tori, registered before any was computed; 13,380 exact runs by <a href="https://arxiv.org/abs/2606.12445">DistQLDPC</a>'s cluster engine, each distance with a checked logical; one 32-core pod for 5.4 days</td><td><span class="badge bad">failed</span> the growth and the record held: [[354,4,28]] reaches 1.49 √n and [[384,12,24]] scores 18.0. That score breaks the ceiling of 17, and [[306,4,26]] is one step above the envelope at 306 qubits. On the published [[360,12,24]]'s torus, nothing of this form beats it</td></tr>
+        <tr><td>The 53 classes that run left at its 4-hour limit, all at 396 qubits, are settled with no practical limit</td><td>registered before any class reached the limit; the same tool with up to 14 days per class, and a checked logical for each</td><td><span class="badge muted">running</span> 17 of 53 so far, every one d = 30: [[396,4,30]], at 1.51 √n the highest in the census</td></tr>
       </tbody>
     </table>
   </div>
@@ -297,9 +300,12 @@
         frontier codes with other tools agreed everywhere, and confirmed that d = 20 by a
         second method. A registered rerun with a second distance tool then settled the 154
         classes the run had left unfinished: every one has d = 24, as the parity of d predicted.
-        <strong>Stage 4</strong>, running now, covers 110 more tori, from 302 to 400 qubits,
-        with predictions registered before it started. Its results go up here when its verdict
-        is in.</span></li>
+        <strong>Stage 4</strong> covered 110 more tori, from 302 to 400 qubits, against laws
+        refitted on stage 3 and registered before it started. Distances kept growing faster than
+        √n, and [[384,12,24]] set a new record, k d²/n = 18.0. That broke the registered ceiling
+        of 17, and one code at 306 qubits sat a step above the fitted envelope, so its verdict is
+        fail. A follow-up is settling the 53 hardest classes, at 396 qubits; every one so far has
+        d = 30. <a href="census.html">The census page</a> charts every stage.</span></li>
       <li><span><strong>Pilots on codes.</strong> Point the agent loop at structural questions with
         a payoff for codes. For example: which conditions on (A, B) force many logical qubits and a
         torus automorphism at once? The judge checks <em class="var">k</em> exactly and distance
