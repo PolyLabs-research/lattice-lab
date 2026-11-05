@@ -1,4 +1,4 @@
-# A census of bivariate bicycle codes: stages 1 to 3
+# A census of bivariate bicycle codes: stages 1 to 4
 
 **Status.**
 - **Stage 1** (`examples/qec-census`, run 2026-10-22) is exploratory, not a registered test.
@@ -10,6 +10,15 @@
     [[18,8,2]] base fails on 6 x 18.
 
   [Stage 2](#stage-2-the-registered-test) has the details.
+- **Stages 3a to 3d** cover every weight-6 code, first on the stage-1 tori, then on the 122
+  held-out tori. The registered stage 3b/3c fails, because a [[294,10,20]] beats the published
+  record score. Stage 3d settles the tori that stage 3b/3c left incomplete.
+- **Stage 4** (`examples/qec-census-4`, registered 2026-10-30, run to 2026-11-05) takes the
+  census to n = 400. Its verdict is fail: the envelope E and the ceiling S2 fail, while growth
+  past √n and a new record score pass.
+  [Stage 4](#stage-4-the-laws-refitted-and-tested-up-to-400-qubits-registered) has the details.
+  Stage 4d is settling the 53 classes that stage 4 left at its 4-hour limit, and so far every
+  one has d = 30.
 
 **Result: every code of the published form on 116 tori with n ≤ 200 was computed, and every one of
 its 3,330 classes with k > 0 has an exact distance. The published codes are at or near the top.**
@@ -974,32 +983,183 @@ its second amendment was committed before any check ran.
   every limit was wall-clock. More runs would finish on a faster one. No verdict here depends on
   that.
 
-## Stage 4 and stage 4d (registered, running)
+## Stage 4: the laws refitted and tested up to 400 qubits (registered)
 
-`examples/qec-census-4` (registered 2026-10-30) takes the census to the 110 tori with
-150 < lm <= 200 (n = 302 to 400). It runs every weight-6 class through DistQLDPC's cluster engine
-(Chen, Jafari and Lai, arXiv:2606.12445; github.com/guluchen/DistQLDPC, commit 8fe913e), with a
-registered limit of 4 hours per class, and uses the parity of d. Its write-up will follow its
-verdict. On 2026-11-03 it had 92 of its 110 tori and 11,551 exact runs, all complete. The
-longest run took 12,845 s, 89% of the limit.
+**Result: verdict fail.** Two of the five predictions fail: the envelope E and the ceiling S2.
+Growth past √n (G) and a new record score (S1) both pass, and the instruments hold (P0, H).
+- **E fails on one torus.** On 3 x 51 the best connected code is [[306,4,26]], one even step above
+  the registered cap of 24 at n = 306.
+- **S2 fails.** [[384,12,24]], on 4 x 48 and 12 x 16 (one group, Z_4 x Z_48), has k d^2/n = 18.0,
+  above the ceiling of 17.0.
+- **G and S1 pass.** 10 tori have a code with d/√n above stage 3's record of 1.4606. The best is
+  [[354,4,28]] on 3 x 59, at 1.488. 29 tori beat the [[294,10,20]]'s score of 13.61. The best is
+  [[384,12,24]], at 18.0.
+- **P0 and H hold.** Criterion E decided all 110 tori, and the k sample agreed on all 5,500
+  codes. No job failed, and every record was made by the registered code and settings.
+- **Five tori are incomplete for E and S2.** On the n = 396 tori (2 x 99, 9 x 22, 11 x 18;
+  3 x 66, 6 x 33), 53 classes with k = 4 reached the 4-hour limit, so the k = 4 best there stopped
+  at d ≥ 28. This does not change the verdict. Stage 4d, below, is settling them, and so far every
+  one has d = 30.
 
-`examples/qec-census-4d` (registered 2026-11-03) handles any class that does reach the limit. It
-was registered before any had. Lifting the limit inside stage 4 would break stage 4's
-registration, so stage 4d reruns those classes separately, as stage 3d did for stage 3b/3c.
-- **The selection** is a rule applied to stage 4's own files as they are written: every class
-  stage 4's registered run records as "timelimit" or "unverified".
+**What was registered** (`examples/qec-census-4/ledger.jsonl`, 2026-10-30, before any code on
+these tori was computed).
+- **The tori.** All 110 tori l x m with 150 < lm <= 200 (n = 302 to 400). The 104 fresh ones are
+  judged. 6 exposed ones are reported apart: 11 x 14, 12 x 13, 13 x 13, 13 x 14 and 14 x 14, named
+  in holdout.json's development sizes, and 6 x 30, the published [[360,12,<=24]]'s torus.
+- **The instrument** (`fast4.py`). It uses stage 3b's classes and window bounds, plus a third,
+  longer window. The exact engine is DistQLDPC's cluster engine (Chen, Jafari and Lai,
+  arXiv:2606.12445; github.com/guluchen/DistQLDPC, commit 8fe913e), with 4 CPU-hours per class.
+  For every exact d, a witness of weight d from this project's window search is checked by
+  distance.verify_witness. Every comparison of bounds uses the parity of d (Proved, 6).
+- **Validation, before registration.** 16 stage 3b/3c tori were rerun with the new instrument.
+  Both instruments finished 528 classes, and they agree on every d. Every entry was settled,
+  including those stage 3b had left incomplete.
+- **The predictions.** `fits.py` fitted them on stages 3a to 3d (157 tori with codes,
+  n <= 300):
+
+| Part | Prediction | Result |
+| --- | --- | --- |
+| P0 | Criterion E decides k > 0; k by the zero rule agrees with bb.k_linalg on 50 random codes per torus; no job fails | **holds**: 104 of 104 fresh tori (110 of 110 with the exposed ones), 0 of 5,500 disagree, no errors |
+| E | Best connected d <= cap(n), the largest even number <= 0.8011 n^0.6074 (C_ENV is stage 3's largest d_max / n^B) | **fails** on 3 x 51 ([[306,4,26]], cap 24); holds on 98 tori; incomplete on the 5 tori at n = 396 |
+| G | Some torus has a code with d/√n > 1.4606 (stage 3's record) | **holds** on 10 tori; the best is [[354,4,28]], at 1.488 |
+| S1 | Some torus has a code with k d^2/n > 13.6054 (the [[294,10,20]]) | **holds** on 29 tori; the best is [[384,12,24]], at 18.0 |
+| S2 | No torus has a code with k d^2/n > 17.0 (the band-maxima line at n = 400, plus 1) | **fails** on 4 x 48 and 12 x 16 ([[384,12,24]], 18.0) |
+| H | The code and settings are as registered | **holds** |
+
+**The run.**
+- **The machine.** One RunPod pod (an AMD EPYC 9575F, 32 vCPU), from 2026-10-30 19:45 to
+  2026-11-05 05:26 UTC. That is 5.4 days, about $146. The 14-day stop rule was not reached.
+- **The classes.** 74 of the 110 tori have codes with k > 0, in 633,390 classes (609,469 on the
+  69 fresh tori with codes).
+- **The exact runs.** 13,380 runs took 2,109 CPU-hours:
+  - 13,217 exact distances came from DistQLDPC, each with its checked witness;
+  - 110 came from the small-weight rule;
+  - 53 reached the 4-hour limit.
+  - No run errored. No window search ever found a logical lighter than DistQLDPC's d.
+- **A quirk of the checkpoint.** `exact-checkpoint.jsonl` keeps each exact result as it arrives,
+  so that a restart can resume. It has a blank line before every entry, because of a truthiness
+  slip in `_saver`. Every reader skips blank lines, so no result is affected.
+
+**What the results say.**
+- **E: the fitted envelope was a little low at n = 306.** There, 0.8011 n^0.6074 = 25.9, so the
+  cap is 24. [[306,4,26]] beats it by one even step. It is one class, with A = 1 + y + xy^2 and
+  B = 1 + y^10 + x^2 y^23. Everywhere else the cap held, often exactly: at n = 354 to 390 the
+  best d is 28 and the cap is 28.
+- **S2: the record score keeps rising.** [[384,12,24]] (k d^2/n = 18.0) is one class on 4 x 48,
+  with A = 1 + y + xy^2 and B = 1 + y^17 + x^3 y^37, and its image on 12 x 16. A ceiling of 17.0
+  was too low by one code. On the exposed 6 x 30, the best k = 12 code has d = 24 exactly, a
+  score of 19.2. That is the published [[360,12,24]]'s torus, and no weight-6 code there beats it
+  at k = 12.
+- **G: growth past √n continues.** The best ratio among settled codes is 1.488, at [[354,4,28]]
+  (5 classes on 3 x 59). Next is 1.476, at [[360,4,28]] on six tori (10 x 18, 12 x 15, 2 x 90,
+  3 x 60, 4 x 45 and 5 x 36). With stage 4d, [[396,4,30]] reaches 1.508.
+- **S1: a new record score, and more beyond 15.** After [[384,12,24]] (18.0) come:
+  - [[310,10,22]] (15.61) on 5 x 31, confirmed by a second method (below);
+  - [[372,10,24]] (15.48) on 2 x 93, 3 x 62 and 6 x 31;
+  - [[378,12,22]] (15.37) on 3 x 63, 7 x 27 and 9 x 21;
+  - [[340,16,18]] (15.25) on 10 x 17.
+
+**The Pareto fronts, n = 302 to 400** (connected codes, d >= 6, fresh tori; "+" marks a lower
+bound, not settled):
+
+| n | Codes |
+| --- | --- |
+| 306 | [[306,4,26]], [[306,8,22]] |
+| 308 | [[308,6,24]] |
+| 310 | [[310,10,22]] |
+| 312 | [[312,4,24]], [[312,8,22]] |
+| 318 | [[318,4,26]] |
+| 322 | [[322,6,24]] |
+| 324 | [[324,4,26]], [[324,8,22]] |
+| 330 | [[330,4,26]], [[330,8,24]] |
+| 336 | [[336,6,26]], [[336,8,24]], [[336,10,22]], [[336,14,18]], [[336,20,12]], [[336,24,8]] |
+| 340 | [[340,16,18]] |
+| 342 | [[342,4,26]], [[342,8,22]] |
+| 348 | [[348,4,26]] |
+| 350 | [[350,6,26]] |
+| 354 | [[354,4,28]] |
+| 360 | [[360,4,28]], [[360,8,24]], [[360,12,20]], [[360,16,16]] |
+| 364 | [[364,6,26]] |
+| 366 | [[366,4,28]] |
+| 372 | [[372,4,28]], [[372,10,24]], [[372,14,20]] |
+| 378 | [[378,6,28]], [[378,10,24]], [[378,12,22]], [[378,16,18]], [[378,20,12]] |
+| 384 | [[384,4,28]], [[384,8,26]], [[384,12,24]], [[384,16,16]], [[384,24,12]], [[384,32,6]] |
+| 390 | [[390,4,28]], [[390,8,26]] |
+| 392 | [[392,6,28]], [[392,12,18]], [[392,18,16]] |
+| 396 | [[396,4,28]]+ (30, by stage 4d), [[396,8,26]] |
+
+On the exposed 6 x 30 the front at k = 12 is [[360,12,24]] (above), not the fresh tori's
+[[360,12,20]].
+
+### Stage 4d: the classes stage 4 left at its limit (registered 2026-11-03, running)
+
+`examples/qec-census-4d`. Lifting the 4-hour limit inside stage 4 would have broken its
+registration (part H). So stage 4d reruns those classes separately, as stage 3d did for stage
+3b/3c, and stage 4's verdict stands as it is.
+- **Registered before any class had reached the limit.** The classes are chosen by a rule
+  applied to stage 4's own files as they are written: every class that stage 4's run recorded as
+  "timelimit" or "unverified".
 - **The job.** DistQLDPC's cluster engine (Chen, Jafari and Lai, arXiv:2606.12445;
-  github.com/guluchen/DistQLDPC, commit 8fe913e), with a 14-day limit. Then a witness of weight
-  d from window.c, checked by distance.verify_witness.
-- **The predictions.**
-  - D1: every selected class is settled, with no contradiction of stage 4's bounds.
-  - B: every d is even and within stage 4's bounds.
-  - R (reported, not judged): stage 4's frontier amended with these distances and judged by
-    stage 4's own judge.
-- **The pod** starts when the first class reaches the limit. It pulls stage 4's records every
-  minute and takes up each new class as it appears.
-- **If no class reaches the limit,** the verdict is "not applicable". Stage 4's own verdict
-  stands either way.
+  github.com/guluchen/DistQLDPC, commit 8fe913e), with a 14-day limit. Then a witness of weight d
+  from window.c, checked by distance.verify_witness.
+- **The predictions.** D1: every selected class is settled, with no contradiction of stage 4's
+  bounds. B: every d is even and within stage 4's bounds. R (reported, not judged): stage 4's
+  frontier amended with these distances, run through stage 4's own judge.
+- **The selection.** It is 53 classes, all connected with k = 4 at n = 396:
+  - 15 on each of 2 x 99, 9 x 22 and 11 x 18 (one group, Z_198);
+  - 4 on each of 3 x 66 and 6 x 33 (Z_3 x Z_66).
+
+  On each, DistQLDPC had proved d ≥ 28, and the window had found 30.
+- **The pod.** One RunPod pod (an AMD EPYC 9965, 32 vCPU), running since 2026-11-03 18:06 UTC.
+- **So far** (2026-11-05 05:35 UTC), 17 classes are recorded, and every one has d = 30 exactly.
+  - DistQLDPC took 9.7 to 25.9 hours each.
+  - Each class has a verified Z-logical of weight 30.
+  - So the k = 4 best on 2 x 99, 9 x 22 and 3 x 66 is [[396,4,30]], since no class there can
+    exceed 30. By isomorphism the same holds on 11 x 18 and 6 x 33.
+  - d/√n = 1.508 is the highest in the census.
+  - d equals cap(396) = 30 exactly, so on these tori E holds and G holds. That is the case the
+    registration singled out ("E and G together").
+- **Its verdict** comes once the other 36 classes are recorded.
+
+### Checks and analyses beside the verdict
+
+- **[[310,10,22]] by a second method** (`examples/qec-census-4/check-310`). This was run after
+  stage 4 had found the code, with the spot-check's instruments and rules. It is not part of the
+  registration. The code is A = 1 + y + xy^13, B = 1 + xy^27 + x^3 y^17 on 5 x 31.
+  - DistQLDPC's MaxSAT engine reached exactly 22, in 2,929 s on an 8-vCPU pod.
+  - The cluster engine took 10 s.
+  - The unpruned search from every qubit reached 22 in 9.9 hours.
+  - The packing search on X-logicals reached 22.
+  - Long windows of both kinds found weight 22 and never lighter.
+  - SCIP's dual bound was 12 at 1 hour.
+  - SAT with a DRAT proof ran out of time at weight 20 and at 21, even with 24 hours.
+
+  So the code is confirmed by a second method, but not certified.
+- **Why the scatter looks regular** (`examples/qec-census-4/regularity`; exploratory, run
+  2026-11-02 when stage 4 was about 75% done). Most of the regularity is arithmetic, not a smooth
+  law:
+  - d is even;
+  - for lm <= 200, codes exist only when lm is divisible by 3, 7, 31, 73 or 85;
+  - 39% of the entries come from isomorphic tori.
+
+  The top edge is a k = 4 staircase on the multiples of 6. It fits d_max ≈ 0.617 √(n ln n), but
+  over n <= 400 the data cannot tell that from n^0.6. Below the edge, d_best ≈ 2.31 n^0.443 − k
+  fits the k layers to about one even step. Proven bounds allow growth exponents from 1/2 to 3/4,
+  and the observed exponent, about 0.6, lies inside that window. Stage 4's full data and stage
+  4d's [[396,4,30]] continue the record ratio's rise (1.488, then 1.508).
+- **The census explorer** (`examples/qec-census-4/explorer`). `census-explorer.html` is a single
+  page that lists every (torus, k) frontier entry of stages 3a to 4, with the best connected
+  code's A and B and the published codes. Its data come from `build_data.py`.
+
+**What it does not establish.**
+- **Each exact d is two claims.** The checked witness proves that d is not larger. That it is
+  not smaller rests on DistQLDPC's cluster engine, a second implementation of the same kind of
+  method as this project's search. On the 528 classes of the validation the two agree, and
+  [[310,10,22]] also has a second method. No certificate covers stage 4's distances.
+- **The fitted constants came from n <= 300.** E failing by one even step on one torus, and S2
+  by one code, says the constants were tight. It does not say the shape of either law is wrong.
+- **One family.** These are weight-6 codes on two-generator abelian groups, up to n = 400.
+  Distance is not performance under noise.
 
 ## What this does not establish
 
@@ -1032,15 +1192,15 @@ registration, so stage 4d reruns those classes separately, as stage 3d did for s
 
 ## Next
 
-1. **Use the parity of d in the census's own settling rule.** d is always even for this family,
-   so a lower bound of 2j - 1 is a lower bound of 2j. Stage 3b's frontier left 154 classes open
-   that this rule would have closed (stage 3d).
+1. **Stage 4d's verdict.** 36 of its 53 classes at n = 396 are still running (2026-11-05). Done
+   so far: the parity of d is used in every settling rule (stages 3d and 4), and exact limits are
+   in CPU-seconds rather than wall-clock time (stage 4, through DistQLDPC's -cpu-lim).
 2. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
    bridge.
 3. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).
-4. **Instruments that don't depend on the machine.** Budget the search in CPU-seconds or nodes
-   rather than wall-clock time, and keep every core busy. Then a faster machine changes how fast a
-   result arrives, but not what it is.
+4. **Certificates at the top of the range.** SAT with DRAT proofs did not finish at d = 22 on
+   [[310,10,22]] within 24 hours. A proof that scales to d = 24 to 30 would turn the census's
+   second implementations into certificates.
 
 ## Reproducing
 

@@ -210,16 +210,24 @@ registered):
   operations. Its data layer is `examples/qec-census-4/dashboards/build.py`, tested in
   `tests/test_census_dashboards.py`; the plan is [census-dashboards-plan.md](census-dashboards-plan.md).
 
-**Census stage 4: the 110 tori with n = 302 to 400** ([code-census.md](code-census.md#stage-4-and-stage-4d-registered-running), registered 2026-10-30, running).
-- **Method.** Every weight-6 class goes through DistQLDPC's cluster engine, with a registered
-  limit of 4 hours per class.
-- **Progress.** On 2026-11-03: 92 of 110 tori and 11,551 exact runs, all complete. The longest
-  run took 3.6 hours.
-- **Stage 4d** (`examples/qec-census-4d`, registered 2026-11-03).
-  - It reruns any class that stage 4 leaves at its limit, with no practical limit (14 days).
-    This keeps stage 4's registration intact.
-  - No class has reached the limit yet.
-  - A second pod starts when one does. If none ever does, the verdict is "not applicable".
+**Census stage 4: the 110 tori with n = 302 to 400** ([code-census.md](code-census.md#stage-4-the-laws-refitted-and-tested-up-to-400-qubits-registered), registered 2026-10-30, run to 2026-11-05). **Verdict: fail.**
+- **What ran.** Every weight-6 class on 110 tori: 633,390 classes on the 74 tori with codes.
+  Exact distances came from DistQLDPC's cluster engine (Chen, Jafari and Lai, arXiv:2606.12445;
+  commit 8fe913e), with 4 CPU-hours per class and a checked witness for every d. 13,380 exact
+  runs took 5.4 days on one 32-vCPU pod. None errored.
+- **E, the fitted envelope, fails** on 3 x 51. [[306,4,26]] is one even step above the cap of 24.
+- **S2, the ceiling, fails.** [[384,12,24]] scores k d²/n = 18.0, above 17.0.
+- **G and S1 pass.** Ten tori pass stage 3's d/√n record; the best is [[354,4,28]], at 1.488.
+  29 tori beat the [[294,10,20]]'s score; the best is [[384,12,24]].
+- **P0 and H hold.**
+- **On the exposed 6 x 30**, the best k = 12 code has d = 24 exactly, so nothing of this form
+  beats the published [[360,12,24]] there.
+- **[[310,10,22]] (score 15.61)** is confirmed by a second method: DistQLDPC's MaxSAT engine.
+- **Stage 4d** (`examples/qec-census-4d`, registered 2026-11-03, running) reruns the 53 classes
+  that stage 4 left at its limit, all k = 4 at n = 396, with a 14-day limit.
+  - The 17 recorded so far all have d = 30.
+  - So the best k = 4 code on those tori is [[396,4,30]]. Its d/√n = 1.508 is the census's
+    highest.
 
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours
