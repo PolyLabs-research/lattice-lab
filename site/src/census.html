@@ -1,0 +1,138 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Findings · quantum codes</div>
+    <h1>A census of bivariate bicycle codes up to 400 qubits</h1>
+    <p class="lede">Bivariate bicycle codes are a family of quantum error-correcting codes that
+      includes IBM's gross code. We computed every code of their common weight-6 form on 348 tori,
+      up to 400 qubits. At each size and number of logical qubits we found the best
+      code's exact distance, each with a checked logical operator. Before each stage ran, we
+      registered what it would find.</p>
+  </header>
+
+  <section class="cards" aria-label="The census in numbers" style="grid-template-columns: repeat(auto-fill, minmax(190px, 1fr))">
+    <div class="card"><span class="big" id="cn-tori">348</span><p>tori, from 8 to 400 qubits,
+      <span id="cn-with">231</span> of them with codes</p></div>
+    <div class="card"><span class="big" id="cn-classes">923,256</span><p>classes of codes with
+      logical qubits, each a pair of three-term polynomials up to symmetry</p></div>
+    <div class="card"><span class="big" id="cn-runs">52,185</span><p>exact distance runs;
+      every best code has a checked logical of its distance</p></div>
+    <div class="card"><span class="big" id="cn-entries">584</span><p>best codes, one per torus and
+      number of logical qubits: <span id="cn-distinct">358</span> distinct [[n, k, d]]</p></div>
+  </section>
+
+  <section class="prose" aria-labelledby="what-title">
+    <h2 id="what-title">What was computed</h2>
+    <p>A code of this family lives on a torus of l × m cells, with n = 2lm physical qubits.
+      It is set by two polynomials A and B in two variables, three terms each. The number of
+      logical qubits, <em class="var">k</em>, comes exactly from the torus's characters. The
+      distance, <em class="var">d</em>, is the hard part. It is the weight of the lightest
+      logical operator, and finding it is an exhaustive search. For every torus, every code was
+      reduced to classes under the torus's symmetries. Each class with <em class="var">k</em> &gt; 0
+      got a fast upper bound, and then exact searches settled the best <em class="var">d</em> for
+      each <em class="var">k</em>.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="d-title">
+    <div class="figure-head">
+      <h3 id="d-title">The best distance at each size</h3>
+      <div class="seg" role="group" aria-label="Codes shown">
+        <button id="d-all" type="button" aria-pressed="true">every k</button>
+        <button id="d-top" type="button" aria-pressed="false">the best k only</button>
+      </div>
+    </div>
+    <div class="chart-box"><svg id="d-chart" viewBox="0 0 760 360" role="img" aria-labelledby="d-title"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell-soft)"></i>stages 1 and 3a, n ≤ 200</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>stages 3b to 3d, n ≤ 300</span>
+      <span><i class="swatch" style="background: var(--gold)"></i>stage 4, n ≤ 400</span>
+      <span><i class="swatch" style="background: var(--ok)"></i>stage 4d's d = 30</span>
+      <span><i class="swatch sq" style="background: var(--muted)"></i>1.40 √n and stage 4's envelope</span>
+    </div>
+    <div class="tip" id="d-tip" aria-live="polite">Point at the chart to read the best code at that size.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="edge-title">
+    <h2 id="edge-title">The distance keeps growing faster than √n</h2>
+    <p>The top edge of the chart belongs to codes with <em class="var">k</em> = 4. Every new record
+      raises the ratio d/√n: from 1.15 at [[48,4,8]] to 1.46 at [[270,4,24]], 1.49 at
+      [[354,4,28]] and 1.51 at [[396,4,30]]. Stage 3 had registered a cap of 1.40 √n and was
+      refuted. Stage 4 registered an envelope fitted on stage 3, 0.80 n<sup>0.61</sup>, rounded
+      down to even. It failed at 306 qubits, where [[306,4,26]] is one step above it, and held
+      at every other size where the best distance is known, often exactly.</p>
+    <p>Most of the regularity is arithmetic. d is always even. Up to 400 qubits, codes exist only
+      when lm is divisible by 3, 7, 31, 73 or 85. Tori with the same group carry the same codes.
+      Over this range, a power law near n<sup>0.6</sup> and √(n ln n) fit the edge equally well.
+      Proven bounds allow exponents between 1/2 and 3/4, so the data do not pick a law.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="s-title">
+    <div class="figure-head">
+      <h3 id="s-title">The best k d²/n at each size</h3>
+    </div>
+    <div class="chart-box"><svg id="s-chart" viewBox="0 0 760 340" role="img" aria-labelledby="s-title"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell-soft)"></i>stages 1 and 3a</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>stages 3b to 3d</span>
+      <span><i class="swatch" style="background: var(--gold)"></i>stage 4</span>
+      <span><i class="swatch" style="background: var(--bad)"></i>a published code</span>
+      <span><i class="swatch sq" style="background: var(--muted)"></i>13.5 and 17, the registered bounds</span>
+    </div>
+    <div class="tip" id="s-tip" aria-live="polite">Point at the chart to read the best score at that size.</div>
+  </section>
+
+  <section class="prose" aria-labelledby="score-title">
+    <h2 id="score-title">Records above the published codes</h2>
+    <p>k d²/n measures what a code delivers per physical qubit: logical qubits times distance
+      squared. The gross code [[144,12,12]] scores 12.0, the highest of the published form up to
+      200 qubits. [[288,12,18]] scores 13.5. Stage 3 registered that nothing up to 300 qubits
+      would beat 13.5, and found [[294,10,20]] at 13.6. Stage 4 registered a ceiling of 17, and
+      found [[384,12,24]] at 18.0. On the torus of Bravyi et al.'s [[360,12,≤24]], whose distance
+      is 24 (a score of 19.2), no weight-6 code does better at <em class="var">k</em> = 12.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="stages-title">
+    <h2 id="stages-title">The stages, and what was registered</h2>
+  </section>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Stage</th><th>Codes</th><th>Registered before the run</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>1 (Oct 22)</td><td>the published form, A = x<sup>a</sup> + y<sup>b</sup> + y<sup>c</sup> and B = y<sup>d</sup> + x<sup>e</sup> + x<sup>f</sup>, on 116 tori up to 200 qubits: 3,330 classes</td><td>nothing: an exploratory survey</td><td><span class="badge muted">survey</span> the gross code has the best k d²/n of all; a rule proved by hand says which tori have codes</td></tr>
+        <tr><td>2 (Oct 22–23)</td><td>the same form on 122 tori held back from stage 1, up to 300 qubits</td><td>9 predictions from stage 1, among them a linear distance law</td><td><span class="badge ok">8 of 9 held</span> the distance law was exact at all 19 instances; a pattern in the best codes failed once</td></tr>
+        <tr><td>3a (Oct 24)</td><td>every weight-6 code on stage 1's 116 tori: 36,496 classes</td><td>nothing: exploratory</td><td><span class="badge muted">survey</span> beats the published form at 18 (n, k) pairs</td></tr>
+        <tr><td>3b/3c (Oct 24–28)</td><td>every weight-6 code on the 122 held-back tori: 253,370 classes</td><td>5 predictions, among them a cap of 1.40 √n and no score above 13.5</td><td><span class="badge bad">refuted</span> [[294,10,20]] scores 13.6, and the best distance reaches 1.42 √n</td></tr>
+        <tr><td>3d (Oct 30)</td><td>the 154 classes stage 3b left unfinished</td><td>a rerun with a second distance tool</td><td><span class="badge ok">154 of 154</span> d = 24, as the parity of d predicted</td></tr>
+        <tr><td>4 (Oct 30–Nov 5)</td><td>every weight-6 code on 110 new tori, 302 to 400 qubits: 633,390 classes</td><td>6 predictions, refitted on stage 3: an envelope, growth past 1.46 √n, a score above 13.6, none above 17</td><td><span class="badge bad">refuted</span> growth and the new record held, but [[384,12,24]] breaks the ceiling and one code breaks the envelope</td></tr>
+        <tr><td>4d (from Nov 3)</td><td>the 53 classes stage 4 left at its 4-hour limit, all at 396 qubits</td><td>registered before any class reached the limit, with up to 14 days each</td><td><span class="badge muted" id="cn-4d-badge">running</span> <span id="cn-4d-text">so far every one has d = 30</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="prose" aria-labelledby="limits-title">
+    <h2 id="limits-title">What the census does not show</h2>
+    <ul>
+      <li><strong>The distances are exact, but most are not certified.</strong> Each comes with a
+        logical operator of that weight, checked independently, so it is never too high. That it is
+        not too low rests on exhaustive searches: this project's own up to 300 qubits, and
+        DistQLDPC's cluster engine beyond. The two agree wherever both finished. A sample was
+        confirmed by other methods, and the smaller codes by checked SAT proofs, but no
+        certificate covers the largest distances.</li>
+      <li><strong>One family.</strong> These are weight-6 codes on two-generator abelian groups.
+        Codes of other forms, such as higher weight or non-abelian groups, do better at some
+        sizes.</li>
+      <li><strong>Distance is not performance.</strong> Nothing here measures logical error rates
+        under circuit noise, decoding or logical gates.</li>
+      <li><strong>Not a claim of novelty.</strong> The literature was checked only in part, and
+        the same [[n, k, d]] need not be the same code.</li>
+    </ul>
+    <p class="note">Sources: the bivariate bicycle codes and the gross code are from Bravyi et al.,
+      Nature 627, 778 (2024), <a href="https://arxiv.org/abs/2308.07915">arXiv:2308.07915</a>.
+      The coprime codes are from Wang and Mueller,
+      <a href="https://arxiv.org/abs/2408.10001">arXiv:2408.10001</a>. Distances beyond 300 qubits
+      come from DistQLDPC, Chen, Jafari and Lai's tool,
+      <a href="https://arxiv.org/abs/2606.12445">arXiv:2606.12445</a>
+      (<a href="https://github.com/guluchen/DistQLDPC">github.com/guluchen/DistQLDPC</a>, commit
+      8fe913e). The <a href="codes.html">quantum codes page</a> shows how the codes' logical
+      qubits follow from the algebra behind the rest of this site.</p>
+  </section>
+</main>

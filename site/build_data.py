@@ -251,6 +251,38 @@ def census() -> dict:
     return {"train": train, "heldout": held, "heldout_sizes": sizes}
 
 
+def qec_census() -> dict:
+    """The code census in aggregate, for the census page: every frontier entry as [[n, k, d]]
+    (no polynomials), the totals, the published codes, and stage 4d's progress. It reads the
+    census dashboards' data layer (examples/qec-census-4/dashboards/data, built by build.py from
+    the records and tested in tests/test_census_dashboards.py)."""
+    D = EX / "qec-census-4" / "dashboards" / "data"
+    frontier = json.loads((D / "frontier.json").read_text())
+    summary = {r["metric"]: r["value"] if r["value"] is not None else r["text"]
+               for r in json.loads((D / "summary.json").read_text())}  # fmt: skip
+    points = sorted({(e["n"], e["k"], e["d"], e["stage"], bool(e["settled"]))
+                     for e in frontier if e["d"] is not None})  # fmt: skip
+    published = [[p["name"], p["n"], p["k"], p["d"]]
+                 for p in json.loads((D / "published.json").read_text()) if p.get("d")]  # fmt: skip
+
+    def lines(path: Path) -> list:
+        return [json.loads(x) for x in path.read_text().splitlines() if x.strip()] \
+            if path.exists() else []  # fmt: skip
+
+    rec4d = lines(EX / "qec-census-4d" / "records.jsonl")
+    led4d = lines(EX / "qec-census-4d" / "ledger.jsonl")
+    return {
+        "points": [list(t) for t in points],
+        "totals": {k: summary[k] for k in ("tori_total", "tori_with_codes", "classes", "exact_runs",
+                                            "frontier_entries", "distinct_entries")},
+        "published": published,
+        "stage4d": {"selected": 53, "recorded": len(rec4d),
+                    "d": sorted({r["d"] for r in rec4d if r.get("d") is not None}),
+                    "verdict": next((e["body"]["verdict"] for e in led4d
+                                     if e["kind"] == "verdict"), None)},
+    }  # fmt: skip
+
+
 def proofs() -> dict:
     """The Lean library's modules: size, theorem count and imports within the library."""
     lib = ROOT / "proofs" / "LatticeProofs"
@@ -321,6 +353,7 @@ def main() -> None:
         "ledger": ledger(),
         "timelines": timelines(),
         "census": census(),
+        "qec_census": qec_census(),
         "proofs": proofs(),
         "pilot37": PILOT37,
     }
