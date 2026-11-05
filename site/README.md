@@ -10,9 +10,11 @@ site/
   src/*.html        the page bodies
   public/           what gets deployed
     index.html, model.html, parity.html, atlas.html, settling.html, proofs.html, codes.html,
-    404.html
-    assets/site.css, assets/lib.js (shared maths, SHA-256, charts)
-    assets/js/<page>.js: index.js, model.js, parity.js, atlas.js, settling.js, proofs.js, codes.js
+    census.html, contact.html, 404.html
+    assets/site.css, assets/lib.js (shared maths, SHA-256, charts), assets/fonts/
+    assets/js/<page>.js: index.js, model.js, parity.js, atlas.js, settling.js, proofs.js, codes.js,
+    census.js, contact.js
+  apps-script/      the contact form's backend (Google Apps Script)
   firebase.json     Firebase Hosting configuration
 ```
 

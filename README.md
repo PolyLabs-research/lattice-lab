@@ -19,14 +19,20 @@ The loop began with settling times. Most of the work since is on linear rules, w
 be computed exactly and proved: period laws for the parity rules, an atlas of rules built from
 neighbour shells, the mechanisms behind it proved in Lean, and seven pilots in which a fresh LLM
 agent, given a problem card, proves a law or finds and proves a mechanism, with Lean as the
-judge of the proof. The latest results explain why every nonzero eigenvalue of rule 4850 at
+judge of the proof. Its latest results explain why every nonzero eigenvalue of rule 4850 at
 m = 37 is a ninth power, with a proof that three independent checkers found stands with repairs,
-and classify the hexagon family it belongs to, confirmed by a registered test. The ring all of
-this lives in is also the ring of bivariate bicycle quantum codes, the proposed next direction
-([docs/next-direction.md](docs/next-direction.md)).
+and classify the hexagon family it belongs to, confirmed by a registered test.
+
+The ring all of this lives in is also the ring of bivariate bicycle quantum codes
+([docs/next-direction.md](docs/next-direction.md)), and that is where the work is now: exact
+distances for published codes ([docs/code-distances.md](docs/code-distances.md)), and a census of
+every weight-6 code of that family up to 400 qubits ([docs/code-census.md](docs/code-census.md)).
+The census's registered predictions failed where it mattered most: [[294,10,20]] scores
+k d²/n = 13.6, above the published [[288,12,18]]'s 13.5, and [[384,12,24]] scores 18.0.
 
 The public website, [polylabs-research.net](https://polylabs-research.net), is built from
-`site/`; [site/README.md](site/README.md) says how to rebuild and deploy it.
+`site/`; [site/README.md](site/README.md) says how to rebuild and deploy it. Its
+[census page](https://polylabs-research.net/census) summarises the census.
 
 ## Findings so far
 
@@ -59,6 +65,9 @@ reasoning after the fact went beyond the tools, the write-up says so.
 | A bivariate bicycle quantum code's logical qubits k are read off the torus's characters (common zeros of A and B, with 2-part multiplicities at even sizes) | **confirmed by a registered test**: agrees with linear algebra on 3,000 of 3,000 random codes and reproduces all 12 published k, IBM's gross code included | [next-direction.md](docs/next-direction.md) | `qec-bb` |
 | The 12 published codes' distances, d = 18 for [[288,12,18]] included | **reproduced by a registered test**, blind to the published values, by an exhaustive search built here (the gross code in 0.2 s, [[288,12,18]] in 3 minutes); an integer program agrees on 11. Its registered method check **failed** once, through a SCIP fault; the fault was traced and fixed, and a second registered test on fresh codes found both instruments hold, while SCIP's unfixed defaults failed on 3 of its codes | [code-distances.md](docs/code-distances.md) | `qec-distance`, `qec-distance-2` |
 | Every code of the published form on 116 tori with n ≤ 200 | **a census, stage 1 (exploratory)**: 3,330 classes with k > 0 on 35 tori, each with an exact distance; the gross code has the highest k d²/n; an exact criterion for which tori have codes (proved by hand, matches all 116); a registered stage 2 on 122 held-out tori confirmed the criterion, the k formulas, the d = 2 rule and a linear distance law (19 of 19 instances exact, up to [[300,8,20]]), and refuted the mod-3 base pattern on 6 x 18 | [code-census.md](docs/code-census.md) | `qec-census`, `qec-census-2`, `qec-census-2b` |
+| The open distances of the published [[360,12,≤24]] and [[756,16,≤34]] | **registered**: [[360,12]] has d = 24 exactly, by a checked weight-24 logical and a split exhaustive search, an independent recomputation of a value Crocker and DistQLDPC had found. [[756,16]] has 30 ≤ d ≤ 34, with a packing cut that a Fable consultation proposed and a registered test checked on fresh codes first; that matches DistQLDPC's public lower bound with a second implementation of the same kind of search. The second run stopped before its registered end, disclosed in its `STOPPED.md` | [code-distances.md](docs/code-distances.md#the-open-distances-examplesqec-open-distance) | `qec-open-distance`, `qec-open-distance-2` |
+| Every weight-6 code of the family up to 300 qubits: the 116 stage-1 tori, then the 122 held out | stage 3a, **exploratory**: 36,496 classes, every d exact, matching Lin and Pryadko's catalog at 43 of 44 comparable (n, k) pairs and never higher. Stage 3b/3c, **registered and refuted**: [[294,10,20]] has k d²/n = 13.61, above the published [[288,12,18]]'s 13.5, and the best d reaches 1.42 √n. A spot-check of 20 frontier codes with other tools (SAT with DRAT proofs, DistQLDPC's two engines, SCIP) agreed everywhere, and the registered stage 3d settled the 154 classes left open: all have d = 24, as the parity of d predicted | [code-census.md](docs/code-census.md#stage-3b3c-every-weight-6-code-on-the-held-out-tori-registered) | `qec-census-3`, `qec-census-3b`, `qec-census-3c`, `qec-census-3d` |
+| Every weight-6 code from 302 to 400 qubits (110 tori), against laws refitted on stage 3 | **registered and refuted**: 633,390 classes, with exact distances from DistQLDPC's cluster engine, each with a checked witness. The fitted envelope fails on 3 x 51 ([[306,4,26]]), and the ceiling on k d²/n fails: [[384,12,24]] scores 18.0, above 17.0. Growth past stage 3's d/√n record and a new record score both held, on 10 and 29 tori. Stage 4d, still running, reruns the 53 classes that stage 4 left at its 4-hour limit; every one settled so far has d = 30, and [[396,4,30]] has the census's highest d/√n, 1.508 | [code-census.md](docs/code-census.md#stage-4-the-laws-refitted-and-tested-up-to-400-qubits-registered) | `qec-census-4`, `qec-census-4d` |
 | An LLM agent, given only a problem card and the Lean library, finds a mechanism and proves it | three pilots, each on the first attempt: the hexagon and triangle laws' 2-parts, and VO + T13's law, which the agent had to find from data. **Accepted by Lean**, not by the agent's account, with pinned statements and standard axioms; the registered predictions held at 15 of 15, 40 of 40 and 20 of 20, and the third agent's own law at 20 of 20 sizes it never saw. The last two ran in their own containers, with their transcripts audited. The laws were within reach of known techniques and, for the third, of one division per data row. Pilots 4 to 7, on open questions, are in the rows above | [llm-pilot.md](docs/llm-pilot.md) | `llm-pilot*` |
 | The atlas's mechanisms, formally | **proved in Lean** (mathlib, standard axioms only): the 18 identities behind them; the bridge, that a rule's period on an odd torus is the lcm of its nonzero eigenvalues' orders; the reduction from even sizes to odd parts on the square and the atlas's own triangular and hexagonal tori; round 2's cube and dilation at every size; round 3's twisted power on the atlas's own triangular torus; the XOR law's 2-part at every size; the hexagon and triangle laws' 2-parts and VO + T13's law (proved by LLM agents, the last also found by one); the confinements that pilots 4 to 7 found and proved, to the cubes at m = 25, 37 and 61 and to the ninth powers at 37; and the full bound, that the period divides 2^sord(m) - 1 | [proofs.md](docs/proofs.md) | `proofs/` |
 
@@ -68,6 +77,9 @@ reasoning after the fact went beyond the tools, the write-up says so.
 uv sync                      # LatticeLife and Kepler at the commits pinned in pyproject.toml
 uv run pytest
 ```
+
+The code-distance and census studies use SCIP, from the optional `qec` group:
+`uv sync --group qec` installs it, and without it their SCIP tests fail.
 
 Python 3.12 or 3.13 (LatticeLife's bound). To work against local checkouts of the libraries,
 run `uv pip install -e ../gameoflife_advanced -e ../kepler` after `uv sync`, then use
@@ -278,8 +290,20 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `hexagon-family` | the registered held-out test of the hexagon-family classification from the rule-4850 deep dive: 41 predicted period odd parts at 37, 13 and other sizes (the classification holds: 35 of 35 tested, 6 untested) |
 | `qec-bb` | the first step toward quantum codes ([next-direction.md](docs/next-direction.md)): a bivariate bicycle code's logical qubits from the torus's characters, against linear algebra and twelve published codes (registered; both predictions held) |
 | `qec-distance` | the published codes' distances by two exact instruments, an integer program (SCIP) and an exhaustive search in C, with method checks on random, toric and trinomial codes (registered; all 12 reproduced, one method check failed; [write-up](docs/code-distances.md)); `check-independent/`, the independent checker's development records |
-| `qec-census` | stage 1 of a census of codes of the published form on every torus with n ≤ 200 outside a committed hold-out: fast k, equivalence classes, exact distances, cross-checks ([write-up](docs/code-census.md); exploratory, stage 2 to be registered) |
+| `qec-census` | stage 1 of a census of codes of the published form on every torus with n ≤ 200 outside a committed hold-out: fast k, equivalence classes, exact distances, cross-checks ([write-up](docs/code-census.md); exploratory; stage 2 tested it, in `qec-census-2`) |
 | `qec-distance-2` | the re-test of both instruments as fixed (SCIP's XOR presolving and rapid learning off; the search with iterative deepening), on fresh codes, the known fault cases, the published codes and a power test with SCIP's defaults as control (registered; the instruments hold) |
+| `qec-census-2` | census stage 2: stage 1's findings registered and tested on the 122 held-out tori (registered; all but the mod-3 base pattern hold, and the verdict stays "incomplete" after a capacity fault in `census.c`) |
+| `qec-census-2b` | stage 2's registered continuation: the jobs its run could not do, with stage 2's predictions copied verbatim |
+| `qec-open-distance` | the open distances of the published [[360,12,≤24]] and [[756,16,≤34]]: a window search for checked logicals and an exhaustive search split across cores (registered; d = 24 for [[360,12]], 24 ≤ d ≤ 34 for [[756,16]]) |
+| `qec-open-distance-2` | a packing cut for the search, tested on fresh codes and known distances, then [[756,16]] to d ≥ 30 (registered; stopped before its registered end, disclosed in `STOPPED.md`) |
+| `qec-census-3` | census stage 3a: every weight-6 code on the 116 stage-1 tori, 36,496 classes with exact distances (exploratory) |
+| `qec-census-3b` | stage 3b: stage 3a's patterns registered on the 122 held-out tori (refuted by [[294,10,20]]); `spotcheck/`, the independent check of 20 frontier codes with other tools |
+| `qec-census-3c` | stage 3b's registered continuation on the tori its run could not reach, with its predictions verbatim; the last 25 tori ran on a RunPod CPU pod (`runpod/`) |
+| `qec-census-3d` | the 154 classes stage 3b/3c left unfinished, settled with DistQLDPC's cluster engine (registered; all d = 24) |
+| `qec-census-4` | census stage 4: the laws refitted and tested on 110 tori from 302 to 400 qubits (registered; the envelope and the ceiling fail); `dashboards/` and `explorer/`, the review dashboards' data layer and the census explorer; `check-310/`, the second method on [[310,10,22]] |
+| `qec-census-4b` | probabilistic distances by information-set decoding: the instrument and its calibration (prepared; not registered or run) |
+| `qec-census-4d` | the 53 classes stage 4 left at its 4-hour limit, rerun with a 14-day limit (registered; running) |
+| `qec-noise` | the plan for circuit-noise simulation of the census's best codes (scoping, not registered) |
 | `census-remainder` | the 45 census entries pilot 4 left, sorted: forced subfields, a chance model and its calibration (all 32,768 symmetric square rules within distance 4 at m = 21 and 25), hidden symmetries mod m; pilot 5 later explained 19 of them, and pilot 7's condition covers 27, among them 10 that no earlier condition covered ([write-up](docs/census-remainder.md)) |
 | `fable-units` | a registered test of Claude Fable's unit criterion and pyramid rules from a consultation: predictions from the fundamental unit and class number alone, decided by direct computation in GF(2)[x]/Phi_p ([write-up](docs/consultations.md)) |
 | `consult-budget` | what a consultation's effort is worth: two answered questions put to Fable at three settings, every claim checked by machine, rubrics graded blind; cost per verified answer, and two findings ([write-up](docs/consultations.md)) |
