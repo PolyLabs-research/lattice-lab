@@ -126,6 +126,8 @@
           <tr><td>The open distances of two larger published codes, [[360,12,≤24]] and [[756,16,≤34]]</td><td>an exhaustive search split across 4 cores, with a stronger cut tested on fresh codes first, and checked logicals</td><td><span class="badge ok">held</span> [[360,12]] has d = 24 exactly; [[756,16]] has 30 ≤ d ≤ 34</td></tr>
           <tr><td>A census's predictions for every weight-6 code on 122 sizes it held back, up to 300 qubits, among them that no code beats the published record k d²/n = 13.5</td><td>253,370 code classes, registered before any was computed</td><td><span class="badge bad">refuted</span> [[294,10,20]] scores 13.6, above the published [[288,12,18]]; an independent check of 20 frontier codes with other tools agreed everywhere</td></tr>
           <tr><td>The 154 classes that run left unfinished have d = 24, as the parity of d predicted</td><td>154 classes on 9 tori, rerun with a second distance tool</td><td><span class="badge ok">154 of 154</span></td></tr>
+          <tr><td>Laws refitted on the census, tested on 110 new sizes from 302 to 400 qubits: the best distance under a fitted envelope, growth past the record d/√n, a new record k d²/n, but none above 17</td><td>633,390 code classes, registered before any was computed; a second distance tool, with a checked logical for every distance</td><td><span class="badge bad">failed</span> growth and a new record held ([[384,12,24]] scores 18.0), but that breaks the ceiling of 17, and one code at 306 qubits is a step above the envelope</td></tr>
+          <tr><td>The 53 classes that run left at its 4-hour limit, all at 396 qubits, settle with no practical limit</td><td>registered before any class reached the limit; up to 14 days per class</td><td><span class="badge muted">running</span> 17 of 53 so far, all d = 30: [[396,4,30]], at 1.51 √n the highest in the census</td></tr>
           <tr><td>The deep dive's classification of rule 4850's family, the hexagon family</td><td>41 held-out predictions of period odd parts, at sizes from 13 to 1,861</td><td><span class="badge ok">35 of 35 tested</span> the six at the largest sizes, 709 to 1,861, were not tested: two ran out of time, and four were recorded as not run</td></tr>
         </tbody>
       </table>
@@ -195,8 +197,9 @@
         characters. A registered test agreed with plain linear algebra on 3,000 of 3,000 random
         codes and reproduced all 12 published values, and a second reproduced all 12 published
         distances, by a search written here. A census of every weight-6 code up to 300 qubits
-        then found [[294,10,20]], above the published [[288,12,18]] on k d²/n, and a fourth stage,
-        up to 400 qubits, is running.</p>
+        then found [[294,10,20]], above the published [[288,12,18]] on k d²/n. A fourth stage, up
+        to 400 qubits, found [[384,12,24]], with k d²/n = 18.0, and distances still growing faster
+        than √n.</p>
     </a>
   </div>
 </main>
