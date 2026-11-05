@@ -11,8 +11,8 @@ verdict back onto its predictions. The words used:
 - **outcome:** "held", "failed", "not tested", "incomplete", "not applicable", "reported"
   (registered to be reported, not judged), "pending" (the run has no verdict yet) or
   "no verdict" (the ledger has none).
-- **interim:** true for stage 4, whose verdict is recorded when its run ends: its outcomes are
-  what the records say so far.
+- **interim:** true for a census stage whose run has not ended (stage 4 until 2026-11-05, stage
+  4d now): its outcomes are what the records say so far.
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from pathlib import Path
 
 AREAS = {
     "Code census": ["qec-census-2", "qec-census-2b", "qec-census-3b", "qec-census-3c",
-                    "qec-census-3d", "qec-census-4"],
+                    "qec-census-3d", "qec-census-4", "qec-census-4d"],
     "Code distances": ["qec-bb", "qec-distance", "qec-distance-2", "qec-open-distance",
                        "qec-open-distance-2"],
     "Periods and laws": ["xor-periods", "xor-periods-algebra", "parity-lattices",
@@ -321,20 +321,57 @@ def stage3b(P, v, ctx):
 
 
 def stage4(P, v, ctx):
-    i4 = ctx["interim4"]
+    if v is None:  # running: what the records say so far
+        i4 = ctx["interim4"]
+        out = []
+        for b in P:
+            p = b["part"]
+            none = "no torus achieves it so far" if p in ("G", "S1") else "no torus fails it so far"
+            if p in ("E", "S2", "P0"):
+                o, note = ("failed", i4[p][0]) if i4[p] else ("pending", none)
+            elif p in ("G", "S1"):
+                o, note = ("held", i4[p][0]) if i4[p] else ("pending", none)
+            else:
+                o, note = "pending", "judged when the run ends"
+            out.append(row(p, _text(b), o, note=note))
+        return out, "running: the verdict is recorded when the run ends"
+    out, _ = parts(P, v, ctx)
+    per = v.get("per_torus", {})
+    fresh = {t: x for t, x in per.items() if t not in v.get("exposed", {})}
+
+    def tori(p, value):
+        return [t for t, x in fresh.items() if x[p] == value]
+
+    def best(p, key):
+        hits = [(x["values"][key], t) for t in tori(p, "yes") for x in [fresh[t]]]
+        return max(hits) if hits else None
+
+    notes = {}
+    for p in ("E", "S2"):
+        bad, open_ = tori(p, "fail"), tori(p, "incomplete")
+        held = "holds on every settled torus"
+        notes[p] = (f"fails on {', '.join(sorted(bad))}" if bad else held) + \
+            (f"; incomplete on {len(open_)}" if open_ else "")  # fmt: skip
+    for p, key in (("G", "d_over_sqrt_n"), ("S1", "score")):
+        b = best(p, key)
+        notes[p] = f"{len(tori(p, 'yes'))} tori; best {b[0]} on {b[1]}" if b else "no torus"
+    notes["P0"] = f"{len(tori('P0', 'pass'))} of {len(fresh)} fresh tori"
+    for r in out:
+        r["note"] = notes.get(r["label"], "")
+    return out, f"verdict {v['verdict']}"
+
+
+def stage4d(P, v, ctx):
+    if v is None:  # running: its records so far
+        n = ctx.get("records4d", 0)
+        rows = [row(b["id"], b.get("claim", ""), "pending",
+                    note=f"running: {n} classes recorded so far") for b in P]  # fmt: skip
+        return rows, "running: its verdict follows stage 4's, once every selected class is done"
     out = []
     for b in P:
-        p = b["part"]
-        if p in ("E", "S2"):
-            o, note = ("failed", i4[p][0]) if i4[p] else ("pending", "no torus fails it so far")
-        elif p in ("G", "S1"):
-            o, note = ("held", i4[p][0]) if i4[p] else ("pending", "no torus achieves it so far")
-        elif p == "P0":
-            o, note = ("failed", i4[p][0]) if i4[p] else ("pending", "no torus fails it so far")
-        else:
-            o, note = "pending", "judged when the run ends"
-        out.append(row(p, _text(b), o, note=note))
-    return out, "running: the verdict is recorded when the run ends"
+        o = "reported" if b["id"] == "R" else word(v.get(b["id"], "not tested"))
+        out.append(row(b["id"], b.get("claim", ""), o))
+    return out, f"verdict {v['verdict']}"
 
 
 READERS = {
@@ -353,7 +390,7 @@ READERS = {
     "qec-distance": qec_distance, "qec-distance-2": qec_distance_2,
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,
     "qec-census-3c": parts, "qec-census-3d": lambda P, v, c: parts(P, v, c, key="id"),
-    "qec-census-3b": stage3b, "qec-census-4": stage4,
+    "qec-census-3b": stage3b, "qec-census-4": stage4, "qec-census-4d": stage4d,
 }  # fmt: skip
 
 
@@ -368,7 +405,9 @@ def build(examples: Path, interim4: dict) -> tuple[list[dict], list[dict]]:
         v = [e for e in ledgers[folder] if e["kind"] == "verdict"]
         return v[-1]["body"] if v else None
 
-    ctx = {"verdict": verdict, "interim4": interim4}
+    rec4d = examples / "qec-census-4d" / "records.jsonl"
+    n4d = len([x for x in rec4d.read_text().splitlines() if x.strip()]) if rec4d.exists() else 0
+    ctx = {"verdict": verdict, "interim4": interim4, "records4d": n4d}
     area_of = {f: a for a, fs in AREAS.items() for f in fs}
     studies, preds = [], []
     for folder, entries in ledgers.items():
@@ -378,13 +417,13 @@ def build(examples: Path, interim4: dict) -> tuple[list[dict], list[dict]]:
         times = {}
         for e in entries:
             times.setdefault(e["kind"], e["time"])
-        if v is None and folder not in ("qec-census-3b", "qec-census-4"):
+        if v is None and folder not in ("qec-census-3b", "qec-census-4", "qec-census-4d"):
             rows = [row(b["body"].get("part") or b["body"].get("test") or b["seq"],
                         _text(b["body"]), "no verdict") for b in P]  # fmt: skip
             summary = "no verdict in the ledger"
         else:
             rows, summary = READERS[folder]([b["body"] for b in P], v, ctx)
-        interim = folder == "qec-census-4"
+        interim = folder in ("qec-census-4", "qec-census-4d") and v is None
         for e, r in zip(P, rows, strict=True):
             preds.append({"key": f"{folder}#{e['seq']}", "study": folder, "seq": e["seq"],
                           "area": area_of[folder], **r, "interim": interim,

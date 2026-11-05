@@ -106,7 +106,7 @@ def test_summary_counts(data):
 
 def test_every_study_and_prediction(data):
     studies, preds = data["studies"], data["predictions"]
-    assert len(studies) == 33 and len(preds) == sum(s["predictions"] for s in studies) == 1322
+    assert len(studies) == 34 and len(preds) == sum(s["predictions"] for s in studies) == 1325
     vocabulary = {"held", "failed", "not tested", "incomplete", "not applicable", "reported",
                   "pending", "no verdict"}  # fmt: skip
     assert {p["outcome"] for p in preds} <= vocabulary
@@ -116,11 +116,15 @@ def test_every_study_and_prediction(data):
     assert out[("qec-census-3c", "P2")] == out[("qec-census-3c", "P3")] == "failed"
     assert out[("qec-census-3c", "P0")] == out[("qec-census-3c", "P4")] == "held"
     assert out[("qec-census-3d", "D1")] == out[("qec-census-3d", "T")] == "held"
-    assert out[("qec-census-4", "E")] == out[("qec-census-4", "S2")] == "failed"  # interim
-    assert out[("qec-census-4", "G")] == out[("qec-census-4", "S1")] == "held"  # interim
+    # stage 4's verdict (2026-11-05): fail, on E and S2
+    assert out[("qec-census-4", "E")] == out[("qec-census-4", "S2")] == "failed"
+    assert out[("qec-census-4", "G")] == out[("qec-census-4", "S1")] == "held"
+    assert out[("qec-census-4", "P0")] == out[("qec-census-4", "H")] == "held"
     by = {s["study"]: s for s in studies}
     assert by["qec-open-distance-2"]["outcome"] == "no verdict"
-    assert by["qec-census-4"]["outcome"] == "pending" and by["qec-census-4"]["interim"]
+    assert by["qec-census-4"]["outcome"] == "mixed" and not by["qec-census-4"]["interim"]
+    if by["qec-census-4d"]["verdict_time"] is None:  # stage 4d still running
+        assert by["qec-census-4d"]["outcome"] == "pending" and by["qec-census-4d"]["interim"]
 
 
 def test_checks(data):
