@@ -17,8 +17,8 @@
   census to n = 400. Its verdict is fail: the envelope E and the ceiling S2 fail, while growth
   past √n and a new record score pass.
   [Stage 4](#stage-4-the-laws-refitted-and-tested-up-to-400-qubits-registered) has the details.
-  Stage 4d is settling the 53 classes that stage 4 left at its 4-hour limit, and so far every
-  one has d = 30.
+  Stage 4d reran the 53 classes that stage 4 left at its 4-hour limit, until every distinct
+  code was known: all have d = 30, so the best k = 4 code at 396 qubits is [[396,4,30]].
 
 **Result: every code of the published form on 116 tori with n ≤ 200 was computed, and every one of
 its 3,330 classes with k > 0 has an exact distance. The published codes are at or near the top.**
@@ -998,8 +998,8 @@ Growth past √n (G) and a new record score (S1) both pass, and the instruments 
   codes. No job failed, and every record was made by the registered code and settings.
 - **Five tori are incomplete for E and S2.** On the n = 396 tori (2 x 99, 9 x 22, 11 x 18;
   3 x 66, 6 x 33), 53 classes with k = 4 reached the 4-hour limit, so the k = 4 best there stopped
-  at d ≥ 28. This does not change the verdict. Stage 4d, below, is settling them, and so far every
-  one has d = 30.
+  at d ≥ 28. This does not change the verdict. Stage 4d, below, settled them: every one has
+  d = 30.
 
 **What was registered** (`examples/qec-census-4/ledger.jsonl`, 2026-10-30, before any code on
 these tori was computed).
@@ -1091,7 +1091,7 @@ bound, not settled):
 On the exposed 6 x 30 the front at k = 12 is [[360,12,24]] (above), not the fresh tori's
 [[360,12,20]].
 
-### Stage 4d: the classes stage 4 left at its limit (registered 2026-11-03, running)
+### Stage 4d: the classes stage 4 left at its limit (registered 2026-11-03, stopped for cost)
 
 `examples/qec-census-4d`. Lifting the 4-hour limit inside stage 4 would have broken its
 registration (part H). So stage 4d reruns those classes separately, as stage 3d did for stage
@@ -1110,16 +1110,32 @@ registration (part H). So stage 4d reruns those classes separately, as stage 3d 
   - 4 on each of 3 x 66 and 6 x 33 (Z_3 x Z_66).
 
   On each, DistQLDPC had proved d ≥ 28, and the window had found 30.
-- **The pod.** One RunPod pod (an AMD EPYC 9965, 32 vCPU), running since 2026-11-03 18:06 UTC.
-- **So far** (2026-11-05 05:35 UTC), 17 classes are recorded, and every one has d = 30 exactly.
-  - DistQLDPC took 9.7 to 25.9 hours each.
-  - Each class has a verified Z-logical of weight 30.
-  - So the k = 4 best on 2 x 99, 9 x 22 and 3 x 66 is [[396,4,30]], since no class there can
-    exceed 30. By isomorphism the same holds on 11 x 18 and 6 x 33.
-  - d/√n = 1.508 is the highest in the census.
+- **The run.** One RunPod pod (an AMD EPYC 9965, 32 vCPU), from 2026-11-03 18:06 to 2026-11-06
+  01:15 UTC.
+- **Stopped for cost.** The pod was stopped on 2026-11-06, at the user's request, once every
+  distinct code among the 53 was known. The 53 classes are only 19 distinct codes:
+  - isomorphic tori carry the same codes;
+  - 9 x 22 and 11 x 18 repeat 2 x 99's 15 codes;
+  - 6 x 33 repeats 3 x 66's 4. The explicit isomorphism Z_6 x Z_33 → Z_3 x Z_66,
+    (a, b) ↦ (a mod 3, b + 33((a − b) mod 2) mod 66), maps 6 x 33's four selected classes onto
+    3 x 66's four, checked with census.canonical.
+- **The result.** 31 classes are recorded, and every one has d = 30 exactly:
+  - all 15 on 2 x 99, all 4 on 3 x 66, and 12 of the copies;
+  - DistQLDPC exited 0 with lower = upper = 30 every time, taking 9.7 to 41.1 hours (median
+    19.3);
+  - each class has a verified Z-logical of weight 30;
+  - none contradicts stage 4's bounds, and every record was made by the registered code.
+
+  The other 22 classes are copies of recorded ones, so they too have d = 30.
+- **What it settles.** The k = 4 best on all five n = 396 tori is [[396,4,30]].
+  - d/√n = 1.508, the highest in the census.
   - d equals cap(396) = 30 exactly, so on these tori E holds and G holds. That is the case the
     registration singled out ("E and G together").
-- **Its verdict** comes once the other 36 classes are recorded.
+  - With stage 4d, stage 4's envelope E fails only at 3 x 51.
+- **No registered verdict.** The ledger ends at run_started, because the run did not reach its
+  end. After its stop rule (2026-11-24 18:06 UTC), a local `study.py resume` would start no new
+  class and record the registered verdict. That verdict would be "incomplete", because 22 classes
+  lack their own record. It costs nothing to run, and it changes none of the distances above.
 
 ### Checks and analyses beside the verdict
 
@@ -1192,9 +1208,10 @@ registration (part H). So stage 4d reruns those classes separately, as stage 3d 
 
 ## Next
 
-1. **Stage 4d's verdict.** 36 of its 53 classes at n = 396 are still running (2026-11-05). Done
-   so far: the parity of d is used in every settling rule (stages 3d and 4), and exact limits are
-   in CPU-seconds rather than wall-clock time (stage 4, through DistQLDPC's -cpu-lim).
+1. **Run locally from here.** Stage 4d was stopped for cost, and pods are no longer used without
+   a decision to. Stage 4d's registered verdict ("incomplete") can be recorded locally after its
+   stop rule, 2026-11-24. Done already: the parity of d is used in every settling rule (stages 3d
+   and 4), and exact limits are in CPU-seconds (stage 4, through DistQLDPC's -cpu-lim).
 2. **Formalise** the common-zero criterion for k > 0 and the k formulas, building on the Lean
    bridge.
 3. **Weights beyond 6**, and groups needing three generators (the catalog's (96, 16)).

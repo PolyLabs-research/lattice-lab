@@ -223,11 +223,13 @@ registered):
 - **On the exposed 6 x 30**, the best k = 12 code has d = 24 exactly, so nothing of this form
   beats the published [[360,12,24]] there.
 - **[[310,10,22]] (score 15.61)** is confirmed by a second method: DistQLDPC's MaxSAT engine.
-- **Stage 4d** (`examples/qec-census-4d`, registered 2026-11-03, running) reruns the 53 classes
-  that stage 4 left at its limit, all k = 4 at n = 396, with a 14-day limit.
-  - The 17 recorded so far all have d = 30.
+- **Stage 4d** (`examples/qec-census-4d`, registered 2026-11-03) reran the 53 classes that stage 4
+  left at its limit, all k = 4 at n = 396, with a 14-day limit.
+  - They are 19 distinct codes. It was stopped for cost on 2026-11-06, once all 19 were known.
+  - All 31 recorded classes have d = 30, and the other 22 are copies of recorded ones.
   - So the best k = 4 code on those tori is [[396,4,30]]. Its d/√n = 1.508 is the census's
     highest.
+  - Its ledger has no verdict yet. Run locally after 2026-11-24, it would record "incomplete".
 
 **Census stage 3a: every weight-6 code on the stage-1 tori** ([code-census.md](code-census.md#stage-3a-every-weight-6-code-examplesqec-census-3), exploratory, run 2026-10-24).
 - **Scope.** All 36,496 classes, on 116 tori with n <= 200, have exact distances, in 1.3 hours

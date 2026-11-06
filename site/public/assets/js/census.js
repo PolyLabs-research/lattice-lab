@@ -18,9 +18,9 @@ if (S4D.verdict) {
   $("cn-4d-badge").textContent = S4D.verdict;
   $("cn-4d-badge").className = `badge ${S4D.verdict === "pass" ? "ok" : S4D.verdict === "fail" ? "bad" : "muted"}`;
   $("cn-4d-text").textContent = `${S4D.recorded} of ${S4D.selected} classes recorded`;
-} else if (S4D.recorded) {
-  const all = S4D.d.length === 1 ? `, every one d = ${S4D.d[0]}` : "";
-  $("cn-4d-text").textContent = `${S4D.recorded} of ${S4D.selected} recorded so far${all}`;
+} else if (S4D.recorded && S4D.d.length === 1) {
+  // stopped for cost once every distinct code was known; the unrecorded classes are copies
+  $("cn-4d-text").textContent = `every one: ${S4D.recorded} of ${S4D.selected} classes recorded, the rest copies of them, before the run was stopped for cost`;
 }
 
 // ---- the entries by size ----
