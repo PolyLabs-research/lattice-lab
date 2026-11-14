@@ -67,8 +67,12 @@ hand. The rest of the m = 37 section, on the seventh pilot and rule 4850, is in
 Before deploying, check the pages locally:
 
 ```bash
-python3 site/preview.py     # then open http://localhost:8000
+python3 site/preview.py     # then open the address it prints
 ```
+
+It prints two addresses: `http://localhost:8000` for a browser on the same machine, and the
+machine's own address for a browser on another one. Over SSH the browser is on another machine,
+where `localhost` would mean that machine and not this one.
 
 `preview.py` serves `/census` from `census.html` and redirects `/census.html` to it, as Firebase's
 `cleanUrls` does. The pages link to each other in that short form, so plain
