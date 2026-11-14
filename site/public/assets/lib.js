@@ -260,7 +260,7 @@ function pointerX(svg, ev, W) {
 
 // The width to draw a chart at: its box's own, so that its text keeps its size on a phone. The
 // chart's box has the class "fit", and the chart is drawn again when the window changes.
-function chartWidth(svg, max = 760) {
+function chartWidth(svg, max = 1060) {
   return Math.round(Math.max(280, Math.min(max, svg.parentElement.clientWidth || max)));
 }
 function sizeChart(svg, W, H) { svg.setAttribute("viewBox", `0 0 ${W} ${H}`); }
@@ -315,6 +315,21 @@ function makeSim({ canvas, terms, n, onStep, onPeriod }) {
   sim.play = on => { sim.playing = on; if (on) requestAnimationFrame(tick); };
   return sim;
 }
+
+// The header's switch between the dark theme, which is the site's own, and the light one. The
+// choice is kept for the next page; the page's head applies it before anything is drawn.
+function setTheme(light) {
+  const root = document.documentElement;
+  if (light) root.dataset.theme = "light"; else delete root.dataset.theme;
+  try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) { /* private browsing */ }
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", css("--paper"));
+  document.querySelector(".theme-toggle")?.setAttribute("aria-label", `Switch to the ${light ? "dark" : "light"} theme`);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const light = document.documentElement.dataset.theme === "light";
+  if (light) setTheme(true);
+  document.querySelector(".theme-toggle")?.addEventListener("click", () => setTheme(document.documentElement.dataset.theme !== "light"));
+});
 
 // On a phone a row of the header's links scrolls sideways: bring the current page's link into view.
 // A table marked "stack" turns into blocks there, and each cell needs its column's heading.

@@ -18,8 +18,10 @@ from __future__ import annotations
 
 import argparse
 import html
+import itertools
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent
@@ -30,6 +32,8 @@ SITE_NAME = "PolyLabs Research"
 # The picture a shared link shows (site/og-card.html, rendered at 1200 x 630).
 CARD = f"{ORIGIN}/assets/og.png"
 CARD_ALT = "PolyLabs Research: small systems, judged by checks they cannot change"
+# Where each page's source, and so its history, is kept.
+HISTORY = "https://github.com/PolyLabs-research/lattice-lab/commits/main/site/src"
 
 # page: (title, description, section). The title is what a search result shows first, so it
 # names the subject in the words someone would search for; the site's name is added after it. A
@@ -185,8 +189,8 @@ HEAD = """<!doctype html>
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{card_alt}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1113">
+<script>try{{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}}catch(e){{}}</script>
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -206,14 +210,32 @@ HEAD = """<!doctype html>
     <nav class="nav" aria-label="Programmes">
 {nav}
     </nav>
+{toggle}
   </div>
 {subnav}</header>
 """
 
-# The two fonts every page's first screen is set in, fetched before the stylesheet asks for them.
+# The header's switch between the dark theme, which is the site's own, and a light one.
+ICON = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"'
+TOGGLE = f"""    <button class="theme-toggle" type="button" aria-label="Switch to the light theme">
+      <svg class="moon" {ICON} stroke-linejoin="round">
+        <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="sun" {ICON} stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2"/>
+        <path d="M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/>
+      </svg>
+    </button>"""
+
+# The fonts every page's first screen is set in, fetched before the stylesheet asks for them.
 PRELOADS = "\n".join(
     f'<link rel="preload" href="assets/fonts/{font}.woff2" as="font" type="font/woff2" crossorigin>'
-    for font in ("stix-two-text-normal-400-600-latin", "ibm-plex-mono-normal-400-latin")
+    for font in (
+        "ibm-plex-sans-normal-400-latin",
+        "ibm-plex-sans-normal-600-latin",
+        "ibm-plex-mono-normal-400-latin",
+    )
 )
 
 SUBNAV_ROW = """  <div class="bar sub">
@@ -250,6 +272,8 @@ FOOT = """<footer class="site-foot gutter">
       <a href="contact.html">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
+    <p class="colophon">No trackers, and no requests to anyone else: the fonts are served from
+      here.{history}</p>
   </div>
 </footer>
 {scripts}
@@ -330,6 +354,153 @@ def structured(page: str) -> str:
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
+# The programmes whose pages hold a table of results, in the order the home page shows them. The
+# home page draws one cell for each row of each table, so it cannot say more than the pages do.
+RECORD_PAGES = ["lattice", "tiny-alphazero", "reckoner", "protocell", "organisation", "corpus-lens"]
+# A row's first badge says how it came out: held, did not hold, held with a caveat, or open.
+VERDICTS = {"ok": "h", "bad": "m", "gold": "q", "muted": "o"}
+# The words for a count of each kind, where a page's table is not one of claims that held or not.
+RECORD_WORDS = {
+    "noun": "results",
+    "h": "held",
+    "m": "did not hold",
+    "q": "with a caveat",
+    "o": "open or null",
+}
+RECORD_WORDS_FOR = {
+    "organisation": {
+        "noun": "ways of running it",
+        "h": "complete",
+        "q": "run in part",
+        "o": "not yet run for real",
+    },
+    "corpus-lens": {"noun": "checks", "o": "not yet run"},
+}
+
+
+class ResultRows(HTMLParser):
+    """The rows of a page's table of results: its headings, each cell's text, each row's badges."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.heads: list[str] = []
+        self.rows: list[dict] = []
+        self.inside = self.in_body = False
+        self.text: list[str] | None = None
+        self.badge: list[str] | None = None
+        self.row: dict | None = None
+
+    def handle_starttag(self, tag: str, attrs: list) -> None:
+        classes = (dict(attrs).get("class") or "").split()
+        if tag == "table":
+            self.inside = "stack" in classes and not self.rows
+        if not self.inside:
+            return
+        if tag == "tbody":
+            self.in_body = True
+        elif tag == "tr" and self.in_body:
+            self.row = {"cells": [], "badges": []}
+        elif tag in ("td", "th"):
+            self.text = []
+        elif tag == "span" and "badge" in classes and self.row is not None:
+            kind = next((c for c in classes if c in VERDICTS), "muted")
+            self.badge = [kind, ""]
+
+    def handle_endtag(self, tag: str) -> None:
+        if not self.inside:
+            return
+        if tag == "table":
+            self.inside = self.in_body = False
+        elif tag == "span" and self.badge is not None and self.row is not None:
+            self.row["badges"].append((self.badge[0], " ".join(self.badge[1].split())))
+            self.badge = None
+        elif tag in ("td", "th") and self.text is not None:
+            text = " ".join("".join(self.text).split())
+            if self.row is not None:
+                self.row["cells"].append(text)
+            elif tag == "th":
+                self.heads.append(text)
+            self.text = None
+        elif tag == "tr" and self.row is not None:
+            if self.row["badges"]:
+                self.rows.append(self.row)
+            self.row = None
+
+    def handle_data(self, data: str) -> None:
+        if self.text is not None:
+            self.text.append(data)
+        if self.badge is not None:
+            self.badge[1] += data
+
+
+def record(page: str) -> list[dict]:
+    """A programme's results, as its page lists them: the claim, how it came out, and the rest."""
+    parser = ResultRows()
+    parser.feed((SRC / f"{page}.html").read_text())
+    # A table that begins with the round or the stage names its claim in the second column.
+    labelled = parser.heads[:1] in (["Round"], ["Stage"])
+    results = []
+    for row in parser.rows:
+        cells, (kind, label) = row["cells"], row["badges"][0]
+        claim = f"{cells[0]}: {cells[1]}" if labelled else cells[0]
+        results.append(
+            {
+                "verdict": VERDICTS[kind],
+                "kind": kind,
+                "label": label,
+                "claim": claim,
+                "outcome": cells[-1].removeprefix(label).strip(),
+            }
+        )
+    return results
+
+
+def number_rows(body: str) -> str:
+    """Give each row of a page's table of results an id, for the home page's cells to link to."""
+    start = body.find('<table class="stack">')
+    if start < 0:
+        return body
+    first, end = body.index("<tbody>", start), body.index("</table>", start)
+    count = itertools.count(1)
+    rows = re.sub(r"<tr>", lambda _: f'<tr id="result-{next(count)}">', body[first:end])
+    return body[:first] + rows + body[end:]
+
+
+def tally(page: str, results: list[dict]) -> str:
+    """A programme's results counted by how they came out, in that page's words."""
+    words = RECORD_WORDS | RECORD_WORDS_FOR.get(page, {})
+    counts = {v: sum(r["verdict"] == v for r in results) for v in "hmqo"}
+    parts = ", ".join(f"{counts[v]} {words[v]}" for v in "hmqo" if counts[v])
+    return f"{len(results)} {words['noun']}: {parts}"
+
+
+def fill_record(body: str) -> str:
+    """The home page's cells and counts, written from the programme pages' own tables."""
+    totals = dict.fromkeys("hmqo", 0)
+    for page in RECORD_PAGES:
+        results = record(page)
+        cells = []
+        for i, r in enumerate(results, 1):
+            totals[r["verdict"]] += 1
+            cells.append(
+                f'<a class="c {r["verdict"]}" href="{page}.html#result-{i}" tabindex="-1"'
+                f' data-kind="{r["kind"]}" data-label="{html.escape(r["label"])}"'
+                f' data-claim="{html.escape(r["claim"])}"'
+                f' data-outcome="{html.escape(r["outcome"])}"></a>'
+            )
+        counted = tally(page, results)
+        head, _, rest = counted.partition(":")
+        body = body.replace(f"<!--strip:{page}-->", "".join(cells))
+        body = body.replace(f"<!--tally:{page}-->", f"<b>{head}</b>:{rest}")
+        body = body.replace(f"<!--label:{page}-->", html.escape(counted))
+    for verdict, count in totals.items():
+        body = body.replace(f"<!--total:{verdict}-->", str(count))
+    body = body.replace("<!--total:all-->", str(sum(totals.values())))
+    if "<!--" in body:
+        raise ValueError("the home page has a marker the builder did not fill")
+    return body
+
+
 def clean_links(document: str) -> str:
     """Links between pages without ".html", the form Firebase serves and does not redirect."""
     pages = "|".join(re.escape(page) for page in PAGES)
@@ -350,6 +521,10 @@ def build(page: str, html_links: bool = False) -> str:
         links = nav_links(SUBNAV[section], page, "", "      ")
         subnav = SUBNAV_ROW.format(label=f"{label} pages", links=links)
     body = (SRC / f"{page}.html").read_text().replace("<main class=", '<main id="main" class=', 1)
+    if page in RECORD_PAGES:
+        body = number_rows(body)
+    if page == "index":
+        body = fill_record(body)
     # The 404 page is served at whatever path was missed, such as /proofs/nope, so its relative
     # links must resolve from the root. It has no address of its own to index.
     missing = page == "404"
@@ -369,6 +544,7 @@ def build(page: str, html_links: bool = False) -> str:
         card=CARD,
         card_alt=html.escape(CARD_ALT),
         preloads=PRELOADS,
+        toggle=TOGGLE,
         structured=""
         if missing
         else f'<script type="application/ld+json">{structured(page)}</script>',
@@ -383,7 +559,12 @@ def build(page: str, html_links: bool = False) -> str:
     if (OUT / "assets" / "js" / f"{page}.js").exists():
         scripts.append(f'<script src="assets/js/{page}.js"></script>')
     notes = "\n    ".join(n for n in (FOOT_ALL, FOOT_SECTION.get(section, "")) if n)
-    document = head + body.rstrip() + "\n" + FOOT.format(notes=notes, scripts="\n".join(scripts))
+    # The site is a folder of a public repository, so each page's history can be read there.
+    history = (
+        "" if missing else f' <a href="{HISTORY}/{page}.html">This page\'s history</a> is public.'
+    )
+    foot = FOOT.format(notes=notes, scripts="\n".join(scripts), history=history)
+    document = head + body.rstrip() + "\n" + foot
     return document if html_links else clean_links(document)
 
 

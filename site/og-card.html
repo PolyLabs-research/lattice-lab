@@ -11,25 +11,25 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="public/assets/fonts/fonts.css">
 <style>
-  :root { --paper: #f2f4f1; --ink: #17201c; --muted: #59645f; --line: #d2d9d4; --cell: #155f78; --soft: #b9d3dc; --gold: #a1660d; }
+  :root { --paper: #0b1113; --panel: #111a1d; --ink: #e6edea; --muted: #93a39d; --line: #223036; --cell: #62c6e0; --gold: #e9ad4a; }
   * { box-sizing: border-box; }
   body { margin: 0; width: 1200px; height: 630px; background: var(--paper); color: var(--ink); display: grid; grid-template-columns: 1fr 470px; gap: 56px; padding: 64px 70px; align-items: center; overflow: hidden; }
   .text { display: grid; gap: 30px; align-content: center; }
   .brand { display: flex; align-items: center; gap: 16px; font: 500 27px "IBM Plex Mono", monospace; letter-spacing: 0.02em; }
   .brand svg { width: 46px; height: 46px; }
-  h1 { margin: 0; font: 600 62px/1.12 "STIX Two Text", serif; letter-spacing: -0.01em; }
+  h1 { margin: 0; font: 600 62px/1.06 "IBM Plex Sans", sans-serif; letter-spacing: -0.03em; }
   .list { font: 400 19px/1.7 "IBM Plex Mono", monospace; color: var(--muted); }
   .url { font: 500 20px "IBM Plex Mono", monospace; color: var(--cell); }
-  canvas { width: 470px; height: 470px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+  canvas { width: 470px; height: 470px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
 </style>
 </head>
 <body>
   <div class="text">
     <div class="brand">
       <svg viewBox="0 0 26 26" aria-hidden="true">
-        <rect x="1" y="1" width="7" height="7" rx="1" fill="#155f78"/><rect x="9.5" y="1" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="18" y="1" width="7" height="7" rx="1" fill="#155f78"/>
-        <rect x="1" y="9.5" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="9.5" y="9.5" width="7" height="7" rx="1" fill="#a1660d"/><rect x="18" y="9.5" width="7" height="7" rx="1" fill="#b9d3dc"/>
-        <rect x="1" y="18" width="7" height="7" rx="1" fill="#155f78"/><rect x="9.5" y="18" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="18" y="18" width="7" height="7" rx="1" fill="#155f78"/>
+        <rect x="1" y="1" width="7" height="7" rx="1" fill="#62c6e0"/><rect x="9.5" y="1" width="7" height="7" rx="1" fill="#1d4855"/><rect x="18" y="1" width="7" height="7" rx="1" fill="#62c6e0"/>
+        <rect x="1" y="9.5" width="7" height="7" rx="1" fill="#1d4855"/><rect x="9.5" y="9.5" width="7" height="7" rx="1" fill="#e9ad4a"/><rect x="18" y="9.5" width="7" height="7" rx="1" fill="#1d4855"/>
+        <rect x="1" y="18" width="7" height="7" rx="1" fill="#62c6e0"/><rect x="9.5" y="18" width="7" height="7" rx="1" fill="#1d4855"/><rect x="18" y="18" width="7" height="7" rx="1" fill="#62c6e0"/>
       </svg>
       PolyLabs Research
     </div>
@@ -55,11 +55,11 @@
     g = h;
   }
   const ctx = document.getElementById("c").getContext("2d"), pad = 34, cs = (940 - 2 * pad) / N;
-  ctx.fillStyle = "#155f78";
+  ctx.fillStyle = "#62c6e0";
   for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
     if (g[r][c]) ctx.fillRect(pad + c * cs + 1.5, pad + r * cs + 1.5, cs - 3, cs - 3);
   }
-  ctx.fillStyle = "#a1660d";
+  ctx.fillStyle = "#e9ad4a";
   ctx.fillRect(pad + (N >> 1) * cs + 1.5, pad + (N >> 1) * cs + 1.5, cs - 3, cs - 3);
 </script>
 </body>

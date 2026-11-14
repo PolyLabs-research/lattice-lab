@@ -1,122 +1,187 @@
 <main class="wrap gutter">
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero home" aria-labelledby="hero-title">
     <div class="hero-text">
-      <div class="eyebrow">PolyLabs Research</div>
-      <h1 id="hero-title">Small systems, judged by checks they cannot change</h1>
-      <p class="lede">We ask what minimal systems can actually do: the laws of a cellular
-        automaton, a chess network of 6.5 million parameters, a model that learns algebra by
-        search, one evolved cell, a company run by AI agents, an agent that reads a mountain of
-        documents. In every programme a claim counts
-        only when something outside the work has checked it: a proof checker, a rule checker,
-        games against fixed opponents, a quote found on its page, or a prediction written down
-        before the run.</p>
+      <div class="eyebrow">Six programmes on what small systems can do</div>
+      <h1 id="hero-title">Don't take our word for it. Run the check.</h1>
+      <p class="lede">We ask what minimal systems can actually do: a cellular automaton's laws, a
+        chess network of 6.5 million parameters, algebra learnt by search, one evolved cell, a
+        company of AI agents. A claim counts here only when something outside the work has
+        checked it. One of those checks is running right here.</p>
       <div class="cta">
-        <a class="primary" href="#programmes">The programmes</a>
+        <a class="primary" href="#record">The record so far</a>
         <a href="#method">How we work</a>
       </div>
-    </div>
-    <aside class="figure" aria-labelledby="latest-title" style="gap: 12px">
-      <div class="figure-head">
-        <h2 id="latest-title" style="font-size: var(--step-0)">Latest on the record</h2>
-        <span class="eyebrow">to 14 Nov 2026</span>
+      <div class="voices">
+        <span>Set like this: what we say.</span>
+        <span class="mono">Set like this: what the record says.</span>
       </div>
-      <ul class="latest">
-        <li><span class="when">13 Nov</span><span><a href="tiny-alphazero.html">Tiny AlphaZero</a>:
-          the registered benchmark finds no single rating. Against seven opponents it performs
-          between 1,154 and 1,780. <span class="badge bad">K2 failed</span></span></li>
-        <li><span class="when">13 Nov</span><span><a href="reckoner.html">Reckoner</a>: a registered
-          sweep expected forgetting without rehearsal and found none.
-          <span class="badge bad">3 of 4 predictions failed</span></span></li>
-        <li><span class="when">12 Nov</span><span><a href="protocell.html">Protocell</a>: two of three
-          searched cells beat the best simple rule on fresh starts, against the preregistered
-          prediction. <span class="badge ok">2 of 3</span></span></li>
-        <li><span class="when">10 Nov</span><span><a href="reckoner.html">Reckoner</a>: an erratum to the
-          first campaign: it trained without the policy target it was built to learn from.
-          <span class="badge bad">erratum</span></span></li>
-        <li><span class="when">6 Nov</span><span><a href="organisation.html">the_organisation</a>: its
-          first run on a real model; the gates sent work back twice.
-          <span class="badge gold">one small run</span></span></li>
-        <li><span class="when">from 3 Nov</span><span><a href="census.html">lattice-lab</a>: the code
-          census's last 53 classes, registered before they ran, settle one by one.
-          <span class="badge muted">running</span></span></li>
-      </ul>
-    </aside>
+    </div>
+    <figure class="hero-fig figure" aria-labelledby="hero-cap" style="margin: 0">
+      <div class="live">
+        <span class="eyebrow"><span class="dot"></span>Computing here</span>
+        <a class="eyebrow" href="lattice.html" style="text-decoration: none">lattice-lab</a>
+      </div>
+      <div class="canvas-box"><canvas id="hero-canvas" aria-label="A torus under the square parity rule, grown from one live cell"></canvas></div>
+      <label class="field" for="hero-n"><span>Torus side n = <span id="hero-n-out" class="mono">31</span></span>
+        <input type="range" id="hero-n" min="3" max="32" value="31">
+      </label>
+      <div class="readout" aria-live="polite">
+        <div class="kv"><span class="k">generation</span><span class="v" id="hero-gen">0</span></div>
+        <div class="kv"><span class="k">period, exact</span><span class="v" id="hero-period">…</span></div>
+        <div class="kv"><span class="k">registered law</span><span class="v" id="hero-law"></span></div>
+      </div>
+      <figcaption class="note" id="hero-cap">The parity rule B1357/S1357, grown from one live cell.
+        Nothing here is a recording: your browser runs the rule, works out its exact period, and
+        compares it with the law lattice-lab registered and then proved. Move the slider to try
+        another size.</figcaption>
+    </figure>
   </section>
 
-  <section id="programmes" class="prose" aria-labelledby="prog-title" style="max-width: none">
-    <div class="eyebrow">Programmes</div>
-    <h2 id="prog-title">Six lines of work</h2>
+  <section id="record" aria-labelledby="record-title" style="display: grid; gap: 24px">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">The record</div>
+        <h2 id="record-title">Every result we have recorded, one cell each</h2>
+        <p>Each cell is one row of a programme's table of results, in the order the page lists
+          them. Those that did not hold stay with the rest. Point at a cell, or tap it, to read
+          what it stands for.</p>
+      </div>
+      <div class="key" aria-label="What each cell means, and how many there are">
+        <span><i class="h"></i><b><!--total:h--></b> held</span>
+        <span><i class="m"></i><b><!--total:m--></b> did not hold</span>
+        <span><i class="q"></i><b><!--total:q--></b> with a caveat</span>
+        <span><i></i><b><!--total:o--></b> open, null or not yet run</span>
+      </div>
+    </div>
+    <div class="tiles">
+      <article class="tile">
+        <div class="tag">Mathematics · quantum codes</div>
+        <h3><a href="lattice.html">lattice-lab</a></h3>
+        <p class="about">Exact laws of cellular automata on finite lattices, tested by registered
+          prediction and proved in Lean. Then the quantum codes that live in the same ring.</p>
+        <div class="strip" role="group" aria-label="<!--label:lattice-->"><!--strip:lattice--></div>
+        <p class="tally"><!--tally:lattice--></p>
+        <p class="judge"><b>Judged by</b> Lean 4, and a hash-chained ledger of predictions</p>
+        <div class="go"><a href="lattice.html">The programme →</a><a href="parity.html">Run a rule against its law →</a></div>
+      </article>
+      <article class="tile">
+        <div class="tag">Self-play · chess</div>
+        <h3><a href="tiny-alphazero.html">Tiny AlphaZero</a></h3>
+        <p class="about">How strong can a 6.5-million-parameter chess network get on one small
+          computer? One registered change per round, for 25 rounds.</p>
+        <div class="strip" role="group" aria-label="<!--label:tiny-alphazero-->"><!--strip:tiny-alphazero--></div>
+        <p class="tally"><!--tally:tiny-alphazero--></p>
+        <p class="judge"><b>Judged by</b> games against frozen opponents, with intervals</p>
+        <div class="go"><a href="tiny-alphazero.html">The programme →</a></div>
+      </article>
+      <article class="tile">
+        <div class="tag">Search · symbolic mathematics</div>
+        <h3><a href="reckoner.html">Reckoner</a></h3>
+        <p class="about">Can a five-million-parameter model learn algebra by search, one checked
+          rewrite at a time, so that its reasoning can be read?</p>
+        <div class="strip" role="group" aria-label="<!--label:reckoner-->"><!--strip:reckoner--></div>
+        <p class="tally"><!--tally:reckoner--></p>
+        <p class="judge"><b>Judged by</b> a checker for every answer, and par for every problem</p>
+        <div class="go"><a href="reckoner.html">The programme →</a></div>
+      </article>
+      <article class="tile">
+        <div class="tag">Artificial life</div>
+        <h3><a href="protocell.html">Protocell</a></h3>
+        <p class="about">One simulated cell whose wall and brain are one network, evolved to
+          manage light. Does behaviour come from parts working together?</p>
+        <div class="strip" role="group" aria-label="<!--label:protocell-->"><!--strip:protocell--></div>
+        <p class="tally"><!--tally:protocell--></p>
+        <p class="judge"><b>Judged by</b> worlds that pass their own checks first, and fresh starts</p>
+        <div class="go"><a href="protocell.html">The programme →</a></div>
+      </article>
+      <article class="tile">
+        <div class="tag">Multi-agent AI · governance</div>
+        <h3><a href="organisation.html">the_organisation</a></h3>
+        <p class="about">An open-source company of AI agents, with gates between phases and a
+          person who pays and signs. Its cells are the ways of running it.</p>
+        <div class="strip" role="group" aria-label="<!--label:organisation-->"><!--strip:organisation--></div>
+        <p class="tally"><!--tally:organisation--></p>
+        <p class="judge"><b>Judged by</b> gates that run the check themselves, and a person for money</p>
+        <div class="go"><a href="organisation.html">The programme →</a></div>
+      </article>
+      <article class="tile">
+        <div class="tag">Document investigation</div>
+        <h3><a href="corpus-lens.html">Corpus Lens</a></h3>
+        <p class="about">Search across large collections of documents, with an agent that may
+          record a finding only with a quote the server finds on the page.</p>
+        <div class="strip" role="group" aria-label="<!--label:corpus-lens-->"><!--strip:corpus-lens--></div>
+        <p class="tally"><!--tally:corpus-lens--></p>
+        <p class="judge"><b>Judged by</b> the server's own search for the quote</p>
+        <div class="go"><a href="corpus-lens.html">The programme →</a><a href="corpus-lens.html#gate-title">Try the citation gate →</a></div>
+      </article>
+    </div>
   </section>
-  <div class="programmes">
-    <a class="card programme" href="lattice.html">
-      <span class="tag">Mathematics · cellular automata · quantum codes</span>
-      <h3>lattice-lab</h3>
-      <span class="badge ok status">proved in Lean, in part</span>
-      <p>Exact laws of cellular automata on finite lattices, found by experiment, tested by
-        registered prediction and proved in Lean, with AI agents proposing and proving. The same
-        ring holds bivariate bicycle quantum codes, and a census of every weight-6 code up to 400
-        qubits found [[294,10,20]], above the published [[288,12,18]] on k d²/n.</p>
-      <span class="judge"><b>Judged by</b> Lean 4, and a hash-chained ledger of predictions</span>
-    </a>
-    <a class="card programme" href="tiny-alphazero.html">
-      <span class="tag">Self-play · search · chess</span>
-      <h3>Tiny AlphaZero</h3>
-      <span class="badge muted status">on a plateau</span>
-      <p>A 6.5-million-parameter network trained by self-play on one small computer, one registered
-        change per round for 25 rounds. A Stockfish teacher helped and twice the teacher hurt. On a
-        public scale it performs between 1,154 and 1,780 by opponent, so the record gives no single
-        number yet.</p>
-      <span class="judge"><b>Judged by</b> games against frozen opponents, with intervals</span>
-    </a>
-    <a class="card programme" href="reckoner.html">
-      <span class="tag">Search · symbolic mathematics</span>
-      <h3>Reckoner</h3>
-      <span class="badge gold status">gain real, cause open</span>
-      <p>A five-million-parameter model learning algebra by search, one checked rewrite at a time,
-        so its reasoning can be read. Its first campaign beat par more often, 101 to 209 of 600;
-        the gain turned out to be shorter paths, and an erratum found it had trained without its
-        intended target.</p>
-      <span class="judge"><b>Judged by</b> a checker for every answer, and par for every problem</span>
-    </a>
-    <a class="card programme" href="protocell.html">
-      <span class="tag">Artificial life · neural networks</span>
-      <h3>Protocell</h3>
-      <span class="badge ok status">beat the best simple rule, once</span>
-      <p>One simulated cell whose wall and brain are one network, evolved to manage light, to test
-        whether behaviour emerges from parts working together. After evolution from nothing failed,
-        a cell written weight by weight, then searched, beat the best simple rule in 2 of 3 runs,
-        from a designed start.</p>
-      <span class="judge"><b>Judged by</b> worlds that pass their own checks first, and fresh starts</span>
-    </a>
-    <a class="card programme" href="organisation.html">
-      <span class="tag">Multi-agent AI · governance</span>
-      <h3>the_organisation</h3>
-      <span class="badge gold status">open source, one live run</span>
-      <p>An open-source company of AI agents: leads who gate each phase, a board for disputes, and
-        a person who pays and signs. It is built to study how agents behave under governance, and
-        its one run on a real model so far ended with the work sent back twice and the release
-        conditional.</p>
-      <span class="judge"><b>Judged by</b> evidence agents cannot verify themselves, and gates that run the check</span>
-    </a>
-    <a class="card programme" href="corpus-lens.html">
-      <span class="tag">Document investigation · AI agents</span>
-      <h3>Corpus Lens</h3>
-      <span class="badge muted status">prototype; no model benchmarked</span>
-      <p>Search and exploration for large collections of documents, scanned or not, with an
-        investigation agent that may record a finding only with a quote the server finds on the
-        page. The benchmark a model must pass first is fixed in advance and has not yet been run.</p>
-      <span class="judge"><b>Judged by</b> a quote found character for character on its page</span>
-    </a>
-  </div>
 
-  <section id="method" class="prose" aria-labelledby="method-title">
-    <div class="eyebrow">How we work</div>
-    <h2 id="method-title">Nobody marks their own work</h2>
-    <p>Finding a pattern, a gain or a plausible answer is easy. Knowing whether it is real is hard:
-      with enough rules, seeds and settings to try, chance supplies patterns too, and a system that
-      reports on itself will report success. So each programme hands its output to a check that the
-      work cannot change, and writes down what it expects before it looks.</p>
+  <section class="aside-split" aria-labelledby="latest-title">
+    <div>
+      <div class="eyebrow">To 14 November 2026</div>
+      <h2 id="latest-title">Latest on the record</h2>
+      <p>Each entry names the record it comes from. A correction is a new entry, not an edit to
+        an old one.</p>
+    </div>
+    <ol class="ledger">
+      <li><span class="when">13 Nov</span><div class="what">
+        <p><a href="tiny-alphazero.html">Tiny AlphaZero</a>: the registered benchmark finds no single
+          rating. Against seven opponents the network performs between 1,154 and 1,780.</p>
+        <div class="receipt"><span class="badge bad">did not hold</span><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_y.md">RUNLOG-p2_y.md</a></div>
+      </div></li>
+      <li><span class="when">13 Nov</span><div class="what">
+        <p><a href="reckoner.html">Reckoner</a>: a registered sweep expected forgetting without
+          rehearsal and found none. Three of its four predictions failed.</p>
+        <div class="receipt"><span class="badge bad">did not hold</span><a href="https://github.com/PolyLabs-research/reckoner/blob/main/SWEEP-m3.md">SWEEP-m3.md</a></div>
+      </div></li>
+      <li><span class="when">12 Nov</span><div class="what">
+        <p><a href="protocell.html">Protocell</a>: two of three searched cells beat the best simple
+          rule on fresh starts. The preregistration had predicted that none would.</p>
+        <div class="receipt"><span class="badge ok">held</span><span>decisions log, D29</span></div>
+      </div></li>
+      <li><span class="when">10 Nov</span><div class="what">
+        <p><a href="reckoner.html">Reckoner</a>: an erratum to the first campaign. It trained without
+          the policy target it was built to learn from, so its gain is real and its cause is open.</p>
+        <div class="receipt"><span class="badge gold">erratum</span><a href="https://github.com/PolyLabs-research/reckoner/blob/main/RUNLOG-m1.md">RUNLOG-m1.md</a></div>
+      </div></li>
+      <li><span class="when">6 Nov</span><div class="what">
+        <p><a href="organisation.html">the_organisation</a>: its first run on a real model. The gates
+          sent work back twice, and the release was accepted as conditional.</p>
+        <div class="receipt"><span class="badge gold">one small run</span><a href="https://github.com/PolyLabs-research/the_organisation/blob/main/docs/live-validation.md">docs/live-validation.md</a></div>
+      </div></li>
+      <li><span class="when">from 3 Nov</span><div class="what">
+        <p><a href="census.html">lattice-lab</a>: the code census's last 53 classes, registered
+          before they ran, settle one by one. Every one so far has distance 30.</p>
+        <div class="receipt"><span class="badge muted">running</span><a href="https://github.com/PolyLabs-research/lattice-lab/tree/main/examples/qec-census-4d">examples/qec-census-4d</a></div>
+      </div></li>
+    </ol>
   </section>
+
+  <section id="method" aria-labelledby="method-title" style="display: grid; gap: 28px">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">How we work</div>
+        <h2 id="method-title">Three rules, in every programme</h2>
+        <p>Finding a pattern, a gain or a plausible answer is easy. Knowing whether it is real is
+          hard: with enough rules, seeds and settings to try, chance supplies patterns too, and a
+          system that reports on itself will report success.</p>
+      </div>
+    </div>
+    <ol class="rules">
+      <li><span class="n">01</span><h3>Nobody marks their own work.</h3>
+        <p>Each programme hands its output to a check the work cannot change: a proof checker, a
+          rule checker, games against fixed opponents, a quote found on its page.</p></li>
+      <li><span class="n">02</span><h3>Written down before the run.</h3>
+        <p>Predictions, thresholds and what each outcome will decide are committed first. A gate
+          that turns out to measure the wrong thing is retired with its reasons; it is never moved
+          to let something through.</p></li>
+      <li><span class="n">03</span><h3>Misses stay on the page.</h3>
+        <p>A refuted prediction is reported as plainly as a confirmed one. A correction is dated
+          and added beside what it corrects, never made silently.</p></li>
+    </ol>
+  </section>
+
   <section class="figure" aria-labelledby="judges-title">
     <div class="figure-head">
       <h2 id="judges-title">Each programme's judge, and what it writes down first</h2>
@@ -134,21 +199,9 @@
         </tbody>
       </table>
     </div>
-  </section>
-  <section class="prose" aria-labelledby="habits-title">
-    <h2 id="habits-title">Three habits that follow</h2>
-    <ol class="steps">
-      <li><span><strong>Misses are reported as plainly as results.</strong> Each programme page
-        lists its misses beside its results: the refuted predictions, failed gates and errata,
-        and what each one pointed at.</span></li>
-      <li><span><strong>A gate is never moved to let something through.</strong> A gate that turns
-        out to measure the wrong thing is retired with its reasons written down, and its
-        threshold stays where it was.</span></li>
-      <li><span><strong>Corrections are added, not made silently.</strong> An erratum is dated and
-        appended, and a finding that turns out wrong is withdrawn where it stands.</span></li>
-    </ol>
-    <p>Much of the code in these programmes is written by AI coding agents working from written
-      plans, and in lattice-lab agents propose mechanisms and prove them. The same rule applies to
-      them: their work counts because the checks pass, not because they say it does.</p>
+    <p class="note">Much of the code in these programmes is written by AI coding agents working
+      from written plans, and in lattice-lab agents propose mechanisms and prove them. The same
+      rules apply to them: their work counts because the checks pass, not because they say it
+      does.</p>
   </section>
 </main>
