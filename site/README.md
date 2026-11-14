@@ -8,9 +8,13 @@ one page.
 ```
 site/
   build_data.py     writes public/assets/data.js from lattice-lab's records and code
-  build_pages.py    wraps each body in src/ in the shared head, header and footer; its PAGES table
-                    gives each page's title, description and programme, NAV the header's
-                    programmes and SUBNAV lattice-lab's own row of pages
+  build_pages.py    wraps each body in src/ in the shared head, header and footer, and writes
+                    sitemap.xml and robots.txt; its PAGES table gives each page's title,
+                    description and programme, NAV the header's programmes and SUBNAV
+                    lattice-lab's own row of pages
+  build_icons.py    draws the mark as favicon.ico, apple-touch-icon.png and assets/mark-512.png
+  og-card.html      the picture a shared link shows; its head says how to render assets/og.png
+  preview.py        serves public/ on this machine the way Firebase does
   src/*.html        the page bodies
   public/           what gets deployed
     index.html                       the home page: every programme, and how we work
@@ -19,9 +23,11 @@ site/
     tiny-alphazero.html, reckoner.html, protocell.html, organisation.html, corpus-lens.html
                                      one page per programme
     contact.html, 404.html
+    sitemap.xml, robots.txt, favicon.ico, apple-touch-icon.png
     assets/site.css, assets/lib.js (shared maths, SHA-256, charts), assets/fonts/
     assets/js/<page>.js              each page's figures
     assets/img/                      screenshots, taken from the_organisation's docs/
+    assets/og.png, assets/mark-512.png   the shared-link picture and the logo
   apps-script/      the contact form's backend (Google Apps Script)
   firebase.json     Firebase Hosting configuration
 ```
@@ -61,8 +67,40 @@ hand. The rest of the m = 37 section, on the seventh pilot and rule 4850, is in
 Before deploying, check the pages locally:
 
 ```bash
-cd site/public && python3 -m http.server 8000     # then open http://localhost:8000
+python3 site/preview.py     # then open http://localhost:8000
 ```
+
+`preview.py` serves `/census` from `census.html` and redirects `/census.html` to it, as Firebase's
+`cleanUrls` does. The pages link to each other in that short form, so plain
+`python3 -m http.server` would not follow the links.
+
+## What search engines read
+
+`build_pages.py` writes all of it, from the `PAGES` table:
+
+- **A title and a description for each page.** The title names the subject in the words someone
+  would search for, and the site's name follows it. A description over about 160 characters is
+  cut off in a search result, and the builder says so when one is.
+- **One address for each page.** Each page names its own address (`rel="canonical"`), without
+  `.html`, and the links between pages use the same form, so no link goes through a redirect.
+  Bodies in `src/` still write `census.html`; the builder shortens them, and `pageHref` in
+  `lib.js` does the same for a link a script builds.
+- **`sitemap.xml` and `robots.txt`**, listing every page but the 404 page.
+- **What a shared link shows:** the Open Graph and Twitter tags, with `assets/og.png` as the
+  picture. To change the picture, edit `og-card.html` and render it as its head says.
+- **Structured data** (schema.org, as JSON-LD): the organisation and the site on the home page,
+  and on every other page what the page is and its trail from the home page.
+
+After the first deploy with these, add the site in
+[Google Search Console](https://search.google.com/search-console) (a DNS TXT record at GoDaddy
+proves the domain is yours) and give it `https://polylabs-research.net/sitemap.xml`. Bing's
+Webmaster Tools can import the site from there.
+
+A page's charts are drawn at the width of their box, and a table marked `class="stack"` becomes
+a list of blocks on a phone. When adding a chart, give its box the class `fit`, draw it with
+`chartWidth`, and give it a table of its numbers with `numbersTable` (all in `lib.js`). The
+site's green and red are close to each other for a red-green colour-blind reader, so a chart
+never tells two things apart by those colours alone: it uses a shape, a dash or a label as well.
 
 lattice-lab is public, and the site links into it on GitHub at `main`: the footer on every page,
 the lattice page, the model page's ledger and pilot table, the proofs page's library and the codes
@@ -164,5 +202,7 @@ In GoDaddy's DNS, point an **A** record for `@` and one for `www` at that IP. Th
 becomes active once DNS resolves, which can take up to an hour or so. Plain `http://` needs a
 second forwarding rule on port 80 with a redirect; Firebase does this by itself.
 
-The bucket serves pages at their `.html` names; the site's links use those names, so both
-routes work unchanged.
+The bucket serves pages at their `.html` names, so build the pages for it with
+`python site/build_pages.py --html-links`, which keeps `.html` on the links between pages. Each
+page's canonical address, and the sitemap, would still name the short form, so change `url()` in
+`build_pages.py` as well if the site ever moves to this route.

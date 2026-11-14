@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  The picture a shared link to the site shows (og:image in build_pages.py), 1200 x 630.
+  To make public/assets/og.png again, open this file in a browser at that window size and
+  screenshot it, or with Playwright:
+    node -e "const{chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1200,height:630}});await p.goto('file://'+process.cwd()+'/site/og-card.html');await p.waitForTimeout(500);await p.screenshot({path:'site/public/assets/og.png'});await b.close()})()"
+  The pattern is the square parity rule B1357/S1357 grown from one cell for 15 steps, computed here.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="public/assets/fonts/fonts.css">
+<style>
+  :root { --paper: #f2f4f1; --ink: #17201c; --muted: #59645f; --line: #d2d9d4; --cell: #155f78; --soft: #b9d3dc; --gold: #a1660d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1200px; height: 630px; background: var(--paper); color: var(--ink); display: grid; grid-template-columns: 1fr 470px; gap: 56px; padding: 64px 70px; align-items: center; overflow: hidden; }
+  .text { display: grid; gap: 30px; align-content: center; }
+  .brand { display: flex; align-items: center; gap: 16px; font: 500 27px "IBM Plex Mono", monospace; letter-spacing: 0.02em; }
+  .brand svg { width: 46px; height: 46px; }
+  h1 { margin: 0; font: 600 62px/1.12 "STIX Two Text", serif; letter-spacing: -0.01em; }
+  .list { font: 400 19px/1.7 "IBM Plex Mono", monospace; color: var(--muted); }
+  .url { font: 500 20px "IBM Plex Mono", monospace; color: var(--cell); }
+  canvas { width: 470px; height: 470px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="brand">
+      <svg viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="7" height="7" rx="1" fill="#155f78"/><rect x="9.5" y="1" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="18" y="1" width="7" height="7" rx="1" fill="#155f78"/>
+        <rect x="1" y="9.5" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="9.5" y="9.5" width="7" height="7" rx="1" fill="#a1660d"/><rect x="18" y="9.5" width="7" height="7" rx="1" fill="#b9d3dc"/>
+        <rect x="1" y="18" width="7" height="7" rx="1" fill="#155f78"/><rect x="9.5" y="18" width="7" height="7" rx="1" fill="#b9d3dc"/><rect x="18" y="18" width="7" height="7" rx="1" fill="#155f78"/>
+      </svg>
+      PolyLabs Research
+    </div>
+    <h1>Small systems, judged by checks they cannot change</h1>
+    <div class="list">lattice-lab · Tiny AlphaZero · Reckoner<br>Protocell · the_organisation · Corpus Lens</div>
+    <div class="url">polylabs-research.net</div>
+  </div>
+  <canvas id="c" width="940" height="940"></canvas>
+<script>
+  // B1357/S1357: a cell is alive next step exactly when an odd number of its 8 neighbours are.
+  const N = 33, STEPS = 15;
+  let g = Array.from({ length: N }, () => new Uint8Array(N));
+  g[N >> 1][N >> 1] = 1;
+  for (let s = 0; s < STEPS; s++) {
+    const h = Array.from({ length: N }, () => new Uint8Array(N));
+    for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+      let k = 0;
+      for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) {
+        if (dr || dc) k += g[(r + dr + N) % N][(c + dc + N) % N];
+      }
+      h[r][c] = k & 1;
+    }
+    g = h;
+  }
+  const ctx = document.getElementById("c").getContext("2d"), pad = 34, cs = (940 - 2 * pad) / N;
+  ctx.fillStyle = "#155f78";
+  for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+    if (g[r][c]) ctx.fillRect(pad + c * cs + 1.5, pad + r * cs + 1.5, cs - 3, cs - 3);
+  }
+  ctx.fillStyle = "#a1660d";
+  ctx.fillRect(pad + (N >> 1) * cs + 1.5, pad + (N >> 1) * cs + 1.5, cs - 3, cs - 3);
+</script>
+</body>
+</html>

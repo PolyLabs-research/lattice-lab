@@ -72,7 +72,7 @@ function drawLoop() {
     <p>${st.what}</p>
     <p><strong>Guards against:</strong> ${st.guards}</p>
     <p><strong>From the record:</strong> ${st.example}</p>
-    <p><a href="${st.href}">${st.link}</a></p>`;
+    <p><a href="${pageHref(st.href)}">${st.link}</a></p>`;
 }
 loopSvg.addEventListener("click", e => {
   const g = e.target.closest(".node");

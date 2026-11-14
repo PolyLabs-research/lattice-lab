@@ -42,14 +42,15 @@
       <h2 id="levers-title">The last seven rounds: one change each, and the plateau</h2>
       <span class="eyebrow">score against Stockfish 16, skill 5</span>
     </div>
-    <div class="chart-box"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
+    <div class="chart-box fit"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
     <div class="legend">
-      <span><i class="swatch" style="background: var(--muted)"></i>the round's baseline arm</span>
-      <span><i class="swatch" style="background: var(--ok)"></i>the change, better and separated</span>
-      <span><i class="swatch" style="background: var(--bad)"></i>the change, worse and separated</span>
-      <span><i class="swatch" style="background: var(--cell)"></i>the change, not separated</span>
+      <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>the round's baseline arm</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><path d="M6.5 1 L12 11.5 L1 11.5 Z" style="fill: var(--ok)"/></svg>the change: better, and separated</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><path d="M6.5 12 L12 1.5 L1 1.5 Z" style="fill: var(--bad)"/></svg>the change: worse, and separated</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>the change: not separated</span>
     </div>
-    <p class="tip" id="levers-tip" aria-live="polite">Point at a round for its registered test.</p>
+    <p class="tip" id="levers-tip" aria-live="polite">Point at a round, or tap it, for its registered test.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="levers-table"></div></details>
     <p class="note" id="levers-cap">Each round's two arms, each scored over six 200-game passes of
       the openings against the same opponent on the same machine. Of seven changes, one helped
       (a Stockfish teacher in a quarter of each batch), one hurt (twice the teacher), and five
@@ -67,14 +68,16 @@
       classical engines agree among themselves about its rating. None of the three agrees with the
       other two, so the decision table's answer is that there is no single number at this level,
       and the page publishes each opponent's reading instead.</p>
-    <div class="chart-box"><svg id="bench-chart" viewBox="0 0 760 330" role="img" aria-labelledby="bench-title bench-cap"></svg></div>
+    <div class="chart-box fit"><svg id="bench-chart" viewBox="0 0 760 330" role="img" aria-labelledby="bench-title bench-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="background: var(--cell)"></i>the network's performance against that opponent</span>
       <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>the opponent's own rating</span>
+      <span><i class="swatch sq" style="background: var(--cell-soft)"></i>the four Stockfish settings' joint fit, 1,644 to 1,704</span>
     </div>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="bench-table"></div></details>
     <p class="note" id="bench-cap">Performance is the rating the results imply against an
       opponent of known rating, with a 95% interval where the run log gives one; the four
-      Stockfish settings together fit 1,674 (1,644 to 1,704). The network searched 48 simulations
+      Stockfish settings together fit 1,674. The network searched 48 simulations
       a move, about 0.12 s, while its opponents took about 1 to 1.9 s a move. The registered next
       step on this track is to rerun the opponents at a clock scaled to CCRL's reference machine
       before any one rating is quoted.</p>
@@ -86,7 +89,7 @@
       <span class="eyebrow">misses included</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Round</th><th>Claim</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>Phase 1</td><td>The first supervised run is valid</td><td><span class="badge bad">invalid</span> all four gates missed (its top move was never legal) from three stacked bugs</td></tr>

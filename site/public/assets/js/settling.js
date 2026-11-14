@@ -39,16 +39,17 @@ function drawSoups() {
     const x = F.sx(L * Math.exp((rnd() - 0.5) * 0.12));
     s += `<circle cx="${x.toFixed(1)}" cy="${F.sy(t).toFixed(1)}" r="1.7" style="fill: var(--cell-soft)"/>`;
   }
-  const curve = (f, color) => {
+  const curve = (f, color, dash = "") => {
     let d = "";
     for (let i = 0; i <= 120; i++) {
       const L = 8 * (1024 / 8) ** (i / 120);
       d += `${i ? "L" : "M"}${F.sx(L).toFixed(1)} ${F.sy(f(L)).toFixed(1)} `;
     }
-    s += `<path d="${d}" style="fill: none; stroke: var(${color}); stroke-width: 2"/>`;
+    s += `<path d="${d}" style="fill: none; stroke: var(${color}); stroke-width: 2; ${dash}"/>`;
   };
   curve(logLaw, "--ok");
-  if (showPower) curve(powLaw, "--bad");
+  // the rejected law dashed, so that the two differ by more than red and green
+  if (showPower) curve(powLaw, "--bad", "stroke-dasharray: 7 5");
   for (const m of MED) {
     s += `<circle cx="${F.sx(m.L).toFixed(1)}" cy="${F.sy(m.median).toFixed(1)}" r="4.5" style="fill: var(${m.study ? "--gold" : "--cell"}); stroke: var(--panel); stroke-width: 1.2"/>`;
   }

@@ -212,6 +212,10 @@ const css = name => getComputedStyle(document.documentElement).getPropertyValue(
 const fmt = x => BigInt(x).toLocaleString("en-US");
 const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = id => document.getElementById(id);
+// A link to another page, written as "parity.html", in the form this page's own links take: the
+// builder drops ".html" for Firebase, which serves /parity and redirects the longer address.
+const HTML_LINKS = /\.html$/.test(document.querySelector(".nav a")?.getAttribute("href") || "");
+const pageHref = href => (HTML_LINKS ? href : href.replace(/^([\w-]+)\.html(?=#|$)/, "$1"));
 function fitCanvas(canvas) {
   const rect = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
   canvas.width = Math.max(1, Math.round(rect.width * dpr));
@@ -252,6 +256,19 @@ function frame({ W = 760, H = 330, L = 58, R = 16, T = 14, B = 42, x, y }) {
 function pointerX(svg, ev, W) {
   const r = svg.getBoundingClientRect();
   return ((ev.clientX - r.left) / r.width) * W;
+}
+
+// The width to draw a chart at: its box's own, so that its text keeps its size on a phone. The
+// chart's box has the class "fit", and the chart is drawn again when the window changes.
+function chartWidth(svg, max = 760) {
+  return Math.round(Math.max(280, Math.min(max, svg.parentElement.clientWidth || max)));
+}
+function sizeChart(svg, W, H) { svg.setAttribute("viewBox", `0 0 ${W} ${H}`); }
+// A chart's numbers as a table, for a reader who cannot point at the chart or cannot see it.
+function numbersTable(id, head, rows) {
+  const cells = (tag, r) => r.map(c => `<${tag}>${c}</${tag}>`).join("");
+  $(id).innerHTML = `<div class="table-box"><table><thead><tr>${cells("th", head)}</tr></thead><tbody>` +
+    rows.map(r => `<tr>${cells("td", r)}</tr>`).join("") + "</tbody></table></div>";
 }
 
 // ---- the live torus: one cell, run under a rule, with its exact period ----
@@ -298,3 +315,18 @@ function makeSim({ canvas, terms, n, onStep, onPeriod }) {
   sim.play = on => { sim.playing = on; if (on) requestAnimationFrame(tick); };
   return sim;
 }
+
+// On a phone a row of the header's links scrolls sideways: bring the current page's link into view.
+// A table marked "stack" turns into blocks there, and each cell needs its column's heading.
+document.addEventListener("DOMContentLoaded", () => {
+  for (const a of document.querySelectorAll(".nav a[aria-current]")) {
+    const nav = a.parentElement;
+    if (nav.scrollWidth > nav.clientWidth) nav.scrollLeft = a.offsetLeft - nav.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
+  }
+  for (const table of document.querySelectorAll("table.stack")) {
+    const heads = [...table.querySelectorAll("thead th")].map(th => th.textContent.trim());
+    for (const tr of table.querySelectorAll("tbody tr")) {
+      [...tr.children].forEach((td, i) => { if (heads[i]) td.dataset.label = heads[i]; });
+    }
+  }
+});

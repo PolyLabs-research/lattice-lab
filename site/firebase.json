@@ -6,7 +6,7 @@
     "ignore": ["firebase.json", "**/.*"],
     "headers": [
       {
-        "source": "**/*.@(js|css|svg)",
+        "source": "**/*.@(js|css|svg|jpg|png|ico)",
         "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
       },
       {

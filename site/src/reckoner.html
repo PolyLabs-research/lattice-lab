@@ -64,7 +64,7 @@ solved in 3 steps, par 3, outcome 0</pre>
       <h2 id="m1-title">The first campaign: under par more often</h2>
       <span class="eyebrow">registered primary · 600 problems</span>
     </div>
-    <div class="chart-box"><svg id="m1-chart" viewBox="0 0 760 320" role="img" aria-labelledby="m1-title m1-cap"></svg></div>
+    <div class="chart-box fit"><svg id="m1-chart" viewBox="0 0 760 320" role="img" aria-labelledby="m1-title m1-cap"></svg></div>
     <p class="note" id="m1-cap">Problems solved in fewer steps than par, out of the 600 deeper
       problems the campaign was registered on, at the start (the supervised anchor) and after
       iterations 4, 9, 14 and 19. Twenty iterations ran in 9.6 hours, with no alarms, and both
@@ -94,14 +94,15 @@ solved in 3 steps, par 3, outcome 0</pre>
       what it knew. It predicted that with none, every seed would forget. Instead every arm held,
       and the arms with little or no rehearsal (<em>f</em> ≤ 0.15) gained the most, reading
       1,208 to 1,212 against the anchor's 1,192.</p>
-    <div class="chart-box"><svg id="sw-chart" viewBox="0 0 760 320" role="img" aria-labelledby="sw-title sw-cap"></svg></div>
+    <div class="chart-box fit"><svg id="sw-chart" viewBox="0 0 760 320" role="img" aria-labelledby="sw-title sw-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="background: var(--cell)"></i>one seed</span>
       <span><i class="swatch" style="background: var(--bad)"></i>control: policy target withheld, f = 0</span>
       <span><i class="swatch sq" style="background: var(--muted)"></i>anchor, 1,192</span>
       <span><i class="swatch sq" style="background: var(--gold)"></i>pass line, 1,190</span>
     </div>
-    <p class="tip" id="sw-tip" aria-live="polite">Point at a column for its readings.</p>
+    <p class="tip" id="sw-tip" aria-live="polite">Point at a column, or tap it, for its readings.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="sw-table"></div></details>
     <p class="note" id="sw-cap">Agreement with the exact solver's move on 1,229 unseen states,
       one training iteration from the anchor, three seeds per fraction. At <em>f</em> = 0 all
       three seeds read 1,211; withholding the policy target dropped the model to 1,088 and
@@ -115,7 +116,7 @@ solved in 3 steps, par 3, outcome 0</pre>
       <span class="eyebrow">misses included</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Claim</th><th>Tested by</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>The supervised model picks the exact solver's move</td><td>1,229 unseen states; threshold 0.90, a model that knows nothing 0.68 to 0.70</td><td><span class="badge ok">passed</span> 0.9699</td></tr>

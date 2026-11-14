@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tiny AlphaZero · PolyLabs Research</title>
-<meta name="description" content="A 6.5-million-parameter chess network trained by self-play on one small computer: how improvement is measured, 25 registered rounds, the plateau, and a public rating that comes out as a spread.">
-<meta property="og:title" content="Tiny AlphaZero · PolyLabs Research">
-<meta property="og:description" content="A 6.5-million-parameter chess network trained by self-play on one small computer: how improvement is measured, 25 registered rounds, the plateau, and a public rating that comes out as a spread.">
+<title>Tiny AlphaZero: a 6.5M-parameter chess network · PolyLabs Research</title>
+<meta name="description" content="A 6.5M-parameter chess network trained by self-play on one small computer: 25 registered rounds, a plateau, and a public rating that comes out as a spread.">
+<link rel="canonical" href="https://polylabs-research.net/tiny-alphazero">
+<meta property="og:url" content="https://polylabs-research.net/tiny-alphazero">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="Tiny AlphaZero: a 6.5M-parameter chess network">
+<meta property="og:description" content="A 6.5M-parameter chess network trained by self-play on one small computer: 25 registered rounds, a plateau, and a public rating that comes out as a spread.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://polylabs-research.net/tiny-alphazero", "url": "https://polylabs-research.net/tiny-alphazero", "name": "Tiny AlphaZero: a 6.5M-parameter chess network", "description": "A 6.5M-parameter chess network trained by self-play on one small computer: 25 registered rounds, a plateau, and a public rating that comes out as a spread.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://polylabs-research.net/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PolyLabs Research", "item": "https://polylabs-research.net/"}, {"@type": "ListItem", "position": 2, "name": "Tiny AlphaZero", "item": "https://polylabs-research.net/tiny-alphazero"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,17 +47,17 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html">lattice-lab</a>
-      <a href="tiny-alphazero.html" aria-current="page">Tiny AlphaZero</a>
-      <a href="reckoner.html">Reckoner</a>
-      <a href="protocell.html">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice">lattice-lab</a>
+      <a href="tiny-alphazero" aria-current="page">Tiny AlphaZero</a>
+      <a href="reckoner">Reckoner</a>
+      <a href="protocell">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <header class="prose">
     <div class="eyebrow">Programme · Tiny AlphaZero</div>
     <h1>How strong can a 6.5-million-parameter chess network get on one small computer?</h1>
@@ -84,14 +101,15 @@
       <h2 id="levers-title">The last seven rounds: one change each, and the plateau</h2>
       <span class="eyebrow">score against Stockfish 16, skill 5</span>
     </div>
-    <div class="chart-box"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
+    <div class="chart-box fit"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
     <div class="legend">
-      <span><i class="swatch" style="background: var(--muted)"></i>the round's baseline arm</span>
-      <span><i class="swatch" style="background: var(--ok)"></i>the change, better and separated</span>
-      <span><i class="swatch" style="background: var(--bad)"></i>the change, worse and separated</span>
-      <span><i class="swatch" style="background: var(--cell)"></i>the change, not separated</span>
+      <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>the round's baseline arm</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><path d="M6.5 1 L12 11.5 L1 11.5 Z" style="fill: var(--ok)"/></svg>the change: better, and separated</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><path d="M6.5 12 L12 1.5 L1 1.5 Z" style="fill: var(--bad)"/></svg>the change: worse, and separated</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>the change: not separated</span>
     </div>
-    <p class="tip" id="levers-tip" aria-live="polite">Point at a round for its registered test.</p>
+    <p class="tip" id="levers-tip" aria-live="polite">Point at a round, or tap it, for its registered test.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="levers-table"></div></details>
     <p class="note" id="levers-cap">Each round's two arms, each scored over six 200-game passes of
       the openings against the same opponent on the same machine. Of seven changes, one helped
       (a Stockfish teacher in a quarter of each batch), one hurt (twice the teacher), and five
@@ -109,14 +127,16 @@
       classical engines agree among themselves about its rating. None of the three agrees with the
       other two, so the decision table's answer is that there is no single number at this level,
       and the page publishes each opponent's reading instead.</p>
-    <div class="chart-box"><svg id="bench-chart" viewBox="0 0 760 330" role="img" aria-labelledby="bench-title bench-cap"></svg></div>
+    <div class="chart-box fit"><svg id="bench-chart" viewBox="0 0 760 330" role="img" aria-labelledby="bench-title bench-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="background: var(--cell)"></i>the network's performance against that opponent</span>
       <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>the opponent's own rating</span>
+      <span><i class="swatch sq" style="background: var(--cell-soft)"></i>the four Stockfish settings' joint fit, 1,644 to 1,704</span>
     </div>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="bench-table"></div></details>
     <p class="note" id="bench-cap">Performance is the rating the results imply against an
       opponent of known rating, with a 95% interval where the run log gives one; the four
-      Stockfish settings together fit 1,674 (1,644 to 1,704). The network searched 48 simulations
+      Stockfish settings together fit 1,674. The network searched 48 simulations
       a move, about 0.12 s, while its opponents took about 1 to 1.9 s a move. The registered next
       step on this track is to rerun the opponents at a clock scaled to CCRL's reference machine
       before any one rating is quoted.</p>
@@ -128,7 +148,7 @@
       <span class="eyebrow">misses included</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Round</th><th>Claim</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>Phase 1</td><td>The first supervised run is valid</td><td><span class="badge bad">invalid</span> all four gates missed (its top move was never legal) from three stacked bugs</td></tr>
@@ -159,7 +179,7 @@
       teacher are closed. The next diagnostic, drafted and not yet run, asks whether the
       network's distance from its teacher is set by its size or by how few labelled positions it
       has seen. On the benchmark track, the clock-scaled rerun is registered as the next step and
-      not scheduled. <a href="reckoner.html">Reckoner</a> carries the same search, and the same
+      not scheduled. <a href="reckoner">Reckoner</a> carries the same search, and the same
       rules for registering a round, over to algebra.</p>
   </section>
 
@@ -183,8 +203,8 @@
       it, not because the work says so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

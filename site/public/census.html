@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Code census · PolyLabs Research</title>
+<title>Census of bivariate bicycle codes up to 400 qubits · PolyLabs Research</title>
 <meta name="description" content="Every weight-6 bivariate bicycle code up to 400 qubits: the best distance and the best k d²/n at each size, and what was registered before each stage ran.">
-<meta property="og:title" content="Code census · PolyLabs Research">
+<link rel="canonical" href="https://polylabs-research.net/census">
+<meta property="og:url" content="https://polylabs-research.net/census">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="Census of bivariate bicycle codes up to 400 qubits">
 <meta property="og:description" content="Every weight-6 bivariate bicycle code up to 400 qubits: the best distance and the best k d²/n at each size, and what was registered before each stage ran.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://polylabs-research.net/census", "url": "https://polylabs-research.net/census", "name": "Census of bivariate bicycle codes up to 400 qubits", "description": "Every weight-6 bivariate bicycle code up to 400 qubits: the best distance and the best k d²/n at each size, and what was registered before each stage ran.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://polylabs-research.net/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PolyLabs Research", "item": "https://polylabs-research.net/"}, {"@type": "ListItem", "position": 2, "name": "lattice-lab", "item": "https://polylabs-research.net/lattice"}, {"@type": "ListItem", "position": 3, "name": "Code census", "item": "https://polylabs-research.net/census"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,29 +47,29 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html" aria-current="true">lattice-lab</a>
-      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
-      <a href="reckoner.html">Reckoner</a>
-      <a href="protocell.html">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice" aria-current="true">lattice-lab</a>
+      <a href="tiny-alphazero">Tiny AlphaZero</a>
+      <a href="reckoner">Reckoner</a>
+      <a href="protocell">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
   <div class="bar sub">
     <nav class="nav subnav" aria-label="lattice-lab pages">
-      <a href="lattice.html">Overview</a>
-      <a href="model.html">The model</a>
-      <a href="parity.html">Parity laws</a>
-      <a href="atlas.html">Linear atlas</a>
-      <a href="settling.html">Settling time</a>
-      <a href="proofs.html">Proofs</a>
-      <a href="codes.html">Quantum codes</a>
-      <a href="census.html" aria-current="page">Code census</a>
+      <a href="lattice">Overview</a>
+      <a href="model">The model</a>
+      <a href="parity">Parity laws</a>
+      <a href="atlas">Linear atlas</a>
+      <a href="settling">Settling time</a>
+      <a href="proofs">Proofs</a>
+      <a href="codes">Quantum codes</a>
+      <a href="census" aria-current="page">Code census</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <header class="prose">
     <div class="eyebrow">Findings · quantum codes</div>
     <h1>A census of bivariate bicycle codes up to 400 qubits</h1>
@@ -186,7 +203,7 @@
       come from DistQLDPC, Chen, Jafari and Lai's tool,
       <a href="https://arxiv.org/abs/2606.12445">arXiv:2606.12445</a>
       (<a href="https://github.com/guluchen/DistQLDPC">github.com/guluchen/DistQLDPC</a>, commit
-      8fe913e). The <a href="codes.html">quantum codes page</a> shows how the codes' logical
+      8fe913e). The <a href="codes">quantum codes page</a> shows how the codes' logical
       qubits follow from the algebra behind the rest of this site.</p>
   </section>
 </main>
@@ -207,8 +224,8 @@
       Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

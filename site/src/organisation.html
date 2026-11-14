@@ -32,7 +32,8 @@
   </section>
 
   <figure class="figure diagram" aria-labelledby="org-fig-cap" style="margin: 0">
-    <div class="diagram-box">
+    <!-- the same picture twice: across for a wide screen, down the page for a phone -->
+    <div class="diagram-box wide">
       <svg viewBox="0 0 760 380" role="img" aria-labelledby="org-fig-cap" font-family="IBM Plex Mono, monospace">
         <!-- shareholders, CEO, board, signatory -->
         <rect x="280" y="8" width="200" height="46" rx="5" style="fill: var(--gold-soft); stroke: var(--gold)"/>
@@ -108,6 +109,76 @@
         <text x="34" y="357" font-size="10.5" style="fill: var(--ink)">hard budget and cycle limit: reaching either pauses the whole organisation</text>
       </svg>
     </div>
+    <svg class="tall" viewBox="0 0 340 572" role="img" aria-labelledby="org-fig-cap" font-family="IBM Plex Mono, monospace">
+        <rect x="70" y="6" width="200" height="44" rx="5" style="fill: var(--gold-soft); stroke: var(--gold)"/>
+        <text x="170" y="25" text-anchor="middle" font-size="13" style="fill: var(--ink)">Shareholders: you</text>
+        <text x="170" y="42" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">your steer is binding</text>
+        <line x1="170" y1="50" x2="170" y2="72" style="stroke: var(--muted)"/>
+        <rect x="70" y="72" width="200" height="44" rx="5" style="fill: var(--panel); stroke: var(--cell)"/>
+        <text x="170" y="91" text-anchor="middle" font-size="13" style="fill: var(--ink)">CEO</text>
+        <text x="170" y="108" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">sets each cycle's direction</text>
+
+        <line x1="110" y1="116" x2="110" y2="150" style="stroke: var(--muted)"/>
+        <rect x="16" y="150" width="146" height="44" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="89" y="169" text-anchor="middle" font-size="12.5" style="fill: var(--ink)">The board</text>
+        <text x="89" y="186" text-anchor="middle" font-size="9.5" style="fill: var(--muted)">positions, then a ruling</text>
+        <rect x="178" y="150" width="146" height="44" rx="5" style="fill: var(--panel); stroke: var(--ok); stroke-width: 1.5"/>
+        <text x="251" y="169" text-anchor="middle" font-size="11.5" style="fill: var(--ink)">Authorised Signatory</text>
+        <text x="251" y="186" text-anchor="middle" font-size="9.5" style="fill: var(--muted)">a person: pays and signs</text>
+
+        <!-- the CEO's line to the leads, down the left -->
+        <path d="M170 116 V204 H6 V492" style="fill: none; stroke: var(--muted)"/>
+        <line x1="6" y1="276" x2="16" y2="276" style="stroke: var(--muted)"/>
+        <line x1="6" y1="408" x2="16" y2="408" style="stroke: var(--muted)"/>
+        <line x1="6" y1="492" x2="16" y2="492" style="stroke: var(--muted); stroke-dasharray: 3 3"/>
+        <!-- a lead's request to the signatory, up the right -->
+        <path d="M324 408 H333 V172 H324" style="fill: none; stroke: var(--ok); stroke-dasharray: 4 3"/>
+
+        <rect x="16" y="212" width="308" height="128" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="30" y="234" font-size="12.5" style="fill: var(--ink)">CTO · engineering</text>
+        <g font-size="9.5" text-anchor="middle" style="fill: var(--muted)">
+          <circle cx="56" cy="276" r="6" style="fill: var(--ok)"/><text x="56" y="297">Spec</text>
+          <circle cx="132" cy="276" r="6" style="fill: var(--ok)"/><text x="132" y="297">Build</text>
+          <circle cx="208" cy="276" r="6" style="fill: var(--panel); stroke: var(--cell); stroke-width: 2"/><text x="208" y="297">Test</text>
+          <circle cx="284" cy="276" r="6" style="fill: var(--panel); stroke: var(--line); stroke-width: 2"/><text x="284" y="297">Release</text>
+        </g>
+        <g style="fill: var(--gold)">
+          <rect x="90" y="272" width="8" height="8" transform="rotate(45 94 276)"/>
+          <rect x="166" y="272" width="8" height="8" transform="rotate(45 170 276)"/>
+          <rect x="242" y="272" width="8" height="8" transform="rotate(45 246 276)"/>
+        </g>
+        <path d="M204 266 C196 247, 144 247, 136 266" style="fill: none; stroke: var(--bad); stroke-width: 1.5"/>
+        <path d="M132 262 l4 6 l4 -6" style="fill: none; stroke: var(--bad); stroke-width: 1.5"/>
+        <text x="170" y="248" text-anchor="middle" font-size="9.5" style="fill: var(--bad)">sent back</text>
+        <text x="30" y="324" font-size="9.5" style="fill: var(--muted)">agents</text>
+        <g style="fill: var(--cell)"><rect x="76" y="314" width="12" height="12" rx="2"/><rect x="92" y="314" width="12" height="12" rx="2"/><rect x="108" y="314" width="12" height="12" rx="2"/></g>
+        <text x="136" y="324" font-size="9.5" style="fill: var(--muted)">a gate between each phase</text>
+
+        <rect x="16" y="354" width="308" height="108" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="30" y="376" font-size="12.5" style="fill: var(--ink)">CFO · finance</text>
+        <g font-size="9.5" text-anchor="middle" style="fill: var(--muted)">
+          <circle cx="56" cy="408" r="6" style="fill: var(--ok)"/><text x="56" y="429">Assess</text>
+          <circle cx="132" cy="408" r="6" style="fill: var(--ok)"/><text x="132" y="429">Model</text>
+          <circle cx="208" cy="408" r="6" style="fill: var(--panel); stroke: var(--cell); stroke-width: 2"/><text x="208" y="429">Budget</text>
+          <circle cx="284" cy="408" r="6" style="fill: var(--panel); stroke: var(--line); stroke-width: 2"/><text x="284" y="429">Report</text>
+        </g>
+        <g style="fill: var(--gold)">
+          <rect x="90" y="404" width="8" height="8" transform="rotate(45 94 408)"/>
+          <rect x="166" y="404" width="8" height="8" transform="rotate(45 170 408)"/>
+          <rect x="242" y="404" width="8" height="8" transform="rotate(45 246 408)"/>
+        </g>
+        <text x="30" y="450" font-size="9.5" style="fill: var(--muted)">agents</text>
+        <g style="fill: var(--cell)"><rect x="76" y="440" width="12" height="12" rx="2"/><rect x="92" y="440" width="12" height="12" rx="2"/></g>
+        <text x="120" y="450" font-size="9.5" style="fill: var(--ok)">asks the signatory to pay</text>
+
+        <rect x="16" y="474" width="308" height="36" rx="5" style="fill: none; stroke: var(--line); stroke-dasharray: 5 4"/>
+        <text x="170" y="496" text-anchor="middle" font-size="11" style="fill: var(--muted)">up to eight leads, 1 to 8 agents each</text>
+
+        <rect x="16" y="524" width="308" height="42" rx="4" style="fill: var(--paper); stroke: var(--line)"/>
+        <rect x="16" y="524" width="96" height="42" rx="4" style="fill: var(--cell-soft)"/>
+        <text x="26" y="541" font-size="10.5" style="fill: var(--ink)">hard budget and cycle limit: reaching</text>
+        <text x="26" y="557" font-size="10.5" style="fill: var(--ink)">either pauses the whole organisation</text>
+    </svg>
     <figcaption class="note" id="org-fig-cap">How an organisation is put together. The gold
       diamonds are gates: a lead reviews each phase's work and passes it or sends it back. Paying
       and signing go only through the signatory's seat, held by a person.</figcaption>
@@ -211,7 +282,7 @@
       <span class="eyebrow">from the project's status table</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Way of running</th><th>Where it stands</th></tr></thead>
         <tbody>
           <tr><td>Simulation, with no model</td><td><span class="badge ok">complete</span> the whole loop and every control, with scripted answers, at no cost</td></tr>

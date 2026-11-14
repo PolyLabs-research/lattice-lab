@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>lattice-lab · PolyLabs Research</title>
+<title>lattice-lab: cellular automaton laws, proved in Lean · PolyLabs Research</title>
 <meta name="description" content="Laws of cellular automata on finite lattices, found by experiment, tested by registered prediction and proved in Lean, with AI agents proposing and proving.">
-<meta property="og:title" content="lattice-lab · PolyLabs Research">
+<link rel="canonical" href="https://polylabs-research.net/lattice">
+<meta property="og:url" content="https://polylabs-research.net/lattice">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="lattice-lab: cellular automaton laws, proved in Lean">
 <meta property="og:description" content="Laws of cellular automata on finite lattices, found by experiment, tested by registered prediction and proved in Lean, with AI agents proposing and proving.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://polylabs-research.net/lattice", "url": "https://polylabs-research.net/lattice", "name": "lattice-lab: cellular automaton laws, proved in Lean", "description": "Laws of cellular automata on finite lattices, found by experiment, tested by registered prediction and proved in Lean, with AI agents proposing and proving.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://polylabs-research.net/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PolyLabs Research", "item": "https://polylabs-research.net/"}, {"@type": "ListItem", "position": 2, "name": "lattice-lab", "item": "https://polylabs-research.net/lattice"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,29 +47,29 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html" aria-current="page">lattice-lab</a>
-      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
-      <a href="reckoner.html">Reckoner</a>
-      <a href="protocell.html">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice" aria-current="page">lattice-lab</a>
+      <a href="tiny-alphazero">Tiny AlphaZero</a>
+      <a href="reckoner">Reckoner</a>
+      <a href="protocell">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
   <div class="bar sub">
     <nav class="nav subnav" aria-label="lattice-lab pages">
-      <a href="lattice.html" aria-current="page">Overview</a>
-      <a href="model.html">The model</a>
-      <a href="parity.html">Parity laws</a>
-      <a href="atlas.html">Linear atlas</a>
-      <a href="settling.html">Settling time</a>
-      <a href="proofs.html">Proofs</a>
-      <a href="codes.html">Quantum codes</a>
-      <a href="census.html">Code census</a>
+      <a href="lattice" aria-current="page">Overview</a>
+      <a href="model">The model</a>
+      <a href="parity">Parity laws</a>
+      <a href="atlas">Linear atlas</a>
+      <a href="settling">Settling time</a>
+      <a href="proofs">Proofs</a>
+      <a href="codes">Quantum codes</a>
+      <a href="census">Code census</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-text">
       <div class="eyebrow">Programme · lattice-lab</div>
@@ -62,7 +79,7 @@
         registered in advance, and a proof in Lean. More and more of the proposing and proving is
         done by AI agents, and machines judge their work too.</p>
       <div class="cta">
-        <a class="primary" href="model.html">How the model works</a>
+        <a class="primary" href="model">How the model works</a>
         <a href="#findings">What it has found</a>
       </div>
     </div>
@@ -100,7 +117,7 @@
       <li><span><strong>Agents.</strong> AI agents, given a problem card and the proof library,
         propose the mechanism and write the proof. An automatic judge decides whether it counts.</span></li>
     </ol>
-    <p><a href="model.html">The model, in detail</a>, includes the real ledger of one study, to
+    <p><a href="model">The model, in detail</a>, includes the real ledger of one study, to
       check yourself, and a record of every step an agent took.</p>
   </section>
 
@@ -113,7 +130,7 @@
       registered. We count that as the method working: each miss pointed at something real, and
       where a corrected claim followed, it was registered and tested again.</p>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Claim</th><th>Tested at</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>Square parity law, P(n) = 2<sup>v</sup>(2<sup>sord(m)</sup> − 1)</td><td>45 sizes by simulation, then all 198 sizes from 3 to 200 exactly</td><td><span class="badge ok">held at all</span> its rival refuted at all 10 sizes where they differ</td></tr>
@@ -153,7 +170,7 @@
     <h2 id="find-title">What the loop has found</h2>
   </section>
   <div class="cards">
-    <a class="card" href="parity.html">
+    <a class="card" href="parity">
       <span class="badge ok status">proved, in part</span>
       <h3>The parity laws</h3>
       <p>Exact period laws for the parity rule on all three lattices. The hexagon's first law was
@@ -161,21 +178,21 @@
         shortfalls of rule 90 and the hexagon shares them exactly; a brief literature search found
         neither fact.</p>
     </a>
-    <a class="card" href="atlas.html">
+    <a class="card" href="atlas">
       <span class="badge gold status">three rounds, refined twice</span>
       <h3>The linear atlas</h3>
       <p>Periods of 502 linear rules built from neighbour shells. A rule reaches its field's full
         bound unless something confines its eigenvalues. Four mechanisms do, and three of them were
         found because a registered prediction failed.</p>
     </a>
-    <a class="card" href="settling.html">
+    <a class="card" href="settling">
       <span class="badge ok status">replicated</span>
       <h3>Settling time</h3>
       <p>A random soup under B2/S34 settles in a time that grows like the logarithm of the torus
         size, replicated to L = 1024. Across eight random rules on four lattices the fluctuations
         share one shape and one ratio, the Gumbel values of extreme-value theory.</p>
     </a>
-    <a class="card" href="model.html#pilots">
+    <a class="card" href="model#pilots">
       <span class="badge ok status">7 of 7 accepted, one in round 2</span>
       <h3>Agents that prove</h3>
       <p>Seven fresh agents, each given only a problem card and the Lean library, proved theorems
@@ -185,7 +202,7 @@
         part of a harder one; the sixth answered the question the fifth's test raised; the
         seventh explained four of five ninth-power rules.</p>
     </a>
-    <a class="card" href="atlas.html#m37">
+    <a class="card" href="atlas#m37">
       <span class="badge ok status" id="m37-status">answered by agents</span>
       <h3>Cubes and ninth powers at m = 37</h3>
       <p id="m37-text">Six rules that none of the known mechanisms touches had every eigenvalue a
@@ -196,14 +213,14 @@
         multi-agent deep dive explained the fifth, rule 4850, with a proof that three independent
         checkers found stands, with repairs. That proof is not yet in Lean.</p>
     </a>
-    <a class="card" href="proofs.html">
+    <a class="card" href="proofs">
       <span class="badge ok status">Lean 4, standard axioms</span>
       <h3>The proof library</h3>
       <p>The bridge from periods to eigenvalues, the bound, the reduction from even sizes to odd,
         every confinement mechanism but rule 4850's, and the agents' seven proofs, all checked by
         Lean against mathlib.</p>
     </a>
-    <a class="card wide" href="codes.html">
+    <a class="card wide" href="codes">
       <span class="badge ok status">k and d reproduced</span>
       <h3>Quantum codes</h3>
       <p>Every linear rule here lives in one ring, and it is the ring of bivariate bicycle quantum
@@ -234,8 +251,8 @@
       Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

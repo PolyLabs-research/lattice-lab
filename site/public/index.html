@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PolyLabs Research</title>
-<meta name="description" content="What small systems can actually do: cellular automata and quantum codes, a small chess network, a model that learns algebra by search, an evolved cell, a company of AI agents and a document-investigation agent, each judged by a check it cannot change.">
-<meta property="og:title" content="PolyLabs Research">
-<meta property="og:description" content="What small systems can actually do: cellular automata and quantum codes, a small chess network, a model that learns algebra by search, an evolved cell, a company of AI agents and a document-investigation agent, each judged by a check it cannot change.">
+<title>PolyLabs Research: small systems, judged by machines</title>
+<meta name="description" content="What small systems can actually do: cellular automata and quantum codes, a 6.5M-parameter chess network, algebra by search, an evolved cell and AI agents.">
+<link rel="canonical" href="https://polylabs-research.net/">
+<meta property="og:url" content="https://polylabs-research.net/">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="PolyLabs Research: small systems, judged by machines">
+<meta property="og:description" content="What small systems can actually do: cellular automata and quantum codes, a 6.5M-parameter chess network, algebra by search, an evolved cell and AI agents.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://polylabs-research.net/#organisation", "name": "PolyLabs Research", "url": "https://polylabs-research.net/", "logo": "https://polylabs-research.net/assets/mark-512.png", "email": "contact@polylabs-research.net", "sameAs": ["https://github.com/PolyLabs-research"]}, {"@type": "WebSite", "@id": "https://polylabs-research.net/#website", "name": "PolyLabs Research", "url": "https://polylabs-research.net/", "description": "What small systems can actually do: cellular automata and quantum codes, a 6.5M-parameter chess network, algebra by search, an evolved cell and AI agents.", "inLanguage": "en-GB", "publisher": {"@id": "https://polylabs-research.net/#organisation"}}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,17 +47,17 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html">lattice-lab</a>
-      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
-      <a href="reckoner.html">Reckoner</a>
-      <a href="protocell.html">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice">lattice-lab</a>
+      <a href="tiny-alphazero">Tiny AlphaZero</a>
+      <a href="reckoner">Reckoner</a>
+      <a href="protocell">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-text">
       <div class="eyebrow">PolyLabs Research</div>
@@ -63,22 +80,22 @@
         <span class="eyebrow">to 14 Nov 2026</span>
       </div>
       <ul class="latest">
-        <li><span class="when">13 Nov</span><span><a href="tiny-alphazero.html">Tiny AlphaZero</a>:
+        <li><span class="when">13 Nov</span><span><a href="tiny-alphazero">Tiny AlphaZero</a>:
           the registered benchmark finds no single rating. Against seven opponents it performs
           between 1,154 and 1,780. <span class="badge bad">K2 failed</span></span></li>
-        <li><span class="when">13 Nov</span><span><a href="reckoner.html">Reckoner</a>: a registered
+        <li><span class="when">13 Nov</span><span><a href="reckoner">Reckoner</a>: a registered
           sweep expected forgetting without rehearsal and found none.
           <span class="badge bad">3 of 4 predictions failed</span></span></li>
-        <li><span class="when">12 Nov</span><span><a href="protocell.html">Protocell</a>: two of three
+        <li><span class="when">12 Nov</span><span><a href="protocell">Protocell</a>: two of three
           searched cells beat the best simple rule on fresh starts, against the preregistered
           prediction. <span class="badge ok">2 of 3</span></span></li>
-        <li><span class="when">10 Nov</span><span><a href="reckoner.html">Reckoner</a>: an erratum to the
+        <li><span class="when">10 Nov</span><span><a href="reckoner">Reckoner</a>: an erratum to the
           first campaign: it trained without the policy target it was built to learn from.
           <span class="badge bad">erratum</span></span></li>
-        <li><span class="when">6 Nov</span><span><a href="organisation.html">the_organisation</a>: its
+        <li><span class="when">6 Nov</span><span><a href="organisation">the_organisation</a>: its
           first run on a real model; the gates sent work back twice.
           <span class="badge gold">one small run</span></span></li>
-        <li><span class="when">from 3 Nov</span><span><a href="census.html">lattice-lab</a>: the code
+        <li><span class="when">from 3 Nov</span><span><a href="census">lattice-lab</a>: the code
           census's last 53 classes, registered before they ran, settle one by one.
           <span class="badge muted">running</span></span></li>
       </ul>
@@ -90,7 +107,7 @@
     <h2 id="prog-title">Six lines of work</h2>
   </section>
   <div class="programmes">
-    <a class="card programme" href="lattice.html">
+    <a class="card programme" href="lattice">
       <span class="tag">Mathematics · cellular automata · quantum codes</span>
       <h3>lattice-lab</h3>
       <span class="badge ok status">proved in Lean, in part</span>
@@ -100,7 +117,7 @@
         qubits found [[294,10,20]], above the published [[288,12,18]] on k d²/n.</p>
       <span class="judge"><b>Judged by</b> Lean 4, and a hash-chained ledger of predictions</span>
     </a>
-    <a class="card programme" href="tiny-alphazero.html">
+    <a class="card programme" href="tiny-alphazero">
       <span class="tag">Self-play · search · chess</span>
       <h3>Tiny AlphaZero</h3>
       <span class="badge muted status">on a plateau</span>
@@ -110,7 +127,7 @@
         number yet.</p>
       <span class="judge"><b>Judged by</b> games against frozen opponents, with intervals</span>
     </a>
-    <a class="card programme" href="reckoner.html">
+    <a class="card programme" href="reckoner">
       <span class="tag">Search · symbolic mathematics</span>
       <h3>Reckoner</h3>
       <span class="badge gold status">gain real, cause open</span>
@@ -120,7 +137,7 @@
         intended target.</p>
       <span class="judge"><b>Judged by</b> a checker for every answer, and par for every problem</span>
     </a>
-    <a class="card programme" href="protocell.html">
+    <a class="card programme" href="protocell">
       <span class="tag">Artificial life · neural networks</span>
       <h3>Protocell</h3>
       <span class="badge ok status">beat the best simple rule, once</span>
@@ -130,7 +147,7 @@
         from a designed start.</p>
       <span class="judge"><b>Judged by</b> worlds that pass their own checks first, and fresh starts</span>
     </a>
-    <a class="card programme" href="organisation.html">
+    <a class="card programme" href="organisation">
       <span class="tag">Multi-agent AI · governance</span>
       <h3>the_organisation</h3>
       <span class="badge gold status">open source, one live run</span>
@@ -140,7 +157,7 @@
         conditional.</p>
       <span class="judge"><b>Judged by</b> evidence agents cannot verify themselves, and gates that run the check</span>
     </a>
-    <a class="card programme" href="corpus-lens.html">
+    <a class="card programme" href="corpus-lens">
       <span class="tag">Document investigation · AI agents</span>
       <h3>Corpus Lens</h3>
       <span class="badge muted status">prototype; no model benchmarked</span>
@@ -164,15 +181,15 @@
       <h2 id="judges-title">Each programme's judge, and what it writes down first</h2>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Programme</th><th>The judge</th><th>Written down before the run</th></tr></thead>
         <tbody>
-          <tr><td><a href="lattice.html">lattice-lab</a></td><td>Lean 4, which accepts a proof or does not, on standard axioms; simulations that say when a number is only a bound</td><td>Predictions at untested sizes, in a hash-chained ledger pushed to GitHub before anyone computes them</td></tr>
-          <tr><td><a href="tiny-alphazero.html">Tiny AlphaZero</a></td><td>Games against frozen opponents and Stockfish, 1,200 per reading, with paired intervals</td><td>Each round's one change, primary test, forecasts and decision table</td></tr>
-          <tr><td><a href="reckoner.html">Reckoner</a></td><td>A checker that evaluates, substitutes or compares at random points, and rules that cannot take an unsound step</td><td>Each campaign and sweep, its predictions and its rule for choosing</td></tr>
-          <tr><td><a href="protocell.html">Protocell</a></td><td>Each world's own checks, then fitness on fresh starts against simple rules run on the same starts</td><td>A preregistration with predictions before every build and run</td></tr>
-          <tr><td><a href="organisation.html">the_organisation</a></td><td>Gates that read the checks themselves, a record of commands no model writes, and a person for money</td><td>Its research questions have no runs yet; its status table says what has run for real</td></tr>
-          <tr><td><a href="corpus-lens.html">Corpus Lens</a></td><td>The server's own search for the quote on its page</td><td>The benchmark's thresholds, and an answer key committed before the run</td></tr>
+          <tr><td><a href="lattice">lattice-lab</a></td><td>Lean 4, which accepts a proof or does not, on standard axioms; simulations that say when a number is only a bound</td><td>Predictions at untested sizes, in a hash-chained ledger pushed to GitHub before anyone computes them</td></tr>
+          <tr><td><a href="tiny-alphazero">Tiny AlphaZero</a></td><td>Games against frozen opponents and Stockfish, 1,200 per reading, with paired intervals</td><td>Each round's one change, primary test, forecasts and decision table</td></tr>
+          <tr><td><a href="reckoner">Reckoner</a></td><td>A checker that evaluates, substitutes or compares at random points, and rules that cannot take an unsound step</td><td>Each campaign and sweep, its predictions and its rule for choosing</td></tr>
+          <tr><td><a href="protocell">Protocell</a></td><td>Each world's own checks, then fitness on fresh starts against simple rules run on the same starts</td><td>A preregistration with predictions before every build and run</td></tr>
+          <tr><td><a href="organisation">the_organisation</a></td><td>Gates that read the checks themselves, a record of commands no model writes, and a person for money</td><td>Its research questions have no runs yet; its status table says what has run for real</td></tr>
+          <tr><td><a href="corpus-lens">Corpus Lens</a></td><td>The server's own search for the quote on its page</td><td>The benchmark's thresholds, and an answer key committed before the run</td></tr>
         </tbody>
       </table>
     </div>
@@ -202,8 +219,8 @@
       it, not because the work says so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

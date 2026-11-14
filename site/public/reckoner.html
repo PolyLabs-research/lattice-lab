@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reckoner · PolyLabs Research</title>
-<meta name="description" content="A five-million-parameter model learning algebra by search against a checker, one readable rewrite at a time: the par game, the first campaign and its errata, and a sweep whose predictions failed.">
-<meta property="og:title" content="Reckoner · PolyLabs Research">
-<meta property="og:description" content="A five-million-parameter model learning algebra by search against a checker, one readable rewrite at a time: the par game, the first campaign and its errata, and a sweep whose predictions failed.">
+<title>Reckoner: a small model learning algebra by search · PolyLabs Research</title>
+<meta name="description" content="A 5M-parameter model learning algebra by search against a checker, one readable rewrite at a time: the par game, the first campaign and its errata.">
+<link rel="canonical" href="https://polylabs-research.net/reckoner">
+<meta property="og:url" content="https://polylabs-research.net/reckoner">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="Reckoner: a small model learning algebra by search">
+<meta property="og:description" content="A 5M-parameter model learning algebra by search against a checker, one readable rewrite at a time: the par game, the first campaign and its errata.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://polylabs-research.net/reckoner", "url": "https://polylabs-research.net/reckoner", "name": "Reckoner: a small model learning algebra by search", "description": "A 5M-parameter model learning algebra by search against a checker, one readable rewrite at a time: the par game, the first campaign and its errata.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://polylabs-research.net/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PolyLabs Research", "item": "https://polylabs-research.net/"}, {"@type": "ListItem", "position": 2, "name": "Reckoner", "item": "https://polylabs-research.net/reckoner"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,17 +47,17 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html">lattice-lab</a>
-      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
-      <a href="reckoner.html" aria-current="page">Reckoner</a>
-      <a href="protocell.html">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice">lattice-lab</a>
+      <a href="tiny-alphazero">Tiny AlphaZero</a>
+      <a href="reckoner" aria-current="page">Reckoner</a>
+      <a href="protocell">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <header class="prose">
     <div class="eyebrow">Programme · Reckoner</div>
     <h1>Teaching a small model algebra by search, with a checker as the only judge</h1>
@@ -106,7 +123,7 @@ solved in 3 steps, par 3, outcome 0</pre>
       <h2 id="m1-title">The first campaign: under par more often</h2>
       <span class="eyebrow">registered primary · 600 problems</span>
     </div>
-    <div class="chart-box"><svg id="m1-chart" viewBox="0 0 760 320" role="img" aria-labelledby="m1-title m1-cap"></svg></div>
+    <div class="chart-box fit"><svg id="m1-chart" viewBox="0 0 760 320" role="img" aria-labelledby="m1-title m1-cap"></svg></div>
     <p class="note" id="m1-cap">Problems solved in fewer steps than par, out of the 600 deeper
       problems the campaign was registered on, at the start (the supervised anchor) and after
       iterations 4, 9, 14 and 19. Twenty iterations ran in 9.6 hours, with no alarms, and both
@@ -136,14 +153,15 @@ solved in 3 steps, par 3, outcome 0</pre>
       what it knew. It predicted that with none, every seed would forget. Instead every arm held,
       and the arms with little or no rehearsal (<em>f</em> ≤ 0.15) gained the most, reading
       1,208 to 1,212 against the anchor's 1,192.</p>
-    <div class="chart-box"><svg id="sw-chart" viewBox="0 0 760 320" role="img" aria-labelledby="sw-title sw-cap"></svg></div>
+    <div class="chart-box fit"><svg id="sw-chart" viewBox="0 0 760 320" role="img" aria-labelledby="sw-title sw-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="background: var(--cell)"></i>one seed</span>
       <span><i class="swatch" style="background: var(--bad)"></i>control: policy target withheld, f = 0</span>
       <span><i class="swatch sq" style="background: var(--muted)"></i>anchor, 1,192</span>
       <span><i class="swatch sq" style="background: var(--gold)"></i>pass line, 1,190</span>
     </div>
-    <p class="tip" id="sw-tip" aria-live="polite">Point at a column for its readings.</p>
+    <p class="tip" id="sw-tip" aria-live="polite">Point at a column, or tap it, for its readings.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="sw-table"></div></details>
     <p class="note" id="sw-cap">Agreement with the exact solver's move on 1,229 unseen states,
       one training iteration from the anchor, three seeds per fraction. At <em>f</em> = 0 all
       three seeds read 1,211; withholding the policy target dropped the model to 1,088 and
@@ -157,7 +175,7 @@ solved in 3 steps, par 3, outcome 0</pre>
       <span class="eyebrow">misses included</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Claim</th><th>Tested by</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>The supervised model picks the exact solver's move</td><td>1,229 unseen states; threshold 0.90, a model that knows nothing 0.68 to 0.70</td><td><span class="badge ok">passed</span> 0.9699</td></tr>
@@ -184,7 +202,7 @@ solved in 3 steps, par 3, outcome 0</pre>
       should stay in the set. The question the base-625 substrate was chosen to ask, whether
       numbers drawn as glyphs beat learned embeddings, has not been run either.</p>
     <p>Reckoner is the second experiment in a series of small models. The first was the chess
-      engine on the <a href="tiny-alphazero.html">Tiny AlphaZero</a> page, whose search it
+      engine on the <a href="tiny-alphazero">Tiny AlphaZero</a> page, whose search it
       inherits. Later stages are planned and not specified: a logic specialist checked by a proof
       checker, a router that only dispatches, so that what the system says stays checkable, and
       last, a model of language with no verifier at all.</p>
@@ -210,8 +228,8 @@ solved in 3 steps, par 3, outcome 0</pre>
       it, not because the work says so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Protocell · PolyLabs Research</title>
-<meta name="description" content="A single simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule tried.">
-<meta property="og:title" content="Protocell · PolyLabs Research">
-<meta property="og:description" content="A single simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule tried.">
+<title>Protocell: an evolved cell that manages light · PolyLabs Research</title>
+<meta name="description" content="A simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule.">
+<link rel="canonical" href="https://polylabs-research.net/protocell">
+<meta property="og:url" content="https://polylabs-research.net/protocell">
+<meta property="og:site_name" content="PolyLabs Research">
+<meta property="og:title" content="Protocell: an evolved cell that manages light">
+<meta property="og:description" content="A simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://polylabs-research.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://polylabs-research.net/protocell", "url": "https://polylabs-research.net/protocell", "name": "Protocell: an evolved cell that manages light", "description": "A simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://polylabs-research.net/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PolyLabs Research", "item": "https://polylabs-research.net/"}, {"@type": "ListItem", "position": 2, "name": "Protocell", "item": "https://polylabs-research.net/protocell"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="site-head gutter">
   <div class="bar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
         <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
         <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
@@ -30,17 +47,17 @@
       <span class="brand-name">PolyLabs Research</span>
     </a>
     <nav class="nav" aria-label="Programmes">
-      <a href="lattice.html">lattice-lab</a>
-      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
-      <a href="reckoner.html">Reckoner</a>
-      <a href="protocell.html" aria-current="page">Protocell</a>
-      <a href="organisation.html">the_organisation</a>
-      <a href="corpus-lens.html">Corpus Lens</a>
-      <a href="contact.html">Contact</a>
+      <a href="lattice">lattice-lab</a>
+      <a href="tiny-alphazero">Tiny AlphaZero</a>
+      <a href="reckoner">Reckoner</a>
+      <a href="protocell" aria-current="page">Protocell</a>
+      <a href="organisation">the_organisation</a>
+      <a href="corpus-lens">Corpus Lens</a>
+      <a href="contact">Contact</a>
     </nav>
   </div>
 </header>
-<main class="wrap gutter">
+<main id="main" class="wrap gutter">
   <header class="prose">
     <div class="eyebrow">Programme · Protocell</div>
     <h1>One cell, evolved to manage light: does behaviour come from parts working together?</h1>
@@ -58,14 +75,21 @@
     <div><dt>Source</dt><dd>Private for now; the records quoted here are its own</dd></div>
   </dl>
 
-  <figure class="figure diagram" aria-labelledby="cell-cap" style="margin: 0">
-    <div class="diagram-box"><svg id="cell-fig" viewBox="0 0 760 340" role="img" aria-labelledby="cell-cap"></svg></div>
-    <figcaption class="note" id="cell-cap">The cell, drawn to its wiring, not to scale. Its wall is a
-      ring of 16 neural nodes in a closed loop; each senses the light where it sits (brighter
-      gold, more light) and beats a cilium. Every wall node is wired both ways to a core of 8
-      neurons. The cell is about the size of a <em>Chlamydomonas</em>, 5 µm in radius; from stage
-      1 its world is a flat pool 2.5 cm in radius at the back of a south-facing cave, on a 24-hour
-      day with a one-second tick.</figcaption>
+  <figure class="figure" aria-labelledby="cell-cap" style="margin: 0">
+    <div class="figure-body split">
+      <svg id="cell-fig" class="cell-fig" viewBox="0 0 380 340" role="img" aria-labelledby="cell-cap"></svg>
+      <dl class="cell-notes">
+        <div><dt>16 wall nodes</dt><dd>Each senses the light at its place and beats a cilium.</dd></div>
+        <div><dt>Ring links</dt><dd>Each node to its two neighbours, in a closed loop.</dd></div>
+        <div><dt>8 core neurons</dt><dd>Fully connected, with time constants from a second to an hour.</dd></div>
+        <div><dt>Spokes, both ways</dt><dd>Every wall node to the core and back.</dd></div>
+        <div><dt>One network</dt><dd>Wall and core are one recurrent network. Evolution sets its weights through a genome of 103 or 135 numbers.</dd></div>
+      </dl>
+    </div>
+    <figcaption class="note" id="cell-cap">The cell, drawn to its wiring, not to scale: a wall node
+      is drawn more golden the more light falls on it. The cell is about the size of a
+      <em>Chlamydomonas</em>, 5 µm in radius; from stage 1 its world is a flat pool 2.5 cm in
+      radius at the back of a south-facing cave, on a 24-hour day with a one-second tick.</figcaption>
   </figure>
 
   <section class="prose" aria-labelledby="pc-q-title">
@@ -95,14 +119,15 @@
       do, so the strong sense could not be tested. Stage 4a built a world with room: a tighter
       economy, where B8 scores 0.576 and the best a still cell can do at the brightest point is
       0.694. Then, one approach at a time:</p>
-    <div class="chart-box"><svg id="pc-chart" viewBox="0 0 760 330" role="img" aria-labelledby="pc-chart-title pc-chart-cap"></svg></div>
+    <div class="chart-box fit"><svg id="pc-chart" viewBox="0 0 760 330" role="img" aria-labelledby="pc-chart-title pc-chart-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>B0, a still cell</span>
       <span><i class="swatch sq" style="background: var(--gold)"></i>B8, the best simple rule</span>
       <span><i class="swatch" style="background: var(--cell)"></i>the cell</span>
-      <span><i class="swatch" style="background: var(--ok)"></i>the cell, above B8 with an interval clear of zero</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5.5" style="fill: none; stroke: var(--ok); stroke-width: 1.5"/><circle cx="6.5" cy="6.5" r="3" style="fill: var(--ok)"/></svg>the cell, above B8 with an interval clear of zero</span>
     </div>
-    <p class="tip" id="pc-tip" aria-live="polite">Point at a row for its readings.</p>
+    <p class="tip" id="pc-tip" aria-live="polite">Point at a row, or tap it, for its readings.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="pc-table"></div></details>
     <p class="note" id="pc-chart-cap">Each row is a separate test on its own fresh starts, with B0
       and B8 run on the same starts, which is why their scores move a little between rows.
       Evolution from nothing got no further than 0.241, far below B8; fitting the cell to
@@ -129,7 +154,7 @@
       <span class="eyebrow">1 to 13 November 2026</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Stage</th><th>Question</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>0, cave</td><td>Do the worlds work: moving pays, the light can be sensed and reached?</td><td><span class="badge gold">after amendment</span> two checks failed as preregistered in stage 0, one in the cave; each passed after one recorded amendment</td></tr>
@@ -167,8 +192,8 @@
       it, not because the work says so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="index.html#method">How we work</a>
-      <a href="contact.html">Contact</a>
+      <a href="./#method">How we work</a>
+      <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

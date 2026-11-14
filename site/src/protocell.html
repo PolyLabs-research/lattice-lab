@@ -16,14 +16,21 @@
     <div><dt>Source</dt><dd>Private for now; the records quoted here are its own</dd></div>
   </dl>
 
-  <figure class="figure diagram" aria-labelledby="cell-cap" style="margin: 0">
-    <div class="diagram-box"><svg id="cell-fig" viewBox="0 0 760 340" role="img" aria-labelledby="cell-cap"></svg></div>
-    <figcaption class="note" id="cell-cap">The cell, drawn to its wiring, not to scale. Its wall is a
-      ring of 16 neural nodes in a closed loop; each senses the light where it sits (brighter
-      gold, more light) and beats a cilium. Every wall node is wired both ways to a core of 8
-      neurons. The cell is about the size of a <em>Chlamydomonas</em>, 5 µm in radius; from stage
-      1 its world is a flat pool 2.5 cm in radius at the back of a south-facing cave, on a 24-hour
-      day with a one-second tick.</figcaption>
+  <figure class="figure" aria-labelledby="cell-cap" style="margin: 0">
+    <div class="figure-body split">
+      <svg id="cell-fig" class="cell-fig" viewBox="0 0 380 340" role="img" aria-labelledby="cell-cap"></svg>
+      <dl class="cell-notes">
+        <div><dt>16 wall nodes</dt><dd>Each senses the light at its place and beats a cilium.</dd></div>
+        <div><dt>Ring links</dt><dd>Each node to its two neighbours, in a closed loop.</dd></div>
+        <div><dt>8 core neurons</dt><dd>Fully connected, with time constants from a second to an hour.</dd></div>
+        <div><dt>Spokes, both ways</dt><dd>Every wall node to the core and back.</dd></div>
+        <div><dt>One network</dt><dd>Wall and core are one recurrent network. Evolution sets its weights through a genome of 103 or 135 numbers.</dd></div>
+      </dl>
+    </div>
+    <figcaption class="note" id="cell-cap">The cell, drawn to its wiring, not to scale: a wall node
+      is drawn more golden the more light falls on it. The cell is about the size of a
+      <em>Chlamydomonas</em>, 5 µm in radius; from stage 1 its world is a flat pool 2.5 cm in
+      radius at the back of a south-facing cave, on a 24-hour day with a one-second tick.</figcaption>
   </figure>
 
   <section class="prose" aria-labelledby="pc-q-title">
@@ -53,14 +60,15 @@
       do, so the strong sense could not be tested. Stage 4a built a world with room: a tighter
       economy, where B8 scores 0.576 and the best a still cell can do at the brightest point is
       0.694. Then, one approach at a time:</p>
-    <div class="chart-box"><svg id="pc-chart" viewBox="0 0 760 330" role="img" aria-labelledby="pc-chart-title pc-chart-cap"></svg></div>
+    <div class="chart-box fit"><svg id="pc-chart" viewBox="0 0 760 330" role="img" aria-labelledby="pc-chart-title pc-chart-cap"></svg></div>
     <div class="legend">
       <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>B0, a still cell</span>
       <span><i class="swatch sq" style="background: var(--gold)"></i>B8, the best simple rule</span>
       <span><i class="swatch" style="background: var(--cell)"></i>the cell</span>
-      <span><i class="swatch" style="background: var(--ok)"></i>the cell, above B8 with an interval clear of zero</span>
+      <span><svg viewBox="0 0 13 13" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5.5" style="fill: none; stroke: var(--ok); stroke-width: 1.5"/><circle cx="6.5" cy="6.5" r="3" style="fill: var(--ok)"/></svg>the cell, above B8 with an interval clear of zero</span>
     </div>
-    <p class="tip" id="pc-tip" aria-live="polite">Point at a row for its readings.</p>
+    <p class="tip" id="pc-tip" aria-live="polite">Point at a row, or tap it, for its readings.</p>
+    <details class="numbers"><summary>The numbers in this chart</summary><div id="pc-table"></div></details>
     <p class="note" id="pc-chart-cap">Each row is a separate test on its own fresh starts, with B0
       and B8 run on the same starts, which is why their scores move a little between rows.
       Evolution from nothing got no further than 0.241, far below B8; fitting the cell to
@@ -87,7 +95,7 @@
       <span class="eyebrow">1 to 13 November 2026</span>
     </div>
     <div class="table-box">
-      <table>
+      <table class="stack">
         <thead><tr><th>Stage</th><th>Question</th><th>Outcome</th></tr></thead>
         <tbody>
           <tr><td>0, cave</td><td>Do the worlds work: moving pays, the light can be sensed and reached?</td><td><span class="badge gold">after amendment</span> two checks failed as preregistered in stage 0, one in the cave; each passed after one recorded amendment</td></tr>
