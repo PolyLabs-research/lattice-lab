@@ -1,0 +1,135 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Programme · Tiny AlphaZero</div>
+    <h1>How strong can a 6.5-million-parameter chess network get on one small computer?</h1>
+    <p class="lede">Tiny AlphaZero rebuilds the AlphaZero loop (a network that plays itself,
+      guided by tree search, and learns from the games) at the smallest size that is still
+      complete, on one mini-PC. Its first version could not tell whether it was improving. This
+      one is built around that question: a fixed ladder of frozen opponents, intervals on every
+      score, and one change per round, registered before it runs.</p>
+  </header>
+
+  <dl class="facts" aria-label="Tiny AlphaZero in brief">
+    <div><dt>Network</dt><dd>6,536,199 parameters: an 8-layer transformer reading the board as 72 tokens</dd></div>
+    <div><dt>Rounds</dt><dd>25 of self-play, p2_a to p2_y, July to November 2026</dd></div>
+    <div><dt>Strength now</dt><dd>1,154 to 1,780 on the CCRL scale, by opponent: no single number</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2">Open, Apache 2.0</a></dd></div>
+  </dl>
+
+  <section class="prose" aria-labelledby="taz-method-title">
+    <h2 id="taz-method-title">How improvement is measured</h2>
+    <p>The first version decided which network was best by four-game matches, so its "best
+      model" changed by coin flip. Here progress is read against a fixed ladder: frozen opponents,
+      from earlier networks to Stockfish 16 held to a set skill level, playing 100 four-move
+      openings, each twice with colours swapped. Every score comes with a 95% interval from a
+      paired bootstrap over the openings, and a round's verdict compares two networks opening by
+      opening.</p>
+    <p>Each round changes one thing. Its file is committed before launch, with the hypothesis,
+      the primary test, forecasts and a table of what each outcome would decide. A gate is never
+      moved to let a network through: when two early gates proved to measure the wrong thing,
+      they were retired to reported-only with the argument written down, and their thresholds
+      were left where they were.</p>
+    <p>The network starts from a supervised warm start, and is trained by a cycle of 512
+      self-play games, searched at 48 simulations a move, then 400 training steps. Every
+      measurement runs on the mini-PC, which has an integrated AMD GPU; since late October the
+      training has run on rented GPUs. It is not pure self-play: mate puzzles are rehearsed from
+      the second round, and since round p2_t a quarter of every batch is positions labelled by
+      Stockfish.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="levers-title">
+    <div class="figure-head">
+      <h2 id="levers-title">The last seven rounds: one change each, and the plateau</h2>
+      <span class="eyebrow">score against Stockfish 16, skill 5</span>
+    </div>
+    <div class="chart-box"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--muted)"></i>the round's baseline arm</span>
+      <span><i class="swatch" style="background: var(--ok)"></i>the change, better and separated</span>
+      <span><i class="swatch" style="background: var(--bad)"></i>the change, worse and separated</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>the change, not separated</span>
+    </div>
+    <p class="tip" id="levers-tip" aria-live="polite">Point at a round for its registered test.</p>
+    <p class="note" id="levers-cap">Each round's two arms, each scored over six 200-game passes of
+      the openings against the same opponent on the same machine. Of seven changes, one helped
+      (a Stockfish teacher in a quarter of each batch), one hurt (twice the teacher), and five
+      made no difference the test could separate. The best six-pass score is 0.379, and no round
+      since p2_t has separated from its own start.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="bench-title">
+    <div class="figure-head">
+      <h2 id="bench-title">Where it stands on a public scale: a spread, not a number</h2>
+      <span class="eyebrow">1,400 games, registered</span>
+    </div>
+    <p style="margin: 0">To place the network on CCRL's rating list, one network played seven
+      opponents of published rating, 200 games each. The registered test asked whether the
+      classical engines agree among themselves about its rating. None of the three agrees with the
+      other two, so the decision table's answer is that there is no single number at this level,
+      and the page publishes each opponent's reading instead.</p>
+    <div class="chart-box"><svg id="bench-chart" viewBox="0 0 760 330" role="img" aria-labelledby="bench-title bench-cap"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell)"></i>the network's performance against that opponent</span>
+      <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>the opponent's own rating</span>
+    </div>
+    <p class="note" id="bench-cap">Performance is the rating the results imply against an
+      opponent of known rating, with a 95% interval where the run log gives one; the four
+      Stockfish settings together fit 1,674 (1,644 to 1,704). The network searched 48 simulations
+      a move, about 0.12 s, while its opponents took about 1 to 1.9 s a move. The registered next
+      step on this track is to rerun the opponents at a clock scaled to CCRL's reference machine
+      before any one rating is quoted.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="taz-board-title">
+    <div class="figure-head">
+      <h2 id="taz-board-title">The rounds that changed the course</h2>
+      <span class="eyebrow">misses included</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Round</th><th>Claim</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1</td><td>The first supervised run is valid</td><td><span class="badge bad">invalid</span> all four gates missed (its top move was never legal) from three stacked bugs</td></tr>
+          <tr><td>Phase 1</td><td>Its gates: legal top move ≥ 0.99, mate in one ≥ 0.90</td><td><span class="badge bad">retired, not lowered</span> 0.976 and 0.802; the illegal moves were a tail of leaving the king in check</td></tr>
+          <tr><td>Phase 1</td><td>Mate in two, ≥ 95% at 128 simulations</td><td><span class="badge ok">passed, threshold unmoved</span> blocked at 77.0%, passed at 98.5%; the last cause was a search bug</td></tr>
+          <tr><td>p2_a</td><td>24 hours of self-play meets milestone M3</td><td><span class="badge bad">failed</span> strength against the start rose, but mate in two fell from 0.985 to 0.830</td></tr>
+          <tr><td>p2_c</td><td>A blended value target gives the first gain against Stockfish</td><td><span class="badge gold">gained, confounded</span> 0.025 → 0.233 at skill 0, but two changes ran, not one</td></tr>
+          <tr><td>p2_d</td><td>The skill-0 opponent is a fixed yardstick</td><td><span class="badge bad">it is not</span> it varies from run to run, so earlier intervals were too narrow</td></tr>
+          <tr><td>p2_e</td><td>Fixed code keeps improving</td><td><span class="badge bad">regressed</span> −0.068, and the control dipped as deep: the protocol, not the code</td></tr>
+          <tr><td>p2_f</td><td>Carrying the replay buffer across rounds removes the dip</td><td><span class="badge ok">confirmed</span> +0.089 (+0.038 to +0.140)</td></tr>
+          <tr><td>finding</td><td>Training was correct on this machine</td><td><span class="badge bad">it was not</span> a known bug in the GPU stack gave the value head half its gradients in every round to p2_f; fixed by a library upgrade</td></tr>
+          <tr><td>p2_g</td><td>Varied self-play openings add strength</td><td><span class="badge ok">confirmed</span> +0.243; not separable from the gradient fix that came with it</td></tr>
+          <tr><td>p2_k</td><td>A lower learning rate, 2e-4 to 2e-5</td><td><span class="badge ok">confirmed</span> +0.117 (+0.093 to +0.140)</td></tr>
+          <tr><td>p2_o, p2_p</td><td>A second step down, to 2e-6</td><td><span class="badge ok">confirmed on replication</span> null at first (the interval touched zero), then +0.075 on a new seed</td></tr>
+          <tr><td>p2_r, p2_s</td><td>128 simulations a move in self-play instead of 48</td><td><span class="badge muted">no effect, twice</span> lever closed</td></tr>
+          <tr><td>diagnosis</td><td>Its losses to skill 5 have one main cause</td><td><span class="badge muted">no single cause</span> the largest share was 29.7%, and 66% of blunders were never seen by the search</td></tr>
+          <tr><td>p2_t</td><td>Positions labelled by Stockfish, a quarter of each batch</td><td><span class="badge ok">confirmed against control</span> +0.050; against its own start, not yet</td></tr>
+          <tr><td>p2_v</td><td>Twice the teacher</td><td><span class="badge bad">worse</span> −0.044, while closer to the teacher's moves</td></tr>
+          <tr><td>p2_x, p2_y</td><td>One CCRL rating</td><td><span class="badge bad">no single number</span> the three classical engines disagree; four of nine forecasts missed in p2_y</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="taz-next-title">
+    <h2 id="taz-next-title">Where it stands</h2>
+    <p>Strength against skill 5 has been flat since p2_t, and the levers tried on top of the
+      teacher are closed. The next diagnostic, drafted and not yet run, asks whether the
+      network's distance from its teacher is set by its size or by how few labelled positions it
+      has seen. On the benchmark track, the clock-scaled rerun is registered as the next step and
+      not scheduled. <a href="reckoner.html">Reckoner</a> carries the same search, and the same
+      rules for registering a round, over to algebra.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="taz-src-title">
+    <h2 id="taz-src-title">Read further</h2>
+    <ul class="sources">
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/tiny_alphazero_v2_spec.md">The specification</a>, with what the first version taught</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/TRAINING_STRATEGY.md">The campaign's rules</a>: one lever per round, gates never move</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_t.md">Round p2_t</a>: the teacher</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_y.md">Round p2_y</a>: the public benchmark and its decision</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/DIAG-2026-11-13-capacity-or-data.md">The next diagnostic</a>, as drafted</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero">The first version</a>, archived</li>
+    </ul>
+  </section>
+</main>

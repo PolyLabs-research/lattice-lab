@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Protocell · PolyLabs Research</title>
+<meta name="description" content="A single simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule tried.">
+<meta property="og:title" content="Protocell · PolyLabs Research">
+<meta property="og:description" content="A single simulated cell whose wall and brain are one neural network, evolved to manage light: the hypothesis, the worlds, and the first cell to beat every simple rule tried.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-head gutter">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="1" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="9.5" y="9.5" width="7" height="7" rx="1" style="fill: var(--gold)"/>
+        <rect x="18" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="1" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="18" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+      </svg>
+      <span class="brand-name">PolyLabs Research</span>
+    </a>
+    <nav class="nav" aria-label="Programmes">
+      <a href="lattice.html">lattice-lab</a>
+      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
+      <a href="reckoner.html">Reckoner</a>
+      <a href="protocell.html" aria-current="page">Protocell</a>
+      <a href="organisation.html">the_organisation</a>
+      <a href="corpus-lens.html">Corpus Lens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Programme · Protocell</div>
+    <h1>One cell, evolved to manage light: does behaviour come from parts working together?</h1>
+    <p class="lede">Protocell builds the simplest organism it can, a single simulated cell whose
+      wall and brain are one small neural network, and asks whether its behaviour emerges from
+      the interaction of its parts. It starts with few parts, each understood, and adds
+      complexity only when a test needs it. Light is the cell's food, and it has to find a good
+      place in the light and hold it.</p>
+  </header>
+
+  <dl class="facts" aria-label="Protocell in brief">
+    <div><dt>Started</dt><dd>1 November 2026</dd></div>
+    <div><dt>The cell</dt><dd>16 wall nodes and 8 core neurons, one recurrent network</dd></div>
+    <div><dt>Its genome</dt><dd>103 or 135 numbers, set by evolution</dd></div>
+    <div><dt>Source</dt><dd>Private for now; the records quoted here are its own</dd></div>
+  </dl>
+
+  <figure class="figure diagram" aria-labelledby="cell-cap" style="margin: 0">
+    <div class="diagram-box"><svg id="cell-fig" viewBox="0 0 760 340" role="img" aria-labelledby="cell-cap"></svg></div>
+    <figcaption class="note" id="cell-cap">The cell, drawn to its wiring, not to scale. Its wall is a
+      ring of 16 neural nodes in a closed loop; each senses the light where it sits (brighter
+      gold, more light) and beats a cilium. Every wall node is wired both ways to a core of 8
+      neurons. The cell is about the size of a <em>Chlamydomonas</em>, 5 µm in radius; from stage
+      1 its world is a flat pool 2.5 cm in radius at the back of a south-facing cave, on a 24-hour
+      day with a one-second tick.</figcaption>
+  </figure>
+
+  <section class="prose" aria-labelledby="pc-q-title">
+    <h2 id="pc-q-title">The hypothesis, in two senses</h2>
+    <p>In the <strong>weak</strong> sense, the cell's behaviour depends on its parts working
+      together: remove any internal part and the behaviour breaks. In the <strong>strong</strong>
+      sense, a cell of interacting parts does better than every simple mechanism. The simple
+      mechanisms are written as rules and run in the same world as baselines. The reflex beats
+      harder on its brighter side. <em>Run and wait</em> swims straight while the light it feels
+      is rising and waits otherwise. <em>Read and run</em> aims each run by reading the light
+      across its wall. The strongest, called B8, uses run-and-wait's trigger with read-and-run's
+      aim.</p>
+    <p>A cell's fitness is its mean energy reserve over a lifetime of a day or two, with the
+      ticks after death counting zero, on a scale from 0 to 1. Every world must pass its own checks
+      before any cell evolves in it: sitting still must fail, the light must be sensable and
+      reachable, random wiring must rarely work, and runs must repeat bit for bit. A
+      preregistration with predictions comes before every build and run, and results are
+      corrected by dated notes, never rewritten.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="pc-chart-title">
+    <div class="figure-head">
+      <h2 id="pc-chart-title">The road to beating the best simple rule</h2>
+      <span class="eyebrow">stage 4a's world · fresh starts</span>
+    </div>
+    <p style="margin: 0">For three stages a simple rule sat within 2–3% of the best any cell could
+      do, so the strong sense could not be tested. Stage 4a built a world with room: a tighter
+      economy, where B8 scores 0.576 and the best a still cell can do at the brightest point is
+      0.694. Then, one approach at a time:</p>
+    <div class="chart-box"><svg id="pc-chart" viewBox="0 0 760 330" role="img" aria-labelledby="pc-chart-title pc-chart-cap"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="border: 2px solid var(--muted); background: transparent"></i>B0, a still cell</span>
+      <span><i class="swatch sq" style="background: var(--gold)"></i>B8, the best simple rule</span>
+      <span><i class="swatch" style="background: var(--cell)"></i>the cell</span>
+      <span><i class="swatch" style="background: var(--ok)"></i>the cell, above B8 with an interval clear of zero</span>
+    </div>
+    <p class="tip" id="pc-tip" aria-live="polite">Point at a row for its readings.</p>
+    <p class="note" id="pc-chart-cap">Each row is a separate test on its own fresh starts, with B0
+      and B8 run on the same starts, which is why their scores move a little between rows.
+      Evolution from nothing got no further than 0.241, far below B8; fitting the cell to
+      B8's beats and cells written weight by weight stayed at the still cell's level. Changing what the cell senses, to light relative to
+      its recent level, let a cell written weight by weight carry 0.909 of B8's lead over the
+      still cell. A search starting there, moving each gene about 1%, found cells that beat B8.</p>
+  </section>
+
+  <section class="open" aria-label="What the result does and does not show">
+    <p><strong>The strong sense, shown once, with its caveats.</strong> In stage 4a's world, two of
+      three searched cells beat B8 on 100 fresh starts: 0.610 and 0.593 against 0.557, surviving
+      100% and 96% of starts. The preregistration had predicted that no champion would beat B8.
+      But the start was designed, not evolved, so this does not show such a cell emerging from
+      nothing; it is one spoke mode, one world and one way of sensing; the third champion does
+      not clear the criterion; and B8 is only the best simple rule tried.</p>
+    <p>An explaining probe found the search had retuned the designed mechanism rather than
+      rebuilt it: the core's links carry about two thirds of the gain, and the champion crosses
+      the dark about twice as fast and holds a rising run more firmly.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="pc-board-title">
+    <div class="figure-head">
+      <h2 id="pc-board-title">Stage by stage</h2>
+      <span class="eyebrow">1 to 13 November 2026</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Stage</th><th>Question</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>0, cave</td><td>Do the worlds work: moving pays, the light can be sensed and reached?</td><td><span class="badge gold">after amendment</span> two checks failed as preregistered in stage 0, one in the cave; each passed after one recorded amendment</td></tr>
+          <tr><td>1</td><td>Do evolved cells reach the reflex?</td><td><span class="badge bad">no</span> 0 of 3 runs in each mode; the best 0.697 against 0.707. But every champion needs its core, the core's recurrence and the ring's links</td></tr>
+          <tr><td>1b</td><td>Does each part's moment-to-moment signal matter, or only its average?</td><td><span class="badge ok">the signal</span> holding any part at its average breaks all six champions</td></tr>
+          <tr><td>3a</td><td>A translucent cell's world that rewards comparing light over time</td><td><span class="badge ok">passes its checks</span> the reflex survives 34% of starts; a rule that compares over time survives all</td></tr>
+          <tr><td>3b</td><td>Does comparing over time evolve?</td><td><span class="badge bad">no</span> 0 of 3 in each mode; first read as "sometimes and partly", corrected in 3c: neither champion compares over time</td></tr>
+          <tr><td>3c</td><td>Does the cell with no front read the light's direction with its ring?</td><td><span class="badge ok">yes</span> remove the direction it senses and survival falls from 43% to 14%; mirror it and to 0%. 8 of 12 predictions held</td></tr>
+          <tr><td>4a</td><td>A world with room above every simple rule</td><td><span class="badge ok">passes its checks</span> B8 0.576, the ceiling 0.694</td></tr>
+          <tr><td>4b, 4c</td><td>Does evolution from nothing reach a working cell there?</td><td><span class="badge bad">no</span> two searches, three pilots; the best evolved cell scores 0.241 against B8's 0.567</td></tr>
+          <tr><td>probe</td><td>Why do the working cells die?</td><td><span class="badge muted">too little light</span> they find about half of B8's, rather than spending too much</td></tr>
+          <tr><td>4d</td><td>Can the cell be fitted to B8's beats?</td><td><span class="badge bad">no</span> the match stalls near 0.31, and the cell scores as a still one</td></tr>
+          <tr><td>4e</td><td>Can it be written weight by weight to do B8's job?</td><td><span class="badge bad">no</span> 13 designs, all at the still cell's level; its notebooks point at the wiring, which senses only through its beats and has no gain control</td></tr>
+          <tr><td>5b</td><td>With light sensed relative to its recent level, can it?</td><td><span class="badge ok">yes, narrowly</span> 0.909 of the gap (0.850 to 0.965) with a front; 0.618 without one, "partly"</td></tr>
+          <tr><td>5c</td><td>Does a search from that cell beat B8?</td><td><span class="badge ok">2 of 3 runs</span> +0.053 and +0.035 over B8; the third +0.016, its interval crossing zero</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="pc-next-title">
+    <h2 id="pc-next-title">Where it stands</h2>
+    <p>Stages 4 and 5 are written up. The open question the result leaves is the one its caveats
+      name: whether a cell that beats the simple rules can emerge from nothing on the new way of
+      sensing, which is the next stage to be drafted. Also open: how the champions' fresh runs
+      come to begin aimed at the light, the cell with no front on the new sensing, and the
+      plan's stage on damage from too much light, which has not been run.</p>
+  </section>
+</main>
+<footer class="site-foot gutter">
+  <div class="bar">
+    <p>Every number on this site comes from a programme's own records (its registered
+      predictions, preregistrations, run logs and rulings) or is computed in your browser. Where a
+      test failed, the page says so, and a result counts because a check outside the work passed
+      it, not because the work says so.</p>
+    <div class="links">
+      <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
+      <a href="index.html#method">How we work</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/lib.js"></script>
+<script src="assets/js/protocell.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Programme · Reckoner</div>
+    <h1>Teaching a small model algebra by search, with a checker as the only judge</h1>
+    <p class="lede">Reckoner asks whether a model of about five million parameters can learn
+      multi-step algebra the way AlphaZero learned chess: by searching over moves and learning
+      from what a verifier accepts, without large-scale pretraining. Every move is a rewrite
+      from a fixed set of seven rules, so the model's reasoning is a derivation a person can
+      read, and an unsound step cannot be taken at all.</p>
+  </header>
+
+  <dl class="facts" aria-label="Reckoner in brief">
+    <div><dt>Started</dt><dd>13 August 2026</dd></div>
+    <div><dt>Model</dt><dd>5,073,156 parameters</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/PolyLabs-research/reckoner">Open, on GitHub</a></dd></div>
+    <div><dt>Now</dt><dd>First campaign closed; the next not yet registered</dd></div>
+  </dl>
+
+  <section class="prose" aria-labelledby="game-title">
+    <h2 id="game-title">The par game</h2>
+    <p>A problem is an expression and a goal: work it out, simplify it, or solve it for
+      <em>x</em>. A move applies one of seven rewrite rules (add, subtract or multiply two numbers,
+      combine like terms, or add to, subtract from or divide both sides) at one place in the
+      expression. Each rule is an equivalence, tested on 10,000 random instances, so no move can
+      make the expression wrong. Numbers are written in base 625, the series' own numeral system,
+      as two-digit tokens.</p>
+    <p>A checker decides when a problem is solved: exact evaluation for arithmetic, substitution
+      for an equation, and agreement at random points for a simplification. Solving is not
+      winning. Every problem carries a <strong>par</strong>, the length of a reference solution
+      in the same seven rules, and the outcome is <strong>+1</strong> for finishing in fewer steps,
+      <strong>0</strong> for matching it, and <strong>−1</strong> for taking more or hitting the
+      step cap. Up to depth 6 par comes from an exhaustive search and cannot be beaten; deeper,
+      it comes from a scripted solver and can be.</p>
+  </section>
+
+  <figure class="figure" aria-labelledby="deriv-cap" style="margin: 0">
+    <pre class="derivation" aria-label="A derivation of 3x + 6 = 21">goal   solve for x          par 3 (exact)
+start  3x + 6 = 21
+
+3x + 6 = 21     <span class="rule">──[sub_both_sides, 6]──►</span>    3x = 21 + (−6)
+3x = 21 + (−6)  <span class="rule">──[eval_add]──────────►</span>    3x = 15
+3x = 15         <span class="rule">──[div_both_sides, 3]──►</span>    x = 5
+
+solved in 3 steps, par 3, outcome 0</pre>
+    <figcaption class="note" id="deriv-cap">A derivation as the project's own renderer prints it,
+      shortened here: one line per rewrite, with the rule named. This one is a reference
+      solution found by exhaustive search, the specification's own example, not a trace of the
+      trained model.</figcaption>
+  </figure>
+
+  <section class="prose" aria-labelledby="judge-title">
+    <h2 id="judge-title">How it is judged</h2>
+    <p>Each campaign and sweep is written down and approved before it runs, with its predictions
+      and its rule for choosing. After that it changes only by dated amendments added at the end,
+      and an amendment written after seeing a result has to say so. Every gate states four
+      numbers: the floor, what a model that knows nothing scores, the threshold, and the
+      measurement. That rule came from a gate that passed vacuously, below.</p>
+    <p>Every defect is written up, the small ones included, in a numbered list of findings
+      (57 so far), and a finding that turns out wrong is withdrawn in place, not deleted.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="m1-title">
+    <div class="figure-head">
+      <h2 id="m1-title">The first campaign: under par more often</h2>
+      <span class="eyebrow">registered primary · 600 problems</span>
+    </div>
+    <div class="chart-box"><svg id="m1-chart" viewBox="0 0 760 320" role="img" aria-labelledby="m1-title m1-cap"></svg></div>
+    <p class="note" id="m1-cap">Problems solved in fewer steps than par, out of the 600 deeper
+      problems the campaign was registered on, at the start (the supervised anchor) and after
+      iterations 4, 9, 14 and 19. Twenty iterations ran in 9.6 hours, with no alarms, and both
+      no-regress floors held. The registered test compares the anchor with the final model:
+      101 against 209, a mean difference of 0.18, 95% interval 0.137 to 0.222.</p>
+    <div class="open">
+      <p><strong>What the gain is.</strong> Taken apart, it is shorter paths to solutions the
+        anchor already found: 149 problems got shorter and 50 longer. On the tightest stratum,
+        where beating par needs a genuinely shorter proof, the campaign went from 43 to 35, with
+        an interval that includes zero. Six problems were newly solved, and all six landed
+        exactly on par, which scores nothing. The measure cannot see a new solve at par, so the
+        campaign's effect on capability is unmeasured.</p>
+      <p><strong>What it trained on.</strong> Found eleven weeks later: the replay buffer stored
+        the search's policy targets in the wrong coordinates, and 89–96% of their mass was
+        dropped. The campaign improved without the target the loop exists to learn from. In the
+        project's words, its gain "is real. Its cause is open."</p>
+    </div>
+  </section>
+
+  <section class="figure" aria-labelledby="sw-title">
+    <div class="figure-head">
+      <h2 id="sw-title">A registered sweep where three of four predictions failed</h2>
+      <span class="eyebrow">13 November 2026</span>
+    </div>
+    <p style="margin: 0">With the defects fixed, a sweep asked how much of each training batch must
+      be old supervised data (the rehearsal fraction <em>f</em>) for the model not to forget
+      what it knew. It predicted that with none, every seed would forget. Instead every arm held,
+      and the arms with little or no rehearsal (<em>f</em> ≤ 0.15) gained the most, reading
+      1,208 to 1,212 against the anchor's 1,192.</p>
+    <div class="chart-box"><svg id="sw-chart" viewBox="0 0 760 320" role="img" aria-labelledby="sw-title sw-cap"></svg></div>
+    <div class="legend">
+      <span><i class="swatch" style="background: var(--cell)"></i>one seed</span>
+      <span><i class="swatch" style="background: var(--bad)"></i>control: policy target withheld, f = 0</span>
+      <span><i class="swatch sq" style="background: var(--muted)"></i>anchor, 1,192</span>
+      <span><i class="swatch sq" style="background: var(--gold)"></i>pass line, 1,190</span>
+    </div>
+    <p class="tip" id="sw-tip" aria-live="polite">Point at a column for its readings.</p>
+    <p class="note" id="sw-cap">Agreement with the exact solver's move on 1,229 unseen states,
+      one training iteration from the anchor, three seeds per fraction. At <em>f</em> = 0 all
+      three seeds read 1,211; withholding the policy target dropped the model to 1,088 and
+      1,089. Agreement with the exact solver's single move is not shown to mean better play, and
+      whether the next campaign uses <em>f</em> = 0 is left to its own rehearsal.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="rk-board-title">
+    <div class="figure-head">
+      <h2 id="rk-board-title">Gates, tests and findings</h2>
+      <span class="eyebrow">misses included</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Claim</th><th>Tested by</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>The supervised model picks the exact solver's move</td><td>1,229 unseen states; threshold 0.90, a model that knows nothing 0.68 to 0.70</td><td><span class="badge ok">passed</span> 0.9699</td></tr>
+          <tr><td>The first form of that gate</td><td>held-out states of depth ≤ 3</td><td><span class="badge bad">vacuous</span> an untrained network already scored 1.0000 against a floor of 0.9897; replaced, and every gate since states its floor and null</td></tr>
+          <tr><td>The search searches</td><td>node counts at 6 to 48 simulations</td><td><span class="badge bad">defect</span> pinned at 6 nodes for every budget, after four gates had passed; fixed (7, 17, 32, 49)</td></tr>
+          <tr><td>Every reference par marked exact was computed</td><td>a proofread of 50 derivations</td><td><span class="badge bad">failed</span> 6 claimed exact par no search had computed; there was no exhaustive labeller yet</td></tr>
+          <tr><td>The exact-par suites leave room to improve</td><td>1,200 problems, depth 1 to 6</td><td><span class="badge muted">saturated</span> 1,200 solved, 1,193 at par, so the registered primary moved to the deeper strata</td></tr>
+          <tr><td>The first campaign's rehearsal holds the floors</td><td>five iterations, floors 1,188 and 1,167</td><td><span class="badge bad">failed</span> 910 and 722; the rehearsal fraction 0.65 followed</td></tr>
+          <tr><td>The campaign beats par more often than the anchor</td><td>600 registered problems, paired bootstrap</td><td><span class="badge ok">confirmed</span> 101 → 209; the gain is shorter paths, and its cause is open</td></tr>
+          <tr><td>The training target is the search's improved policy</td><td>40 constructed positions with proven losses</td><td><span class="badge bad">defect</span> it was the visit share, with 58% of its mass on proven losses in every one; fixed</td></tr>
+          <tr><td>A run can be replicated with another seed</td><td>the campaign's random streams</td><td><span class="badge bad">defect</span> the seed reached none of them; fixed</td></tr>
+          <tr><td>Rehearsal sweep, the visit-share target</td><td>3 registered predictions</td><td><span class="badge ok">3 of 3</span> held; an earlier finding of "immediate" forgetting withdrawn</td></tr>
+          <tr><td>Rehearsal sweep, the improved target</td><td>4 registered predictions, 28 arms</td><td><span class="badge bad">3 of 4 failed</span> no fraction forgot, and none was needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="rk-next-title">
+    <h2 id="rk-next-title">Where it stands</h2>
+    <p>The first campaign is closed and written up with its errata. The next is not yet
+      registered, and no seed but one has been. Three one-change rounds are registered and not
+      run, among them whether a rule the optimal derivations never use (it appears in 0 of 920)
+      should stay in the set. The question the base-625 substrate was chosen to ask, whether
+      numbers drawn as glyphs beat learned embeddings, has not been run either.</p>
+    <p>Reckoner is the second experiment in a series of small models. The first was the chess
+      engine on the <a href="tiny-alphazero.html">Tiny AlphaZero</a> page, whose search it
+      inherits. Later stages are planned and not specified: a logic specialist checked by a proof
+      checker, a router that only dispatches, so that what the system says stays checkable, and
+      last, a model of language with no verifier at all.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="rk-src-title">
+    <h2 id="rk-src-title">Read further</h2>
+    <ul class="sources">
+      <li><a href="https://github.com/PolyLabs-research/reckoner/blob/main/experiment2_math_base625_spec.md">The specification</a>: the thesis, the game and the checker</li>
+      <li><a href="https://github.com/PolyLabs-research/reckoner/blob/main/RUNLOG-m1.md">The first campaign's run log</a>, with its erratum</li>
+      <li><a href="https://github.com/PolyLabs-research/reckoner/blob/main/FINDINGS.md">Findings</a>: F-39 takes the gain apart, F-53 is the erratum, F-57 the sweep</li>
+      <li><a href="https://github.com/PolyLabs-research/reckoner/blob/main/SWEEP-m3.md">The sweep</a>, registered before any arm ran</li>
+      <li><a href="https://github.com/PolyLabs-research/reckoner/blob/main/docs/derivations.md">Fifty derivations</a>, rendered</li>
+      <li><a href="https://github.com/PolyLabs-research/base-625">base-625</a>, the numeral system</li>
+    </ul>
+  </section>
+</main>

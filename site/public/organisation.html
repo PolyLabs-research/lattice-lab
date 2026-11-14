@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>the_organisation · PolyLabs Research</title>
+<meta name="description" content="An open-source company of AI agents, with gates between phases and a person who pays and signs: what it is, the checks agents cannot talk past, and its one run on a real model.">
+<meta property="og:title" content="the_organisation · PolyLabs Research">
+<meta property="og:description" content="An open-source company of AI agents, with gates between phases and a person who pays and signs: what it is, the checks agents cannot talk past, and its one run on a real model.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-head gutter">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="1" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="9.5" y="9.5" width="7" height="7" rx="1" style="fill: var(--gold)"/>
+        <rect x="18" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="1" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="18" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+      </svg>
+      <span class="brand-name">PolyLabs Research</span>
+    </a>
+    <nav class="nav" aria-label="Programmes">
+      <a href="lattice.html">lattice-lab</a>
+      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
+      <a href="reckoner.html">Reckoner</a>
+      <a href="protocell.html">Protocell</a>
+      <a href="organisation.html" aria-current="page">the_organisation</a>
+      <a href="corpus-lens.html">Corpus Lens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Programme · the_organisation</div>
+    <h1>A company of AI agents, with a person holding the purse</h1>
+    <p class="lede">the_organisation turns one prompt into a working organisation of AI agents: a
+      CEO that answers to you, executive leads who each follow a standard procedure with a gate
+      between its phases, and agents under each lead doing the work. It is open-source software,
+      and it is built to be an instrument too: every plan, gate, ruling and dollar goes on the
+      record in plain files, so how agents behave under governance can be read back, not guessed.</p>
+  </header>
+
+  <dl class="facts" aria-label="the_organisation in brief">
+    <div><dt>Started</dt><dd>5 November 2026</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/PolyLabs-research/the_organisation">Open, Apache 2.0</a>, TypeScript</dd></div>
+    <div><dt>Tests</dt><dd>More than 1,100, run on every pull request</dd></div>
+    <div><dt>Run on a real model</dt><dd>Once: one lead, one agent, one cycle</dd></div>
+  </dl>
+
+  <section class="prose" aria-labelledby="org-title">
+    <h2 id="org-title">How it is organised</h2>
+    <p>There is a CEO, up to eight executive leads chosen from a library of fifteen (or seats
+      you define), and one to eight agents under each lead. Each lead works to an operating
+      profile, such as Spec → Build → Test → Release, and a phase must pass the lead's gate
+      before the next begins. Work that fails the gate is sent back. When two leads' priorities
+      collide, each states a position and the CEO rules, or an independent judge does if you
+      seat one.</p>
+    <p>One seat pays and signs: the Authorised Signatory, which is a person unless you decide
+      otherwise. Agents can draft a contract and choose a supplier. The organisation then asks,
+      gets on with other work, and treats nothing as paid until the person says it is. A hard
+      budget pauses everything, and so does a cycle limit. After each cycle the CEO asks
+      <em>"What would the shareholders want now?"</em> and the next cycle begins.</p>
+  </section>
+
+  <figure class="figure diagram" aria-labelledby="org-fig-cap" style="margin: 0">
+    <div class="diagram-box">
+      <svg viewBox="0 0 760 380" role="img" aria-labelledby="org-fig-cap" font-family="IBM Plex Mono, monospace">
+        <!-- shareholders, CEO, board, signatory -->
+        <rect x="280" y="8" width="200" height="46" rx="5" style="fill: var(--gold-soft); stroke: var(--gold)"/>
+        <text x="380" y="28" text-anchor="middle" font-size="13" style="fill: var(--ink)">Shareholders: you</text>
+        <text x="380" y="45" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">your steer is binding</text>
+        <line x1="380" y1="54" x2="380" y2="86" style="stroke: var(--muted)"/>
+        <rect x="280" y="86" width="200" height="46" rx="5" style="fill: var(--panel); stroke: var(--cell)"/>
+        <text x="380" y="106" text-anchor="middle" font-size="13" style="fill: var(--ink)">CEO</text>
+        <text x="380" y="123" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">sets each cycle's direction</text>
+        <rect x="20" y="86" width="210" height="46" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="125" y="106" text-anchor="middle" font-size="13" style="fill: var(--ink)">The board</text>
+        <text x="125" y="123" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">positions on the record, a ruling</text>
+        <line x1="230" y1="109" x2="280" y2="109" style="stroke: var(--muted)"/>
+        <rect x="530" y="86" width="210" height="46" rx="5" style="fill: var(--panel); stroke: var(--ok); stroke-width: 1.5"/>
+        <text x="635" y="106" text-anchor="middle" font-size="13" style="fill: var(--ink)">Authorised Signatory</text>
+        <text x="635" y="123" text-anchor="middle" font-size="10.5" style="fill: var(--muted)">a person: pays and signs</text>
+        <!-- to the leads -->
+        <line x1="380" y1="132" x2="380" y2="152" style="stroke: var(--muted)"/>
+        <line x1="130" y1="152" x2="630" y2="152" style="stroke: var(--muted)"/>
+        <line x1="130" y1="152" x2="130" y2="172" style="stroke: var(--muted)"/>
+        <line x1="380" y1="152" x2="380" y2="172" style="stroke: var(--muted)"/>
+        <line x1="630" y1="152" x2="630" y2="172" style="stroke: var(--muted); stroke-dasharray: 3 3"/>
+        <path d="M 600 132 C 600 150, 470 150, 455 172" style="fill: none; stroke: var(--ok); stroke-dasharray: 4 3"/>
+        <text x="612" y="147" font-size="10" style="fill: var(--ok)">requests at a gate</text>
+
+        <!-- lead 1: CTO -->
+        <rect x="20" y="172" width="220" height="150" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="34" y="194" font-size="12.5" style="fill: var(--ink)">CTO · engineering</text>
+        <g font-size="9.5" text-anchor="middle" style="fill: var(--muted)">
+          <circle cx="50" cy="236" r="6" style="fill: var(--ok)"/><text x="50" y="257">Spec</text>
+          <circle cx="100" cy="236" r="6" style="fill: var(--ok)"/><text x="100" y="257">Build</text>
+          <circle cx="150" cy="236" r="6" style="fill: var(--panel); stroke: var(--cell); stroke-width: 2"/><text x="150" y="257">Test</text>
+          <circle cx="200" cy="236" r="6" style="fill: var(--panel); stroke: var(--line); stroke-width: 2"/><text x="200" y="257">Release</text>
+        </g>
+        <g style="fill: var(--gold)">
+          <rect x="71" y="232" width="8" height="8" transform="rotate(45 75 236)"/>
+          <rect x="121" y="232" width="8" height="8" transform="rotate(45 125 236)"/>
+          <rect x="171" y="232" width="8" height="8" transform="rotate(45 175 236)"/>
+        </g>
+        <path d="M 172 226 C 165 205, 112 205, 104 226" style="fill: none; stroke: var(--bad); stroke-width: 1.5"/>
+        <path d="M 100 222 l 4 6 l 4 -6" style="fill: none; stroke: var(--bad); stroke-width: 1.5"/>
+        <text x="138" y="208" text-anchor="middle" font-size="9.5" style="fill: var(--bad)">sent back</text>
+        <text x="34" y="284" font-size="9.5" style="fill: var(--muted)">agents</text>
+        <g style="fill: var(--cell)"><rect x="80" y="275" width="12" height="12" rx="2"/><rect x="96" y="275" width="12" height="12" rx="2"/><rect x="112" y="275" width="12" height="12" rx="2"/></g>
+        <text x="34" y="310" font-size="9.5" style="fill: var(--muted)">a gate between each phase</text>
+
+        <!-- lead 2: CFO -->
+        <rect x="270" y="172" width="220" height="150" rx="5" style="fill: var(--panel); stroke: var(--line)"/>
+        <text x="284" y="194" font-size="12.5" style="fill: var(--ink)">CFO · finance</text>
+        <g font-size="9.5" text-anchor="middle" style="fill: var(--muted)">
+          <circle cx="300" cy="236" r="6" style="fill: var(--ok)"/><text x="300" y="257">Assess</text>
+          <circle cx="350" cy="236" r="6" style="fill: var(--ok)"/><text x="350" y="257">Model</text>
+          <circle cx="400" cy="236" r="6" style="fill: var(--panel); stroke: var(--cell); stroke-width: 2"/><text x="400" y="257">Budget</text>
+          <circle cx="450" cy="236" r="6" style="fill: var(--panel); stroke: var(--line); stroke-width: 2"/><text x="450" y="257">Report</text>
+        </g>
+        <g style="fill: var(--gold)">
+          <rect x="321" y="232" width="8" height="8" transform="rotate(45 325 236)"/>
+          <rect x="371" y="232" width="8" height="8" transform="rotate(45 375 236)"/>
+          <rect x="421" y="232" width="8" height="8" transform="rotate(45 425 236)"/>
+        </g>
+        <text x="284" y="284" font-size="9.5" style="fill: var(--muted)">agents</text>
+        <g style="fill: var(--cell)"><rect x="330" y="275" width="12" height="12" rx="2"/><rect x="346" y="275" width="12" height="12" rx="2"/></g>
+        <text x="284" y="310" font-size="9.5" style="fill: var(--muted)">asks the signatory to pay</text>
+
+        <!-- more leads -->
+        <rect x="520" y="172" width="220" height="150" rx="5" style="fill: none; stroke: var(--line); stroke-dasharray: 5 4"/>
+        <text x="630" y="236" text-anchor="middle" font-size="12" style="fill: var(--muted)">up to eight leads,</text>
+        <text x="630" y="254" text-anchor="middle" font-size="12" style="fill: var(--muted)">1 to 8 agents each</text>
+
+        <!-- budget -->
+        <rect x="20" y="340" width="720" height="26" rx="4" style="fill: var(--paper); stroke: var(--line)"/>
+        <rect x="20" y="340" width="190" height="26" rx="4" style="fill: var(--cell-soft)"/>
+        <text x="34" y="357" font-size="10.5" style="fill: var(--ink)">hard budget and cycle limit: reaching either pauses the whole organisation</text>
+      </svg>
+    </div>
+    <figcaption class="note" id="org-fig-cap">How an organisation is put together. The gold
+      diamonds are gates: a lead reviews each phase's work and passes it or sends it back. Paying
+      and signing go only through the signatory's seat, held by a person.</figcaption>
+  </figure>
+
+  <section class="prose" aria-labelledby="checks-title">
+    <h2 id="checks-title">Checks the agents cannot talk their way past</h2>
+    <p>A system of agents that marks its own work will report success. So the parts that decide
+      whether something is done sit outside what any agent can write:</p>
+    <ul>
+      <li><strong>Evidence, not say-so.</strong> A finished plan only moves its commitment to
+        <em>awaiting verification</em>. Agents can submit evidence but cannot verify their own
+        work; its owner, an independent reviewer or a person does.</li>
+      <li><strong>A gate that runs the check itself.</strong> For work one command can prove, the
+        system runs the lead's chosen check before the lead is asked anything. Exit code 0
+        passes, and nothing else does.</li>
+      <li><strong>A record no model writes.</strong> Every command an agent runs is recorded by
+        the code that ran it: how it ended and how long it took. The lead is told to go by that
+        record where an agent's report says more.</li>
+      <li><strong>Privileges enforced in code.</strong> What each role may do (search, change
+        records, read or draft mail, sign in, act on accounts) is switched in code where the
+        thing is done, not by asking the model, and the documentation lists separately what is
+        enforced and what is only instructed.</li>
+      <li><strong>Unknowns stay unknown.</strong> Missing values are not filled in, and only a
+        person can confirm a measurement or a payment.</li>
+      <li><strong>Plain files.</strong> State is JSON on disk, with a line of activity for every
+        unit of work, so every decision and its reasons can be read back after the run.</li>
+    </ul>
+  </section>
+
+  <section class="figure" aria-labelledby="run-title">
+    <div class="figure-head">
+      <h2 id="run-title">The one run on a real model</h2>
+      <span class="badge gold">one small run, one day</span>
+    </div>
+    <p style="margin: 0">On 6 November 2026 one small organisation ran from start to finish on a
+      real model: one lead (a CTO) with one agent, for one cycle, on Claude Haiku 5.5 through a
+      Claude Code login. The whole prompt was: <em>"A one-page website that tells neighbours when
+      the community garden is open and what is ready to pick this week."</em></p>
+    <div class="figure-body split">
+      <div class="table-box">
+        <table style="min-width: 0">
+          <tbody>
+            <tr><th scope="row">Time</th><td>11 minutes</td></tr>
+            <tr><th scope="row">Model replies</th><td>59</td></tr>
+            <tr><th scope="row">Tokens</th><td>about 900,000, most read from cache</td></tr>
+            <tr><th scope="row">Cost</th><td>$0.15 at list price; nothing was billed, as it ran on a subscription login</td></tr>
+            <tr><th scope="row">Files written</th><td>8: the page, its style, a data file and a README; a spec, build notes, a test report and release notes</td></tr>
+            <tr><th scope="row">Spec, Build</th><td><span class="badge ok">passed</span></td></tr>
+            <tr><th scope="row">Test</th><td><span class="badge bad">sent back once</span> the script was longer than the spec allowed; let through after the fix</td></tr>
+            <tr><th scope="row">Release</th><td><span class="badge bad">sent back once</span> then accepted as conditional, not passed</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="shot narrow">
+        <img src="assets/img/organisation-live-site.jpg" width="900" height="900" loading="lazy"
+          alt="The one-page site the run built, with each fact it was not given marked PLACEHOLDER">
+        <figcaption class="note">The page it built. Every fact it was not given, such as the
+          garden's name, hours and address, is marked as a placeholder instead of being made up.</figcaption>
+      </figure>
+    </div>
+    <p style="margin: 0">The CTO's report to the board said the site was built and documented but
+      <strong>not verified in a browser</strong>, because the agents on that machine could not run
+      anything, and it kept the test report's FAIL on the record. That is the behaviour the gates
+      are for. It is also, in the project's own words, one small run on one model on one day:
+      evidence that the loop holds together on a real model, not a claim about what larger
+      organisations will do.</p>
+    <figure class="shot">
+      <img src="assets/img/organisation-live-run.jpg" width="1360" height="1100" loading="lazy"
+        alt="The dashboard after the real run: the CTO's report to the board, saying the site is built but not verified in a browser and the release is conditional">
+      <figcaption class="note">The dashboard after the real run, with the CTO's report to the board.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" aria-labelledby="study-title">
+    <h2 id="study-title">What it is built to study</h2>
+    <p>Because every review, ruling and call is logged, the same runs that do the work can answer
+      questions about the agents doing it:</p>
+    <ul>
+      <li><strong>How often do gates send work back, and on which models?</strong> Executives can
+        run on one model and agents on another, so models can be compared seat by seat.</li>
+      <li><strong>Do effort ratings mean anything?</strong> Leads rate each task from 1 to 10, and
+        the system learns what each level actually takes, in minutes and dollars, separately for
+        each model. Its Overseer view shows whether the ratings predict the cost.</li>
+      <li><strong>Can routing follow results?</strong> A model that has had 3 of its last 8 tasks
+        sent back gives up its highest effort level; one whose last 5 tasks at its highest level
+        all stood is tried a level higher.</li>
+      <li><strong>Can a long-running organisation keep its memory?</strong> Left with only its
+        recent cycles in view, an organisation that runs for long forgets what it did, has it
+        done again, and rules against itself. Its memory is an index of words over its own files,
+        with no model behind it, shown to a lead where it bears on what the lead is deciding.</li>
+    </ul>
+    <p class="open">None of these has been measured yet. The instruments exist; the data does
+      not. No send-back rates, effort costs or model comparisons have been recorded, and this
+      page will say when they are.</p>
+  </section>
+
+  <section class="figure" aria-labelledby="status-title">
+    <div class="figure-head">
+      <h2 id="status-title">What has been run for real, and what has not</h2>
+      <span class="eyebrow">from the project's status table</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Way of running</th><th>Where it stands</th></tr></thead>
+        <tbody>
+          <tr><td>Simulation, with no model</td><td><span class="badge ok">complete</span> the whole loop and every control, with scripted answers, at no cost</td></tr>
+          <tr><td>A Claude Code login</td><td><span class="badge gold">run once</span> the organisation above, and about twenty short calls; Linux only</td></tr>
+          <tr><td>Running code in a sandbox</td><td><span class="badge gold">tested, no model choosing</span> real containers on Docker 29 on Linux, every wall and limit checked; no real model has yet decided what to run</td></tr>
+          <tr><td>Anthropic's API and eleven other providers</td><td><span class="badge muted">stand-ins only</span> built and tested against local stand-ins that speak their protocols; not yet called for real</td></tr>
+          <tr><td>Hosted sessions (Claude Managed Agents)</td><td><span class="badge muted">stand-ins only</span> tested against a stand-in for the API</td></tr>
+          <tr><td>GitHub repositories</td><td><span class="badge muted">reads only</span> reads checked against the real API; nothing written to a real repository</td></tr>
+          <tr><td>Email and service accounts</td><td><span class="badge muted">stand-ins only</span> with a real local browser; no real mailbox or outside account used</td></tr>
+          <tr><td>Tool servers (MCP)</td><td><span class="badge muted">local only</span> a real server on the same machine; no third party's server connected</td></tr>
+          <tr><td>Memory</td><td><span class="badge muted">simulation only</span> whole organisations over six cycles; no real model has been shown it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="shot">
+      <img src="assets/img/organisation-headquarters.jpg" width="1360" height="860" loading="lazy"
+        alt="An organisation's headquarters in simulation: a room for each seat, a desk for each agent, and three payment requests waiting for the signatory">
+      <figcaption class="note">In simulation: an organisation's headquarters, with a room for every
+        seat and a desk for every agent, and three requests to pay waiting for the person in the
+        signatory's seat. No model is being called.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" aria-labelledby="org-src-title">
+    <h2 id="org-src-title">Read further</h2>
+    <ul class="sources">
+      <li><a href="https://github.com/PolyLabs-research/the_organisation#status">The README's status table</a>: what has been run for real, kept current</li>
+      <li><a href="https://github.com/PolyLabs-research/the_organisation/blob/main/docs/live-validation.md">The live-validation record</a> of the run above</li>
+      <li><a href="https://github.com/PolyLabs-research/the_organisation/blob/main/docs/code-execution.md">Running code</a>: the sandbox, the system's record and the gate that runs a check</li>
+      <li><a href="https://github.com/PolyLabs-research/the_organisation/blob/main/docs/email-and-accounts.md#what-is-enforced-and-what-is-only-instructed">What is enforced and what is only instructed</a></li>
+    </ul>
+  </section>
+</main>
+<footer class="site-foot gutter">
+  <div class="bar">
+    <p>Every number on this site comes from a programme's own records (its registered
+      predictions, preregistrations, run logs and rulings) or is computed in your browser. Where a
+      test failed, the page says so, and a result counts because a check outside the work passed
+      it, not because the work says so.</p>
+    <div class="links">
+      <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
+      <a href="index.html#method">How we work</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/lib.js"></script>
+</body>
+</html>

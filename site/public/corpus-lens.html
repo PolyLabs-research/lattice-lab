@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Corpus Lens · PolyLabs Research</title>
+<meta name="description" content="A document-investigation tool whose agent may record a finding only with a quote the server finds on a real page: the pipeline, the citation gate to try, and what is checked.">
+<meta property="og:title" content="Corpus Lens · PolyLabs Research">
+<meta property="og:description" content="A document-investigation tool whose agent may record a finding only with a quote the server finds on a real page: the pipeline, the citation gate to try, and what is checked.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-head gutter">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="1" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="1" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="1" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="9.5" y="9.5" width="7" height="7" rx="1" style="fill: var(--gold)"/>
+        <rect x="18" y="9.5" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="1" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+        <rect x="9.5" y="18" width="7" height="7" rx="1" style="fill: var(--cell-soft)"/>
+        <rect x="18" y="18" width="7" height="7" rx="1" style="fill: var(--cell)"/>
+      </svg>
+      <span class="brand-name">PolyLabs Research</span>
+    </a>
+    <nav class="nav" aria-label="Programmes">
+      <a href="lattice.html">lattice-lab</a>
+      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
+      <a href="reckoner.html">Reckoner</a>
+      <a href="protocell.html">Protocell</a>
+      <a href="organisation.html">the_organisation</a>
+      <a href="corpus-lens.html" aria-current="page">Corpus Lens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap gutter">
+  <header class="prose">
+    <div class="eyebrow">Programme · Corpus Lens</div>
+    <h1>Reading a mountain of documents, where every finding must quote its page</h1>
+    <p class="lede">Corpus Lens turns a large collection of documents (scanned PDFs, Word files,
+      workbooks, emails and whole mailboxes) into something a person can search and browse by
+      time, person, organisation and type. On top of it sits an investigation agent built around
+      one rule: it may record a finding only with a quote that the server itself finds, character
+      for character, on a real page.</p>
+  </header>
+
+  <dl class="facts" aria-label="Corpus Lens in brief">
+    <div><dt>Started</dt><dd>22 August 2026</dd></div>
+    <div><dt>Tests</dt><dd>1,950 passing, none skipped, and 37 for the interface</dd></div>
+    <div><dt>Stage</dt><dd>A single-user prototype that runs on one machine</dd></div>
+    <div><dt>Source</dt><dd>Private for now; the records quoted here are its own</dd></div>
+  </dl>
+
+  <section class="prose" aria-labelledby="cl-pipe-title">
+    <h2 id="cl-pipe-title">From a pile of files to something you can question</h2>
+    <ol class="steps">
+      <li><span><strong>Ingest.</strong> PDFs and images, text, Word (.docx and .doc), Excel (.xlsx
+        and .xls), CSV, email (.eml and Outlook .msg), zip archives of them, and Outlook
+        mailboxes (.pst), each message of which becomes an email of its own. Duplicates are
+        found by their SHA-256 hash.</span></li>
+      <li><span><strong>Extract.</strong> Text comes from each page's text layer, or by OCR where a
+        page has none. Every file is read in a locked-down process of its own, with limits on its
+        memory and time, so a hostile file can harm nothing else.</span></li>
+      <li><span><strong>Classify and date.</strong> Rules assign each document a type (an email, a
+        court filing, an invoice) and find its dates.</span></li>
+      <li><span><strong>Name.</strong> People, organisations and places are tagged, and the same
+        name written different ways is merged, in a way a person can review and undo.</span></li>
+      <li><span><strong>Explore.</strong> A timeline, an entity network, full-text search and a
+        document viewer. Processing starts by itself and can be stopped; what has been read is
+        kept, and it carries on from there.</span></li>
+    </ol>
+  </section>
+
+  <section class="figure" aria-labelledby="gate-title">
+    <div class="figure-head">
+      <h2 id="gate-title">The citation gate, in your browser</h2>
+      <span class="eyebrow">a sketch of the rule, on an invented page</span>
+    </div>
+    <p style="margin: 0">An agent that is asked to cite will sometimes invent a quote, or paraphrase
+      one, or stitch two passages into a sentence that reads as damning and is not real. So the
+      agent is never asked where a quote is. It supplies a page and the words; the server looks for
+      them, and stores the page's own characters at the place it found them. The agent cannot put
+      a single character into the record, only select a run of the page's. Try it:</p>
+    <div class="figure-body split">
+      <div class="controls">
+        <div class="field">The page (invented for this demonstration)
+          <p id="gate-page" class="derivation" style="white-space: pre-wrap; margin: 0"></p>
+        </div>
+      </div>
+      <div class="controls">
+        <label class="field" for="gate-quote">The agent's quote
+          <textarea id="gate-quote" rows="3" style="width: 100%"></textarea>
+        </label>
+        <div class="row" role="group" aria-label="Try a quote">
+          <button type="button" data-q="0">an exact quote</button>
+          <button type="button" data-q="1">a paraphrase</button>
+          <button type="button" data-q="2">stitched</button>
+          <button type="button" data-q="3">twice on the page</button>
+          <button type="button" data-q="4">too short</button>
+          <button type="button" data-q="5">typed plainly</button>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div class="kv"><span class="k">the gate says</span><span class="v" id="gate-verdict">…</span></div>
+          <div class="kv"><span class="k">stored</span><span class="v" id="gate-stored"></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">This page's script follows the published rules: a quote must be at least 20
+      characters and occur exactly once on its page, and matching forgives only typography
+      (Unicode forms, curly quotes, dashes and spacing), never case or punctuation. The project's
+      own gate adds more: the names and numbers in a claim must appear in its quotes, a claim and
+      its evidence are written together or not at all, and a withdrawn claim stays visible as
+      withdrawn.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="cl-rules-title">
+    <h2 id="cl-rules-title">Rules the work is held to</h2>
+    <p>The project's build plan opens with invariants that every later change must keep, and a
+      list of rules for the coding agents that do much of the building:</p>
+    <ul>
+      <li><strong>The six gate guarantees</strong> survive every change unchanged or stronger. The
+        tests that pin them are themselves pinned by their SHA-256 hash, so they cannot be quietly
+        edited, and the gate is never replaced by a stand-in in a test.</li>
+      <li><strong>The text of a page is never edited in place.</strong> Reading a page again makes
+        a new lineage with new page ids, so every stored quote keeps pointing at the text it was
+        found in.</li>
+      <li><strong>Logs never hold content:</strong> no document text, quotes, queries or names.</li>
+      <li><strong>The owner's documents never leave their machine</strong>, and no one's documents
+        are used for benchmarks or training. Fixtures are synthetic and made by committed scripts.</li>
+      <li><strong>Gates are never edited to pass.</strong> No test is skipped or loosened to get a
+        green run, and no threshold is lowered: the code is fixed instead.</li>
+    </ul>
+  </section>
+
+  <section class="figure" aria-labelledby="cl-board-title">
+    <div class="figure-head">
+      <h2 id="cl-board-title">What has been checked, and what has not</h2>
+      <span class="eyebrow">synthetic and public data only</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Claim</th><th>Checked by</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>The tests would notice if the gate's matching were broken</td><td>5 deliberate breaks, among them storing the model's string instead of the page's</td><td><span class="badge ok">5 of 5 caught</span> the last fails twenty tests</td></tr>
+          <tr><td>The per-file sandbox is covered by its tests</td><td>63 deliberate weakenings</td><td><span class="badge ok">61 caught at once</span> one made no difference; one was a real gap, now tested</td></tr>
+          <tr><td>The old Excel reader reads what another reader reads</td><td>29 public workbooks from five open-source packages, cell by cell against python-calamine</td><td><span class="badge ok">1,315 of 1,320</span> the five are error cells, which the other reader leaves empty</td></tr>
+          <tr><td>The Outlook message reader agrees with an established one</td><td>13 messages from two open-source projects' public test data</td><td><span class="badge ok">12 of 13 agree</span> on the 13th, in Traditional Chinese, the other reader fails and this one reads it</td></tr>
+          <tr><td>Merging names keeps up at scale</td><td>150,000 synthetic entities</td><td><span class="badge ok">under 5 s</span></td></tr>
+          <tr><td>A model can copy text verbatim well enough to drive the agent</td><td>a fixed benchmark: success ≥ 0.90, fabricated quotes ≤ 0.01, scanned pages ≥ 0.75, backend errors ≤ 0.02</td><td><span class="badge muted">not yet run</span> no model has been benchmarked; the thresholds are fixed in advance and are never edited</td></tr>
+          <tr><td>The agent finds what a person would, on a real investigation</td><td>an answer key committed before the run; precision ≥ 0.8, recall ≥ 0.6</td><td><span class="badge muted">not yet run</span> registered in the plan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="cl-next-title">
+    <h2 id="cl-next-title">Where it stands</h2>
+    <p>The pipeline, the readers and the integrity gate are built and tested, and the agent's turn
+      loop runs. What has not happened yet is the measurement that decides whether a model may
+      drive it: the verbatim-copying benchmark comes first, because a model that cannot reproduce
+      text it has just read cannot drive this system at all, however fluent it sounds. A phased
+      build plan takes the project from here toward unattended investigations, and its first
+      phase, the foundations, is under way.</p>
+    <p>Corpus Lens can also read a slice of <a href="https://openalex.org">OpenAlex</a>, the open
+      catalogue of about 510 million scholarly works, as a corpus, and draw a topic map of a whole
+      field, with communities found by clustering rather than taken from the catalogue's own
+      labels.</p>
+  </section>
+</main>
+<footer class="site-foot gutter">
+  <div class="bar">
+    <p>Every number on this site comes from a programme's own records (its registered
+      predictions, preregistrations, run logs and rulings) or is computed in your browser. Where a
+      test failed, the page says so, and a result counts because a check outside the work passed
+      it, not because the work says so.</p>
+    <div class="links">
+      <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
+      <a href="index.html#method">How we work</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/lib.js"></script>
+<script src="assets/js/corpus-lens.js"></script>
+</body>
+</html>

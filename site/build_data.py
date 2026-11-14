@@ -303,7 +303,7 @@ def proofs() -> dict:
     return out
 
 
-# The m = 37 question's state, as the site shows it: the home page's card (status, card), the
+# The m = 37 question's state, as the site shows it: the lattice page's card (status, card), the
 # fourth pilot's row on the model page (time, judge, test) and the atlas page's m = 37 section
 # (eyebrow, and html, the fourth pilot's account). Edited by hand as the work moves on.
 PILOT37 = {

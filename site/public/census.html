@@ -29,15 +29,26 @@
       </svg>
       <span class="brand-name">PolyLabs Research</span>
     </a>
-    <nav class="nav" aria-label="Site">
+    <nav class="nav" aria-label="Programmes">
+      <a href="lattice.html" aria-current="true">lattice-lab</a>
+      <a href="tiny-alphazero.html">Tiny AlphaZero</a>
+      <a href="reckoner.html">Reckoner</a>
+      <a href="protocell.html">Protocell</a>
+      <a href="organisation.html">the_organisation</a>
+      <a href="corpus-lens.html">Corpus Lens</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="bar sub">
+    <nav class="nav subnav" aria-label="lattice-lab pages">
+      <a href="lattice.html">Overview</a>
       <a href="model.html">The model</a>
       <a href="parity.html">Parity laws</a>
       <a href="atlas.html">Linear atlas</a>
       <a href="settling.html">Settling time</a>
       <a href="proofs.html">Proofs</a>
       <a href="codes.html">Quantum codes</a>
-      <a href="census.html">Code census</a>
-      <a href="contact.html">Contact</a>
+      <a href="census.html" aria-current="page">Code census</a>
     </nav>
   </div>
 </header>
@@ -181,19 +192,23 @@
 </main>
 <footer class="site-foot gutter">
   <div class="bar">
-    <p>Every number on this site comes from the project's registered records or is computed in
-      your browser from the rules themselves. Experiments run on
+    <p>Every number on this site comes from a programme's own records (its registered
+      predictions, preregistrations, run logs and rulings) or is computed in your browser. Where a
+      test failed, the page says so, and a result counts because a check outside the work passed
+      it, not because the work says so.</p>
+    <p>Experiments run on
       <a href="https://github.com/PolyLabs-research/gameoflife_advanced">LatticeLife</a>; laws are
       fitted by <a href="https://github.com/PolyLabs-research/kepler">Kepler</a>; both are open
       source. The studies, with their ledgers and records, and the Lean library are in
-      <a href="https://github.com/PolyLabs-research/lattice-lab">lattice-lab</a>, which is open source too.</p>
+      <a href="https://github.com/PolyLabs-research/lattice-lab">lattice-lab</a>, which is open
+      source too.</p>
     <p>The agents in the pilots are Claude Code sessions, each started fresh with no context but a
       problem card; the seventh pilot's second round ran over the API. Their proofs count because
       Lean accepts them, not because they say so.</p>
     <div class="links">
       <a href="https://github.com/PolyLabs-research">github.com/PolyLabs-research</a>
-      <a href="model.html">How we work</a>
-      <a href="proofs.html">What is proved</a>
+      <a href="index.html#method">How we work</a>
+      <a href="contact.html">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
   </div>

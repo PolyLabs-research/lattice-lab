@@ -24,7 +24,8 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
 
 - **The website.** [polylabs-research.net](https://polylabs-research.net) is built from `site/`
   in lattice-lab; [site/README.md](../site/README.md) says how to rebuild and deploy it. It
-  links into lattice-lab on GitHub, at `main`.
+  covers every PolyLabs Research programme, with lattice-lab's section at `/lattice`, and links
+  into lattice-lab on GitHub, at `main`.
 - **Licences.** lattice-lab's code is under Apache-2.0 and everything else under CC BY 4.0
   ([README](../README.md#licence)). Kepler and LatticeLife have no licence yet.
 - **Pins.** lattice-lab pins LatticeLife `256450b` and Kepler `0af9b28` (`pyproject.toml`,

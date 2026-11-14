@@ -1,22 +1,49 @@
 # The website: polylabs-research.net
 
 A static site, with no server code and no build step needed to deploy it: `public/` is the whole
-site. The interactive figures compute in the browser from `public/assets/data.js`.
+site. It covers every PolyLabs Research programme. lattice-lab has a section of its own, whose
+interactive figures compute in the browser from `public/assets/data.js`; each other programme has
+one page.
 
 ```
 site/
   build_data.py     writes public/assets/data.js from lattice-lab's records and code
-  build_pages.py    wraps each body in src/ in the shared head, header and footer
+  build_pages.py    wraps each body in src/ in the shared head, header and footer; its PAGES table
+                    gives each page's title, description and programme, NAV the header's
+                    programmes and SUBNAV lattice-lab's own row of pages
   src/*.html        the page bodies
   public/           what gets deployed
-    index.html, model.html, parity.html, atlas.html, settling.html, proofs.html, codes.html,
-    census.html, contact.html, 404.html
+    index.html                       the home page: every programme, and how we work
+    lattice.html, model.html, parity.html, atlas.html, settling.html, proofs.html, codes.html,
+    census.html                      lattice-lab's section
+    tiny-alphazero.html, reckoner.html, protocell.html, organisation.html, corpus-lens.html
+                                     one page per programme
+    contact.html, 404.html
     assets/site.css, assets/lib.js (shared maths, SHA-256, charts), assets/fonts/
-    assets/js/<page>.js: index.js, model.js, parity.js, atlas.js, settling.js, proofs.js, codes.js,
-    census.js, contact.js
+    assets/js/<page>.js              each page's figures
+    assets/img/                      screenshots, taken from the_organisation's docs/
   apps-script/      the contact form's backend (Google Apps Script)
   firebase.json     Firebase Hosting configuration
 ```
+
+Until 14 November 2026 the home page was lattice-lab's; that page is now `lattice.html`, and every
+other lattice-lab page kept its address.
+
+## The other programmes' pages
+
+The pages for Tiny AlphaZero, Reckoner, Protocell, the_organisation and Corpus Lens are written by
+hand from those projects' own records, and are not rebuilt from them. Each chart's numbers are in
+its `assets/js/<page>.js`, with the record they come from named in a comment. Update a page when
+its programme records something new, and keep the home page's "Latest on the record" list and
+cards in step.
+
+- Tiny AlphaZero, Reckoner and the_organisation are public, and their pages link into them on
+  GitHub at `main`.
+- Protocell and Corpus Lens are private: their pages describe them and link nowhere.
+- Corpus Lens's rules keep its owner's documents, and anything measured on them, out of any demo.
+  Its page uses only synthetic and public data, and its citation-gate demonstration runs on an
+  invented page.
+- None of the pages names a person, a pod, a machine's paths or an account's spend.
 
 ## Rebuilding
 
@@ -26,7 +53,7 @@ uv run --no-sync python site/build_pages.py    # after editing site/src/ or the 
 ```
 
 Then commit `site/public/` and deploy. `build_data.py` reads only this repository. The state of
-the m = 37 question on the site (the home page's card, the fourth pilot's row on the model page
+the m = 37 question on the site (the lattice page's card, the fourth pilot's row on the model page
 and its account on the atlas page) is the `PILOT37` dictionary in `build_data.py`, edited by
 hand. The rest of the m = 37 section, on the seventh pilot and rule 4850, is in
 `src/atlas.html`.
@@ -38,7 +65,7 @@ cd site/public && python3 -m http.server 8000     # then open http://localhost:8
 ```
 
 lattice-lab is public, and the site links into it on GitHub at `main`: the footer on every page,
-the home page, the model page's ledger and pilot table, the proofs page's library and the codes
+the lattice page, the model page's ledger and pilot table, the proofs page's library and the codes
 page's sources. Moving or renaming a linked file on `main` breaks its link, so search `site/src/`
 and `build_pages.py` for its path first. Kepler and LatticeLife are public and are linked too.
 

@@ -1,4 +1,4 @@
-// Home: the parity rule from one cell, with its exact period against the registered law.
+// Lattice lab: the parity rule from one cell, with its exact period against the registered law.
 const heroCanvas = $("hero-canvas");
 const hero = makeSim({
   canvas: heroCanvas,

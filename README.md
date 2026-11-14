@@ -31,7 +31,9 @@ The census's registered predictions failed where it mattered most: [[294,10,20]]
 k d²/n = 13.6, above the published [[288,12,18]]'s 13.5, and [[384,12,24]] scores 18.0.
 
 The public website, [polylabs-research.net](https://polylabs-research.net), is built from
-`site/`; [site/README.md](site/README.md) says how to rebuild and deploy it. Its
+`site/`; [site/README.md](site/README.md) says how to rebuild and deploy it. It covers every
+PolyLabs Research programme, with lattice-lab's own section at
+[/lattice](https://polylabs-research.net/lattice). Its
 [census page](https://polylabs-research.net/census) summarises the census.
 
 ## Findings so far

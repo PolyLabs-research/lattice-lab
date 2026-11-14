@@ -298,12 +298,3 @@ function makeSim({ canvas, terms, n, onStep, onPeriod }) {
   sim.play = on => { sim.playing = on; if (on) requestAnimationFrame(tick); };
   return sim;
 }
-
-// Mark the current page in the navigation.
-document.addEventListener("DOMContentLoaded", () => {
-  const here = (location.pathname.split("/").pop() || "index.html").replace(/\.html$/, "") || "index";
-  for (const a of document.querySelectorAll(".nav a")) {
-    const to = a.getAttribute("href").replace(/\.html$/, "").replace(/^\.\//, "") || "index";
-    if (to === here) a.setAttribute("aria-current", "page");
-  }
-});
