@@ -15,6 +15,8 @@ site/
   build_icons.py    draws the mark as favicon.ico, apple-touch-icon.png and assets/mark-512.png
   og-card.html      the picture a shared link shows; its head says how to render assets/og.png
   preview.py        serves public/ on this machine the way Firebase does
+  check_site.py     checks the built site: links, anchors, results tables, private links
+  REVIEW.md, review-state.json   the nightly review's procedure, and what it last checked
   src/*.html        the page bodies
   public/           what gets deployed
     index.html                       the home page: every programme, and how we work
@@ -34,6 +36,38 @@ site/
 
 Until 14 November 2026 the home page was lattice-lab's; that page is now `lattice.html`, and every
 other lattice-lab page kept its address.
+
+## The design
+
+The site is dark by default, with a light theme behind the switch in the header; the choice is
+kept in the browser. `assets/site.css` holds both sets of colours at its top.
+
+- **Two voices.** What we say is set in the text face, IBM Plex Sans. What a record says (dates,
+  counts, verdicts, file names) is set in mono.
+- **A verdict is a cell.** `<span class="badge ok">` draws a filled cell and its word, `bad` a
+  crossed one, `gold` a half-filled one and `muted` a dotted one: held, did not hold, held with
+  a caveat, open. The shapes differ as well as the colours, and the cyan and orange of the first
+  two were chosen with a validator to stay apart for a red-green colour-blind reader.
+- **The home page's record is generated.** Each programme page has one table of results marked
+  `class="stack"`, and each row's first badge says how it came out. `build_pages.py` draws one
+  cell on the home page for each row (`RECORD_PAGES`, `record()`, `fill_record()`), counts them,
+  and gives each row an id for its cell to link to. So a new row on a programme's page is a new
+  cell on the home page at the next build, and the home page cannot say more than the pages do.
+  `RECORD_WORDS_FOR` holds the words for a page whose table is not one of claims.
+- **The home page's check is real.** Its figure runs the parity rule in the browser and works out
+  the period there (`assets/js/index.js`, with `lib.js`); it needs nothing from `data.js`.
+
+The "Latest on the record" list on the home page is written by hand, each entry with the record
+it comes from. Add to it; do not edit an old entry.
+
+## The nightly review
+
+Every night at about 2:40 UK time a scheduled Claude Code session checks the site against each
+programme's record and, if anything has moved on, opens a pull request to bring the site up to
+date. Nothing goes live until a person merges it and deploys. [REVIEW.md](REVIEW.md) is the
+procedure it follows and the rules it keeps; `review-state.json` records the commit of each
+repository the site was last checked against; `check_site.py` is the mechanical check every
+change must pass (`python3 site/check_site.py`, after building the pages).
 
 ## The other programmes' pages
 
@@ -156,7 +190,8 @@ The CLI signs in with `firebase login`, or uses gcloud's application-default cre
 `GOOGLE_CLOUD_QUOTA_PROJECT=polylabs-512110` is set. Earlier versions stay in the console's
 release history, and one click rolls back.
 
-The fonts (IBM Plex Mono, STIX Two Text) are served from `public/assets/fonts/`, not Google
+The fonts (IBM Plex Sans, IBM Plex Mono, and STIX Two Text for formulas) are served from
+`public/assets/fonts/`, not Google
 Fonts, so a visit makes no third-party requests. The one exception is sending the contact form,
 which posts to Google Apps Script.
 

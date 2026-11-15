@@ -17,12 +17,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1113">
+<script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-normal-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -55,6 +56,16 @@
       <a href="corpus-lens" aria-current="page">Corpus Lens</a>
       <a href="contact">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to the light theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" stroke-linejoin="round">
+        <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2"/>
+        <path d="M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/>
+      </svg>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap gutter">
@@ -165,13 +176,13 @@
       <table class="stack">
         <thead><tr><th>Claim</th><th>Checked by</th><th>Outcome</th></tr></thead>
         <tbody>
-          <tr><td>The tests would notice if the gate's matching were broken</td><td>5 deliberate breaks, among them storing the model's string instead of the page's</td><td><span class="badge ok">5 of 5 caught</span> the last fails twenty tests</td></tr>
-          <tr><td>The per-file sandbox is covered by its tests</td><td>63 deliberate weakenings</td><td><span class="badge ok">61 caught at once</span> one made no difference; one was a real gap, now tested</td></tr>
-          <tr><td>The old Excel reader reads what another reader reads</td><td>29 public workbooks from five open-source packages, cell by cell against python-calamine</td><td><span class="badge ok">1,315 of 1,320</span> the five are error cells, which the other reader leaves empty</td></tr>
-          <tr><td>The Outlook message reader agrees with an established one</td><td>13 messages from two open-source projects' public test data</td><td><span class="badge ok">12 of 13 agree</span> on the 13th, in Traditional Chinese, the other reader fails and this one reads it</td></tr>
-          <tr><td>Merging names keeps up at scale</td><td>150,000 synthetic entities</td><td><span class="badge ok">under 5 s</span></td></tr>
-          <tr><td>A model can copy text verbatim well enough to drive the agent</td><td>a fixed benchmark: success ≥ 0.90, fabricated quotes ≤ 0.01, scanned pages ≥ 0.75, backend errors ≤ 0.02</td><td><span class="badge muted">not yet run</span> no model has been benchmarked; the thresholds are fixed in advance and are never edited</td></tr>
-          <tr><td>The agent finds what a person would, on a real investigation</td><td>an answer key committed before the run; precision ≥ 0.8, recall ≥ 0.6</td><td><span class="badge muted">not yet run</span> registered in the plan</td></tr>
+          <tr id="result-1"><td>The tests would notice if the gate's matching were broken</td><td>5 deliberate breaks, among them storing the model's string instead of the page's</td><td><span class="badge ok">5 of 5 caught</span> the last fails twenty tests</td></tr>
+          <tr id="result-2"><td>The per-file sandbox is covered by its tests</td><td>63 deliberate weakenings</td><td><span class="badge ok">61 caught at once</span> one made no difference; one was a real gap, now tested</td></tr>
+          <tr id="result-3"><td>The old Excel reader reads what another reader reads</td><td>29 public workbooks from five open-source packages, cell by cell against python-calamine</td><td><span class="badge ok">1,315 of 1,320</span> the five are error cells, which the other reader leaves empty</td></tr>
+          <tr id="result-4"><td>The Outlook message reader agrees with an established one</td><td>13 messages from two open-source projects' public test data</td><td><span class="badge ok">12 of 13 agree</span> on the 13th, in Traditional Chinese, the other reader fails and this one reads it</td></tr>
+          <tr id="result-5"><td>Merging names keeps up at scale</td><td>150,000 synthetic entities</td><td><span class="badge ok">under 5 s</span></td></tr>
+          <tr id="result-6"><td>A model can copy text verbatim well enough to drive the agent</td><td>a fixed benchmark: success ≥ 0.90, fabricated quotes ≤ 0.01, scanned pages ≥ 0.75, backend errors ≤ 0.02</td><td><span class="badge muted">not yet run</span> no model has been benchmarked; the thresholds are fixed in advance and are never edited</td></tr>
+          <tr id="result-7"><td>The agent finds what a person would, on a real investigation</td><td>an answer key committed before the run; precision ≥ 0.8, recall ≥ 0.6</td><td><span class="badge muted">not yet run</span> registered in the plan</td></tr>
         </tbody>
       </table>
     </div>
@@ -203,6 +214,8 @@
       <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
+    <p class="colophon">No trackers, and no requests to anyone else: the fonts are served from
+      here. <a href="https://github.com/PolyLabs-research/lattice-lab/commits/main/site/src/corpus-lens.html">This page's history</a> is public.</p>
   </div>
 </footer>
 <script src="assets/lib.js"></script>

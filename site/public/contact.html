@@ -17,12 +17,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PolyLabs Research: small systems, judged by checks they cannot change">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1416" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1113">
+<script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/stix-two-text-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-normal-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -55,6 +56,16 @@
       <a href="corpus-lens">Corpus Lens</a>
       <a href="contact" aria-current="page">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to the light theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" stroke-linejoin="round">
+        <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>
+      </svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2"/>
+        <path d="M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/>
+      </svg>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap gutter">
@@ -101,6 +112,8 @@
       <a href="contact">Contact</a>
       <a href="mailto:contact@polylabs-research.net">contact@polylabs-research.net</a>
     </div>
+    <p class="colophon">No trackers, and no requests to anyone else: the fonts are served from
+      here. <a href="https://github.com/PolyLabs-research/lattice-lab/commits/main/site/src/contact.html">This page's history</a> is public.</p>
   </div>
 </footer>
 <script src="assets/lib.js"></script>
