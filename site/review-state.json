@@ -1,0 +1,43 @@
+{
+  "_comment": "The commit on each repository's default branch that the website was last checked against. The nightly review (site/REVIEW.md) reads what has been committed since, and moves each commit forward when it opens its pull request. Change by hand only to make the review look again at older work.",
+  "reviewed": "2026-11-14",
+  "repos": {
+    "lattice-lab": {
+      "repo": "PolyLabs-research/lattice-lab",
+      "public": true,
+      "commit": "34b64cde297bb8ee8f470d0b4d3c84b6e5d2ec37",
+      "pages": ["lattice", "model", "parity", "atlas", "settling", "proofs", "codes", "census"],
+      "note": "Its own website lives in site/; commits that only change the website are not research progress."
+    },
+    "tiny-alphazero": {
+      "repo": "PolyLabs-research/Tiny-AlphaZero-v2",
+      "public": true,
+      "commit": "58c6c11af851f56e96e5552f281b88551f9fe14e",
+      "pages": ["tiny-alphazero"]
+    },
+    "reckoner": {
+      "repo": "PolyLabs-research/reckoner",
+      "public": true,
+      "commit": "52d7dcbf67f03c7b5cb3bdf0d398e0ec4caf896b",
+      "pages": ["reckoner"]
+    },
+    "protocell": {
+      "repo": "PolyLabs-research/protocell",
+      "public": false,
+      "commit": "d5f1c180af022cb9b0fe9597cd9da8b01598919e",
+      "pages": ["protocell"]
+    },
+    "organisation": {
+      "repo": "PolyLabs-research/the_organisation",
+      "public": true,
+      "commit": "ba8406ca21d39439f798be94b3eda6fa972963e2",
+      "pages": ["organisation"]
+    },
+    "corpus-lens": {
+      "repo": "PolyLabs-research/corpus-lens",
+      "public": false,
+      "commit": "ae5acf172bc80e2b12945562c59d45a9fba9cea0",
+      "pages": ["corpus-lens"]
+    }
+  }
+}

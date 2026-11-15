@@ -15,6 +15,8 @@ site/
   build_icons.py    draws the mark as favicon.ico, apple-touch-icon.png and assets/mark-512.png
   og-card.html      the picture a shared link shows; its head says how to render assets/og.png
   preview.py        serves public/ on this machine the way Firebase does
+  check_site.py     checks the built site: links, anchors, results tables, private links
+  REVIEW.md, review-state.json   the nightly review's procedure, and what it last checked
   src/*.html        the page bodies
   public/           what gets deployed
     index.html                       the home page: every programme, and how we work
@@ -57,6 +59,15 @@ kept in the browser. `assets/site.css` holds both sets of colours at its top.
 
 The "Latest on the record" list on the home page is written by hand, each entry with the record
 it comes from. Add to it; do not edit an old entry.
+
+## The nightly review
+
+Every night at about 2:40 UK time a scheduled Claude Code session checks the site against each
+programme's record and, if anything has moved on, opens a pull request to bring the site up to
+date. Nothing goes live until a person merges it and deploys. [REVIEW.md](REVIEW.md) is the
+procedure it follows and the rules it keeps; `review-state.json` records the commit of each
+repository the site was last checked against; `check_site.py` is the mechanical check every
+change must pass (`python3 site/check_site.py`, after building the pages).
 
 ## The other programmes' pages
 
