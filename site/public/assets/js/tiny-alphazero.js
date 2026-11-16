@@ -1,17 +1,19 @@
 // Tiny AlphaZero: two charts from the project's own run logs
-// (github.com/PolyLabs-research/Tiny-AlphaZero-v2, RUNLOG-p2_q.md to RUNLOG-p2_y.md).
+// (github.com/PolyLabs-research/Tiny-AlphaZero-v2, RUNLOG-p2_s.md to RUNLOG-p2_ab.md).
 
-// Each round's two arms: mean score over six 200-game reps against Stockfish 16 at skill 5,
-// 10,000 nodes a move, and the round's registered test K1 (change − baseline, 95% interval).
+// Each round's two arms: mean score over 200-game reps against Stockfish 16 at skill 5, 10,000
+// nodes a move (six reps an arm to p2_w; twelve in p2_aa; in p2_ab twelve against the 24 of the
+// two four-million runs), and the round's registered test K1 (change − baseline, 95% interval).
 // sep: 1 better and separated, −1 worse and separated, 0 not separated.
 const ROUNDS = [
-  { r: "p2_q", lever: "40 more iterations at learning rate 2e-6", base: ["the start", 0.306], arm: ["after 40", 0.315], d: "+0.009", ci: "−0.018 to +0.035", sep: 0 },
-  { r: "p2_r", lever: "128 self-play simulations a move, not 48", base: ["48", 0.341], arm: ["128", 0.321], d: "−0.020", ci: "−0.055 to +0.015", sep: 0 },
   { r: "p2_s", lever: "128 simulations again, then a step down", base: ["48", 0.330], arm: ["128", 0.325], d: "−0.005", ci: "−0.033 to +0.023", sep: 0 },
   { r: "p2_t", lever: "positions labelled by Stockfish, a quarter of each batch", base: ["no teacher", 0.310], arm: ["teacher", 0.360], d: "+0.050", ci: "+0.014 to +0.085", sep: 1 },
   { r: "p2_u", lever: "the teacher's positions labelled afresh", base: ["old labels", 0.3608], arm: ["fresh", 0.3563], d: "−0.005", ci: "−0.038 to +0.028", sep: 0 },
   { r: "p2_v", lever: "the teacher at half of each batch, not a quarter", base: ["quarter", 0.3779], arm: ["half", 0.3338], d: "−0.044", ci: "−0.078 to −0.010", sep: -1 },
   { r: "p2_w", lever: "256 more teacher rows on top of each batch", base: ["quarter", 0.3788], arm: ["wider", 0.3521], d: "−0.027", ci: "−0.061 to +0.007", sep: 0 },
+  // RUNLOG-p2_aa.md §3 (K1), RUNLOG-p2_ab.md §3 (K1)
+  { r: "p2_aa", lever: "the start trained on four million Stockfish-labelled positions alone, each seen about four times: the diagnostic's training, run again", base: ["the start, 12 reps", 0.3810], arm: ["4M, 12 reps", 0.4165], d: "+0.0354", ci: "+0.0112 to +0.0596", sep: 1 },
+  { r: "p2_ab", lever: "twice the labelled positions, eight million", base: ["4M, two runs, 24 reps", 0.4214], arm: ["8M, 12 reps", 0.4446], d: "+0.0232", ci: "+0.0011 to +0.0451", sep: 1 },
 ];
 const VERDICT = { 1: "better, separated", 0: "not separated", [-1]: "worse, separated" };
 
@@ -34,7 +36,7 @@ function drawLevers() {
   sizeChart(svg, W, H);
   const n = ROUNDS.length, slot = (W - L - R) / n, dx = narrow ? 7 : 10;
   const F = frame({ W, H, L, R, T, B, x: { min: 0, max: n, ticks: [] },
-                    y: { min: 0.30, max: 0.40, ticks: [0.30, 0.32, 0.34, 0.36, 0.38, 0.40], fmt: v => v.toFixed(2), label: narrow ? "" : "score against skill 5" } });
+                    y: { min: 0.30, max: 0.46, ticks: [0.30, 0.32, 0.34, 0.36, 0.38, 0.40, 0.42, 0.44, 0.46], fmt: v => v.toFixed(2), label: narrow ? "" : "score against skill 5" } });
   let s = F.markup;
   ROUNDS.forEach((r, i) => {
     const cx = L + slot * (i + 0.5), xb = cx - dx, xa = cx + dx, yb = F.sy(r.base[1]), ya = F.sy(r.arm[1]);
@@ -45,7 +47,7 @@ function drawLevers() {
     if (r.sep > 0) s += `<path d="M${xa.toFixed(1)} ${(ya - 8).toFixed(1)} l7.5 13.5 h-15 Z" style="fill: var(--ok); ${ring}"/>`;
     else if (r.sep < 0) s += `<path d="M${xa.toFixed(1)} ${(ya + 8).toFixed(1)} l7.5 -13.5 h-15 Z" style="fill: var(--bad); ${ring}"/>`;
     else s += `<circle cx="${xa.toFixed(1)}" cy="${ya.toFixed(1)}" r="5.5" style="fill: var(--cell); ${ring}"/>`;
-    // only the two changes that separated carry their difference as a label
+    // only the changes that separated carry their difference as a label
     if (r.sep) s += `<text x="${xa.toFixed(1)}" y="${(ya + (r.sep > 0 ? -13 : 23)).toFixed(1)}" text-anchor="middle" ${FONT} style="fill: var(--ink)">${r.d}</text>`;
     s += `<text x="${cx.toFixed(1)}" y="${H - B + 18}" text-anchor="middle" ${FONT} style="fill: var(--muted)">${r.r}</text>`;
   });

@@ -11,8 +11,8 @@
 
   <dl class="facts" aria-label="Tiny AlphaZero in brief">
     <div><dt>Network</dt><dd>6,536,199 parameters: an 8-layer transformer reading the board as 72 tokens</dd></div>
-    <div><dt>Rounds</dt><dd>25 of self-play, p2_a to p2_y, July to November 2026</dd></div>
-    <div><dt>Strength now</dt><dd>1,154 to 1,780 on the CCRL scale, by opponent: no single number</dd></div>
+    <div><dt>Rounds</dt><dd>27, p2_a to p2_ab, August to November 2026: 23 of self-play, two benchmarks, two on Stockfish's labels alone</dd></div>
+    <div><dt>Strength now</dt><dd>0.4446 against Stockfish 16 at skill 5, from 0.3810 before p2_aa; not yet placed on the CCRL scale</dd></div>
     <div><dt>Source</dt><dd><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2">Open, Apache 2.0</a></dd></div>
   </dl>
 
@@ -31,15 +31,17 @@
       were left where they were.</p>
     <p>The network starts from a supervised warm start, and is trained by a cycle of 512
       self-play games, searched at 48 simulations a move, then 400 training steps. Every
-      measurement runs on the mini-PC, which has an integrated AMD GPU; since late October the
-      training has run on rented GPUs. It is not pure self-play: mate puzzles are rehearsed from
-      the second round, and since round p2_t a quarter of every batch is positions labelled by
-      Stockfish.</p>
+      measurement runs on the mini-PC, which has an integrated AMD GPU; from late October the
+      self-play training ran on rented GPUs. It is not pure self-play: mate puzzles are rehearsed
+      from the second round, and from round p2_t a quarter of every batch is positions labelled by
+      Stockfish. Since p2_aa the network has been trained on Stockfish's labels alone, with no
+      self-play games: millions of positions its earlier self-play reached, each seen a few times.
+      That training runs on the mini-PC; only the labelling is rented.</p>
   </section>
 
   <section class="figure" aria-labelledby="levers-title">
     <div class="figure-head">
-      <h2 id="levers-title">The last seven rounds: one change each, and the plateau</h2>
+      <h2 id="levers-title">The last seven training rounds: one change each</h2>
       <span class="eyebrow">score against Stockfish 16, skill 5</span>
     </div>
     <div class="chart-box fit"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
@@ -51,11 +53,14 @@
     </div>
     <p class="tip" id="levers-tip" aria-live="polite">Point at a round, or tap it, for its registered test.</p>
     <details class="numbers"><summary>The numbers in this chart</summary><div id="levers-table"></div></details>
-    <p class="note" id="levers-cap">Each round's two arms, each scored over six 200-game passes of
-      the openings against the same opponent on the same machine. Of seven changes, one helped
-      (a Stockfish teacher in a quarter of each batch), one hurt (twice the teacher), and five
-      made no difference the test could separate. The best six-pass score is 0.379, and no round
-      since p2_t has separated from its own start.</p>
+    <p class="note" id="levers-cap">Each round's two arms, against the same opponent on the same
+      machine, 200 games a pass of the openings. To p2_w each arm stands on six passes; in p2_aa
+      each stands on twelve, and in p2_ab the change's twelve are set against 24 from the two runs
+      of the four-million-position training, taken from the record rather than measured again.
+      Neither of the last two rounds played self-play games. Of seven changes, three helped (the
+      Stockfish teacher in a quarter of each batch, four million labelled positions alone, then
+      eight million), one hurt (twice the teacher), and three made no difference the test could
+      separate. p2_ab's interval clears zero by 0.0011.</p>
   </section>
 
   <section class="figure" aria-labelledby="bench-title">
@@ -63,8 +68,8 @@
       <h2 id="bench-title">Where it stands on a public scale: a spread, not a number</h2>
       <span class="eyebrow">1,400 games, registered</span>
     </div>
-    <p style="margin: 0">To place the network on CCRL's rating list, one network played seven
-      opponents of published rating, 200 games each. The registered test asked whether the
+    <p style="margin: 0">To place the network on CCRL's rating list, the network as it stood after
+      p2_w played seven opponents of published rating, 200 games each. The registered test asked whether the
       classical engines agree among themselves about its rating. None of the three agrees with the
       other two, so the decision table's answer is that there is no single number at this level,
       and the page publishes each opponent's reading instead.</p>
@@ -80,7 +85,8 @@
       Stockfish settings together fit 1,674. The network searched 48 simulations
       a move, about 0.12 s, while its opponents took about 1 to 1.9 s a move. The registered next
       step on this track is to rerun the opponents at a clock scaled to CCRL's reference machine
-      before any one rating is quoted.</p>
+      before any one rating is quoted. These readings are of the network before p2_aa; the one
+      trained since has not been placed.</p>
   </section>
 
   <section class="figure" aria-labelledby="taz-board-title">
@@ -109,6 +115,9 @@
           <tr><td>p2_t</td><td>Positions labelled by Stockfish, a quarter of each batch</td><td><span class="badge ok">confirmed against control</span> +0.050; against its own start, not yet</td></tr>
           <tr><td>p2_v</td><td>Twice the teacher</td><td><span class="badge bad">worse</span> −0.044, while closer to the teacher's moves</td></tr>
           <tr><td>p2_x, p2_y</td><td>One CCRL rating</td><td><span class="badge bad">no single number</span> the three classical engines disagree; four of nine forecasts missed in p2_y</td></tr>
+          <tr><td>diagnosis</td><td>Its distance from the teacher is set by its size, or by how few labelled positions it has seen</td><td><span class="badge muted">not resolved</span> the two largest sets were still improving when the 16M-sample cap stopped them. In an aside that decided nothing, four million positions beat the start by +0.037 at skill 5; a set of 475,696, seen about 29 times over, fell to 0.113</td></tr>
+          <tr><td>p2_aa</td><td>A second run of that four-million-position training beats the start at skill 5</td><td><span class="badge ok">replicated</span> +0.0354 (+0.0112 to +0.0596), twelve passes a side; the first run holds at +0.0452. The same positions in a new order, not new data</td></tr>
+          <tr><td>p2_ab</td><td>Twice the labelled positions, eight million, beat four million</td><td><span class="badge gold">held, thin margin</span> +0.0232 (+0.0011 to +0.0451) against both four-million runs; against the first alone the interval includes zero. One run, and two of eight forecasts missed</td></tr>
         </tbody>
       </table>
     </div>
@@ -116,12 +125,20 @@
 
   <section class="prose" aria-labelledby="taz-next-title">
     <h2 id="taz-next-title">Where it stands</h2>
-    <p>Strength against skill 5 has been flat since p2_t, and the levers tried on top of the
-      teacher are closed. The next diagnostic, drafted and not yet run, asks whether the
-      network's distance from its teacher is set by its size or by how few labelled positions it
-      has seen. On the benchmark track, the clock-scaled rerun is registered as the next step and
-      not scheduled. <a href="reckoner.html">Reckoner</a> carries the same search, and the same
-      rules for registering a round, over to algebra.</p>
+    <p>The plateau after p2_t has ended, on one route. Trained on Stockfish-labelled positions
+      alone, four million positions each seen about four times beat the start at skill 5 in p2_aa,
+      a second run of a gain the capacity-or-data diagnostic had found in an aside; it was the same
+      positions in a new order, so the data were not replicated. In p2_ab eight million positions
+      beat that training by +0.0232, with the interval's lower end at +0.0011, on one run. Against
+      the start the gain is +0.0635, the largest the project has measured, reported rather than
+      registered.</p>
+    <p>Why many positions each seen a few times help, when a small set drilled many times hurt,
+      is a hypothesis. The diagnostic's own question, size or data, is not resolved: its larger
+      sets were stopped by the sample cap while still improving. The next round, p2_ac, is more
+      data again, its size not yet settled. On the benchmark track the clock-scaled rerun is
+      registered and not scheduled, and the network that now stands has not been placed on the
+      CCRL scale. <a href="reckoner.html">Reckoner</a> carries the same search, and the same rules
+      for registering a round, over to algebra.</p>
   </section>
 
   <section class="prose" aria-labelledby="taz-src-title">
@@ -131,7 +148,9 @@
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/TRAINING_STRATEGY.md">The campaign's rules</a>: one lever per round, gates never move</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_t.md">Round p2_t</a>: the teacher</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_y.md">Round p2_y</a>: the public benchmark and its decision</li>
-      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/DIAG-2026-11-13-capacity-or-data.md">The next diagnostic</a>, as drafted</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/DIAG-2026-11-13-capacity-or-data.md">The capacity-or-data diagnostic</a>, with its results</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_aa.md">Round p2_aa</a>: the replication</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_ab.md">Round p2_ab</a>: eight million positions</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero">The first version</a>, archived</li>
     </ul>
   </section>
