@@ -1,5 +1,6 @@
 // Protocell: the cell's wiring, and stage 4a's world from the project's own records
-// (docs/prereg/stage4b.md, stage4d.md, stage4e.md, stage5.md, stage5c.md; private repository).
+// (docs/prereg/stage4b.md, stage4d.md, stage4e.md, stage5.md, stage5c.md, stage6.md and
+// stage6b.md, and docs/data/stage6/test/stage6.json for stage 6's B0; private repository).
 
 // ---- the cell, drawn to its wiring: 16 wall nodes in a ring, 8 core neurons, spokes both ways ----
 function drawCell() {
@@ -54,6 +55,8 @@ const ROWS = [
   { name: "written weight by weight", detail: "stage 4e, the better of two modes", b0: 0.156, b8: 0.554, cells: [[0.152, 0]] },
   { name: "the same, sensing relative light", detail: "stage 5b, design 16: 0.909 of the gap", b0: 0.163, b8: 0.563, cells: [[0.527, 0]] },
   { name: "searched from design 16", detail: "stage 5c, three champions; design 16 scored 0.537 on these starts", b0: 0.168, b8: 0.557, cells: [[0.610, 1], [0.593, 1], [0.574, 0]] },
+  { name: "evolved, relative sensing", detail: "stage 6, three runs from random genomes, 200 generations; design 16 scored 0.509 on these starts", b0: 0.165, b8: 0.538, cells: [[0.588, 1], [0.510, 0], [0.165, 0]] },
+  { name: "the same, 400 generations", detail: "stage 6b, five fresh runs from random genomes; design 16 scored 0.560 on these starts", b0: 0.166, b8: 0.558, cells: [[0.642, 1], [0.623, 1], [0.569, 0], [0.556, 0], [0.425, 0]] },
 ];
 function drawChart() {
   const svg = $("pc-chart"), W = chartWidth(svg), narrow = W < 560;
