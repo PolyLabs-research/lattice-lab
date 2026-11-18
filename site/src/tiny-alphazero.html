@@ -11,8 +11,8 @@
 
   <dl class="facts" aria-label="Tiny AlphaZero in brief">
     <div><dt>Network</dt><dd>6,536,199 parameters: an 8-layer transformer reading the board as 72 tokens</dd></div>
-    <div><dt>Rounds</dt><dd>27, p2_a to p2_ab, August to November 2026: 23 of self-play, two benchmarks, two on Stockfish's labels alone</dd></div>
-    <div><dt>Strength now</dt><dd>0.4446 against Stockfish 16 at skill 5, from 0.3810 before p2_aa; not yet placed on the CCRL scale</dd></div>
+    <div><dt>Rounds</dt><dd>28, p2_a to p2_ac, August to November 2026: 23 of self-play, two benchmarks, three on Stockfish's labels alone</dd></div>
+    <div><dt>Strength now</dt><dd>0.5280 against Stockfish 16 at skill 5, its first score above 0.5, from 0.3810 before p2_aa; not yet placed on the CCRL scale</dd></div>
     <div><dt>Source</dt><dd><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2">Open, Apache 2.0</a></dd></div>
   </dl>
 
@@ -35,13 +35,14 @@
       self-play training ran on rented GPUs. It is not pure self-play: mate puzzles are rehearsed
       from the second round, and from round p2_t a quarter of every batch is positions labelled by
       Stockfish. Since p2_aa the network has been trained on Stockfish's labels alone, with no
-      self-play games: millions of positions its earlier self-play reached, each seen a few times.
-      That training runs on the mini-PC; only the labelling is rented.</p>
+      self-play games: millions of positions its earlier self-play reached, each seen a few times,
+      and from p2_ac positions from rated human games on Lichess as well. That training runs on
+      the mini-PC; only the labelling is rented.</p>
   </section>
 
   <section class="figure" aria-labelledby="levers-title">
     <div class="figure-head">
-      <h2 id="levers-title">The last seven training rounds: one change each</h2>
+      <h2 id="levers-title">The last eight training rounds: one change each</h2>
       <span class="eyebrow">score against Stockfish 16, skill 5</span>
     </div>
     <div class="chart-box fit"><svg id="levers-chart" viewBox="0 0 760 360" role="img" aria-labelledby="levers-title levers-cap"></svg></div>
@@ -53,14 +54,18 @@
     </div>
     <p class="tip" id="levers-tip" aria-live="polite">Point at a round, or tap it, for its registered test.</p>
     <details class="numbers"><summary>The numbers in this chart</summary><div id="levers-table"></div></details>
-    <p class="note" id="levers-cap">Each round's two arms, against the same opponent on the same
+    <p class="note" id="levers-cap">Each round's two arms (on a narrow screen a round is
+      named without its "p2_"), against the same opponent on the same
       machine, 200 games a pass of the openings. To p2_w each arm stands on six passes; in p2_aa
-      each stands on twelve, and in p2_ab the change's twelve are set against 24 from the two runs
-      of the four-million-position training, taken from the record rather than measured again.
-      Neither of the last two rounds played self-play games. Of seven changes, three helped (the
+      each stands on twelve, in p2_ab the change's twelve are set against 24 from the two runs
+      of the four-million-position training, taken from the record rather than measured again,
+      and in p2_ac each stands on 24, twelve of the baseline's taken from p2_ab.
+      None of the last three rounds played self-play games. Of eight changes, four helped (the
       Stockfish teacher in a quarter of each batch, four million labelled positions alone, then
-      eight million), one hurt (twice the teacher), and three made no difference the test could
-      separate. p2_ab's interval clears zero by 0.0011.</p>
+      eight million, then 31.9 million), one hurt (twice the teacher), and three made no
+      difference the test could separate. p2_ab's interval clears zero by 0.0011. In p2_ac the
+      number of positions and their source changed together, so the round does not say which
+      paid.</p>
   </section>
 
   <section class="figure" aria-labelledby="bench-title">
@@ -118,6 +123,7 @@
           <tr><td>diagnosis</td><td>Its distance from the teacher is set by its size, or by how few labelled positions it has seen</td><td><span class="badge muted">not resolved</span> the two largest sets were still improving when the 16M-sample cap stopped them. In an aside that decided nothing, four million positions beat the start by +0.037 at skill 5; a set of 475,696, seen about 29 times over, fell to 0.113</td></tr>
           <tr><td>p2_aa</td><td>A second run of that four-million-position training beats the start at skill 5</td><td><span class="badge ok">replicated</span> +0.0354 (+0.0112 to +0.0596), twelve passes a side; the first run holds at +0.0452. The same positions in a new order, not new data</td></tr>
           <tr><td>p2_ab</td><td>Twice the labelled positions, eight million, beat four million</td><td><span class="badge gold">held, thin margin</span> +0.0232 (+0.0011 to +0.0451) against both four-million runs; against the first alone the interval includes zero. One run, and two of eight forecasts missed</td></tr>
+          <tr><td>p2_ac</td><td>31.9 million labelled positions, the eight million plus older self-play and human games from Lichess, beat eight million</td><td><span class="badge ok">confirmed</span> +0.0875 (+0.0694 to +0.1055), 24 passes a side: 0.5280 against 0.4405, the first score above 0.5 at skill 5. Size and source changed together, so the round does not say which paid. One run; four of eight forecasts missed, the gain more than twice the top of its predicted range</td></tr>
         </tbody>
       </table>
     </div>
@@ -129,15 +135,22 @@
       alone, four million positions each seen about four times beat the start at skill 5 in p2_aa,
       a second run of a gain the capacity-or-data diagnostic had found in an aside; it was the same
       positions in a new order, so the data were not replicated. In p2_ab eight million positions
-      beat that training by +0.0232, with the interval's lower end at +0.0011, on one run. Against
-      the start the gain is +0.0635, the largest the project has measured, reported rather than
-      registered.</p>
-    <p>Why many positions each seen a few times help, when a small set drilled many times hurt,
-      is a hypothesis. The diagnostic's own question, size or data, is not resolved: its larger
-      sets were stopped by the sample cap while still improving. The next round, p2_ac, is more
-      data again, its size not yet settled. On the benchmark track the clock-scaled rerun is
-      registered and not scheduled, and the network that now stands has not been placed on the
-      CCRL scale. <a href="reckoner.html">Reckoner</a> carries the same search, and the same rules
+      beat that training by +0.0232, with the interval's lower end at +0.0011, on one run. In p2_ac
+      31.9 million positions beat the eight-million network by +0.0875 (+0.0694 to +0.1055), the
+      largest gain between two rounds the project has measured. The added 23,892,957 were
+      8,845,607 from older self-play and 15,047,350 from rated human games on Lichess. The
+      network that now stands scores 0.5280 against skill 5, the first above 0.5. Against the
+      start the gain is +0.1470, reported rather than registered.</p>
+    <p>Size and source changed together in p2_ac, so the round does not say which paid. Its
+      training also stopped, by the registered rule, when about 54% of the rows had been drawn:
+      the held-out positions that decide when to stop are all from self-play. Whether training
+      further would find more is a question for a later round, not a result. The next round,
+      p2_ad, is drafted and not yet registered: two sets of equal size, one adding the older
+      self-play and one the same number of human-game positions. Why many positions each seen a
+      few times help, when a small set drilled many times hurt, is a hypothesis, and the
+      diagnostic's own question, size or data, is not resolved. On the benchmark track the
+      clock-scaled rerun is registered and not scheduled, and the network that now stands has
+      not been placed on the CCRL scale. <a href="reckoner.html">Reckoner</a> carries the same search, and the same rules
       for registering a round, over to algebra.</p>
   </section>
 
@@ -151,6 +164,7 @@
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/DIAG-2026-11-13-capacity-or-data.md">The capacity-or-data diagnostic</a>, with its results</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_aa.md">Round p2_aa</a>: the replication</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_ab.md">Round p2_ab</a>: eight million positions</li>
+      <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_ac.md">Round p2_ac</a>: 31.9 million positions, with human games</li>
       <li><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero">The first version</a>, archived</li>
     </ul>
   </section>

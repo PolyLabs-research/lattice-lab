@@ -68,9 +68,9 @@
         <div class="tag">Self-play · chess</div>
         <h3><a href="tiny-alphazero.html">Tiny AlphaZero</a></h3>
         <p class="about">How strong can a 6.5-million-parameter chess network get on one small
-          computer? One registered change per round, 27 so far. After a plateau, millions of
-          positions labelled by Stockfish, each seen a few times, gave the first gains over its start
-          since p2_t, the latest by a thin margin.</p>
+          computer? One registered change per round, 28 so far. After a plateau, millions of
+          positions labelled by Stockfish, each seen a few times, have raised it three rounds
+          running. The latest network is the first to score above 0.5 against Stockfish at skill 5.</p>
         <div class="strip" role="group" aria-label="<!--label:tiny-alphazero-->"><!--strip:tiny-alphazero--></div>
         <p class="tally"><!--tally:tiny-alphazero--></p>
         <p class="judge"><b>Judged by</b> games against frozen opponents, with intervals</p>
@@ -92,7 +92,8 @@
         <p class="about">One simulated cell whose wall and brain are one network, evolved to
           manage light. In one world, cells evolved from random genomes do the best simple rule's
           job in 4 of 5 runs and beat it in 2. In six worlds they never saw, they beat each world's
-          best rule in 4 of 24 pairs.</p>
+          best rule in 4 of 24 pairs. Evolved in four worlds at once, one cell in five runs beats
+          it in five of nine worlds.</p>
         <div class="strip" role="group" aria-label="<!--label:protocell-->"><!--strip:protocell--></div>
         <p class="tally"><!--tally:protocell--></p>
         <p class="judge"><b>Judged by</b> worlds that pass their own checks first, and fresh starts</p>
@@ -123,12 +124,25 @@
 
   <section class="aside-split" aria-labelledby="latest-title">
     <div>
-      <div class="eyebrow">To 16 November 2026</div>
+      <div class="eyebrow">To 18 November 2026</div>
       <h2 id="latest-title">Latest on the record</h2>
       <p>Each entry names the record it comes from. A correction is a new entry, not an edit to
         an old one.</p>
     </div>
     <ol class="ledger">
+      <li><span class="when">18 Nov</span><div class="what">
+        <p><a href="tiny-alphazero.html">Tiny AlphaZero</a>: 31.9 million Stockfish-labelled positions,
+          the added ones from older self-play and human games on Lichess, beat eight million at
+          skill 5 by +0.0875. The network scores 0.5280, its first above 0.5. Size and source changed
+          together, so the round does not say which paid.</p>
+        <div class="receipt"><span class="badge ok">held</span><a href="https://github.com/PolyLabs-research/Tiny-AlphaZero-v2/blob/main/RUNLOG-p2_ac.md">RUNLOG-p2_ac.md</a></div>
+      </div></li>
+      <li><span class="when">16 Nov</span><div class="what">
+        <p><a href="protocell.html">Protocell</a>: evolved in four worlds at once, one champion of five
+          does the best simple rule's job in all four, where the criterion asked for three. That one
+          beats each world's re-tuned rule in five of nine worlds, two of them never met.</p>
+        <div class="receipt"><span class="badge bad">criteria not met</span><span>decisions log, D42</span></div>
+      </div></li>
       <li><span class="when">16 Nov</span><div class="what">
         <p><a href="tiny-alphazero.html">Tiny AlphaZero</a>: eight million Stockfish-labelled positions
           beat four million at skill 5 by +0.0232, the interval's lower end at +0.0011, on one run.
@@ -162,16 +176,6 @@
         <p><a href="reckoner.html">Reckoner</a>: a registered sweep expected forgetting without
           rehearsal and found none. Three of its four predictions failed.</p>
         <div class="receipt"><span class="badge bad">did not hold</span><a href="https://github.com/PolyLabs-research/reckoner/blob/main/SWEEP-m3.md">SWEEP-m3.md</a></div>
-      </div></li>
-      <li><span class="when">12 Nov</span><div class="what">
-        <p><a href="protocell.html">Protocell</a>: two of three searched cells beat the best simple
-          rule on fresh starts. The preregistration had predicted that none would.</p>
-        <div class="receipt"><span class="badge ok">held</span><span>decisions log, D29</span></div>
-      </div></li>
-      <li><span class="when">10 Nov</span><div class="what">
-        <p><a href="reckoner.html">Reckoner</a>: an erratum to the first campaign. It trained without
-          the policy target it was built to learn from, so its gain is real and its cause is open.</p>
-        <div class="receipt"><span class="badge gold">erratum</span><a href="https://github.com/PolyLabs-research/reckoner/blob/main/RUNLOG-m1.md">RUNLOG-m1.md</a></div>
       </div></li>
     </ol>
   </section>
