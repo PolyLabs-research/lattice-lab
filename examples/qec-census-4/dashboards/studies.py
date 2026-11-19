@@ -24,7 +24,7 @@ AREAS = {
     "Code census": ["qec-census-2", "qec-census-2b", "qec-census-3b", "qec-census-3c",
                     "qec-census-3d", "qec-census-4", "qec-census-4d"],
     "Code distances": ["qec-bb", "qec-distance", "qec-distance-2", "qec-open-distance",
-                       "qec-open-distance-2"],
+                       "qec-open-distance-2", "qec-parents"],
     "Periods and laws": ["xor-periods", "xor-periods-algebra", "parity-lattices",
                          "parity-lattices-hexagon", "linear-atlas", "linear-atlas-2",
                          "linear-atlas-3", "kepler-rediscovery", "hexagon-family", "fable-units",
@@ -269,6 +269,13 @@ def qec_bb(P, v, ctx):
     return out, f"method {v['method']}; rediscovery {v['rediscovery']}"
 
 
+def qec_parents(P, v, ctx):
+    out = [row(b["test"], b["predicted"], word(v[b["test"]])) for b in P]
+    return out, (f"{v['late_record_cells_descending']} of {v['late_record_cells']} record cells "
+                 f"descend; frontier {v['frontier_fraction']:.3f}, control "
+                 f"{v['control_fraction']:.3f}")  # fmt: skip
+
+
 def qec_distance(P, v, ctx):
     out = []
     for b in P:
@@ -391,6 +398,7 @@ READERS = {
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,
     "qec-census-3c": parts, "qec-census-3d": lambda P, v, c: parts(P, v, c, key="id"),
     "qec-census-3b": stage3b, "qec-census-4": stage4, "qec-census-4d": stage4d,
+    "qec-parents": qec_parents,
 }  # fmt: skip
 
 
