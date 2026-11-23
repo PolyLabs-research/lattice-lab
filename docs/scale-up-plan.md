@@ -241,16 +241,56 @@ Three things in the records that were not registered:
   standoff, by half a species to one on average. That is a difference in kind as well as in
   amount.
 
-**What is left of step 2:**
+**Laws against time and size** (`examples/scale-up-compete/laws.py`, exploratory, run
+2026-11-23: 672 runs in 13 minutes on one core). Two worlds, as you chose: Life against
+HighLife under the standoff, and soup 19 of the tie-break test under both tie-breaks. Soup 19
+is the one with the most contested births (68% under the draw) among those in which the
+standoff did not cost a species. Seven sides from 32 to 256, 32 starts at each, Kepler's laws.
 
-- **Laws against time and size**, under the draw: how the live fraction falls with time in the
-  pairs, and how the species balance's spread and the mixing depend on the grid's size, at four
-  or more sizes up to 256, fitted by Kepler (`power` against `logarithmic`; `fit_replicates`
-  for the error bars).
-- **Gate:** laws with error bars at four or more sizes. The known answer this step needed is
-  S, above, and it held.
+| Quantity | Life against HighLife, standoff | Soup 19, the draw | Soup 19, the standoff |
+| --- | --- | --- | --- |
+| live fraction against time, at side 256 | falls as c + a (1 + t/τ)^-b towards c = 0.042 (0.040 to 0.044), with τ = 75 and b = 1.3 | settles as c + a exp(-t/τ) to c = 0.766, with τ = 39 generations | the same form, to c = 0.500, with τ = 15 |
+| mean live fraction against the side | does not depend on it: 0.0486 ± 0.0003 at generation 1,000 | does not: 0.7662 ± 0.0001 | does not: 0.4999 ± 0.0004 |
+| mean share of species 1 | does not: 0.562 ± 0.002 (Life holds 56% of the live cells) | does not: 0.1732 ± 0.0002 | does not: 0.185 ± 0.002 |
+| mean unlike share of adjacent pairs | does not: 0.027 ± 0.001 | does not: 0.6388 ± 0.0002 | does not: 0.3947 ± 0.0006 |
+| spread over the starts, as a power of the side | -1.01 ± 0.08, -1.00 ± 0.07, -0.94 ± 0.08 (live, share, unlike) | -1.03, -0.99, -0.97, each ± 0.07 | -0.92 ± 0.07, -0.89 ± 0.10, -0.96 ± 0.07 |
+| every species alive at the end | in all 224 runs | in 2 of 32 runs at side 32, rising to 29 of 32 at 256 | in 1 of 32 at side 32, rising to 26 of 32 at 256 |
+
+What this says:
+
+- **Bigger is more of the same.** No mean depends on the side: `constant` is the law Kepler
+  ranks first for all nine, though a weak trend is not excluded (the next law is within 2 BIC
+  points every time). All nine spreads fall as one over the side, each exponent within two
+  standard errors of -1. That is what a grid made of independent patches does: nothing in
+  these quantities is organised over a distance that 256 cells can see.
+- **One thing does depend on size: which species survive.** In the soup one species of five
+  (B4/S3) dies out on small grids and survives on large ones. The share of runs keeping all
+  five follows a logistic curve in the logarithm of the side, reaching one half at side 124
+  under the draw and 157 under the standoff. The form 1 - exp(-(side / L0)^d) fits as well,
+  with d = 1.86 ± 0.22 and 1.86 ± 0.25: within one standard error of 2, as if each patch of
+  the grid had its own small chance of keeping the species. No species was lost in the pair
+  at any size.
+- **The two worlds relax differently.** The pair's live fraction falls slowly, as a power of
+  time; the soup's settles exponentially, in tens of generations.
+- **The standoff halves the soup's contests** as well as lowering its live fraction: 72% of
+  births are contested under the draw and 34% under the standoff, at every size.
+
+These are fits to the data that chose them, so they are descriptions, not tests. The pair's
+c = 0.042 is where its curve points beyond generation 1,000, which nothing here checks.
+
+**Gate: passed.** Laws with error bars at seven sizes, and the known answer (S, above) held.
 
 ### Step 3: the registered scale-up test
+
+**What step 2 gives it to test**, at sides larger than any seen (512 to 4096), for the same
+two worlds:
+
+- the means do not move: each lies in the band its constant gives (for instance the soup's
+  live fraction under the draw between 0.7659 and 0.7664 at every side);
+- the spreads keep falling as one over the side (the pair's live fraction to 0.0005 at 1024);
+- every species of the soup survives in at least 98% of runs at 1024 under the draw (the
+  logistic curve gives 0.995), where 9% failed to at 256;
+- the time laws' constants are the ones found at 256.
 
 - **What:** the laws fitted up to 256 predict the same quantities at 1024, 2048 and 4096. The
   predictions are registered with their bands and then run.

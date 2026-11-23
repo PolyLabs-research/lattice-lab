@@ -178,9 +178,13 @@ running then zooming out matches zooming out then running.
   (`examples/scale-up-tie-break`): all 15 predictions held. The tie-break changes nothing
   measurable where contests are rare, and lowers the live fraction by 0.04 to 0.46 of the grid
   where they are a fifth or more of births.
-- **Next in step 2:** how the live fraction, the species balance and the mixing depend on time
-  and on grid size, with laws fitted at four or more sizes, for step 3 to test at 1024 to 4096.
-  Steps 3 to 5 are not built, and the rest of the plan's decisions are open.
+- **Step 2 is done.** Laws against time and size (`examples/scale-up-compete/laws.py`,
+  exploratory) for Life against HighLife under the standoff and for one soup under both
+  tie-breaks, at seven sides from 32 to 256: no mean depends on the side, every spread falls as
+  one over the side, and the one thing that does depend on size is which species survive (the
+  soup keeps all five in 6% of runs at side 32 and 91% at 256).
+- **Next is step 3**, the registered test of those laws at sides 512 to 4096. It needs your
+  word, and a RunPod launch for the two largest sides. Steps 4 and 5 are not built.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
