@@ -19,6 +19,7 @@ MAX_RATE=${2:?the confirmed ceiling in dollars an hour}
 VCPU=${VCPU:-32}
 WORKERS=${WORKERS:-14}  # a run at side 4096 holds 3 GB, and 32 vCPUs are 16 cores with 64 GB
 FLAVOR=${FLAVOR:-cpu5c}
+GATE=${GATE:-0.6}  # seconds the speed gate allows; an older flavour (cpu3c, cpu3g) needs about 0.9
 REPO=$(cd "$(dirname "$0")/../../.." && pwd)
 D=examples/scale-up-sizes-large
 OUT=$HOME/lattice-lab-runs/sizes-large
@@ -84,7 +85,8 @@ t = time.time(); x = 0
 for i in range(5000000): x += i
 print(round(time.time() - t, 2))"') || fail "the speed gate did not run"
 say "speed gate: $gate s"
-awk -v t="$gate" 'BEGIN { exit !(t > 0.6) }' && fail "a slow host: $gate s for a loop that takes 0.24 s here"
+awk -v t="$gate" -v most="$GATE" 'BEGIN { exit !(t > most) }' \
+    && fail "a slow host: $gate s for a loop that takes 0.24 s here (at most $GATE s allowed)"
 
 "${SSH[@]}" 'cat > /root/pod-run.sh' < "$D/pod/pod-run.sh" || fail "staging"
 timeout 30 "${SSH[@]}" "nohup setsid bash /root/pod-run.sh $BRANCH $COMMIT $WORKERS > /root/pod-run.out 2>&1 < /dev/null &" > /dev/null 2>&1

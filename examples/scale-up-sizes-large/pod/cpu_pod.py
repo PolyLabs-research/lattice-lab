@@ -30,7 +30,7 @@ except ImportError as error:  # only on a machine without that lifecycle library
 
 TAG = "latticelab-sizes"
 IMAGE = "runpod/base:1.4.1-ubuntu2404"  # RunPod's CPU base image; its CMD is /start.sh
-FLAVORS = ("cpu3c", "cpu5c", "cpu5g")
+FLAVORS = ("cpu3c", "cpu3g", "cpu5c", "cpu5g")
 
 
 def flavours(rp: cloud.RunPod) -> dict[str, dict]:
