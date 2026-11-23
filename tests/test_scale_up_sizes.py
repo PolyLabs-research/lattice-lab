@@ -349,6 +349,49 @@ def test_the_extras_count_blocks_and_scores():
     assert told["largest"] == 3.1 and told["expected_beyond_2"] == 0.1
 
 
+def test_the_extras_say_whether_large_grids_agree():
+    extras = _load("scale_up_sizes_extras", LAB / "extras.py")
+    level = {side: [0.3 + 0.004 * 512 / side * z for z in SCATTER] for side in (512, 1024, 2048)}
+    same = extras.agreement(level)
+    assert same["sides"] == [512, 1024, 2048] and same["dof"] == 2
+    assert same["chi2"] == 0 and same["chance"] == 1 and same["widest_gap"]["standard_errors"] == 0
+    assert math.isclose(same["weighted_mean"][0], 0.3) and same["mean"] == [0.3, 0.3, 0.3]
+    # the errors fall as one over the side, so the largest grid weighs most
+    assert math.isclose(same["se"][0] / same["se"][2], 4, rel_tol=1e-4)
+    moved = extras.agreement({**level, 4096: [0.301 + 0.0005 * z for z in SCATTER]})
+    gap = 0.001 / math.hypot(0.001 / 8**0.5, 0.0005 / 8**0.5)
+    assert moved["widest_gap"]["sides"] == [2048, 4096]
+    assert math.isclose(moved["widest_gap"]["standard_errors"], gap, abs_tol=0.01)
+    assert moved["chi2"] > 6 and moved["chance"] < 0.12 and moved["dof"] == 3
+
+
+def test_the_extras_set_fresh_starts_beside_the_registered_ones(tmp_path, monkeypatch):
+    extras = _load("scale_up_sizes_extras", LAB / "extras.py")
+    monkeypatch.setattr(extras, "RECHECK", tmp_path / "none.jsonl")
+    assert extras.rechecks({}) == []
+    fresh = []
+    for seed, z in zip(SEEDS, SCATTER, strict=True):
+        run = _run(seed, live=0.31 + 0.004 * z)
+        fresh.append({**run, "rules": ["a", "b"], "tie_break": "standoff"})
+    path = tmp_path / "records.jsonl"
+    path.write_text("".join(json.dumps(r) + "\n" for r in fresh))
+    monkeypatch.setattr(extras, "RECHECK", path)
+    registered = [_run(s, live=0.3 + 0.004 * z) for s, z in zip(SEEDS, SCATTER, strict=True)]
+    (row,) = extras.rechecks({("pair standoff", 10000): registered})
+    assert (row["world"], row["side"], row["starts"], row["seeds"]) == (
+        "pair standoff",
+        10000,
+        8,
+        [1, 8],
+    )
+    live = row["live"]
+    assert math.isclose(live["fresh"][0], 0.31) and math.isclose(live["registered"][0], 0.3)
+    assert math.isclose(live["gap_in_standard_errors"], 0.01 / (0.004 / 2), abs_tol=0.01)
+    assert math.isclose(live["together"][0], 0.305)
+    (alone,) = extras.rechecks({})
+    assert "registered" not in alone["live"] and math.isclose(alone["share"]["fresh"][0], 0.5)
+
+
 # --- the ledgers ---------------------------------------------------------------------------------
 
 
@@ -415,6 +458,60 @@ def test_the_registered_run_at_sides_512_and_1024_held():
         found = [details[f"pair standoff, side {side}: time {name}"] for side in (512, 1024)]
         assert all(math.isclose(f["measured"], value, rel_tol=2e-3) for f in found)
         assert all(-2.2 < f["score"] < -1.7 for f in found)
+
+
+def test_the_registered_run_at_sides_2048_and_4096_held():
+    """The run of 2026-11-23, on a rented machine: all 62 predictions held there too. No
+    comparison was as far as 2.5 standard errors, every species survived all 96 runs, and the
+    rare species' blocks were as dense as on the small grids."""
+    path = LARGE / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == dict.fromkeys(S.FAMILIES, "holds")
+    assert set(verdict["outcomes"].values()) == {"holds"} and len(verdict["outcomes"]) == 62
+    assert verdict["missing"] == [] and len(ledger.entries[-2]["body"]["rows"]) == 96
+    # it ran from a clean checkout of the registered code, on another machine
+    code = ledger.entries[-3]["body"]["provenance"]["lattice_lab"]
+    assert (
+        code["dirty"] is False
+        and code["source"] != "file:///home/michael/Documents/dev/lattice-lab"
+    )
+    details = verdict["details"]
+    scores = {label: abs(d["score"]) for label, d in details.items() if "score" in d}
+    assert len(scores) == 56 and sum(s > 2 for s in scores.values()) == 1
+    assert max(scores, key=scores.get) == "soup standoff, side 4096: spread rare"
+    assert max(scores.values()) == 2.44
+    assert max(s for label, s in scores.items() if ": mean " in label) == 1.38
+    for label, found in details.items():
+        if label.endswith("survival"):
+            assert (found["measured"], found["of"]) == (16, 16)
+    for name, told in verdict["reported"].items():
+        assert told["starts"] == 16 and not any(told["starts_losing_each_species"])
+        if name.startswith("soup"):
+            rare = told["rare_species"]
+            assert rare["every_count_a_multiple_of"] == 4 and rare["cells_at_the_end"][0] >= 432
+            assert rare["unchanged_from_generation"] == 20
+    # the rare species' density, now known to a few parts in a hundred
+    for world, per_million in (("soup random", 166.3), ("soup standoff", 114.2)):
+        found = details[f"{world}, side 4096: mean rare"]
+        assert math.isclose(found["measured"] * 1e6, per_million, abs_tol=0.05)
+        assert found["se"] * 1e6 < 2.1 and abs(found["score"]) < 0.6
+    # the pair's law against time: about one and a half standard errors below side 256, as at
+    # sides 512 and 1024
+    for side in (2048, 4096):
+        c = details[f"pair standoff, side {side}: time c"]
+        b = details[f"pair standoff, side {side}: time b"]
+        assert 0.0401 < c["measured"] < 0.0405 and 1.11 < b["measured"] < 1.17
+        assert -1.7 < c["score"] < -1.4 and -1.7 < b["score"] < -1.2
+    # each claim compares a large grid with the small grids' constant and its error. Set beside
+    # each other, the pair's live fraction at the two sides is five of their own errors apart
+    # (docs/scale-up-plan.md says what fresh starts made of that)
+    wide, wider = (details[f"pair standoff, side {side}: mean live"] for side in (2048, 4096))
+    gap = (wide["measured"] - wider["measured"]) / math.hypot(wide["se"], wider["se"])
+    assert math.isclose(gap, 5.11, abs_tol=0.01)
 
 
 def test_both_parts_were_registered_before_either_was_run():

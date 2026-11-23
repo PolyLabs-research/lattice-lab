@@ -1,0 +1,5 @@
+Mon Nov 23 15:09:05 UTC 2026
+model name	: AMD EPYC 9575F 64-Core Processor
+cpu quota: max 100000  nproc: 32
+               total        used        free      shared  buff/cache   available
+Mem:             503          52         172           0         283         451

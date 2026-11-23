@@ -115,14 +115,14 @@ while :; do
     # the state is read before the pull: once it says done, what the pull brings is final
     state=$("${SSH[@]}" 'cat /root/run/STATE' 2> /dev/null)
     pull
-    records=$(wc -l < "$OUT/pulled/records.jsonl" 2> /dev/null || echo 0)
+    records=$(cat "$OUT/pulled/records.jsonl" 2> /dev/null | wc -l)
     say "state: ${state:-?}; $records of 96 records"
     case "$state" in
         done)
             kind=none
             for _ in 1 2 3 4 5; do  # the pod is deleted only once its results are here
                 kind=$(tail -1 "$OUT/pulled/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["kind"])')
-                records=$(wc -l < "$OUT/pulled/records.jsonl" 2> /dev/null || echo 0)
+                records=$(cat "$OUT/pulled/records.jsonl" 2> /dev/null | wc -l)
                 [ "$kind" = verdict ] && [ "$records" = 96 ] && break
                 sleep 20
                 pull
