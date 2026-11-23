@@ -9,6 +9,10 @@
 #       bash examples/scale-up-sizes-large/pod/launch.sh HOURS MAX_RATE
 #   e.g. HOURS 6 and MAX_RATE 1.12 (cpu5c, 32 vCPUs): $6.72 at most
 #
+# Large pods are often out of stock for minutes at a time. SIZES names the sizes that will do,
+# best first (FLAVOUR:VCPUS, e.g. "cpu5c:32 cpu5g:16 cpu5c:16"), and WAIT the minutes to keep
+# asking; the first in stock under MAX_RATE is taken.
+#
 # The log and the pulled files go to ~/lattice-lab-runs/sizes-large/. Nothing in the repository
 # is changed: when the run is done, copy pulled/ledger.jsonl and pulled/records.jsonl into
 # examples/scale-up-sizes-large/, verify, and commit. The pod's own deadline and the sweeper
@@ -16,10 +20,8 @@
 set -u
 HOURS=${1:?hours}
 MAX_RATE=${2:?the confirmed ceiling in dollars an hour}
-VCPU=${VCPU:-32}
-WORKERS=${WORKERS:-14}  # a run at side 4096 holds 3 GB, and 32 vCPUs are 16 cores with 64 GB
-FLAVOR=${FLAVOR:-cpu5c}
-GATE=${GATE:-0.6}  # seconds the speed gate allows; an older flavour (cpu3c, cpu3g) needs about 0.9
+SIZES=${SIZES:-cpu5c:32}
+WAIT=${WAIT:-0}
 REPO=$(cd "$(dirname "$0")/../../.." && pwd)
 D=examples/scale-up-sizes-large
 OUT=$HOME/lattice-lab-runs/sizes-large
@@ -41,12 +43,26 @@ git fetch -q origin "$BRANCH"
   || { say "the ledger does not end with the registration"; exit 1; }
 [ ! -e "$D/records.jsonl" ] || { say "there are records already"; exit 1; }
 
-say "launch: $FLAVOR, $VCPU vCPUs, $HOURS h cap, at most \$$MAX_RATE/h; $BRANCH at ${COMMIT:0:8}; $WORKERS workers"
-out=$("$PY" "$D/pod/cpu_pod.py" --flavor "$FLAVOR" --vcpu "$VCPU" --hours "$HOURS" --max-rate "$MAX_RATE" --yes 2>&1)
-echo "$out"
-POD=$(echo "$out" | sed -n 's/^launched \([a-z0-9]*\) .*/\1/p')
-DEADLINE=$(echo "$out" | sed -n 's/^launched [a-z0-9]* taz-[a-z0-9_-]*-dl\([0-9]*\) .*/\1/p')
-[ -n "$POD" ] && [ -n "$DEADLINE" ] || { say "no pod launched; stopping"; exit 1; }
+say "launch: one of $SIZES, $HOURS h cap, at most \$$MAX_RATE/h, asking for $WAIT minutes; $BRANCH at ${COMMIT:0:8}"
+# shellcheck disable=SC2086  # SIZES is a list
+"$PY" -u "$D/pod/cpu_pod.py" --sizes $SIZES --hours "$HOURS" --max-rate "$MAX_RATE" --wait "$WAIT" --yes 2>&1 | tee "$OUT/launch.out"
+got=$(grep '^launched ' "$OUT/launch.out" | tail -1)
+POD=$(echo "$got" | sed -n 's/^launched \([a-z0-9]*\) .*/\1/p')
+DEADLINE=$(echo "$got" | sed -n 's/^launched [a-z0-9]* taz-[a-z0-9_-]*-dl\([0-9]*\) .*/\1/p')
+FLAVOR=$(echo "$got" | sed -n 's/.*(\(cpu[0-9a-z]*\), \([0-9]*\) vCPUs.*/\1/p')
+VCPU=$(echo "$got" | sed -n 's/.*(\(cpu[0-9a-z]*\), \([0-9]*\) vCPUs.*/\2/p')
+[ -n "$POD" ] && [ -n "$DEADLINE" ] && [ -n "$FLAVOR" ] && [ -n "$VCPU" ] || { say "no pod launched; stopping"; exit 1; }
+# a run at side 4096 holds 3 GB: 64 GB takes fourteen at a time, 32 GB eight
+case "$FLAVOR:$VCPU" in
+    cpu5c:32 | cpu5g:16 | cpu3g:16 | cpu3c:32) workers=14 ;;
+    cpu5c:16 | cpu3c:16) workers=8 ;;
+    *) workers=4 ;;
+esac
+WORKERS=${WORKERS:-$workers}
+# the speed gate: 0.6 s for the newer generation, 0.9 s for the older
+case "$FLAVOR" in cpu3*) gate=0.9 ;; *) gate=0.6 ;; esac
+GATE=${GATE:-$gate}
+say "pod $POD: $FLAVOR, $VCPU vCPUs; $WORKERS workers; speed gate $GATE s"
 
 SSH=()
 pull() {  # whatever the pod has so far; a file that is not there yet is skipped
