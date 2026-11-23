@@ -43,6 +43,9 @@ def test_what_is_measured_of_a_record():
     assert LAWS.measure(record, "live", 0) == 0.5 and LAWS.measure(record, "live", -1) == 0.08
     assert LAWS.measure(record, "share", -1) == 0.75 and LAWS.measure(record, "unlike", -1) == 0.1
     assert LAWS.measure(record, "left", 0) == 2.0
+    assert LAWS.measure(record, "share", -1, 1) == 0.25
+    assert LAWS.measure(record, "density", -1) == 0.06
+    assert LAWS.measure(record, "density", 0, 1) == 0.2
     with pytest.raises(ValueError, match="unknown quantity"):
         LAWS.measure(record, "dead", 0)
     assert LAWS.world_of({"rules": ["a", "b"], "tie_break": "standoff"}) == "pair standoff"
@@ -56,6 +59,57 @@ def test_a_spread_that_falls_as_one_over_the_side_is_found():
     assert math.isclose(law["constants"]["a"][0], 2.0, rel_tol=1e-3)
     assert math.isclose(law["at_larger_sides"]["1024"][0], 2.0 / 1024, rel_tol=1e-3)
     assert LAWS.spread_law({32: [1.0, 1.0], 64: [1.0, 1.0]})["law"] is None
+
+
+def test_a_spread_as_an_amplitude_over_the_side():
+    """The exponent held at -1, fitted in logarithms: exact data give the amplitude back with
+    the error eight starts at each of seven sides allow, and scatter beyond that widens it."""
+    sides = list(LAWS.SIDES)
+    exact = LAWS.inverse_law(sides, [2.0 / side for side in sides], [8] * 7)
+    assert math.isclose(exact["a"], 2.0) and exact["chi2_per_dof"] == 0
+    assert math.isclose(exact["se_log"], (1 / (7 * 14)) ** 0.5, rel_tol=1e-5)
+    value, low, high = exact["at_larger_sides"]["1024"]
+    assert math.isclose(value, 2.0 / 1024, rel_tol=1e-5)  # stored to six figures
+    assert math.isclose(low * high, value**2, rel_tol=1e-4)
+    rough = LAWS.inverse_law(sides, [2.0 / side * (4 if side == 64 else 1) for side in sides],
+                             [8] * 7)  # fmt: skip
+    assert rough["chi2_per_dof"] > 1 and rough["se_log"] > exact["se_log"] and rough["a"] > 2
+    by_side = {side: [0.5 + 2.0 / side * z for z in SCATTER] for side in LAWS.SIDES}
+    assert math.isclose(LAWS.spread_law(by_side)["inverse"]["a"], 2.0, rel_tol=1e-6)
+
+
+def _left(cells: int, *finals: int) -> list[dict]:
+    """Made-up runs of three species on `cells` cells: the second ends with `finals` cells,
+    reached by generation 20."""
+    return [
+        {
+            "cells": cells,
+            "rules": ["B3/S23", "B4/S3", "B36/S23"],
+            "generations": [0, 20, 40, 60],
+            "alive": [[500, 300, 300, 300], [100, final, final, final], [400, 200, 190, 180]],
+        }
+        for final in finals
+    ]
+
+
+def test_what_is_left_of_a_species_that_some_starts_lose():
+    by_side = {50: _left(2500, 0, 4, 0, 0), 100: _left(10000, 4, 8, 0, 4)}
+    law = LAWS.blocks_law(by_side, 1)
+    assert law["species"] == 2 and law["rule"] == "B4/S3" and law["unit"] == 4
+    assert law["units"] == 5 and law["grid_cells"] == 50000 and law["settled_by_generation"] == 20
+    assert math.isclose(law["density"][0], 20 / 50000) and law["survived"] == [1, 3]
+    assert law["cells_at_end"] == [1.0, 4.0]
+    # five units on 50,000 cells: 0.25 expected on the small grid and 1 on the large one
+    expected = [round(1 - math.exp(-0.25), 4), round(1 - math.exp(-1), 4)]
+    assert law["survival_from_density"] == expected
+    assert math.isclose(LAWS.block_spread(0.0004, 4, 100), 0.0004, rel_tol=1e-12)  # sqrt(1) units
+    chance, low = LAWS.block_survival(0.0004, 0.0001, 4, 200)
+    assert math.isclose(chance, 1 - math.exp(-4)) and low < chance
+    # a species that is still changing has not settled by the first sample
+    moving = {50: _left(2500, 4, 8)}
+    moving[50][0]["alive"][1] = [100, 12, 8, 4]
+    assert LAWS.blocks_law(moving, 1)["settled_by_generation"] == 60
+    assert LAWS.blocks_law({50: _left(2500, 0, 0)}, 1)["law"] is None
 
 
 def test_a_mean_that_does_not_depend_on_the_side_is_called_constant():
@@ -161,3 +215,25 @@ def test_the_laws_the_runs_gave():
     for soup in (draw, level):
         d, error = soup["survival"]["patches"]["d"]
         assert abs(d - 2) < error and soup["survival"]["at_larger_sides"]["1024"][0] > 0.98
+    # every spread is an amplitude over the side, within the scatter seven sides allow
+    for world in results["worlds"].values():
+        for laws in world["against_size"].values():
+            inverse = laws["spread"]["inverse"]
+            assert inverse["chi2_per_dof"] < 3 and 0.048 <= inverse["se_log"] < 0.083
+    # what is left of the soup's fourth species is blocks of four cells, settled by the first
+    # sample, as many per cell at every size; their density gives the survival that was seen
+    assert "blocks" not in pair
+    for soup, per_million in ((draw, 174), (level, 110)):
+        blocks = soup["blocks"]
+        assert (blocks["species"], blocks["rule"], blocks["unit"]) == (4, "B4/S3", 4)
+        assert blocks["settled_by_generation"] == 20 and 0.9 < blocks["dispersion"] < 1.2
+        assert math.isclose(blocks["density"][0] * 1e6, per_million, abs_tol=1)
+        for seen, starts, law in zip(
+            blocks["survived"], blocks["starts"], blocks["survival_from_density"], strict=True
+        ):
+            assert abs(seen / starts - law) < 3.3 * (law * (1 - law) / starts) ** 0.5
+        assert blocks["at_larger_sides"]["1024"]["survival"] == [1.0, 1.0]
+    assert draw["blocks"]["survived"] == draw["survival"]["survived"]
+    # under the standoff the smallest grid also lost other species, once or twice
+    assert level["deaths_by_species"]["32"] == [1, 2, 0, 30, 1]
+    assert level["blocks"]["survived"] == [2, 2, 2, 8, 15, 16, 26]

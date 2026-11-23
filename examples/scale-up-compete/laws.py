@@ -30,6 +30,16 @@ What is fitted:
 - **survival against size**: the share of starts in which every species is alive at the end,
   with a binomial likelihood, as a logistic curve in the logarithm of the side and as
   1 - exp(-(side / L0)^d), which is what independent patches give with d = 2.
+- **the species some starts lose** (added before step 3 was registered, from the same records):
+  its cells at the end, start by start. In the soup it is species 4 (B4/S3), and what is left
+  of it by generation 20 never changes again and is always a multiple of four: 2 x 2 blocks,
+  which no other species can break, since a cell is only ever born into an empty place and a
+  species counts its own kind alone. So whether the species survives is settled by the start:
+  it does when at least one block forms. The blocks' density, how their number scatters over
+  the starts, and the survival that density gives if they form independently
+  (1 - exp(-density x cells)) are in `blocks`.
+- **the spread as amplitude / side** (added at the same time): the power law's exponent held
+  at -1, the amplitude from the seven sides in logarithms. This is the form step 3 tests.
 
 Records go to laws/records.jsonl (LatticeLife's own, resumable) and the fits to
 laws/results.json. The starts are 2001 to 2032; a registered study must use others.
@@ -63,7 +73,7 @@ WORLDS = {
 }
 TIME_LAWS = ("power", "logarithmic", "shifted_power", "relaxation", "algebraic_relaxation")
 SIZE_LAWS = ("constant", "logarithmic", "power")
-LARGER = (1024, 2048, 4096)
+LARGER = (512, 1024, 2048, 4096)
 
 
 def tasks(sides=SIDES, seeds=SEEDS) -> list[CompetitionTask]:
@@ -80,17 +90,21 @@ def world_of(record: dict) -> str:
     return ("pair " if len(record["rules"]) == 2 else "soup ") + record["tie_break"]
 
 
-def measure(record: dict, quantity: str, at: int) -> float:
-    """One quantity of a record at sample `at`: `live`, the live fraction; `share`, species 1's
-    share of the live cells; `unlike`, the share of adjacent live pairs that are of two species;
-    `left`, the species alive (at the end of the run, whatever `at` is)."""
+def measure(record: dict, quantity: str, at: int, species: int = 0) -> float:
+    """One quantity of a record at sample `at`: `live`, the live fraction; `share`, the share of
+    the live cells that species number `species` holds (counted from 0, so species 1 unless
+    told otherwise); `density`, that species' cells as a share of the grid; `unlike`, the share
+    of adjacent live pairs that are of two species; `left`, the species alive (at the end of
+    the run, whatever `at` is)."""
     if quantity == "left":
         return float(sum(e is None for e in record["extinct_at"]))
     alive = [series[at] for series in record["alive"]]
     if quantity == "live":
         return sum(alive) / record["cells"]
     if quantity == "share":
-        return alive[0] / max(sum(alive), 1)
+        return alive[species] / max(sum(alive), 1)
+    if quantity == "density":
+        return alive[species] / record["cells"]
     if quantity == "unlike":
         return record["unlike"][at] / max(record["unlike"][at] + record["like"][at], 1)
     raise ValueError(f"unknown quantity {quantity!r}")
@@ -188,6 +202,116 @@ def spread_law(by_side: dict[int, list[float]]) -> dict:
             str(side): [round(float(v), 6), round(float(lo), 6), round(float(hi), 6)]
             for side, v, lo, hi in zip(LARGER, value, low, high, strict=True)
         },
+        "inverse": inverse_law(sides, spreads, [len(by_side[s]) for s in sides]),
+    }
+
+
+def inverse_law(sides: list[int], spreads: list[float], starts: list[int]) -> dict:
+    """The spread as amplitude / side: the power law with its exponent held at -1, which is what
+    independent patches give. Fitted in logarithms, where a spread over n starts has the
+    standard error 1 / sqrt(2 (n - 1)) whatever its size; `se_log` is the amplitude's, widened
+    by sqrt(chi2 / dof) when the sides scatter more than that."""
+    logs = [math.log(sd * side) for side, sd in zip(sides, spreads, strict=True)]
+    weights = [2.0 * (n - 1) for n in starts]
+    centre = sum(w * v for w, v in zip(weights, logs, strict=True)) / sum(weights)
+    chi2 = sum(w * (v - centre) ** 2 for w, v in zip(weights, logs, strict=True))
+    dof = len(sides) - 1
+    se = math.sqrt(1.0 / sum(weights)) * max(1.0, math.sqrt(chi2 / dof))
+    amplitude = math.exp(centre)
+    return {
+        "formula": "a / side",
+        "a": signif(amplitude),
+        "se_log": signif(se),
+        "chi2_per_dof": round(chi2 / dof, 2),
+        "at_larger_sides": {
+            str(side): [
+                signif(amplitude / side),
+                signif(amplitude / side * math.exp(-1.959964 * se)),
+                signif(amplitude / side * math.exp(1.959964 * se)),
+            ]
+            for side in LARGER
+        },
+    }
+
+
+def signif(value: float, digits: int = 6) -> float:
+    """`value` to `digits` significant figures."""
+    return float(f"{value:.{digits - 1}e}")
+
+
+def block_spread(density: float, unit: int, side: int) -> float:
+    """The spread over the starts of a species' share of the grid, when what is left of it is
+    independent units of `unit` cells at `density` cells per grid cell: a Poisson number of
+    units, so sqrt(unit x density) / side."""
+    return math.sqrt(unit * density) / side
+
+
+def block_survival(density: float, error: float, unit: int, side: int) -> tuple[float, float]:
+    """The chance that a start keeps such a species, 1 - exp(-density x cells / unit), and the
+    same at the lower end of the density's 95% band (taken in logarithms)."""
+    low = density * math.exp(-1.959964 * error / density)
+    return (
+        1.0 - math.exp(-density * side * side / unit),
+        1.0 - math.exp(-low * side * side / unit),
+    )
+
+
+def blocks_law(by_side: dict[int, list[dict]], species: int) -> dict:
+    """A species that some starts lose, by its cells at the end of each run (species number
+    `species`, from 0).
+
+    `unit` is the largest number that divides every count (4 when what is left is 2 x 2
+    blocks), `settled_by` the first sampled generation from which no run's count changes again,
+    and `density` its cells as a share of the grid over all runs, with a standard error from
+    the scatter of the runs about it. `dispersion` is the variance of the number of units over
+    its mean, pooled over the sides: 1 when units form independently (a Poisson number), which
+    gives the spread of the density as sqrt(unit x density) / side and the chance that a start
+    keeps the species as 1 - exp(-density x cells / unit)."""
+    sides = sorted(by_side)
+    counts = {s: [r["alive"][species][-1] for r in by_side[s]] for s in sides}
+    cells = {s: by_side[s][0]["cells"] for s in sides}
+    unit = math.gcd(*[c for s in sides for c in counts[s]])
+    out: dict = {"species": species + 1, "sides": sides, "unit": unit}
+    out["cells_at_end"] = [round(statistics.fmean(counts[s]), 3) for s in sides]
+    if unit == 0:  # the species is lost in every run
+        return {**out, "law": None}
+    settled = 0
+    for s in sides:
+        for r in by_side[s]:
+            series = r["alive"][species]
+            last = max((i for i, v in enumerate(series) if v != series[-1]), default=-1)
+            settled = max(settled, last + 1)
+    area = sum(len(counts[s]) * cells[s] for s in sides)
+    density = sum(sum(counts[s]) for s in sides) / area
+    scatter = sum((c - density * cells[s]) ** 2 for s in sides for c in counts[s])
+    error = math.sqrt(scatter) / area
+    runs = sum(len(counts[s]) for s in sides)
+    pearson = sum(
+        (c / unit - density * cells[s] / unit) ** 2 / (density * cells[s] / unit)
+        for s in sides
+        for c in counts[s]
+    )
+    return {
+        **out,
+        "law": "independent units",
+        "rule": by_side[sides[0]][0]["rules"][species],
+        "settled_by_generation": by_side[sides[0]][0]["generations"][settled],
+        "units": sum(sum(counts[s]) for s in sides) // unit,
+        "grid_cells": area,
+        "density": [signif(density), signif(error)],
+        "dispersion": round(pearson / (runs - 1), 3),
+        "survival_from_density": [
+            round(block_survival(density, error, unit, s)[0], 4) for s in sides
+        ],
+        "survived": [sum(c > 0 for c in counts[s]) for s in sides],
+        "starts": [len(counts[s]) for s in sides],
+        "at_larger_sides": {
+            str(side): {
+                "spread": signif(block_spread(density, unit, side)),
+                "survival": [round(p, 6) for p in block_survival(density, error, unit, side)],
+            }
+            for side in LARGER
+        },
     }
 
 
@@ -272,6 +396,18 @@ def analyse(records: list[dict]) -> dict:
                 for side in sides
             },
         }
+        lost = sorted(
+            {
+                i
+                for r in runs[world, largest]
+                for i, gone in enumerate(r["extinct_at"])
+                if gone is not None
+            }
+        )
+        if len(lost) == 1:  # one species that starts still lose on the largest grid
+            out["worlds"][world]["blocks"] = blocks_law(
+                {side: runs[world, side] for side in sides}, lost[0]
+            )
     return out
 
 
