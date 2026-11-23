@@ -204,7 +204,7 @@ qec = [
 [package.metadata]
 requires-dist = [
     { name = "kepler", git = "https://github.com/PolyLabs-research/kepler?rev=0af9b28c5586376219ec17b8620e9dbc726701d8" },
-    { name = "latticelife", git = "https://github.com/PolyLabs-research/gameoflife_advanced?rev=456e044f9d725e7853c2f54d781e4cda180ed1f6" },
+    { name = "latticelife", git = "https://github.com/PolyLabs-research/gameoflife_advanced?rev=f0ee136e7bae1b0508c76279f7aeb7c6b445a5a0" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "scipy", specifier = ">=1.10" },
 ]
@@ -223,7 +223,7 @@ qec = [{ name = "pyscipopt", specifier = ">=6.0" }]
 [[package]]
 name = "latticelife"
 version = "0.1.0"
-source = { git = "https://github.com/PolyLabs-research/gameoflife_advanced?rev=456e044f9d725e7853c2f54d781e4cda180ed1f6#456e044f9d725e7853c2f54d781e4cda180ed1f6" }
+source = { git = "https://github.com/PolyLabs-research/gameoflife_advanced?rev=f0ee136e7bae1b0508c76279f7aeb7c6b445a5a0#f0ee136e7bae1b0508c76279f7aeb7c6b445a5a0" }
 dependencies = [
     { name = "numpy" },
     { name = "pygame" },
