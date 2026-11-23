@@ -311,7 +311,7 @@ Each study is a directory under `examples/`. The ones with ledgers check with
 | `fable-units` | a registered test of Claude Fable's unit criterion and pyramid rules from a consultation: predictions from the fundamental unit and class number alone, decided by direct computation in GF(2)[x]/Phi_p ([write-up](docs/consultations.md)) |
 | `consult-budget` | what a consultation's effort is worth: two answered questions put to Fable at three settings, every claim checked by machine, rubrics graded blind; cost per verified answer, and two findings ([write-up](docs/consultations.md)) |
 | `rule-4850` | rule 4850's ninth powers at m = 37: the pre-check, the consultation's question, a fast census by discrete logs, and the registered radius-5 census that refuted chance ([write-up](docs/consultations.md)); `deep/`, the multi-agent deep dive that explained it, with its investigators', verifiers' and checkers' scripts and [the report](examples/rule-4850/deep/REPORT.md) |
-| `scale-up-linear` | the scale-up instrument (`scaleup.py`: zoom out a LatticeLife torus by blocks and test whether a coarse world predicts the zoomed-out fine one) and its registered calibration on the four parity rules: exact at powers of two up to 128, a fair coin per supercell at mismatched scales, with the coins' independence worked out from the group ring (`mismatch.py`); 296 of 296 cases held ([plan](docs/scale-up-plan.md)) |
+| `scale-up-linear` | the scale-up instrument (`scaleup.py`: zoom out a LatticeLife torus by blocks and test whether a coarse world predicts the zoomed-out fine one) and its registered calibration on the four parity rules: exact at powers of two up to 128, a fair coin per supercell at mismatched scales, with the coins' independence worked out from the group ring (`mismatch.py`); 296 of 296 cases held. `promote.py` checks that LatticeLife's own `experiments.coarse`, where the instrument now lives, reproduces every record ([plan](docs/scale-up-plan.md)) |
 
 ## Settling times: a replication and a universality test
 
@@ -349,7 +349,7 @@ pushed.
 - **Order.** `verify` checks every verdict's predictions were written before its run started,
   and every held-out record was appended after that.
 - **Reproducibility.** `verify --rerun N` reruns records from their seeds and settings and
-  compares the bytes.
+  compares the bytes. A registered study gets the same check when it names `rerun`.
 - **The prototype's traps** are regression tests (`tests/test_traps.py`): a zero starting
   constant must not vanish; a verdict must survive dropping the smallest sizes; an unsettled run
   must never count against a law.

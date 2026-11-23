@@ -28,9 +28,11 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
   into lattice-lab on GitHub, at `main`.
 - **Licences.** lattice-lab's code is under Apache-2.0 and everything else under CC BY 4.0
   ([README](../README.md#licence)). Kepler and LatticeLife have no licence yet.
-- **Pins.** lattice-lab pins LatticeLife `256450b` and Kepler `0af9b28` (`pyproject.toml`,
-  `uv.lock`). Both are current for code: every later commit on those repositories' working
-  branches changes only the README.
+- **Pins.** lattice-lab pins LatticeLife `d690cae` and Kepler `0af9b28` (`pyproject.toml`,
+  `uv.lock`). LatticeLife's pin is its branch `coarse-graining`: the working branch, whose
+  commits after `256450b` change only the README, plus the zoom-out module of the scale-up
+  plan's step 1 (2026-11-23). Kepler's is current for code: every later commit on its working
+  branch changes only the README.
 - **The move.** Links, the Kepler pin's URL and the lockfile point at PolyLabs-research. The
   study ledgers still record `tripptytrip` URLs in their provenance. That is deliberate: they are
   hash-chained records of what ran, and GitHub redirects the old URLs.
@@ -59,7 +61,8 @@ A registered study runs in four steps:
 4. If the run is interrupted, `study.py resume` finishes it.
 
 `lattice-lab verify --lab <dir>` checks the hash chain, and that every prediction precedes its run
-and every record follows the run's start.
+and every record follows the run's start. A study that names `rerun` (one stored record computed
+again) also has sample records rerun and compared, as the loop's own records are.
 
 ## What has been established
 
@@ -155,10 +158,15 @@ running then zooming out matches zooming out then running.
   no supercell differed at blocks from 2 to 128 on grids up to 768 x 768 (10.1 million
   comparisons), and the 36 controls at mismatched scales each fell inside their exact binomial
   interval. The run took 3.5 minutes on one core.
-- **Next is step 1**, moving the instrument into LatticeLife, and then the competitive world
-  (steps 2 to 4) and reversible variants (step 5). None of that is built, and the plan's
-  decisions are open. The first is whether the multi-species birth tie-break stays a random
-  draw.
+- **Step 1 is done: the instrument lives in LatticeLife** (`experiments.coarse`, branch
+  `coarse-graining`), with a dilated adjacency and wrapped grids built without loops. Its gate
+  passed: LatticeLife's module reproduces all 3,084 records of the calibration
+  (`examples/scale-up-linear/promote.py`, `promotion.json`). A study can now name `rerun`, and
+  `lattice-lab verify` then reruns its records.
+- **Next is step 2**, the competitive world without the app, then steps 3 to 5. None of that is
+  built, and the plan's decisions are open. The first is the multi-species birth tie-break,
+  which the plan sets out in full: a first count found it decides under half a percent of
+  births.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their

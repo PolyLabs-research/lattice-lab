@@ -90,7 +90,7 @@ question.toml
 | The empty rule `B/S` dies at once; the loop says constant | `tests/test_known_rules.py` |
 | A linear rule's transient and period match an independent GF(2) computation | `tests/test_known_rules.py` |
 | Order check: predictions before the run, held-out records after it | `ledger.check_order`, `lattice-lab verify` |
-| Records rerun byte for byte | `lattice-lab verify --rerun N` |
+| Records rerun byte for byte | `lattice-lab verify --rerun N`: the loop's records, and those of a study that names `rerun` |
 | The three prototype traps | `tests/test_traps.py` |
 
 ## Milestones

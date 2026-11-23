@@ -1,0 +1,35 @@
+{
+ "through": "latticelife.experiments.coarse.closure",
+ "cases": 296,
+ "records": 3084,
+ "rerun": 3084,
+ "identical": 3084,
+ "different": [],
+ "not_rerun": 0,
+ "seconds": 207,
+ "provenance": {
+  "lattice_lab": {
+   "version": "0.1.0",
+   "commit": "3070e629a988af2a39256953771412738a699aaa",
+   "dirty": false,
+   "source": "file:///home/michael/Documents/dev/lattice-lab"
+  },
+  "latticelife": {
+   "version": "0.1.0",
+   "commit": "d690caeff3b202fac4aef91854238e8f24ac771f",
+   "dirty": false,
+   "source": "https://github.com/PolyLabs-research/gameoflife_advanced"
+  },
+  "kepler": {
+   "version": "0.1.0",
+   "commit": "0af9b28c5586376219ec17b8620e9dbc726701d8",
+   "dirty": false,
+   "source": "https://github.com/PolyLabs-research/kepler"
+  },
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39"
+ }
+}

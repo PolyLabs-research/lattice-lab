@@ -132,7 +132,12 @@ def cmd_report(args) -> int:
 
 
 def _study_rerun(lab: Path):
-    """(the study's rerun function, None), or (None, why its records cannot be rerun)."""
+    """(the study's rerun function, ""), or (None, why its records cannot be rerun). A study's
+    module is imported only if its study.py mentions `rerun`: importing one runs whatever it
+    does on import, and the studies written before the hook existed have none."""
+    source = lab / "study.py"
+    if not source.is_file() or "rerun" not in source.read_text():
+        return None, "no loop spec"
     try:
         study = studies.load(lab)
     except Exception as exc:  # whatever the study's own module raises on import

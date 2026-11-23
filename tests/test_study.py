@@ -189,13 +189,24 @@ def test_a_study_without_rerun_or_one_that_does_not_load_is_only_warned_about(tm
     assert cli.main(["verify", "--lab", str(tmp_path / "plain")]) == 0
     out = json.loads(capsys.readouterr().out)
     assert out["warnings"] == ["question 0: no loop spec, so its records were not rerun"]
-    (tmp_path / "broken").mkdir()
-    for name in ("ledger.jsonl", "records.jsonl"):
-        (tmp_path / "broken" / name).write_bytes((tmp_path / "plain" / name).read_bytes())
-    (tmp_path / "broken" / "study.py").write_text("import a_module_that_is_not_there\n")
-    assert cli.main(["verify", "--lab", str(tmp_path / "broken")]) == 0
+
+    def copy(name: str, source: str) -> Path:
+        lab = tmp_path / name
+        lab.mkdir()
+        for file in ("ledger.jsonl", "records.jsonl"):
+            (lab / file).write_bytes((tmp_path / "plain" / file).read_bytes())
+        (lab / "study.py").write_text(source)
+        return lab
+
+    # a study.py that names the hook but cannot be imported: said, not fatal
+    broken = copy("broken", "import a_module_that_is_not_there\nrerun = None\n")
+    assert cli.main(["verify", "--lab", str(broken)]) == 0
     out = json.loads(capsys.readouterr().out)
-    assert (
-        out["reruns"]["checked"] == 0 and "did not load (ModuleNotFoundError" in out["warnings"][0]
-    )
+    assert out["reruns"]["checked"] == 0
+    assert "did not load (ModuleNotFoundError" in out["warnings"][0]
+    # one that never mentions the hook is not imported at all
+    old = copy("old", "raise SystemExit('a study from before the hook: importing it is avoided')\n")
+    assert cli.main(["verify", "--lab", str(old)]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["warnings"] == ["question 0: no loop spec, so its records were not rerun"]
     assert load(tmp_path / "no-such-lab") is None

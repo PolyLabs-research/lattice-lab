@@ -1,8 +1,10 @@
 # Scaling up: a ladder from a rule to its large-scale law (plan)
 
-**Status:** a plan, written 2026-11-23. **Its first step passed the same day: the instrument is
-calibrated** (`examples/scale-up-linear`, 296 of 296 registered cases held). Nothing else in it
-is built. The decisions that are yours are at the end.
+**Status:** a plan, written 2026-11-23. **Steps 0 and 1 are done.** The instrument is
+calibrated (`examples/scale-up-linear`, 296 of 296 registered cases held), and it now lives in
+LatticeLife (`experiments.coarse`, branch `coarse-graining`), which reproduces the calibration's
+3,084 records to the last bit. Steps 2 to 5 are not built. The decisions that are yours are at
+the end.
 
 ## What the ladder is for
 
@@ -115,19 +117,19 @@ From a reading of the pinned LatticeLife (`256450b`) and Kepler (`0af9b28`) on 2
 
 | Need | Exists | Missing |
 | --- | --- | --- |
-| zooming out | `scaleup.py` here: square and hexagon, a sampled cell or a block's parity. LatticeLife's `local.py` has a b x b block test in row and column indices | counts per species, the leading species, the triangle, a home in LatticeLife |
-| the closure test | `scaleup.closure`: two deterministic routes, compared exactly | cells with more than two states; coarse rules that are probabilistic |
+| zooming out | LatticeLife `experiments.coarse` (since step 1): square and hexagon, a sampled cell, a block's parity, each species' count and the leading species | the triangle |
+| the closure test | `coarse.closure` and `run_closure`: two deterministic routes, compared exactly | cells with more than two states; coarse rules that are probabilistic |
 | competing species without the app | nothing. Every headless experiment runs one species (`torus_config` sets `n_lifeforms = 1`), and a session seeds species by mixing them uniformly | sessions with chosen shares and layouts, and their records |
 | a start of your choosing | experiments start from a density and a seed only | explicit starts: shares, half and half, stripes |
 | domains and fronts | cluster counts, damage spreading | interface density, domain size, front speed, time until one species is left |
-| large grids | one update rule, about 55 ns per cell per generation for one species, 93 for two and 125 for three (measured at 512 x 512). Adjacency is built by Python loops | a vectorised adjacency above about 2000 x 2000; nothing else up to 4096 x 4096 |
+| large grids | one update rule, about 55 ns per cell per generation for one species, 93 for two and 125 for three (measured at 512 x 512). Since step 1 a wrapped adjacency is built without loops: 2.5 seconds at 4096 x 4096 | nothing up to 4096 x 4096 |
 | reversible rules | nothing; the engine keeps one generation | a second-order wrapper (step 5) |
 | growth laws | Kepler: `power`, `logarithmic`, the relaxation laws, `fit_replicates` | nothing |
 | a win probability against a starting share | Kepler: `logistic_p` with a binomial likelihood | nothing |
 | the same law across rules or lattices | Kepler: `fit_groups`, `compare_sharing` | nothing |
 | conserved quantities | Kepler: `find_invariants` | wiring it to second-order runs |
 | a probabilistic coarse rule | nothing: Kepler fits closed-form laws, not transition tables | decision D3 |
-| registered tests | `lattice_lab.study` | `verify` cannot rerun a study's records |
+| registered tests | `lattice_lab.study`; since step 1 `verify` reruns the records of a study that names `rerun` | nothing |
 
 Two things turned up that you should know about:
 
@@ -137,30 +139,49 @@ Two things turned up that you should know about:
   its seed, but the next grid depends on the random stream as well as the present grid. That
   matters for anything said about determinism or reversibility of that world, and it is
   decision D1.
-- **The local checkouts are behind the pins.** `~/Documents/dev/latticelife` is at `15aa710`,
-  seven commits before the pinned `256450b`, and has none of `observables.py`, `local.py`,
-  `damage.py`, `series.py` or `cost.py`. `~/Documents/dev/kepler` still points at the old
-  `tripptytrip` remote and has no `src/kepler` at all. Any build starts by fetching.
+- **The local checkouts were behind the pins.** `~/Documents/dev/latticelife` was at
+  `15aa710`, seven commits before the pinned `256450b`; step 1 fetched it and left it on
+  `coarse-graining`. `~/Documents/dev/kepler` still points at the old `tripptytrip` remote and
+  has no `src/kepler` at all, so a Kepler build starts by fetching.
 
 ## Build changes, in order
 
 Each step ends in a gate. A step is not started until the gate before it has passed.
 
-### Step 1: give the instrument a home in LatticeLife
+### Step 1: give the instrument a home in LatticeLife (done 2026-11-23)
 
-- **Where:** a new `latticelife/experiments/coarse.py`, from `scaleup.py`, on a branch from
-  `256450b`.
-- **What:** the block geometry (`coarse_side`, `sample_cells`, `block_cells`), the projections,
-  and the closure test with JSONL records in the house form. Add two projections for species:
-  the count of each species in a block, and the leading species with a stated tie rule.
-- **Also:** a vectorised wrapped adjacency with a `dilation` argument, replacing the Python
-  loops. `dilated_adjacency` here is that code, and at dilation 1 it is LatticeLife's array.
-- **Stable interface:** new names and new fields only, added to `test_stable_api.py`.
-- **In lattice-lab:** move the pin, and give `Study` an optional rerun hook so that
-  `lattice-lab verify` can rerun study records. The calibration's records carry the hash of the
-  fine grid they ended on, so they can be checked byte for byte.
-- **Gate:** the calibration's 296 cases rerun through the LatticeLife module give the same
-  records as `examples/scale-up-linear/records.jsonl`.
+**In LatticeLife** (`PolyLabs-research/gameoflife_advanced`, branch `coarse-graining`, commit
+`d690cae`, one commit on the working branch the old pin was on):
+
+- **`experiments/coarse.py`**, from `scaleup.py`: the block geometry (`coarse_grid`,
+  `sample_cells`, `block_cells`), the projections, worlds, and the closure test, with resumable
+  JSONL records in the house form (`ClosureTask`, `closure_point`, `run_closure`). Grids may be
+  rectangles, as everywhere else in LatticeLife.
+- **Two projections for species:** `block_counts`, each species' cells per block, and
+  `leading_species`, the species with the most. A block with no live cell, or with two species
+  level at the top, has no leader.
+- **`build_adjacency(..., dilation=k)`**, and wrapped grids built in whole-array operations.
+  The array is the one the per-cell loops gave, cell for cell and in the same order, on every
+  shape: the tests compare the two over a range of sizes, and a wider check of 648 grids up to
+  20 x 20 found no difference. A 512 x 512 grid builds about fifteen times faster and a
+  4096 x 4096 one in 2.5 seconds.
+- **Stable interface:** new names only, added to `test_stable_api.py` and the changelog.
+- **Tests:** LatticeLife's whole suite passes, 1,190 tests with the new ones.
+
+**In lattice-lab** (branch `scale-up-step-1`):
+
+- **The pin** moves to `d690cae`.
+- **`Study.rerun`**, an optional fifth thing a study names: one stored record computed again.
+  `lattice-lab verify` reruns sample records of a study that has it, as it always has for the
+  loop's own records. `study.load(DIR)` gives the study a lab directory holds. The calibration
+  has the hook.
+- **`examples/scale-up-linear/promote.py`**, the gate.
+
+**The gate: passed.** Every record of the calibration's registered run, through
+`latticelife.experiments.coarse`: 3,084 of 3,084 identical (`promotion.json`). On the new pin
+lattice-lab's own suite has no new failure (524 pass; the 9 that fail here are the 8 that need
+the optional SCIP install and the one timing test, as before), and `verify` finds no problem in
+any of the 35 ledgers: the older labs' LatticeLife sweeps rerun byte for byte.
 
 ### Step 2: the competitive world without the app, and a first look
 
@@ -332,12 +353,16 @@ What each one gives:
   against HighLife, the pair in LatticeLife's README.
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
   frequencies in lattice-lab first, and a Kepler extension only if a closed form shows up.
-- **D4. When to move the instrument into LatticeLife.** Step 0's verdict is in, so step 1 can
-  start when you say.
+- **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Step 3's two larger sizes need a RunPod launch, which I will cost and ask
   about before starting.
-- **D6. This branch.** `scale-up-linear` holds the study, its tests and this plan. Like the
-  unmerged `ccr-effac3f1-udftpr` (the qec-parents study), it adds its study to the census
-  dashboards' table, so the two meet on one line: the count of studies and predictions in
-  `tests/test_census_dashboards.py`. Whichever is merged second needs that line set to 36
-  studies and 1,624 predictions.
+- **D6. The branches.** Three, none merged and none with a pull request yet:
+  - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
+  - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
+  - LatticeLife `coarse-graining`: the zoom-out module. lattice-lab's pin points at it, so it
+    should stay, or be merged, before `scale-up-step-1` is.
+
+  Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), `scale-up-linear` adds its
+  study to the census dashboards' table, so the two meet on one line: the count of studies and
+  predictions in `tests/test_census_dashboards.py`. Whichever is merged second needs that line
+  set to 36 studies and 1,624 predictions.
