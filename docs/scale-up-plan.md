@@ -8,8 +8,11 @@ tie-break, two of them deterministic. Several species run without the app, and a
 test of the tie-break held on all 15 predictions (`examples/scale-up-tie-break`): it matters
 only where contests are common. Laws fitted for two worlds on grids of side 32 to 256 were
 then tested on grids of side 512 to 4096 (`examples/scale-up-sizes`,
-`examples/scale-up-sizes-large`): all 124 registered predictions held. Steps 4 and 5 are not
-built. The decisions that are yours are at the end.
+`examples/scale-up-sizes-large`): all 124 registered predictions held. One sample in that test
+ran high against the other large grids, so a further registered test on fresh starts asked
+whether the large grids agree with each other (`examples/scale-up-gap`): all nine predictions
+held, and nothing creeps with the size of the grid. Steps 4 and 5 are not built. The
+decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -456,7 +459,7 @@ that from the other side: by zooming out.
 
 **Gate: passed.**
 
-### Step 3b: do the large grids agree with each other? (registered 2026-11-23)
+### Step 3b: do the large grids agree with each other? (done 2026-11-23)
 
 Step 3 left one thing open: with the registered and the fresh starts together, the pair's live
 fraction at side 2048 was 0.0002 above side 4096's, 0.4% of its value. You asked for that to
@@ -482,6 +485,46 @@ fails its claim more than 99 times in 100.
   4096 by more than these margins, and the intervals say how much less. If the live
   fraction's claim for sides 2048 and 4096 fails, the gap is real and step 4 has to allow
   for it.
+
+**The run** (2026-11-23, on a rented machine: 512 runs in 2 hours 11 minutes, sixteen at a
+time, $2.49). All nine predictions held. The ledger verifies, and records computed again on
+this machine, one of them at side 4096, match the pod's byte for byte.
+
+| Mean at generation 1,000 | Side 1024 (384 starts) | Side 2048 (96) | Side 4096 (32) | Largest difference, and its 99% interval | Margin |
+| --- | --- | --- | --- | --- | --- |
+| live fraction | 0.048302 ± 0.000028 | 0.048330 ± 0.000026 | 0.048267 ± 0.000023 | 0.000064 (-0.000027 to 0.000154), sides 2048 and 4096 | 0.0002 |
+| species 1's share of the live cells | 0.56143 ± 0.00032 | 0.56084 ± 0.00035 | 0.56114 ± 0.00017 | 0.00059 (-0.00064 to 0.00181), sides 1024 and 2048 | 0.0028 |
+| unlike share of adjacent pairs | 0.026395 ± 0.000058 | 0.026390 ± 0.000053 | 0.026380 ± 0.000051 | 0.000015 (-0.00019 to 0.00022), sides 1024 and 4096 | 0.00053 |
+
+What it says:
+
+- **The gap is closed.** On fresh starts sides 2048 and 4096 differ by 0.00006 ± 0.00003 in the
+  live fraction: a third of the 0.0002 left after step 3, and a fifth of what the registered
+  samples first showed. A gap of 0.0002 is outside the 99% interval of every pair of sides.
+- **Nothing creeps.** A straight line through the three sides, with the re-check's starts
+  added at side 2048, changes by -0.00002 ± 0.00002 for each doubling of the side: 0.04% ±
+  0.04% of the live fraction. The species balance changes by 0.02% ± 0.03% a doubling and the
+  mixing by 0.03% ± 0.15%. The three sides are what one constant would give (chances of 0.16,
+  0.49 and 0.86). These last figures are from `extras.py` and were not registered.
+- **What is not excluded.** The largest difference is 1.8 standard errors from zero, and both
+  fresh samples at side 2048 (16 and 96 starts) gave 0.04833, where side 4096 gave 0.04827
+  twice. So a real difference of about a tenth of a percent between those two sides is
+  possible. It is not a drift with size: side 1024 lies between them.
+- **The sample that started this stands alone.** The registered sixteen starts at side 2048
+  gave 0.04861, 4.2 standard errors above the 112 fresh starts at the same side. Its records
+  reproduce here to the byte and its starts are independent of each other, so I have nothing
+  but chance to put it down to, and at that distance chance is a poor explanation. It is a
+  loose end in the bookkeeping, not in the world: every later sample at that side disagrees
+  with it.
+- **At generation 200**, where the gap first showed, the three sides are within 0.00002 of each
+  other (± 0.00007).
+- **The spreads** between these three sides fall as the side to the power -1.08, -1.16 and
+  -1.04 (live fraction, species balance, mixing), each ± 0.08. Step 3's hint that the pair's
+  species balance falls more slowly than one over the side did not repeat.
+
+**Gate: passed.** For step 4, between sides 1024 and 4096 the pair's means can be taken as
+constants to within 0.3% for the live fraction and for the species balance, and 0.8% for the
+mixing: those are the widest ends of the 99% intervals above.
 
 ### Step 4: closure for the competitive world
 
@@ -523,6 +566,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 3, sides 512 and 1024, 192 runs | up to 1.0 million | up to 1,000 | 69 minutes | here, two cores |
 | step 3, sides 2048 and 4096, 96 runs | up to 16.8 million | up to 1,000 | 2 hours 20 minutes on fourteen cores of a pod (about 33 core-hours); 3 GB a run at side 4096 | a pod |
 | the re-check, side 2048, 16 runs | 4.2 million | 1,000 | 40 minutes | here, two cores |
+| step 3b, sides 1024, 2048 and 4096, 512 runs | up to 16.8 million | 1,000 | 2 hours 11 minutes on sixteen cores of a pod, $2.49 | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -693,9 +737,9 @@ What each one gives:
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
-- **D7. The remainder at side 2048.** You chose to close it before step 4 (2026-11-23). It
-  is step 3b above: a registered test at three sides, larger than the one first sketched
-  here, on a pod you approved at $1.12 an hour with a six-hour deadline.
+- **D7. The remainder at side 2048.** Done (step 3b). You chose to close it before step 4;
+  the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
+  agreed.
 - **D6. The branches.** Seven, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
@@ -707,9 +751,9 @@ What each one gives:
     `scale-up-step-2` pins. A LatticeLife branch should stay, or be merged, before the
     lattice-lab branch that pins it is;
   - lattice-lab `scale-up-step-3`, on top of `scale-up-step-2`: the registered scale-up test,
-    both parts and both runs.
+    both parts and both runs, and step 3b.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 39
-  studies and 1,763 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 40
+  studies and 1,772 predictions.

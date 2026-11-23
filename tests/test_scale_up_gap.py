@@ -240,5 +240,42 @@ def test_the_ledger_holds_the_registration():
         assert question["body"]["sha256"] == S.question()["sha256"]
 
 
+def test_the_registered_run_found_that_the_large_grids_agree():
+    """The run of 2026-11-23, on a rented machine: all nine predictions held. On fresh starts
+    the three sides' live fractions are within 0.00007 of each other, no difference is as far
+    as two standard errors from zero, and the gap of 0.0002 is outside every 99% interval."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == {"live": "holds", "share": "holds", "unlike": "holds"}
+    assert set(verdict["outcomes"].values()) == {"holds"} and len(verdict["outcomes"]) == 9
+    assert verdict["missing"] == [] and len(ledger.entries[-2]["body"]["rows"]) == 512
+    code = ledger.entries[-3]["body"]["provenance"]["lattice_lab"]
+    assert code["dirty"] is False and code["source"] == "file:///root/run/lattice-lab"
+    means = verdict["means"]["live"]
+    assert [means[side]["starts"] for side in ("1024", "2048", "4096")] == [384, 96, 32]
+    assert math.isclose(means["1024"]["mean"], 0.0483017) and means["1024"]["se"] < 2.9e-5
+    assert math.isclose(means["2048"]["mean"], 0.0483301) and means["2048"]["se"] < 2.6e-5
+    assert math.isclose(means["4096"]["mean"], 0.0482665) and means["4096"]["se"] < 2.4e-5
+    # the pair of sides the question came from: 0.00006 apart, and at most 0.00016 at 99%
+    gap = verdict["differences"]["live, sides 2048 and 4096"]
+    assert math.isclose(gap["difference"], 6.36e-5, rel_tol=1e-3)
+    assert math.isclose(gap["se"], 3.46e-5, rel_tol=1e-2) and -0.00003 < gap["low"]
+    assert gap["high"] < 0.00016 < gap["margin"]
+    scores = {label: d["difference"] / d["se"] for label, d in verdict["differences"].items()}
+    assert max(scores, key=lambda label: abs(scores[label])) == "live, sides 2048 and 4096"
+    assert math.isclose(max(map(abs, scores.values())), 1.84, abs_tol=0.005)
+    for d in verdict["differences"].values():
+        assert -d["margin"] < d["low"] < d["high"] < d["margin"]
+    # at generation 200, where the gap first showed, the sides are level
+    early = verdict["reported"]
+    assert early["live_fraction_at_generation"] == 200
+    assert max(abs(d["difference"]) for d in early["differences"].values()) < 2.5e-5
+    assert early["starts_losing_a_species"] == {"1024": 0, "2048": 0, "4096": 0}
+
+
 def test_verify_can_rerun_the_studys_records():
     assert load(LAB).rerun is not None

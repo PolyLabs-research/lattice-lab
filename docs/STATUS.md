@@ -96,6 +96,7 @@ before the runs that tested them.
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 | Zooming out a parity rule by 2^k with the clock slowed by 2^k gives the rule itself; the scale-up instrument counts none where the scales match and a fair coin per supercell where they do not | **registered calibration, 296 of 296 held** (2026-11-23): no supercell differed in 10.1 million comparisons at blocks 2 to 128, grids up to 768; 36 controls each inside their exact binomial interval. The exact cases are `gstep_iterate_two_pow` and `restrict_iterate`; the controls' law is by machine, not in Lean | [scale-up-plan.md](scale-up-plan.md) |
 | What a world of several species does on grids of side 32 to 256 is what it does on grids up to sixteen times as wide: means are constants, spreads fall as one over the side, and the rare species' blocks are as dense | **registered test, 124 of 124 held** (2026-11-23): 62 predictions at sides 512 and 1024 and the same 62 at sides 2048 and 4096, registered together before either part was run, for Life against HighLife and one five-species soup under two tie-breaks; no comparison beyond 2.5 standard errors. Not registered: set against each other, the large sides agree on eight of nine means; one sample of sixteen starts ran high, and fresh starts did not | [scale-up-plan.md](scale-up-plan.md) |
+| The large grids agree with each other: between sides 1024 and 4096 the pair's live fraction, species balance and mixing do not creep with the size of the grid | **registered test, 9 of 9 held** (2026-11-23), on fresh starts (384, 96 and 32): each pair of sides agrees within 0.0002 for the live fraction by its 99% interval (the largest difference is 0.00006 ± 0.00003), 0.0028 for the species balance and 0.00053 for the mixing. Not registered: 0.04% ± 0.04% change in the live fraction for each doubling of the side | [scale-up-plan.md](scale-up-plan.md) |
 | The birth tie-break changes a world of several species only where contests are common | **registered test, 15 of 15 held** (2026-11-23): the standoff against the random draw; no difference in two Life-like pairs (contests 0.4% of births), nor in five soups with rare contests; in all nine soups where a fifth or more of births are contested the standoff lowers the live fraction, by 0.04 to 0.46 of the grid | [scale-up-plan.md](scale-up-plan.md) |
 
 ## The atlas, where it stands
@@ -193,8 +194,14 @@ running then zooming out matches zooming out then running.
   (`examples/scale-up-sizes-large`, 16 starts each, on a RunPod pod for $2.57). The means are
   the small grids' constants, the spreads fall as one over the side, every species survived
   all 288 runs, and the rare species' blocks are as dense as predicted. One registered sample
-  (the pair at side 2048) ran high against the other large sides; sixteen fresh starts did
-  not, and the plan says what is and is not settled. Steps 4 and 5 are not built.
+  (the pair at side 2048) ran high against the other large sides, and sixteen fresh starts did
+  not.
+- **Step 3b is done: the large grids agree with each other.** A registered test on fresh
+  starts (`examples/scale-up-gap`: the pair at sides 1024, 2048 and 4096; 384, 96 and 32
+  starts; on a RunPod pod for $2.49) held on all nine predictions. The three sides' live
+  fractions are within 0.00007 of each other, the gap of 0.0002 that step 3 left is outside
+  every 99% interval, and a line through the three sides changes by 0.04% ± 0.04% for each
+  doubling of the side. Steps 4 and 5 are not built.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their

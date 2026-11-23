@@ -22,6 +22,9 @@ part has run), and writes extras.json:
   weighted mean, the chi-square against it, and the chance of one that large.
 - **the fresh starts of recheck.py**, where there are any, beside the registered sample they
   repeat.
+- **every start there is** of the pair at the large sides: the scale-up test's, the re-check's
+  and, once it has a verdict, those of the test of whether the large grids agree
+  (examples/scale-up-gap), each sample alone and all together.
 """
 
 from __future__ import annotations
@@ -45,6 +48,8 @@ PARTS = (HERE, HERE.parent / "scale-up-sizes-large")
 QUANTITIES = ("live", "share", "unlike")
 LARGE = 512  # the sides the registered parts ran begin here
 RECHECK = HERE / "recheck" / "records.jsonl"
+GAP = HERE.parent / "scale-up-gap" / "ledger.jsonl"
+PAIR = "pair standoff"
 
 
 def runs_by_world_and_side() -> tuple[dict, dict]:
@@ -86,10 +91,13 @@ def blocks(runs: list[dict], species: int) -> dict:
 def agreement(by_side: dict[int, list[float]]) -> dict:
     """Whether the means at these sides agree with each other: each mean with its standard
     error, their weighted mean, the chi-square of the means against it and the chance of a
-    chi-square that large if one constant lay behind them all."""
+    chi-square that large if one constant lay behind them all; and the slope of a straight
+    line through them against the number of doublings of the side, with its standard error."""
     sides = sorted(by_side)
     means = [statistics.fmean(by_side[s]) for s in sides]
     errors = [statistics.stdev(by_side[s]) / math.sqrt(len(by_side[s])) for s in sides]
+    if min(errors) == 0:  # a side whose starts all agree exactly: nothing to weigh by
+        return {"sides": sides, "mean": means, "se": errors, "chi2": None, "dof": len(sides) - 1}
     weights = [1.0 / e**2 for e in errors]
     centre = sum(w * m for w, m in zip(weights, means, strict=True)) / sum(weights)
     chi2 = sum(w * (m - centre) ** 2 for w, m in zip(weights, means, strict=True))
@@ -99,6 +107,14 @@ def agreement(by_side: dict[int, list[float]]) -> dict:
         for j in range(i + 1, len(sides))
     ]
     widest = max(gaps) if gaps else (0.0, None, None)
+    # a straight line through the means against the number of doublings of the side
+    steps = [math.log2(side) for side in sides]
+    middle = sum(w * x for w, x in zip(weights, steps, strict=True)) / sum(weights)
+    lever = sum(w * (x - middle) ** 2 for w, x in zip(weights, steps, strict=True))
+    slope = (
+        sum(w * (x - middle) * (m - centre) for w, x, m in zip(weights, steps, means, strict=True))
+        / lever
+    )
     return {
         "sides": sides,
         "mean": [laws.signif(m) for m in means],
@@ -108,6 +124,7 @@ def agreement(by_side: dict[int, list[float]]) -> dict:
         "dof": len(sides) - 1,
         "chance": laws.signif(float(stats.chi2.sf(chi2, len(sides) - 1)), 3),
         "widest_gap": {"standard_errors": round(widest[0], 2), "sides": [widest[1], widest[2]]},
+        "change_per_doubling": [laws.signif(slope), laws.signif(math.sqrt(1.0 / lever))],
     }
 
 
@@ -140,6 +157,62 @@ def rechecks(runs: dict) -> list[dict]:
                 entry["together"] = [laws.signif(v) for v in mean_and_error(new + old)]
             row[quantity] = entry
         out.append(row)
+    return out
+
+
+def every_start(runs: dict) -> dict:
+    """The pair's means at each large side from every start there is, sample by sample and all
+    together, and whether the sides agree when all are used. `runs` holds the scale-up test's
+    own; the re-check's and the gap study's are read here (the latter once it has a verdict)."""
+    samples: dict[str, dict[int, list[dict]]] = {"the scale-up test": {}}
+    for (world, side), found in runs.items():
+        if world == PAIR and side >= LARGE:
+            samples["the scale-up test"][side] = found
+    if RECHECK.exists():
+        fresh: dict[int, list[dict]] = {}
+        for line in RECHECK.read_text().splitlines():
+            record = json.loads(line)
+            if laws.world_of(record) == PAIR:
+                fresh.setdefault(int(record["cells"] ** 0.5), []).append(record)
+        samples["the re-check"] = fresh
+    if GAP.exists():
+        entries = Ledger(GAP).entries
+        if entries[-1]["kind"] == "verdict":
+            later: dict[int, list[dict]] = {}
+            for row in entries[-2]["body"]["rows"]:
+                later.setdefault(row["side"], []).append(row)
+            samples["the gap study"] = later
+    out: dict = {"samples": list(samples), "quantities": {}}
+    sides = sorted({side for found in samples.values() for side in found})
+    for quantity in QUANTITIES:
+        rows, pooled = {}, {}
+        for side in sides:
+            row, everything = {}, []
+            for name, found in samples.items():
+                values = [laws.measure(r, quantity, -1) for r in found.get(side, [])]
+                if len(values) > 1:
+                    row[name] = [len(values), *(laws.signif(v) for v in mean_and_error(values))]
+                    everything += values
+            row["together"] = [
+                len(everything),
+                *(laws.signif(v) for v in mean_and_error(everything)),
+            ]
+            rows[str(side)] = row
+            pooled[side] = everything
+        found = {"by_side": rows, "sides_agree": agreement(pooled)}
+        # the starts that came after the question was asked: the re-check's and the gap study's
+        later_only = {
+            side: [
+                laws.measure(r, quantity, -1)
+                for name in ("the re-check", "the gap study")
+                for r in samples.get(name, {}).get(side, [])
+            ]
+            for side in sides
+        }
+        later_only = {side: values for side, values in later_only.items() if len(values) > 1}
+        if len(later_only) > 1:
+            found["sides_agree_on_fresh_starts"] = agreement(later_only)
+        out["quantities"][quantity] = found
     return out
 
 
@@ -193,6 +266,7 @@ def analyse() -> dict:
     for name, verdict in verdicts.items():
         out["scores"][name] = scores(verdict)
     out["recheck"] = rechecks(runs)
+    out["every_start_of_the_pair"] = every_start(runs)
     return out
 
 
@@ -212,7 +286,7 @@ def main() -> None:
             if agree:
                 print(
                     f"   sides {agree['sides']}: chi2 {agree['chi2']} on {agree['dof']}, chance "
-                    f"{agree['chance']}; widest gap {agree['widest_gap']}"
+                    f"{agree.get('chance')}; widest gap {agree.get('widest_gap')}"
                 )
         for side, found in row.get("blocks", {}).items():
             print(f"{world}: side {side}: blocks {found}")
@@ -220,6 +294,22 @@ def main() -> None:
         print(f"{name}: scores {found}")
     for row in results["recheck"]:
         print(f"recheck: {row}")
+    pair = results["every_start_of_the_pair"]
+    print(f"every start of the pair, from {pair['samples']}:")
+    for quantity, found in pair["quantities"].items():
+        for side, row in found["by_side"].items():
+            print(f"   {quantity}, side {side}: {row}")
+        fresh = found.get("sides_agree_on_fresh_starts")
+        if fresh:
+            print(
+                f"   {quantity}, fresh starts only, sides {fresh['sides']}: chi2 {fresh['chi2']} "
+                f"on {fresh['dof']}, chance {fresh.get('chance')}; change per doubling "
+                f"{fresh.get('change_per_doubling')}"
+            )
+        agree = found["sides_agree"]
+        print(
+            f"   {quantity}: chi2 {agree['chi2']} on {agree['dof']}, chance {agree.get('chance')}"
+        )
 
 
 if __name__ == "__main__":

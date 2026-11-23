@@ -363,6 +363,10 @@ def test_the_extras_say_whether_large_grids_agree():
     assert moved["widest_gap"]["sides"] == [2048, 4096]
     assert math.isclose(moved["widest_gap"]["standard_errors"], gap, abs_tol=0.01)
     assert moved["chi2"] > 6 and moved["chance"] < 0.12 and moved["dof"] == 3
+    # a straight line against the number of doublings: level, and then rising
+    assert abs(same["change_per_doubling"][0]) < 1e-12 and same["change_per_doubling"][1] > 0
+    slope, error = moved["change_per_doubling"]
+    assert 0.0002 < slope < 0.001 and slope > 2 * error
 
 
 def test_the_extras_set_fresh_starts_beside_the_registered_ones(tmp_path, monkeypatch):
@@ -390,6 +394,37 @@ def test_the_extras_set_fresh_starts_beside_the_registered_ones(tmp_path, monkey
     assert math.isclose(live["together"][0], 0.305)
     (alone,) = extras.rechecks({})
     assert "registered" not in alone["live"] and math.isclose(alone["share"]["fresh"][0], 0.5)
+
+
+def test_the_extras_put_every_start_of_the_pair_together(tmp_path, monkeypatch):
+    extras = _load("scale_up_sizes_extras", LAB / "extras.py")
+    monkeypatch.setattr(extras, "GAP", tmp_path / "no-ledger.jsonl")
+    fresh = []
+    for seed, z in zip(SEEDS, SCATTER, strict=True):
+        run = _run(seed, live=0.31 + 0.004 * z, cells=2048**2)
+        fresh.append({**run, "rules": ["a", "b"], "tie_break": "standoff"})
+    path = tmp_path / "records.jsonl"
+    path.write_text("".join(json.dumps(r) + "\n" for r in fresh))
+    monkeypatch.setattr(extras, "RECHECK", path)
+    own = {
+        ("pair standoff", side): [
+            _run(s, live=0.3 + 0.004 * z) for s, z in zip(SEEDS, SCATTER, strict=True)
+        ]
+        for side in (256, 2048, 4096)
+    }
+    own["soup random", 4096] = own["pair standoff", 4096]
+    found = extras.every_start(own)
+    assert found["samples"] == ["the scale-up test", "the re-check"]
+    live = found["quantities"]["live"]
+    assert set(live["by_side"]) == {"2048", "4096"}  # the pair, at the large sides only
+    wide = live["by_side"]["2048"]
+    assert (
+        wide["the scale-up test"][0] == wide["the re-check"][0] == 8 and wide["together"][0] == 16
+    )
+    assert math.isclose(wide["the re-check"][1], 0.31, rel_tol=1e-4)
+    assert math.isclose(wide["together"][1], 0.305, rel_tol=1e-4)
+    assert set(live["by_side"]["4096"]) == {"the scale-up test", "together"}
+    assert live["sides_agree"]["sides"] == [2048, 4096] and live["sides_agree"]["dof"] == 1
 
 
 # --- the ledgers ---------------------------------------------------------------------------------
