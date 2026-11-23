@@ -1,9 +1,9 @@
 // Tiny AlphaZero: two charts from the project's own run logs
-// (github.com/PolyLabs-research/Tiny-AlphaZero-v2, RUNLOG-p2_s.md to RUNLOG-p2_ac.md).
+// (github.com/PolyLabs-research/Tiny-AlphaZero-v2, RUNLOG-p2_s.md to RUNLOG-p2_ae.md).
 
 // Each round's two arms: mean score over 200-game reps against Stockfish 16 at skill 5, 10,000
 // nodes a move (six reps an arm to p2_w; twelve in p2_aa; in p2_ab twelve against the 24 of the
-// two four-million runs; 24 an arm in p2_ac), and the round's registered test K1 (change − baseline, 95% interval).
+// two four-million runs; 24 an arm from p2_ac on), and the round's registered test K1 (change − baseline, 95% interval).
 // sep: 1 better and separated, −1 worse and separated, 0 not separated.
 const ROUNDS = [
   { r: "p2_s", lever: "128 simulations again, then a step down", base: ["48", 0.330], arm: ["128", 0.325], d: "−0.005", ci: "−0.033 to +0.023", sep: 0 },
@@ -15,6 +15,9 @@ const ROUNDS = [
   { r: "p2_aa", lever: "the start trained on four million Stockfish-labelled positions alone, each seen about four times: the diagnostic's training, run again", base: ["the start, 12 reps", 0.3810], arm: ["4M, 12 reps", 0.4165], d: "+0.0354", ci: "+0.0112 to +0.0596", sep: 1 },
   { r: "p2_ab", lever: "twice the labelled positions, eight million", base: ["4M, two runs, 24 reps", 0.4214], arm: ["8M, 12 reps", 0.4446], d: "+0.0232", ci: "+0.0011 to +0.0451", sep: 1 },
   { r: "p2_ac", lever: "31.9 million labelled positions: the eight million, plus older self-play and rated human games from Lichess", base: ["8M, 24 reps", 0.4405], arm: ["31.9M, 24 reps", 0.5280], d: "+0.0875", ci: "+0.0694 to +0.1055", sep: 1 },
+  // RUNLOG-p2_ad.md §4 (K1: H17 − S17), RUNLOG-p2_ae.md §4 (K1: F26 − S17)
+  { r: "p2_ad", lever: "at 16,845,607 positions, human-game positions in place of older self-play", base: ["older self-play, 24 reps", 0.5156], arm: ["human games, 24 reps", 0.4855], d: "−0.0301", ci: "−0.0467 to −0.0135", sep: -1 },
+  { r: "p2_ae", lever: "8,845,607 positions of fresh self-play by the standing network, added to p2_ad's older-self-play set", base: ["16.8M, 24 reps", 0.5195], arm: ["25.7M, 24 reps", 0.5068], d: "−0.0127", ci: "−0.0294 to +0.0041", sep: 0 },
 ];
 const VERDICT = { 1: "better, separated", 0: "not separated", [-1]: "worse, separated" };
 
@@ -35,7 +38,7 @@ function drawLevers() {
   const svg = $("levers-chart"), W = chartWidth(svg), narrow = W < 560, H = narrow ? 300 : 360;
   const L = narrow ? 40 : 58, R = narrow ? 6 : 16, T = 24, B = narrow ? 30 : 42;
   sizeChart(svg, W, H);
-  const n = ROUNDS.length, slot = (W - L - R) / n, dx = narrow ? 7 : 10;
+  const n = ROUNDS.length, slot = (W - L - R) / n, dx = narrow ? 5 : 10;
   const F = frame({ W, H, L, R, T, B, x: { min: 0, max: n, ticks: [] },
                     y: { min: 0.30, max: 0.54, ticks: [0.30, 0.34, 0.38, 0.42, 0.46, 0.50, 0.54], fmt: v => v.toFixed(2), label: narrow ? "" : "score against skill 5" } });
   let s = F.markup;
@@ -51,8 +54,9 @@ function drawLevers() {
     // only the changes that separated carry their difference as a label
     // kept inside the chart's right edge, where the last round's label would be cut off
     const lx = Math.min(xa, W - R - (narrow ? 26 : 30));
-    if (r.sep) s += `<text x="${lx.toFixed(1)}" y="${(ya + (r.sep > 0 ? -13 : 23)).toFixed(1)}" text-anchor="middle" ${FONT} style="fill: var(--ink)">${r.d}</text>`;
-    s += `<text x="${cx.toFixed(1)}" y="${H - B + 18}" text-anchor="middle" ${FONT} style="fill: var(--muted)">${narrow ? r.r.slice(3) : r.r}</text>`;  // on a phone eight names do not fit: "ac" for p2_ac
+    // on a phone ten rounds leave no room for the labels: a tap on a round gives its test
+    if (r.sep && !narrow) s += `<text x="${lx.toFixed(1)}" y="${(ya + (r.sep > 0 ? -13 : 23)).toFixed(1)}" text-anchor="middle" ${FONT} style="fill: var(--ink)">${r.d}</text>`;
+    s += `<text x="${cx.toFixed(1)}" y="${H - B + 18}" text-anchor="middle" ${FONT} style="fill: var(--muted)">${narrow ? r.r.slice(3) : r.r}</text>`;  // on a phone the full names do not fit: "ac" for p2_ac
   });
   s += `<rect id="lv-cursor" x="0" y="${T}" width="${slot.toFixed(1)}" height="${H - T - B}" style="fill: var(--ink)" opacity="0"/>`;
   svg.innerHTML = s;

@@ -1,11 +1,11 @@
 {
   "_comment": "The commit on each repository's default branch that the website was last checked against. The nightly review (site/REVIEW.md) reads what has been committed since, and moves each commit forward when it opens its pull request. Change by hand only to make the review look again at older work.",
-  "reviewed": "2026-11-18",
+  "reviewed": "2026-11-23",
   "repos": {
     "lattice-lab": {
       "repo": "PolyLabs-research/lattice-lab",
       "public": true,
-      "commit": "27f9396b19354db83d905450150bc3aedc9475e8",
+      "commit": "51c1e1dd6867111c97d774dd2f4d5822f177f7eb",
       "pages": [
         "lattice",
         "model",
@@ -21,7 +21,7 @@
     "tiny-alphazero": {
       "repo": "PolyLabs-research/Tiny-AlphaZero-v2",
       "public": true,
-      "commit": "98280c9cf26f3980185cf0c6743cbaa9ad457bf6",
+      "commit": "dec2e32922050ebbd2b88df63a4c3ba4b9fc184a",
       "pages": [
         "tiny-alphazero"
       ]
