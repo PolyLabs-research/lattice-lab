@@ -72,7 +72,9 @@ fail() {
 }
 
 ready=$("${RP[@]}" wait-ssh "$POD" --timeout 900) || fail "no SSH"
-read -r -a SSH <<< "${ready#ssh ready: }"  # resolved once: nothing below asks the API again until the end
+line=$(echo "$ready" | sed -n 's/^ssh ready: //p' | tail -1)
+[ -n "$line" ] || fail "no ssh command in: $ready"
+read -r -a SSH <<< "$line"  # resolved once: nothing below asks the API again until the end
 say "ssh: ${SSH[-1]}"
 
 # a host can be many times slower than it should be: time a plain loop (0.24 s on the lab's machine)
@@ -92,14 +94,23 @@ say "job started on $POD"
 
 while :; do
     sleep 180
+    # the state is read before the pull: once it says done, what the pull brings is final
+    state=$("${SSH[@]}" 'cat /root/run/STATE' 2> /dev/null)
     pull
-    state=$(cat "$OUT/pulled/STATE" 2> /dev/null)
     records=$(wc -l < "$OUT/pulled/records.jsonl" 2> /dev/null || echo 0)
     say "state: ${state:-?}; $records of 96 records"
     case "$state" in
         done)
-            kind=$(tail -1 "$OUT/pulled/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["kind"])')
-            [ "$kind" = verdict ] || fail "done, but the pulled ledger ends with $kind"
+            kind=none
+            for _ in 1 2 3 4 5; do  # the pod is deleted only once its results are here
+                kind=$(tail -1 "$OUT/pulled/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["kind"])')
+                records=$(wc -l < "$OUT/pulled/records.jsonl" 2> /dev/null || echo 0)
+                [ "$kind" = verdict ] && [ "$records" = 96 ] && break
+                sleep 20
+                pull
+            done
+            [ "$kind" = verdict ] && [ "$records" = 96 ] \
+                || fail "done, but the pulled ledger ends with $kind and there are $records records"
             terminate
             say "done: the ledger and $records records are in $OUT/pulled"
             notify-send "lattice-lab sizes-large" "done: $records records pulled" 2> /dev/null || true
