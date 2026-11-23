@@ -146,6 +146,16 @@ tried) explain three square rules at 25, 29, 35, 53 and 55. The seventh pilot's 
 
 ## Open questions, roughly in order
 
+**A new direction: scaling up** ([scale-up-plan.md](scale-up-plan.md), 2026-11-23). A ladder
+from a rule to its large-scale law: zoom out by blocks, propose a coarse rule, and test whether
+running then zooming out matches zooming out then running. Step 0 is registered and **not yet
+run**: `examples/scale-up-linear` calibrates the instrument on LatticeLife's four parity rules,
+where the answers are theorems (296 predictions: exact agreement at powers of two up to 128, and
+a fair coin per supercell where the scales do not match). Run it with
+`python examples/scale-up-linear/study.py run --workers 1`. The plan's later steps (competing
+species, a registered test at 1024 to 4096, reversible variants) need the build changes it
+lists, and its decisions are open.
+
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
 logical qubits are read off the same characters. Its first step, a registered rediscovery test

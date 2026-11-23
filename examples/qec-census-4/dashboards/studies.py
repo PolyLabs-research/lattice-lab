@@ -33,6 +33,7 @@ AREAS = {
                    "llm-pilot-37", "llm-pilot-37b", "llm-pilot-37c"],
     "Settling times": ["lab-b2s34", "settling-time-replication", "settling-universality",
                        "settling-time-local"],
+    "Scaling up": ["scale-up-linear"],
 }  # fmt: skip
 CODE_AREAS = ("Code census", "Code distances")
 WORDS = {"pass": "held", "hold": "held", "holds": "held", "supported": "held",
@@ -237,6 +238,23 @@ def settling_replication(P, v, ctx):
     return out, f"survivors: {', '.join(v['survivors'])}"
 
 
+def scale_up_linear(P, v, ctx):
+    bad = {r["case"]: r["outcome"] for r in v["not_holding"]}
+    words = {"fails": "failed", "missing": "incomplete", "untested": "not tested"}
+    out = []
+    for b in P:
+        zero = b["predicted"] == "zero"
+        expects = "no supercell differs" if zero else "a fair coin per supercell"
+        text = (f"{b['kind']}: {b['shape']} {b['rule']}, side {b['side']}, block {b['block']}, "
+                f"clock {b['clock']}, {b['projection']}; {expects}")  # fmt: skip
+        out.append(row(f"{b['hypothesis']} case {b['case']}", text,
+                       words.get(bad.get(b["case"]), "held")))  # fmt: skip
+    h = v["hypotheses"]
+    return out, f"{v['verdict']}: " + ", ".join(
+        f"{k} {h[k]['holds']} of {h[k]['cases']}" for k in sorted(h)
+    )
+
+
 def settling_universality(P, v, ctx):
     out = []
     for b in P:
@@ -386,7 +404,8 @@ READERS = {
     "parity-lattices-hexagon": parity_lattices_hexagon, "parity-lattices": parity_lattices,
     "xor-periods": xor_periods, "xor-periods-algebra": xor_periods, "rule-4850": rule_4850,
     "settling-time-local": settling_local, "settling-time-replication": settling_replication,
-    "settling-universality": settling_universality, "qec-bb": qec_bb,
+    "settling-universality": settling_universality, "scale-up-linear": scale_up_linear,
+    "qec-bb": qec_bb,
     "qec-distance": qec_distance, "qec-distance-2": qec_distance_2,
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,
     "qec-census-3c": parts, "qec-census-3d": lambda P, v, c: parts(P, v, c, key="id"),
