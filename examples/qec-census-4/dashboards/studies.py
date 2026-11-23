@@ -33,7 +33,8 @@ AREAS = {
                    "llm-pilot-37", "llm-pilot-37b", "llm-pilot-37c"],
     "Settling times": ["lab-b2s34", "settling-time-replication", "settling-universality",
                        "settling-time-local"],
-    "Scaling up": ["scale-up-linear", "scale-up-tie-break"],
+    "Scaling up": ["scale-up-linear", "scale-up-tie-break", "scale-up-sizes",
+                   "scale-up-sizes-large"],
 }  # fmt: skip
 CODE_AREAS = ("Code census", "Code distances")
 WORDS = {"pass": "held", "hold": "held", "holds": "held", "supported": "held",
@@ -262,6 +263,13 @@ def scale_up_tie_break(P, v, ctx):
     return out, ", ".join(f"{claim} {v['verdict'][claim]}" for claim in ("S", "A", "B"))
 
 
+def scale_up_sizes(P, v, ctx):
+    words = {"missing": "incomplete"}
+    out = [row(b["label"], b["claim"], words.get(v["outcomes"][b["label"]]) or
+               word(v["outcomes"][b["label"]])) for b in P]  # fmt: skip
+    return out, ", ".join(f"{family} {v['verdict'][family]}" for family in v["verdict"])
+
+
 def settling_universality(P, v, ctx):
     out = []
     for b in P:
@@ -412,7 +420,8 @@ READERS = {
     "xor-periods": xor_periods, "xor-periods-algebra": xor_periods, "rule-4850": rule_4850,
     "settling-time-local": settling_local, "settling-time-replication": settling_replication,
     "settling-universality": settling_universality, "scale-up-linear": scale_up_linear,
-    "scale-up-tie-break": scale_up_tie_break,
+    "scale-up-tie-break": scale_up_tie_break, "scale-up-sizes": scale_up_sizes,
+    "scale-up-sizes-large": scale_up_sizes,
     "qec-bb": qec_bb,
     "qec-distance": qec_distance, "qec-distance-2": qec_distance_2,
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,
@@ -445,7 +454,8 @@ def build(examples: Path, interim4: dict) -> tuple[list[dict], list[dict]]:
         for e in entries:
             times.setdefault(e["kind"], e["time"])
         if v is None and folder not in ("qec-census-3b", "qec-census-4", "qec-census-4d"):
-            rows = [row(b["body"].get("part") or b["body"].get("test") or b["seq"],
+            rows = [row(b["body"].get("part") or b["body"].get("test") or
+                        b["body"].get("label") or b["seq"],
                         _text(b["body"]), "no verdict") for b in P]  # fmt: skip
             summary = "no verdict in the ledger"
         else:

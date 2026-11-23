@@ -270,6 +270,18 @@ What this says:
   with d = 1.86 ± 0.22 and 1.86 ± 0.25: within one standard error of 2, as if each patch of
   the grid had its own small chance of keeping the species. No species was lost in the pair
   at any size.
+- **That one thing is a lottery of the start** (found on 2026-11-23 in the same records,
+  while preparing step 3). What is left of B4/S3 never changes after generation 20 and is
+  always a multiple of four cells: 2 x 2 blocks. Nothing can break a block, because a cell is
+  only ever born into an empty place and each species counts its own kind alone. So the species
+  lives on when at least one block forms in the first generations, and is gone by generation 3
+  when none does. The blocks are as dense at every size, 44 per million cells under the draw
+  and 27 under the standoff, and their number scatters over the starts as independent events
+  do (variance over mean 1.02 and 1.12). That density gives the survival seen at each side
+  with nothing fitted to survival: under the draw 1.4, 3.1, 5.2, 10.6, 16.3, 25.6 and 30.2
+  starts of 32, against the 2, 2, 4, 11, 18, 22 and 29 seen. So this is more of the same too:
+  a large grid keeps the species because it has room for a block, and the logistic curve was
+  a description of that, not a law of its own.
 - **The two worlds relax differently.** The pair's live fraction falls slowly, as a power of
   time; the soup's settles exponentially, in tens of generations.
 - **The standoff halves the soup's contests** as well as lowering its live fraction: 72% of
@@ -282,20 +294,49 @@ c = 0.042 is where its curve points beyond generation 1,000, which nothing here 
 
 ### Step 3: the registered scale-up test
 
-**What step 2 gives it to test**, at sides larger than any seen (512 to 4096), for the same
-two worlds:
+**Registered 2026-11-23**, in two parts from one set of laws, before either was run, so that
+neither part's predictions can lean on the other's results:
 
-- the means do not move: each lies in the band its constant gives (for instance the soup's
-  live fraction under the draw between 0.7659 and 0.7664 at every side);
-- the spreads keep falling as one over the side (the pair's live fraction to 0.0005 at 1024);
-- every species of the soup survives in at least 98% of runs at 1024 under the draw (the
-  logistic curve gives 0.995), where 9% failed to at 256;
-- the time laws' constants are the ones found at 256.
+- `examples/scale-up-sizes`: sides 512 and 1024, 32 starts each, run here;
+- `examples/scale-up-sizes-large`: sides 2048 and 4096, 16 starts each, for a pod.
 
-- **What:** the laws fitted up to 256 predict the same quantities at 1024, 2048 and 4096. The
-  predictions are registered with their bands and then run.
-- **Where it runs:** 1024 here on one or two cores; 2048 and 4096 on a RunPod CPU pod
-  (`docs/runpod-setup.md`), because of this machine's heat limit.
+The same three worlds as the laws (Life against HighLife under the standoff, soup 19 under the
+draw and under the standoff), from starts no earlier run used. Each part makes 62 claims, all
+read from the step-2 fits (`examples/scale-up-compete/laws/results.json`, hashed into the
+question):
+
+| Claims | What is predicted at each new side |
+| --- | --- |
+| mean (22) | the mean over the starts of the live fraction, of species 1's share and of the unlike share of pairs is the constant fitted at sides 32 to 256; in the soup, so is the rare species' share of the grid (174 cells per million under the draw, 110 under the standoff) |
+| spread (22) | the spread of each over the starts is an amplitude over the side: the exponent held at -1 and the amplitude fitted at sides 32 to 256. For the rare species nothing is fitted: independent blocks give a spread of sqrt(4 x density) / side |
+| survival (6) | every species is alive at the end in at least 31 of 32 starts at side 512 under the draw, in at least 30 under the standoff, and in every start at the larger sides; the pair loses no species |
+| time (12) | the live fraction's law against time, refitted at the new side, settles where it did at side 256 and as fast: c and b of c + a (1 + t/τ)^-b for the pair, c and τ of c + a exp(-t/τ) for the soup |
+
+A claim holds when the measurement is within 3.29 combined standard errors of the law's value
+(the 99.9% level). The level is strict because a part makes 62 claims: at it, laws that are
+exactly right fail a claim in about one part in sixteen. Spreads are compared in logarithms.
+
+Two things changed from what this section said before the registration, both worked out from
+the step-2 records alone:
+
+- **The spreads are tested as one over the side exactly**, not as the fitted power with its
+  own error. That is the claim itself, and it is sharper: at side 4096 the fitted powers would
+  have allowed a spread anywhere within a factor of 3 of the law, and this allows 1.9.
+- **Survival is predicted from the blocks' density**, not from the logistic curve. The curve
+  gave "at least 24 of 32" at side 512, which is less than the 29 of 32 already seen at 256;
+  the density gives "at least 31 of 32", and adds a test that still means something where
+  every start survives: the rare species' share of the grid, and its spread.
+
+**A dry run on data already seen.** The same code, with laws fitted to the smaller step-2
+sides and judged at the larger ones (up to 192 judged at 256; up to 128 judged at 192 and 256;
+up to 96 judged at 128, 192 and 256): every claim held, the largest gap was 2.4 standard
+errors, and 5 of 168 were above 2, which is what chance gives. This checks the method, not the
+laws, which were chosen on this data.
+
+- **Where it runs:** 512 and 1024 here on two cores; 2048 and 4096 on a RunPod CPU pod
+  (`docs/runpod-setup.md`), because of this machine's heat limit. A run at side 4096 takes
+  about 3 GB and 20 to 25 minutes on one core; the 96 runs of the large part come to about 23
+  core-hours.
 - **Gate:** the verdict, whichever way it goes. A failure says where the small grids stop being
   a guide, which is the horizon the ladder is for.
 
