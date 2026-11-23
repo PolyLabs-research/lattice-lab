@@ -6,17 +6,17 @@
  "identical": 3084,
  "different": [],
  "not_rerun": 0,
- "seconds": 207,
+ "seconds": 202,
  "provenance": {
   "lattice_lab": {
    "version": "0.1.0",
-   "commit": "3070e629a988af2a39256953771412738a699aaa",
+   "commit": "15594f41851755d968dacd3f745605f9eb7133bc",
    "dirty": false,
    "source": "file:///home/michael/Documents/dev/lattice-lab"
   },
   "latticelife": {
    "version": "0.1.0",
-   "commit": "d690caeff3b202fac4aef91854238e8f24ac771f",
+   "commit": "456e044f9d725e7853c2f54d781e4cda180ed1f6",
    "dirty": false,
    "source": "https://github.com/PolyLabs-research/gameoflife_advanced"
   },
