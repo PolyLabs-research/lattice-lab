@@ -1,10 +1,11 @@
 # Scaling up: a ladder from a rule to its large-scale law (plan)
 
-**Status:** a plan, written 2026-11-23. **Steps 0 and 1 are done.** The instrument is
-calibrated (`examples/scale-up-linear`, 296 of 296 registered cases held), and it now lives in
-LatticeLife (`experiments.coarse`, branch `coarse-graining`), which reproduces the calibration's
-3,084 records to the last bit. Steps 2 to 5 are not built. The decisions that are yours are at
-the end.
+**Status:** a plan, written 2026-11-23. **Steps 0 and 1 are done, and the birth tie-break is
+a setting.** The instrument is calibrated (`examples/scale-up-linear`, 296 of 296 registered
+cases held), and it now lives in LatticeLife (`experiments.coarse`), which reproduces the
+calibration's 3,084 records to the last bit. LatticeLife's update rule takes four kinds of
+tie-break, two of them deterministic (branch `tie-break`). Steps 2 to 5 are not built. The
+decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -121,6 +122,7 @@ From a reading of the pinned LatticeLife (`256450b`) and Kepler (`0af9b28`) on 2
 | the closure test | `coarse.closure` and `run_closure`: two deterministic routes, compared exactly | cells with more than two states; coarse rules that are probabilistic |
 | competing species without the app | nothing. Every headless experiment runs one species (`torus_config` sets `n_lifeforms = 1`), and a session seeds species by mixing them uniformly | sessions with chosen shares and layouts, and their records |
 | a start of your choosing | experiments start from a density and a seed only | explicit starts: shares, half and half, stripes |
+| the birth tie-break | a setting since 2026-11-23: `random` (as before), `standoff`, `strongest`, `weighted`; contested cells counted every generation | a hidden layer; noise in the rule |
 | domains and fronts | cluster counts, damage spreading | interface density, domain size, front speed, time until one species is left |
 | large grids | one update rule, about 55 ns per cell per generation for one species, 93 for two and 125 for three (measured at 512 x 512). Since step 1 a wrapped adjacency is built without loops: 2.5 seconds at 4096 x 4096 | nothing up to 4096 x 4096 |
 | reversible rules | nothing; the engine keeps one generation | a second-order wrapper (step 5) |
@@ -133,12 +135,13 @@ From a reading of the pinned LatticeLife (`256450b`) and Kepler (`0af9b28`) on 2
 
 Two things turned up that you should know about:
 
-- **The competitive world is not a function of the grid alone.** With one species the update is
-  deterministic. With two or more, a dead cell that two species could both be born into goes to
-  one of them by a random draw (`core/lattice.py`, the birth step). A run is reproducible from
-  its seed, but the next grid depends on the random stream as well as the present grid. That
-  matters for anything said about determinism or reversibility of that world, and it is
-  decision D1.
+- **The competitive world was not a function of the grid alone.** With one species the update
+  is deterministic. With two or more, a dead cell that two species could both be born into went
+  to one of them by a random draw (`core/lattice.py`, the birth step). A run was reproducible
+  from its seed, but the next grid depended on the random stream as well as the present grid.
+  That matters for anything said about determinism or reversibility of that world. It was
+  decision D1, and the tie-break is now a setting: the draw is still the default, and two of
+  the other kinds make the world a function of its grid.
 - **The local checkouts were behind the pins.** `~/Documents/dev/latticelife` was at
   `15aa710`, seven commits before the pinned `256450b`; step 1 fetched it and left it on
   `coarse-graining`. `~/Documents/dev/kepler` still points at the old `tripptytrip` remote and
@@ -170,7 +173,7 @@ Each step ends in a gate. A step is not started until the gate before it has pas
 
 **In lattice-lab** (branch `scale-up-step-1`):
 
-- **The pin** moves to `d690cae`.
+- **The pin** moved to `d690cae`, and on to `456e044` when the tie-break was built (below).
 - **`Study.rerun`**, an optional fifth thing a study names: one stored record computed again.
   `lattice-lab verify` reruns sample records of a study that has it, as it always has for the
   loop's own records. `study.load(DIR)` gives the study a lab directory holds. The calibration
@@ -262,8 +265,9 @@ later it must reproduce the one update rule cell for cell, with a test that says
 ## The birth tie-break (decision D1), in full
 
 **What it is.** With two or more species, a dead cell can satisfy the birth rule of more than
-one of them at once. LatticeLife then gives the cell to one of them by a random draw with equal
-odds (`core/lattice.py`). Everything else in the update is a function of the grid.
+one of them at once. LatticeLife gave the cell to one of them by a random draw with equal odds
+(`core/lattice.py`), and still does unless told otherwise. Everything else in the update is a
+function of the grid.
 
 **How often it acts.** A first look on 2026-11-23, exploratory and not a registered result:
 256 x 256, Life against Life and Life against HighLife, 600 generations from a mixed start, two
@@ -280,6 +284,22 @@ A contest needs exactly three neighbours of each species round one empty cell, w
 once the first crowded generations have passed. So for these pairs the species compete almost
 entirely by occupying cells the other needs, and the tie-break is a rare event. Whether it
 still shapes the large scale is a question step 2 can answer.
+
+**In `autorun`'s own soups it is the opposite.** A second look the same day, once contests
+were counted by the engine: 24 `autorun` sessions as it makes them (random rules with one to
+four birth counts each, 1 to 10 species, 50 x 50, 100 generations, the random draw). Again
+exploratory.
+
+| Species | Sessions | Contested cells a generation, of 2,500 | Share of births that are contested |
+| --- | --- | --- | --- |
+| 2 | 5 | 26 | 4% |
+| 3 to 5 | 9 | 217 to 315 | 26% to 33% |
+| 7 to 10 | 7 | 445 to 591 | 40% to 69% |
+
+Over the 22 sessions with two or more species, 38% of all births were contested. (One session
+of six species sat at 2%: the rules drawn matter as much as their number.) With rules drawn
+at random and several species, the tie-break is a large part of the dynamics, and its kind
+should be expected to change them: a standoff withholds a third of the births.
 
 **The options.** There are two separate choices: how the odds are set among the species that
 could be born, and where the draw comes from.
@@ -333,22 +353,49 @@ What each one gives:
   certain or an exact fair coin. This is established mathematics that has not been checked
   against the lab's code; it is a pointer for step 5.
 
-**Recommendation.**
+**Built on 2026-11-23**, ahead of step 2 at your word (LatticeLife branch `tie-break`, commit
+`456e044`, which lattice-lab pins). The tie-break is a setting of the one update rule:
+`simulation.tie_break` in the config, `--tie-break` on `ui` and `autorun`, `TieBreak` in code.
 
-1. Step 2 studies the world as it is.
-2. Make the tie-break a named setting in LatticeLife, with today's draw as the default, and add
-   the standoff first. Then compare the two worlds' large-scale laws, with the expectation
-   registered beforehand. Given how rarely a contest happens, the expectation is no difference.
-3. Add the weighted draw only if (2) shows the tie-break matters, and the hidden layer with
-   step 5.
-4. If the aim is randomness that shapes the large scale, build the noisy rule as its own world.
+| `tie_break` | Who is born in a contested cell | Draws? |
+| --- | --- | --- |
+| `random`, the default | one of the eligible species, each with the same chance: the rule as it was, draw for draw | yes |
+| `standoff` | nobody | no |
+| `strongest` | the eligible species with the most cells within `tie_break_radius` steps (2 unless set); nobody if the top is shared | no |
+| `weighted` | a draw, with chances in proportion to that count raised to `tie_break_power`; power 0 is `random`, draw for draw | yes |
+
+- **What the tests show.** Each kind does what the table says on a single contested cell worked
+  by hand. A deterministic kind never advances the generator, and two different generators
+  give one trajectory. No species is favoured by its id or its place in the list. One species
+  runs the same under all four. With strengths of 4 against 3 the weighted draw gives the
+  stronger species 4/7, 16/25 and 0.909 of 3,000 cells at powers 1, 2 and 8, each inside five
+  standard deviations.
+- **Contests are counted.** Every generation's contested cells are in its result
+  (`UpdateResult.contested`), under every kind, so how often the tie-break acts is data from
+  now on and needs no special measurement.
+- **The recorder.** A new `autorun` database records each session's tie-break and each
+  generation's contested cells (schema v3). A database from before is left as it is and takes
+  only sessions that draw at random, which is what every session in it did.
+- **Nothing else moved.** The draw is still the default and is the rule as it was, draw for
+  draw. On the new pin LatticeLife's suite passes (1,269 tests), the calibration's 3,084
+  records come out identical again, lattice-lab's suite has no new failure, and `verify` finds
+  no problem in any of the 35 ledgers.
+- **Not built:** the hidden layer (with step 5), and noise in the rule itself (its own world,
+  if you want it). The app's settings panel does not offer the tie-break yet: set it in the
+  config, or start the app with `--tie-break`.
+- **Not yet compared.** Nothing here says whether the kinds differ at large scale. That is
+  step 2's first question, and the expectations are to be registered before the comparison is
+  run: no difference for Life-like pairs, where contests are rare, and a clear difference for
+  soups of several species with random rules, where they are a third of the births.
 
 ## Decisions for you
 
-- **D1. The tie-break.** The section above sets out the options. In short: study the world as
-  it is in step 2, add the standoff as a second world and compare, and treat randomness that
-  matters as a separate lever (noise in the rule). Step 5 needs a tie-break that is a function
-  of the grid for more than one species.
+- **D1. The tie-break.** Decided on 2026-11-23: build the setting first, so the option is
+  there for discovery. It is built (the section above). What stays open is which kinds and
+  which worlds step 2 compares. I recommend the draw against the standoff first, then
+  `strongest`, in two worlds: a Life-like pair, where contests are rare, and an `autorun`-style
+  soup of several species, where they are common. Noise in the rule is a separate lever, not
+  built.
 - **D2. Which contest first.** I recommend Life against Life (the symmetric control), then Life
   against HighLife, the pair in LatticeLife's README.
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
@@ -356,11 +403,12 @@ What each one gives:
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Step 3's two larger sizes need a RunPod launch, which I will cost and ask
   about before starting.
-- **D6. The branches.** Three, none merged and none with a pull request yet:
+- **D6. The branches.** Four, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
-  - LatticeLife `coarse-graining`: the zoom-out module. lattice-lab's pin points at it, so it
-    should stay, or be merged, before `scale-up-step-1` is.
+  - LatticeLife `coarse-graining`: the zoom-out module;
+  - LatticeLife `tie-break`, on top of it: the tie-break setting. lattice-lab's pin points at
+    this one, so it should stay, or be merged, before `scale-up-step-1` is.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), `scale-up-linear` adds its
   study to the census dashboards' table, so the two meet on one line: the count of studies and

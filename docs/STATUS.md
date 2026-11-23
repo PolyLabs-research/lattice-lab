@@ -28,11 +28,12 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
   into lattice-lab on GitHub, at `main`.
 - **Licences.** lattice-lab's code is under Apache-2.0 and everything else under CC BY 4.0
   ([README](../README.md#licence)). Kepler and LatticeLife have no licence yet.
-- **Pins.** lattice-lab pins LatticeLife `d690cae` and Kepler `0af9b28` (`pyproject.toml`,
-  `uv.lock`). LatticeLife's pin is its branch `coarse-graining`: the working branch, whose
-  commits after `256450b` change only the README, plus the zoom-out module of the scale-up
-  plan's step 1 (2026-11-23). Kepler's is current for code: every later commit on its working
-  branch changes only the README.
+- **Pins.** lattice-lab pins LatticeLife `456e044` and Kepler `0af9b28` (`pyproject.toml`,
+  `uv.lock`). LatticeLife's pin is its branch `tie-break`: the working branch, whose commits
+  after `256450b` change only the README, plus two commits of the scale-up plan (2026-11-23),
+  the zoom-out module (`coarse-graining`, `d690cae`) and the birth tie-break as a setting.
+  Kepler's is current for code: every later commit on its working branch changes only the
+  README.
 - **The move.** Links, the Kepler pin's URL and the lockfile point at PolyLabs-research. The
   study ledgers still record `tripptytrip` URLs in their provenance. That is deliberate: they are
   hash-chained records of what ran, and GitHub redirects the old URLs.
@@ -163,10 +164,14 @@ running then zooming out matches zooming out then running.
   passed: LatticeLife's module reproduces all 3,084 records of the calibration
   (`examples/scale-up-linear/promote.py`, `promotion.json`). A study can now name `rerun`, and
   `lattice-lab verify` then reruns its records.
+- **The birth tie-break is a setting** in LatticeLife (2026-11-23, built ahead of step 2):
+  the random draw as before, or `standoff`, `strongest` or `weighted`. With `standoff` or
+  `strongest` a world of several species is a function of its grid. First counts, exploratory:
+  the tie-break decides under half a percent of births in Life-like contests, and about 38%
+  of them in `autorun`'s soups of several species with random rules. Whether the kinds differ
+  at large scale has not been tested.
 - **Next is step 2**, the competitive world without the app, then steps 3 to 5. None of that is
-  built, and the plan's decisions are open. The first is the multi-species birth tie-break,
-  which the plan sets out in full: a first count found it decides under half a percent of
-  births.
+  built, and the rest of the plan's decisions are open.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
