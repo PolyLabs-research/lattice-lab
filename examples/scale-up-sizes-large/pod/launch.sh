@@ -1,30 +1,39 @@
 #!/usr/bin/env bash
-# Run part 2 of the scale-up test (sides 2048 and 4096) on a rented CPU pod, from the lab's own
-# machine: rent the pod, check its speed, start the registered run there, bring the ledger and
-# the records back as they grow, and delete the pod when the verdict is in, when anything
-# fails, or ten minutes before the deadline. Started detached, so it does not depend on the
-# session that started it:
+# Run a registered study on a rented CPU pod, from the lab's own machine: rent the pod, check
+# its speed, start the registered run there, bring the ledger and the records back as they
+# grow, and delete the pod when the verdict is in, when anything fails, or ten minutes before
+# the deadline. Started detached, so it does not depend on the session that started it:
 #
 #   systemd-run --user --unit=sizes-large --collect \
 #       bash examples/scale-up-sizes-large/pod/launch.sh HOURS MAX_RATE
 #   e.g. HOURS 6 and MAX_RATE 1.12 (cpu5c, 32 vCPUs): $6.72 at most
 #
+# It was written for part 2 of the scale-up test (sides 2048 and 4096), which is what it runs
+# unless told otherwise. For another study set STUDY (its folder), TESTS (the test files the
+# pod runs first) and, if the runs are light, WORKERS:
+#
+#   STUDY=examples/scale-up-gap TESTS=tests/test_scale_up_gap.py WORKERS=16
+#
 # Large pods are often out of stock for minutes at a time. SIZES names the sizes that will do,
 # best first (FLAVOUR:VCPUS, e.g. "cpu5c:32 cpu5g:16 cpu5c:16"), and WAIT the minutes to keep
 # asking; the first in stock under MAX_RATE is taken.
 #
-# The log and the pulled files go to ~/lattice-lab-runs/sizes-large/. Nothing in the repository
-# is changed: when the run is done, copy pulled/ledger.jsonl and pulled/records.jsonl into
-# examples/scale-up-sizes-large/, verify, and commit. The pod's own deadline and the sweeper
-# timer on this machine cap the cost whatever happens to this script.
+# The log and the pulled files go to ~/lattice-lab-runs/NAME/ (NAME is the study's folder
+# without "scale-up-"). Nothing in the repository is changed: when the run is done, copy
+# pulled/ledger.jsonl and pulled/records.jsonl into the study's folder, verify, and commit.
+# The pod's own deadline and the sweeper timer on this machine cap the cost whatever happens
+# to this script.
 set -u
 HOURS=${1:?hours}
 MAX_RATE=${2:?the confirmed ceiling in dollars an hour}
 SIZES=${SIZES:-cpu5c:32}
 WAIT=${WAIT:-0}
-REPO=$(cd "$(dirname "$0")/../../.." && pwd)
-D=examples/scale-up-sizes-large
-OUT=$HOME/lattice-lab-runs/sizes-large
+HERE=$(cd "$(dirname "$0")" && pwd)
+REPO=$(git -C "$HERE" rev-parse --show-toplevel)
+D=${STUDY:-examples/scale-up-sizes-large}
+TESTS=${TESTS:-tests/test_scale_up_sizes.py}
+NAME=${NAME:-$(basename "$D" | sed 's/^scale-up-//')}
+OUT=$HOME/lattice-lab-runs/$NAME
 mkdir -p "$OUT/pulled"
 exec >> "$OUT/launch.log" 2>&1
 CHESS=$HOME/Documents/dev/chess
@@ -42,10 +51,12 @@ git fetch -q origin "$BRANCH"
 [ "$(tail -1 "$D/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["kind"])')" = prediction ] \
   || { say "the ledger does not end with the registration"; exit 1; }
 [ ! -e "$D/records.jsonl" ] || { say "there are records already"; exit 1; }
+RECORDS=$(head -1 "$D/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["body"]["runs"])')
+[ -n "$RECORDS" ] || { say "the question does not say how many runs there are"; exit 1; }
 
-say "launch: one of $SIZES, $HOURS h cap, at most \$$MAX_RATE/h, asking for $WAIT minutes; $BRANCH at ${COMMIT:0:8}"
+say "launch: $D ($RECORDS runs) on one of $SIZES, $HOURS h cap, at most \$$MAX_RATE/h, asking for $WAIT minutes; $BRANCH at ${COMMIT:0:8}"
 # shellcheck disable=SC2086  # SIZES is a list
-"$PY" -u "$D/pod/cpu_pod.py" --sizes $SIZES --hours "$HOURS" --max-rate "$MAX_RATE" --wait "$WAIT" --yes 2>&1 | tee "$OUT/launch.out"
+"$PY" -u "$HERE/cpu_pod.py" --tag "latticelab-$NAME" --sizes $SIZES --hours "$HOURS" --max-rate "$MAX_RATE" --wait "$WAIT" --yes 2>&1 | tee "$OUT/launch.out"
 got=$(grep '^launched ' "$OUT/launch.out" | tail -1)
 POD=$(echo "$got" | sed -n 's/^launched \([a-z0-9]*\) .*/\1/p')
 DEADLINE=$(echo "$got" | sed -n 's/^launched [a-z0-9]* taz-[a-z0-9_-]*-dl\([0-9]*\) .*/\1/p')
@@ -84,7 +95,7 @@ fail() {
     say "FAILED: $*"
     pull
     terminate
-    notify-send -u critical "lattice-lab sizes-large" "failed: $*" 2> /dev/null || true
+    notify-send -u critical "lattice-lab $NAME" "failed: $*" 2> /dev/null || true
     exit 1
 }
 
@@ -104,8 +115,8 @@ say "speed gate: $gate s"
 awk -v t="$gate" -v most="$GATE" 'BEGIN { exit !(t > most) }' \
     && fail "a slow host: $gate s for a loop that takes 0.24 s here (at most $GATE s allowed)"
 
-"${SSH[@]}" 'cat > /root/pod-run.sh' < "$D/pod/pod-run.sh" || fail "staging"
-timeout 30 "${SSH[@]}" "nohup setsid bash /root/pod-run.sh $BRANCH $COMMIT $WORKERS > /root/pod-run.out 2>&1 < /dev/null &" > /dev/null 2>&1
+"${SSH[@]}" 'cat > /root/pod-run.sh' < "$HERE/pod-run.sh" || fail "staging"
+timeout 30 "${SSH[@]}" "nohup setsid bash /root/pod-run.sh $BRANCH $COMMIT $WORKERS $D '$TESTS' > /root/pod-run.out 2>&1 < /dev/null &" > /dev/null 2>&1
 sleep 45
 "${SSH[@]}" 'test -s /root/run/STATE' || fail "the job did not start"
 say "job started on $POD"
@@ -116,22 +127,22 @@ while :; do
     state=$("${SSH[@]}" 'cat /root/run/STATE' 2> /dev/null)
     pull
     records=$(cat "$OUT/pulled/records.jsonl" 2> /dev/null | wc -l)
-    say "state: ${state:-?}; $records of 96 records"
+    say "state: ${state:-?}; $records of $RECORDS records"
     case "$state" in
         done)
             kind=none
             for _ in 1 2 3 4 5; do  # the pod is deleted only once its results are here
                 kind=$(tail -1 "$OUT/pulled/ledger.jsonl" | "$PY" -c 'import json, sys; print(json.loads(sys.stdin.read())["kind"])')
                 records=$(cat "$OUT/pulled/records.jsonl" 2> /dev/null | wc -l)
-                [ "$kind" = verdict ] && [ "$records" = 96 ] && break
+                [ "$kind" = verdict ] && [ "$records" = "$RECORDS" ] && break
                 sleep 20
                 pull
             done
-            [ "$kind" = verdict ] && [ "$records" = 96 ] \
+            [ "$kind" = verdict ] && [ "$records" = "$RECORDS" ] \
                 || fail "done, but the pulled ledger ends with $kind and there are $records records"
             terminate
             say "done: the ledger and $records records are in $OUT/pulled"
-            notify-send "lattice-lab sizes-large" "done: $records records pulled" 2> /dev/null || true
+            notify-send "lattice-lab $NAME" "done: $records records pulled" 2> /dev/null || true
             exit 0
             ;;
         failed*) fail "the pod's run: $state" ;;

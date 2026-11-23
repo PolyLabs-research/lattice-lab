@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
-# Part 2 of the scale-up test (sides 2048 and 4096) on a rented machine: set up, test, run.
+# A registered study on a rented machine: set up, test, run. By default part 2 of the scale-up
+# test (sides 2048 and 4096).
 #
-#   bash pod-run.sh BRANCH COMMIT WORKERS
+#   bash pod-run.sh BRANCH COMMIT WORKERS [STUDY_FOLDER] [TEST_FILES]
 #
 # Clones lattice-lab (public, so no token) at COMMIT of BRANCH, installs the locked versions,
-# runs the study's own tests (which check that the code and the laws are as registered), records
-# the hardware, and runs the registered study. A second start resumes a run that was cut short.
+# runs the study's own tests (which check that the code is as registered), records the
+# hardware, and runs the registered study. A second start resumes a run that was cut short.
 # /root/run/STATE says where it is: setup, selftest, running, done, or failed with the reason.
 # Nothing is pushed from here: the machine that started this pulls the ledger and the records.
 set -uo pipefail
 BRANCH=${1:?branch}
 COMMIT=${2:?commit}
 WORKERS=${3:?workers}
+D=${4:-examples/scale-up-sizes-large}
+TESTS=${5:-tests/test_scale_up_sizes.py}
 W=/root/run
-D=examples/scale-up-sizes-large
 mkdir -p "$W"
 exec > >(tee -a "$W/pod-run.log") 2>&1
 state() { echo "$*" > "$W/STATE"; echo "=== $(date -u +%FT%TZ) $*"; }
@@ -42,7 +44,8 @@ uv sync --frozen --group dev -q || die "uv sync"
 
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 state selftest
-uv run --no-sync pytest -q tests/test_scale_up_sizes.py || die "the study's tests"
+# shellcheck disable=SC2086  # TESTS is a list of files
+uv run --no-sync pytest -q $TESTS || die "the study's tests"
 
 if grep -q '"run_started"' "$D/ledger.jsonl"; then step=resume; else step=run; fi
 state "running ($step, $WORKERS workers)"

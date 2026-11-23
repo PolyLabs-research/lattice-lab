@@ -456,6 +456,33 @@ that from the other side: by zooming out.
 
 **Gate: passed.**
 
+### Step 3b: do the large grids agree with each other? (registered 2026-11-23)
+
+Step 3 left one thing open: with the registered and the fresh starts together, the pair's live
+fraction at side 2048 was 0.0002 above side 4096's, 0.4% of its value. You asked for that to
+be closed before step 4, because step 4 compares a world with its zoomed-out self, and a mean
+that crept with the size of the grid would be in the way of that.
+
+`examples/scale-up-gap`: Life against HighLife under the standoff, as in step 3, at sides
+1024, 2048 and 4096 from starts no earlier run used: 384, 96 and 32 of them, which gives the
+three sides' mean live fractions about the same standard error (0.000025). The test I
+sketched in decision D7, sixteen more starts at two sides, would not have been enough: its
+interval would have been as wide as the gap.
+
+Nine predictions. For each pair of sides, the means at generation 1,000 differ by less than a
+margin: 0.0002 for the live fraction (the gap seen), 0.0028 for species 1's share of the
+live cells (0.5% of its value) and 0.00053 for the unlike share of adjacent pairs (2%). A
+claim holds when the 99% interval of the difference lies inside the margin. If the sides
+truly agree, all nine pass about 98 times in 100; a real gap of 0.0002 in the live fraction
+fails its claim more than 99 times in 100.
+
+- **Where it runs:** the same kind of pod as step 3's large part, about 24 core-hours of this
+  machine.
+- **Gate:** the verdict. If the claims hold, the means do not creep between sides 1024 and
+  4096 by more than these margins, and the intervals say how much less. If the live
+  fraction's claim for sides 2048 and 4096 fails, the gap is real and step 4 has to allow
+  for it.
+
 ### Step 4: closure for the competitive world
 
 - **What:** propose coarse rules on the leading species of each block and measure the closure
@@ -666,13 +693,9 @@ What each one gives:
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
-- **D7. The remainder at side 2048** (new, 2026-11-23). With the registered and the fresh
-  starts together, the pair's live fraction at side 2048 is 3.5 standard errors above side
-  4096's, 0.4% of its value. Sixteen more starts of the pair at each of the two sides would
-  say whether that is one unlucky sample: about 8 core-hours, which is an hour and about $1
-  on a pod, or four hours here on two cores. It should be registered, with the prediction
-  that the two sides agree. It changes nothing in what step 3 showed, so I would only do it
-  if the fourth decimal matters to you before step 4.
+- **D7. The remainder at side 2048.** You chose to close it before step 4 (2026-11-23). It
+  is step 3b above: a registered test at three sides, larger than the one first sketched
+  here, on a pod you approved at $1.12 an hour with a six-hour deadline.
 - **D6. The branches.** Seven, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;

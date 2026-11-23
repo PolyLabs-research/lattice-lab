@@ -81,10 +81,10 @@ def stock(rp: cloud.RunPod, sizes: list[tuple[str, int]]) -> list[dict]:
     return out
 
 
-def body(deadline: int, flavor: str, vcpu: int, disk_gb: int) -> dict:
+def body(deadline: int, flavor: str, vcpu: int, disk_gb: int, tag: str = TAG) -> dict:
     """RunPod's REST v2 request for a CPU pod (checked against its published schema)."""
     return {
-        "name": cloud.pod_name(TAG, deadline),
+        "name": cloud.pod_name(tag, deadline),
         "image": IMAGE,
         "cloud": "SECURE",
         "cpu": {"id": flavor, "vcpuCount": vcpu},
@@ -101,7 +101,7 @@ def launch(rp: cloud.RunPod, found: dict, args: argparse.Namespace, balance: flo
     deleted at once), None when RunPod had none after all."""
     limits = cloud.Limits.load()
     deadline = int(time.time() + args.hours * 3600)
-    request = body(deadline, found["flavor"], found["vcpu"], args.disk)
+    request = body(deadline, found["flavor"], found["vcpu"], args.disk, args.tag)
     try:
         pod = rp.create_pod(request)
     except cloud.CloudError as error:
@@ -144,6 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-rate", type=float, required=True, help="the confirmed $/h ceiling")
     parser.add_argument("--wait", type=float, default=0, help="minutes to keep asking for stock")
     parser.add_argument("--disk", type=int, default=20, help="container disk, GB")
+    parser.add_argument("--tag", default=TAG, help="the pod's name carries it: [a-z0-9_-]")
     parser.add_argument("--yes", action="store_true", help="actually create the pod")
     args = parser.parse_args(argv)
     try:
