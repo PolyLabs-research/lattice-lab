@@ -90,6 +90,7 @@ before the runs that tested them.
 | Codes of the published form on every stage-1 torus (n ≤ 200): which tori have codes, their k, and exact distances | **stage 1 of a census, exploratory**: 3,330 classes on 35 of 116 tori, every d exact by the search, 297 cross-checked by the program with none disagreeing, independently rechecked; the gross code has the highest k d²/n; an exact criterion for which tori have codes is proved by hand and matches all 116; stage 2, registered on the held-out tori, is next | [code-census.md](code-census.md) |
 | The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum. The fault (SCIP's XOR presolving) was then fixed, the search made faster, and a second registered test on fresh codes found both instruments hold (`examples/qec-distance-2`) | [code-distances.md](code-distances.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
+| Zooming out a parity rule by 2^k with the clock slowed by 2^k gives the rule itself; the scale-up instrument counts none where the scales match and a fair coin per supercell where they do not | **registered calibration, 296 of 296 held** (2026-11-23): no supercell differed in 10.1 million comparisons at blocks 2 to 128, grids up to 768; 36 controls each inside their exact binomial interval. The exact cases are `gstep_iterate_two_pow` and `restrict_iterate`; the controls' law is by machine, not in Lean | [scale-up-plan.md](scale-up-plan.md) |
 
 ## The atlas, where it stands
 
@@ -148,13 +149,16 @@ tried) explain three square rules at 25, 29, 35, 53 and 55. The seventh pilot's 
 
 **A new direction: scaling up** ([scale-up-plan.md](scale-up-plan.md), 2026-11-23). A ladder
 from a rule to its large-scale law: zoom out by blocks, propose a coarse rule, and test whether
-running then zooming out matches zooming out then running. Step 0 is registered and **not yet
-run**: `examples/scale-up-linear` calibrates the instrument on LatticeLife's four parity rules,
-where the answers are theorems (296 predictions: exact agreement at powers of two up to 128, and
-a fair coin per supercell where the scales do not match). Run it with
-`python examples/scale-up-linear/study.py run --workers 1`. The plan's later steps (competing
-species, a registered test at 1024 to 4096, reversible variants) need the build changes it
-lists, and its decisions are open.
+running then zooming out matches zooming out then running.
+- **Step 0 is done: calibrated.** `examples/scale-up-linear` tried the instrument on
+  LatticeLife's four parity rules, where the answers are known. All 296 registered cases held:
+  no supercell differed at blocks from 2 to 128 on grids up to 768 x 768 (10.1 million
+  comparisons), and the 36 controls at mismatched scales each fell inside their exact binomial
+  interval. The run took 3.5 minutes on one core.
+- **Next is step 1**, moving the instrument into LatticeLife, and then the competitive world
+  (steps 2 to 4) and reversible variants (step 5). None of that is built, and the plan's
+  decisions are open. The first is whether the multi-species birth tie-break stays a random
+  draw.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their

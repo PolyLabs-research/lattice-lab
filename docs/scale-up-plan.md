@@ -1,8 +1,8 @@
 # Scaling up: a ladder from a rule to its large-scale law (plan)
 
-**Status:** a plan, written 2026-11-23. Its first step is built and registered and has not been
-run: `examples/scale-up-linear`, 296 predictions. Nothing else in it is built. The decisions that
-are yours are at the end.
+**Status:** a plan, written 2026-11-23. **Its first step passed the same day: the instrument is
+calibrated** (`examples/scale-up-linear`, 296 of 296 registered cases held). Nothing else in it
+is built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -44,7 +44,7 @@ run, written to a ledger and pushed before the run.
 This measures whether a simpler world stands in for a finer one, in these automata. It says
 nothing about physics.
 
-## Step 0: calibrate the instrument on linear rules (registered)
+## Step 0: calibrate the instrument on linear rules (registered; calibrated)
 
 `examples/scale-up-linear`. The instrument is `scaleup.py`: worlds, projections and the closure
 test, on LatticeLife's own update rule. Before its count is trusted on rules whose answer nobody
@@ -82,14 +82,28 @@ less than once in a million runs.
 What was seen before registration is declared in the question: the instrument was written and
 tested on fine sides 12, 16, 18 and 24, and no registered case uses them.
 
+**The run (2026-11-23, 3.5 minutes on one core): calibrated.** Every case held.
+
+| | Cases | Held | What the records show |
+| --- | --- | --- | --- |
+| H0 | 32 | 32 | no cell differed |
+| H1 | 228 | 228 | no supercell differed; with H0, 10,105,746 comparisons, and between 20% and 80% of supercells live in every one, so none was a comparison of two dead grids |
+| H2 | 36 | 36 | every total inside its interval; the shares that differed ran from 0.4959 to 0.5046, and over all controls 820,478 of 1,640,448 |
+
+Two things the records show that were not registered as tests:
+
+- Where the group ring gave all but one coin independent, it also said every start's count
+  must be even. All 768 such counts are even. Of the 1,536 counts where every coin is
+  independent, 760 are odd.
+- The spread of a control's 64 counts is the binomial spread: the ratio of the two variances
+  has a median of 1.03 over the 36 controls, and runs from 0.63 to 1.39.
+
 ```bash
-uv run --no-sync python examples/scale-up-linear/study.py run --workers 1   # a few minutes
 uv run --no-sync lattice-lab verify --lab examples/scale-up-linear
 ```
 
-The verdict is `calibrated`, `not calibrated` or `incomplete`. Passing shows that the
-instrument reports a true zero as zero, and a true half as a half within its exact interval. It
-does not show that any other rule can be coarse-grained.
+The verdict shows that the instrument reports a true zero as zero, and a true half as a half
+within its exact interval. It does not show that any other rule can be coarse-grained.
 
 The triangle is left out. Its rule is a 2 x 2 matrix M with M² = s I, and Frobenius scales s,
 not M, so the zoomed-out clock should count pairs of generations. That is untested, and is a
@@ -146,7 +160,7 @@ Each step ends in a gate. A step is not started until the gate before it has pas
   `lattice-lab verify` can rerun study records. The calibration's records carry the hash of the
   fine grid they ended on, so they can be checked byte for byte.
 - **Gate:** the calibration's 296 cases rerun through the LatticeLife module give the same
-  records.
+  records as `examples/scale-up-linear/records.jsonl`.
 
 ### Step 2: the competitive world without the app, and a first look
 
@@ -208,7 +222,7 @@ At the measured 55, 93 and 125 ns per cell per generation for one, two and three
 
 | Run | Cells | Generations | One run | Where |
 | --- | --- | --- | --- | --- |
-| step 0, all 296 cases | up to 590,000 | up to 256 | a few minutes in total | here, one core |
+| step 0, all 296 cases | up to 590,000 | up to 256 | 3.5 minutes in total (measured) | here, one core |
 | step 2, two species at 256 | 65,536 | 4,096 | 25 seconds | here |
 | step 3, two species at 1024 | 1.0 million | 4,096 | 7 minutes | here, one or two cores |
 | step 3, two species at 4096 | 16.8 million | 4,096 | 1.8 hours, an estimated 2 GB | a pod, one run per core |
@@ -235,8 +249,8 @@ later it must reproduce the one update rule cell for cell, with a test that says
   against HighLife, the pair in LatticeLife's README.
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
   frequencies in lattice-lab first, and a Kepler extension only if a closed form shows up.
-- **D4. When to move the instrument into LatticeLife.** I recommend after step 0's verdict, as
-  step 1 says, not before.
+- **D4. When to move the instrument into LatticeLife.** Step 0's verdict is in, so step 1 can
+  start when you say.
 - **D5. The pod.** Step 3's two larger sizes need a RunPod launch, which I will cost and ask
   about before starting.
 - **D6. This branch.** `scale-up-linear` holds the study, its tests and this plan. Like the

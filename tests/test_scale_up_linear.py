@@ -265,6 +265,41 @@ def test_the_ledger_holds_the_registration():
         assert question["body"]["sha256"] == S.question()["sha256"]
 
 
+def test_the_registered_run_calibrated_the_instrument():
+    """The run of 2026-11-23: every case held. No supercell differed where the scales match, and
+    every control's total lay inside the interval registered with it."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    kinds = [e["kind"] for e in ledger.entries]
+    assert kinds[-3:] == ["run_started", "observations", "verdict"] and len(kinds) == 300
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == "calibrated" and verdict["not_holding"] == []
+    assert {h: (c["cases"], c["holds"]) for h, c in verdict["hypotheses"].items()} == {
+        "H0": (32, 32),
+        "H1": (228, 228),
+        "H2": (36, 36),
+    }
+    cases = {e["body"]["case"]: e["body"] for e in ledger.entries if e["kind"] == "prediction"}
+    rows = ledger.entries[-2]["body"]["rows"]
+    zero = [r for r in rows if cases[r["case"]]["predicted"] == "zero"]
+    half = [r for r in rows if cases[r["case"]]["predicted"] == "half"]
+    assert len(zero) == 780 and len(half) == 2304
+    assert sum(sum(r["mismatches"]) for r in zero) == 0
+    assert sum(r["supercells"] * len(r["mismatches"]) for r in zero) == 10_105_746
+    assert all(0 < live < r["supercells"] for r in zero for live in r["live"])
+    assert sum(r["supercells"] for r in half) == 1_640_448
+    assert sum(r["mismatches"][0] for r in half) == 820_478
+    for control in verdict["controls"]:
+        assert control["accept"][0] <= control["total"] <= control["accept"][1]
+    # where the group ring gave rank N - 1, every start's count is even; at rank N about half are
+    constrained = [r for r in half if cases[r["case"]]["supercells"] > cases[r["case"]]["rank"]]
+    free = [r for r in half if cases[r["case"]]["supercells"] == cases[r["case"]]["rank"]]
+    assert len(constrained) == 768 and not any(r["mismatches"][0] % 2 for r in constrained)
+    assert sum(r["mismatches"][0] % 2 for r in free) == 760 and len(free) == 1536
+
+
 def _git(path: Path, *args: str) -> None:
     subprocess.run(
         ["git", "-C", str(path), "-c", "user.name=t", "-c", "user.email=t@t", *args],
