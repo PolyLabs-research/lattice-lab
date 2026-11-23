@@ -328,6 +328,27 @@ def test_a_part_registers_runs_and_judges_on_small_grids(tmp_path):
     assert summary.startswith("mean ") and readers.READERS["scale-up-sizes-large"]
 
 
+# --- what else the runs show (exploratory) -------------------------------------------------------
+
+
+def test_the_extras_count_blocks_and_scores():
+    extras = _load("scale_up_sizes_extras", LAB / "extras.py")
+    counts = [0, 1, 1, 2, 2, 2, 3, 5]
+    runs = [_run(s, rare=4 * n, cells=10**6) for s, n in zip(SEEDS, counts, strict=True)]
+    found = extras.blocks(runs, 3)
+    assert found["blocks_per_run"] == 2.0 and found["per_million_cells"] == 2.0
+    assert found["starts_with_none"] == 1 and found["every_count_a_multiple_of_four"]
+    assert math.isclose(found["variance_over_mean"], 1.14, abs_tol=0.005)  # 16 / 7 over 2
+    odd = extras.blocks([_run(1, rare=6), _run(2, rare=8)], 3)
+    assert not odd["every_count_a_multiple_of_four"]
+    assert extras.blocks([_run(1, rare=0), _run(2, rare=0)], 3)["variance_over_mean"] is None
+    verdict = {"details": {"a": {"score": 0.5}, "b": {"score": -2.5}, "c": {"measured": 32},
+                           "d": {"score": 3.1}}}  # fmt: skip
+    told = extras.scores(verdict)
+    assert (told["comparisons"], told["beyond_2"], told["beyond_3"]) == (3, 2, 1)
+    assert told["largest"] == 3.1 and told["expected_beyond_2"] == 0.1
+
+
 # --- the ledgers ---------------------------------------------------------------------------------
 
 
@@ -348,6 +369,52 @@ def test_the_ledger_holds_the_registration(part):
     if "verdict" not in kinds:  # between registration and the run, nothing may move
         assert question["body"]["sha256"] == now["sha256"]
         assert question["body"]["laws_sha256"] == now["laws_sha256"]
+
+
+def test_the_registered_run_at_sides_512_and_1024_held():
+    """The run of 2026-11-23: all 62 predictions held. No comparison was as far as 2.3 standard
+    errors, every species survived all 192 runs, and the rare species was left as blocks of
+    four, as dense as on the small grids."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == dict.fromkeys(S.FAMILIES, "holds")
+    assert set(verdict["outcomes"].values()) == {"holds"} and len(verdict["outcomes"]) == 62
+    assert verdict["missing"] == [] and len(ledger.entries[-2]["body"]["rows"]) == 192
+    details = verdict["details"]
+    scores = {label: abs(d["score"]) for label, d in details.items() if "score" in d}
+    assert len(scores) == 56 and sum(s > 2 for s in scores.values()) == 2
+    assert max(scores, key=scores.get) == "pair standoff, side 512: spread share"
+    assert max(scores.values()) == 2.26
+    assert max(s for label, s in scores.items() if ": mean " in label) == 1.12
+    for label, found in details.items():
+        if label.endswith("survival"):
+            assert (found["measured"], found["of"]) == (32, 32)
+    # the soup's live fraction under the draw is the small grids', to four places
+    for side in (512, 1024):
+        live = details[f"soup random, side {side}: mean live"]
+        assert abs(live["measured"] - 0.76615) < 1e-4 and live["se"] < 1e-4
+    # the rare species: blocks of four, settled by the first sample, at the small grids' density
+    for name, told in verdict["reported"].items():
+        assert told["starts"] == 32 and not any(told["starts_losing_each_species"])
+        if name.startswith("soup"):
+            rare = told["rare_species"]
+            assert rare["every_count_a_multiple_of"] == 4 and rare["cells_at_the_end"][0] >= 8
+            assert rare["unchanged_from_generation"] == 20
+    for world, per_million in (("soup random", 174.452), ("soup standoff", 109.84)):
+        for side in (512, 1024):
+            found = details[f"{world}, side {side}: mean rare"]
+            assert math.isclose(found["predicted"] * 1e6, per_million)
+            assert abs(found["measured"] * 1e6 - per_million) < 14
+    # the pair's law against time: both sides give the same constants, about two standard
+    # errors below those of side 256, which the looser fit there allows
+    for name, value in (("b", 1.086), ("c", 0.0395)):
+        found = [details[f"pair standoff, side {side}: time {name}"] for side in (512, 1024)]
+        assert all(math.isclose(f["measured"], value, rel_tol=2e-3) for f in found)
+        assert all(-2.2 < f["score"] < -1.7 for f in found)
 
 
 def test_both_parts_were_registered_before_either_was_run():

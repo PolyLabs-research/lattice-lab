@@ -340,6 +340,57 @@ laws, which were chosen on this data.
 - **Gate:** the verdict, whichever way it goes. A failure says where the small grids stop being
   a guide, which is the horizon the ladder is for.
 
+**The run at sides 512 and 1024** (2026-11-23: 192 runs in 69 minutes on two cores). All 62
+predictions held. The ledger verifies, and four records computed again came out byte for byte.
+
+| Claims | Result at 512 and 1024 |
+| --- | --- |
+| mean (22) | all hold, none further than 1.2 standard errors from its constant. The soup's live fraction under the draw is 0.76608 ± 0.00008 and 0.76622 ± 0.00004, against 0.76615 ± 0.00013; the pair's at generation 1,000 is 0.04839 at both sides, against 0.04864 ± 0.00027 |
+| spread (22) | all hold. The furthest is the pair's species balance at side 512: 0.0142 against 0.0104, 2.3 standard errors (at 1024, 0.0066 against 0.0052, 1.7) |
+| survival (6) | every species alive at the end of all 192 runs |
+| time (12) | all hold. The soup settles as fast as at 256: τ = 39.0 and 39.3 against 39.4 ± 0.6 under the draw, 14.5 and 14.9 against 15.1 ± 0.3 under the standoff. The pair's c and b come out about two standard errors below the values from side 256, at both sides (see below) |
+
+The rare species is where the test had most to lose, and it held: under the draw it holds 165
+± 9 and 162 ± 4 cells per million at the two sides, against the 174 ± 14 of the small grids;
+under the standoff 119 ± 9 and 106 ± 3, against 110 ± 11. Every count is a multiple of four
+and none changes after generation 20. A start at side 512 has 11 blocks on average under the
+draw and 8 under the standoff, and none had fewer than two.
+
+What the records show beyond the predictions (`examples/scale-up-sizes/extras.py`,
+exploratory):
+
+- **The errors quoted were the right size.** Of the 56 comparisons with a score, two are
+  beyond 2 standard errors (2.5 expected by chance) and none beyond 3; their root mean square
+  is 0.91, where 1 is exact.
+- **One over the side, more tightly.** Refitted over all nine sides, the nine powers run from
+  -0.92 to -1.03 with errors of 0.04 to 0.05, about half of step 2's. All are within 1.8
+  standard errors of -1. The two furthest are both the species balance (the pair's, -0.92 ±
+  0.05, and the soup's under the standoff, -0.93 ± 0.05), which is worth watching at the
+  larger sides.
+- **The means, more tightly.** `constant` still ranks first for all nine over nine sides, and
+  the constants are now known three times better: the pair's live fraction 0.04841 ± 0.00008,
+  the soup's 0.76619 ± 0.00004 under the draw and 0.5001 ± 0.0001 under the standoff.
+- **The pair's law against time was loosely pinned at 256.** Sides 512 and 1024 give the same
+  constants to three figures: c = 0.0395, τ = 51, b = 1.09, against 0.0425, 75 and 1.33 from
+  side 256. The curves themselves agree: averaged over generations 500 to 1,000 the live
+  fraction is 0.05106 ± 0.00029 on sides 128 to 256 and 0.05096 ± 0.00010 on 512 and 1024. So
+  this is four constants trading against each other on a noisier curve, not the world changing
+  with size, and the better values are the new ones: the pair is heading for a live fraction
+  of 0.040, not 0.042, and nears it about as one over the time. The large part's predictions
+  for c and b were registered from side 256 and cannot be changed; expect them to hold by the
+  same two standard errors.
+
+**What this does and does not show.** Laws fitted on grids up to 256 across predicted grids
+four times as wide, in 62 ways, at the precision the starts allow. How much a mean could have
+moved before its claim failed differs a great deal: 0.06% for the soup's live fraction under
+the draw, 2% for the pair's live fraction and species balance, 8% for the pair's mixing, and
+about a quarter for the rare species' density. A spread off by a factor of 1.6 would have
+failed. It does not show that nothing is organised over longer distances than 1,024 cells,
+and the sixteen starts of the large part will test the spreads less sharply (a factor of 1.9)
+than this part did.
+
+**Gate: half passed.** The large part is registered and waits for a pod (decision D5).
+
 ### Step 4: closure for the competitive world
 
 - **What:** propose coarse rules on the leading species of each block and measure the closure
@@ -370,18 +421,30 @@ laws, which were chosen on this data.
 
 ## What the runs cost
 
-At the measured 55, 93 and 125 ns per cell per generation for one, two and three species. The
-4,096 generations are a placeholder: step 2 will say how long a run needs to be.
+Measured, on one core of this machine unless it says otherwise.
 
-| Run | Cells | Generations | One run | Where |
+| Run | Cells | Generations | Cost | Where |
 | --- | --- | --- | --- | --- |
-| step 0, all 296 cases | up to 590,000 | up to 256 | 3.5 minutes in total (measured) | here, one core |
-| step 2, two species at 256 | 65,536 | 4,096 | 25 seconds | here |
-| step 3, two species at 1024 | 1.0 million | 4,096 | 7 minutes | here, one or two cores |
-| step 3, two species at 4096 | 16.8 million | 4,096 | 1.8 hours, an estimated 2 GB | a pod, one run per core |
+| step 0, all 296 cases | up to 590,000 | up to 256 | 3.5 minutes in total | here, one core |
+| step 2, the tie-break test, 3,584 runs | up to 16,384 | up to 600 | 12 minutes | here, one core |
+| step 2, the laws, 672 runs | up to 65,536 | up to 1,000 | 13 minutes | here, one core |
+| step 3, sides 512 and 1024, 192 runs | up to 1.0 million | up to 1,000 | 69 minutes | here, two cores |
+| step 3, side 2048, 48 runs | 4.2 million | up to 1,000 | about 4.4 core-hours (timed on a few generations); under 1 GB a run | a pod |
+| step 3, side 4096, 48 runs | 16.8 million | up to 1,000 | about 19 core-hours (timed on a few generations); 3 GB a run | a pod |
 
-Sixteen starts at 4096 are about 28 core-hours. No step needs a faster engine. If one is wanted
-later it must reproduce the one update rule cell for cell, with a test that says so.
+A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
+little more per cell on the largest grids, which no longer fit the processor's cache. The
+pair's runs came out faster than the timing said (16 s at side 512 against 23 s), because
+most of the grid is empty after the first hundred generations.
+
+**The pod for the large part** (priced 2026-11-23): a compute-optimised CPU pod with 32
+vCPUs and 64 GB is $1.12 an hour. Fourteen runs at a time fit its memory. At this machine's
+speed the 96 runs would take about two hours there; with a deadline of six hours, after which
+the pod deletes itself, the most it can cost is $6.72, and the likely cost is $3 to $4. The
+same runs would take about twelve hours here on two cores and cost nothing.
+
+No step needs a faster engine. If one is wanted later it must reproduce the one update rule
+cell for cell, with a test that says so.
 
 ## What is not planned
 
@@ -533,9 +596,12 @@ What each one gives:
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
   frequencies in lattice-lab first, and a Kepler extension only if a closed form shows up.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
-- **D5. The pod.** Step 3's two larger sizes need a RunPod launch, which I will cost and ask
-  about before starting.
-- **D6. The branches.** Six, none merged and none with a pull request yet:
+- **D5. The pod.** Step 3's large part (sides 2048 and 4096) is registered and waits for a
+  machine. Costed above: a 32-vCPU pod at $1.12 an hour with a six-hour deadline, $6.72 at
+  most and $3 to $4 likely; or this machine, about twelve hours on two cores, for nothing. The
+  scripts for the pod are in `examples/scale-up-sizes-large/pod/` and have not met a real pod
+  yet. Nothing is launched until you say which.
+- **D6. The branches.** Seven, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -544,9 +610,11 @@ What each one gives:
     tie-break test;
   - LatticeLife `competition`, on top of `tie-break`: several species without the app, which
     `scale-up-step-2` pins. A LatticeLife branch should stay, or be merged, before the
-    lattice-lab branch that pins it is.
+    lattice-lab branch that pins it is;
+  - lattice-lab `scale-up-step-3`, on top of `scale-up-step-2`: the registered scale-up test,
+    both parts, and the run of the first.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 37
-  studies and 1,639 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 39
+  studies and 1,763 predictions.
