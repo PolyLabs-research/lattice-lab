@@ -33,7 +33,7 @@ AREAS = {
                    "llm-pilot-37", "llm-pilot-37b", "llm-pilot-37c"],
     "Settling times": ["lab-b2s34", "settling-time-replication", "settling-universality",
                        "settling-time-local"],
-    "Scaling up": ["scale-up-linear"],
+    "Scaling up": ["scale-up-linear", "scale-up-tie-break"],
 }  # fmt: skip
 CODE_AREAS = ("Code census", "Code distances")
 WORDS = {"pass": "held", "hold": "held", "holds": "held", "supported": "held",
@@ -255,6 +255,13 @@ def scale_up_linear(P, v, ctx):
     )
 
 
+def scale_up_tie_break(P, v, ctx):
+    words = {"missing": "incomplete"}
+    out = [row(b["label"], b["predicted"], words.get(v["outcomes"][b["label"]]) or
+               word(v["outcomes"][b["label"]])) for b in P]  # fmt: skip
+    return out, ", ".join(f"{claim} {v['verdict'][claim]}" for claim in ("S", "A", "B"))
+
+
 def settling_universality(P, v, ctx):
     out = []
     for b in P:
@@ -405,6 +412,7 @@ READERS = {
     "xor-periods": xor_periods, "xor-periods-algebra": xor_periods, "rule-4850": rule_4850,
     "settling-time-local": settling_local, "settling-time-replication": settling_replication,
     "settling-universality": settling_universality, "scale-up-linear": scale_up_linear,
+    "scale-up-tie-break": scale_up_tie_break,
     "qec-bb": qec_bb,
     "qec-distance": qec_distance, "qec-distance-2": qec_distance_2,
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,
