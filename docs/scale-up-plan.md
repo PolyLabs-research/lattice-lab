@@ -1,11 +1,13 @@
 # Scaling up: a ladder from a rule to its large-scale law (plan)
 
-**Status:** a plan, written 2026-11-23. **Steps 0 and 1 are done, and the birth tie-break is
-a setting.** The instrument is calibrated (`examples/scale-up-linear`, 296 of 296 registered
-cases held), and it now lives in LatticeLife (`experiments.coarse`), which reproduces the
-calibration's 3,084 records to the last bit. LatticeLife's update rule takes four kinds of
-tie-break, two of them deterministic (branch `tie-break`). Steps 2 to 5 are not built. The
-decisions that are yours are at the end.
+**Status:** a plan, written 2026-11-23. **Steps 0 and 1 are done, the birth tie-break is a
+setting, and step 2 has started.** The instrument is calibrated (`examples/scale-up-linear`,
+296 of 296 registered cases held), and it now lives in LatticeLife (`experiments.coarse`),
+which reproduces the calibration's 3,084 records to the last bit. LatticeLife's update rule
+takes four kinds of tie-break, two of them deterministic. Several species now run without the
+app, and a registered test of the tie-break held on all 15 predictions
+(`examples/scale-up-tie-break`): it matters only where contests are common. The rest of step
+2, and steps 3 to 5, are not built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -120,10 +122,10 @@ From a reading of the pinned LatticeLife (`256450b`) and Kepler (`0af9b28`) on 2
 | --- | --- | --- |
 | zooming out | LatticeLife `experiments.coarse` (since step 1): square and hexagon, a sampled cell, a block's parity, each species' count and the leading species | the triangle |
 | the closure test | `coarse.closure` and `run_closure`: two deterministic routes, compared exactly | cells with more than two states; coarse rules that are probabilistic |
-| competing species without the app | nothing. Every headless experiment runs one species (`torus_config` sets `n_lifeforms = 1`), and a session seeds species by mixing them uniformly | sessions with chosen shares and layouts, and their records |
-| a start of your choosing | experiments start from a density and a seed only | explicit starts: shares, half and half, stripes |
+| competing species without the app | LatticeLife `experiments.competition` (since step 2): a start with chosen shares, a run under a named tie-break, and a record of each species' cells, births, mixing and extinction | layouts other than a uniform mix (half and half, stripes) |
+| a start of your choosing | `species_start`: a density and a share for each species, every cell independently | half and half, stripes |
 | the birth tie-break | a setting since 2026-11-23: `random` (as before), `standoff`, `strongest`, `weighted`; contested cells counted every generation | a hidden layer; noise in the rule |
-| domains and fronts | cluster counts, damage spreading | interface density, domain size, front speed, time until one species is left |
+| domains and fronts | cluster counts, damage spreading; since step 2 the adjacent pairs of two species and of one (how mixed the species are), and the generation each species died out | domain size, front speed |
 | large grids | one update rule, about 55 ns per cell per generation for one species, 93 for two and 125 for three (measured at 512 x 512). Since step 1 a wrapped adjacency is built without loops: 2.5 seconds at 4096 x 4096 | nothing up to 4096 x 4096 |
 | reversible rules | nothing; the engine keeps one generation | a second-order wrapper (step 5) |
 | growth laws | Kepler: `power`, `logarithmic`, the relaxation laws, `fit_replicates` | nothing |
@@ -186,21 +188,67 @@ lattice-lab's own suite has no new failure (524 pass; the 9 that fail here are t
 the optional SCIP install and the one timing test, as before), and `verify` finds no problem in
 any of the 35 ledgers: the older labs' LatticeLife sweeps rerun byte for byte.
 
-### Step 2: the competitive world without the app, and a first look
+### Step 2: the competitive world without the app, and a first look (started 2026-11-23)
 
-- **Where:** LatticeLife `experiments/`: a multi-species session builder (rules, starting
-  shares, layout, seed), its records, and the observables: each species' share per block,
-  interface density, domain size, front position, and the generation at which one species is
-  left.
-- **Study:** `examples/scale-up-compete` in lattice-lab, **exploratory**, on tori up to 256:
-  how domain size grows with time, how a front between two species moves, and how the chance of
-  winning depends on the starting share. Kepler fits each (`power` against `logarithmic`,
-  `logistic_p` with a binomial likelihood).
-- **A known answer inside it:** two species with the same rule are interchangeable, so at equal
-  shares each must win half the time, and the front between them must not drift. That is this
-  step's calibration.
-- **Gate:** laws with error bars at four or more sizes, and the symmetric contest fair within
-  its binomial interval.
+**Built.** LatticeLife `experiments/competition.py` (branch `competition`, commit `f0ee136`,
+which lattice-lab pins): `species_start` seeds a wrapped grid with a density and a share for
+each species; `competition_point` runs it under a named tie-break and records, at chosen
+generations, each species' live cells and births, the adjacent pairs of two species and of one,
+the contested cells, and the generation each species died out. LatticeLife's suite passes with
+it (1,293 tests).
+
+**The first look** (`examples/scale-up-compete`, exploratory, the random draw only):
+
+- **Life-like pairs coexist.** Conway's Life against itself and against HighLife, 128 x 128,
+  16 starts each: no species was lost in 600 generations. The live fraction falls from 0.50 to
+  0.14 by generation 50 and is still falling at 600 (0.060 and 0.055). Only 3% of adjacent live
+  pairs are of two species, so they sit in separate patches. One species' share of the live
+  cells wanders between runs, by 0.07 to 0.09 either side of a half.
+- **Soups stay active.** Twelve five-species soups with rules drawn as `autorun` draws them,
+  64 x 64, 8 starts each: the live fraction at generation 200 is between 0.27 and 0.92, and
+  in most soups it has settled by generation 40. Two to five species survive, and contests are
+  from 0.3% to 75% of births.
+
+So the plan's picture of this step was partly wrong. With these rules nobody wins: there is no
+"chance of winning against the starting share" and no generation "at which one species is
+left" to fit a law to, and a front is not what separates the patches. What can be measured
+against time and size is the live fraction, the species balance and its spread, and the mixing.
+
+**The registered test of the tie-break** (`examples/scale-up-tie-break`; registered and run
+2026-11-23, 3,584 runs in 12 minutes on one core). The random draw against the standoff, from
+the same starts. All 15 predictions held.
+
+| Claim | Worlds | Prediction | Result |
+| --- | --- | --- | --- |
+| S, a known answer | Life against itself, 128 x 128, 128 starts | two species with the same rule end level, under either tie-break | species 1's share at generation 600 averages 0.509 under the draw and 0.494 under the standoff; one half is inside both 99.9% intervals |
+| A, no difference where contests are rare | Life against itself and against HighLife, 128 starts each | the standoff's mean is within a margin of the draw's, for the live fraction at generations 100, 300 and 600, the species balance and the mixing | all ten inside their margins; the largest difference in live fraction is 0.003, 4% of its value |
+| B0 | the 5 soups (of 24) where contests are 1% of births or less | no difference in live fraction beyond 0.02 | the largest difference is 0.001, and no interval reaches 0.007 |
+| B1, B2 | the 9 soups where contests are a fifth of births or more | the tie-breaks differ in at least three quarters, and the standoff lowers the live fraction by more than 0.02 in at least half | they differ in all 9, and the standoff lowers it in all 9, by 0.04 to 0.46 of the grid (6% to 75% of its value) |
+
+Contests were 0.41% of births in the pairs, under both tie-breaks, and no species died out in
+any of the 512 runs.
+
+Three things in the records that were not registered:
+
+- **The drop follows the contested share.** Over all 24 soups the rank correlation between the
+  share of births contested under the draw and the change in live fraction is -0.82. Of the
+  ten soups between the two groups, six differ: in five the standoff lowers the live fraction,
+  in two of them by more than 0.02, and in one it raises it, by 0.008.
+- **One interval in the pairs excludes zero.** For Life against itself at generation 300 the
+  standoff's live fraction is lower by 0.003 (0.0005 to 0.005). It is inside its margin, and
+  one such interval in ten is not surprising, but it may be a small real effect.
+- **The standoff costs some soups a species.** In four soups fewer species survive under the
+  standoff, by half a species to one on average. That is a difference in kind as well as in
+  amount.
+
+**What is left of step 2:**
+
+- **Laws against time and size**, under the draw: how the live fraction falls with time in the
+  pairs, and how the species balance's spread and the mixing depend on the grid's size, at four
+  or more sizes up to 256, fitted by Kepler (`power` against `logarithmic`; `fit_replicates`
+  for the error bars).
+- **Gate:** laws with error bars at four or more sizes. The known answer this step needed is
+  S, above, and it held.
 
 ### Step 3: the registered scale-up test
 
@@ -383,34 +431,41 @@ What each one gives:
 - **Not built:** the hidden layer (with step 5), and noise in the rule itself (its own world,
   if you want it). The app's settings panel does not offer the tie-break yet: set it in the
   config, or start the app with `--tie-break`.
-- **Not yet compared.** Nothing here says whether the kinds differ at large scale. That is
-  step 2's first question, and the expectations are to be registered before the comparison is
-  run: no difference for Life-like pairs, where contests are rare, and a clear difference for
-  soups of several species with random rules, where they are a third of the births.
+- **Compared, the draw against the standoff** (`examples/scale-up-tie-break`, registered; step
+  2 above): no measurable difference where contests are rare, in the Life-like pairs and in
+  five soups; a lower live fraction under the standoff in every soup where a fifth or more of
+  births are contested, by 0.04 to 0.46 of the grid. `strongest` and `weighted` have not been
+  compared with anything, and no comparison has been made above 128 x 128.
 
 ## Decisions for you
 
 - **D1. The tie-break.** Decided on 2026-11-23: build the setting first, so the option is
-  there for discovery. It is built (the section above). What stays open is which kinds and
-  which worlds step 2 compares. I recommend the draw against the standoff first, then
-  `strongest`, in two worlds: a Life-like pair, where contests are rare, and an `autorun`-style
-  soup of several species, where they are common. Noise in the rule is a separate lever, not
-  built.
-- **D2. Which contest first.** I recommend Life against Life (the symmetric control), then Life
-  against HighLife, the pair in LatticeLife's README.
+  there for discovery. It is built, and the draw has been compared with the standoff (step 2).
+  What stays open: which tie-break the later steps run. For Life-like pairs it makes no
+  measurable difference, so the standoff costs nothing there and buys a world that is a
+  function of its grid. For soups it is a different world, and both are worth keeping. Noise
+  in the rule is a separate lever, not built.
+- **D2. Which contest first.** Done as recommended: Life against Life (the symmetric control)
+  and Life against HighLife, the pair in LatticeLife's README. They coexist, so the next
+  question is which worlds to follow to larger sizes: these pairs, whose ash is quiet, or a
+  soup, which stays active.
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
   frequencies in lattice-lab first, and a Kepler extension only if a closed form shows up.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Step 3's two larger sizes need a RunPod launch, which I will cost and ask
   about before starting.
-- **D6. The branches.** Four, none merged and none with a pull request yet:
+- **D6. The branches.** Six, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
-  - LatticeLife `tie-break`, on top of it: the tie-break setting. lattice-lab's pin points at
-    this one, so it should stay, or be merged, before `scale-up-step-1` is.
+  - LatticeLife `tie-break`, on top of it: the tie-break setting, which `scale-up-step-1` pins;
+  - lattice-lab `scale-up-step-2`, on top of `scale-up-step-1`: the first look and the
+    tie-break test;
+  - LatticeLife `competition`, on top of `tie-break`: several species without the app, which
+    `scale-up-step-2` pins. A LatticeLife branch should stay, or be merged, before the
+    lattice-lab branch that pins it is.
 
-  Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), `scale-up-linear` adds its
-  study to the census dashboards' table, so the two meet on one line: the count of studies and
-  predictions in `tests/test_census_dashboards.py`. Whichever is merged second needs that line
-  set to 36 studies and 1,624 predictions.
+  Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
+  studies to the census dashboards' table, so they meet it on one line: the count of studies
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 37
+  studies and 1,639 predictions.

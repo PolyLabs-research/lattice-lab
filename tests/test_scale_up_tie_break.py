@@ -215,6 +215,40 @@ def test_the_ledger_holds_the_registration():
         assert question["body"]["sha256"] == S.question()["sha256"]
 
 
+def test_the_registered_run_found_the_tie_break_matters_only_where_contests_are_common():
+    """The run of 2026-11-23: every prediction held. Identical species ended level; the pairs
+    showed no difference beyond their margins; the five soups with rare contests were level,
+    and in all nine with common contests the standoff lowered the live fraction."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == {"S": "holds", "A": "holds", "B": "holds"}
+    assert set(verdict["outcomes"].values()) == {"holds"} and len(verdict["outcomes"]) == 15
+    assert verdict["missing"] == [] and len(ledger.entries[-2]["body"]["rows"]) == 3584
+    for kind in S.KINDS:
+        known = verdict["known_answer"][kind]
+        assert known["n"] == 128 and known["low"] < 0.5 < known["high"]
+    for claims in verdict["pairs"].values():
+        for result in claims.values():
+            assert -result["margin"] < result["low"] and result["high"] < result["margin"]
+    soups = verdict["soups"]
+    assert (soups["rare"], soups["rare_level"]) == (5, 5)
+    assert (soups["common"], soups["common_differ"], soups["common_lowered"]) == (9, 9, 9)
+    common = [s for s in soups["table"] if s["contested"] >= S.COMMON]
+    assert -0.46 < min(s["difference"] for s in common) < -0.45
+    assert -0.05 < max(s["difference"] for s in common) < -0.04
+    rare = [s for s in soups["table"] if s["contested"] <= S.RARE]
+    assert max(abs(s["difference"]) for s in rare) < 0.002
+    # not registered: the more of a soup's births are contested, the more the standoff lowers it
+    order = stats.spearmanr(
+        [s["contested"] for s in soups["table"]], [s["difference"] for s in soups["table"]]
+    )
+    assert -0.83 < order.statistic < -0.81
+
+
 def _git(path: Path, *args: str) -> None:
     subprocess.run(
         ["git", "-C", str(path), "-c", "user.name=t", "-c", "user.email=t@t", *args],

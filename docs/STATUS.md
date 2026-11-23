@@ -28,12 +28,12 @@ is on the branch **`ccr-ab9f0bb1-qb20sx`** in each repository. Merging it is a d
   into lattice-lab on GitHub, at `main`.
 - **Licences.** lattice-lab's code is under Apache-2.0 and everything else under CC BY 4.0
   ([README](../README.md#licence)). Kepler and LatticeLife have no licence yet.
-- **Pins.** lattice-lab pins LatticeLife `456e044` and Kepler `0af9b28` (`pyproject.toml`,
-  `uv.lock`). LatticeLife's pin is its branch `tie-break`: the working branch, whose commits
-  after `256450b` change only the README, plus two commits of the scale-up plan (2026-11-23),
-  the zoom-out module (`coarse-graining`, `d690cae`) and the birth tie-break as a setting.
-  Kepler's is current for code: every later commit on its working branch changes only the
-  README.
+- **Pins.** lattice-lab pins LatticeLife `f0ee136` and Kepler `0af9b28` (`pyproject.toml`,
+  `uv.lock`). LatticeLife's pin is its branch `competition`: the working branch, whose commits
+  after `256450b` change only the README, plus three commits of the scale-up plan
+  (2026-11-23): the zoom-out module (`coarse-graining`, `d690cae`), the birth tie-break as a
+  setting (`tie-break`, `456e044`) and several species without the app. Kepler's is current for
+  code: every later commit on its working branch changes only the README.
 - **The move.** Links, the Kepler pin's URL and the lockfile point at PolyLabs-research. The
   study ledgers still record `tripptytrip` URLs in their provenance. That is deliberate: they are
   hash-chained records of what ran, and GitHub redirects the old URLs.
@@ -95,6 +95,7 @@ before the runs that tested them.
 | The published distances of those 12 codes, [[288,12,18]] included | **reproduced by a registered test**, blind to the published values: an exhaustive search built here gives every published d exactly ([[288,12,18]] in 3 minutes, the gross code in 0.2 s), and an integer program (SCIP) agrees on 11 and brackets the twelfth at 13 to 18. The registered method check **failed** once: on 1 of 200 random codes SCIP returned a wrong optimum. The fault (SCIP's XOR presolving) was then fixed, the search made faster, and a second registered test on fresh codes found both instruments hold (`examples/qec-distance-2`) | [code-distances.md](code-distances.md) |
 | An LLM agent, given a problem card and the Lean library, proves the hexagon and triangle laws' 2-parts, and finds and proves VO + T13's law from data | three pilots, each passed on the first attempt with no feedback; accepted by the judge (Lean, pinned statements, standard axioms); registered tests 15 of 15, 40 of 40 and 20 of 20. In the third the agent's own law held at 20 of 20 sizes it never saw, and its m = 1 case had no prior proof. The last two ran in their own containers, with their whole transcripts audited. The law was easy to read off the data, and the orchestrator knew it beforehand | [llm-pilot.md](llm-pilot.md) |
 | Zooming out a parity rule by 2^k with the clock slowed by 2^k gives the rule itself; the scale-up instrument counts none where the scales match and a fair coin per supercell where they do not | **registered calibration, 296 of 296 held** (2026-11-23): no supercell differed in 10.1 million comparisons at blocks 2 to 128, grids up to 768; 36 controls each inside their exact binomial interval. The exact cases are `gstep_iterate_two_pow` and `restrict_iterate`; the controls' law is by machine, not in Lean | [scale-up-plan.md](scale-up-plan.md) |
+| The birth tie-break changes a world of several species only where contests are common | **registered test, 15 of 15 held** (2026-11-23): the standoff against the random draw; no difference in two Life-like pairs (contests 0.4% of births), nor in five soups with rare contests; in all nine soups where a fifth or more of births are contested the standoff lowers the live fraction, by 0.04 to 0.46 of the grid | [scale-up-plan.md](scale-up-plan.md) |
 
 ## The atlas, where it stands
 
@@ -170,8 +171,16 @@ running then zooming out matches zooming out then running.
   the tie-break decides under half a percent of births in Life-like contests, and about 38%
   of them in `autorun`'s soups of several species with random rules. Whether the kinds differ
   at large scale has not been tested.
-- **Next is step 2**, the competitive world without the app, then steps 3 to 5. None of that is
-  built, and the rest of the plan's decisions are open.
+- **Step 2 has started.** LatticeLife runs several species without the app
+  (`experiments.competition`). A first look under the draw (`examples/scale-up-compete`,
+  exploratory) found that Life-like pairs coexist, with no species lost in 600 generations, and
+  that soups stay active. A registered test then compared the draw with the standoff
+  (`examples/scale-up-tie-break`): all 15 predictions held. The tie-break changes nothing
+  measurable where contests are rare, and lowers the live fraction by 0.04 to 0.46 of the grid
+  where they are a fifth or more of births.
+- **Next in step 2:** how the live fraction, the species balance and the mixing depend on time
+  and on grid size, with laws fitted at four or more sizes, for step 3 to test at 1024 to 4096.
+  Steps 3 to 5 are not built, and the rest of the plan's decisions are open.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
