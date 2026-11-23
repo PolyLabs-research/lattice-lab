@@ -29,11 +29,23 @@ and `register` and `run` do the rest:
 `lattice-lab verify --lab DIR` checks a study's ledger like any other: the chain, and that every
 prediction precedes the run and every record used follows its start. If the question body holds
 the loop's `spec` and `records_file`, verify also reruns sample records byte for byte.
+
+A study may name a fifth thing, so that verify can do the same for it:
+
+    rerun(record)  one stored record computed again, from the fields it carries: the dict that
+                   `execute` would write for it
+
+`load(DIR)` gives the study a lab directory holds (`STUDY` in its study.py), and verify reruns
+sample records of a study that has `rerun`, comparing the canonical JSON with the stored line.
+A record that carries a wall-clock time or anything else that differs from run to run cannot be
+rerun this way.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import importlib.util
 import json
 import subprocess
 import sys
@@ -58,6 +70,7 @@ class Study:
     decide: Callable[[list[dict], list[dict]], dict]
     records: str = "records.jsonl"
     ledger: str = "ledger.jsonl"
+    rerun: Callable[[dict], dict] | None = None
 
     @property
     def ledger_path(self) -> Path:
@@ -66,6 +79,28 @@ class Study:
     @property
     def records_path(self) -> Path:
         return Path(self.directory) / self.records
+
+
+def load(directory: str | Path) -> Study | None:
+    """The study a lab directory holds: `STUDY` in its study.py. None when there is no study.py
+    or it defines no Study of that name. The module is imported, so whatever it does on import
+    happens."""
+    path = Path(directory).resolve() / "study.py"
+    if not path.is_file():
+        return None
+    name = "lattice_lab_study_" + hashlib.sha256(str(path).encode()).hexdigest()[:16]
+    module = sys.modules.get(name)
+    if module is None:
+        spec = importlib.util.spec_from_file_location(name, path)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        try:
+            spec.loader.exec_module(module)
+        except BaseException:
+            del sys.modules[name]
+            raise
+    study = getattr(module, "STUDY", None)
+    return study if isinstance(study, Study) else None
 
 
 def _git(path: Path, *args: str) -> subprocess.CompletedProcess:

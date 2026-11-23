@@ -45,10 +45,15 @@ The verdict is `calibrated` when every case holds, `not calibrated` when any fai
 throughout, which tests nothing).
 
 **What the registration had seen** is in the question's `excluded_seen`.
+
+**Added after the verdict** (2026-11-23, the plan's step 1): `rerun`, which computes one stored
+record again so that `lattice-lab verify` can check it, and the import it needs. Nothing that
+ran was changed, but this file's sha256 is no longer the one in the question.
 """
 
 from __future__ import annotations
 
+import functools
 import hashlib
 import json
 import sys
@@ -405,8 +410,23 @@ def predictions() -> list[dict]:
     return cases()
 
 
+@functools.lru_cache(maxsize=1)
+def _registered() -> tuple[dict, ...]:
+    return tuple(cases())
+
+
+def rerun(record: dict) -> dict:
+    """One stored record, computed again from its case and seed (for `lattice-lab verify`)."""
+    return run_bundle(([_registered()[record["case"]]], record["seed"]))[0]
+
+
 STUDY = Study(
-    directory=HERE, question=question, predictions=predictions, execute=execute, decide=decide
+    directory=HERE,
+    question=question,
+    predictions=predictions,
+    execute=execute,
+    decide=decide,
+    rerun=rerun,
 )
 
 if __name__ == "__main__":

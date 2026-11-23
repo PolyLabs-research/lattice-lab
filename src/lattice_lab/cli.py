@@ -24,8 +24,9 @@ from pathlib import Path
 from kepler import LAWS
 
 from lattice_lab import consult
+from lattice_lab import study as studies
 from lattice_lab.experiment import LatticeExperimenter, question_config, rerun_record
-from lattice_lab.ledger import Ledger, LedgerError, check_order, record_lines
+from lattice_lab.ledger import Ledger, LedgerError, canonical, check_order, record_lines
 from lattice_lab.loop import ask
 from lattice_lab.provenance import provenance
 from lattice_lab.question import Question, QuestionError
@@ -130,6 +131,17 @@ def cmd_report(args) -> int:
     return 0
 
 
+def _study_rerun(lab: Path):
+    """(the study's rerun function, None), or (None, why its records cannot be rerun)."""
+    try:
+        study = studies.load(lab)
+    except Exception as exc:  # whatever the study's own module raises on import
+        return None, f"no loop spec, and its study.py did not load ({type(exc).__name__}: {exc})"
+    if study is None or study.rerun is None:
+        return None, "no loop spec"
+    return study.rerun, ""
+
+
 def cmd_verify(args) -> int:
     path = args.lab / "ledger.jsonl"
     if not path.is_file():
@@ -148,10 +160,21 @@ def cmd_verify(args) -> int:
             )
         if not args.rerun or not q["body"].get("records_file"):
             continue
-        if "spec" not in q["body"]:  # a study's records may come from several rules
-            warnings.append(f"question {q['seq']}: no loop spec, so its records were not rerun")
-            continue
         lines = record_lines(args.lab / q["body"]["records_file"])
+        if "spec" not in q["body"]:  # a study: its records may come from several rules
+            rerun, why = _study_rerun(args.lab)
+            if rerun is None:
+                warnings.append(f"question {q['seq']}: {why}, so its records were not rerun")
+                continue
+            for offset, _, line in random.Random(q["hash"]).sample(
+                lines, min(args.rerun, len(lines))
+            ):
+                reruns["checked"] += 1
+                if canonical(rerun(json.loads(line))).encode() == line:
+                    reruns["identical"] += 1
+                else:
+                    reruns["different"].append({"question": q["seq"], "offset": offset})
+            continue
         if not lines:
             continue
         spec = Question.from_dict(q["body"]["spec"])

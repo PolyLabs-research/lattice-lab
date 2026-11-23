@@ -7,8 +7,9 @@ from pathlib import Path
 
 import pytest
 
+from lattice_lab import cli
 from lattice_lab.ledger import Ledger, check_order
-from lattice_lab.study import Study, StudyError, append_records, register, resume, run
+from lattice_lab.study import Study, StudyError, append_records, load, register, resume, run
 
 
 def _git(path: Path, *args: str) -> None:
@@ -123,3 +124,78 @@ def test_an_interrupted_run_resumes_without_repeating_work(tmp_path):
     assert ledger.verify() == [] and check_order(ledger, tmp_path) == []
     with pytest.raises(StudyError, match="no observations"):
         resume(study)
+
+
+STUDY_FILE = """
+from pathlib import Path
+
+from lattice_lab.study import Study, append_records
+
+
+def execute(path, workers):
+    append_records(path, [{{"x": x, "y": 2 * x}} for x in (3, 4, 5)])
+
+
+def rerun(record):
+    return {{"x": record["x"], "y": {factor} * record["x"]}}
+
+
+STUDY = Study(
+    Path(__file__).resolve().parent,
+    lambda: {{"id": "toy", "title": "Is y twice x?"}},
+    lambda: [{{"law": "y = 2x"}}],
+    execute,
+    lambda rows, predictions: {{"rows": len(rows)}},
+    {rerun}
+)
+"""
+
+
+def _lab(directory: Path, factor: int = 2, rerun: str = "rerun=rerun,") -> Study:
+    directory.mkdir()
+    _git(directory, "init", "-q")
+    (directory / "study.py").write_text(STUDY_FILE.format(factor=factor, rerun=rerun))
+    study = load(directory)
+    register(study)
+    _git(directory, "add", "ledger.jsonl")
+    _git(directory, "commit", "-q", "-m", "register")
+    run(study)
+    return study
+
+
+def test_verify_reruns_the_records_of_a_study_that_can_rerun_them(tmp_path, capsys):
+    study = _lab(tmp_path / "sound")
+    assert study.rerun({"x": 7}) == {"x": 7, "y": 14} and load(tmp_path / "sound") is study
+    assert cli.main(["verify", "--lab", str(tmp_path / "sound"), "--rerun", "2"]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["problems"] == [] and out["reruns"] == {
+        "checked": 2,
+        "identical": 2,
+        "different": [],
+    }
+    assert not any("not rerun" in w for w in out["warnings"])
+
+
+def test_verify_fails_when_a_rerun_record_differs(tmp_path, capsys):
+    _lab(tmp_path / "moved", factor=3)  # the study's code no longer gives what was recorded
+    assert cli.main(["verify", "--lab", str(tmp_path / "moved"), "--rerun", "5"]) == 1
+    out = json.loads(capsys.readouterr().out)
+    assert out["reruns"]["checked"] == 3 and out["reruns"]["identical"] == 0
+    assert out["problems"] == ["3 rerun record(s) differ from the stored ones"]
+
+
+def test_a_study_without_rerun_or_one_that_does_not_load_is_only_warned_about(tmp_path, capsys):
+    _lab(tmp_path / "plain", rerun="")
+    assert cli.main(["verify", "--lab", str(tmp_path / "plain")]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["warnings"] == ["question 0: no loop spec, so its records were not rerun"]
+    (tmp_path / "broken").mkdir()
+    for name in ("ledger.jsonl", "records.jsonl"):
+        (tmp_path / "broken" / name).write_bytes((tmp_path / "plain" / name).read_bytes())
+    (tmp_path / "broken" / "study.py").write_text("import a_module_that_is_not_there\n")
+    assert cli.main(["verify", "--lab", str(tmp_path / "broken")]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert (
+        out["reruns"]["checked"] == 0 and "did not load (ModuleNotFoundError" in out["warnings"][0]
+    )
+    assert load(tmp_path / "no-such-lab") is None

@@ -238,13 +238,96 @@ later it must reproduce the one update rule cell for cell, with a test that says
 - The triangle lattice, beyond the small study named above.
 - Any claim about the Planck scale or about physics.
 
+## The birth tie-break (decision D1), in full
+
+**What it is.** With two or more species, a dead cell can satisfy the birth rule of more than
+one of them at once. LatticeLife then gives the cell to one of them by a random draw with equal
+odds (`core/lattice.py`). Everything else in the update is a function of the grid.
+
+**How often it acts.** A first look on 2026-11-23, exploratory and not a registered result:
+256 x 256, Life against Life and Life against HighLife, 600 generations from a mixed start, two
+starts each at two densities.
+
+| Share of births that are contested | Half-full start | 20% start |
+| --- | --- | --- |
+| generation 1 | about 9.4% (some 1,180 of 12,500) | about 0.5% |
+| generation 10 | under 1% | about 0.1% or less |
+| generation 100 onward | 0 to 2 births a generation, of 400 to 2,200 | 0 or 1 |
+| over all 600 generations | 0.40% to 0.47% | 0.03% to 0.04% |
+
+A contest needs exactly three neighbours of each species round one empty cell, which is rare
+once the first crowded generations have passed. So for these pairs the species compete almost
+entirely by occupying cells the other needs, and the tie-break is a rare event. Whether it
+still shapes the large scale is a question step 2 can answer.
+
+**The options.** There are two separate choices: how the odds are set among the species that
+could be born, and where the draw comes from.
+
+| Option | Odds | Where the draw comes from | A function of the grid alone? |
+| --- | --- | --- | --- |
+| Today | equal | a random stream outside the grid | no |
+| Standoff | none: a contested cell stays empty | no draw | yes |
+| Strongest wins | the species with more cells nearby takes the cell; level means a standoff | no draw | yes |
+| Weighted | in proportion to local strength, raised to a power: 0 gives today's rule, a large power gives strongest wins | a random stream outside the grid | no |
+| Hidden layer | any of the above | hidden bits in every cell, which follow a deterministic rule of their own | yes, of the full grid; random to anyone who sees only the species |
+
+A fixed priority (species 1 always wins) is also a function of the grid, but it builds a bias
+into the contest, so it is not on the list.
+
+What each one gives:
+
+- **Standoff and strongest wins** make the world an ordinary cellular automaton with several
+  states. Exact cycles and periods mean something again for several species, and the reversible
+  construction of step 5 applies.
+- **Weighted** is the "random within a range" option: the range is the set of species that
+  could be born, and one dial runs from equal odds to strongest wins. For Life-like rules the
+  strength must be counted over a wider neighbourhood than the birth neighbourhood, because two
+  B3 species contesting a cell always have three neighbours each.
+- **A hidden layer** makes the world deterministic on its full state and random to an observer
+  who cannot see the layer. A parity rule would serve as the hidden rule, since the lab knows
+  its behaviour exactly; in its reversible form the randomness is never used up.
+- **Noise in the rule itself** is a different lever, listed because the tie-break fires so
+  rarely: every birth or survival happens with odds set by the neighbourhood. That is the
+  standard probabilistic cellular automaton. Its large-scale behaviour, sharp transitions with
+  exponents shared across many rules, is well mapped, which makes it good ground for the
+  ladder.
+
+**What this has to do with quantum mechanics.**
+
+- *What matches.* In quantum mechanics the state fixes the odds exactly, and between
+  measurements the evolution is deterministic and reversible.
+- *What is missing.* Interference: alternatives carry signed amounts that can cancel before
+  they become odds. And entanglement: correlations between distant outcomes that no local rule
+  with local dice can produce (Bell's theorem). A weighted draw gives a classical probabilistic
+  automaton, which is worth studying and is not quantum.
+- *The hidden layer* is the "deterministic underneath" position. Bell's theorem says a local
+  hidden layer cannot reproduce quantum correlations unless the starting state is already
+  correlated with every later choice of measurement.
+- *Where the lab meets the real thing.* The reversible parity rules of step 5. A Clifford
+  quantum cellular automaton acts on Pauli operators through a 2 x 2 matrix of Laurent
+  polynomials over GF(2) (Schlingemann, Vogts and Werner, 2008, in one dimension), and
+  x(t + 1) = f x(t) + x(t − 1) with a symmetric f is the matrix [[f, 1], [1, 0]]. That is the
+  one family of quantum automata that can be simulated exactly at any size, it lives in the
+  ring the rest of this repository lives in, and in it a measurement's outcome is either
+  certain or an exact fair coin. This is established mathematics that has not been checked
+  against the lab's code; it is a pointer for step 5.
+
+**Recommendation.**
+
+1. Step 2 studies the world as it is.
+2. Make the tie-break a named setting in LatticeLife, with today's draw as the default, and add
+   the standoff first. Then compare the two worlds' large-scale laws, with the expectation
+   registered beforehand. Given how rarely a contest happens, the expectation is no difference.
+3. Add the weighted draw only if (2) shows the tie-break matters, and the hidden layer with
+   step 5.
+4. If the aim is randomness that shapes the large scale, build the noisy rule as its own world.
+
 ## Decisions for you
 
-- **D1. The tie-break.** Keep the random draw, or add a rule that is a function of the grid
-  alone (for example: a contested cell stays empty)? I recommend running step 2 on the world as
-  it is, then adding the deterministic rule as a second world. Whether the tie-break changes the
-  large-scale laws is then the ladder's first question about classes. Step 5 needs the
-  deterministic rule for more than one species.
+- **D1. The tie-break.** The section above sets out the options. In short: study the world as
+  it is in step 2, add the standoff as a second world and compare, and treat randomness that
+  matters as a separate lever (noise in the rule). Step 5 needs a tie-break that is a function
+  of the grid for more than one species.
 - **D2. Which contest first.** I recommend Life against Life (the symmetric control), then Life
   against HighLife, the pair in LatticeLife's README.
 - **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition

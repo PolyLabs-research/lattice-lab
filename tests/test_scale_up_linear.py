@@ -7,6 +7,7 @@ so nothing in this file computes a registered case.
 """
 
 import importlib.util
+import json
 import math
 import subprocess
 import sys
@@ -19,7 +20,7 @@ import pytest
 from latticelife.core.geometries import build_adjacency
 
 from lattice_lab.ledger import Ledger, check_order
-from lattice_lab.study import Study, register, run
+from lattice_lab.study import Study, load, register, run
 
 ROOT = Path(__file__).resolve().parent.parent
 LAB = ROOT / "examples" / "scale-up-linear"
@@ -298,6 +299,46 @@ def test_the_registered_run_calibrated_the_instrument():
     free = [r for r in half if cases[r["case"]]["supercells"] == cases[r["case"]]["rank"]]
     assert len(constrained) == 768 and not any(r["mismatches"][0] % 2 for r in constrained)
     assert sum(r["mismatches"][0] % 2 for r in free) == 760 and len(free) == 1536
+
+
+def _stored(limit_side: int, count: int) -> list[dict]:
+    """A spread of the registered run's records on fine grids up to `limit_side`."""
+    ledger = Ledger(LAB / "ledger.jsonl")
+    cases = {e["body"]["case"]: e["body"] for e in ledger.entries if e["kind"] == "prediction"}
+    rows = [r for r in ledger.entries[-2]["body"]["rows"] if cases[r["case"]]["side"] <= limit_side]
+    return rows[:: max(1, len(rows) // count)][:count]
+
+
+def test_the_study_reruns_its_own_records():
+    """`rerun`, the hook `lattice-lab verify` uses: the study's own instrument gives each stored
+    record again, on whatever LatticeLife is installed now."""
+    if not (LAB / "records.jsonl").exists():
+        pytest.skip("not run yet")
+    assert load(LAB).rerun is not None
+    for record in _stored(60, 12):
+        assert S.rerun(record) == record
+
+
+def test_latticelifes_own_module_reproduces_the_registered_run():
+    """Step 1 of the plan moved the instrument into LatticeLife (experiments.coarse). Its gate:
+    every record of the registered run comes out the same through that module. promote.py ran
+    them all and wrote promotion.json; a spread of the smaller ones is rerun here."""
+    pytest.importorskip("latticelife.experiments.coarse")
+    promote = _load("scale_up_linear_promote", LAB / "promote.py")
+    cases, stored = promote.registered_cases(), promote.stored_lines()
+    assert len(cases) == 296 and len(stored) == 3084
+    jobs = [job for job in promote.bundles(cases) if job[0][0]["side"] <= 60]
+    for job in jobs[:: max(1, len(jobs) // 20)]:
+        for record in promote.rerun(job):
+            assert promote.canonical(record) == stored[record["case"], record["seed"]]
+    path = LAB / "promotion.json"
+    if not path.exists():
+        pytest.skip("promote.py has not been run")
+    report = json.loads(path.read_text())
+    assert report["records"] == report["rerun"] == report["identical"] == 3084
+    assert report["different"] == [] and report["not_rerun"] == 0
+    assert report["through"] == "latticelife.experiments.coarse.closure"
+    assert len(report["provenance"]["latticelife"]["commit"]) == 40
 
 
 def _git(path: Path, *args: str) -> None:
