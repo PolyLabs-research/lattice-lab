@@ -11,7 +11,10 @@ then tested on grids of side 512 to 4096 (`examples/scale-up-sizes`,
 `examples/scale-up-sizes-large`): all 124 registered predictions held. One sample in that test
 ran high against the other large grids, so a further registered test on fresh starts asked
 whether the large grids agree with each other (`examples/scale-up-gap`): all nine predictions
-held, and nothing creeps with the size of the grid. Steps 4 and 5 are not built. The
+held, and nothing creeps with the size of the grid. Step 4, the zoom-out, has its instrument,
+a first look and a registered test (`examples/scale-up-closure`: 43 of 45 predictions held):
+zoomed out, these worlds are maps of where things still move, with one exact law and a rule
+that is nearly the same at every time but not at every scale. Step 5 is not built. The
 decisions that are yours are at the end.
 
 ## What the ladder is for
@@ -137,7 +140,7 @@ From a reading of the pinned LatticeLife (`256450b`) and Kepler (`0af9b28`) on 2
 | a win probability against a starting share | Kepler: `logistic_p` with a binomial likelihood | nothing |
 | the same law across rules or lattices | Kepler: `fit_groups`, `compare_sharing` | nothing |
 | conserved quantities | Kepler: `find_invariants` | wiring it to second-order runs |
-| a probabilistic coarse rule | nothing: Kepler fits closed-form laws, not transition tables | decision D3 |
+| a probabilistic coarse rule | since step 4, tables of what came next in `examples/scale-up-closure/zoom.py`: several species, several alphabets, four views of a neighbourhood, scored on starts they did not learn from and run on by themselves | a closed form for a table (Kepler), should one show up; a home in LatticeLife |
 | registered tests | `lattice_lab.study`; since step 1 `verify` reruns the records of a study that names `rerun` | nothing |
 
 Two things turned up that you should know about:
@@ -526,7 +529,7 @@ What it says:
 constants to within 0.3% for the live fraction and for the species balance, and 0.8% for the
 mixing: those are the widest ends of the 99% intervals above.
 
-### Step 4: closure for the competitive world (started 2026-11-24)
+### Step 4: closure for the competitive world (first look and registered test, 2026-11-24)
 
 **The instrument** (`examples/scale-up-closure/zoom.py`; in lattice-lab until it has earned a
 place in LatticeLife, as step 0's did). A fine world is run once and read through b x b blocks
@@ -635,11 +638,52 @@ and at a block twice as large (64) as any it used. 45 predictions in six familie
 
 The records hold tallies, not grids, and every number in the verdict is recomputed from them.
 
-- **Needs still:** a comparison of whole runs in distribution, beyond the share of blocks
-  moving; richer symbols (who leads and whether it moved follows the fine world's movement
-  much further in this first look); and a world where something is organised over a growing
-  distance, which neither of these is.
-- **Gate:** the registered test above.
+**The run** (2026-11-24: 54 records in 47 minutes on two cores). 43 of the 45 predictions
+held, and what the first look saw on side 1024 came back on side 2048 to three figures. The
+ledger verifies, and three records computed again from scratch came out byte for byte.
+
+| Family | Result |
+| --- | --- |
+| S, stillness | no block moved out of stillness: none in 902 million still neighbourhoods, in the pair at blocks 4 to 64 and the soup at blocks 4 to 16. With the clock four blocks long 8,700 did, of 5.9 million. **The soup at block 32 failed as registered:** it had no still neighbourhood in any start, so there was nothing for the claim to hold on |
+| N, the neighbours' share | 0.376, 0.279, 0.176 and 0.096 of the surprise at blocks 4 to 32 (the first look: 0.375, 0.278, 0.175, 0.096), and under half a percent of the errors. **Block 64 failed:** 0.084, where the band drawn from the trend stopped at 0.08 |
+| T, one rule at every time | the rule with neighbour counts learned early has 0.4%, 0.8% and 0.8% more surprise late than the rule learned late (blocks 4, 8, 16); the rule that knows the block alone has 64%, 54% and 47% more |
+| X, another torus | the rule learned on side 1024 has at most 0.02% more surprise on side 2048 than the rule learned there |
+| E, one number at every scale | 0.0081, 0.0077, 0.0075 and 0.0075 at blocks 4 to 32, and 0.0086 ± 0.0010 at the block of 64 that no run had been read through |
+| H, the horizon | eight coarse generations on, the rule with neighbour counts has 0.86, 1.10, 1.21 and 1.10 of the fine world's movement; at the end the rule that knows the block alone has 11, 9, 6 and 3.5 times it, and at blocks 4 and 8 the rule with neighbour counts has none left |
+
+The two failures are mine, and say different things:
+
+- **The band at block 64 was a guess dressed as a trend.** Between blocks 4 and 32 each
+  doubling took more off the neighbours' share than the one before, so I expected about half
+  again and drew the band round that. It fell from 0.096 to 0.084. With the clock at the
+  block, a block of 64 after generation 256 is at a different point in its life from a block
+  of 4: two thirds of the blocks of 64 are moving then, against one in twenty of the blocks
+  of 4. How much the neighbours tell depends on that as well as on the size, so the share
+  against the block was never a law to extend.
+- **The soup at block 32 was a claim that could not be tested.** The first look had already
+  shown that the soup has no still neighbourhoods at that block, and I registered the claim
+  anyway and wrote the judge to count nothing-to-test as a failure. Nothing moved out of
+  stillness there, or anywhere.
+
+**What step 4 shows.** Zoomed out, these worlds are not a contest between species: who leads a
+block is frozen and tends to one species everywhere. They are maps of where things still
+move. Movement cannot start where nothing around it moved, which is exact. In the pair it
+spreads from moving neighbours and dies without them by a rule that is the same early and
+late to within a percent of its surprise, the same on a torus twice as wide to within a
+fiftieth of a percent, and has one entry that is the same at every block from 4 to 64. The
+rule is not the same at every scale otherwise, so this ladder has no rung-to-rung fixed point
+here. And it is not the whole of the fine world: run on by itself it keeps the right amount
+of movement for about eight coarse generations, then lets it die too fast at small blocks,
+because some movers last and one bit does not say which.
+
+**Gate: passed** in the sense the plan gave it (the verdict, whichever way it goes), with the
+two misses above on the record.
+
+- **What it would take to go further:** symbols that carry more than one bit (who leads as
+  well as whether it moved kept 0.61 of the fine world's movement where the single bit kept
+  0.03, in the first look); a comparison of whole runs beyond the share of blocks moving;
+  and a world where something is organised over a growing distance. Neither of these two
+  worlds is one, and that is the main thing steps 2 to 4 have established about them.
 
 ### Step 5: reversible variants
 
@@ -671,6 +715,8 @@ Measured, on one core of this machine unless it says otherwise.
 | step 3, sides 512 and 1024, 192 runs | up to 1.0 million | up to 1,000 | 69 minutes | here, two cores |
 | step 3, sides 2048 and 4096, 96 runs | up to 16.8 million | up to 1,000 | 2 hours 20 minutes on fourteen cores of a pod (about 33 core-hours); 3 GB a run at side 4096 | a pod |
 | the re-check, side 2048, 16 runs | 4.2 million | 1,000 | 40 minutes | here, two cores |
+| step 4, the first look, 48 runs read through blocks | up to 1.0 million | up to 1,024 | 30 minutes with its analysis | here, two cores |
+| step 4, the registered test, 22 runs read through blocks | up to 4.2 million | up to 1,024 | 47 minutes with its analysis | here, two cores |
 | step 3b, sides 1024, 2048 and 4096, 512 runs | up to 16.8 million | 1,000 | 2 hours 11 minutes on sixteen cores of a pod, $2.49 | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
@@ -837,15 +883,24 @@ What each one gives:
   and Life against HighLife, the pair in LatticeLife's README. They coexist, so the next
   question is which worlds to follow to larger sizes: these pairs, whose ash is quiet, or a
   soup, which stays active.
-- **D3. Where a probabilistic coarse rule lives.** I recommend a plain table of transition
-  frequencies in lattice-lab first, and a Kepler extension only if a closed form shows up.
+- **D3. Where a probabilistic coarse rule lives.** Done as recommended: plain tables of what
+  came next, in lattice-lab (`examples/scale-up-closure/zoom.py`). No closed form has shown
+  up that would call for Kepler, apart from the one number that is the same at every block.
+- **D8. Where the ladder goes next** (new, 2026-11-24). Three ways on from step 4, cheapest
+  first: (a) richer symbols for the pair, since the first look says they carry much further;
+  (b) a search of the lab's rule sets for a world where something is organised over a
+  growing distance, read off how the spread of a block's count grows with the block, which
+  is the world this ladder is for; (c) step 5, the reversible variants, where nothing can
+  die out and the zoomed-out world cannot freeze. I recommend (b) first: it is a few hours
+  on this machine, and it decides whether (a) and (c) are worth their cost on these two
+  worlds or on a better one.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
 - **D7. The remainder at side 2048.** Done (step 3b). You chose to close it before step 4;
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
-- **D6. The branches.** Seven, none merged and none with a pull request yet:
+- **D6. The branches.** Eight, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -856,9 +911,11 @@ What each one gives:
     `scale-up-step-2` pins. A LatticeLife branch should stay, or be merged, before the
     lattice-lab branch that pins it is;
   - lattice-lab `scale-up-step-3`, on top of `scale-up-step-2`: the registered scale-up test,
-    both parts and both runs, and step 3b.
+    both parts and both runs, and step 3b;
+  - lattice-lab `scale-up-step-4`, on top of `scale-up-step-3`: the zoom-out instrument, its
+    first look and its registered test.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 40
-  studies and 1,772 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 41
+  studies and 1,817 predictions.

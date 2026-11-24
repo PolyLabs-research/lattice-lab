@@ -560,5 +560,57 @@ def test_the_closure_ledger_holds_the_registration():
         assert question["body"]["sha256"] == S.question()["sha256"]
 
 
+def test_the_registered_closure_run_held_on_43_of_45():
+    """The run of 2026-11-24, side 2048, sixteen fresh starts: 43 of the 45 predictions held.
+    What the first look saw on side 1024 came back to three figures. The two that failed were
+    the band guessed for a block of 64, missed by 0.004, and a stillness claim for the soup
+    at block 32, where there was no still neighbourhood to try it on."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["missing"] == [] and len(ledger.entries[-2]["body"]["rows"]) == 54
+    assert verdict["verdict"] == {
+        "E": "holds", "H": "holds", "N": "fails", "S": "fails", "T": "holds", "X": "holds",
+    }  # fmt: skip
+    failed = {label for label, word in verdict["outcomes"].items() if word == "fails"}
+    assert failed == {"N block 64: surprise", "S soup standoff, block 32"}
+    assert sum(word == "holds" for word in verdict["outcomes"].values()) == 43
+    m = verdict["measured"]
+    # stillness: nothing moved out of it anywhere, in 902 million still neighbourhoods; the
+    # claim that failed had none to be tried on, and the control broke as it should
+    still = {k: v for k, v in m.items() if k.startswith("S ") and k != "S control"}
+    assert all(v["moved_from_stillness"] == 0 for v in still.values())
+    assert sum(v["of"] for v in still.values()) == 902418683
+    assert m["S soup standoff, block 32"]["of"] == 0
+    assert m["S control"] == {"moved_from_stillness": 8700, "of": 5853870}
+    # the neighbours' share of the surprise: the smaller torus's, to three places
+    for block, share in S.REMOVED.items():
+        assert abs(m[f"N block {block}: surprise"]["measured"] - share) < 0.002
+        assert m[f"N block {block}: errors"]["measured"] < 0.005
+    assert m["N block 64: surprise"]["measured"] == 0.08437  # the band stopped at 0.08
+    # one rule at every time, with the neighbours and not without
+    for block in (4, 8, 16):
+        assert 1.004 < m[f"T block {block}: with neighbours"]["measured"] < 1.009
+        assert 1.47 < m[f"T block {block}: alone"]["measured"] < 1.65
+    # the rule learned on side 1024 is the rule on side 2048
+    assert max(m[f"X block {block}"]["measured"] for block in (4, 8, 16, 32)) == 1.00021
+    # one number at every scale, a block of 64 included
+    chances = [m[f"E block {block}"]["measured"] for block in (4, 8, 16, 32, 64)]
+    assert chances == [0.00813, 0.00773, 0.00745, 0.00746, 0.00862]
+    assert m["E block 64"]["of"] == 8813
+    # the horizon: what the first look found, to within a few hundredths
+    keeps = [m[f"H block {block}: keeps up"]["measured"] for block in (4, 8, 16, 32)]
+    assert keeps == [0.8563, 1.1019, 1.2128, 1.1012]
+    assert [m[f"H block {b}: alone"]["measured"] > 3.4 for b in (4, 8, 16, 32)] == [True] * 4
+    assert m["H block 4: dies early"]["coarse"] == m["H block 8: dies early"]["coarse"] == 0.0
+    # the rule for movement at a block of 64, which no run had been read through
+    wide = verdict["rule_for_movement"]["64"]
+    assert wide["moves_next_after_still"][:2] == [0.0, 0.00862]
+    assert wide["moves_next_after_moved"][0] > 0.6 and wide["moving"]["1024"] > 0.2
+
+
 def test_verify_can_rerun_the_closure_studys_records():
     assert load(LAB).rerun is not None
