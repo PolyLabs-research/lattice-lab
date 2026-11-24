@@ -451,5 +451,215 @@
   "tie_break": "standoff",
   "density": 1.0,
   "why": "five species with one rule whose territories grew"
+ },
+ {
+  "family": "rival",
+  "index": 244,
+  "name": "B245678/S3678 against itself",
+  "rules": [
+   "B245678/S3678",
+   "B245678/S3678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 244,
+  "name": "B245678/S3678 against itself",
+  "rules": [
+   "B245678/S3678",
+   "B245678/S3678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 329,
+  "name": "B24678/S34678 against itself",
+  "rules": [
+   "B24678/S34678",
+   "B24678/S34678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 329,
+  "name": "B24678/S34678 against itself",
+  "rules": [
+   "B24678/S34678",
+   "B24678/S34678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 695,
+  "name": "B3568/S124678 against itself",
+  "rules": [
+   "B3568/S124678",
+   "B3568/S124678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 695,
+  "name": "B3568/S124678 against itself",
+  "rules": [
+   "B3568/S124678",
+   "B3568/S124678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 833,
+  "name": "B2578/S135678 against itself",
+  "rules": [
+   "B2578/S135678",
+   "B2578/S135678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 833,
+  "name": "B2578/S135678 against itself",
+  "rules": [
+   "B2578/S135678",
+   "B2578/S135678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 588,
+  "name": "B03458/S035678 against itself",
+  "rules": [
+   "B03458/S035678",
+   "B03458/S035678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 588,
+  "name": "B03458/S035678 against itself",
+  "rules": [
+   "B03458/S035678",
+   "B03458/S035678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 372,
+  "name": "B23467/S4568 against itself",
+  "rules": [
+   "B23467/S4568",
+   "B23467/S4568"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival",
+  "index": 372,
+  "name": "B23467/S4568 against itself",
+  "rules": [
+   "B23467/S4568",
+   "B23467/S4568"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "growing territories in all four of its contests"
+ },
+ {
+  "family": "rival alone",
+  "index": 244,
+  "name": "B245678/S3678",
+  "rules": [
+   "B245678/S3678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
+ },
+ {
+  "family": "rival alone",
+  "index": 329,
+  "name": "B24678/S34678",
+  "rules": [
+   "B24678/S34678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
+ },
+ {
+  "family": "rival alone",
+  "index": 695,
+  "name": "B3568/S124678",
+  "rules": [
+   "B3568/S124678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
+ },
+ {
+  "family": "rival alone",
+  "index": 833,
+  "name": "B2578/S135678",
+  "rules": [
+   "B2578/S135678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
+ },
+ {
+  "family": "rival alone",
+  "index": 588,
+  "name": "B03458/S035678",
+  "rules": [
+   "B03458/S035678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
+ },
+ {
+  "family": "rival alone",
+  "index": 372,
+  "name": "B23467/S4568",
+  "rules": [
+   "B23467/S4568"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "the rule of a rival above, alone"
  }
 ]

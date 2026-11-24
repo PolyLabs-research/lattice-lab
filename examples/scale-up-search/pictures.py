@@ -53,6 +53,12 @@ WORLDS: list[tuple[str, tuple[str, ...], str, float, str]] = [
      "each fills in its own, and the territories go on growing."),
     ("B2378/S25678, three copies", ("B2378/S25678",) * 3, "standoff", 1.0,
      "Three species with the one rule share the grid out the same way."),
+    ("B245678/S3678 against a copy of itself, ties drawn", ("B245678/S3678",) * 2, "random", 1.0,
+     "One of the 202 rules of the random draw that hold territories against their copy. "
+     "Alone it fills the grid and stops. Against a copy, two still grounds with only the "
+     "walls moving, under either tie-break."),
+    ("B23467/S4568 against a copy of itself", ("B23467/S4568",) * 2, "standoff", 1.0,
+     "Another of them, of the other kind: busy alone, and busy inside its territories."),
     ("B015/S1 against a copy of itself, ties left empty", ("B015/S1",) * 2, "standoff", 1.0,
      "Under the standoff the two species sort themselves into territories that stay busy "
      "inside and grow slowly."),

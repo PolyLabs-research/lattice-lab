@@ -34,6 +34,10 @@ repeat here (five species cost four times what one does).
     pair      two different rules whose territories the contests found growing (two at most)
     copies    five species with one rule whose territories the contests found growing (the
               one world with the largest territories)
+    rival     from rivals.py, which gives every rule of the even draw a copy of itself: the
+              six rules with the largest territories among those whose territories grow from
+              both starts under both tie-breaks, each under both tie-breaks from a full
+              start; and each of those rules alone (`rival alone`), to set beside its contest
 
 **What is reported** for each world, from the field of its with the largest area at the end
 and, for a world of several species, from each species' own cells (its territory):
@@ -85,15 +89,15 @@ import search  # noqa: E402
 OUT = HERE / "confirm"
 SIDE, TIMES, BLOCKS = 1024, (64, 128, 256, 512, 1024, 2048), (4, 8, 16, 32, 64, 128)
 STARTS = (12001, 12002, 12003)
-ALONE, SOUPS, LEFT, CONTESTS, PAIRS, COPIES = 10, 4, 4, 4, 2, 1
+ALONE, SOUPS, LEFT, CONTESTS, PAIRS, COPIES, RIVALS = 10, 4, 4, 4, 2, 1, 6
 WAITS = (2, 4, 8)
 DRIFT, HALVED, TAKEN = 0.2, 0.5, 64.0
 MORE = ("known", "alone", "contest", "pair")
 
 
-def candidates(screen: list[dict], contested: dict) -> list[dict]:
+def candidates(screen: list[dict], contested: dict, wider: dict | None = None) -> list[dict]:
     """The worlds to run again. `screen` is the screen's worlds as search.describe gives them,
-    `contested` the summary of contests.py."""
+    `contested` the summary of contests.py, and `wider` that of rivals.py if it has run."""
     out = [{"family": "known", "index": f["index"], "name": f["name"], "rules": f["rules"],
             "tie_break": f["tie_break"], "density": 0.5, "why": "a known world"}
            for f in screen if f["family"] == "known"]  # fmt: skip
@@ -141,6 +145,20 @@ def candidates(screen: list[dict], contested: dict) -> list[dict]:
         out.append({"family": "copies", "index": f["index"], "name": f["name"],
                     "rules": f["rules"], "tie_break": f["tie_break"], "density": f["density"],
                     "why": "five species with one rule whose territories grew"})  # fmt: skip
+    sturdy = [e for e in (wider or {}).get("territories", [])
+              if len(e["verdicts"]) == 4
+              and set(e["verdicts"].values()) == {"growing territories"}]  # fmt: skip
+    best = sorted(sturdy, key=lambda e: -e["territory"])[:RIVALS]
+    for entry in best:
+        for kind in contests.KINDS:
+            out.append({"family": "rival", "index": entry["index"],
+                        "name": f"{entry['rule']} against itself",
+                        "rules": [entry["rule"]] * 2, "tie_break": kind, "density": 1.0,
+                        "why": "growing territories in all four of its contests"})  # fmt: skip
+    for entry in best:
+        out.append({"family": "rival alone", "index": entry["index"], "name": entry["rule"],
+                    "rules": [entry["rule"]], "tie_break": "standoff", "density": 0.5,
+                    "why": "the rule of a rival above, alone"})  # fmt: skip
     return out
 
 
@@ -279,7 +297,9 @@ def main() -> None:
         screen = [search.describe(json.loads(line))
                   for line in (search.OUT / "records.jsonl").read_text().splitlines()]  # fmt: skip
         contested = json.loads((contests.OUT / "summary.json").read_text())
-        picked.write_text(json.dumps(candidates(screen, contested), indent=1) + "\n")
+        wider = HERE / "rivals" / "summary.json"
+        more = json.loads(wider.read_text()) if wider.exists() else None
+        picked.write_text(json.dumps(candidates(screen, contested, more), indent=1) + "\n")
     worlds = json.loads(picked.read_text())
     path = OUT / "records.jsonl"
 

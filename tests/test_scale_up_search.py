@@ -34,6 +34,7 @@ CONTESTS = _load("scale_up_search_contests", LAB / "contests.py")
 CONFIRM = _load("scale_up_search_confirm", LAB / "confirm.py")
 PICTURES = _load("scale_up_search_pictures", LAB / "pictures.py")
 LONG = _load("scale_up_search_long", LAB / "long.py")
+RIVALS = _load("scale_up_search_rivals", LAB / "rivals.py")
 
 
 # --- the correlation area, where the answer is known ---------------------------------------------
@@ -413,6 +414,125 @@ def test_the_rules_one_count_away():
                                "verdict": "mixed"}]) == []  # fmt: skip
 
 
+# --- every rule against its copy -----------------------------------------------------------------
+
+
+def test_every_rule_of_the_draw_gets_a_rival():
+    rules = RIVALS.rules()
+    assert len(rules) == len({r["rule"] for r in rules}) == 1196
+    assert rules[0] == {"index": 1, "rule": SEARCH.random_rule(1)}
+    assert {"index": 1107, "rule": "B2378/S25678"} in rules  # under the number it was drawn at
+    worlds = RIVALS.worlds()
+    assert len(worlds) == len({CONTESTS.key(w) for w in worlds}) == 4 * 1196
+    assert {w["density"] for w in worlds[: 2 * 1196]} == {1.0}  # the full starts first
+    assert {w["density"] for w in worlds[2 * 1196 :]} == {0.5}
+    first = worlds[:2]
+    assert [w["tie_break"] for w in first] == ["random", "standoff"]
+    assert all(w["rules"] == [rules[0]["rule"]] * 2 and w["family"] == "copy" for w in first)
+
+
+def test_what_the_rules_come_to_against_their_copies():
+    def told(rule, index, density, kind, verdict, area=0.0):
+        territories = [{"area": area}, {"area": area / 2}]
+        return {"rules": [rule, rule], "index": index, "density": density, "tie_break": kind,
+                "verdict": verdict, "territories": territories}  # fmt: skip
+
+    found = [
+        # territories under both tie-breaks, growing under one
+        told("B2378/S25678", 1, 1.0, "random", "growing territories", 100.0),
+        told("B2378/S25678", 1, 1.0, "standoff", "standing territories", 160.0),
+        told("B2378/S25678", 1, 0.5, "random", "mixed"),
+        told("B2378/S25678", 1, 0.5, "standoff", "mixed"),
+        # under the standoff only, and only from the half-full start
+        told("B2/S0", 2, 1.0, "random", "mixed"),
+        told("B2/S0", 2, 1.0, "standoff", "dead"),
+        told("B2/S0", 2, 0.5, "random", "together", 30.0),
+        told("B2/S0", 2, 0.5, "standoff", "standing territories", 26.0),
+        # under the draw only
+        told("B3/S23", 3, 1.0, "random", "standing territories", 20.0),
+        told("B3/S23", 3, 1.0, "standoff", "one left"),
+        # neither
+        told("B4678/S35678", 4, 1.0, "random", "dead"),
+        told("B4678/S35678", 4, 1.0, "standoff", "dead"),
+    ]
+    entries = RIVALS.by_rule(found)
+    assert [(e["rule"], e["holds"]) for e in entries] == [
+        ("B2378/S25678", "both"), ("B2/S0", "standoff only"), ("B3/S23", "draw only"),
+        ("B4678/S35678", "neither"),
+    ]  # fmt: skip
+    assert [e["territory"] for e in entries] == [160.0, 26.0, 20.0, 0.0]  # not the 30 held together
+    assert [e["growing"] for e in entries] == [True, False, False, False]
+    assert entries[0]["verdicts"]["full start, standoff"] == "standing territories"
+    assert entries[1]["verdicts"]["half-full start, random"] == "together"
+    alone = {"B2378/S25678": {"called": "growing", "changed": 0.4},
+             "B2/S0": {"called": "patches", "changed": 0.3},
+             "B3/S23": {"called": "patches", "changed": 0.004}}  # fmt: skip
+    summary = RIVALS.summarise(found, alone)
+    assert summary["rules"] == 4 and summary["growing"] == 1
+    assert summary["holds"] == {"both": 1, "standoff only": 1, "draw only": 1, "neither": 1}
+    assert summary["tallies"]["full start, standoff"] == {
+        "contests": 4, "dead": 2, "one left": 1, "growing territories": 0,
+        "standing territories": 1, "together": 0, "mixed": 0,
+    }  # fmt: skip
+    assert summary["alone"]["patches"] == {"both": 0, "standoff only": 1, "draw only": 1,
+                                           "neither": 0}  # fmt: skip
+    assert summary["alone"]["not screened"]["neither"] == 1
+    assert summary["alone"]["dead"] == dict.fromkeys(RIVALS.HOLDS, 0)  # every call has its row
+    # how busy each rule is alone, and the fewest of its own kind a birth needs
+    assert summary["activity alone"]["busy"] == {"both": 1, "standoff only": 1, "draw only": 0,
+                                                 "neither": 0}  # fmt: skip
+    assert summary["activity alone"]["still"]["draw only"] == 1
+    least = summary["least birth"]
+    assert least["2"] == {"both": 1, "standoff only": 1, "draw only": 0, "neither": 0}
+    assert least["3"]["draw only"] == 1 and least["4 or more"]["neither"] == 1
+    assert least["0"] == least["1"] == least["never born"] == dict.fromkeys(RIVALS.HOLDS, 0)
+    few = summary["least birth 2 or 3"]  # B2378/S25678 and B3/S23 survive on 2, B2/S0 does not
+    assert few["survives on 1 or 2"] == {"both": 1, "standoff only": 0, "draw only": 1,
+                                         "neither": 0}  # fmt: skip
+    assert few["survives on neither"]["standoff only"] == 1
+    assert sum(sum(row.values()) for row in few.values()) == 3  # Anneal needs four: left out
+    # the two cuts together, with the rules that die in every contest set aside
+    assert [e["dies"] for e in entries] == [False, False, False, True]
+    assert summary["needs its own kind"] == {
+        "rules": 1, "die in every contest": 0,
+        "of the rest": {"both": 0, "standoff only": 1, "draw only": 0, "neither": 0},
+    }  # fmt: skip
+    assert summary["does not"]["rules"] == 3 and summary["does not"]["die in every contest"] == 1
+    assert summary["does not"]["of the rest"] == {"both": 1, "standoff only": 0, "draw only": 1,
+                                                  "neither": 0}  # fmt: skip
+    # the first cut apart for the rules it was read off and the others: none of these four
+    # made-up rules is among the first 458 of the draw, so all sit with the others
+    assert summary["least birth, the other rules"] == least
+    read_off = summary["least birth, the rules it was read off"]
+    assert all(row == dict.fromkeys(RIVALS.HOLDS, 0) for row in read_off.values())
+    assert [e["rule"] for e in summary["territories"]] == ["B2378/S25678", "B2/S0", "B3/S23"]
+    # which counts the rules with territories share: birth on 2 in two of the three, of
+    # three in four of all the rules; survival on 8 in one of three
+    birth = {c["count"]: (c["all"], c["chosen"]) for c in summary["counts"]["birth"]}
+    assert birth[2] == (0.5, 0.667) and birth[3] == (0.5, 0.667) and birth[4] == (0.25, 0.0)
+    survival = {c["count"]: (c["all"], c["chosen"]) for c in summary["counts"]["survival"]}
+    assert survival[8] == (0.5, 0.333) and survival[0] == (0.25, 0.333)
+    assert summary["counts under both"]["birth"][7]["chosen"] == 1.0
+    assert RIVALS.counts(entries, [])["birth"][0]["chosen"] is None
+
+
+def test_the_three_ways_of_cutting_the_rules():
+    assert [RIVALS.least_birth(r) for r in ("B0147/S128", "B15/S7", "B2378/S25678", "B3/S23",
+                                            "B4678/S35678", "B8/S", "B/S23")] == [
+        "0", "1", "2", "3", "4 or more", "4 or more", "never born",
+    ]  # fmt: skip
+    assert RIVALS.survives_on_few("B3/S23") and RIVALS.survives_on_few("B2/S1")
+    assert not RIVALS.survives_on_few("B2/S0") and not RIVALS.survives_on_few("B2/S345678")
+    assert not RIVALS.survives_on_few("B12/S")  # the counts of the birth set do not count
+    assert RIVALS.needs_its_own_kind("B2/S0") and RIVALS.needs_its_own_kind("B3568/S0346")
+    assert not RIVALS.needs_its_own_kind("B2378/S25678")  # survives on two
+    assert not RIVALS.needs_its_own_kind("B1/S5") and not RIVALS.needs_its_own_kind("B4/S5")
+    busy = [RIVALS.activity({"called": c, "changed": x})
+            for c, x in (("dead", 0.0), ("patches", 0.0), ("patches", 0.009), ("organised", 0.01),
+                         ("patches", 0.199), ("growing", 0.2), ("patches", 0.5))]  # fmt: skip
+    assert busy == ["dead or full", "still", "still", "quiet", "quiet", "busy", "busy"]
+
+
 # --- the candidates again ------------------------------------------------------------------------
 
 
@@ -586,6 +706,31 @@ def test_the_candidates_that_are_run_again():
     ]
     assert len({CONFIRM.key(w) for w in worlds}) == len(worlds)
     assert {w["density"] for w in worlds if w["family"] in ("known", "alone", "soup")} == {0.5}
+    # the wider screen adds its best rules, each under both tie-breaks and alone; the worlds
+    # picked before it stay as they were, in their order
+    four = ("full start, random", "full start, standoff", "half-full start, random",
+            "half-full start, standoff")  # fmt: skip
+    grows = dict.fromkeys(four, "growing territories")
+    entries = [{"rule": f"B{i}/S", "index": 100 + i, "holds": "both", "growing": True,
+                "territory": 10.0 * i, "verdicts": grows} for i in range(1, 9)]  # fmt: skip
+    # larger territories, but not growing in every one of the four contests: not picked
+    entries += [{"rule": "B9/S", "index": 9, "holds": "standoff only", "growing": True,
+                 "territory": 999.0, "verdicts": grows | {four[0]: "mixed"}},
+                {"rule": "B8/S8", "index": 8, "holds": "both", "growing": True,
+                 "territory": 999.0, "verdicts": grows | {four[3]: "standing territories"}},
+                {"rule": "B7/S7", "index": 7, "holds": "both", "growing": True,
+                 "territory": 999.0, "verdicts": {four[0]: "growing territories"}}]  # fmt: skip
+    wider = CONFIRM.candidates(screen, contested, {"territories": entries})
+    assert wider[: len(worlds)] == worlds
+    added = wider[len(worlds) :]
+    rivals = [w for w in added if w["family"] == "rival"]
+    assert [w["index"] for w in rivals] == [108, 108, 107, 107, 106, 106, 105, 105, 104, 104,
+                                             103, 103]  # fmt: skip
+    assert [w["tie_break"] for w in rivals[:2]] == ["random", "standoff"]
+    assert {w["density"] for w in rivals} == {1.0} and rivals[0]["rules"] == ["B8/S"] * 2
+    alone = [w for w in added if w["family"] == "rival alone"]
+    assert [w["rules"] for w in alone] == [[f"B{i}/S"] for i in range(8, 2, -1)]
+    assert len(added) == 18 and len({CONFIRM.key(w) for w in wider}) == len(wider)
 
 
 def test_the_worlds_that_are_followed_for_longer():
@@ -714,11 +859,67 @@ def test_the_contests_found_what_the_write_up_says():
     assert over("variant", "one left") == 27
 
 
+def test_the_wider_screen_found_what_the_write_up_says():
+    summary = _summary("rivals")
+    assert summary["rules"] == 1196
+    assert sum(t["contests"] for t in summary["tallies"].values()) == 4784
+    assert all(t["contests"] == 1196 for t in summary["tallies"].values())
+    assert summary["holds"] == {"both": 112, "standoff only": 77, "draw only": 13, "neither": 994}
+    assert summary["growing"] == 175
+
+    def holding(row: dict) -> int:
+        return sum(row.values()) - row["neither"]
+
+    # territories go with how few of its own kind a cell needs to be born
+    least = {group: holding(row) for group, row in summary["least birth"].items()}
+    assert least == {"0": 28, "1": 41, "2": 91, "3": 41, "4 or more": 1, "never born": 0}
+    sizes = {group: sum(row.values()) for group, row in summary["least birth"].items()}
+    assert sizes == {"0": 593, "1": 279, "2": 159, "3": 82, "4 or more": 81, "never born": 2}
+    # and it does so on the rules that cut was not read from
+    other = summary["least birth, the other rules"]
+    assert sum(sum(row.values()) for row in other.values()) == 1196 - RIVALS.READ_OFF
+    rate = {group: holding(row) / sum(row.values()) for group, row in other.items()}
+    assert rate["0"] < 0.06 and rate["1"] < 0.2 and rate["4 or more"] < 0.05
+    assert rate["2"] > 0.5 and rate["3"] > 0.45
+    # the two cuts together
+    own = summary["needs its own kind"]
+    assert own["rules"] == 57 and own["die in every contest"] == 10
+    assert own["of the rest"] == {"both": 37, "standoff only": 5, "draw only": 2, "neither": 3}
+    rest = summary["does not"]
+    assert rest["rules"] == 1139 and holding(rest["of the rest"]) == 158
+    # they come from rules that are patches alone, not from the ones that grow alone
+    assert holding(summary["alone"]["patches"]) == 191
+    assert holding(summary["alone"]["growing"]) == 2
+    assert holding(summary["activity alone"]["busy"]) == 144
+    sturdy = [e for e in summary["territories"]
+              if set(e["verdicts"].values()) == {"growing territories"}]  # fmt: skip
+    assert len(sturdy) == 78 and all(len(e["verdicts"]) == 4 for e in sturdy)
+    assert "B2378/S25678" in {e["rule"] for e in sturdy}
+
+
+def test_a_contest_run_twice_comes_out_the_same():
+    """contests.py and rivals.py both ran the 20 rules of the draw that grow alone, against
+    their copies: the same world must end on the same grid, cell for cell."""
+    paths = [LAB / name / "records.jsonl" for name in ("contests", "rivals")]
+    if not all(path.exists() for path in paths):
+        pytest.skip("the contests have not been run")
+    ends = []
+    for path in paths:
+        with path.open() as lines:
+            records = map(json.loads, lines)
+            ends.append({(r["rules"][0], r["tie_break"], r["density"]): r["final_sha256"]
+                         for r in records if r["family"] in ("contest", "copy")})  # fmt: skip
+    shared = set(ends[0]) & set(ends[1])
+    assert len(shared) == 80 and all(ends[0][k] == ends[1][k] for k in shared)
+
+
 def test_the_candidates_came_out_as_the_write_up_says():
     summary = _summary("confirm")
     worlds = {(w["family"], w["name"], w["tie_break"]): w for w in summary["worlds"]}
-    assert len(worlds) == 38 and sum(w["starts"] for w in summary["worlds"]) == 56
+    assert len(worlds) == 56 and sum(w["starts"] for w in summary["worlds"]) == 74
     assert {w["starts"] for w in summary["worlds"]} == {1, 3}
+    first = [w for w in summary["worlds"] if not w["family"].startswith("rival")]
+    assert len(first) == 38 and sum(w["starts"] for w in first) == 56  # before the wider screen
 
     def called(family: str, name: str, kind: str = "standoff") -> str:
         return worlds[(family, name, kind)]["called"]
@@ -746,6 +947,21 @@ def test_the_candidates_came_out_as_the_write_up_says():
     slow = worlds[("contest", "B015/S1 against itself", "standoff")]
     assert slow["clock"]["4"]["median"] < 1 < slow["clock"]["8"]["median"]
     assert slow["apart"] < -0.99 and abs(slow["shares"][0] - slow["shares"][1]) < 0.05
+    # the six sturdiest rules of the wider screen: five keep growing under both tie-breaks
+    # with the clock at four, one sets; alone, none of them is anything
+    rivals = [w for w in summary["worlds"] if w["family"] == "rival"]
+    assert len(rivals) == 12 and {w["density"] for w in rivals} == {1.0}
+    grows = [w for w in rivals if w["called"] == "keeps growing"]
+    sets = {w["name"] for w in rivals if w["called"] == "organised"}
+    assert len(grows) == 10 and sets == {"B2578/S135678 against itself"}
+    assert all(w["apart"] < -0.99 and w["holding"] == 2 for w in rivals)
+    assert sum(abs(w["clock"]["4"]["median"] - 1) < 0.12 for w in grows) == 9
+    still = worlds[("rival", "B245678/S3678 against itself", "random")]
+    assert still["live"][-1] > 0.95 and still["changed"] < 0.05 and still["area"][-1] > 3000
+    busy = worlds[("rival", "B23467/S4568 against itself", "standoff")]
+    assert busy["changed"] > 0.3 and abs(busy["shares"][0] - busy["shares"][1]) < 0.02
+    alone = [w["called"] for w in summary["worlds"] if w["family"] == "rival alone"]
+    assert len(alone) == 6 and set(alone) <= {"dead", "patches"}
 
 
 def test_the_longer_look_came_out_as_the_write_up_says():

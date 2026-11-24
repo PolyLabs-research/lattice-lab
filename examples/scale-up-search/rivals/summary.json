@@ -1,0 +1,3279 @@
+{
+ "side": 256,
+ "times": [
+  32,
+  64,
+  128,
+  256,
+  512
+ ],
+ "start": 11001,
+ "rules": 1196,
+ "tallies": {
+  "full start, random": {
+   "contests": 1196,
+   "dead": 58,
+   "one left": 0,
+   "growing territories": 91,
+   "standing territories": 29,
+   "together": 4,
+   "mixed": 1014
+  },
+  "full start, standoff": {
+   "contests": 1196,
+   "dead": 108,
+   "one left": 0,
+   "growing territories": 150,
+   "standing territories": 29,
+   "together": 6,
+   "mixed": 903
+  },
+  "half-full start, random": {
+   "contests": 1196,
+   "dead": 53,
+   "one left": 1,
+   "growing territories": 96,
+   "standing territories": 21,
+   "together": 14,
+   "mixed": 1011
+  },
+  "half-full start, standoff": {
+   "contests": 1196,
+   "dead": 100,
+   "one left": 1,
+   "growing territories": 157,
+   "standing territories": 23,
+   "together": 6,
+   "mixed": 909
+  }
+ },
+ "holds": {
+  "both": 112,
+  "standoff only": 77,
+  "draw only": 13,
+  "neither": 994
+ },
+ "growing": 175,
+ "alone": {
+  "dead": {
+   "both": 3,
+   "standoff only": 3,
+   "draw only": 2,
+   "neither": 34
+  },
+  "patches": {
+   "both": 107,
+   "standoff only": 73,
+   "draw only": 11,
+   "neither": 917
+  },
+  "organised": {
+   "both": 1,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 25
+  },
+  "growing": {
+   "both": 1,
+   "standoff only": 1,
+   "draw only": 0,
+   "neither": 18
+  }
+ },
+ "activity alone": {
+  "dead or full": {
+   "both": 3,
+   "standoff only": 3,
+   "draw only": 2,
+   "neither": 34
+  },
+  "still": {
+   "both": 26,
+   "standoff only": 8,
+   "draw only": 6,
+   "neither": 216
+  },
+  "quiet": {
+   "both": 5,
+   "standoff only": 4,
+   "draw only": 1,
+   "neither": 34
+  },
+  "busy": {
+   "both": 78,
+   "standoff only": 62,
+   "draw only": 4,
+   "neither": 710
+  }
+ },
+ "least birth": {
+  "0": {
+   "both": 6,
+   "standoff only": 13,
+   "draw only": 9,
+   "neither": 565
+  },
+  "1": {
+   "both": 10,
+   "standoff only": 29,
+   "draw only": 2,
+   "neither": 238
+  },
+  "2": {
+   "both": 57,
+   "standoff only": 34,
+   "draw only": 0,
+   "neither": 68
+  },
+  "3": {
+   "both": 38,
+   "standoff only": 1,
+   "draw only": 2,
+   "neither": 41
+  },
+  "4 or more": {
+   "both": 1,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 80
+  },
+  "never born": {
+   "both": 0,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 2
+  }
+ },
+ "least birth, the rules it was read off": {
+  "0": {
+   "both": 2,
+   "standoff only": 6,
+   "draw only": 4,
+   "neither": 221
+  },
+  "1": {
+   "both": 6,
+   "standoff only": 11,
+   "draw only": 1,
+   "neither": 88
+  },
+  "2": {
+   "both": 25,
+   "standoff only": 18,
+   "draw only": 0,
+   "neither": 31
+  },
+  "3": {
+   "both": 12,
+   "standoff only": 1,
+   "draw only": 0,
+   "neither": 11
+  },
+  "4 or more": {
+   "both": 0,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 20
+  },
+  "never born": {
+   "both": 0,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 1
+  }
+ },
+ "least birth, the other rules": {
+  "0": {
+   "both": 4,
+   "standoff only": 7,
+   "draw only": 5,
+   "neither": 344
+  },
+  "1": {
+   "both": 4,
+   "standoff only": 18,
+   "draw only": 1,
+   "neither": 150
+  },
+  "2": {
+   "both": 32,
+   "standoff only": 16,
+   "draw only": 0,
+   "neither": 37
+  },
+  "3": {
+   "both": 26,
+   "standoff only": 0,
+   "draw only": 2,
+   "neither": 30
+  },
+  "4 or more": {
+   "both": 1,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 60
+  },
+  "never born": {
+   "both": 0,
+   "standoff only": 0,
+   "draw only": 0,
+   "neither": 1
+  }
+ },
+ "least birth 2 or 3": {
+  "survives on 1 or 2": {
+   "both": 58,
+   "standoff only": 30,
+   "draw only": 0,
+   "neither": 96
+  },
+  "survives on neither": {
+   "both": 37,
+   "standoff only": 5,
+   "draw only": 2,
+   "neither": 13
+  }
+ },
+ "needs its own kind": {
+  "rules": 57,
+  "die in every contest": 10,
+  "of the rest": {
+   "both": 37,
+   "standoff only": 5,
+   "draw only": 2,
+   "neither": 3
+  }
+ },
+ "does not": {
+  "rules": 1139,
+  "die in every contest": 40,
+  "of the rest": {
+   "both": 75,
+   "standoff only": 72,
+   "draw only": 11,
+   "neither": 941
+  }
+ },
+ "counts": {
+  "birth": [
+   {
+    "count": 0,
+    "all": 0.496,
+    "chosen": 0.139
+   },
+   {
+    "count": 1,
+    "all": 0.484,
+    "chosen": 0.287
+   },
+   {
+    "count": 2,
+    "all": 0.491,
+    "chosen": 0.653
+   },
+   {
+    "count": 3,
+    "all": 0.515,
+    "chosen": 0.663
+   },
+   {
+    "count": 4,
+    "all": 0.493,
+    "chosen": 0.614
+   },
+   {
+    "count": 5,
+    "all": 0.515,
+    "chosen": 0.644
+   },
+   {
+    "count": 6,
+    "all": 0.471,
+    "chosen": 0.51
+   },
+   {
+    "count": 7,
+    "all": 0.503,
+    "chosen": 0.455
+   },
+   {
+    "count": 8,
+    "all": 0.507,
+    "chosen": 0.55
+   }
+  ],
+  "survival": [
+   {
+    "count": 0,
+    "all": 0.522,
+    "chosen": 0.51
+   },
+   {
+    "count": 1,
+    "all": 0.489,
+    "chosen": 0.356
+   },
+   {
+    "count": 2,
+    "all": 0.498,
+    "chosen": 0.371
+   },
+   {
+    "count": 3,
+    "all": 0.491,
+    "chosen": 0.441
+   },
+   {
+    "count": 4,
+    "all": 0.498,
+    "chosen": 0.51
+   },
+   {
+    "count": 5,
+    "all": 0.505,
+    "chosen": 0.599
+   },
+   {
+    "count": 6,
+    "all": 0.508,
+    "chosen": 0.574
+   },
+   {
+    "count": 7,
+    "all": 0.498,
+    "chosen": 0.594
+   },
+   {
+    "count": 8,
+    "all": 0.461,
+    "chosen": 0.46
+   }
+  ]
+ },
+ "counts under both": {
+  "birth": [
+   {
+    "count": 0,
+    "all": 0.496,
+    "chosen": 0.054
+   },
+   {
+    "count": 1,
+    "all": 0.484,
+    "chosen": 0.107
+   },
+   {
+    "count": 2,
+    "all": 0.491,
+    "chosen": 0.562
+   },
+   {
+    "count": 3,
+    "all": 0.515,
+    "chosen": 0.679
+   },
+   {
+    "count": 4,
+    "all": 0.493,
+    "chosen": 0.661
+   },
+   {
+    "count": 5,
+    "all": 0.515,
+    "chosen": 0.688
+   },
+   {
+    "count": 6,
+    "all": 0.471,
+    "chosen": 0.509
+   },
+   {
+    "count": 7,
+    "all": 0.503,
+    "chosen": 0.411
+   },
+   {
+    "count": 8,
+    "all": 0.507,
+    "chosen": 0.545
+   }
+  ],
+  "survival": [
+   {
+    "count": 0,
+    "all": 0.522,
+    "chosen": 0.509
+   },
+   {
+    "count": 1,
+    "all": 0.489,
+    "chosen": 0.357
+   },
+   {
+    "count": 2,
+    "all": 0.498,
+    "chosen": 0.357
+   },
+   {
+    "count": 3,
+    "all": 0.491,
+    "chosen": 0.446
+   },
+   {
+    "count": 4,
+    "all": 0.498,
+    "chosen": 0.5
+   },
+   {
+    "count": 5,
+    "all": 0.505,
+    "chosen": 0.598
+   },
+   {
+    "count": 6,
+    "all": 0.508,
+    "chosen": 0.607
+   },
+   {
+    "count": 7,
+    "all": 0.498,
+    "chosen": 0.607
+   },
+   {
+    "count": 8,
+    "all": 0.461,
+    "chosen": 0.429
+   }
+  ]
+ },
+ "territories": [
+  {
+   "rule": "B357/S25678",
+   "index": 1016,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "together"
+   },
+   "territory": 670.09,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B245678/S3678",
+   "index": 244,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 508.09,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24678/S34678",
+   "index": 329,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 507.3,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23578/S015678",
+   "index": 1160,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 476.62,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34568/S0135678",
+   "index": 804,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 434.25,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3568/S124678",
+   "index": 695,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 395.72,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2578/S135678",
+   "index": 833,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 386.65,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B03458/S035678",
+   "index": 588,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 375.45,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23467/S4568",
+   "index": 372,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 351.44,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23456/S01567",
+   "index": 1189,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 310.33,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3456/S01567",
+   "index": 606,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 303.17,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B345678/S03568",
+   "index": 521,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 301.69,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3456/S02467",
+   "index": 427,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 295.23,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B234568/S023678",
+   "index": 429,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 294.65,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B0356/S235678",
+   "index": 387,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 288.04,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B234578/S0567",
+   "index": 760,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 268.21,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B13458/S024568",
+   "index": 115,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 262.21,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34567/S12467",
+   "index": 167,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 261.51,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34568/S2456",
+   "index": 860,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 256.47,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B134568/S0457",
+   "index": 307,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 244.28,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2345/S0",
+   "index": 391,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 227.89,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B1234567/S456",
+   "index": 443,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 227.81,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34578/S035",
+   "index": 914,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 225.24,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2458/S0346",
+   "index": 1055,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 222.92,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23456/S0357",
+   "index": 943,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 219.34,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24567/S368",
+   "index": 245,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 214.24,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B345/S01356",
+   "index": 331,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 209.69,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34678/S01356",
+   "index": 1058,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 208.26,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3568/S0346",
+   "index": 159,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 207.96,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24567/S023567",
+   "index": 297,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 207.47,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3468/S03478",
+   "index": 10,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 201.35,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B0134678/S145678",
+   "index": 742,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 197.22,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2347/S34578",
+   "index": 741,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 195.65,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B246/S457",
+   "index": 194,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 195.21,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B1467/S45678",
+   "index": 67,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "together"
+   },
+   "territory": 194.39,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23467/S478",
+   "index": 124,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 191.48,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24678/S13568",
+   "index": 56,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 191.27,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2345/S0367",
+   "index": 1131,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 190.54,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23457/S3458",
+   "index": 188,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 187.35,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2378/S25678",
+   "index": 1107,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 183.0,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3456/S013468",
+   "index": 781,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 181.16,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24568/S68",
+   "index": 511,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 177.59,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3468/S01357",
+   "index": 550,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 175.77,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B35/S0346",
+   "index": 986,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 175.18,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3468/S034",
+   "index": 852,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 172.42,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B245/S46",
+   "index": 1153,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 170.14,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B234678/S0347",
+   "index": 359,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 169.93,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2348/S8",
+   "index": 898,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 167.31,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3458/S2367",
+   "index": 984,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 165.19,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3458/S02367",
+   "index": 231,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 161.44,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24678/S1346",
+   "index": 264,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 160.28,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B1456/S14567",
+   "index": 814,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 157.47,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B235678/S1356",
+   "index": 316,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 156.9,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B256/S03457",
+   "index": 1164,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 156.41,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2458/S0347",
+   "index": 890,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 156.08,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23568/S5",
+   "index": 649,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 155.39,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B234568/S1678",
+   "index": 396,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 155.17,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2345/S02678",
+   "index": 413,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 154.04,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B14578/S034568",
+   "index": 857,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 153.49,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3468/S02678",
+   "index": 129,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 153.07,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3457/S01245",
+   "index": 1003,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 151.63,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B35/S023567",
+   "index": 181,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 151.05,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B378/S03457",
+   "index": 854,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 150.98,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23478/S157",
+   "index": 495,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 149.45,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23578/S267",
+   "index": 116,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 145.51,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B246/S13578",
+   "index": 540,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 141.54,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2356/S0578",
+   "index": 261,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 139.99,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3578/S01345",
+   "index": 782,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 137.82,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B13458/S0235678",
+   "index": 178,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 135.9,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B358/S2356",
+   "index": 755,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 133.24,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24567/S134",
+   "index": 956,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 127.88,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2467/S034",
+   "index": 257,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 127.69,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2357/S057",
+   "index": 944,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 125.84,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B34567/S0127",
+   "index": 912,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 124.82,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B267/S245",
+   "index": 491,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 122.79,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B348/S124",
+   "index": 484,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 122.1,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24567/S18",
+   "index": 62,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 118.74,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23568/S1",
+   "index": 472,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 118.43,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B35/S01357",
+   "index": 1195,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 116.76,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24/S02457",
+   "index": 470,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 115.01,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B348/S013678",
+   "index": 529,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 111.99,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2568/S458",
+   "index": 1112,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 111.45,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B25/S257",
+   "index": 728,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 110.1,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2348/S17",
+   "index": 773,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 108.61,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B256/S2678",
+   "index": 205,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 107.67,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23568/S0235678",
+   "index": 398,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 107.59,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B246/S7",
+   "index": 275,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 105.28,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B26/S2458",
+   "index": 1068,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 101.53,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B023568/S0145678",
+   "index": 1192,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 97.53,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3458/S1237",
+   "index": 14,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 93.1,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B1248/S245678",
+   "index": 185,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 90.52,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B237/S2478",
+   "index": 598,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 88.6,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2378/S056",
+   "index": 824,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 86.07,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B348/S13",
+   "index": 29,
+   "verdicts": {
+    "full start, random": "dead",
+    "full start, standoff": "together",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 82.65,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B257/S567",
+   "index": 802,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 78.08,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2567/S48",
+   "index": 817,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 78.07,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B2358/S014567",
+   "index": 945,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 76.22,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B24578/S13456",
+   "index": 338,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 74.02,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B25/S045",
+   "index": 242,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 72.78,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B23678/S045678",
+   "index": 725,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 66.04,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3458/S23468",
+   "index": 254,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 65.57,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B358/S024567",
+   "index": 997,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 59.66,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B3478/S0125",
+   "index": 1184,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 59.36,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B0245/S024567",
+   "index": 1004,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 51.55,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B12345/S145678",
+   "index": 872,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 51.01,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B358/S0245678",
+   "index": 671,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 47.89,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B456/S24567",
+   "index": 526,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "together"
+   },
+   "territory": 43.59,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B345678/S013456",
+   "index": 344,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 40.34,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B35/S0234678",
+   "index": 882,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 30.88,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B01457/S1245678",
+   "index": 375,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 29.25,
+   "growing": false,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B358/S012",
+   "index": 587,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 24.99,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B12467/S124567",
+   "index": 1024,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 20.07,
+   "growing": true,
+   "holds": "both",
+   "dies": false
+  },
+  {
+   "rule": "B13468/S34678",
+   "index": 575,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 457.55,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B123467/S04578",
+   "index": 670,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 206.14,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B134567/S145",
+   "index": 686,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 197.81,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B123457/S024578",
+   "index": 798,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 182.99,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234568/S0358",
+   "index": 1166,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 172.49,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1345678/S03456",
+   "index": 58,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 166.14,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234/S02456",
+   "index": 815,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 147.7,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12348/S025678",
+   "index": 1031,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 141.07,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234678/S03467",
+   "index": 38,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 135.42,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B145678/S03456",
+   "index": 130,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 134.99,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B234578/S12568",
+   "index": 1149,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 134.86,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234678/S346",
+   "index": 270,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 134.26,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12346/S246",
+   "index": 513,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 128.88,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234578/S0158",
+   "index": 1186,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 128.58,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1235/S34678",
+   "index": 999,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 123.81,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B123456/S014",
+   "index": 685,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 123.72,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234578/S38",
+   "index": 317,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 118.67,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B123458/S2567",
+   "index": 753,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 117.96,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12345678/S13467",
+   "index": 340,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 114.79,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2378/S1358",
+   "index": 23,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 114.7,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2346/S2358",
+   "index": 929,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 105.6,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2458/S013467",
+   "index": 369,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 103.38,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0126/S056",
+   "index": 1146,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 101.66,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2578/S23568",
+   "index": 393,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 101.38,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2358/S024",
+   "index": 402,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 100.02,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12358/S4567",
+   "index": 616,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 99.21,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B01456/S7",
+   "index": 1096,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 98.54,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B235/S134",
+   "index": 1142,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 96.72,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B234567/S02378",
+   "index": 1130,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 95.64,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B256/S037",
+   "index": 423,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 94.88,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2348/S0167",
+   "index": 145,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 93.76,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1345678/S278",
+   "index": 1115,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 93.46,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B23478/S01367",
+   "index": 6,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 91.6,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2568/S02458",
+   "index": 455,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 88.21,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2345/S02378",
+   "index": 577,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 84.99,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2568/S1456",
+   "index": 660,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 84.76,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B237/S025678",
+   "index": 748,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 76.72,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B23578/S126",
+   "index": 153,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 75.15,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B012578/S0678",
+   "index": 296,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "dead",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 72.37,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B013568/S6",
+   "index": 1177,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 71.94,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B23567/S02367",
+   "index": 401,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 62.93,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1245678/S1245678",
+   "index": 155,
+   "verdicts": {
+    "full start, random": "together",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 62.52,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B26/S035",
+   "index": 4,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 62.01,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B234567/S123578",
+   "index": 739,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 61.72,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2345678/S12356",
+   "index": 382,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 60.02,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B013458/S78",
+   "index": 333,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 56.32,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B134567/S2347",
+   "index": 412,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 56.21,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B267/S037",
+   "index": 1029,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 55.26,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B123478/S256",
+   "index": 712,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 54.97,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2568/S02568",
+   "index": 318,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 53.85,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B013456/S7",
+   "index": 926,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 52.91,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B268/S058",
+   "index": 772,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 44.32,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12347/S034578",
+   "index": 282,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 43.66,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B134568/S01456",
+   "index": 302,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 35.69,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B256/S1367",
+   "index": 321,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 32.52,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12356/S034578",
+   "index": 281,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 29.41,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B34578/S01235678",
+   "index": 63,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 27.93,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0345678/S0124567",
+   "index": 420,
+   "verdicts": {
+    "full start, random": "together",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "together",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 26.68,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B268/S2357",
+   "index": 1199,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 26.6,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2578/S14578",
+   "index": 976,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 25.91,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B278/S02456",
+   "index": 867,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 25.51,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B01268/S01456",
+   "index": 213,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 25.11,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234678/S13578",
+   "index": 1080,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 24.43,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B257/S148",
+   "index": 280,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 23.97,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B26/S0247",
+   "index": 131,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 22.96,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B237/S013458",
+   "index": 901,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 22.65,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B25/S14",
+   "index": 560,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "growing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 20.45,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B1234678/S58",
+   "index": 633,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 19.22,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B28/S2378",
+   "index": 721,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 19.16,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0134/S01245678",
+   "index": 323,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 18.87,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0245678/S345678",
+   "index": 946,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "together",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 18.69,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B12348/S38",
+   "index": 1121,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 18.33,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B257/S1478",
+   "index": 86,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "growing territories"
+   },
+   "territory": 18.11,
+   "growing": true,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B2357/S03456",
+   "index": 288,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "mixed",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "standing territories"
+   },
+   "territory": 17.83,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0127/S03478",
+   "index": 353,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 17.67,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B012/S014",
+   "index": 574,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 16.8,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B0128/S014568",
+   "index": 1056,
+   "verdicts": {
+    "full start, random": "mixed",
+    "full start, standoff": "standing territories",
+    "half-full start, random": "mixed",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 16.31,
+   "growing": false,
+   "holds": "standoff only",
+   "dies": false
+  },
+  {
+   "rule": "B034678/S135678",
+   "index": 1001,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 413.51,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B01457/S235678",
+   "index": 928,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 336.01,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0123/S05678",
+   "index": 37,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "dead",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "dead"
+   },
+   "territory": 107.19,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0234/S4567",
+   "index": 433,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "together",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 85.96,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0125/S0245678",
+   "index": 325,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 79.32,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0256/S024567",
+   "index": 586,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 46.47,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B13678/S124567",
+   "index": 765,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 30.94,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B013478/S4567",
+   "index": 770,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 24.61,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0248/S03457",
+   "index": 1159,
+   "verdicts": {
+    "full start, random": "growing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "growing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 24.15,
+   "growing": true,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B34567/S578",
+   "index": 613,
+   "verdicts": {
+    "full start, random": "dead",
+    "full start, standoff": "dead",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "together"
+   },
+   "territory": 19.0,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B0345/S024578",
+   "index": 212,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 17.79,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B345678/S6",
+   "index": 479,
+   "verdicts": {
+    "full start, random": "dead",
+    "full start, standoff": "dead",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 17.67,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  },
+  {
+   "rule": "B1235678/S01245678",
+   "index": 324,
+   "verdicts": {
+    "full start, random": "standing territories",
+    "full start, standoff": "mixed",
+    "half-full start, random": "standing territories",
+    "half-full start, standoff": "mixed"
+   },
+   "territory": 17.3,
+   "growing": false,
+   "holds": "draw only",
+   "dies": false
+  }
+ ]
+}
