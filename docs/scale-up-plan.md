@@ -1106,6 +1106,57 @@ reading, not a test. Fresh rules would test both.
 **Gate:** none, as nothing was registered. What it gives is the candidate worlds and the
 question for decision D9.
 
+### Step 4c: which rules hold territories (registered 2026-11-24)
+
+Step 4b read two cuts off its own runs: territories against a copy go with how few of its
+own kind a cell needs to be born, and, among the rules that need two or three, with whether
+a cell can last on one or two. The first had held on rules it was not read from; the second
+had been tried on none. You chose to put both on the record before the ladder goes on
+(decision D9). `examples/scale-up-territories` is that test.
+
+- **What is run.** 600 fresh rules of the same even draw, from its number 1,201 on, leaving
+  out the 3,287 rules that any earlier run has used alone, in a soup or against a rival. Each
+  is run as the wider screen ran its rules: alone, and against a copy of itself from the
+  full start and the half-full one under both tie-breaks, on side 256 for 512 generations.
+  Every run begins from start 14001, which no run has used.
+- **More rules for the second cut.** It lives among the rules that need two or three for a
+  birth, and 600 rules hold 117 of them, 31 on its smaller side: too few to tell a real
+  difference from none. So the draw goes on for 1,200 fresh rules more, and the 242 of that
+  kind among them meet their copies too. The second cut is judged on all 359, 102 on its
+  smaller side; everything else on the 600. In all 3,968 runs, about 75 minutes here.
+- **Sizing first** (`sizing.py`, exploratory). The screen ran every contest from one start,
+  so 200 of its rules were run again from another: 199 hold territories or not as they did,
+  and 791 of the 800 contests come to the same verdict. A rule's verdict is the rule's, not
+  its start's, and the bounds below allow for the number of rules alone.
+- **Ten predictions in five families.** Each is a share of a group of the fresh rules, or a
+  difference of two shares, against a bound set between what the screen gave and what would
+  mean nothing. The last two columns are the chance a claim passes if the fresh rules are
+  like the screen's, and if the cut it tests were worth nothing.
+
+  | | Claim | Rules in its group | The screen gave | Passes if like the screen | Passes if worth nothing |
+  | --- | --- | --- | --- | --- | --- |
+  | R1 | of all the fresh rules, between 11% and 24% hold territories against their copy | 600 | 0.169 | 1.000 | – |
+  | B1 | of the rules a cell of which is born with none of its own kind around it, at most 10% hold territories | 292 | 0.047 | 1.000 | 0.001 |
+  | B2 | of the rules that need two or three of their own kind for a birth, at least 40% hold territories | 117 | 0.548 | 1.000 | 0.000 |
+  | B3 | of the rules that need four or more of their own kind for a birth, or have no births, at most 8% hold territories | 43 | 0.012 | 0.998 | 0.053 |
+  | B4 | the share of rules holding territories is higher by 0.20 or more among those that need two or three for a birth than among those that need one | 117 and 148 | 0.401 | 1.000 | 0.000 |
+  | B5 | the share of rules holding territories is higher by 0.03 or more among those that need one of their own kind for a birth than among those that need none | 148 and 292 | 0.1 | 0.988 | 0.127 |
+  | L1 | among the rules that need two or three for a birth, the share holding territories is higher by 0.10 or more where a cell does not survive on one or two of its own kind than where it does | 102 and 257 | 0.294 | 1.000 | 0.043 |
+  | L2 | of the rules that need two or three for a birth, whose cells do not survive on one or two, and that do not die in every one of their contests, at least 70% hold territories | about 84 | 0.936 | 1.000 | 0.024 |
+  | K1 | of the rules that hold territories under one tie-break and not the other, at least two in three hold them under the standoff | about 45 | 0.856 | 1.000 | 0.018 |
+  | A1 | of the rules that the screen's judge calls organised or growing when they are alone, at most 35% hold territories against their copy | about 23 | 0.065 | 1.000 | 0.991 |
+
+  R is how common territories are; B the first cut; L the second; K the tie-break; A what a
+  rule does alone. A1 cannot tell "no likelier" from "less likely", and passes 99 times in
+  100 if organising alone made no difference: what it can refuse is the guess the search
+  began with, that the rules that organise alone are the ones to hold territories (it would
+  pass one time in ten if half of them did).
+- **Not tested is not failed.** A claim whose group turns out smaller than the number it
+  names is recorded as not tested: a bound on a share of three rules says nothing. That is
+  the lesson of step 4's soup at block 32. The groups by a rule's counts are known before
+  any run and are all large enough.
+- **Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1338,6 +1389,7 @@ What each one gives:
   (c) leave the search here and take up D8's other two.
   I recommend (a) and then (b). (a) is small, it settles "why" as far as counts can, and it
   is the last thing owed on the question you asked. (b) is what the ladder is for.
+  You chose (a): it is step 4c, registered on 2026-11-24. (b) stays open.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.

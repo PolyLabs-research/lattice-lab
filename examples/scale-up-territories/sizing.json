@@ -1,0 +1,167 @@
+{
+ "rules": 200,
+ "starts": [
+  11001,
+  11002
+ ],
+ "from the screen's start": {
+  "rules": 200,
+  "all": {
+   "of": 200,
+   "have": 30,
+   "share": 0.15
+  },
+  "birth": {
+   "none": {
+    "of": 103,
+    "have": 1,
+    "share": 0.0097
+   },
+   "one": {
+    "of": 52,
+    "have": 8,
+    "share": 0.1538
+   },
+   "two or three": {
+    "of": 38,
+    "have": 21,
+    "share": 0.5526
+   },
+   "four or more": {
+    "of": 7,
+    "have": 0,
+    "share": 0.0
+   }
+  },
+  "cannot last on one or two": {
+   "of": 7,
+   "have": 6,
+   "share": 0.8571
+  },
+  "can last on one or two": {
+   "of": 31,
+   "have": 15,
+   "share": 0.4839
+  },
+  "needs its own kind and lives": {
+   "of": 6,
+   "have": 6,
+   "share": 1.0
+  },
+  "needs its own kind and dies in every contest": 1,
+  "holds": {
+   "both": 17,
+   "standoff only": 12,
+   "draw only": 1,
+   "neither": 170
+  },
+  "growing": 27,
+  "holders, patches alone": {
+   "of": 30,
+   "have": 29,
+   "share": 0.9667
+  },
+  "grow alone": {
+   "of": 2,
+   "have": 0,
+   "share": 0.0
+  },
+  "organise alone": {
+   "of": 7,
+   "have": 0,
+   "share": 0.0
+  },
+  "alone": {
+   "dead": 9,
+   "patches": 184,
+   "organised": 5,
+   "growing": 2
+  }
+ },
+ "from the second start": {
+  "rules": 200,
+  "all": {
+   "of": 200,
+   "have": 29,
+   "share": 0.145
+  },
+  "birth": {
+   "none": {
+    "of": 103,
+    "have": 1,
+    "share": 0.0097
+   },
+   "one": {
+    "of": 52,
+    "have": 8,
+    "share": 0.1538
+   },
+   "two or three": {
+    "of": 38,
+    "have": 20,
+    "share": 0.5263
+   },
+   "four or more": {
+    "of": 7,
+    "have": 0,
+    "share": 0.0
+   }
+  },
+  "cannot last on one or two": {
+   "of": 7,
+   "have": 6,
+   "share": 0.8571
+  },
+  "can last on one or two": {
+   "of": 31,
+   "have": 14,
+   "share": 0.4516
+  },
+  "needs its own kind and lives": {
+   "of": 6,
+   "have": 6,
+   "share": 1.0
+  },
+  "needs its own kind and dies in every contest": 1,
+  "holds": {
+   "both": 16,
+   "standoff only": 11,
+   "draw only": 2,
+   "neither": 171
+  },
+  "growing": 25,
+  "holders, patches alone": {
+   "of": 29,
+   "have": 28,
+   "share": 0.9655
+  },
+  "grow alone": {
+   "of": 2,
+   "have": 0,
+   "share": 0.0
+  },
+  "organise alone": {
+   "of": 6,
+   "have": 0,
+   "share": 0.0
+  },
+  "alone": {
+   "dead": 9,
+   "patches": 185,
+   "organised": 4,
+   "growing": 2
+  }
+ },
+ "between the starts": {
+  "rules": 200,
+  "hold or not, the same from both starts": 199,
+  "hold from the second start only": [],
+  "hold from the first start only": [
+   "B257/S1478"
+  ],
+  "the same of both, neither, the standoff only, the draw only": 198,
+  "contests": 800,
+  "contests with the same verdict": 791,
+  "called the same alone": 199
+ }
+}
