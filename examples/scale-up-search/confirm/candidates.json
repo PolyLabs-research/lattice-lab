@@ -1,0 +1,455 @@
+[
+ {
+  "family": "known",
+  "index": 1,
+  "name": "Life",
+  "rules": [
+   "B3/S23"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 2,
+  "name": "HighLife",
+  "rules": [
+   "B36/S23"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 3,
+  "name": "Life against HighLife",
+  "rules": [
+   "B3/S23",
+   "B36/S23"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 4,
+  "name": "soup 19",
+  "rules": [
+   "B0127/S34",
+   "B0178/S56",
+   "B2468/S056",
+   "B4/S3",
+   "B2378/S234"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 5,
+  "name": "Vote",
+  "rules": [
+   "B5678/S45678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 6,
+  "name": "Anneal",
+  "rules": [
+   "B4678/S35678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "known",
+  "index": 7,
+  "name": "Day and Night",
+  "rules": [
+   "B3678/S34678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a known world"
+ },
+ {
+  "family": "alone",
+  "index": 1,
+  "name": "B01245/S235",
+  "rules": [
+   "B01245/S235"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 791)"
+ },
+ {
+  "family": "alone",
+  "index": 2,
+  "name": "B0124578/S0134",
+  "rules": [
+   "B0124578/S0134"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 959)"
+ },
+ {
+  "family": "alone",
+  "index": 3,
+  "name": "B013/S1",
+  "rules": [
+   "B013/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 0.25,
+  "why": "grew alone in the screen (soup 2 20032 (standoff), the species left)"
+ },
+ {
+  "family": "alone",
+  "index": 4,
+  "name": "B456/S0124678",
+  "rules": [
+   "B456/S0124678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 818)"
+ },
+ {
+  "family": "alone",
+  "index": 5,
+  "name": "B012457/S14",
+  "rules": [
+   "B012457/S14"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 880)"
+ },
+ {
+  "family": "alone",
+  "index": 6,
+  "name": "B012358/S0125",
+  "rules": [
+   "B012358/S0125"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 759)"
+ },
+ {
+  "family": "alone",
+  "index": 7,
+  "name": "B027/S2",
+  "rules": [
+   "B027/S2"
+  ],
+  "tie_break": "standoff",
+  "density": 0.16666666666666666,
+  "why": "grew alone in the screen (soup 3 30044 (standoff), the species left)"
+ },
+ {
+  "family": "alone",
+  "index": 8,
+  "name": "B012348/S01246",
+  "rules": [
+   "B012348/S01246"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 59)"
+ },
+ {
+  "family": "alone",
+  "index": 9,
+  "name": "B015/S1",
+  "rules": [
+   "B015/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 0.25,
+  "why": "grew alone in the screen (soup 2 20093 (random), the species left)"
+ },
+ {
+  "family": "alone",
+  "index": 10,
+  "name": "B138/S123",
+  "rules": [
+   "B138/S123"
+  ],
+  "tie_break": "standoff",
+  "density": 0.25,
+  "why": "grew alone in the screen (soup 2 20092 (random), the species left)"
+ },
+ {
+  "family": "alone",
+  "index": 11,
+  "name": "B2378/S25678",
+  "rules": [
+   "B2378/S25678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 1107)"
+ },
+ {
+  "family": "alone",
+  "index": 12,
+  "name": "B2/S0",
+  "rules": [
+   "B2/S0"
+  ],
+  "tie_break": "standoff",
+  "density": 0.16666666666666666,
+  "why": "grew alone in the screen (soup 3 30019 (standoff), the species left)"
+ },
+ {
+  "family": "alone",
+  "index": 13,
+  "name": "B237/S025678",
+  "rules": [
+   "B237/S025678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "grew alone in the screen (rule 748)"
+ },
+ {
+  "family": "soup",
+  "index": 50092,
+  "name": "soup 5 50092",
+  "rules": [
+   "B124/S2",
+   "B57/S2457",
+   "B0126/S6",
+   "B27/S1258",
+   "B0245/S68"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with two species or more"
+ },
+ {
+  "family": "soup",
+  "index": 30145,
+  "name": "soup 3 30145",
+  "rules": [
+   "B0137/S03",
+   "B025/S13",
+   "B3/S234"
+  ],
+  "tie_break": "random",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with two species or more"
+ },
+ {
+  "family": "soup",
+  "index": 50149,
+  "name": "soup 5 50149",
+  "rules": [
+   "B1456/S2357",
+   "B05/S04",
+   "B348/S0378",
+   "B12/S5678",
+   "B038/S3467"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with two species or more"
+ },
+ {
+  "family": "soup",
+  "index": 30046,
+  "name": "soup 3 30046",
+  "rules": [
+   "B0247/S4",
+   "B6/S0245",
+   "B35/S2346"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with two species or more"
+ },
+ {
+  "family": "left",
+  "index": 20032,
+  "name": "soup 2 20032",
+  "rules": [
+   "B5/S67",
+   "B013/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with one species left"
+ },
+ {
+  "family": "left",
+  "index": 30044,
+  "name": "soup 3 30044",
+  "rules": [
+   "B027/S2",
+   "B238/S0346",
+   "B3568/S237"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with one species left"
+ },
+ {
+  "family": "left",
+  "index": 20093,
+  "name": "soup 2 20093",
+  "rules": [
+   "B015/S1",
+   "B15/S7"
+  ],
+  "tie_break": "random",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with one species left"
+ },
+ {
+  "family": "left",
+  "index": 20092,
+  "name": "soup 2 20092",
+  "rules": [
+   "B6/S367",
+   "B138/S123"
+  ],
+  "tie_break": "random",
+  "density": 0.5,
+  "why": "a soup that grew in the screen with one species left"
+ },
+ {
+  "family": "contest",
+  "index": 1,
+  "name": "B2378/S25678 against itself",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 1,
+  "name": "B2378/S25678 against itself",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 2,
+  "name": "B015/S1 against itself",
+  "rules": [
+   "B015/S1",
+   "B015/S1"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 2,
+  "name": "B015/S1 against itself",
+  "rules": [
+   "B015/S1",
+   "B015/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 3,
+  "name": "B237/S025678 against itself",
+  "rules": [
+   "B237/S025678",
+   "B237/S025678"
+  ],
+  "tie_break": "random",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 3,
+  "name": "B237/S025678 against itself",
+  "rules": [
+   "B237/S025678",
+   "B237/S025678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 4,
+  "name": "B2/S0 against itself",
+  "rules": [
+   "B2/S0",
+   "B2/S0"
+  ],
+  "tie_break": "random",
+  "density": 0.5,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "contest",
+  "index": 4,
+  "name": "B2/S0 against itself",
+  "rules": [
+   "B2/S0",
+   "B2/S0"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5,
+  "why": "its territories grew in the contests"
+ },
+ {
+  "family": "pair",
+  "index": 511,
+  "name": "B013/S1 against B015/S1",
+  "rules": [
+   "B013/S1",
+   "B015/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "two rules whose territories grew in the contests"
+ },
+ {
+  "family": "copies",
+  "index": 2,
+  "name": "5 copies of B2378/S25678",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0,
+  "why": "five species with one rule whose territories grew"
+ }
+]

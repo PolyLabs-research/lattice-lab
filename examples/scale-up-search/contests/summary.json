@@ -1,0 +1,2120 @@
+{
+ "side": 256,
+ "times": [
+  32,
+  64,
+  128,
+  256,
+  512
+ ],
+ "start": 11001,
+ "rules": [
+  {
+   "rule": "B3678/S34678",
+   "source": "known 7",
+   "field": "live",
+   "area": 525.39,
+   "growth": 0.518,
+   "density": 0.5
+  },
+  {
+   "rule": "B01245/S235",
+   "source": "rule 791",
+   "field": "live",
+   "area": 524.83,
+   "growth": 0.443,
+   "density": 0.5
+  },
+  {
+   "rule": "B0124578/S0134",
+   "source": "rule 959",
+   "field": "live",
+   "area": 468.5,
+   "growth": 0.733,
+   "density": 0.5
+  },
+  {
+   "rule": "B4678/S35678",
+   "source": "known 6",
+   "field": "live",
+   "area": 455.35,
+   "growth": 0.523,
+   "density": 0.5
+  },
+  {
+   "rule": "B013/S1",
+   "source": "soup 2 20032 (standoff), the species left",
+   "field": "live",
+   "area": 450.42,
+   "growth": 0.519,
+   "density": 0.25
+  },
+  {
+   "rule": "B456/S0124678",
+   "source": "rule 818",
+   "field": "live",
+   "area": 434.44,
+   "growth": 2.037,
+   "density": 0.5
+  },
+  {
+   "rule": "B012457/S14",
+   "source": "rule 880",
+   "field": "live",
+   "area": 428.11,
+   "growth": 0.751,
+   "density": 0.5
+  },
+  {
+   "rule": "B012358/S0125",
+   "source": "rule 759",
+   "field": "live",
+   "area": 417.47,
+   "growth": 0.552,
+   "density": 0.5
+  },
+  {
+   "rule": "B027/S2",
+   "source": "soup 3 30044 (standoff), the species left",
+   "field": "species 1",
+   "area": 340.46,
+   "growth": 0.768,
+   "density": 0.16666666666666666
+  },
+  {
+   "rule": "B012348/S01246",
+   "source": "rule 59",
+   "field": "live",
+   "area": 295.71,
+   "growth": 0.284,
+   "density": 0.5
+  },
+  {
+   "rule": "B015/S1",
+   "source": "soup 2 20093 (random), the species left",
+   "field": "species 1",
+   "area": 252.73,
+   "growth": 0.491,
+   "density": 0.25
+  },
+  {
+   "rule": "B138/S123",
+   "source": "soup 2 20092 (random), the species left",
+   "field": "live, columns",
+   "area": 248.78,
+   "growth": 0.914,
+   "density": 0.25
+  },
+  {
+   "rule": "B0124/S034",
+   "source": "soup 5 50080 (random), the species left",
+   "field": "species 4",
+   "area": 245.72,
+   "growth": 0.335,
+   "density": 0.1
+  },
+  {
+   "rule": "B0167/S023",
+   "source": "rule 881",
+   "field": "live",
+   "area": 235.42,
+   "growth": 0.591,
+   "density": 0.5
+  },
+  {
+   "rule": "B0368/S025678",
+   "source": "rule 362",
+   "field": "live",
+   "area": 221.49,
+   "growth": 2.671,
+   "density": 0.5
+  },
+  {
+   "rule": "B01256/S04",
+   "source": "rule 1165",
+   "field": "live",
+   "area": 195.71,
+   "growth": 0.547,
+   "density": 0.5
+  },
+  {
+   "rule": "B1348/S123467",
+   "source": "rule 262",
+   "field": "live, columns",
+   "area": 158.68,
+   "growth": 0.782,
+   "density": 0.5
+  },
+  {
+   "rule": "B23/S12358",
+   "source": "rule 785",
+   "field": "live, rows",
+   "area": 132.46,
+   "growth": 0.37,
+   "density": 0.5
+  },
+  {
+   "rule": "B27/S12468",
+   "source": "rule 580",
+   "field": "live, columns",
+   "area": 122.34,
+   "growth": 0.704,
+   "density": 0.5
+  },
+  {
+   "rule": "B12345678/S568",
+   "source": "rule 1033",
+   "field": "live, rows",
+   "area": 72.16,
+   "growth": 1.072,
+   "density": 0.5
+  },
+  {
+   "rule": "B2378/S25678",
+   "source": "rule 1107",
+   "field": "live",
+   "area": 65.47,
+   "growth": 1.173,
+   "density": 0.5
+  },
+  {
+   "rule": "B2/S0",
+   "source": "soup 3 30019 (standoff), the species left",
+   "field": "species 1",
+   "area": 48.91,
+   "growth": 0.403,
+   "density": 0.16666666666666666
+  },
+  {
+   "rule": "B237/S025678",
+   "source": "rule 748",
+   "field": "live",
+   "area": 34.38,
+   "growth": 0.988,
+   "density": 0.5
+  },
+  {
+   "rule": "B014567/S2678",
+   "source": "rule 441",
+   "field": "live, columns",
+   "area": 30.95,
+   "growth": 0.703,
+   "density": 0.5
+  },
+  {
+   "rule": "B01237/S023478",
+   "source": "rule 95",
+   "field": "live, rows",
+   "area": 25.2,
+   "growth": 0.466,
+   "density": 0.5
+  },
+  {
+   "rule": "B0/S6",
+   "source": "soup 2 20117 (random), the species left",
+   "field": "live",
+   "area": 21.44,
+   "growth": 0.251,
+   "density": 0.25
+  },
+  {
+   "rule": "B38/S0123",
+   "source": "rule 684",
+   "field": "live, columns",
+   "area": 20.41,
+   "growth": 1.123,
+   "density": 0.5
+  },
+  {
+   "rule": "B06/S67",
+   "source": "rule 342",
+   "field": "live",
+   "area": 19.92,
+   "growth": 0.281,
+   "density": 0.5
+  },
+  {
+   "rule": "B235/S023458",
+   "source": "rule 434",
+   "field": "live, rows",
+   "area": 17.04,
+   "growth": 0.616,
+   "density": 0.5
+  }
+ ],
+ "tallies": {
+  "contest, full start, random": {
+   "contests": 29,
+   "dead": 2,
+   "one left": 0,
+   "growing territories": 1,
+   "standing territories": 1,
+   "together": 0,
+   "mixed": 25
+  },
+  "contest, full start, standoff": {
+   "contests": 29,
+   "dead": 3,
+   "one left": 0,
+   "growing territories": 3,
+   "standing territories": 1,
+   "together": 0,
+   "mixed": 22
+  },
+  "contest, half-full start, random": {
+   "contests": 29,
+   "dead": 2,
+   "one left": 0,
+   "growing territories": 1,
+   "standing territories": 0,
+   "together": 2,
+   "mixed": 24
+  },
+  "contest, half-full start, standoff": {
+   "contests": 29,
+   "dead": 3,
+   "one left": 0,
+   "growing territories": 4,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 22
+  },
+  "pair, full start, random": {
+   "contests": 66,
+   "dead": 1,
+   "one left": 20,
+   "growing territories": 0,
+   "standing territories": 0,
+   "together": 2,
+   "mixed": 43
+  },
+  "pair, full start, standoff": {
+   "contests": 66,
+   "dead": 4,
+   "one left": 25,
+   "growing territories": 1,
+   "standing territories": 0,
+   "together": 2,
+   "mixed": 34
+  },
+  "cross, full start, random": {
+   "contests": 6,
+   "dead": 0,
+   "one left": 6,
+   "growing territories": 0,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 0
+  },
+  "cross, full start, standoff": {
+   "contests": 6,
+   "dead": 0,
+   "one left": 6,
+   "growing territories": 0,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 0
+  },
+  "3 copies, full start, random": {
+   "contests": 4,
+   "dead": 0,
+   "one left": 0,
+   "growing territories": 2,
+   "standing territories": 1,
+   "together": 0,
+   "mixed": 1
+  },
+  "3 copies, full start, standoff": {
+   "contests": 4,
+   "dead": 1,
+   "one left": 0,
+   "growing territories": 2,
+   "standing territories": 1,
+   "together": 0,
+   "mixed": 0
+  },
+  "5 copies, full start, random": {
+   "contests": 4,
+   "dead": 0,
+   "one left": 0,
+   "growing territories": 3,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 1
+  },
+  "5 copies, full start, standoff": {
+   "contests": 4,
+   "dead": 1,
+   "one left": 0,
+   "growing territories": 3,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 0
+  },
+  "variant, full start, random": {
+   "contests": 18,
+   "dead": 0,
+   "one left": 13,
+   "growing territories": 5,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 0
+  },
+  "variant, full start, standoff": {
+   "contests": 18,
+   "dead": 0,
+   "one left": 14,
+   "growing territories": 4,
+   "standing territories": 0,
+   "together": 0,
+   "mixed": 0
+  }
+ },
+ "growing territories": [
+  {
+   "family": "contest",
+   "index": 21,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.536392,
+   "shares": [
+    0.264267,
+    0.272125
+   ],
+   "holding": 2,
+   "changed": 0.405701,
+   "called": "growing",
+   "field": "species 1",
+   "area": 183.0,
+   "scaling": 1.441,
+   "growth": 0.786,
+   "area_over_time": [
+    18.9529,
+    39.0716,
+    61.5226,
+    99.0323,
+    183.0037
+   ],
+   "density": 0.5,
+   "source": "rule 1107",
+   "verdict": "growing territories",
+   "apart": -0.882,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 183.0,
+     "scaling": 1.441,
+     "growth": 0.786
+    },
+    {
+     "called": "growing",
+     "area": 163.07,
+     "scaling": 1.421,
+     "growth": 0.799
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 17,
+   "name": "B2378/S25678 against B2378/S2568",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S2568"
+   ],
+   "tie_break": "standoff",
+   "live": 0.508743,
+   "shares": [
+    0.334183,
+    0.174561
+   ],
+   "holding": 2,
+   "changed": 0.431961,
+   "called": "growing",
+   "field": "species 1",
+   "area": 163.23,
+   "scaling": 1.42,
+   "growth": 0.984,
+   "area_over_time": [
+    15.1879,
+    21.7796,
+    41.7046,
+    68.3191,
+    163.2274
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.935,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 163.23,
+     "scaling": 1.42,
+     "growth": 0.984
+    },
+    {
+     "called": "growing",
+     "area": 105.54,
+     "scaling": 1.367,
+     "growth": 0.719
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 21,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.544037,
+   "shares": [
+    0.264084,
+    0.279953
+   ],
+   "holding": 2,
+   "changed": 0.399612,
+   "called": "growing",
+   "field": "species 2",
+   "area": 162.03,
+   "scaling": 1.382,
+   "growth": 0.853,
+   "area_over_time": [
+    17.9057,
+    27.1699,
+    49.6966,
+    79.1011,
+    162.0289
+   ],
+   "density": 1.0,
+   "source": "rule 1107",
+   "verdict": "growing territories",
+   "apart": -0.883,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 155.67,
+     "scaling": 1.337,
+     "growth": 0.843
+    },
+    {
+     "called": "growing",
+     "area": 162.03,
+     "scaling": 1.382,
+     "growth": 0.853
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 9,
+   "name": "B2378/S25678 against B237/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B237/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.508286,
+   "shares": [
+    0.274857,
+    0.233429
+   ],
+   "holding": 2,
+   "changed": 0.425522,
+   "called": "growing",
+   "field": "species 1",
+   "area": 159.2,
+   "scaling": 1.346,
+   "growth": 0.903,
+   "area_over_time": [
+    15.7645,
+    32.8393,
+    45.5533,
+    70.2755,
+    159.1973
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.956,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 159.2,
+     "scaling": 1.346,
+     "growth": 0.903
+    },
+    {
+     "called": "growing",
+     "area": 108.58,
+     "scaling": 1.335,
+     "growth": 0.628
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 2,
+   "name": "5 copies of B2378/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.474106,
+   "shares": [
+    0.081635,
+    0.106934,
+    0.144455,
+    0.05365,
+    0.087433
+   ],
+   "holding": 5,
+   "changed": 0.472809,
+   "called": "growing",
+   "field": "species 2",
+   "area": 144.61,
+   "scaling": 1.352,
+   "growth": 0.619,
+   "area_over_time": [
+    18.1995,
+    34.6924,
+    61.2925,
+    92.3036,
+    144.6126
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.252,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 113.61,
+     "scaling": 1.212,
+     "growth": 0.479
+    },
+    {
+     "called": "growing",
+     "area": 144.61,
+     "scaling": 1.352,
+     "growth": 0.619
+    },
+    {
+     "called": "growing",
+     "area": 117.38,
+     "scaling": 1.317,
+     "growth": 0.587
+    },
+    {
+     "called": "growing",
+     "area": 124.02,
+     "scaling": 1.24,
+     "growth": 0.769
+    },
+    {
+     "called": "growing",
+     "area": 120.43,
+     "scaling": 1.266,
+     "growth": 0.543
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 8,
+   "name": "B2378/S25678 against B238/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B238/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.517059,
+   "shares": [
+    0.38269,
+    0.134369
+   ],
+   "holding": 2,
+   "changed": 0.424118,
+   "called": "growing",
+   "field": "species 1",
+   "area": 131.32,
+   "scaling": 1.391,
+   "growth": 0.756,
+   "area_over_time": [
+    15.2288,
+    26.6523,
+    46.0315,
+    59.369,
+    131.3213
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.933,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 131.32,
+     "scaling": 1.391,
+     "growth": 0.756
+    },
+    {
+     "called": "growing",
+     "area": 116.18,
+     "scaling": 1.32,
+     "growth": 0.65
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 11,
+   "name": "B015/S1 against itself",
+   "rules": [
+    "B015/S1",
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "live": 0.452789,
+   "shares": [
+    0.25676,
+    0.19603
+   ],
+   "holding": 2,
+   "changed": 0.28569,
+   "called": "growing",
+   "field": "species 2",
+   "area": 129.45,
+   "scaling": 1.645,
+   "growth": 0.686,
+   "area_over_time": [
+    16.846,
+    32.8739,
+    50.0327,
+    84.6015,
+    129.4535
+   ],
+   "density": 0.5,
+   "source": "soup 2 20093 (random), the species left",
+   "verdict": "growing territories",
+   "apart": -0.989,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 110.33,
+     "scaling": 1.64,
+     "growth": 0.597
+    },
+    {
+     "called": "growing",
+     "area": 129.45,
+     "scaling": 1.645,
+     "growth": 0.686
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 18,
+   "name": "B2378/S25678 against B2378/S2567",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S2567"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497803,
+   "shares": [
+    0.292114,
+    0.205688
+   ],
+   "holding": 2,
+   "changed": 0.440247,
+   "called": "growing",
+   "field": "species 1",
+   "area": 127.75,
+   "scaling": 1.243,
+   "growth": 0.772,
+   "area_over_time": [
+    16.2198,
+    35.184,
+    43.7835,
+    67.5346,
+    127.7464
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.939,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 127.75,
+     "scaling": 1.243,
+     "growth": 0.772
+    },
+    {
+     "called": "growing",
+     "area": 82.95,
+     "scaling": 1.201,
+     "growth": 0.583
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 2,
+   "name": "5 copies of B2378/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.491776,
+   "shares": [
+    0.118454,
+    0.100693,
+    0.087311,
+    0.109467,
+    0.075851
+   ],
+   "holding": 5,
+   "changed": 0.500656,
+   "called": "growing",
+   "field": "species 3",
+   "area": 119.92,
+   "scaling": 1.445,
+   "growth": 0.899,
+   "area_over_time": [
+    14.1613,
+    23.1405,
+    34.4879,
+    62.2359,
+    119.9207
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.252,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 117.56,
+     "scaling": 1.42,
+     "growth": 0.809
+    },
+    {
+     "called": "growing",
+     "area": 110.03,
+     "scaling": 1.385,
+     "growth": 0.546
+    },
+    {
+     "called": "growing",
+     "area": 119.92,
+     "scaling": 1.445,
+     "growth": 0.899
+    },
+    {
+     "called": "growing",
+     "area": 82.94,
+     "scaling": 1.247,
+     "growth": 0.514
+    },
+    {
+     "called": "growing",
+     "area": 88.68,
+     "scaling": 1.249,
+     "growth": 0.388
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 2,
+   "name": "3 copies of B2378/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.485931,
+   "shares": [
+    0.154373,
+    0.19548,
+    0.136078
+   ],
+   "holding": 3,
+   "changed": 0.455124,
+   "called": "growing",
+   "field": "species 2",
+   "area": 116.02,
+   "scaling": 1.193,
+   "growth": 0.638,
+   "area_over_time": [
+    20.3419,
+    30.0777,
+    47.8918,
+    69.7909,
+    116.0178
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.485,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 109.08,
+     "scaling": 1.263,
+     "growth": 0.621
+    },
+    {
+     "called": "growing",
+     "area": 116.02,
+     "scaling": 1.193,
+     "growth": 0.638
+    },
+    {
+     "called": "growing",
+     "area": 99.17,
+     "scaling": 1.158,
+     "growth": 0.697
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 11,
+   "name": "B015/S1 against itself",
+   "rules": [
+    "B015/S1",
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "live": 0.446472,
+   "shares": [
+    0.21846,
+    0.228012
+   ],
+   "holding": 2,
+   "changed": 0.283951,
+   "called": "growing",
+   "field": "species 1",
+   "area": 110.87,
+   "scaling": 1.568,
+   "growth": 0.333,
+   "area_over_time": [
+    30.49,
+    47.7255,
+    69.8832,
+    80.5195,
+    110.8652
+   ],
+   "density": 1.0,
+   "source": "soup 2 20093 (random), the species left",
+   "verdict": "growing territories",
+   "apart": -0.99,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 110.87,
+     "scaling": 1.568,
+     "growth": 0.333
+    },
+    {
+     "called": "growing",
+     "area": 105.12,
+     "scaling": 1.561,
+     "growth": 0.342
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 21,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.498917,
+   "shares": [
+    0.246964,
+    0.251953
+   ],
+   "holding": 2,
+   "changed": 0.468002,
+   "called": "growing",
+   "field": "species 1",
+   "area": 108.85,
+   "scaling": 1.445,
+   "growth": 0.934,
+   "area_over_time": [
+    7.6022,
+    15.5734,
+    29.8191,
+    66.188,
+    108.8537
+   ],
+   "density": 1.0,
+   "source": "rule 1107",
+   "verdict": "growing territories",
+   "apart": -0.96,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 108.85,
+     "scaling": 1.445,
+     "growth": 0.934
+    },
+    {
+     "called": "growing",
+     "area": 106.25,
+     "scaling": 1.453,
+     "growth": 0.846
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 18,
+   "name": "B2378/S25678 against B2378/S2567",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S2567"
+   ],
+   "tie_break": "random",
+   "live": 0.48584,
+   "shares": [
+    0.238419,
+    0.247421
+   ],
+   "holding": 2,
+   "changed": 0.487961,
+   "called": "growing",
+   "field": "species 1",
+   "area": 101.56,
+   "scaling": 1.393,
+   "growth": 0.772,
+   "area_over_time": [
+    11.5345,
+    21.4186,
+    34.8132,
+    57.5074,
+    101.565
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.977,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 101.56,
+     "scaling": 1.393,
+     "growth": 0.772
+    },
+    {
+     "called": "growing",
+     "area": 73.51,
+     "scaling": 1.368,
+     "growth": 0.584
+    }
+   ]
+  },
+  {
+   "family": "pair",
+   "index": 511,
+   "name": "B013/S1 against B015/S1",
+   "rules": [
+    "B013/S1",
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "live": 0.456451,
+   "shares": [
+    0.232208,
+    0.224243
+   ],
+   "holding": 2,
+   "changed": 0.298813,
+   "called": "growing",
+   "field": "species 1",
+   "area": 98.33,
+   "scaling": 1.483,
+   "growth": 0.537,
+   "area_over_time": [
+    25.1594,
+    41.1534,
+    46.6973,
+    58.426,
+    98.3307
+   ],
+   "density": 1.0,
+   "source": "soup 2 20032 (standoff), the species left; soup 2 20093 (random), the species left",
+   "verdict": "growing territories",
+   "apart": -0.978,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 98.33,
+     "scaling": 1.483,
+     "growth": 0.537
+    },
+    {
+     "called": "growing",
+     "area": 20.74,
+     "scaling": 1.344,
+     "growth": 0.427
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 4,
+   "name": "3 copies of B237/S025678",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.481506,
+   "shares": [
+    0.155701,
+    0.146133,
+    0.179672
+   ],
+   "holding": 3,
+   "changed": 0.476379,
+   "called": "growing",
+   "field": "species 1",
+   "area": 94.38,
+   "scaling": 1.33,
+   "growth": 0.924,
+   "area_over_time": [
+    13.0317,
+    20.8121,
+    26.2126,
+    53.266,
+    94.3815
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.495,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 94.38,
+     "scaling": 1.33,
+     "growth": 0.924
+    },
+    {
+     "called": "growing",
+     "area": 91.23,
+     "scaling": 1.31,
+     "growth": 0.655
+    },
+    {
+     "called": "growing",
+     "area": 90.81,
+     "scaling": 1.304,
+     "growth": 0.831
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 9,
+   "name": "B2378/S25678 against B237/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B237/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.491913,
+   "shares": [
+    0.22496,
+    0.266953
+   ],
+   "holding": 2,
+   "changed": 0.484009,
+   "called": "growing",
+   "field": "species 1",
+   "area": 92.96,
+   "scaling": 1.399,
+   "growth": 0.972,
+   "area_over_time": [
+    10.0635,
+    17.2074,
+    24.1721,
+    49.3178,
+    92.9579
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.986,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 92.96,
+     "scaling": 1.399,
+     "growth": 0.972
+    },
+    {
+     "called": "growing",
+     "area": 77.4,
+     "scaling": 1.362,
+     "growth": 0.847
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 8,
+   "name": "B2378/S25678 against B238/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B238/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.492371,
+   "shares": [
+    0.304001,
+    0.18837
+   ],
+   "holding": 2,
+   "changed": 0.478958,
+   "called": "growing",
+   "field": "species 2",
+   "area": 86.7,
+   "scaling": 1.414,
+   "growth": 0.924,
+   "area_over_time": [
+    10.7395,
+    16.8403,
+    24.0963,
+    57.7905,
+    86.6996
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.966,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 84.99,
+     "scaling": 1.385,
+     "growth": 0.814
+    },
+    {
+     "called": "growing",
+     "area": 86.7,
+     "scaling": 1.414,
+     "growth": 0.924
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 4,
+   "name": "5 copies of B237/S025678",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.488663,
+   "shares": [
+    0.107101,
+    0.091904,
+    0.100708,
+    0.077637,
+    0.111313
+   ],
+   "holding": 5,
+   "changed": 0.474548,
+   "called": "growing",
+   "field": "species 5",
+   "area": 86.66,
+   "scaling": 1.279,
+   "growth": 0.719,
+   "area_over_time": [
+    9.9314,
+    15.8555,
+    31.9901,
+    48.6734,
+    86.6589
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.254,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 80.18,
+     "scaling": 1.269,
+     "growth": 0.938
+    },
+    {
+     "called": "growing",
+     "area": 49.75,
+     "scaling": 0.919,
+     "growth": 0.61
+    },
+    {
+     "called": "growing",
+     "area": 66.42,
+     "scaling": 1.111,
+     "growth": 0.7
+    },
+    {
+     "called": "growing",
+     "area": 60.64,
+     "scaling": 1.108,
+     "growth": 0.55
+    },
+    {
+     "called": "growing",
+     "area": 86.66,
+     "scaling": 1.279,
+     "growth": 0.719
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 2,
+   "name": "3 copies of B2378/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.487289,
+   "shares": [
+    0.117065,
+    0.139511,
+    0.230713
+   ],
+   "holding": 3,
+   "changed": 0.493286,
+   "called": "growing",
+   "field": "species 3",
+   "area": 85.4,
+   "scaling": 1.374,
+   "growth": 0.432,
+   "area_over_time": [
+    13.3,
+    28.6821,
+    46.9456,
+    57.3533,
+    85.4048
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.504,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 84.91,
+     "scaling": 1.31,
+     "growth": 0.533
+    },
+    {
+     "called": "growing",
+     "area": 82.89,
+     "scaling": 1.225,
+     "growth": 0.339
+    },
+    {
+     "called": "growing",
+     "area": 85.4,
+     "scaling": 1.374,
+     "growth": 0.432
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 21,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "random",
+   "live": 0.496872,
+   "shares": [
+    0.253098,
+    0.243774
+   ],
+   "holding": 2,
+   "changed": 0.474487,
+   "called": "growing",
+   "field": "species 1",
+   "area": 84.55,
+   "scaling": 1.34,
+   "growth": 0.641,
+   "area_over_time": [
+    12.2917,
+    17.8286,
+    34.751,
+    54.9257,
+    84.5506
+   ],
+   "density": 0.5,
+   "source": "rule 1107",
+   "verdict": "growing territories",
+   "apart": -0.968,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 84.55,
+     "scaling": 1.34,
+     "growth": 0.641
+    },
+    {
+     "called": "growing",
+     "area": 73.46,
+     "scaling": 1.34,
+     "growth": 0.626
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 17,
+   "name": "B2378/S25678 against B2378/S2568",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S2568"
+   ],
+   "tie_break": "random",
+   "live": 0.472626,
+   "shares": [
+    0.198715,
+    0.273911
+   ],
+   "holding": 2,
+   "changed": 0.503952,
+   "called": "growing",
+   "field": "species 1",
+   "area": 79.35,
+   "scaling": 1.331,
+   "growth": 0.59,
+   "area_over_time": [
+    8.2154,
+    18.6432,
+    35.001,
+    63.9049,
+    79.351
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.985,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 79.35,
+     "scaling": 1.331,
+     "growth": 0.59
+    },
+    {
+     "called": "growing",
+     "area": 50.14,
+     "scaling": 1.286,
+     "growth": 0.439
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 23,
+   "name": "B237/S025678 against itself",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.481735,
+   "shares": [
+    0.251678,
+    0.230057
+   ],
+   "holding": 2,
+   "changed": 0.475906,
+   "called": "growing",
+   "field": "species 2",
+   "area": 76.72,
+   "scaling": 1.217,
+   "growth": 0.606,
+   "area_over_time": [
+    8.9962,
+    20.1249,
+    33.1059,
+    58.389,
+    76.7211
+   ],
+   "density": 0.5,
+   "source": "rule 748",
+   "verdict": "growing territories",
+   "apart": -0.986,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 74.29,
+     "scaling": 1.218,
+     "growth": 0.556
+    },
+    {
+     "called": "growing",
+     "area": 76.72,
+     "scaling": 1.217,
+     "growth": 0.606
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 23,
+   "name": "B237/S025678 against itself",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.479721,
+   "shares": [
+    0.276886,
+    0.202835
+   ],
+   "holding": 2,
+   "changed": 0.471405,
+   "called": "growing",
+   "field": "species 2",
+   "area": 69.73,
+   "scaling": 1.129,
+   "growth": 0.52,
+   "area_over_time": [
+    11.6884,
+    16.3076,
+    33.9159,
+    50.8949,
+    69.7344
+   ],
+   "density": 1.0,
+   "source": "rule 748",
+   "verdict": "growing territories",
+   "apart": -0.979,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 59.56,
+     "scaling": 1.16,
+     "growth": 0.526
+    },
+    {
+     "called": "growing",
+     "area": 69.73,
+     "scaling": 1.129,
+     "growth": 0.52
+    }
+   ]
+  },
+  {
+   "family": "variant",
+   "index": 16,
+   "name": "B2378/S25678 against B2378/S2578",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S2578"
+   ],
+   "tie_break": "random",
+   "live": 0.540192,
+   "shares": [
+    0.473129,
+    0.067062
+   ],
+   "holding": 2,
+   "changed": 0.415848,
+   "called": "growing",
+   "field": "species 1",
+   "area": 69.03,
+   "scaling": 1.299,
+   "growth": 0.903,
+   "area_over_time": [
+    8.5785,
+    12.2661,
+    19.7387,
+    32.1836,
+    69.0336
+   ],
+   "density": 1.0,
+   "source": "one count away from the best territory rule",
+   "verdict": "growing territories",
+   "apart": -0.809,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 69.03,
+     "scaling": 1.299,
+     "growth": 0.903
+    },
+    {
+     "called": "growing",
+     "area": 66.26,
+     "scaling": 1.163,
+     "growth": 0.665
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 3,
+   "name": "5 copies of B2/S0",
+   "rules": [
+    "B2/S0",
+    "B2/S0",
+    "B2/S0",
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "live": 0.280884,
+   "shares": [
+    0.051834,
+    0.059921,
+    0.052338,
+    0.055878,
+    0.060913
+   ],
+   "holding": 5,
+   "changed": 0.311462,
+   "called": "growing",
+   "field": "species 2",
+   "area": 42.62,
+   "scaling": 1.451,
+   "growth": 0.511,
+   "area_over_time": [
+    10.626,
+    15.4341,
+    20.9753,
+    32.1163,
+    42.622
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.24,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 35.66,
+     "scaling": 1.342,
+     "growth": 0.625
+    },
+    {
+     "called": "growing",
+     "area": 42.62,
+     "scaling": 1.451,
+     "growth": 0.511
+    },
+    {
+     "called": "growing",
+     "area": 39.06,
+     "scaling": 1.392,
+     "growth": 0.536
+    },
+    {
+     "called": "growing",
+     "area": 34.5,
+     "scaling": 1.304,
+     "growth": 0.627
+    },
+    {
+     "called": "growing",
+     "area": 36.33,
+     "scaling": 1.304,
+     "growth": 0.507
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 4,
+   "name": "5 copies of B237/S025678",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "random",
+   "live": 0.556778,
+   "shares": [
+    0.106003,
+    0.116165,
+    0.107132,
+    0.113007,
+    0.114471
+   ],
+   "holding": 5,
+   "changed": 0.514816,
+   "called": "growing",
+   "field": "species 2",
+   "area": 34.7,
+   "scaling": 1.047,
+   "growth": 0.346,
+   "area_over_time": [
+    8.98,
+    16.6407,
+    21.4821,
+    18.1029,
+    34.6966
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.245,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 34.01,
+     "scaling": 1.037,
+     "growth": 0.497
+    },
+    {
+     "called": "growing",
+     "area": 34.7,
+     "scaling": 1.047,
+     "growth": 0.346
+    },
+    {
+     "called": "growing",
+     "area": 32.85,
+     "scaling": 1.026,
+     "growth": 0.284
+    },
+    {
+     "called": "growing",
+     "area": 28.44,
+     "scaling": 0.925,
+     "growth": 0.376
+    },
+    {
+     "called": "growing",
+     "area": 27.79,
+     "scaling": 0.92,
+     "growth": 0.38
+    }
+   ]
+  },
+  {
+   "family": "5 copies",
+   "index": 3,
+   "name": "5 copies of B2/S0",
+   "rules": [
+    "B2/S0",
+    "B2/S0",
+    "B2/S0",
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "random",
+   "live": 0.299286,
+   "shares": [
+    0.050537,
+    0.074295,
+    0.063431,
+    0.060577,
+    0.050446
+   ],
+   "holding": 5,
+   "changed": 0.329971,
+   "called": "growing",
+   "field": "species 4",
+   "area": 32.28,
+   "scaling": 1.328,
+   "growth": 0.454,
+   "area_over_time": [
+    8.6922,
+    10.8955,
+    17.1999,
+    22.3157,
+    32.279
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.246,
+   "territories": [
+    {
+     "called": "organised",
+     "area": 18.28,
+     "scaling": 1.034,
+     "growth": 0.247
+    },
+    {
+     "called": "growing",
+     "area": 23.76,
+     "scaling": 1.145,
+     "growth": 0.324
+    },
+    {
+     "called": "growing",
+     "area": 31.1,
+     "scaling": 1.29,
+     "growth": 0.528
+    },
+    {
+     "called": "growing",
+     "area": 32.28,
+     "scaling": 1.328,
+     "growth": 0.454
+    },
+    {
+     "called": "growing",
+     "area": 19.79,
+     "scaling": 1.041,
+     "growth": 0.322
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 22,
+   "name": "B2/S0 against itself",
+   "rules": [
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "live": 0.240219,
+   "shares": [
+    0.110229,
+    0.12999
+   ],
+   "holding": 2,
+   "changed": 0.344681,
+   "called": "growing",
+   "field": "species 1",
+   "area": 26.03,
+   "scaling": 1.142,
+   "growth": 0.5,
+   "area_over_time": [
+    6.2983,
+    7.2633,
+    13.0211,
+    21.1195,
+    26.0348
+   ],
+   "density": 0.5,
+   "source": "soup 3 30019 (standoff), the species left",
+   "verdict": "growing territories",
+   "apart": -0.923,
+   "territories": [
+    {
+     "called": "growing",
+     "area": 26.03,
+     "scaling": 1.142,
+     "growth": 0.5
+    },
+    {
+     "called": "growing",
+     "area": 23.27,
+     "scaling": 1.12,
+     "growth": 0.491
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 4,
+   "name": "3 copies of B237/S025678",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "random",
+   "live": 0.546417,
+   "shares": [
+    0.176498,
+    0.188889,
+    0.18103
+   ],
+   "holding": 3,
+   "changed": 0.533356,
+   "called": "growing",
+   "field": "species 3",
+   "area": 17.71,
+   "scaling": 0.793,
+   "growth": 0.435,
+   "area_over_time": [
+    5.3948,
+    10.4509,
+    9.6899,
+    12.6716,
+    17.7055
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "growing territories",
+   "apart": -0.478,
+   "territories": [
+    {
+     "called": "patches",
+     "area": 14.47,
+     "scaling": 0.726,
+     "growth": 0.417
+    },
+    {
+     "called": "patches",
+     "area": 15.74,
+     "scaling": 0.793,
+     "growth": 0.368
+    },
+    {
+     "called": "growing",
+     "area": 17.71,
+     "scaling": 0.793,
+     "growth": 0.435
+    }
+   ]
+  }
+ ],
+ "standing territories": [
+  {
+   "family": "contest",
+   "index": 22,
+   "name": "B2/S0 against itself",
+   "rules": [
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "live": 0.229614,
+   "shares": [
+    0.121765,
+    0.107849
+   ],
+   "holding": 2,
+   "changed": 0.343597,
+   "called": "organised",
+   "field": "species 2",
+   "area": 93.08,
+   "scaling": 1.762,
+   "growth": -0.113,
+   "area_over_time": [
+    62.9149,
+    126.5754,
+    108.8036,
+    103.0165,
+    93.0806
+   ],
+   "density": 1.0,
+   "source": "soup 3 30019 (standoff), the species left",
+   "verdict": "standing territories",
+   "apart": -0.981,
+   "territories": [
+    {
+     "called": "organised",
+     "area": 84.29,
+     "scaling": 1.73,
+     "growth": -0.075
+    },
+    {
+     "called": "organised",
+     "area": 93.08,
+     "scaling": 1.762,
+     "growth": -0.113
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 22,
+   "name": "B2/S0 against itself",
+   "rules": [
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "random",
+   "live": 0.241043,
+   "shares": [
+    0.124588,
+    0.116455
+   ],
+   "holding": 2,
+   "changed": 0.358383,
+   "called": "organised",
+   "field": "species 2",
+   "area": 58.06,
+   "scaling": 1.649,
+   "growth": -0.454,
+   "area_over_time": [
+    62.9149,
+    126.5754,
+    108.957,
+    85.8723,
+    58.0576
+   ],
+   "density": 1.0,
+   "source": "soup 3 30019 (standoff), the species left",
+   "verdict": "standing territories",
+   "apart": -0.95,
+   "territories": [
+    {
+     "called": "organised",
+     "area": 55.18,
+     "scaling": 1.625,
+     "growth": -0.369
+    },
+    {
+     "called": "organised",
+     "area": 58.06,
+     "scaling": 1.649,
+     "growth": -0.454
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 3,
+   "name": "3 copies of B2/S0",
+   "rules": [
+    "B2/S0",
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "live": 0.249237,
+   "shares": [
+    0.070923,
+    0.094971,
+    0.083344
+   ],
+   "holding": 3,
+   "changed": 0.336227,
+   "called": "organised",
+   "field": "species 1",
+   "area": 33.97,
+   "scaling": 1.241,
+   "growth": 0.073,
+   "area_over_time": [
+    24.4627,
+    23.4902,
+    30.6821,
+    36.477,
+    33.9711
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "standing territories",
+   "apart": -0.471,
+   "territories": [
+    {
+     "called": "organised",
+     "area": 33.97,
+     "scaling": 1.241,
+     "growth": 0.073
+    },
+    {
+     "called": "organised",
+     "area": 33.83,
+     "scaling": 1.258,
+     "growth": 0.144
+    },
+    {
+     "called": "organised",
+     "area": 30.31,
+     "scaling": 1.169,
+     "growth": 0.193
+    }
+   ]
+  },
+  {
+   "family": "3 copies",
+   "index": 3,
+   "name": "3 copies of B2/S0",
+   "rules": [
+    "B2/S0",
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "random",
+   "live": 0.277756,
+   "shares": [
+    0.095062,
+    0.092773,
+    0.08992
+   ],
+   "holding": 3,
+   "changed": 0.362946,
+   "called": "organised",
+   "field": "species 3",
+   "area": 26.64,
+   "scaling": 1.213,
+   "growth": 0.115,
+   "area_over_time": [
+    21.0728,
+    20.1112,
+    22.7203,
+    17.9067,
+    26.6442
+   ],
+   "density": 1.0,
+   "source": "held territories against one copy of itself",
+   "verdict": "standing territories",
+   "apart": -0.478,
+   "territories": [
+    {
+     "called": "organised",
+     "area": 21.21,
+     "scaling": 1.101,
+     "growth": -0.229
+    },
+    {
+     "called": "patches",
+     "area": 15.07,
+     "scaling": 0.893,
+     "growth": -0.18
+    },
+    {
+     "called": "organised",
+     "area": 26.64,
+     "scaling": 1.213,
+     "growth": 0.115
+    }
+   ]
+  }
+ ]
+}

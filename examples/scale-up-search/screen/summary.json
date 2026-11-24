@@ -1,0 +1,4132 @@
+{
+ "side": 256,
+ "times": [
+  32,
+  64,
+  128,
+  256,
+  512
+ ],
+ "blocks": [
+  2,
+  4,
+  8,
+  16,
+  32
+ ],
+ "start": 11001,
+ "large_area": 16.0,
+ "still_growing": 0.25,
+ "families": {
+  "known": {
+   "worlds": 7,
+   "dead": 0,
+   "patches": 2,
+   "organised": 3,
+   "growing": 2,
+   "contested": 1,
+   "growing and contested": 0
+  },
+  "soup 2, random": {
+   "worlds": 150,
+   "dead": 3,
+   "patches": 141,
+   "organised": 2,
+   "growing": 4,
+   "contested": 59,
+   "growing and contested": 0
+  },
+  "soup 2, standoff": {
+   "worlds": 150,
+   "dead": 2,
+   "patches": 141,
+   "organised": 3,
+   "growing": 4,
+   "contested": 58,
+   "growing and contested": 1
+  },
+  "soup 3, random": {
+   "worlds": 150,
+   "dead": 2,
+   "patches": 143,
+   "organised": 2,
+   "growing": 3,
+   "contested": 95,
+   "growing and contested": 3
+  },
+  "soup 3, standoff": {
+   "worlds": 150,
+   "dead": 2,
+   "patches": 144,
+   "organised": 0,
+   "growing": 4,
+   "contested": 85,
+   "growing and contested": 2
+  },
+  "soup 5, random": {
+   "worlds": 150,
+   "dead": 0,
+   "patches": 143,
+   "organised": 5,
+   "growing": 2,
+   "contested": 134,
+   "growing and contested": 1
+  },
+  "soup 5, standoff": {
+   "worlds": 150,
+   "dead": 1,
+   "patches": 139,
+   "organised": 7,
+   "growing": 3,
+   "contested": 121,
+   "growing and contested": 3
+  },
+  "rule": {
+   "worlds": 1200,
+   "dead": 42,
+   "patches": 1111,
+   "organised": 27,
+   "growing": 20,
+   "contested": 0,
+   "growing and contested": 0
+  },
+  "near-majority": {
+   "worlds": 300,
+   "dead": 153,
+   "patches": 104,
+   "organised": 43,
+   "growing": 0,
+   "contested": 0,
+   "growing and contested": 0
+  }
+ },
+ "known": [
+  {
+   "family": "known",
+   "index": 1,
+   "name": "Life",
+   "rules": [
+    "B3/S23"
+   ],
+   "tie_break": "standoff",
+   "live": 0.046249,
+   "shares": [
+    0.046249
+   ],
+   "holding": 0,
+   "changed": 0.025467,
+   "called": "patches",
+   "field": "live",
+   "area": 11.26,
+   "scaling": 0.54,
+   "growth": -0.25,
+   "area_over_time": [
+    8.3043,
+    8.0393,
+    15.9261,
+    12.6995,
+    11.2596
+   ]
+  },
+  {
+   "family": "known",
+   "index": 2,
+   "name": "HighLife",
+   "rules": [
+    "B36/S23"
+   ],
+   "tie_break": "standoff",
+   "live": 0.046082,
+   "shares": [
+    0.046082
+   ],
+   "holding": 0,
+   "changed": 0.033371,
+   "called": "organised",
+   "field": "live",
+   "area": 17.7,
+   "scaling": 0.625,
+   "growth": 0.228,
+   "area_over_time": [
+    9.4438,
+    8.015,
+    12.9107,
+    21.6618,
+    17.7034
+   ]
+  },
+  {
+   "family": "known",
+   "index": 3,
+   "name": "Life against HighLife",
+   "rules": [
+    "B3/S23",
+    "B36/S23"
+   ],
+   "tie_break": "standoff",
+   "live": 0.049789,
+   "shares": [
+    0.02916,
+    0.02063
+   ],
+   "holding": 0,
+   "changed": 0.004913,
+   "called": "patches",
+   "field": "species 1",
+   "area": 7.54,
+   "scaling": 0.458,
+   "growth": -0.462,
+   "area_over_time": [
+    9.0371,
+    11.2662,
+    14.3049,
+    12.0706,
+    7.5376
+   ]
+  },
+  {
+   "family": "known",
+   "index": 4,
+   "name": "soup 19",
+   "rules": [
+    "B0127/S34",
+    "B0178/S56",
+    "B2468/S056",
+    "B4/S3",
+    "B2378/S234"
+   ],
+   "tie_break": "standoff",
+   "live": 0.501251,
+   "shares": [
+    0.111038,
+    0.338593,
+    0.04213,
+    6.1e-05,
+    0.00943
+   ],
+   "holding": 2,
+   "changed": 0.029648,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 50.8,
+   "scaling": 0.961,
+   "growth": 0.023,
+   "area_over_time": [
+    29.77,
+    47.4729,
+    49.212,
+    50.7938,
+    50.8031
+   ]
+  },
+  {
+   "family": "known",
+   "index": 5,
+   "name": "Vote",
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497345,
+   "shares": [
+    0.497345
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.38,
+   "scaling": 0.265,
+   "growth": 0.0,
+   "area_over_time": [
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809
+   ]
+  },
+  {
+   "family": "known",
+   "index": 6,
+   "name": "Anneal",
+   "rules": [
+    "B4678/S35678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.587097,
+   "shares": [
+    0.587097
+   ],
+   "holding": 1,
+   "changed": 0.01384,
+   "called": "growing",
+   "field": "live",
+   "area": 455.35,
+   "scaling": 1.545,
+   "growth": 0.523,
+   "area_over_time": [
+    95.3086,
+    149.6671,
+    220.4735,
+    336.3388,
+    455.3524
+   ]
+  },
+  {
+   "family": "known",
+   "index": 7,
+   "name": "Day and Night",
+   "rules": [
+    "B3678/S34678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.430038,
+   "shares": [
+    0.430038
+   ],
+   "holding": 1,
+   "changed": 0.024185,
+   "called": "growing",
+   "field": "live",
+   "area": 525.39,
+   "scaling": 1.647,
+   "growth": 0.518,
+   "area_over_time": [
+    28.3936,
+    85.9475,
+    256.113,
+    393.1434,
+    525.3938
+   ]
+  }
+ ],
+ "growing": [
+  {
+   "family": "rule",
+   "index": 362,
+   "name": null,
+   "rules": [
+    "B0368/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.603256,
+   "shares": [
+    0.603256
+   ],
+   "holding": 1,
+   "changed": 0.281723,
+   "called": "growing",
+   "field": "live",
+   "area": 221.49,
+   "scaling": 1.641,
+   "growth": 2.671,
+   "area_over_time": [
+    1.7472,
+    2.2945,
+    5.4586,
+    30.3874,
+    221.4885
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 818,
+   "name": null,
+   "rules": [
+    "B456/S0124678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.783371,
+   "shares": [
+    0.783371
+   ],
+   "holding": 1,
+   "changed": 0.012451,
+   "called": "growing",
+   "field": "live",
+   "area": 434.44,
+   "scaling": 1.716,
+   "growth": 2.037,
+   "area_over_time": [
+    9.3365,
+    10.149,
+    25.7815,
+    147.9679,
+    434.4368
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20092,
+   "name": null,
+   "rules": [
+    "B6/S367",
+    "B138/S123"
+   ],
+   "tie_break": "standoff",
+   "live": 0.485413,
+   "shares": [
+    0.000671,
+    0.484741
+   ],
+   "holding": 1,
+   "changed": 0.029953,
+   "called": "growing",
+   "field": "live, rows",
+   "area": 197.49,
+   "scaling": 1.521,
+   "growth": 1.224,
+   "area_over_time": [
+    4.5893,
+    7.6249,
+    36.2119,
+    108.3685,
+    197.4895
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1107,
+   "name": null,
+   "rules": [
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.908615,
+   "shares": [
+    0.908615
+   ],
+   "holding": 1,
+   "changed": 0.047897,
+   "called": "growing",
+   "field": "live",
+   "area": 65.47,
+   "scaling": 1.066,
+   "growth": 1.173,
+   "area_over_time": [
+    4.4124,
+    4.3067,
+    12.8717,
+    41.3969,
+    65.4712
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 684,
+   "name": null,
+   "rules": [
+    "B38/S0123"
+   ],
+   "tie_break": "standoff",
+   "live": 0.367432,
+   "shares": [
+    0.367432
+   ],
+   "holding": 1,
+   "changed": 0.329056,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 20.41,
+   "scaling": 1.222,
+   "growth": 1.123,
+   "area_over_time": [
+    2.2709,
+    2.7021,
+    4.3054,
+    6.0026,
+    20.4092
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30022,
+   "name": null,
+   "rules": [
+    "B3/S6",
+    "B2/S1248",
+    "B1348/S25"
+   ],
+   "tie_break": "random",
+   "live": 0.654495,
+   "shares": [
+    0.0,
+    0.423355,
+    0.23114
+   ],
+   "holding": 2,
+   "changed": 0.245361,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 20.27,
+   "scaling": 0.756,
+   "growth": 1.108,
+   "area_over_time": [
+    1.1535,
+    1.6456,
+    4.3657,
+    8.0306,
+    20.2749
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1033,
+   "name": null,
+   "rules": [
+    "B12345678/S568"
+   ],
+   "tie_break": "standoff",
+   "live": 0.503448,
+   "shares": [
+    0.503448
+   ],
+   "holding": 1,
+   "changed": 0.002289,
+   "called": "growing",
+   "field": "live, rows",
+   "area": 72.16,
+   "scaling": 0.969,
+   "growth": 1.072,
+   "area_over_time": [
+    3.0977,
+    5.45,
+    16.3174,
+    38.4537,
+    72.1635
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 748,
+   "name": null,
+   "rules": [
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.924423,
+   "shares": [
+    0.924423
+   ],
+   "holding": 1,
+   "changed": 0.02774,
+   "called": "growing",
+   "field": "live",
+   "area": 34.38,
+   "scaling": 0.817,
+   "growth": 0.988,
+   "area_over_time": [
+    2.7627,
+    4.7186,
+    8.7363,
+    38.7416,
+    34.3809
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30145,
+   "name": null,
+   "rules": [
+    "B0137/S03",
+    "B025/S13",
+    "B3/S234"
+   ],
+   "tie_break": "random",
+   "live": 0.621765,
+   "shares": [
+    0.255173,
+    0.233917,
+    0.132675
+   ],
+   "holding": 3,
+   "changed": 0.438171,
+   "called": "growing",
+   "field": "species 3",
+   "area": 52.04,
+   "scaling": 1.0,
+   "growth": 0.985,
+   "area_over_time": [
+    7.3835,
+    9.9496,
+    13.2733,
+    26.81,
+    52.0365
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20092,
+   "name": null,
+   "rules": [
+    "B6/S367",
+    "B138/S123"
+   ],
+   "tie_break": "random",
+   "live": 0.481781,
+   "shares": [
+    0.000732,
+    0.481049
+   ],
+   "holding": 1,
+   "changed": 0.034073,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 248.78,
+   "scaling": 1.573,
+   "growth": 0.914,
+   "area_over_time": [
+    11.8195,
+    30.5981,
+    70.0648,
+    176.7377,
+    248.7837
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 262,
+   "name": null,
+   "rules": [
+    "B1348/S123467"
+   ],
+   "tie_break": "standoff",
+   "live": 0.517944,
+   "shares": [
+    0.517944
+   ],
+   "holding": 1,
+   "changed": 0.008469,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 158.68,
+   "scaling": 1.369,
+   "growth": 0.782,
+   "area_over_time": [
+    4.8438,
+    13.8302,
+    53.6616,
+    131.1046,
+    158.6833
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30044,
+   "name": null,
+   "rules": [
+    "B027/S2",
+    "B238/S0346",
+    "B3568/S237"
+   ],
+   "tie_break": "standoff",
+   "live": 0.400909,
+   "shares": [
+    0.360031,
+    0.020493,
+    0.020386
+   ],
+   "holding": 1,
+   "changed": 0.074707,
+   "called": "growing",
+   "field": "species 1",
+   "area": 340.46,
+   "scaling": 1.522,
+   "growth": 0.768,
+   "area_over_time": [
+    16.8324,
+    41.6147,
+    117.38,
+    226.1562,
+    340.4604
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 880,
+   "name": null,
+   "rules": [
+    "B012457/S14"
+   ],
+   "tie_break": "standoff",
+   "live": 0.572006,
+   "shares": [
+    0.572006
+   ],
+   "holding": 1,
+   "changed": 0.035934,
+   "called": "growing",
+   "field": "live",
+   "area": 428.11,
+   "scaling": 1.532,
+   "growth": 0.751,
+   "area_over_time": [
+    15.6583,
+    48.4695,
+    151.2407,
+    283.5187,
+    428.106
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 959,
+   "name": null,
+   "rules": [
+    "B0124578/S0134"
+   ],
+   "tie_break": "standoff",
+   "live": 0.025345,
+   "shares": [
+    0.025345
+   ],
+   "holding": 0,
+   "changed": 0.003204,
+   "called": "growing",
+   "field": "live",
+   "area": 468.5,
+   "scaling": 1.57,
+   "growth": 0.733,
+   "area_over_time": [
+    51.0378,
+    88.3025,
+    169.6369,
+    304.0903,
+    468.5013
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 580,
+   "name": null,
+   "rules": [
+    "B27/S12468"
+   ],
+   "tie_break": "standoff",
+   "live": 0.458542,
+   "shares": [
+    0.458542
+   ],
+   "holding": 1,
+   "changed": 0.022568,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 122.34,
+   "scaling": 1.206,
+   "growth": 0.704,
+   "area_over_time": [
+    9.7422,
+    16.2433,
+    46.1065,
+    89.3334,
+    122.3445
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 441,
+   "name": null,
+   "rules": [
+    "B014567/S2678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.619339,
+   "shares": [
+    0.619339
+   ],
+   "holding": 1,
+   "changed": 0.205429,
+   "called": "growing",
+   "field": "live, columns",
+   "area": 30.95,
+   "scaling": 1.056,
+   "growth": 0.703,
+   "area_over_time": [
+    6.0815,
+    8.9618,
+    11.6791,
+    17.7921,
+    30.9514
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30003,
+   "name": null,
+   "rules": [
+    "B0278/S034",
+    "B2/S1258",
+    "B0/S467"
+   ],
+   "tie_break": "random",
+   "live": 0.494934,
+   "shares": [
+    0.286636,
+    0.017426,
+    0.190872
+   ],
+   "holding": 2,
+   "changed": 0.464828,
+   "called": "growing",
+   "field": "species 2",
+   "area": 25.21,
+   "scaling": 0.845,
+   "growth": 0.686,
+   "area_over_time": [
+    5.0651,
+    6.7932,
+    9.736,
+    12.4255,
+    25.2085
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 434,
+   "name": null,
+   "rules": [
+    "B235/S023458"
+   ],
+   "tie_break": "standoff",
+   "live": 0.575821,
+   "shares": [
+    0.575821
+   ],
+   "holding": 1,
+   "changed": 0.26268,
+   "called": "growing",
+   "field": "live, rows",
+   "area": 17.04,
+   "scaling": 0.871,
+   "growth": 0.616,
+   "area_over_time": [
+    4.8809,
+    5.8722,
+    7.2589,
+    10.7986,
+    17.0422
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 881,
+   "name": null,
+   "rules": [
+    "B0167/S023"
+   ],
+   "tie_break": "standoff",
+   "live": 0.645172,
+   "shares": [
+    0.645172
+   ],
+   "holding": 1,
+   "changed": 0.003128,
+   "called": "growing",
+   "field": "live",
+   "area": 235.42,
+   "scaling": 1.188,
+   "growth": 0.591,
+   "area_over_time": [
+    17.5964,
+    42.3992,
+    103.8257,
+    197.5761,
+    235.421
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 759,
+   "name": null,
+   "rules": [
+    "B012358/S0125"
+   ],
+   "tie_break": "standoff",
+   "live": 0.710648,
+   "shares": [
+    0.710648
+   ],
+   "holding": 1,
+   "changed": 0.022507,
+   "called": "growing",
+   "field": "live",
+   "area": 417.47,
+   "scaling": 1.501,
+   "growth": 0.552,
+   "area_over_time": [
+    61.4088,
+    121.4114,
+    194.1208,
+    259.8009,
+    417.4716
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1165,
+   "name": null,
+   "rules": [
+    "B01256/S04"
+   ],
+   "tie_break": "standoff",
+   "live": 0.595901,
+   "shares": [
+    0.595901
+   ],
+   "holding": 1,
+   "changed": 0.001022,
+   "called": "growing",
+   "field": "live",
+   "area": 195.71,
+   "scaling": 1.093,
+   "growth": 0.547,
+   "area_over_time": [
+    16.743,
+    36.9075,
+    91.659,
+    168.64,
+    195.7129
+   ]
+  },
+  {
+   "family": "known",
+   "index": 6,
+   "name": "Anneal",
+   "rules": [
+    "B4678/S35678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.587097,
+   "shares": [
+    0.587097
+   ],
+   "holding": 1,
+   "changed": 0.01384,
+   "called": "growing",
+   "field": "live",
+   "area": 455.35,
+   "scaling": 1.545,
+   "growth": 0.523,
+   "area_over_time": [
+    95.3086,
+    149.6671,
+    220.4735,
+    336.3388,
+    455.3524
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20032,
+   "name": null,
+   "rules": [
+    "B5/S67",
+    "B013/S1"
+   ],
+   "tie_break": "standoff",
+   "live": 0.605774,
+   "shares": [
+    0.0,
+    0.605774
+   ],
+   "holding": 1,
+   "changed": 0.014709,
+   "called": "growing",
+   "field": "live",
+   "area": 450.42,
+   "scaling": 1.541,
+   "growth": 0.519,
+   "area_over_time": [
+    85.6811,
+    135.3396,
+    219.2832,
+    334.1533,
+    450.4199
+   ]
+  },
+  {
+   "family": "known",
+   "index": 7,
+   "name": "Day and Night",
+   "rules": [
+    "B3678/S34678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.430038,
+   "shares": [
+    0.430038
+   ],
+   "holding": 1,
+   "changed": 0.024185,
+   "called": "growing",
+   "field": "live",
+   "area": 525.39,
+   "scaling": 1.647,
+   "growth": 0.518,
+   "area_over_time": [
+    28.3936,
+    85.9475,
+    256.113,
+    393.1434,
+    525.3938
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20093,
+   "name": null,
+   "rules": [
+    "B015/S1",
+    "B15/S7"
+   ],
+   "tie_break": "random",
+   "live": 0.903397,
+   "shares": [
+    0.896301,
+    0.007095
+   ],
+   "holding": 1,
+   "changed": 0.01265,
+   "called": "growing",
+   "field": "species 1",
+   "area": 252.73,
+   "scaling": 1.214,
+   "growth": 0.491,
+   "area_over_time": [
+    48.4411,
+    80.9612,
+    127.9433,
+    203.1812,
+    252.7298
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20032,
+   "name": null,
+   "rules": [
+    "B5/S67",
+    "B013/S1"
+   ],
+   "tie_break": "random",
+   "live": 0.438522,
+   "shares": [
+    0.0,
+    0.438522
+   ],
+   "holding": 1,
+   "changed": 0.014999,
+   "called": "growing",
+   "field": "live",
+   "area": 438.45,
+   "scaling": 1.522,
+   "growth": 0.487,
+   "area_over_time": [
+    90.5208,
+    137.2122,
+    223.2188,
+    327.5152,
+    438.4514
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50066,
+   "name": null,
+   "rules": [
+    "B1347/S7",
+    "B234/S0348",
+    "B136/S7",
+    "B02/S35",
+    "B1/S6"
+   ],
+   "tie_break": "standoff",
+   "live": 0.36058,
+   "shares": [
+    0.13649,
+    0.024216,
+    0.020309,
+    0.179565,
+    0.0
+   ],
+   "holding": 2,
+   "changed": 0.440918,
+   "called": "growing",
+   "field": "species 3",
+   "area": 21.29,
+   "scaling": 1.075,
+   "growth": 0.486,
+   "area_over_time": [
+    11.2199,
+    10.2363,
+    10.8515,
+    13.902,
+    21.2874
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 95,
+   "name": null,
+   "rules": [
+    "B01237/S023478"
+   ],
+   "tie_break": "standoff",
+   "live": 0.507645,
+   "shares": [
+    0.507645
+   ],
+   "holding": 1,
+   "changed": 0.190399,
+   "called": "growing",
+   "field": "live, rows",
+   "area": 25.2,
+   "scaling": 0.779,
+   "growth": 0.466,
+   "area_over_time": [
+    4.0516,
+    7.7273,
+    13.206,
+    20.4707,
+    25.2011
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 791,
+   "name": null,
+   "rules": [
+    "B01245/S235"
+   ],
+   "tie_break": "standoff",
+   "live": 0.136292,
+   "shares": [
+    0.136292
+   ],
+   "holding": 1,
+   "changed": 0.011978,
+   "called": "growing",
+   "field": "live",
+   "area": 524.83,
+   "scaling": 1.636,
+   "growth": 0.443,
+   "area_over_time": [
+    66.1325,
+    171.6162,
+    283.9468,
+    379.7531,
+    524.8348
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50149,
+   "name": null,
+   "rules": [
+    "B1456/S2357",
+    "B05/S04",
+    "B348/S0378",
+    "B12/S5678",
+    "B038/S3467"
+   ],
+   "tie_break": "standoff",
+   "live": 0.545746,
+   "shares": [
+    0.10434,
+    0.19043,
+    0.041672,
+    0.064972,
+    0.144333
+   ],
+   "holding": 4,
+   "changed": 0.322556,
+   "called": "growing",
+   "field": "species 1",
+   "area": 41.72,
+   "scaling": 1.415,
+   "growth": 0.435,
+   "area_over_time": [
+    12.0566,
+    14.0355,
+    22.841,
+    33.2692,
+    41.7223
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30019,
+   "name": null,
+   "rules": [
+    "B2/S4",
+    "B47/S2",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "live": 0.236069,
+   "shares": [
+    0.033691,
+    0.008377,
+    0.194
+   ],
+   "holding": 1,
+   "changed": 0.34201,
+   "called": "growing",
+   "field": "species 1",
+   "area": 48.91,
+   "scaling": 1.169,
+   "growth": 0.403,
+   "area_over_time": [
+    10.0564,
+    17.1587,
+    27.9957,
+    48.2201,
+    48.9146
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30022,
+   "name": null,
+   "rules": [
+    "B3/S6",
+    "B2/S1248",
+    "B1348/S25"
+   ],
+   "tie_break": "standoff",
+   "live": 0.48941,
+   "shares": [
+    0.0,
+    0.098282,
+    0.391129
+   ],
+   "holding": 2,
+   "changed": 0.471039,
+   "called": "growing",
+   "field": "species 2",
+   "area": 18.51,
+   "scaling": 0.813,
+   "growth": 0.396,
+   "area_over_time": [
+    5.1629,
+    7.7817,
+    10.6874,
+    10.7537,
+    18.5067
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20093,
+   "name": null,
+   "rules": [
+    "B015/S1",
+    "B15/S7"
+   ],
+   "tie_break": "standoff",
+   "live": 0.362823,
+   "shares": [
+    0.275345,
+    0.087479
+   ],
+   "holding": 2,
+   "changed": 0.348297,
+   "called": "growing",
+   "field": "species 1",
+   "area": 18.83,
+   "scaling": 0.704,
+   "growth": 0.388,
+   "area_over_time": [
+    13.9876,
+    12.6257,
+    10.9931,
+    16.6054,
+    18.8298
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 785,
+   "name": null,
+   "rules": [
+    "B23/S12358"
+   ],
+   "tie_break": "standoff",
+   "live": 0.490112,
+   "shares": [
+    0.490112
+   ],
+   "holding": 1,
+   "changed": 0.003876,
+   "called": "growing",
+   "field": "live, rows",
+   "area": 132.46,
+   "scaling": 1.208,
+   "growth": 0.37,
+   "area_over_time": [
+    11.7381,
+    29.3289,
+    79.2693,
+    123.2656,
+    132.455
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20102,
+   "name": null,
+   "rules": [
+    "B0126/S12",
+    "B18/S03"
+   ],
+   "tie_break": "standoff",
+   "live": 0.027267,
+   "shares": [
+    0.022568,
+    0.0047
+   ],
+   "holding": 0,
+   "changed": 0.012451,
+   "called": "growing",
+   "field": "live",
+   "area": 192.39,
+   "scaling": 1.26,
+   "growth": 0.349,
+   "area_over_time": [
+    30.7098,
+    62.1311,
+    118.5341,
+    164.8635,
+    192.3886
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30046,
+   "name": null,
+   "rules": [
+    "B0247/S4",
+    "B6/S0245",
+    "B35/S2346"
+   ],
+   "tie_break": "standoff",
+   "live": 0.459793,
+   "shares": [
+    0.294647,
+    0.061523,
+    0.103622
+   ],
+   "holding": 3,
+   "changed": 0.369354,
+   "called": "growing",
+   "field": "species 3",
+   "area": 28.2,
+   "scaling": 0.813,
+   "growth": 0.349,
+   "area_over_time": [
+    11.0034,
+    12.2353,
+    17.3764,
+    25.4737,
+    28.2034
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50080,
+   "name": null,
+   "rules": [
+    "B7/S06",
+    "B2378/S6",
+    "B267/S137",
+    "B0124/S034",
+    "B2356/S347"
+   ],
+   "tie_break": "random",
+   "live": 0.322952,
+   "shares": [
+    0.042496,
+    0.0,
+    0.0,
+    0.280457,
+    0.0
+   ],
+   "holding": 1,
+   "changed": 0.010086,
+   "called": "growing",
+   "field": "species 4",
+   "area": 245.72,
+   "scaling": 1.244,
+   "growth": 0.335,
+   "area_over_time": [
+    65.8704,
+    117.442,
+    154.3551,
+    207.109,
+    245.7241
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50051,
+   "name": null,
+   "rules": [
+    "B0678/S47",
+    "B016/S068",
+    "B0245/S5",
+    "B16/S7",
+    "B4/S257"
+   ],
+   "tie_break": "random",
+   "live": 0.484024,
+   "shares": [
+    0.131607,
+    0.20433,
+    0.144424,
+    0.0,
+    0.003662
+   ],
+   "holding": 3,
+   "changed": 0.304779,
+   "called": "growing",
+   "field": "live",
+   "area": 17.57,
+   "scaling": 0.577,
+   "growth": 0.307,
+   "area_over_time": [
+    10.0888,
+    12.0919,
+    11.4844,
+    16.5924,
+    17.5714
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50092,
+   "name": null,
+   "rules": [
+    "B124/S2",
+    "B57/S2457",
+    "B0126/S6",
+    "B27/S1258",
+    "B0245/S68"
+   ],
+   "tie_break": "standoff",
+   "live": 0.286911,
+   "shares": [
+    0.00148,
+    0.003738,
+    0.068893,
+    0.040939,
+    0.17186
+   ],
+   "holding": 2,
+   "changed": 0.279556,
+   "called": "growing",
+   "field": "species 3",
+   "area": 60.05,
+   "scaling": 1.287,
+   "growth": 0.294,
+   "area_over_time": [
+    25.8262,
+    40.7591,
+    39.9387,
+    49.0892,
+    60.0542
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 59,
+   "name": null,
+   "rules": [
+    "B012348/S01246"
+   ],
+   "tie_break": "standoff",
+   "live": 0.090195,
+   "shares": [
+    0.090195
+   ],
+   "holding": 1,
+   "changed": 0.01535,
+   "called": "growing",
+   "field": "live",
+   "area": 295.71,
+   "scaling": 1.307,
+   "growth": 0.284,
+   "area_over_time": [
+    100.553,
+    158.8818,
+    199.3877,
+    268.3454,
+    295.7051
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 342,
+   "name": null,
+   "rules": [
+    "B06/S67"
+   ],
+   "tie_break": "standoff",
+   "live": 0.307526,
+   "shares": [
+    0.307526
+   ],
+   "holding": 1,
+   "changed": 0.345367,
+   "called": "growing",
+   "field": "live",
+   "area": 19.92,
+   "scaling": 0.556,
+   "growth": 0.281,
+   "area_over_time": [
+    9.6784,
+    9.7053,
+    13.4828,
+    15.8605,
+    19.9166
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20117,
+   "name": null,
+   "rules": [
+    "B245/S378",
+    "B0/S6"
+   ],
+   "tie_break": "random",
+   "live": 0.260529,
+   "shares": [
+    0.0,
+    0.260529
+   ],
+   "holding": 1,
+   "changed": 0.265366,
+   "called": "growing",
+   "field": "live",
+   "area": 21.44,
+   "scaling": 0.745,
+   "growth": 0.251,
+   "area_over_time": [
+    16.5575,
+    12.9319,
+    15.1455,
+    14.2953,
+    21.4373
+   ]
+  }
+ ],
+ "organised": [
+  {
+   "family": "rule",
+   "index": 96,
+   "name": null,
+   "rules": [
+    "B012356/S0145"
+   ],
+   "tie_break": "standoff",
+   "live": 0.407425,
+   "shares": [
+    0.407425
+   ],
+   "holding": 1,
+   "changed": 0.008804,
+   "called": "organised",
+   "field": "live",
+   "area": 212.3,
+   "scaling": 1.201,
+   "growth": 0.118,
+   "area_over_time": [
+    39.3629,
+    108.4472,
+    180.1627,
+    210.4866,
+    212.3035
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 652,
+   "name": null,
+   "rules": [
+    "B012356/S0145"
+   ],
+   "tie_break": "standoff",
+   "live": 0.407425,
+   "shares": [
+    0.407425
+   ],
+   "holding": 1,
+   "changed": 0.008804,
+   "called": "organised",
+   "field": "live",
+   "area": 212.3,
+   "scaling": 1.201,
+   "growth": 0.118,
+   "area_over_time": [
+    39.3629,
+    108.4472,
+    180.1627,
+    210.4866,
+    212.3035
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50080,
+   "name": null,
+   "rules": [
+    "B7/S06",
+    "B2378/S6",
+    "B267/S137",
+    "B0124/S034",
+    "B2356/S347"
+   ],
+   "tie_break": "standoff",
+   "live": 0.980072,
+   "shares": [
+    0.042496,
+    0.0,
+    3.1e-05,
+    0.937546,
+    0.0
+   ],
+   "holding": 1,
+   "changed": 0.001205,
+   "called": "organised",
+   "field": "live",
+   "area": 137.38,
+   "scaling": 0.972,
+   "growth": 0.186,
+   "area_over_time": [
+    47.5099,
+    78.4363,
+    106.201,
+    137.7349,
+    137.3754
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 837,
+   "name": null,
+   "rules": [
+    "B023/S012357"
+   ],
+   "tie_break": "standoff",
+   "live": 0.487427,
+   "shares": [
+    0.487427
+   ],
+   "holding": 1,
+   "changed": 0.003098,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 94.94,
+   "scaling": 1.046,
+   "growth": 0.104,
+   "area_over_time": [
+    19.785,
+    51.0374,
+    82.1935,
+    94.5494,
+    94.9386
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1105,
+   "name": null,
+   "rules": [
+    "B012347/S0127"
+   ],
+   "tie_break": "standoff",
+   "live": 0.895432,
+   "shares": [
+    0.895432
+   ],
+   "holding": 1,
+   "changed": 0.01593,
+   "called": "organised",
+   "field": "live",
+   "area": 92.7,
+   "scaling": 1.074,
+   "growth": -0.021,
+   "area_over_time": [
+    32.3025,
+    72.074,
+    95.4643,
+    75.8437,
+    92.6976
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 263,
+   "name": null,
+   "rules": [
+    "B012346/S034"
+   ],
+   "tie_break": "standoff",
+   "live": 0.125519,
+   "shares": [
+    0.125519
+   ],
+   "holding": 1,
+   "changed": 0.00531,
+   "called": "organised",
+   "field": "live",
+   "area": 78.22,
+   "scaling": 0.733,
+   "growth": 0.0,
+   "area_over_time": [
+    69.3917,
+    77.6389,
+    78.2177,
+    78.2177,
+    78.2177
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 863,
+   "name": null,
+   "rules": [
+    "B0128/S12468"
+   ],
+   "tie_break": "standoff",
+   "live": 0.452148,
+   "shares": [
+    0.452148
+   ],
+   "holding": 1,
+   "changed": 0.012482,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 77.72,
+   "scaling": 0.965,
+   "growth": 0.158,
+   "area_over_time": [
+    15.2583,
+    41.1965,
+    62.4107,
+    75.8932,
+    77.7165
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1183,
+   "name": null,
+   "rules": [
+    "B0123456/S0125"
+   ],
+   "tie_break": "standoff",
+   "live": 0.167419,
+   "shares": [
+    0.167419
+   ],
+   "holding": 1,
+   "changed": 0.006332,
+   "called": "organised",
+   "field": "live",
+   "area": 76.56,
+   "scaling": 0.647,
+   "growth": 0.121,
+   "area_over_time": [
+    32.8802,
+    53.7141,
+    64.7358,
+    73.9722,
+    76.5594
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 121,
+   "name": null,
+   "rules": [
+    "B012345/S1234"
+   ],
+   "tie_break": "standoff",
+   "live": 0.03125,
+   "shares": [
+    0.03125
+   ],
+   "holding": 0,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 74.7,
+   "scaling": 0.584,
+   "growth": 0.0,
+   "area_over_time": [
+    73.3445,
+    74.723,
+    74.7035,
+    74.7035,
+    74.7035
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20085,
+   "name": null,
+   "rules": [
+    "B018/S3",
+    "B456/S3"
+   ],
+   "tie_break": "random",
+   "live": 0.762482,
+   "shares": [
+    0.760834,
+    0.001648
+   ],
+   "holding": 1,
+   "changed": 0.000168,
+   "called": "organised",
+   "field": "live",
+   "area": 70.67,
+   "scaling": 0.704,
+   "growth": 0.0,
+   "area_over_time": [
+    70.6747,
+    70.6504,
+    70.6747,
+    70.6504,
+    70.6747
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 290,
+   "name": null,
+   "rules": [
+    "B012578/S23"
+   ],
+   "tie_break": "standoff",
+   "live": 0.76973,
+   "shares": [
+    0.76973
+   ],
+   "holding": 1,
+   "changed": 0.005844,
+   "called": "organised",
+   "field": "live",
+   "area": 65.36,
+   "scaling": 0.694,
+   "growth": 0.003,
+   "area_over_time": [
+    52.1844,
+    59.8545,
+    65.1113,
+    65.3598,
+    65.3611
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 907,
+   "name": null,
+   "rules": [
+    "B01234578/S0125"
+   ],
+   "tie_break": "standoff",
+   "live": 0.219254,
+   "shares": [
+    0.219254
+   ],
+   "holding": 1,
+   "changed": 0.001801,
+   "called": "organised",
+   "field": "live",
+   "area": 62.52,
+   "scaling": 0.593,
+   "growth": -0.001,
+   "area_over_time": [
+    50.8685,
+    58.8118,
+    62.5854,
+    63.5266,
+    62.5182
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20085,
+   "name": null,
+   "rules": [
+    "B018/S3",
+    "B456/S3"
+   ],
+   "tie_break": "standoff",
+   "live": 0.832047,
+   "shares": [
+    0.831192,
+    0.000854
+   ],
+   "holding": 1,
+   "changed": 0.000153,
+   "called": "organised",
+   "field": "species 1",
+   "area": 54.89,
+   "scaling": 0.534,
+   "growth": 0.0,
+   "area_over_time": [
+    54.5875,
+    54.8445,
+    54.8896,
+    54.8445,
+    54.8896
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 738,
+   "name": null,
+   "rules": [
+    "B24/S012346"
+   ],
+   "tie_break": "standoff",
+   "live": 0.520172,
+   "shares": [
+    0.520172
+   ],
+   "holding": 1,
+   "changed": 0.002563,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 52.26,
+   "scaling": 0.788,
+   "growth": 0.001,
+   "area_over_time": [
+    29.6226,
+    48.3825,
+    52.1905,
+    52.2704,
+    52.2621
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 64,
+   "name": null,
+   "rules": [
+    "B012356/S23456"
+   ],
+   "tie_break": "standoff",
+   "live": 0.132248,
+   "shares": [
+    0.132248
+   ],
+   "holding": 1,
+   "changed": 0.00795,
+   "called": "organised",
+   "field": "live",
+   "area": 51.21,
+   "scaling": 0.626,
+   "growth": -0.001,
+   "area_over_time": [
+    45.2181,
+    48.1573,
+    51.2725,
+    51.338,
+    51.2136
+   ]
+  },
+  {
+   "family": "known",
+   "index": 4,
+   "name": "soup 19",
+   "rules": [
+    "B0127/S34",
+    "B0178/S56",
+    "B2468/S056",
+    "B4/S3",
+    "B2378/S234"
+   ],
+   "tie_break": "standoff",
+   "live": 0.501251,
+   "shares": [
+    0.111038,
+    0.338593,
+    0.04213,
+    6.1e-05,
+    0.00943
+   ],
+   "holding": 2,
+   "changed": 0.029648,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 50.8,
+   "scaling": 0.961,
+   "growth": 0.023,
+   "area_over_time": [
+    29.77,
+    47.4729,
+    49.212,
+    50.7938,
+    50.8031
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 278,
+   "name": null,
+   "rules": [
+    "B14568/S56"
+   ],
+   "tie_break": "standoff",
+   "live": 0.49147,
+   "shares": [
+    0.49147
+   ],
+   "holding": 1,
+   "changed": 0.007187,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 49.33,
+   "scaling": 0.795,
+   "growth": 0.059,
+   "area_over_time": [
+    17.1247,
+    31.6219,
+    45.4322,
+    49.3141,
+    49.3334
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 93,
+   "name": null,
+   "rules": [
+    "B345678/S568"
+   ],
+   "tie_break": "standoff",
+   "live": 0.502533,
+   "shares": [
+    0.502533
+   ],
+   "holding": 1,
+   "changed": 0.000809,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 47.49,
+   "scaling": 0.871,
+   "growth": 0.019,
+   "area_over_time": [
+    12.0075,
+    26.1815,
+    46.245,
+    47.5405,
+    47.494
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 807,
+   "name": null,
+   "rules": [
+    "B128/S01246"
+   ],
+   "tie_break": "standoff",
+   "live": 0.437408,
+   "shares": [
+    0.437408
+   ],
+   "holding": 1,
+   "changed": 0.003799,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 47.05,
+   "scaling": 0.814,
+   "growth": 0.044,
+   "area_over_time": [
+    23.0614,
+    32.5234,
+    44.2796,
+    46.8296,
+    47.055
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 5,
+   "name": null,
+   "rules": [
+    "B45678/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.482941,
+   "shares": [
+    0.482941
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 47.04,
+   "scaling": 0.516,
+   "growth": 0.0,
+   "area_over_time": [
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 81,
+   "name": null,
+   "rules": [
+    "B45678/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.482941,
+   "shares": [
+    0.482941
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 47.04,
+   "scaling": 0.516,
+   "growth": 0.0,
+   "area_over_time": [
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 138,
+   "name": null,
+   "rules": [
+    "B45678/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.482941,
+   "shares": [
+    0.482941
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 47.04,
+   "scaling": 0.516,
+   "growth": 0.0,
+   "area_over_time": [
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 189,
+   "name": null,
+   "rules": [
+    "B45678/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.482941,
+   "shares": [
+    0.482941
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 47.04,
+   "scaling": 0.516,
+   "growth": 0.0,
+   "area_over_time": [
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 191,
+   "name": null,
+   "rules": [
+    "B45678/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.482941,
+   "shares": [
+    0.482941
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 47.04,
+   "scaling": 0.516,
+   "growth": 0.0,
+   "area_over_time": [
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402,
+    47.0402
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 67,
+   "name": null,
+   "rules": [
+    "B45678/S15678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.606354,
+   "shares": [
+    0.606354
+   ],
+   "holding": 1,
+   "changed": 0.000732,
+   "called": "organised",
+   "field": "live",
+   "area": 44.58,
+   "scaling": 0.471,
+   "growth": 0.0,
+   "area_over_time": [
+    44.5551,
+    44.58,
+    44.58,
+    44.58,
+    44.58
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50003,
+   "name": null,
+   "rules": [
+    "B0356/S257",
+    "B058/S1578",
+    "B268/S234",
+    "B7/S035",
+    "B1/S5"
+   ],
+   "tie_break": "random",
+   "live": 0.658707,
+   "shares": [
+    0.171814,
+    0.258682,
+    0.106186,
+    0.042862,
+    0.079163
+   ],
+   "holding": 4,
+   "changed": 0.273438,
+   "called": "organised",
+   "field": "species 3",
+   "area": 40.77,
+   "scaling": 0.876,
+   "growth": 0.076,
+   "area_over_time": [
+    21.866,
+    29.9471,
+    36.6783,
+    39.6064,
+    40.7656
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1021,
+   "name": null,
+   "rules": [
+    "B013458/S234"
+   ],
+   "tie_break": "standoff",
+   "live": 0.040939,
+   "shares": [
+    0.040939
+   ],
+   "holding": 0,
+   "changed": 0.003922,
+   "called": "organised",
+   "field": "live",
+   "area": 39.96,
+   "scaling": 0.78,
+   "growth": -0.177,
+   "area_over_time": [
+    30.3426,
+    46.1824,
+    51.0837,
+    57.3652,
+    39.956
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50032,
+   "name": null,
+   "rules": [
+    "B06/S2378",
+    "B6/S6",
+    "B27/S2347",
+    "B1567/S3",
+    "B124/S1"
+   ],
+   "tie_break": "random",
+   "live": 0.688736,
+   "shares": [
+    0.291611,
+    0.0,
+    0.159378,
+    0.018021,
+    0.219727
+   ],
+   "holding": 3,
+   "changed": 0.223038,
+   "called": "organised",
+   "field": "species 3",
+   "area": 38.73,
+   "scaling": 0.895,
+   "growth": 0.0,
+   "area_over_time": [
+    25.7562,
+    35.7349,
+    38.7204,
+    38.3097,
+    38.7278
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20115,
+   "name": null,
+   "rules": [
+    "B68/S4",
+    "B023/S2"
+   ],
+   "tie_break": "standoff",
+   "live": 0.450287,
+   "shares": [
+    0.0,
+    0.450287
+   ],
+   "holding": 1,
+   "changed": 0.016083,
+   "called": "organised",
+   "field": "live",
+   "area": 37.77,
+   "scaling": 0.404,
+   "growth": 0.001,
+   "area_over_time": [
+    34.443,
+    37.8543,
+    37.7464,
+    37.6907,
+    37.7737
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50032,
+   "name": null,
+   "rules": [
+    "B06/S2378",
+    "B6/S6",
+    "B27/S2347",
+    "B1567/S3",
+    "B124/S1"
+   ],
+   "tie_break": "standoff",
+   "live": 0.6306,
+   "shares": [
+    0.287796,
+    0.0,
+    0.091019,
+    0.0,
+    0.251785
+   ],
+   "holding": 3,
+   "changed": 0.243637,
+   "called": "organised",
+   "field": "species 3",
+   "area": 36.04,
+   "scaling": 0.773,
+   "growth": 0.114,
+   "area_over_time": [
+    16.6352,
+    25.9939,
+    30.7865,
+    35.1302,
+    36.0393
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20115,
+   "name": null,
+   "rules": [
+    "B68/S4",
+    "B023/S2"
+   ],
+   "tie_break": "random",
+   "live": 0.452103,
+   "shares": [
+    0.0,
+    0.452103
+   ],
+   "holding": 1,
+   "changed": 0.015579,
+   "called": "organised",
+   "field": "live",
+   "area": 35.81,
+   "scaling": 0.379,
+   "growth": 0.001,
+   "area_over_time": [
+    32.9819,
+    35.9434,
+    35.783,
+    35.7406,
+    35.8132
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 145,
+   "name": null,
+   "rules": [
+    "B45678/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.861969,
+   "shares": [
+    0.861969
+   ],
+   "holding": 1,
+   "changed": 0.002029,
+   "called": "organised",
+   "field": "live",
+   "area": 31.16,
+   "scaling": 0.293,
+   "growth": 0.002,
+   "area_over_time": [
+    31.153,
+    31.0802,
+    31.0886,
+    31.1144,
+    31.1572
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 247,
+   "name": null,
+   "rules": [
+    "B45678/S25678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.861969,
+   "shares": [
+    0.861969
+   ],
+   "holding": 1,
+   "changed": 0.002029,
+   "called": "organised",
+   "field": "live",
+   "area": 31.16,
+   "scaling": 0.293,
+   "growth": 0.002,
+   "area_over_time": [
+    31.153,
+    31.0802,
+    31.0886,
+    31.1144,
+    31.1572
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50003,
+   "name": null,
+   "rules": [
+    "B0356/S257",
+    "B058/S1578",
+    "B268/S234",
+    "B7/S035",
+    "B1/S5"
+   ],
+   "tie_break": "standoff",
+   "live": 0.591187,
+   "shares": [
+    0.174164,
+    0.25766,
+    0.061539,
+    0.042862,
+    0.054962
+   ],
+   "holding": 4,
+   "changed": 0.284683,
+   "called": "organised",
+   "field": "species 3",
+   "area": 30.59,
+   "scaling": 0.686,
+   "growth": 0.041,
+   "area_over_time": [
+    17.0954,
+    24.048,
+    28.8894,
+    30.7666,
+    30.595
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 130,
+   "name": null,
+   "rules": [
+    "B5678/S245678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.646622,
+   "shares": [
+    0.646622
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 29.05,
+   "scaling": 0.337,
+   "growth": 0.0,
+   "area_over_time": [
+    28.9849,
+    29.047,
+    29.047,
+    29.047,
+    29.047
+   ]
+  },
+  {
+   "family": "known",
+   "index": 5,
+   "name": "Vote",
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497345,
+   "shares": [
+    0.497345
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.38,
+   "scaling": 0.265,
+   "growth": 0.0,
+   "area_over_time": [
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 84,
+   "name": null,
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497345,
+   "shares": [
+    0.497345
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.38,
+   "scaling": 0.265,
+   "growth": 0.0,
+   "area_over_time": [
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 101,
+   "name": null,
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497345,
+   "shares": [
+    0.497345
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.38,
+   "scaling": 0.265,
+   "growth": 0.0,
+   "area_over_time": [
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 210,
+   "name": null,
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.497345,
+   "shares": [
+    0.497345
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.38,
+   "scaling": 0.265,
+   "growth": 0.0,
+   "area_over_time": [
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809,
+    27.3809
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 137,
+   "name": null,
+   "rules": [
+    "B5678/S045678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.50235,
+   "shares": [
+    0.50235
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 27.05,
+   "scaling": 0.264,
+   "growth": 0.0,
+   "area_over_time": [
+    27.0452,
+    27.0452,
+    27.0452,
+    27.0452,
+    27.0452
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 639,
+   "name": null,
+   "rules": [
+    "B01234568/S012456"
+   ],
+   "tie_break": "standoff",
+   "live": 0.128311,
+   "shares": [
+    0.128311
+   ],
+   "holding": 1,
+   "changed": 0.004257,
+   "called": "organised",
+   "field": "live",
+   "area": 26.59,
+   "scaling": 0.41,
+   "growth": 0.0,
+   "area_over_time": [
+    26.2258,
+    26.5507,
+    26.5938,
+    26.5507,
+    26.5938
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 157,
+   "name": null,
+   "rules": [
+    "B578/S045678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.350677,
+   "shares": [
+    0.350677
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 26.35,
+   "scaling": 0.298,
+   "growth": 0.0,
+   "area_over_time": [
+    26.5141,
+    26.3487,
+    26.3487,
+    26.3487,
+    26.3487
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 384,
+   "name": null,
+   "rules": [
+    "B123568/S28"
+   ],
+   "tie_break": "standoff",
+   "live": 0.490982,
+   "shares": [
+    0.490982
+   ],
+   "holding": 1,
+   "changed": 0.202667,
+   "called": "organised",
+   "field": "live",
+   "area": 25.91,
+   "scaling": 0.865,
+   "growth": 0.212,
+   "area_over_time": [
+    11.355,
+    11.0256,
+    19.3261,
+    20.0555,
+    25.9142
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 7,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 22,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 79,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 134,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 161,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 176,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 180,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 258,
+   "name": null,
+   "rules": [
+    "B5678/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.825867,
+   "shares": [
+    0.825867
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.9,
+   "scaling": 0.327,
+   "growth": 0.0,
+   "area_over_time": [
+    25.9327,
+    25.8991,
+    25.8991,
+    25.8991,
+    25.8991
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50083,
+   "name": null,
+   "rules": [
+    "B017/S7",
+    "B1457/S26",
+    "B14/S01",
+    "B8/S7",
+    "B06/S025"
+   ],
+   "tie_break": "random",
+   "live": 0.505203,
+   "shares": [
+    0.147415,
+    0.0,
+    0.161407,
+    0.0,
+    0.196381
+   ],
+   "holding": 3,
+   "changed": 0.151413,
+   "called": "organised",
+   "field": "species 1",
+   "area": 25.53,
+   "scaling": 0.79,
+   "growth": 0.014,
+   "area_over_time": [
+    14.302,
+    19.1806,
+    25.0242,
+    21.6182,
+    25.5308
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 260,
+   "name": null,
+   "rules": [
+    "B67/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.163269,
+   "shares": [
+    0.163269
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.34,
+   "scaling": 0.361,
+   "growth": 0.0,
+   "area_over_time": [
+    25.0405,
+    25.3369,
+    25.3369,
+    25.3369,
+    25.3369
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 88,
+   "name": null,
+   "rules": [
+    "B5678/S02345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.96138,
+   "shares": [
+    0.96138
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 25.26,
+   "scaling": 0.361,
+   "growth": 0.0,
+   "area_over_time": [
+    25.1107,
+    25.2593,
+    25.2593,
+    25.2593,
+    25.2593
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 15,
+   "name": null,
+   "rules": [
+    "B678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.168457,
+   "shares": [
+    0.168457
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.56,
+   "scaling": 0.334,
+   "growth": 0.0,
+   "area_over_time": [
+    24.2626,
+    24.5589,
+    24.5589,
+    24.5589,
+    24.5589
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 51,
+   "name": null,
+   "rules": [
+    "B678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.168457,
+   "shares": [
+    0.168457
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.56,
+   "scaling": 0.334,
+   "growth": 0.0,
+   "area_over_time": [
+    24.2626,
+    24.5589,
+    24.5589,
+    24.5589,
+    24.5589
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 71,
+   "name": null,
+   "rules": [
+    "B678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.168457,
+   "shares": [
+    0.168457
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.56,
+   "scaling": 0.334,
+   "growth": 0.0,
+   "area_over_time": [
+    24.2626,
+    24.5589,
+    24.5589,
+    24.5589,
+    24.5589
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 225,
+   "name": null,
+   "rules": [
+    "B678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.168457,
+   "shares": [
+    0.168457
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.56,
+   "scaling": 0.334,
+   "growth": 0.0,
+   "area_over_time": [
+    24.2626,
+    24.5589,
+    24.5589,
+    24.5589,
+    24.5589
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 272,
+   "name": null,
+   "rules": [
+    "B678/S45678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.168457,
+   "shares": [
+    0.168457
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.56,
+   "scaling": 0.334,
+   "growth": 0.0,
+   "area_over_time": [
+    24.2626,
+    24.5589,
+    24.5589,
+    24.5589,
+    24.5589
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 62,
+   "name": null,
+   "rules": [
+    "B567/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.820389,
+   "shares": [
+    0.820389
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 24.52,
+   "scaling": 0.324,
+   "growth": 0.0,
+   "area_over_time": [
+    24.5547,
+    24.5227,
+    24.5227,
+    24.5227,
+    24.5227
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50134,
+   "name": null,
+   "rules": [
+    "B36/S2",
+    "B145/S2467",
+    "B367/S148",
+    "B0158/S7",
+    "B14/S0124"
+   ],
+   "tie_break": "random",
+   "live": 0.346558,
+   "shares": [
+    0.000198,
+    0.0,
+    0.019958,
+    0.050705,
+    0.275696
+   ],
+   "holding": 2,
+   "changed": 0.120087,
+   "called": "organised",
+   "field": "species 4",
+   "area": 24.48,
+   "scaling": 0.697,
+   "growth": -0.006,
+   "area_over_time": [
+    14.9814,
+    20.424,
+    24.667,
+    36.3281,
+    24.4796
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 676,
+   "name": null,
+   "rules": [
+    "B4/S34578"
+   ],
+   "tie_break": "standoff",
+   "live": 0.081268,
+   "shares": [
+    0.081268
+   ],
+   "holding": 1,
+   "changed": 7.6e-05,
+   "called": "organised",
+   "field": "live",
+   "area": 23.21,
+   "scaling": 0.427,
+   "growth": -0.307,
+   "area_over_time": [
+    16.2055,
+    34.1104,
+    35.5442,
+    23.1975,
+    23.2102
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 766,
+   "name": null,
+   "rules": [
+    "B01234568/S024"
+   ],
+   "tie_break": "standoff",
+   "live": 0.188126,
+   "shares": [
+    0.188126
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.99,
+   "scaling": 0.321,
+   "growth": 0.0,
+   "area_over_time": [
+    22.9904,
+    22.9904,
+    22.9904,
+    22.9904,
+    22.9904
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 406,
+   "name": null,
+   "rules": [
+    "B1234578/S23458"
+   ],
+   "tie_break": "standoff",
+   "live": 0.508728,
+   "shares": [
+    0.508728
+   ],
+   "holding": 1,
+   "changed": 0.286316,
+   "called": "organised",
+   "field": "live",
+   "area": 22.75,
+   "scaling": 0.843,
+   "growth": 0.135,
+   "area_over_time": [
+    10.3624,
+    17.7131,
+    18.88,
+    22.4201,
+    22.7549
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 18,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 42,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 70,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 94,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 95,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 110,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 158,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 214,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 277,
+   "name": null,
+   "rules": [
+    "B5678/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.957047,
+   "shares": [
+    0.957047
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 22.22,
+   "scaling": 0.276,
+   "growth": 0.0,
+   "area_over_time": [
+    22.0058,
+    22.2154,
+    22.2154,
+    22.2154,
+    22.2154
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50061,
+   "name": null,
+   "rules": [
+    "B0128/S0",
+    "B15/S0",
+    "B8/S2",
+    "B0123/S15",
+    "B1237/S7"
+   ],
+   "tie_break": "random",
+   "live": 0.521042,
+   "shares": [
+    0.200363,
+    0.0,
+    0.003906,
+    0.301224,
+    0.015549
+   ],
+   "holding": 2,
+   "changed": 0.230484,
+   "called": "organised",
+   "field": "species 1",
+   "area": 22.07,
+   "scaling": 0.783,
+   "growth": 0.055,
+   "area_over_time": [
+    4.4308,
+    8.5189,
+    20.444,
+    30.1945,
+    22.0696
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1111,
+   "name": null,
+   "rules": [
+    "B57/S0145678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.387024,
+   "shares": [
+    0.387024
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 21.46,
+   "scaling": 0.268,
+   "growth": 0.0,
+   "area_over_time": [
+    21.4599,
+    21.4599,
+    21.4599,
+    21.4599,
+    21.4599
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 12,
+   "name": null,
+   "rules": [
+    "B01/S01458"
+   ],
+   "tie_break": "standoff",
+   "live": 0.2845,
+   "shares": [
+    0.2845
+   ],
+   "holding": 1,
+   "changed": 0.019287,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 21.17,
+   "scaling": 0.66,
+   "growth": 0.009,
+   "area_over_time": [
+    10.5969,
+    17.3302,
+    20.9164,
+    21.1208,
+    21.1728
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 511,
+   "name": null,
+   "rules": [
+    "B24568/S68"
+   ],
+   "tie_break": "standoff",
+   "live": 0.494095,
+   "shares": [
+    0.494095
+   ],
+   "holding": 1,
+   "changed": 0.014679,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 21.12,
+   "scaling": 0.633,
+   "growth": 0.017,
+   "area_over_time": [
+    17.5402,
+    19.6838,
+    20.6326,
+    21.4731,
+    21.1198
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 278,
+   "name": null,
+   "rules": [
+    "B458/S5678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.057953,
+   "shares": [
+    0.057953
+   ],
+   "holding": 1,
+   "changed": 0.000519,
+   "called": "organised",
+   "field": "live",
+   "area": 21.03,
+   "scaling": 0.217,
+   "growth": 0.0,
+   "area_over_time": [
+    21.0873,
+    21.0331,
+    21.0331,
+    21.0331,
+    21.0331
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 296,
+   "name": null,
+   "rules": [
+    "B578/S345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.741028,
+   "shares": [
+    0.741028
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 20.41,
+   "scaling": 0.328,
+   "growth": 0.0,
+   "area_over_time": [
+    20.4138,
+    20.4103,
+    20.4103,
+    20.4103,
+    20.4103
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 970,
+   "name": null,
+   "rules": [
+    "B046/S013567"
+   ],
+   "tie_break": "standoff",
+   "live": 0.516464,
+   "shares": [
+    0.516464
+   ],
+   "holding": 1,
+   "changed": 0.287277,
+   "called": "organised",
+   "field": "live",
+   "area": 20.36,
+   "scaling": 0.852,
+   "growth": 0.138,
+   "area_over_time": [
+    11.6305,
+    14.3048,
+    16.8104,
+    15.3559,
+    20.3635
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30032,
+   "name": null,
+   "rules": [
+    "B7/S1478",
+    "B08/S8",
+    "B0147/S0246"
+   ],
+   "tie_break": "random",
+   "live": 0.794907,
+   "shares": [
+    0.031815,
+    0.480026,
+    0.283066
+   ],
+   "holding": 2,
+   "changed": 0.340652,
+   "called": "organised",
+   "field": "live",
+   "area": 19.6,
+   "scaling": 0.704,
+   "growth": 0.249,
+   "area_over_time": [
+    8.1942,
+    10.4611,
+    13.8734,
+    14.628,
+    19.6023
+   ]
+  },
+  {
+   "family": "soup 3",
+   "index": 30099,
+   "name": null,
+   "rules": [
+    "B78/S245",
+    "B246/S016",
+    "B0158/S0"
+   ],
+   "tie_break": "random",
+   "live": 0.305054,
+   "shares": [
+    0.007812,
+    0.028519,
+    0.268723
+   ],
+   "holding": 1,
+   "changed": 0.001053,
+   "called": "organised",
+   "field": "species 3",
+   "area": 19.31,
+   "scaling": 0.2,
+   "growth": 0.0,
+   "area_over_time": [
+    17.5759,
+    19.0605,
+    19.3083,
+    19.3281,
+    19.3115
+   ]
+  },
+  {
+   "family": "near-majority",
+   "index": 236,
+   "name": null,
+   "rules": [
+    "B567/S2345678"
+   ],
+   "tie_break": "standoff",
+   "live": 0.949692,
+   "shares": [
+    0.949692
+   ],
+   "holding": 1,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 19.14,
+   "scaling": 0.297,
+   "growth": 0.0,
+   "area_over_time": [
+    18.9357,
+    19.1369,
+    19.1369,
+    19.1369,
+    19.1369
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 1019,
+   "name": null,
+   "rules": [
+    "B568/S124567"
+   ],
+   "tie_break": "standoff",
+   "live": 0.256882,
+   "shares": [
+    0.256882
+   ],
+   "holding": 1,
+   "changed": 0.001389,
+   "called": "organised",
+   "field": "live",
+   "area": 18.1,
+   "scaling": 0.401,
+   "growth": 0.008,
+   "area_over_time": [
+    15.803,
+    18.141,
+    17.9101,
+    18.0527,
+    18.1036
+   ]
+  },
+  {
+   "family": "soup 2",
+   "index": 20117,
+   "name": null,
+   "rules": [
+    "B245/S378",
+    "B0/S6"
+   ],
+   "tie_break": "standoff",
+   "live": 0.271835,
+   "shares": [
+    0.0,
+    0.271835
+   ],
+   "holding": 1,
+   "changed": 0.258133,
+   "called": "organised",
+   "field": "live",
+   "area": 17.73,
+   "scaling": 0.601,
+   "growth": 0.057,
+   "area_over_time": [
+    11.8496,
+    19.9284,
+    16.3866,
+    15.8133,
+    17.7294
+   ]
+  },
+  {
+   "family": "known",
+   "index": 2,
+   "name": "HighLife",
+   "rules": [
+    "B36/S23"
+   ],
+   "tie_break": "standoff",
+   "live": 0.046082,
+   "shares": [
+    0.046082
+   ],
+   "holding": 0,
+   "changed": 0.033371,
+   "called": "organised",
+   "field": "live",
+   "area": 17.7,
+   "scaling": 0.625,
+   "growth": 0.228,
+   "area_over_time": [
+    9.4438,
+    8.015,
+    12.9107,
+    21.6618,
+    17.7034
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 688,
+   "name": null,
+   "rules": [
+    "B0245678/S56"
+   ],
+   "tie_break": "standoff",
+   "live": 0.502869,
+   "shares": [
+    0.502869
+   ],
+   "holding": 1,
+   "changed": 0.000809,
+   "called": "organised",
+   "field": "live, columns",
+   "area": 17.69,
+   "scaling": 0.509,
+   "growth": 0.0,
+   "area_over_time": [
+    17.0355,
+    17.7125,
+    17.6866,
+    17.7125,
+    17.6866
+   ]
+  },
+  {
+   "family": "rule",
+   "index": 101,
+   "name": null,
+   "rules": [
+    "B0123456/S13456"
+   ],
+   "tie_break": "standoff",
+   "live": 0.013107,
+   "shares": [
+    0.013107
+   ],
+   "holding": 0,
+   "changed": 0.0,
+   "called": "organised",
+   "field": "live",
+   "area": 16.81,
+   "scaling": 0.205,
+   "growth": 0.0,
+   "area_over_time": [
+    16.8145,
+    16.8145,
+    16.8145,
+    16.8145,
+    16.8145
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50134,
+   "name": null,
+   "rules": [
+    "B36/S2",
+    "B145/S2467",
+    "B367/S148",
+    "B0158/S7",
+    "B14/S0124"
+   ],
+   "tie_break": "standoff",
+   "live": 0.565308,
+   "shares": [
+    0.000153,
+    0.0,
+    0.021301,
+    0.251282,
+    0.292572
+   ],
+   "holding": 2,
+   "changed": 0.213577,
+   "called": "organised",
+   "field": "species 4",
+   "area": 16.69,
+   "scaling": 0.528,
+   "growth": 0.068,
+   "area_over_time": [
+    10.3223,
+    10.8411,
+    15.194,
+    17.0493,
+    16.6888
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50096,
+   "name": null,
+   "rules": [
+    "B45/S2345",
+    "B2678/S0125",
+    "B0127/S248",
+    "B58/S56",
+    "B3/S8"
+   ],
+   "tie_break": "standoff",
+   "live": 0.67009,
+   "shares": [
+    0.010468,
+    0.409378,
+    0.250244,
+    0.0,
+    0.0
+   ],
+   "holding": 2,
+   "changed": 0.188217,
+   "called": "organised",
+   "field": "live, rows",
+   "area": 16.6,
+   "scaling": 0.762,
+   "growth": -0.0,
+   "area_over_time": [
+    2.8789,
+    11.3732,
+    16.6147,
+    17.037,
+    16.6037
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50105,
+   "name": null,
+   "rules": [
+    "B01/S127",
+    "B3/S13",
+    "B0357/S2",
+    "B38/S0278",
+    "B05/S358"
+   ],
+   "tie_break": "standoff",
+   "live": 0.558914,
+   "shares": [
+    0.27626,
+    0.027771,
+    0.098572,
+    0.04953,
+    0.106781
+   ],
+   "holding": 3,
+   "changed": 0.011734,
+   "called": "organised",
+   "field": "live",
+   "area": 16.56,
+   "scaling": 0.737,
+   "growth": 0.032,
+   "area_over_time": [
+    13.315,
+    13.4139,
+    15.827,
+    16.7471,
+    16.5554
+   ]
+  },
+  {
+   "family": "soup 5",
+   "index": 50058,
+   "name": null,
+   "rules": [
+    "B246/S0123",
+    "B356/S2",
+    "B168/S1347",
+    "B1267/S1347",
+    "B12/S27"
+   ],
+   "tie_break": "standoff",
+   "live": 0.647324,
+   "shares": [
+    0.383896,
+    0.0,
+    0.014709,
+    0.248718,
+    0.0
+   ],
+   "holding": 2,
+   "changed": 0.384872,
+   "called": "organised",
+   "field": "species 3",
+   "area": 16.5,
+   "scaling": 0.49,
+   "growth": null,
+   "area_over_time": [
+    4.9861,
+    null,
+    null,
+    11.6408,
+    16.4964
+   ]
+  }
+ ]
+}

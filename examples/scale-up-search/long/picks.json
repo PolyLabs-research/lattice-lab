@@ -1,0 +1,70 @@
+[
+ {
+  "family": "known",
+  "index": 6,
+  "name": "Anneal",
+  "rules": [
+   "B4678/S35678"
+  ],
+  "tie_break": "standoff",
+  "density": 0.5
+ },
+ {
+  "family": "contest",
+  "index": 1,
+  "name": "B2378/S25678 against itself",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "random",
+  "density": 1.0
+ },
+ {
+  "family": "contest",
+  "index": 1,
+  "name": "B2378/S25678 against itself",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0
+ },
+ {
+  "family": "contest",
+  "index": 3,
+  "name": "B237/S025678 against itself",
+  "rules": [
+   "B237/S025678",
+   "B237/S025678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0
+ },
+ {
+  "family": "contest",
+  "index": 2,
+  "name": "B015/S1 against itself",
+  "rules": [
+   "B015/S1",
+   "B015/S1"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0
+ },
+ {
+  "family": "copies",
+  "index": 2,
+  "name": "5 copies of B2378/S25678",
+  "rules": [
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678",
+   "B2378/S25678"
+  ],
+  "tie_break": "standoff",
+  "density": 1.0
+ }
+]

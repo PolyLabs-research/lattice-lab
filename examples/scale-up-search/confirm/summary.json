@@ -1,0 +1,7524 @@
+{
+ "side": 1024,
+ "times": [
+  64,
+  128,
+  256,
+  512,
+  1024,
+  2048
+ ],
+ "blocks": [
+  4,
+  8,
+  16,
+  32,
+  64,
+  128
+ ],
+ "starts": [
+  12001,
+  12002,
+  12003
+ ],
+ "large_area": 16.0,
+ "still_growing": 0.25,
+ "worlds": [
+  {
+   "family": "known",
+   "index": 1,
+   "name": "Life",
+   "rules": [
+    "B3/S23"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 1,
+   "live": [
+    0.11098,
+    0.08688,
+    0.06619,
+    0.05432,
+    0.04141,
+    0.03467
+   ],
+   "shares": [
+    0.03467
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.008092,
+   "field": "live",
+   "called": "organised",
+   "share": [
+    0.11098,
+    0.08688,
+    0.06619,
+    0.05432,
+    0.04141,
+    0.03467
+   ],
+   "drift": -0.07631,
+   "area": [
+    13.96,
+    15.87,
+    17.99,
+    27.33,
+    24.31,
+    24.39
+   ],
+   "peak": {
+    "area": 27.33,
+    "generation": 512
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.74,
+    3.98,
+    4.24,
+    5.23,
+    4.93,
+    4.94
+   ],
+   "growth_late": -0.082,
+   "growth_late_by_start": [
+    -0.082
+   ],
+   "growth_overall": 0.185,
+   "scaling": 0.58,
+   "area_by_block_at_end": [
+    3.1,
+    4.71,
+    6.96,
+    10.92,
+    17.68,
+    24.39
+   ],
+   "clock": {
+    "2": {
+     "pairs": 15,
+     "median": 0.334,
+     "least": 0.261,
+     "most": 0.398
+    },
+    "4": {
+     "pairs": 12,
+     "median": 0.368,
+     "least": 0.257,
+     "most": 0.495
+    },
+    "8": {
+     "pairs": 9,
+     "median": 0.377,
+     "least": 0.253,
+     "most": 0.615
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "known",
+   "index": 2,
+   "name": "HighLife",
+   "rules": [
+    "B36/S23"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 1,
+   "live": [
+    0.14282,
+    0.10114,
+    0.06968,
+    0.04403,
+    0.02814,
+    0.01971
+   ],
+   "shares": [
+    0.01971
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.000471,
+   "field": "live",
+   "called": "patches",
+   "share": [
+    0.14282,
+    0.10114,
+    0.06968,
+    0.04403,
+    0.02814,
+    0.01971
+   ],
+   "drift": -0.12311,
+   "area": [
+    12.14,
+    14.12,
+    18.32,
+    23.88,
+    22.1,
+    5.32
+   ],
+   "peak": {
+    "area": 23.88,
+    "generation": 512
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.48,
+    3.76,
+    4.28,
+    4.89,
+    4.7,
+    2.31
+   ],
+   "growth_late": -1.084,
+   "growth_late_by_start": [
+    -1.084
+   ],
+   "growth_overall": -0.104,
+   "scaling": 0.059,
+   "area_by_block_at_end": [
+    3.0,
+    3.78,
+    4.64,
+    4.9,
+    5.23,
+    5.32
+   ],
+   "clock": {
+    "2": {
+     "pairs": 15,
+     "median": 0.308,
+     "least": 0.068,
+     "most": 0.423
+    },
+    "4": {
+     "pairs": 12,
+     "median": 0.339,
+     "least": 0.052,
+     "most": 0.554
+    },
+    "8": {
+     "pairs": 9,
+     "median": 0.344,
+     "least": 0.059,
+     "most": 0.612
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "known",
+   "index": 3,
+   "name": "Life against HighLife",
+   "rules": [
+    "B3/S23",
+    "B36/S23"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 1,
+   "live": [
+    0.12976,
+    0.09774,
+    0.07137,
+    0.05541,
+    0.04875,
+    0.04735
+   ],
+   "shares": [
+    0.0263,
+    0.02105
+   ],
+   "holding": 0,
+   "apart": -0.136,
+   "changed": 0.000134,
+   "field": "species 1",
+   "called": "patches",
+   "share": [
+    0.05759,
+    0.04495,
+    0.03518,
+    0.02967,
+    0.02711,
+    0.0263
+   ],
+   "drift": -0.03129,
+   "area": [
+    13.86,
+    16.22,
+    13.69,
+    15.09,
+    7.99,
+    5.01
+   ],
+   "peak": {
+    "area": 16.22,
+    "generation": 128
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.72,
+    4.03,
+    3.7,
+    3.88,
+    2.83,
+    2.24
+   ],
+   "growth_late": -0.796,
+   "growth_late_by_start": [
+    -0.796
+   ],
+   "growth_overall": -0.293,
+   "scaling": 0.103,
+   "area_by_block_at_end": [
+    2.88,
+    3.52,
+    4.02,
+    4.34,
+    4.21,
+    5.01
+   ],
+   "clock": {
+    "2": {
+     "pairs": 10,
+     "median": 0.283,
+     "least": 0.185,
+     "most": 0.315
+    },
+    "4": {
+     "pairs": 10,
+     "median": 0.232,
+     "least": 0.116,
+     "most": 0.291
+    },
+    "8": {
+     "pairs": 8,
+     "median": 0.146,
+     "least": 0.096,
+     "most": 0.278
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.05759,
+      0.04495,
+      0.03518,
+      0.02967,
+      0.02711,
+      0.0263
+     ],
+     "drift": -0.03129,
+     "area": [
+      13.86,
+      16.22,
+      13.69,
+      15.09,
+      7.99,
+      5.01
+     ],
+     "peak": {
+      "area": 16.22,
+      "generation": 128
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.72,
+      4.03,
+      3.7,
+      3.88,
+      2.83,
+      2.24
+     ],
+     "growth_late": -0.796,
+     "growth_late_by_start": [
+      -0.796
+     ],
+     "growth_overall": -0.293,
+     "scaling": 0.103,
+     "area_by_block_at_end": [
+      2.88,
+      3.52,
+      4.02,
+      4.34,
+      4.21,
+      5.01
+     ],
+     "clock": {
+      "2": {
+       "pairs": 10,
+       "median": 0.283,
+       "least": 0.185,
+       "most": 0.315
+      },
+      "4": {
+       "pairs": 10,
+       "median": 0.232,
+       "least": 0.116,
+       "most": 0.291
+      },
+      "8": {
+       "pairs": 8,
+       "median": 0.146,
+       "least": 0.096,
+       "most": 0.278
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.07218,
+      0.05279,
+      0.03619,
+      0.02574,
+      0.02164,
+      0.02105
+     ],
+     "drift": -0.05113,
+     "area": [
+      18.7,
+      20.0,
+      17.98,
+      13.61,
+      5.41,
+      4.29
+     ],
+     "peak": {
+      "area": 20.0,
+      "generation": 128
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      4.32,
+      4.47,
+      4.24,
+      3.69,
+      2.33,
+      2.07
+     ],
+     "growth_late": -0.832,
+     "growth_late_by_start": [
+      -0.832
+     ],
+     "growth_overall": -0.476,
+     "scaling": 0.075,
+     "area_by_block_at_end": [
+      2.95,
+      3.51,
+      3.73,
+      3.87,
+      4.09,
+      4.29
+     ],
+     "clock": {
+      "2": {
+       "pairs": 11,
+       "median": 0.233,
+       "least": 0.113,
+       "most": 0.355
+      },
+      "4": {
+       "pairs": 11,
+       "median": 0.176,
+       "least": 0.076,
+       "most": 0.343
+      },
+      "8": {
+       "pairs": 9,
+       "median": 0.09,
+       "least": 0.06,
+       "most": 0.223
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "known",
+   "index": 4,
+   "name": "soup 19",
+   "rules": [
+    "B0127/S34",
+    "B0178/S56",
+    "B2468/S056",
+    "B4/S3",
+    "B2378/S234"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 1,
+   "live": [
+    0.49454,
+    0.50303,
+    0.50213,
+    0.50174,
+    0.5018,
+    0.50173
+   ],
+   "shares": [
+    0.09332,
+    0.35613,
+    0.04219,
+    0.00014,
+    0.00994
+   ],
+   "holding": 2,
+   "apart": null,
+   "changed": 0.029063,
+   "field": "live, rows",
+   "called": "organised",
+   "share": [
+    0.49454,
+    0.50303,
+    0.50213,
+    0.50174,
+    0.5018,
+    0.50173
+   ],
+   "drift": 0.00719,
+   "area": [
+    80.27,
+    90.19,
+    93.68,
+    96.35,
+    97.36,
+    95.83
+   ],
+   "peak": {
+    "area": 97.36,
+    "generation": 1024
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    8.96,
+    9.5,
+    9.68,
+    9.82,
+    9.87,
+    9.79
+   ],
+   "growth_late": -0.004,
+   "growth_late_by_start": [
+    -0.004
+   ],
+   "growth_overall": 0.047,
+   "scaling": 0.403,
+   "area_by_block_at_end": [
+    4.71,
+    13.41,
+    31.99,
+    54.78,
+    69.14,
+    95.83
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.4,
+     "least": 0.315,
+     "most": 0.614
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.407,
+     "least": 0.315,
+     "most": 0.62
+    },
+    "8": {
+     "pairs": 12,
+     "median": 0.414,
+     "least": 0.319,
+     "most": 0.623
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "organised",
+     "share": [
+      0.08737,
+      0.09107,
+      0.09254,
+      0.09306,
+      0.0934,
+      0.09332
+     ],
+     "drift": 0.00595,
+     "area": [
+      46.08,
+      48.74,
+      48.58,
+      47.48,
+      47.56,
+      48.02
+     ],
+     "peak": {
+      "area": 48.74,
+      "generation": 128
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      6.79,
+      6.98,
+      6.97,
+      6.89,
+      6.9,
+      6.93
+     ],
+     "growth_late": 0.008,
+     "growth_late_by_start": [
+      0.008
+     ],
+     "growth_overall": 0.005,
+     "scaling": 0.4,
+     "area_by_block_at_end": [
+      3.58,
+      8.15,
+      16.78,
+      27.57,
+      35.84,
+      48.02
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.367,
+       "least": 0.313,
+       "most": 0.52
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.37,
+       "least": 0.318,
+       "most": 0.515
+      },
+      "8": {
+       "pairs": 12,
+       "median": 0.362,
+       "least": 0.308,
+       "most": 0.515
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "organised",
+     "share": [
+      0.3547,
+      0.3596,
+      0.35729,
+      0.35641,
+      0.35612,
+      0.35613
+     ],
+     "drift": 0.00143,
+     "area": [
+      30.16,
+      28.59,
+      26.68,
+      26.08,
+      26.48,
+      26.14
+     ],
+     "peak": {
+      "area": 30.16,
+      "generation": 64
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      5.49,
+      5.35,
+      5.17,
+      5.11,
+      5.15,
+      5.11
+     ],
+     "growth_late": 0.002,
+     "growth_late_by_start": [
+      0.002
+     ],
+     "growth_overall": -0.04,
+     "scaling": 0.436,
+     "area_by_block_at_end": [
+      1.85,
+      4.13,
+      8.6,
+      14.29,
+      19.07,
+      26.14
+     ],
+     "clock": {
+      "2": {
+       "pairs": 15,
+       "median": 0.335,
+       "least": 0.3,
+       "most": 0.417
+      },
+      "4": {
+       "pairs": 12,
+       "median": 0.337,
+       "least": 0.29,
+       "most": 0.416
+      },
+      "8": {
+       "pairs": 9,
+       "median": 0.329,
+       "least": 0.284,
+       "most": 0.412
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "patches",
+     "share": [
+      0.0424,
+      0.04227,
+      0.04222,
+      0.04219,
+      0.04219,
+      0.04219
+     ],
+     "drift": -0.00021,
+     "area": [
+      1.06,
+      1.06,
+      1.08,
+      1.08,
+      1.08,
+      1.08
+     ],
+     "peak": {
+      "area": 1.08,
+      "generation": 256
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.03,
+      1.03,
+      1.04,
+      1.04,
+      1.04,
+      1.04
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": 0.006,
+     "scaling": 0.145,
+     "area_by_block_at_end": [
+      0.84,
+      0.84,
+      0.85,
+      0.88,
+      0.87,
+      1.08
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 4",
+     "called": "dead",
+     "share": [
+      0.00014,
+      0.00014,
+      0.00014,
+      0.00014,
+      0.00014,
+      0.00014
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    },
+    {
+     "field": "species 5",
+     "called": "dead",
+     "share": [
+      0.00992,
+      0.00994,
+      0.00994,
+      0.00994,
+      0.00994,
+      0.00994
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    }
+   ]
+  },
+  {
+   "family": "known",
+   "index": 5,
+   "name": "Vote",
+   "rules": [
+    "B5678/S45678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 1,
+   "live": [
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016
+   ],
+   "shares": [
+    0.5016
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.0,
+   "field": "live",
+   "called": "organised",
+   "share": [
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016,
+    0.5016
+   ],
+   "drift": 0.0,
+   "area": [
+    33.12,
+    33.12,
+    33.12,
+    33.12,
+    33.12,
+    33.12
+   ],
+   "peak": {
+    "area": 33.12,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    5.75,
+    5.75,
+    5.75,
+    5.75,
+    5.75,
+    5.75
+   ],
+   "growth_late": 0.0,
+   "growth_late_by_start": [
+    0.0
+   ],
+   "growth_overall": 0.0,
+   "scaling": 0.112,
+   "area_by_block_at_end": [
+    9.27,
+    18.59,
+    25.07,
+    28.37,
+    30.58,
+    33.12
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.283,
+     "least": 0.269,
+     "most": 0.501
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.283,
+     "least": 0.269,
+     "most": 0.501
+    },
+    "8": {
+     "pairs": 15,
+     "median": 0.283,
+     "least": 0.269,
+     "most": 0.501
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "known",
+   "index": 6,
+   "name": "Anneal",
+   "rules": [
+    "B4678/S35678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 3,
+   "live": [
+    0.50134,
+    0.50092,
+    0.50051,
+    0.4966,
+    0.49006,
+    0.48356
+   ],
+   "shares": [
+    0.48356
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.006642,
+   "field": "live",
+   "called": "keeps growing",
+   "share": [
+    0.50134,
+    0.50092,
+    0.50051,
+    0.4966,
+    0.49006,
+    0.48356
+   ],
+   "drift": -0.01778,
+   "area": [
+    160.02,
+    298.65,
+    540.0,
+    973.31,
+    1770.21,
+    3141.53
+   ],
+   "peak": {
+    "area": 3141.53,
+    "generation": 2048
+   },
+   "area_spread": [
+    57.19,
+    77.38,
+    106.01,
+    113.59,
+    256.67,
+    544.2
+   ],
+   "length": [
+    12.65,
+    17.28,
+    23.24,
+    31.2,
+    42.07,
+    56.05
+   ],
+   "growth_late": 0.845,
+   "growth_late_by_start": [
+    0.919,
+    0.687,
+    0.92
+   ],
+   "growth_overall": 0.858,
+   "scaling": 1.066,
+   "area_by_block_at_end": [
+    15.33,
+    58.84,
+    216.38,
+    716.25,
+    1810.6,
+    3141.53
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.767,
+     "least": 0.472,
+     "most": 0.976
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.972,
+     "least": 0.854,
+     "most": 1.0
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.254,
+     "least": 1.032,
+     "most": 1.608
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "known",
+   "index": 7,
+   "name": "Day and Night",
+   "rules": [
+    "B3678/S34678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a known world",
+   "starts": 3,
+   "live": [
+    0.50097,
+    0.50274,
+    0.50465,
+    0.50906,
+    0.51438,
+    0.51943
+   ],
+   "shares": [
+    0.51943
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.016163,
+   "field": "live",
+   "called": "keeps growing",
+   "share": [
+    0.50097,
+    0.50274,
+    0.50465,
+    0.50906,
+    0.51438,
+    0.51943
+   ],
+   "drift": 0.01846,
+   "area": [
+    96.63,
+    310.27,
+    662.17,
+    1148.34,
+    1830.61,
+    2864.44
+   ],
+   "peak": {
+    "area": 2864.44,
+    "generation": 2048
+   },
+   "area_spread": [
+    16.82,
+    52.12,
+    129.9,
+    215.12,
+    263.77,
+    245.24
+   ],
+   "length": [
+    9.83,
+    17.61,
+    25.73,
+    33.89,
+    42.79,
+    53.52
+   ],
+   "growth_late": 0.659,
+   "growth_late_by_start": [
+    0.762,
+    0.621,
+    0.618
+   ],
+   "growth_overall": 0.941,
+   "scaling": 1.033,
+   "area_by_block_at_end": [
+    14.96,
+    57.25,
+    208.87,
+    683.95,
+    1708.72,
+    2864.44
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.878,
+     "least": 0.536,
+     "most": 1.197
+    },
+    "4": {
+     "pairs": 20,
+     "median": 1.028,
+     "least": 0.839,
+     "most": 1.873
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.395,
+     "least": 1.061,
+     "most": 3.249
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 1,
+   "name": "B01245/S235",
+   "rules": [
+    "B01245/S235"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 791)",
+   "starts": 1,
+   "live": [
+    0.29517,
+    0.23497,
+    0.17278,
+    0.11583,
+    0.06116,
+    0.02079
+   ],
+   "shares": [
+    0.02079
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.001735,
+   "field": "live",
+   "called": "taking over",
+   "share": [
+    0.29517,
+    0.23497,
+    0.17278,
+    0.11583,
+    0.06116,
+    0.02079
+   ],
+   "drift": -0.27438,
+   "area": [
+    211.45,
+    378.14,
+    683.57,
+    1126.94,
+    1571.72,
+    2153.05
+   ],
+   "peak": {
+    "area": 2153.05,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    14.54,
+    19.45,
+    26.15,
+    33.57,
+    39.64,
+    46.4
+   ],
+   "growth_late": 0.467,
+   "growth_late_by_start": [
+    0.467
+   ],
+   "growth_overall": 0.675,
+   "scaling": 0.913,
+   "area_by_block_at_end": [
+    14.82,
+    56.28,
+    200.62,
+    606.95,
+    1300.32,
+    2153.05
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.731,
+     "least": 0.474,
+     "most": 0.96
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.901,
+     "least": 0.65,
+     "most": 1.029
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.058,
+     "least": 0.861,
+     "most": 1.497
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 2,
+   "name": "B0124578/S0134",
+   "rules": [
+    "B0124578/S0134"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 959)",
+   "starts": 1,
+   "live": [
+    0.19606,
+    0.13213,
+    0.07394,
+    0.02979,
+    0.00895,
+    0.00093
+   ],
+   "shares": [
+    0.00093
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.000607,
+   "field": "live",
+   "called": "taken over",
+   "share": [
+    0.19606,
+    0.13213,
+    0.07394,
+    0.02979,
+    0.00895,
+    0.00093
+   ],
+   "area": [
+    187.02,
+    262.43,
+    351.19,
+    706.32,
+    null,
+    null
+   ],
+   "peak": {
+    "area": 706.32,
+    "generation": 512
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 3,
+   "name": "B013/S1",
+   "rules": [
+    "B013/S1"
+   ],
+   "tie_break": "standoff",
+   "density": 0.25,
+   "why": "grew alone in the screen (soup 2 20032 (standoff), the species left)",
+   "starts": 1,
+   "live": [
+    0.01456,
+    0.00507,
+    0.00356,
+    0.00355,
+    0.00356,
+    0.00355
+   ],
+   "shares": [
+    0.00355
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.000195,
+   "field": "live",
+   "called": "dead",
+   "share": [
+    0.01456,
+    0.00507,
+    0.00356,
+    0.00355,
+    0.00356,
+    0.00355
+   ],
+   "area": [
+    44.39,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "peak": {
+    "area": 44.39,
+    "generation": 64
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 4,
+   "name": "B456/S0124678",
+   "rules": [
+    "B456/S0124678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 818)",
+   "starts": 1,
+   "live": [
+    0.92668,
+    0.92996,
+    0.91637,
+    0.84133,
+    0.55776,
+    0.06039
+   ],
+   "shares": [
+    0.06039
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.003772,
+   "field": "live",
+   "called": "taking over",
+   "share": [
+    0.92668,
+    0.92996,
+    0.91637,
+    0.84133,
+    0.55776,
+    0.06039
+   ],
+   "drift": -0.86629,
+   "area": [
+    10.2,
+    23.05,
+    193.92,
+    1854.55,
+    5605.59,
+    4533.78
+   ],
+   "peak": {
+    "area": 5605.59,
+    "generation": 1024
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.19,
+    4.8,
+    13.93,
+    43.06,
+    74.87,
+    67.33
+   ],
+   "growth_late": 0.645,
+   "growth_late_by_start": [
+    0.645
+   ],
+   "growth_overall": 2.029,
+   "scaling": 1.399,
+   "area_by_block_at_end": [
+    13.28,
+    50.93,
+    189.45,
+    652.25,
+    2075.48,
+    4533.78
+   ],
+   "clock": {
+    "2": {
+     "pairs": 17,
+     "median": 1.406,
+     "least": 0.493,
+     "most": 3.42
+    },
+    "4": {
+     "pairs": 12,
+     "median": 4.212,
+     "least": 1.121,
+     "most": 27.27
+    },
+    "8": {
+     "pairs": 7,
+     "median": 8.36,
+     "least": 3.691,
+     "most": 82.426
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 5,
+   "name": "B012457/S14",
+   "rules": [
+    "B012457/S14"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 880)",
+   "starts": 3,
+   "live": [
+    0.49527,
+    0.50551,
+    0.51521,
+    0.52006,
+    0.52543,
+    0.52827
+   ],
+   "shares": [
+    0.52827
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.018546,
+   "field": "live",
+   "called": "keeps growing",
+   "share": [
+    0.49527,
+    0.50551,
+    0.51521,
+    0.52006,
+    0.52543,
+    0.52827
+   ],
+   "drift": 0.033,
+   "area": [
+    66.35,
+    238.65,
+    511.97,
+    925.81,
+    1644.59,
+    2805.01
+   ],
+   "peak": {
+    "area": 2805.01,
+    "generation": 2048
+   },
+   "area_spread": [
+    6.33,
+    40.66,
+    70.75,
+    64.41,
+    51.0,
+    211.98
+   ],
+   "length": [
+    8.15,
+    15.45,
+    22.63,
+    30.43,
+    40.55,
+    52.96
+   ],
+   "growth_late": 0.8,
+   "growth_late_by_start": [
+    0.76,
+    0.837,
+    0.802
+   ],
+   "growth_overall": 1.035,
+   "scaling": 1.011,
+   "area_by_block_at_end": [
+    14.96,
+    57.41,
+    210.34,
+    690.81,
+    1794.52,
+    2805.01
+   ],
+   "clock": {
+    "2": {
+     "pairs": 24,
+     "median": 0.903,
+     "least": 0.495,
+     "most": 1.242
+    },
+    "4": {
+     "pairs": 19,
+     "median": 1.031,
+     "least": 0.879,
+     "most": 2.219
+    },
+    "8": {
+     "pairs": 14,
+     "median": 1.519,
+     "least": 1.075,
+     "most": 3.771
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 6,
+   "name": "B012358/S0125",
+   "rules": [
+    "B012358/S0125"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 759)",
+   "starts": 1,
+   "live": [
+    0.63603,
+    0.67364,
+    0.72296,
+    0.78633,
+    0.85566,
+    0.92343
+   ],
+   "shares": [
+    0.92343
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.004231,
+   "field": "live",
+   "called": "taking over",
+   "share": [
+    0.63603,
+    0.67364,
+    0.72296,
+    0.78633,
+    0.85566,
+    0.92343
+   ],
+   "drift": 0.2874,
+   "area": [
+    150.22,
+    283.79,
+    535.99,
+    846.31,
+    1410.99,
+    2530.94
+   ],
+   "peak": {
+    "area": 2530.94,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    12.26,
+    16.85,
+    23.15,
+    29.09,
+    37.56,
+    50.31
+   ],
+   "growth_late": 0.79,
+   "growth_late_by_start": [
+    0.79
+   ],
+   "growth_overall": 0.799,
+   "scaling": 0.977,
+   "area_by_block_at_end": [
+    14.9,
+    56.53,
+    204.75,
+    653.3,
+    1754.86,
+    2530.94
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.784,
+     "least": 0.394,
+     "most": 0.961
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.925,
+     "least": 0.665,
+     "most": 1.004
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.098,
+     "least": 1.013,
+     "most": 1.342
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 7,
+   "name": "B027/S2",
+   "rules": [
+    "B027/S2"
+   ],
+   "tie_break": "standoff",
+   "density": 0.16666666666666666,
+   "why": "grew alone in the screen (soup 3 30044 (standoff), the species left)",
+   "starts": 1,
+   "live": [
+    0.09844,
+    0.0517,
+    0.02165,
+    0.01092,
+    0.00834,
+    0.00833
+   ],
+   "shares": [
+    0.00833
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.000631,
+   "field": "live",
+   "called": "taken over",
+   "share": [
+    0.09844,
+    0.0517,
+    0.02165,
+    0.01092,
+    0.00834,
+    0.00833
+   ],
+   "area": [
+    70.28,
+    125.13,
+    120.72,
+    46.19,
+    null,
+    null
+   ],
+   "peak": {
+    "area": 125.13,
+    "generation": 128
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 8,
+   "name": "B012348/S01246",
+   "rules": [
+    "B012348/S01246"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 59)",
+   "starts": 1,
+   "live": [
+    0.32466,
+    0.26882,
+    0.2054,
+    0.14097,
+    0.07982,
+    0.02951
+   ],
+   "shares": [
+    0.02951
+   ],
+   "holding": 0,
+   "apart": null,
+   "changed": 0.003028,
+   "field": "live",
+   "called": "taking over",
+   "share": [
+    0.32466,
+    0.26882,
+    0.2054,
+    0.14097,
+    0.07982,
+    0.02951
+   ],
+   "drift": -0.29515,
+   "area": [
+    310.61,
+    557.02,
+    850.25,
+    1325.14,
+    2074.93,
+    2432.0
+   ],
+   "peak": {
+    "area": 2432.0,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    17.62,
+    23.6,
+    29.16,
+    36.4,
+    45.55,
+    49.32
+   ],
+   "growth_late": 0.438,
+   "growth_late_by_start": [
+    0.438
+   ],
+   "growth_overall": 0.605,
+   "scaling": 1.01,
+   "area_by_block_at_end": [
+    14.53,
+    54.63,
+    192.99,
+    599.59,
+    1331.08,
+    2432.0
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.732,
+     "least": 0.525,
+     "most": 0.953
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.937,
+     "least": 0.745,
+     "most": 1.075
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.096,
+     "least": 0.978,
+     "most": 1.675
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 9,
+   "name": "B015/S1",
+   "rules": [
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "density": 0.25,
+   "why": "grew alone in the screen (soup 2 20093 (random), the species left)",
+   "starts": 1,
+   "live": [
+    0.3613,
+    0.3613,
+    0.36131,
+    0.3613,
+    0.3613,
+    0.3613
+   ],
+   "shares": [
+    0.3613
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.006075,
+   "field": "live",
+   "called": "organised",
+   "share": [
+    0.3613,
+    0.3613,
+    0.36131,
+    0.3613,
+    0.3613,
+    0.3613
+   ],
+   "drift": 0.0,
+   "area": [
+    21.14,
+    21.16,
+    21.14,
+    21.16,
+    21.14,
+    21.16
+   ],
+   "peak": {
+    "area": 21.16,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    4.6,
+    4.6,
+    4.6,
+    4.6,
+    4.6,
+    4.6
+   ],
+   "growth_late": 0.0,
+   "growth_late_by_start": [
+    0.0
+   ],
+   "growth_overall": 0.0,
+   "scaling": 0.108,
+   "area_by_block_at_end": [
+    7.63,
+    13.23,
+    16.96,
+    18.23,
+    20.82,
+    21.16
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.277,
+     "least": 0.254,
+     "most": 0.321
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.277,
+     "least": 0.254,
+     "most": 0.321
+    },
+    "8": {
+     "pairs": 12,
+     "median": 0.277,
+     "least": 0.254,
+     "most": 0.321
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 10,
+   "name": "B138/S123",
+   "rules": [
+    "B138/S123"
+   ],
+   "tie_break": "standoff",
+   "density": 0.25,
+   "why": "grew alone in the screen (soup 2 20092 (random), the species left)",
+   "starts": 1,
+   "live": [
+    0.41826,
+    0.43544,
+    0.46189,
+    0.48345,
+    0.48777,
+    0.48912
+   ],
+   "shares": [
+    0.48912
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.004409,
+   "field": "live, rows",
+   "called": "organised",
+   "share": [
+    0.41826,
+    0.43544,
+    0.46189,
+    0.48345,
+    0.48777,
+    0.48912
+   ],
+   "drift": 0.07086,
+   "area": [
+    22.06,
+    62.61,
+    206.63,
+    389.76,
+    480.37,
+    502.43
+   ],
+   "peak": {
+    "area": 502.43,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    4.7,
+    7.91,
+    14.37,
+    19.74,
+    21.92,
+    22.42
+   ],
+   "growth_late": 0.183,
+   "growth_late_by_start": [
+    0.183
+   ],
+   "growth_overall": 0.922,
+   "scaling": 0.589,
+   "area_by_block_at_end": [
+    7.08,
+    25.55,
+    84.13,
+    222.15,
+    435.56,
+    502.43
+   ],
+   "clock": {
+    "2": {
+     "pairs": 19,
+     "median": 0.863,
+     "least": 0.303,
+     "most": 1.249
+    },
+    "4": {
+     "pairs": 15,
+     "median": 1.15,
+     "least": 0.359,
+     "most": 3.084
+    },
+    "8": {
+     "pairs": 11,
+     "median": 2.178,
+     "least": 0.674,
+     "most": 5.782
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 11,
+   "name": "B2378/S25678",
+   "rules": [
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 1107)",
+   "starts": 1,
+   "live": [
+    0.50793,
+    0.54577,
+    0.67015,
+    0.91988,
+    0.95883,
+    0.95881
+   ],
+   "shares": [
+    0.95881
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.001245,
+   "field": "live",
+   "called": "taken over",
+   "share": [
+    0.50793,
+    0.54577,
+    0.67015,
+    0.91988,
+    0.95883,
+    0.95881
+   ],
+   "drift": 0.45088,
+   "area": [
+    4.55,
+    11.84,
+    76.73,
+    126.17,
+    4.17,
+    4.2
+   ],
+   "peak": {
+    "area": 126.17,
+    "generation": 512
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    2.13,
+    3.44,
+    8.76,
+    11.23,
+    2.04,
+    2.05
+   ],
+   "growth_late": -2.455,
+   "growth_late_by_start": [
+    -2.455
+   ],
+   "growth_overall": -0.126,
+   "scaling": -0.053,
+   "area_by_block_at_end": [
+    3.55,
+    4.45,
+    4.67,
+    4.52,
+    5.06,
+    4.2
+   ],
+   "clock": {
+    "2": {
+     "pairs": 11,
+     "median": 0.481,
+     "least": 0.011,
+     "most": 1.534
+    },
+    "4": {
+     "pairs": 11,
+     "median": 0.039,
+     "least": 0.011,
+     "most": 2.522
+    },
+    "8": {
+     "pairs": 7,
+     "median": 0.083,
+     "least": 0.016,
+     "most": 0.12
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 12,
+   "name": "B2/S0",
+   "rules": [
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "density": 0.16666666666666666,
+   "why": "grew alone in the screen (soup 3 30019 (standoff), the species left)",
+   "starts": 1,
+   "live": [
+    0.21965,
+    0.22067,
+    0.22022,
+    0.22007,
+    0.21967,
+    0.22007
+   ],
+   "shares": [
+    0.22007
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.339952,
+   "field": "live",
+   "called": "patches",
+   "share": [
+    0.21965,
+    0.22067,
+    0.22022,
+    0.22007,
+    0.21967,
+    0.22007
+   ],
+   "drift": 0.00042,
+   "area": [
+    1.57,
+    1.66,
+    1.59,
+    2.34,
+    1.85,
+    2.59
+   ],
+   "peak": {
+    "area": 2.59,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    1.25,
+    1.29,
+    1.26,
+    1.53,
+    1.36,
+    1.61
+   ],
+   "growth_late": 0.073,
+   "growth_late_by_start": [
+    0.073
+   ],
+   "growth_overall": 0.133,
+   "scaling": 0.253,
+   "area_by_block_at_end": [
+    1.48,
+    1.65,
+    1.71,
+    1.82,
+    2.07,
+    2.59
+   ],
+   "clock": {
+    "2": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "4": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "8": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "alone",
+   "index": 13,
+   "name": "B237/S025678",
+   "rules": [
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "grew alone in the screen (rule 748)",
+   "starts": 1,
+   "live": [
+    0.51426,
+    0.55283,
+    0.67315,
+    0.91282,
+    0.95434,
+    0.95429
+   ],
+   "shares": [
+    0.95429
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.001059,
+   "field": "live",
+   "called": "taken over",
+   "share": [
+    0.51426,
+    0.55283,
+    0.67315,
+    0.91282,
+    0.95434,
+    0.95429
+   ],
+   "drift": 0.44003,
+   "area": [
+    4.81,
+    14.99,
+    83.15,
+    116.85,
+    5.27,
+    5.14
+   ],
+   "peak": {
+    "area": 116.85,
+    "generation": 512
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    2.19,
+    3.87,
+    9.12,
+    10.81,
+    2.3,
+    2.27
+   ],
+   "growth_late": -2.254,
+   "growth_late_by_start": [
+    -2.254
+   ],
+   "growth_overall": -0.102,
+   "scaling": 0.199,
+   "area_by_block_at_end": [
+    3.31,
+    3.93,
+    4.09,
+    3.9,
+    3.92,
+    5.14
+   ],
+   "clock": {
+    "2": {
+     "pairs": 11,
+     "median": 0.509,
+     "least": 0.013,
+     "most": 1.552
+    },
+    "4": {
+     "pairs": 11,
+     "median": 0.034,
+     "least": 0.013,
+     "most": 2.181
+    },
+    "8": {
+     "pairs": 7,
+     "median": 0.078,
+     "least": 0.019,
+     "most": 0.105
+    }
+   },
+   "territories": []
+  },
+  {
+   "family": "soup",
+   "index": 50092,
+   "name": "soup 5 50092",
+   "rules": [
+    "B124/S2",
+    "B57/S2457",
+    "B0126/S6",
+    "B27/S1258",
+    "B0245/S68"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with two species or more",
+   "starts": 1,
+   "live": [
+    0.28969,
+    0.28889,
+    0.2911,
+    0.28956,
+    0.29312,
+    0.29396
+   ],
+   "shares": [
+    0.00026,
+    0.00363,
+    0.09323,
+    0.00926,
+    0.18759
+   ],
+   "holding": 2,
+   "apart": null,
+   "changed": 0.328217,
+   "field": "species 3",
+   "called": "keeps growing",
+   "share": [
+    0.07633,
+    0.07429,
+    0.07611,
+    0.07787,
+    0.08363,
+    0.09323
+   ],
+   "drift": 0.0169,
+   "area": [
+    22.94,
+    34.66,
+    57.92,
+    80.1,
+    114.28,
+    195.09
+   ],
+   "peak": {
+    "area": 195.09,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    4.79,
+    5.89,
+    7.61,
+    8.95,
+    10.69,
+    13.97
+   ],
+   "growth_late": 0.642,
+   "growth_late_by_start": [
+    0.642
+   ],
+   "growth_overall": 0.602,
+   "scaling": 0.77,
+   "area_by_block_at_end": [
+    3.69,
+    9.79,
+    26.83,
+    67.09,
+    140.47,
+    195.09
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.539,
+     "least": 0.318,
+     "most": 0.688
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.659,
+     "least": 0.505,
+     "most": 0.716
+    },
+    "8": {
+     "pairs": 12,
+     "median": 0.771,
+     "least": 0.731,
+     "most": 0.895
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "dead",
+     "share": [
+      0.00289,
+      0.00255,
+      0.00212,
+      0.00149,
+      0.00081,
+      0.00026
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "dead",
+     "share": [
+      0.00363,
+      0.00363,
+      0.00363,
+      0.00363,
+      0.00363,
+      0.00363
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "keeps growing",
+     "share": [
+      0.07633,
+      0.07429,
+      0.07611,
+      0.07787,
+      0.08363,
+      0.09323
+     ],
+     "drift": 0.0169,
+     "area": [
+      22.94,
+      34.66,
+      57.92,
+      80.1,
+      114.28,
+      195.09
+     ],
+     "peak": {
+      "area": 195.09,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      4.79,
+      5.89,
+      7.61,
+      8.95,
+      10.69,
+      13.97
+     ],
+     "growth_late": 0.642,
+     "growth_late_by_start": [
+      0.642
+     ],
+     "growth_overall": 0.602,
+     "scaling": 0.77,
+     "area_by_block_at_end": [
+      3.69,
+      9.79,
+      26.83,
+      67.09,
+      140.47,
+      195.09
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.539,
+       "least": 0.318,
+       "most": 0.688
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.659,
+       "least": 0.505,
+       "most": 0.716
+      },
+      "8": {
+       "pairs": 12,
+       "median": 0.771,
+       "least": 0.731,
+       "most": 0.895
+      }
+     }
+    },
+    {
+     "field": "species 4",
+     "called": "dead",
+     "share": [
+      0.05062,
+      0.04895,
+      0.0446,
+      0.03604,
+      0.02286,
+      0.00926
+     ],
+     "area": [
+      1.95,
+      2.13,
+      3.11,
+      5.06,
+      8.22,
+      null
+     ],
+     "peak": {
+      "area": 8.22,
+      "generation": 1024
+     }
+    },
+    {
+     "field": "species 5",
+     "called": "keeps growing",
+     "share": [
+      0.15622,
+      0.15948,
+      0.16464,
+      0.17053,
+      0.18219,
+      0.18759
+     ],
+     "drift": 0.03137,
+     "area": [
+      11.75,
+      14.79,
+      26.43,
+      27.83,
+      42.1,
+      86.04
+     ],
+     "peak": {
+      "area": 86.04,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.43,
+      3.85,
+      5.14,
+      5.27,
+      6.49,
+      9.28
+     ],
+     "growth_late": 0.814,
+     "growth_late_by_start": [
+      0.814
+     ],
+     "growth_overall": 0.542,
+     "scaling": 0.709,
+     "area_by_block_at_end": [
+      2.74,
+      5.93,
+      13.93,
+      32.21,
+      64.77,
+      86.04
+     ],
+     "clock": {
+      "2": {
+       "pairs": 14,
+       "median": 0.46,
+       "least": 0.317,
+       "most": 0.706
+      },
+      "4": {
+       "pairs": 11,
+       "median": 0.572,
+       "least": 0.462,
+       "most": 0.893
+      },
+      "8": {
+       "pairs": 8,
+       "median": 0.769,
+       "least": 0.602,
+       "most": 1.016
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "soup",
+   "index": 30145,
+   "name": "soup 3 30145",
+   "rules": [
+    "B0137/S03",
+    "B025/S13",
+    "B3/S234"
+   ],
+   "tie_break": "random",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with two species or more",
+   "starts": 1,
+   "live": [
+    0.58633,
+    0.59251,
+    0.60232,
+    0.62413,
+    0.66116,
+    0.69154
+   ],
+   "shares": [
+    0.23181,
+    0.21753,
+    0.2422
+   ],
+   "holding": 3,
+   "apart": -0.784,
+   "changed": 0.339603,
+   "field": "species 3",
+   "called": "keeps growing",
+   "share": [
+    0.06585,
+    0.07373,
+    0.09324,
+    0.1308,
+    0.19174,
+    0.2422
+   ],
+   "drift": 0.17635,
+   "area": [
+    13.02,
+    22.83,
+    45.47,
+    97.69,
+    159.93,
+    182.83
+   ],
+   "peak": {
+    "area": 182.83,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.61,
+    4.78,
+    6.74,
+    9.88,
+    12.65,
+    13.52
+   ],
+   "growth_late": 0.452,
+   "growth_late_by_start": [
+    0.452
+   ],
+   "growth_overall": 0.817,
+   "scaling": 0.42,
+   "area_by_block_at_end": [
+    4.59,
+    14.38,
+    42.16,
+    102.14,
+    168.65,
+    182.83
+   ],
+   "clock": {
+    "2": {
+     "pairs": 19,
+     "median": 0.603,
+     "least": 0.325,
+     "most": 0.773
+    },
+    "4": {
+     "pairs": 15,
+     "median": 0.965,
+     "least": 0.55,
+     "most": 1.207
+    },
+    "8": {
+     "pairs": 11,
+     "median": 1.664,
+     "least": 0.984,
+     "most": 2.067
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.271,
+      0.27117,
+      0.26599,
+      0.25735,
+      0.24409,
+      0.23181
+     ],
+     "drift": -0.03919,
+     "area": [
+      1.41,
+      1.78,
+      2.0,
+      3.72,
+      7.86,
+      11.57
+     ],
+     "peak": {
+      "area": 11.57,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.19,
+      1.33,
+      1.41,
+      1.93,
+      2.8,
+      3.4
+     ],
+     "growth_late": 0.818,
+     "growth_late_by_start": [
+      0.818
+     ],
+     "growth_overall": 0.642,
+     "scaling": 0.391,
+     "area_by_block_at_end": [
+      1.32,
+      1.92,
+      3.44,
+      6.73,
+      10.36,
+      11.57
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.24948,
+      0.24761,
+      0.24309,
+      0.23599,
+      0.22533,
+      0.21753
+     ],
+     "drift": -0.03195,
+     "area": [
+      0.84,
+      1.54,
+      2.34,
+      3.52,
+      6.24,
+      5.15
+     ],
+     "peak": {
+      "area": 6.24,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      0.92,
+      1.24,
+      1.53,
+      1.88,
+      2.5,
+      2.27
+     ],
+     "growth_late": 0.275,
+     "growth_late_by_start": [
+      0.275
+     ],
+     "growth_overall": 0.563,
+     "scaling": 0.149,
+     "area_by_block_at_end": [
+      1.05,
+      1.38,
+      2.27,
+      4.19,
+      6.11,
+      5.15
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "keeps growing",
+     "share": [
+      0.06585,
+      0.07373,
+      0.09324,
+      0.1308,
+      0.19174,
+      0.2422
+     ],
+     "drift": 0.17635,
+     "area": [
+      13.02,
+      22.83,
+      45.47,
+      97.69,
+      159.93,
+      182.83
+     ],
+     "peak": {
+      "area": 182.83,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.61,
+      4.78,
+      6.74,
+      9.88,
+      12.65,
+      13.52
+     ],
+     "growth_late": 0.452,
+     "growth_late_by_start": [
+      0.452
+     ],
+     "growth_overall": 0.817,
+     "scaling": 0.42,
+     "area_by_block_at_end": [
+      4.59,
+      14.38,
+      42.16,
+      102.14,
+      168.65,
+      182.83
+     ],
+     "clock": {
+      "2": {
+       "pairs": 19,
+       "median": 0.603,
+       "least": 0.325,
+       "most": 0.773
+      },
+      "4": {
+       "pairs": 15,
+       "median": 0.965,
+       "least": 0.55,
+       "most": 1.207
+      },
+      "8": {
+       "pairs": 11,
+       "median": 1.664,
+       "least": 0.984,
+       "most": 2.067
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "soup",
+   "index": 50149,
+   "name": "soup 5 50149",
+   "rules": [
+    "B1456/S2357",
+    "B05/S04",
+    "B348/S0378",
+    "B12/S5678",
+    "B038/S3467"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with two species or more",
+   "starts": 1,
+   "live": [
+    0.54329,
+    0.54624,
+    0.54993,
+    0.55198,
+    0.55344,
+    0.55705
+   ],
+   "shares": [
+    0.13707,
+    0.19048,
+    0.04175,
+    0.03635,
+    0.15139
+   ],
+   "holding": 3,
+   "apart": -0.6,
+   "changed": 0.330693,
+   "field": "species 4",
+   "called": "keeps growing",
+   "share": [
+    0.0518,
+    0.04948,
+    0.04657,
+    0.0441,
+    0.04215,
+    0.03635
+   ],
+   "drift": -0.01545,
+   "area": [
+    15.33,
+    23.52,
+    42.13,
+    71.97,
+    95.23,
+    192.04
+   ],
+   "peak": {
+    "area": 192.04,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.92,
+    4.85,
+    6.49,
+    8.48,
+    9.76,
+    13.86
+   ],
+   "growth_late": 0.708,
+   "growth_late_by_start": [
+    0.708
+   ],
+   "growth_overall": 0.716,
+   "scaling": 0.787,
+   "area_by_block_at_end": [
+    2.73,
+    7.12,
+    21.79,
+    64.53,
+    148.49,
+    192.04
+   ],
+   "clock": {
+    "2": {
+     "pairs": 15,
+     "median": 0.518,
+     "least": 0.343,
+     "most": 0.867
+    },
+    "4": {
+     "pairs": 12,
+     "median": 0.766,
+     "least": 0.6,
+     "most": 0.989
+    },
+    "8": {
+     "pairs": 9,
+     "median": 1.065,
+     "least": 0.919,
+     "most": 1.328
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.11099,
+      0.11521,
+      0.12062,
+      0.12435,
+      0.12879,
+      0.13707
+     ],
+     "drift": 0.02608,
+     "area": [
+      11.91,
+      18.46,
+      31.13,
+      55.94,
+      63.15,
+      102.13
+     ],
+     "peak": {
+      "area": 102.13,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.45,
+      4.3,
+      5.58,
+      7.48,
+      7.95,
+      10.11
+     ],
+     "growth_late": 0.434,
+     "growth_late_by_start": [
+      0.434
+     ],
+     "growth_overall": 0.619,
+     "scaling": 0.811,
+     "area_by_block_at_end": [
+      2.01,
+      4.26,
+      11.66,
+      33.2,
+      76.39,
+      102.13
+     ],
+     "clock": {
+      "2": {
+       "pairs": 15,
+       "median": 0.486,
+       "least": 0.303,
+       "most": 0.705
+      },
+      "4": {
+       "pairs": 12,
+       "median": 0.65,
+       "least": 0.512,
+       "most": 0.763
+      },
+      "8": {
+       "pairs": 9,
+       "median": 0.821,
+       "least": 0.747,
+       "most": 0.922
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.19048,
+      0.19048,
+      0.19048,
+      0.19048,
+      0.19048,
+      0.19048
+     ],
+     "drift": 0.0,
+     "area": [
+      0.12,
+      0.12,
+      0.12,
+      0.12,
+      0.12,
+      0.12
+     ],
+     "peak": {
+      "area": 0.12,
+      "generation": 64
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      0.34,
+      0.34,
+      0.34,
+      0.34,
+      0.34,
+      0.34
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": -0.001,
+     "scaling": 0.012,
+     "area_by_block_at_end": [
+      0.25,
+      0.19,
+      0.14,
+      0.12,
+      0.1,
+      0.12
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "patches",
+     "share": [
+      0.04175,
+      0.04175,
+      0.04175,
+      0.04175,
+      0.04175,
+      0.04175
+     ],
+     "drift": 0.0,
+     "area": [
+      0.83,
+      0.83,
+      0.83,
+      0.83,
+      0.83,
+      0.83
+     ],
+     "peak": {
+      "area": 0.83,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      0.91,
+      0.91,
+      0.91,
+      0.91,
+      0.91,
+      0.91
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": 0.0,
+     "scaling": 0.066,
+     "area_by_block_at_end": [
+      0.79,
+      0.76,
+      0.74,
+      0.76,
+      0.79,
+      0.83
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 4",
+     "called": "keeps growing",
+     "share": [
+      0.0518,
+      0.04948,
+      0.04657,
+      0.0441,
+      0.04215,
+      0.03635
+     ],
+     "drift": -0.01545,
+     "area": [
+      15.33,
+      23.52,
+      42.13,
+      71.97,
+      95.23,
+      192.04
+     ],
+     "peak": {
+      "area": 192.04,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.92,
+      4.85,
+      6.49,
+      8.48,
+      9.76,
+      13.86
+     ],
+     "growth_late": 0.708,
+     "growth_late_by_start": [
+      0.708
+     ],
+     "growth_overall": 0.716,
+     "scaling": 0.787,
+     "area_by_block_at_end": [
+      2.73,
+      7.12,
+      21.79,
+      64.53,
+      148.49,
+      192.04
+     ],
+     "clock": {
+      "2": {
+       "pairs": 15,
+       "median": 0.518,
+       "least": 0.343,
+       "most": 0.867
+      },
+      "4": {
+       "pairs": 12,
+       "median": 0.766,
+       "least": 0.6,
+       "most": 0.989
+      },
+      "8": {
+       "pairs": 9,
+       "median": 1.065,
+       "least": 0.919,
+       "most": 1.328
+      }
+     }
+    },
+    {
+     "field": "species 5",
+     "called": "patches",
+     "share": [
+      0.14827,
+      0.14932,
+      0.15051,
+      0.15129,
+      0.15027,
+      0.15139
+     ],
+     "drift": 0.00312,
+     "area": [
+      1.77,
+      2.07,
+      2.08,
+      2.03,
+      2.87,
+      2.29
+     ],
+     "peak": {
+      "area": 2.87,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.33,
+      1.44,
+      1.44,
+      1.42,
+      1.69,
+      1.51
+     ],
+     "growth_late": 0.09,
+     "growth_late_by_start": [
+      0.09
+     ],
+     "growth_overall": 0.093,
+     "scaling": 0.066,
+     "area_by_block_at_end": [
+      1.46,
+      1.6,
+      1.79,
+      2.09,
+      2.6,
+      2.29
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "soup",
+   "index": 30046,
+   "name": "soup 3 30046",
+   "rules": [
+    "B0247/S4",
+    "B6/S0245",
+    "B35/S2346"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with two species or more",
+   "starts": 1,
+   "live": [
+    0.45584,
+    0.45883,
+    0.46126,
+    0.46322,
+    0.465,
+    0.46459
+   ],
+   "shares": [
+    0.28999,
+    0.06115,
+    0.11345
+   ],
+   "holding": 3,
+   "apart": -0.764,
+   "changed": 0.37171,
+   "field": "species 3",
+   "called": "organised",
+   "share": [
+    0.09617,
+    0.10092,
+    0.10747,
+    0.10967,
+    0.11406,
+    0.11345
+   ],
+   "drift": 0.01728,
+   "area": [
+    13.04,
+    19.19,
+    29.06,
+    42.35,
+    51.8,
+    54.02
+   ],
+   "peak": {
+    "area": 54.02,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    3.61,
+    4.38,
+    5.39,
+    6.51,
+    7.2,
+    7.35
+   ],
+   "growth_late": 0.176,
+   "growth_late_by_start": [
+    0.176
+   ],
+   "growth_overall": 0.431,
+   "scaling": 0.32,
+   "area_by_block_at_end": [
+    4.32,
+    9.42,
+    19.28,
+    34.65,
+    52.34,
+    54.02
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.423,
+     "least": 0.294,
+     "most": 0.512
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.487,
+     "least": 0.329,
+     "most": 0.577
+    },
+    "8": {
+     "pairs": 12,
+     "median": 0.552,
+     "least": 0.421,
+     "most": 0.738
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.29853,
+      0.29677,
+      0.29264,
+      0.29241,
+      0.28979,
+      0.28999
+     ],
+     "drift": -0.00854,
+     "area": [
+      2.06,
+      3.45,
+      4.78,
+      5.55,
+      8.63,
+      7.68
+     ],
+     "peak": {
+      "area": 8.63,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.44,
+      1.86,
+      2.19,
+      2.36,
+      2.94,
+      2.77
+     ],
+     "growth_late": 0.234,
+     "growth_late_by_start": [
+      0.234
+     ],
+     "growth_overall": 0.39,
+     "scaling": 0.29,
+     "area_by_block_at_end": [
+      1.34,
+      1.94,
+      3.16,
+      5.13,
+      7.44,
+      7.68
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.06115,
+      0.06115,
+      0.06115,
+      0.06115,
+      0.06115,
+      0.06115
+     ],
+     "drift": 0.0,
+     "area": [
+      0.88,
+      0.88,
+      0.88,
+      0.88,
+      0.88,
+      0.88
+     ],
+     "peak": {
+      "area": 0.88,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      0.94,
+      0.94,
+      0.94,
+      0.94,
+      0.94,
+      0.94
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": 0.0,
+     "scaling": 0.002,
+     "area_by_block_at_end": [
+      0.89,
+      0.9,
+      0.88,
+      0.87,
+      0.86,
+      0.88
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "organised",
+     "share": [
+      0.09617,
+      0.10092,
+      0.10747,
+      0.10967,
+      0.11406,
+      0.11345
+     ],
+     "drift": 0.01728,
+     "area": [
+      13.04,
+      19.19,
+      29.06,
+      42.35,
+      51.8,
+      54.02
+     ],
+     "peak": {
+      "area": 54.02,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      3.61,
+      4.38,
+      5.39,
+      6.51,
+      7.2,
+      7.35
+     ],
+     "growth_late": 0.176,
+     "growth_late_by_start": [
+      0.176
+     ],
+     "growth_overall": 0.431,
+     "scaling": 0.32,
+     "area_by_block_at_end": [
+      4.32,
+      9.42,
+      19.28,
+      34.65,
+      52.34,
+      54.02
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.423,
+       "least": 0.294,
+       "most": 0.512
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.487,
+       "least": 0.329,
+       "most": 0.577
+      },
+      "8": {
+       "pairs": 12,
+       "median": 0.552,
+       "least": 0.421,
+       "most": 0.738
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "left",
+   "index": 20032,
+   "name": "soup 2 20032",
+   "rules": [
+    "B5/S67",
+    "B013/S1"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with one species left",
+   "starts": 1,
+   "live": [
+    0.46862,
+    0.47723,
+    0.48362,
+    0.49202,
+    0.50166,
+    0.51481
+   ],
+   "shares": [
+    0.0,
+    0.51481
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.007452,
+   "field": "live",
+   "called": "keeps growing",
+   "share": [
+    0.46862,
+    0.47723,
+    0.48362,
+    0.49202,
+    0.50166,
+    0.51481
+   ],
+   "drift": 0.04619,
+   "area": [
+    198.93,
+    369.86,
+    680.79,
+    1284.52,
+    2277.71,
+    3780.07
+   ],
+   "peak": {
+    "area": 3780.07,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    14.1,
+    19.23,
+    26.09,
+    35.84,
+    47.73,
+    61.48
+   ],
+   "growth_late": 0.779,
+   "growth_late_by_start": [
+    0.779
+   ],
+   "growth_overall": 0.858,
+   "scaling": 1.206,
+   "area_by_block_at_end": [
+    15.3,
+    58.59,
+    215.11,
+    709.83,
+    1836.5,
+    3780.07
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.767,
+     "least": 0.517,
+     "most": 0.977
+    },
+    "4": {
+     "pairs": 20,
+     "median": 1.0,
+     "least": 0.886,
+     "most": 1.284
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.248,
+     "least": 1.039,
+     "most": 2.203
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "dead",
+     "share": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.46862,
+      0.47723,
+      0.48362,
+      0.49202,
+      0.50166,
+      0.51481
+     ],
+     "drift": 0.04619,
+     "area": [
+      198.93,
+      369.86,
+      680.79,
+      1284.52,
+      2277.71,
+      3780.07
+     ],
+     "peak": {
+      "area": 3780.07,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      14.1,
+      19.23,
+      26.09,
+      35.84,
+      47.73,
+      61.48
+     ],
+     "growth_late": 0.779,
+     "growth_late_by_start": [
+      0.779
+     ],
+     "growth_overall": 0.858,
+     "scaling": 1.206,
+     "area_by_block_at_end": [
+      15.3,
+      58.59,
+      215.11,
+      709.83,
+      1836.5,
+      3780.07
+     ],
+     "clock": {
+      "2": {
+       "pairs": 25,
+       "median": 0.767,
+       "least": 0.517,
+       "most": 0.977
+      },
+      "4": {
+       "pairs": 20,
+       "median": 1.0,
+       "least": 0.886,
+       "most": 1.284
+      },
+      "8": {
+       "pairs": 15,
+       "median": 1.248,
+       "least": 1.039,
+       "most": 2.203
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "left",
+   "index": 30044,
+   "name": "soup 3 30044",
+   "rules": [
+    "B027/S2",
+    "B238/S0346",
+    "B3568/S237"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with one species left",
+   "starts": 1,
+   "live": [
+    0.40964,
+    0.44375,
+    0.48425,
+    0.51827,
+    0.54043,
+    0.56753
+   ],
+   "shares": [
+    0.52693,
+    0.02068,
+    0.01992
+   ],
+   "holding": 1,
+   "apart": -0.09,
+   "changed": 0.03549,
+   "field": "live",
+   "called": "keeps growing",
+   "share": [
+    0.40964,
+    0.44375,
+    0.48425,
+    0.51827,
+    0.54043,
+    0.56753
+   ],
+   "drift": 0.15789,
+   "area": [
+    36.6,
+    129.5,
+    337.3,
+    699.97,
+    1299.93,
+    2078.93
+   ],
+   "peak": {
+    "area": 2078.93,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    6.05,
+    11.38,
+    18.37,
+    26.46,
+    36.05,
+    45.6
+   ],
+   "growth_late": 0.785,
+   "growth_late_by_start": [
+    0.785
+   ],
+   "growth_overall": 1.148,
+   "scaling": 0.942,
+   "area_by_block_at_end": [
+    12.97,
+    48.57,
+    175.74,
+    562.99,
+    1350.22,
+    2078.93
+   ],
+   "clock": {
+    "2": {
+     "pairs": 24,
+     "median": 0.889,
+     "least": 0.535,
+     "most": 1.13
+    },
+    "4": {
+     "pairs": 19,
+     "median": 1.12,
+     "least": 0.899,
+     "most": 2.351
+    },
+    "8": {
+     "pairs": 14,
+     "median": 1.787,
+     "least": 1.145,
+     "most": 4.879
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.35727,
+      0.40246,
+      0.44363,
+      0.47766,
+      0.49982,
+      0.52693
+     ],
+     "drift": 0.16966,
+     "area": [
+      40.91,
+      133.74,
+      340.46,
+      700.61,
+      1292.73,
+      2052.01
+     ],
+     "peak": {
+      "area": 2052.01,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      6.4,
+      11.56,
+      18.45,
+      26.47,
+      35.95,
+      45.3
+     ],
+     "growth_late": 0.775,
+     "growth_late_by_start": [
+      0.775
+     ],
+     "growth_overall": 1.117,
+     "scaling": 0.945,
+     "area_by_block_at_end": [
+      12.79,
+      47.78,
+      172.8,
+      553.7,
+      1331.08,
+      2052.01
+     ],
+     "clock": {
+      "2": {
+       "pairs": 24,
+       "median": 0.871,
+       "least": 0.531,
+       "most": 1.087
+      },
+      "4": {
+       "pairs": 19,
+       "median": 1.1,
+       "least": 0.887,
+       "most": 2.222
+      },
+      "8": {
+       "pairs": 14,
+       "median": 1.74,
+       "least": 1.118,
+       "most": 4.573
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.03244,
+      0.02136,
+      0.0207,
+      0.02068,
+      0.02068,
+      0.02068
+     ],
+     "drift": -0.01176,
+     "area": [
+      3.9,
+      0.99,
+      0.54,
+      0.52,
+      0.52,
+      0.52
+     ],
+     "peak": {
+      "area": 3.9,
+      "generation": 64
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.97,
+      0.99,
+      0.74,
+      0.72,
+      0.72,
+      0.72
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": -0.5,
+     "scaling": -0.11,
+     "area_by_block_at_end": [
+      0.77,
+      0.65,
+      0.61,
+      0.6,
+      0.56,
+      0.52
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "patches",
+     "share": [
+      0.01992,
+      0.01992,
+      0.01992,
+      0.01992,
+      0.01992,
+      0.01992
+     ],
+     "drift": 0.0,
+     "area": [
+      2.54,
+      2.54,
+      2.54,
+      2.54,
+      2.54,
+      2.54
+     ],
+     "peak": {
+      "area": 2.54,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.59,
+      1.59,
+      1.59,
+      1.59,
+      1.59,
+      1.59
+     ],
+     "growth_late": 0.0,
+     "growth_late_by_start": [
+      0.0
+     ],
+     "growth_overall": 0.0,
+     "scaling": -0.16,
+     "area_by_block_at_end": [
+      2.83,
+      3.07,
+      3.17,
+      3.17,
+      2.99,
+      2.54
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "left",
+   "index": 20093,
+   "name": "soup 2 20093",
+   "rules": [
+    "B015/S1",
+    "B15/S7"
+   ],
+   "tie_break": "random",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with one species left",
+   "starts": 1,
+   "live": [
+    0.70707,
+    0.76734,
+    0.83574,
+    0.90289,
+    0.95631,
+    0.987
+   ],
+   "shares": [
+    0.98634,
+    0.00066
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.00135,
+   "field": "species 1",
+   "called": "taking over",
+   "share": [
+    0.66979,
+    0.74203,
+    0.82064,
+    0.89547,
+    0.95346,
+    0.98634
+   ],
+   "drift": 0.31655,
+   "area": [
+    139.33,
+    220.57,
+    336.3,
+    552.62,
+    836.02,
+    815.54
+   ],
+   "peak": {
+    "area": 836.02,
+    "generation": 1024
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    11.8,
+    14.85,
+    18.34,
+    23.51,
+    28.91,
+    28.56
+   ],
+   "growth_late": 0.281,
+   "growth_late_by_start": [
+    0.281
+   ],
+   "growth_overall": 0.549,
+   "scaling": 0.645,
+   "area_by_block_at_end": [
+    13.42,
+    46.19,
+    146.16,
+    333.66,
+    640.72,
+    815.54
+   ],
+   "clock": {
+    "2": {
+     "pairs": 25,
+     "median": 0.562,
+     "least": 0.336,
+     "most": 0.901
+    },
+    "4": {
+     "pairs": 20,
+     "median": 0.834,
+     "least": 0.466,
+     "most": 0.944
+    },
+    "8": {
+     "pairs": 15,
+     "median": 1.018,
+     "least": 0.733,
+     "most": 1.367
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "taking over",
+     "share": [
+      0.66979,
+      0.74203,
+      0.82064,
+      0.89547,
+      0.95346,
+      0.98634
+     ],
+     "drift": 0.31655,
+     "area": [
+      139.33,
+      220.57,
+      336.3,
+      552.62,
+      836.02,
+      815.54
+     ],
+     "peak": {
+      "area": 836.02,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      11.8,
+      14.85,
+      18.34,
+      23.51,
+      28.91,
+      28.56
+     ],
+     "growth_late": 0.281,
+     "growth_late_by_start": [
+      0.281
+     ],
+     "growth_overall": 0.549,
+     "scaling": 0.645,
+     "area_by_block_at_end": [
+      13.42,
+      46.19,
+      146.16,
+      333.66,
+      640.72,
+      815.54
+     ],
+     "clock": {
+      "2": {
+       "pairs": 25,
+       "median": 0.562,
+       "least": 0.336,
+       "most": 0.901
+      },
+      "4": {
+       "pairs": 20,
+       "median": 0.834,
+       "least": 0.466,
+       "most": 0.944
+      },
+      "8": {
+       "pairs": 15,
+       "median": 1.018,
+       "least": 0.733,
+       "most": 1.367
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "dead",
+     "share": [
+      0.03728,
+      0.02531,
+      0.0151,
+      0.00742,
+      0.00285,
+      0.00066
+     ],
+     "area": [
+      3.9,
+      9.66,
+      12.21,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 12.21,
+      "generation": 256
+     }
+    }
+   ]
+  },
+  {
+   "family": "left",
+   "index": 20092,
+   "name": "soup 2 20092",
+   "rules": [
+    "B6/S367",
+    "B138/S123"
+   ],
+   "tie_break": "random",
+   "density": 0.5,
+   "why": "a soup that grew in the screen with one species left",
+   "starts": 1,
+   "live": [
+    0.42226,
+    0.43735,
+    0.46398,
+    0.48267,
+    0.4879,
+    0.4892
+   ],
+   "shares": [
+    0.00056,
+    0.48864
+   ],
+   "holding": 1,
+   "apart": null,
+   "changed": 0.004354,
+   "field": "live, columns",
+   "called": "organised",
+   "share": [
+    0.42226,
+    0.43735,
+    0.46398,
+    0.48267,
+    0.4879,
+    0.4892
+   ],
+   "drift": 0.06694,
+   "area": [
+    22.52,
+    79.33,
+    285.43,
+    491.27,
+    594.68,
+    657.64
+   ],
+   "peak": {
+    "area": 657.64,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    4.75,
+    8.91,
+    16.89,
+    22.16,
+    24.39,
+    25.64
+   ],
+   "growth_late": 0.21,
+   "growth_late_by_start": [
+    0.21
+   ],
+   "growth_overall": 0.967,
+   "scaling": 0.818,
+   "area_by_block_at_end": [
+    7.08,
+    25.4,
+    82.55,
+    211.71,
+    397.07,
+    657.64
+   ],
+   "clock": {
+    "2": {
+     "pairs": 19,
+     "median": 0.825,
+     "least": 0.435,
+     "most": 1.396
+    },
+    "4": {
+     "pairs": 15,
+     "median": 1.123,
+     "least": 0.532,
+     "most": 3.854
+    },
+    "8": {
+     "pairs": 11,
+     "median": 2.09,
+     "least": 0.872,
+     "most": 6.633
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "dead",
+     "share": [
+      0.00056,
+      0.00056,
+      0.00056,
+      0.00056,
+      0.00056,
+      0.00056
+     ],
+     "area": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "peak": {
+      "area": 0.0,
+      "generation": null
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.4217,
+      0.43679,
+      0.46342,
+      0.48211,
+      0.48734,
+      0.48864
+     ],
+     "drift": 0.06694,
+     "area": [
+      2.55,
+      2.6,
+      2.54,
+      0.87,
+      0.33,
+      0.2
+     ],
+     "peak": {
+      "area": 2.6,
+      "generation": 128
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.6,
+      1.61,
+      1.59,
+      0.94,
+      0.57,
+      0.44
+     ],
+     "growth_late": -1.079,
+     "growth_late_by_start": [
+      -1.079
+     ],
+     "growth_overall": -0.829,
+     "scaling": -0.341,
+     "area_by_block_at_end": [
+      0.12,
+      0.18,
+      0.26,
+      0.31,
+      0.27,
+      0.2
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 1,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "random",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.49019,
+    0.48903,
+    0.49104,
+    0.50089,
+    0.56493,
+    0.76189
+   ],
+   "shares": [
+    0.36082,
+    0.40108
+   ],
+   "holding": 2,
+   "apart": -0.941,
+   "changed": 0.21008,
+   "field": "species 2",
+   "called": "keeps growing",
+   "share": [
+    0.24567,
+    0.2464,
+    0.2498,
+    0.25781,
+    0.29637,
+    0.40108
+   ],
+   "drift": 0.15541,
+   "area": [
+    22.37,
+    42.26,
+    103.76,
+    246.83,
+    876.51,
+    3007.5
+   ],
+   "peak": {
+    "area": 3007.5,
+    "generation": 2048
+   },
+   "area_spread": [
+    1.63,
+    6.76,
+    20.33,
+    54.96,
+    162.51,
+    53.49
+   ],
+   "length": [
+    4.73,
+    6.5,
+    10.19,
+    15.71,
+    29.61,
+    54.84
+   ],
+   "growth_late": 1.804,
+   "growth_late_by_start": [
+    1.65,
+    1.829,
+    1.967
+   ],
+   "growth_overall": 1.421,
+   "scaling": 1.231,
+   "area_by_block_at_end": [
+    11.57,
+    43.31,
+    160.01,
+    545.6,
+    1525.49,
+    3007.5
+   ],
+   "clock": {
+    "2": {
+     "pairs": 19,
+     "median": 0.847,
+     "least": 0.498,
+     "most": 1.796
+    },
+    "4": {
+     "pairs": 15,
+     "median": 1.777,
+     "least": 0.993,
+     "most": 4.801
+    },
+    "8": {
+     "pairs": 11,
+     "median": 3.743,
+     "least": 1.711,
+     "most": 9.784
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.24452,
+      0.24263,
+      0.24124,
+      0.24308,
+      0.26856,
+      0.36082
+     ],
+     "drift": 0.1163,
+     "area": [
+      22.81,
+      41.07,
+      107.04,
+      258.76,
+      859.87,
+      2854.7
+     ],
+     "peak": {
+      "area": 2854.7,
+      "generation": 2048
+     },
+     "area_spread": [
+      1.24,
+      3.99,
+      16.11,
+      55.78,
+      170.66,
+      65.54
+     ],
+     "length": [
+      4.78,
+      6.41,
+      10.35,
+      16.09,
+      29.32,
+      53.43
+     ],
+     "growth_late": 1.732,
+     "growth_late_by_start": [
+      1.611,
+      1.714,
+      1.905
+     ],
+     "growth_overall": 1.408,
+     "scaling": 1.212,
+     "area_by_block_at_end": [
+      11.34,
+      42.32,
+      155.94,
+      532.31,
+      1481.32,
+      2854.7
+     ],
+     "clock": {
+      "2": {
+       "pairs": 19,
+       "median": 0.878,
+       "least": 0.498,
+       "most": 1.756
+      },
+      "4": {
+       "pairs": 15,
+       "median": 1.785,
+       "least": 1.01,
+       "most": 4.304
+      },
+      "8": {
+       "pairs": 11,
+       "median": 3.592,
+       "least": 1.788,
+       "most": 9.138
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.24567,
+      0.2464,
+      0.2498,
+      0.25781,
+      0.29637,
+      0.40108
+     ],
+     "drift": 0.15541,
+     "area": [
+      22.37,
+      42.26,
+      103.76,
+      246.83,
+      876.51,
+      3007.5
+     ],
+     "peak": {
+      "area": 3007.5,
+      "generation": 2048
+     },
+     "area_spread": [
+      1.63,
+      6.76,
+      20.33,
+      54.96,
+      162.51,
+      53.49
+     ],
+     "length": [
+      4.73,
+      6.5,
+      10.19,
+      15.71,
+      29.61,
+      54.84
+     ],
+     "growth_late": 1.804,
+     "growth_late_by_start": [
+      1.65,
+      1.829,
+      1.967
+     ],
+     "growth_overall": 1.421,
+     "scaling": 1.231,
+     "area_by_block_at_end": [
+      11.57,
+      43.31,
+      160.01,
+      545.6,
+      1525.49,
+      3007.5
+     ],
+     "clock": {
+      "2": {
+       "pairs": 19,
+       "median": 0.847,
+       "least": 0.498,
+       "most": 1.796
+      },
+      "4": {
+       "pairs": 15,
+       "median": 1.777,
+       "least": 0.993,
+       "most": 4.801
+      },
+      "8": {
+       "pairs": 11,
+       "median": 3.743,
+       "least": 1.711,
+       "most": 9.784
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 1,
+   "name": "B2378/S25678 against itself",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.46163,
+    0.46921,
+    0.48353,
+    0.53938,
+    0.72609,
+    0.88145
+   ],
+   "shares": [
+    0.41645,
+    0.465
+   ],
+   "holding": 2,
+   "apart": -0.989,
+   "changed": 0.087953,
+   "field": "species 1",
+   "called": "keeps growing",
+   "share": [
+    0.23101,
+    0.23418,
+    0.2407,
+    0.26527,
+    0.35133,
+    0.41645
+   ],
+   "drift": 0.18544,
+   "area": [
+    46.18,
+    82.27,
+    169.44,
+    389.9,
+    1199.15,
+    2448.94
+   ],
+   "peak": {
+    "area": 2448.94,
+    "generation": 2048
+   },
+   "area_spread": [
+    11.97,
+    10.71,
+    20.06,
+    37.71,
+    41.84,
+    174.95
+   ],
+   "length": [
+    6.8,
+    9.07,
+    13.02,
+    19.75,
+    34.63,
+    49.49
+   ],
+   "growth_late": 1.325,
+   "growth_late_by_start": [
+    1.327,
+    1.205,
+    1.448
+   ],
+   "growth_overall": 1.184,
+   "scaling": 0.998,
+   "area_by_block_at_end": [
+    13.81,
+    52.61,
+    191.6,
+    614.36,
+    1474.83,
+    2448.94
+   ],
+   "clock": {
+    "2": {
+     "pairs": 21,
+     "median": 0.842,
+     "least": 0.525,
+     "most": 1.517
+    },
+    "4": {
+     "pairs": 16,
+     "median": 1.731,
+     "least": 1.023,
+     "most": 2.313
+    },
+    "8": {
+     "pairs": 12,
+     "median": 3.09,
+     "least": 1.668,
+     "most": 4.454
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.23101,
+      0.23418,
+      0.2407,
+      0.26527,
+      0.35133,
+      0.41645
+     ],
+     "drift": 0.18544,
+     "area": [
+      46.18,
+      82.27,
+      169.44,
+      389.9,
+      1199.15,
+      2448.94
+     ],
+     "peak": {
+      "area": 2448.94,
+      "generation": 2048
+     },
+     "area_spread": [
+      11.97,
+      10.71,
+      20.06,
+      37.71,
+      41.84,
+      174.95
+     ],
+     "length": [
+      6.8,
+      9.07,
+      13.02,
+      19.75,
+      34.63,
+      49.49
+     ],
+     "growth_late": 1.325,
+     "growth_late_by_start": [
+      1.327,
+      1.205,
+      1.448
+     ],
+     "growth_overall": 1.184,
+     "scaling": 0.998,
+     "area_by_block_at_end": [
+      13.81,
+      52.61,
+      191.6,
+      614.36,
+      1474.83,
+      2448.94
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.842,
+       "least": 0.525,
+       "most": 1.517
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.731,
+       "least": 1.023,
+       "most": 2.313
+      },
+      "8": {
+       "pairs": 12,
+       "median": 3.09,
+       "least": 1.668,
+       "most": 4.454
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "taking over",
+     "share": [
+      0.23062,
+      0.23503,
+      0.24283,
+      0.27411,
+      0.37476,
+      0.465
+     ],
+     "drift": 0.23438,
+     "area": [
+      45.7,
+      87.38,
+      161.13,
+      421.83,
+      1218.03,
+      2413.25
+     ],
+     "peak": {
+      "area": 2413.25,
+      "generation": 2048
+     },
+     "area_spread": [
+      8.4,
+      10.77,
+      16.64,
+      29.48,
+      35.14,
+      125.13
+     ],
+     "length": [
+      6.76,
+      9.35,
+      12.69,
+      20.54,
+      34.9,
+      49.12
+     ],
+     "growth_late": 1.258,
+     "growth_late_by_start": [
+      1.258,
+      1.179,
+      1.339
+     ],
+     "growth_overall": 1.183,
+     "scaling": 0.99,
+     "area_by_block_at_end": [
+      13.78,
+      52.51,
+      191.18,
+      611.82,
+      1462.55,
+      2413.25
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.878,
+       "least": 0.565,
+       "most": 1.482
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.71,
+       "least": 1.021,
+       "most": 2.312
+      },
+      "8": {
+       "pairs": 12,
+       "median": 3.078,
+       "least": 1.695,
+       "most": 4.451
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 2,
+   "name": "B015/S1 against itself",
+   "rules": [
+    "B015/S1",
+    "B015/S1"
+   ],
+   "tie_break": "random",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 1,
+   "live": [
+    0.94171,
+    0.94153,
+    0.94218,
+    0.94181,
+    0.94198,
+    0.94186
+   ],
+   "shares": [
+    0.4705,
+    0.47136
+   ],
+   "holding": 2,
+   "apart": -0.925,
+   "changed": 0.487439,
+   "field": "live, columns",
+   "called": "patches",
+   "share": [
+    0.94171,
+    0.94153,
+    0.94218,
+    0.94181,
+    0.94198,
+    0.94186
+   ],
+   "drift": 0.00015,
+   "area": [
+    0.92,
+    1.4,
+    1.14,
+    1.4,
+    1.09,
+    1.45
+   ],
+   "peak": {
+    "area": 1.45,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    0.96,
+    1.18,
+    1.07,
+    1.18,
+    1.04,
+    1.2
+   ],
+   "growth_late": 0.026,
+   "growth_late_by_start": [
+    0.026
+   ],
+   "growth_overall": 0.072,
+   "scaling": 0.12,
+   "area_by_block_at_end": [
+    1.1,
+    1.14,
+    1.17,
+    1.23,
+    1.28,
+    1.45
+   ],
+   "clock": {
+    "2": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "4": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "8": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.47127,
+      0.47062,
+      0.47065,
+      0.47093,
+      0.47078,
+      0.4705
+     ],
+     "drift": -0.00077,
+     "area": [
+      1.5,
+      1.44,
+      0.77,
+      0.91,
+      1.72,
+      1.04
+     ],
+     "peak": {
+      "area": 1.72,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.22,
+      1.2,
+      0.88,
+      0.95,
+      1.31,
+      1.02
+     ],
+     "growth_late": 0.1,
+     "growth_late_by_start": [
+      0.1
+     ],
+     "growth_overall": -0.045,
+     "scaling": -0.139,
+     "area_by_block_at_end": [
+      1.11,
+      1.18,
+      1.23,
+      1.27,
+      1.09,
+      1.04
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.47044,
+      0.47091,
+      0.47153,
+      0.47088,
+      0.47119,
+      0.47136
+     ],
+     "drift": 0.00092,
+     "area": [
+      1.47,
+      1.4,
+      0.89,
+      0.98,
+      1.58,
+      1.26
+     ],
+     "peak": {
+      "area": 1.58,
+      "generation": 1024
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.21,
+      1.18,
+      0.94,
+      0.99,
+      1.26,
+      1.12
+     ],
+     "growth_late": 0.18,
+     "growth_late_by_start": [
+      0.18
+     ],
+     "growth_overall": -0.013,
+     "scaling": -0.023,
+     "area_by_block_at_end": [
+      1.11,
+      1.18,
+      1.24,
+      1.3,
+      1.1,
+      1.26
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 2,
+   "name": "B015/S1 against itself",
+   "rules": [
+    "B015/S1",
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.45036,
+    0.44966,
+    0.44868,
+    0.44919,
+    0.44807,
+    0.44856
+   ],
+   "shares": [
+    0.20291,
+    0.24565
+   ],
+   "holding": 2,
+   "apart": -0.998,
+   "changed": 0.285,
+   "field": "species 1",
+   "called": "keeps growing",
+   "share": [
+    0.22063,
+    0.2187,
+    0.21697,
+    0.21354,
+    0.20809,
+    0.20291
+   ],
+   "drift": -0.01772,
+   "area": [
+    77.33,
+    111.07,
+    173.58,
+    287.51,
+    446.73,
+    735.86
+   ],
+   "peak": {
+    "area": 735.86,
+    "generation": 2048
+   },
+   "area_spread": [
+    26.64,
+    34.07,
+    50.15,
+    73.86,
+    101.26,
+    148.05
+   ],
+   "length": [
+    8.79,
+    10.54,
+    13.17,
+    16.96,
+    21.14,
+    27.13
+   ],
+   "growth_late": 0.678,
+   "growth_late_by_start": [
+    0.662,
+    0.59,
+    0.795
+   ],
+   "growth_overall": 0.657,
+   "scaling": 1.102,
+   "area_by_block_at_end": [
+    4.37,
+    14.06,
+    48.96,
+    159.66,
+    410.75,
+    735.86
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.675,
+     "least": 0.436,
+     "most": 0.911
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.905,
+     "least": 0.681,
+     "most": 0.97
+    },
+    "8": {
+     "pairs": 12,
+     "median": 1.109,
+     "least": 1.011,
+     "most": 1.349
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.22063,
+      0.2187,
+      0.21697,
+      0.21354,
+      0.20809,
+      0.20291
+     ],
+     "drift": -0.01772,
+     "area": [
+      77.33,
+      111.07,
+      173.58,
+      287.51,
+      446.73,
+      735.86
+     ],
+     "peak": {
+      "area": 735.86,
+      "generation": 2048
+     },
+     "area_spread": [
+      26.64,
+      34.07,
+      50.15,
+      73.86,
+      101.26,
+      148.05
+     ],
+     "length": [
+      8.79,
+      10.54,
+      13.17,
+      16.96,
+      21.14,
+      27.13
+     ],
+     "growth_late": 0.678,
+     "growth_late_by_start": [
+      0.662,
+      0.59,
+      0.795
+     ],
+     "growth_overall": 0.657,
+     "scaling": 1.102,
+     "area_by_block_at_end": [
+      4.37,
+      14.06,
+      48.96,
+      159.66,
+      410.75,
+      735.86
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.675,
+       "least": 0.436,
+       "most": 0.911
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.905,
+       "least": 0.681,
+       "most": 0.97
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.109,
+       "least": 1.011,
+       "most": 1.349
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.22973,
+      0.23096,
+      0.23171,
+      0.23565,
+      0.23998,
+      0.24565
+     ],
+     "drift": 0.01592,
+     "area": [
+      75.92,
+      111.88,
+      168.9,
+      263.13,
+      411.7,
+      627.89
+     ],
+     "peak": {
+      "area": 627.89,
+      "generation": 2048
+     },
+     "area_spread": [
+      27.83,
+      34.65,
+      43.17,
+      66.36,
+      67.64,
+      67.33
+     ],
+     "length": [
+      8.71,
+      10.58,
+      13.0,
+      16.22,
+      20.29,
+      25.06
+     ],
+     "growth_late": 0.627,
+     "growth_late_by_start": [
+      0.666,
+      0.484,
+      0.767
+     ],
+     "growth_overall": 0.615,
+     "scaling": 1.086,
+     "area_by_block_at_end": [
+      3.97,
+      12.42,
+      42.8,
+      139.27,
+      355.72,
+      627.89
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.668,
+       "least": 0.45,
+       "most": 0.871
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.848,
+       "least": 0.679,
+       "most": 0.905
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.033,
+       "least": 0.931,
+       "most": 1.192
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 3,
+   "name": "B237/S025678 against itself",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "random",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 1,
+   "live": [
+    0.54061,
+    0.53981,
+    0.54056,
+    0.5405,
+    0.54018,
+    0.54056
+   ],
+   "shares": [
+    0.27043,
+    0.27012
+   ],
+   "holding": 2,
+   "apart": -0.624,
+   "changed": 0.540586,
+   "field": "species 1",
+   "called": "patches",
+   "share": [
+    0.27034,
+    0.26945,
+    0.27088,
+    0.27044,
+    0.26922,
+    0.27043
+   ],
+   "drift": 9e-05,
+   "area": [
+    2.45,
+    3.83,
+    3.17,
+    2.63,
+    2.97,
+    2.84
+   ],
+   "peak": {
+    "area": 3.83,
+    "generation": 128
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    1.57,
+    1.96,
+    1.78,
+    1.62,
+    1.72,
+    1.68
+   ],
+   "growth_late": 0.053,
+   "growth_late_by_start": [
+    0.053
+   ],
+   "growth_overall": -0.009,
+   "scaling": -0.05,
+   "area_by_block_at_end": [
+    1.79,
+    2.3,
+    2.69,
+    3.04,
+    2.91,
+    2.84
+   ],
+   "clock": {
+    "2": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "4": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    },
+    "8": {
+     "pairs": 0,
+     "median": null,
+     "least": null,
+     "most": null
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.27034,
+      0.26945,
+      0.27088,
+      0.27044,
+      0.26922,
+      0.27043
+     ],
+     "drift": 9e-05,
+     "area": [
+      2.45,
+      3.83,
+      3.17,
+      2.63,
+      2.97,
+      2.84
+     ],
+     "peak": {
+      "area": 3.83,
+      "generation": 128
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.57,
+      1.96,
+      1.78,
+      1.62,
+      1.72,
+      1.68
+     ],
+     "growth_late": 0.053,
+     "growth_late_by_start": [
+      0.053
+     ],
+     "growth_overall": -0.009,
+     "scaling": -0.05,
+     "area_by_block_at_end": [
+      1.79,
+      2.3,
+      2.69,
+      3.04,
+      2.91,
+      2.84
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.27027,
+      0.27036,
+      0.26968,
+      0.27006,
+      0.27096,
+      0.27012
+     ],
+     "drift": -0.00015,
+     "area": [
+      2.76,
+      3.47,
+      4.08,
+      2.69,
+      2.78,
+      2.13
+     ],
+     "peak": {
+      "area": 4.08,
+      "generation": 256
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      1.66,
+      1.86,
+      2.02,
+      1.64,
+      1.67,
+      1.46
+     ],
+     "growth_late": -0.165,
+     "growth_late_by_start": [
+      -0.165
+     ],
+     "growth_overall": -0.098,
+     "scaling": -0.182,
+     "area_by_block_at_end": [
+      1.81,
+      2.33,
+      2.65,
+      2.75,
+      2.4,
+      2.13
+     ],
+     "clock": {
+      "2": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "4": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      },
+      "8": {
+       "pairs": 0,
+       "median": null,
+       "least": null,
+       "most": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 3,
+   "name": "B237/S025678 against itself",
+   "rules": [
+    "B237/S025678",
+    "B237/S025678"
+   ],
+   "tie_break": "standoff",
+   "density": 1.0,
+   "why": "its territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.46954,
+    0.47246,
+    0.47578,
+    0.4808,
+    0.49155,
+    0.52307
+   ],
+   "shares": [
+    0.25678,
+    0.26628
+   ],
+   "holding": 2,
+   "apart": -0.953,
+   "changed": 0.424238,
+   "field": "species 1",
+   "called": "keeps growing",
+   "share": [
+    0.23534,
+    0.23566,
+    0.23625,
+    0.23676,
+    0.24374,
+    0.25678
+   ],
+   "drift": 0.02144,
+   "area": [
+    20.93,
+    41.55,
+    67.24,
+    135.34,
+    294.22,
+    672.4
+   ],
+   "peak": {
+    "area": 672.4,
+    "generation": 2048
+   },
+   "area_spread": [
+    0.78,
+    2.84,
+    2.93,
+    16.2,
+    29.18,
+    23.28
+   ],
+   "length": [
+    4.58,
+    6.45,
+    8.2,
+    11.63,
+    17.15,
+    25.93
+   ],
+   "growth_late": 1.156,
+   "growth_late_by_start": [
+    1.102,
+    1.149,
+    1.227
+   ],
+   "growth_overall": 0.986,
+   "scaling": 0.845,
+   "area_by_block_at_end": [
+    6.39,
+    20.98,
+    69.6,
+    208.35,
+    461.63,
+    672.4
+   ],
+   "clock": {
+    "2": {
+     "pairs": 19,
+     "median": 0.709,
+     "least": 0.454,
+     "most": 1.074
+    },
+    "4": {
+     "pairs": 15,
+     "median": 1.05,
+     "least": 0.864,
+     "most": 1.415
+    },
+    "8": {
+     "pairs": 11,
+     "median": 1.74,
+     "least": 1.245,
+     "most": 2.57
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.23534,
+      0.23566,
+      0.23625,
+      0.23676,
+      0.24374,
+      0.25678
+     ],
+     "drift": 0.02144,
+     "area": [
+      20.93,
+      41.55,
+      67.24,
+      135.34,
+      294.22,
+      672.4
+     ],
+     "peak": {
+      "area": 672.4,
+      "generation": 2048
+     },
+     "area_spread": [
+      0.78,
+      2.84,
+      2.93,
+      16.2,
+      29.18,
+      23.28
+     ],
+     "length": [
+      4.58,
+      6.45,
+      8.2,
+      11.63,
+      17.15,
+      25.93
+     ],
+     "growth_late": 1.156,
+     "growth_late_by_start": [
+      1.102,
+      1.149,
+      1.227
+     ],
+     "growth_overall": 0.986,
+     "scaling": 0.845,
+     "area_by_block_at_end": [
+      6.39,
+      20.98,
+      69.6,
+      208.35,
+      461.63,
+      672.4
+     ],
+     "clock": {
+      "2": {
+       "pairs": 19,
+       "median": 0.709,
+       "least": 0.454,
+       "most": 1.074
+      },
+      "4": {
+       "pairs": 15,
+       "median": 1.05,
+       "least": 0.864,
+       "most": 1.415
+      },
+      "8": {
+       "pairs": 11,
+       "median": 1.74,
+       "least": 1.245,
+       "most": 2.57
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.2342,
+      0.2368,
+      0.23953,
+      0.24404,
+      0.24781,
+      0.26628
+     ],
+     "drift": 0.03208,
+     "area": [
+      21.07,
+      40.69,
+      67.73,
+      139.09,
+      287.36,
+      618.03
+     ],
+     "peak": {
+      "area": 618.03,
+      "generation": 2048
+     },
+     "area_spread": [
+      0.84,
+      5.77,
+      2.96,
+      20.53,
+      41.13,
+      52.32
+     ],
+     "length": [
+      4.59,
+      6.38,
+      8.23,
+      11.79,
+      16.95,
+      24.86
+     ],
+     "growth_late": 1.076,
+     "growth_late_by_start": [
+      0.968,
+      1.152,
+      1.118
+     ],
+     "growth_overall": 0.968,
+     "scaling": 0.815,
+     "area_by_block_at_end": [
+      6.24,
+      20.36,
+      67.34,
+      199.78,
+      441.64,
+      618.03
+     ],
+     "clock": {
+      "2": {
+       "pairs": 19,
+       "median": 0.681,
+       "least": 0.454,
+       "most": 1.059
+      },
+      "4": {
+       "pairs": 15,
+       "median": 1.037,
+       "least": 0.882,
+       "most": 1.375
+      },
+      "8": {
+       "pairs": 11,
+       "median": 1.766,
+       "least": 1.229,
+       "most": 2.39
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 4,
+   "name": "B2/S0 against itself",
+   "rules": [
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "random",
+   "density": 0.5,
+   "why": "its territories grew in the contests",
+   "starts": 1,
+   "live": [
+    0.26557,
+    0.2643,
+    0.26368,
+    0.26409,
+    0.26401,
+    0.2622
+   ],
+   "shares": [
+    0.13105,
+    0.13115
+   ],
+   "holding": 2,
+   "apart": -0.875,
+   "changed": 0.373613,
+   "field": "species 1",
+   "called": "patches",
+   "share": [
+    0.13272,
+    0.13179,
+    0.13284,
+    0.13196,
+    0.13122,
+    0.13105
+   ],
+   "drift": -0.00167,
+   "area": [
+    7.43,
+    9.23,
+    10.13,
+    7.99,
+    11.0,
+    12.75
+   ],
+   "peak": {
+    "area": 12.75,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    2.73,
+    3.04,
+    3.18,
+    2.83,
+    3.32,
+    3.57
+   ],
+   "growth_late": 0.337,
+   "growth_late_by_start": [
+    0.337
+   ],
+   "growth_overall": 0.123,
+   "scaling": 0.287,
+   "area_by_block_at_end": [
+    2.06,
+    3.38,
+    5.66,
+    8.56,
+    10.68,
+    12.75
+   ],
+   "clock": {
+    "2": {
+     "pairs": 7,
+     "median": 0.278,
+     "least": 0.16,
+     "most": 0.329
+    },
+    "4": {
+     "pairs": 5,
+     "median": 0.261,
+     "least": 0.218,
+     "most": 0.323
+    },
+    "8": {
+     "pairs": 3,
+     "median": 0.288,
+     "least": 0.256,
+     "most": 0.3
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "patches",
+     "share": [
+      0.13272,
+      0.13179,
+      0.13284,
+      0.13196,
+      0.13122,
+      0.13105
+     ],
+     "drift": -0.00167,
+     "area": [
+      7.43,
+      9.23,
+      10.13,
+      7.99,
+      11.0,
+      12.75
+     ],
+     "peak": {
+      "area": 12.75,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      2.73,
+      3.04,
+      3.18,
+      2.83,
+      3.32,
+      3.57
+     ],
+     "growth_late": 0.337,
+     "growth_late_by_start": [
+      0.337
+     ],
+     "growth_overall": 0.123,
+     "scaling": 0.287,
+     "area_by_block_at_end": [
+      2.06,
+      3.38,
+      5.66,
+      8.56,
+      10.68,
+      12.75
+     ],
+     "clock": {
+      "2": {
+       "pairs": 7,
+       "median": 0.278,
+       "least": 0.16,
+       "most": 0.329
+      },
+      "4": {
+       "pairs": 5,
+       "median": 0.261,
+       "least": 0.218,
+       "most": 0.323
+      },
+      "8": {
+       "pairs": 3,
+       "median": 0.288,
+       "least": 0.256,
+       "most": 0.3
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "patches",
+     "share": [
+      0.13284,
+      0.13251,
+      0.13083,
+      0.13213,
+      0.1328,
+      0.13115
+     ],
+     "drift": -0.00169,
+     "area": [
+      7.43,
+      8.99,
+      10.4,
+      7.81,
+      9.98,
+      11.73
+     ],
+     "peak": {
+      "area": 11.73,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      2.73,
+      3.0,
+      3.23,
+      2.79,
+      3.16,
+      3.42
+     ],
+     "growth_late": 0.293,
+     "growth_late_by_start": [
+      0.293
+     ],
+     "growth_overall": 0.095,
+     "scaling": 0.274,
+     "area_by_block_at_end": [
+      2.04,
+      3.38,
+      5.59,
+      8.01,
+      9.54,
+      11.73
+     ],
+     "clock": {
+      "2": {
+       "pairs": 7,
+       "median": 0.284,
+       "least": 0.166,
+       "most": 0.303
+      },
+      "4": {
+       "pairs": 5,
+       "median": 0.278,
+       "least": 0.212,
+       "most": 0.303
+      },
+      "8": {
+       "pairs": 3,
+       "median": 0.274,
+       "least": 0.249,
+       "most": 0.274
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "contest",
+   "index": 4,
+   "name": "B2/S0 against itself",
+   "rules": [
+    "B2/S0",
+    "B2/S0"
+   ],
+   "tie_break": "standoff",
+   "density": 0.5,
+   "why": "its territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.24479,
+    0.24219,
+    0.2415,
+    0.24062,
+    0.23894,
+    0.23867
+   ],
+   "shares": [
+    0.1245,
+    0.11417
+   ],
+   "holding": 2,
+   "apart": -0.994,
+   "changed": 0.341257,
+   "field": "species 2",
+   "called": "keeps growing",
+   "share": [
+    0.12202,
+    0.12035,
+    0.11911,
+    0.11747,
+    0.11284,
+    0.11417
+   ],
+   "drift": -0.00785,
+   "area": [
+    14.66,
+    25.84,
+    44.57,
+    81.68,
+    147.1,
+    223.51
+   ],
+   "peak": {
+    "area": 223.51,
+    "generation": 2048
+   },
+   "area_spread": [
+    0.62,
+    3.39,
+    2.36,
+    23.97,
+    39.14,
+    22.19
+   ],
+   "length": [
+    3.83,
+    5.08,
+    6.68,
+    9.04,
+    12.13,
+    14.95
+   ],
+   "growth_late": 0.726,
+   "growth_late_by_start": [
+    0.972,
+    0.664,
+    0.597
+   ],
+   "growth_overall": 0.802,
+   "scaling": 1.135,
+   "area_by_block_at_end": [
+    2.55,
+    5.88,
+    16.34,
+    46.35,
+    115.98,
+    223.51
+   ],
+   "clock": {
+    "2": {
+     "pairs": 14,
+     "median": 0.645,
+     "least": 0.463,
+     "most": 0.776
+    },
+    "4": {
+     "pairs": 11,
+     "median": 0.943,
+     "least": 0.798,
+     "most": 1.131
+    },
+    "8": {
+     "pairs": 8,
+     "median": 1.388,
+     "least": 1.058,
+     "most": 1.95
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.12277,
+      0.12183,
+      0.12239,
+      0.12314,
+      0.1261,
+      0.1245
+     ],
+     "drift": 0.00173,
+     "area": [
+      14.98,
+      24.31,
+      42.54,
+      83.65,
+      132.45,
+      213.09
+     ],
+     "peak": {
+      "area": 213.09,
+      "generation": 2048
+     },
+     "area_spread": [
+      1.94,
+      2.68,
+      4.61,
+      18.62,
+      39.87,
+      52.84
+     ],
+     "length": [
+      3.87,
+      4.93,
+      6.52,
+      9.15,
+      11.51,
+      14.6
+     ],
+     "growth_late": 0.675,
+     "growth_late_by_start": [
+      0.824,
+      0.491,
+      0.703
+     ],
+     "growth_overall": 0.785,
+     "scaling": 1.14,
+     "area_by_block_at_end": [
+      2.5,
+      5.62,
+      15.44,
+      43.86,
+      108.98,
+      213.09
+     ],
+     "clock": {
+      "2": {
+       "pairs": 14,
+       "median": 0.645,
+       "least": 0.462,
+       "most": 0.799
+      },
+      "4": {
+       "pairs": 11,
+       "median": 0.904,
+       "least": 0.773,
+       "most": 1.137
+      },
+      "8": {
+       "pairs": 8,
+       "median": 1.326,
+       "least": 1.013,
+       "most": 1.801
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.12202,
+      0.12035,
+      0.11911,
+      0.11747,
+      0.11284,
+      0.11417
+     ],
+     "drift": -0.00785,
+     "area": [
+      14.66,
+      25.84,
+      44.57,
+      81.68,
+      147.1,
+      223.51
+     ],
+     "peak": {
+      "area": 223.51,
+      "generation": 2048
+     },
+     "area_spread": [
+      0.62,
+      3.39,
+      2.36,
+      23.97,
+      39.14,
+      22.19
+     ],
+     "length": [
+      3.83,
+      5.08,
+      6.68,
+      9.04,
+      12.13,
+      14.95
+     ],
+     "growth_late": 0.726,
+     "growth_late_by_start": [
+      0.972,
+      0.664,
+      0.597
+     ],
+     "growth_overall": 0.802,
+     "scaling": 1.135,
+     "area_by_block_at_end": [
+      2.55,
+      5.88,
+      16.34,
+      46.35,
+      115.98,
+      223.51
+     ],
+     "clock": {
+      "2": {
+       "pairs": 14,
+       "median": 0.645,
+       "least": 0.463,
+       "most": 0.776
+      },
+      "4": {
+       "pairs": 11,
+       "median": 0.943,
+       "least": 0.798,
+       "most": 1.131
+      },
+      "8": {
+       "pairs": 8,
+       "median": 1.388,
+       "least": 1.058,
+       "most": 1.95
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "pair",
+   "index": 511,
+   "name": "B013/S1 against B015/S1",
+   "rules": [
+    "B013/S1",
+    "B015/S1"
+   ],
+   "tie_break": "standoff",
+   "density": 1.0,
+   "why": "two rules whose territories grew in the contests",
+   "starts": 3,
+   "live": [
+    0.47536,
+    0.4763,
+    0.47514,
+    0.47451,
+    0.47073,
+    0.47222
+   ],
+   "shares": [
+    0.25851,
+    0.21371
+   ],
+   "holding": 2,
+   "apart": -0.995,
+   "changed": 0.299912,
+   "field": "species 1",
+   "called": "keeps growing",
+   "share": [
+    0.2623,
+    0.26388,
+    0.26273,
+    0.261,
+    0.25536,
+    0.25851
+   ],
+   "drift": -0.00379,
+   "area": [
+    47.49,
+    70.55,
+    119.41,
+    195.27,
+    327.7,
+    454.78
+   ],
+   "peak": {
+    "area": 454.78,
+    "generation": 2048
+   },
+   "area_spread": [
+    10.56,
+    3.46,
+    9.14,
+    5.36,
+    24.75,
+    50.25
+   ],
+   "length": [
+    6.89,
+    8.4,
+    10.93,
+    13.97,
+    18.1,
+    21.33
+   ],
+   "growth_late": 0.61,
+   "growth_late_by_start": [
+    0.528,
+    0.65,
+    0.643
+   ],
+   "growth_overall": 0.676,
+   "scaling": 1.019,
+   "area_by_block_at_end": [
+    4.31,
+    12.87,
+    38.87,
+    110.79,
+    267.65,
+    454.78
+   ],
+   "clock": {
+    "2": {
+     "pairs": 20,
+     "median": 0.62,
+     "least": 0.416,
+     "most": 0.778
+    },
+    "4": {
+     "pairs": 16,
+     "median": 0.793,
+     "least": 0.701,
+     "most": 0.845
+    },
+    "8": {
+     "pairs": 12,
+     "median": 0.977,
+     "least": 0.86,
+     "most": 1.291
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.2623,
+      0.26388,
+      0.26273,
+      0.261,
+      0.25536,
+      0.25851
+     ],
+     "drift": -0.00379,
+     "area": [
+      47.49,
+      70.55,
+      119.41,
+      195.27,
+      327.7,
+      454.78
+     ],
+     "peak": {
+      "area": 454.78,
+      "generation": 2048
+     },
+     "area_spread": [
+      10.56,
+      3.46,
+      9.14,
+      5.36,
+      24.75,
+      50.25
+     ],
+     "length": [
+      6.89,
+      8.4,
+      10.93,
+      13.97,
+      18.1,
+      21.33
+     ],
+     "growth_late": 0.61,
+     "growth_late_by_start": [
+      0.528,
+      0.65,
+      0.643
+     ],
+     "growth_overall": 0.676,
+     "scaling": 1.019,
+     "area_by_block_at_end": [
+      4.31,
+      12.87,
+      38.87,
+      110.79,
+      267.65,
+      454.78
+     ],
+     "clock": {
+      "2": {
+       "pairs": 20,
+       "median": 0.62,
+       "least": 0.416,
+       "most": 0.778
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.793,
+       "least": 0.701,
+       "most": 0.845
+      },
+      "8": {
+       "pairs": 12,
+       "median": 0.977,
+       "least": 0.86,
+       "most": 1.291
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.21306,
+      0.21243,
+      0.21241,
+      0.21351,
+      0.21537,
+      0.21371
+     ],
+     "drift": 0.00065,
+     "area": [
+      11.86,
+      17.59,
+      30.35,
+      47.29,
+      74.99,
+      111.04
+     ],
+     "peak": {
+      "area": 111.04,
+      "generation": 2048
+     },
+     "area_spread": [
+      3.0,
+      1.64,
+      2.19,
+      2.73,
+      7.56,
+      13.02
+     ],
+     "length": [
+      3.44,
+      4.19,
+      5.51,
+      6.88,
+      8.66,
+      10.54
+     ],
+     "growth_late": 0.616,
+     "growth_late_by_start": [
+      0.547,
+      0.658,
+      0.635
+     ],
+     "growth_overall": 0.659,
+     "scaling": 1.024,
+     "area_by_block_at_end": [
+      1.62,
+      3.63,
+      9.82,
+      26.84,
+      64.42,
+      111.04
+     ],
+     "clock": {
+      "2": {
+       "pairs": 12,
+       "median": 0.546,
+       "least": 0.4,
+       "most": 0.738
+      },
+      "4": {
+       "pairs": 9,
+       "median": 0.753,
+       "least": 0.666,
+       "most": 0.841
+      },
+      "8": {
+       "pairs": 6,
+       "median": 1.05,
+       "least": 0.943,
+       "most": 1.195
+      }
+     }
+    }
+   ]
+  },
+  {
+   "family": "copies",
+   "index": 2,
+   "name": "5 copies of B2378/S25678",
+   "rules": [
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678",
+    "B2378/S25678"
+   ],
+   "tie_break": "standoff",
+   "density": 1.0,
+   "why": "five species with one rule whose territories grew",
+   "starts": 1,
+   "live": [
+    0.4516,
+    0.45571,
+    0.46275,
+    0.47468,
+    0.52881,
+    0.68633
+   ],
+   "shares": [
+    0.12738,
+    0.16408,
+    0.13023,
+    0.11892,
+    0.14572
+   ],
+   "holding": 5,
+   "apart": -0.238,
+   "changed": 0.268363,
+   "field": "species 3",
+   "called": "keeps growing",
+   "share": [
+    0.08762,
+    0.08684,
+    0.08654,
+    0.09064,
+    0.10127,
+    0.13023
+   ],
+   "drift": 0.04261,
+   "area": [
+    55.18,
+    95.8,
+    184.02,
+    306.58,
+    592.74,
+    1477.91
+   ],
+   "peak": {
+    "area": 1477.91,
+    "generation": 2048
+   },
+   "area_spread": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "length": [
+    7.43,
+    9.79,
+    13.57,
+    17.51,
+    24.35,
+    38.44
+   ],
+   "growth_late": 1.135,
+   "growth_late_by_start": [
+    1.135
+   ],
+   "growth_overall": 0.924,
+   "scaling": 0.866,
+   "area_by_block_at_end": [
+    11.58,
+    42.75,
+    150.22,
+    445.13,
+    901.9,
+    1477.91
+   ],
+   "clock": {
+    "2": {
+     "pairs": 21,
+     "median": 0.72,
+     "least": 0.493,
+     "most": 1.329
+    },
+    "4": {
+     "pairs": 16,
+     "median": 1.204,
+     "least": 0.865,
+     "most": 1.93
+    },
+    "8": {
+     "pairs": 12,
+     "median": 1.893,
+     "least": 1.201,
+     "most": 3.23
+    }
+   },
+   "territories": [
+    {
+     "field": "species 1",
+     "called": "keeps growing",
+     "share": [
+      0.0894,
+      0.08997,
+      0.09348,
+      0.09161,
+      0.10134,
+      0.12738
+     ],
+     "drift": 0.03798,
+     "area": [
+      34.65,
+      61.57,
+      101.13,
+      255.34,
+      601.08,
+      1329.93
+     ],
+     "peak": {
+      "area": 1329.93,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      5.89,
+      7.85,
+      10.06,
+      15.98,
+      24.52,
+      36.47
+     ],
+     "growth_late": 1.19,
+     "growth_late_by_start": [
+      1.19
+     ],
+     "growth_overall": 1.072,
+     "scaling": 0.779,
+     "area_by_block_at_end": [
+      11.78,
+      43.74,
+      154.3,
+      451.8,
+      935.79,
+      1329.93
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.75,
+       "least": 0.416,
+       "most": 1.323
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.26,
+       "least": 0.689,
+       "most": 1.781
+      },
+      "8": {
+       "pairs": 12,
+       "median": 2.085,
+       "least": 1.259,
+       "most": 3.906
+      }
+     }
+    },
+    {
+     "field": "species 2",
+     "called": "keeps growing",
+     "share": [
+      0.09315,
+      0.09579,
+      0.09713,
+      0.10409,
+      0.11813,
+      0.16408
+     ],
+     "drift": 0.07093,
+     "area": [
+      40.17,
+      74.58,
+      113.86,
+      196.93,
+      505.68,
+      1362.44
+     ],
+     "peak": {
+      "area": 1362.44,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      6.34,
+      8.64,
+      10.67,
+      14.03,
+      22.49,
+      36.91
+     ],
+     "growth_late": 1.395,
+     "growth_late_by_start": [
+      1.395
+     ],
+     "growth_overall": 0.986,
+     "scaling": 0.758,
+     "area_by_block_at_end": [
+      12.07,
+      44.92,
+      159.24,
+      476.39,
+      1007.62,
+      1362.44
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.739,
+       "least": 0.416,
+       "most": 1.341
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.06,
+       "least": 0.72,
+       "most": 1.924
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.859,
+       "least": 1.232,
+       "most": 3.068
+      }
+     }
+    },
+    {
+     "field": "species 3",
+     "called": "keeps growing",
+     "share": [
+      0.08762,
+      0.08684,
+      0.08654,
+      0.09064,
+      0.10127,
+      0.13023
+     ],
+     "drift": 0.04261,
+     "area": [
+      55.18,
+      95.8,
+      184.02,
+      306.58,
+      592.74,
+      1477.91
+     ],
+     "peak": {
+      "area": 1477.91,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      7.43,
+      9.79,
+      13.57,
+      17.51,
+      24.35,
+      38.44
+     ],
+     "growth_late": 1.135,
+     "growth_late_by_start": [
+      1.135
+     ],
+     "growth_overall": 0.924,
+     "scaling": 0.866,
+     "area_by_block_at_end": [
+      11.58,
+      42.75,
+      150.22,
+      445.13,
+      901.9,
+      1477.91
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.72,
+       "least": 0.493,
+       "most": 1.329
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.204,
+       "least": 0.865,
+       "most": 1.93
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.893,
+       "least": 1.201,
+       "most": 3.23
+      }
+     }
+    },
+    {
+     "field": "species 4",
+     "called": "keeps growing",
+     "share": [
+      0.09091,
+      0.09226,
+      0.09398,
+      0.09341,
+      0.10067,
+      0.11892
+     ],
+     "drift": 0.02801,
+     "area": [
+      37.64,
+      76.76,
+      129.75,
+      224.02,
+      599.71,
+      1232.71
+     ],
+     "peak": {
+      "area": 1232.71,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      6.13,
+      8.76,
+      11.39,
+      14.97,
+      24.49,
+      35.11
+     ],
+     "growth_late": 1.23,
+     "growth_late_by_start": [
+      1.23
+     ],
+     "growth_overall": 0.996,
+     "scaling": 0.764,
+     "area_by_block_at_end": [
+      11.52,
+      42.41,
+      147.6,
+      427.2,
+      859.05,
+      1232.71
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.711,
+       "least": 0.497,
+       "most": 1.269
+      },
+      "4": {
+       "pairs": 16,
+       "median": 1.13,
+       "least": 0.835,
+       "most": 1.774
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.919,
+       "least": 1.173,
+       "most": 2.821
+      }
+     }
+    },
+    {
+     "field": "species 5",
+     "called": "keeps growing",
+     "share": [
+      0.09052,
+      0.09085,
+      0.09162,
+      0.09493,
+      0.1074,
+      0.14572
+     ],
+     "drift": 0.0552,
+     "area": [
+      55.93,
+      72.97,
+      119.83,
+      198.27,
+      437.44,
+      1221.97
+     ],
+     "peak": {
+      "area": 1221.97,
+      "generation": 2048
+     },
+     "area_spread": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "length": [
+      7.48,
+      8.54,
+      10.95,
+      14.08,
+      20.91,
+      34.96
+     ],
+     "growth_late": 1.312,
+     "growth_late_by_start": [
+      1.312
+     ],
+     "growth_overall": 0.878,
+     "scaling": 0.711,
+     "area_by_block_at_end": [
+      11.83,
+      43.82,
+      154.48,
+      456.12,
+      972.65,
+      1221.97
+     ],
+     "clock": {
+      "2": {
+       "pairs": 21,
+       "median": 0.719,
+       "least": 0.407,
+       "most": 1.33
+      },
+      "4": {
+       "pairs": 16,
+       "median": 0.991,
+       "least": 0.673,
+       "most": 1.861
+      },
+      "8": {
+       "pairs": 12,
+       "median": 1.636,
+       "least": 1.127,
+       "most": 2.846
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

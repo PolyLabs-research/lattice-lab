@@ -14,8 +14,12 @@ whether the large grids agree with each other (`examples/scale-up-gap`): all nin
 held, and nothing creeps with the size of the grid. Step 4, the zoom-out, has its instrument,
 a first look and a registered test (`examples/scale-up-closure`: 43 of 45 predictions held):
 zoomed out, these worlds are maps of where things still move, with one exact law and a rule
-that is nearly the same at every time but not at every scale. Step 5 is not built. The
-decisions that are yours are at the end.
+that is nearly the same at every time but not at every scale. A search of the lab's rule
+sets for a world organised over a growing distance, which those two are not
+(`examples/scale-up-search`, exploratory), found that such worlds are rare, that most of
+what grows is one kind of ground taking the whole grid, and that species with one rule
+between them can hold territories that go on growing, under the standoff above all. Step 5
+is not built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -685,6 +689,320 @@ two misses above on the record.
   and a world where something is organised over a growing distance. Neither of these two
   worlds is one, and that is the main thing steps 2 to 4 have established about them.
 
+### Step 4b: the search for a world that organises itself (exploratory, 2026-11-24)
+
+Step 4 ended on what its two worlds lack: nothing in them is organised over more than a few
+cells, at any age. You chose to look for a world that is different before spending more on
+those two (decision D8). This is that search. **Nothing in it is registered.** It sorts
+worlds on a small grid, picks candidates, and runs the picks again on a larger grid from
+fresh starts. What comes out is a candidate for a registered test, not the result of one.
+
+**The measure** (`examples/scale-up-search/organised.py`). Take the live cells, or one
+species' cells, as a field of 0s and 1s with mean p. Cut the grid into b x b blocks and add
+up each block. Were the cells independent, the sums would scatter with variance b² p (1 - p).
+The **correlation area** at block b is how many times more they scatter than that:
+
+    area(b) = variance of the block sums / (b² p (1 - p))
+
+- It is 1 where cells are independent.
+- As the block grows it levels at the number of cells that go together.
+- Inside domains larger than the block it is the block's own area, b².
+
+So three numbers describe a world: the area at the largest block, the power of the block it
+is still growing as there (0 once it has levelled), and the power of time it grows as. A
+pattern can be ordered without its sums scattering (a chequerboard puts the same sum in
+every block), so the live cells are also read against three masks of +1 and -1 by turns:
+chequered, rows and columns.
+
+A fourth number says **which clock goes with a zoom-out** (`organised.clock`). If a world
+seen through blocks twice the size, some number of times later, is the same picture, each
+block's cells go together as they did, and the area, which counts cells, is four times what
+it was. So
+
+    area(2b, wait x t) / (4 area(b, t))
+
+is 1 where the wait is the right one, under 1 where it is too short and over 1 where it is
+too long. Step 4 took the wait to be 2, the clock at the block. A world of patches has no
+such clock: its area does not move, and the number is a quarter whatever the wait.
+
+The measure gives the answers that are known (`tests/test_scale_up_search.py`): 1 at every
+block for independent cells; the block's own area inside tiles of 8 x 8 and 64 from there
+on; 0 for a chequerboard, and b² against its own mask; a clock of four waits for a made-up
+world whose domains have a side of the square root of its age.
+
+**The screen** (`search.py`): 2,407 worlds, each once from a half-full mixed start (start
+11001) on a wrapped grid of side 256 for 512 generations, read at generations 32 to 512
+through blocks of 2 to 32. It took 59 minutes on two cores. By the field of its that has the
+largest area at block 32 at the end, a world is called:
+
+- **growing**: 16 cells or more, still growing as the 0.25 power of time or faster over the
+  last three readings;
+- **organised**: 16 cells or more, no longer growing;
+- **patches**: less than 16 cells, which is what the worlds of steps 2 to 4 are;
+- **dead**: nothing alive at the end, or nothing empty.
+
+The thresholds sort, they do not claim. Of the 2,407 worlds, 132 repeat a rule already
+drawn (the draws below say how), so 2,275 are different, and the table counts each once.
+Nine in ten of them have an area under 6.6 cells; 107 have 16 or more, and half of those (53)
+grow slower than the 0.1 power of time.
+
+| Family | Worlds | Dead | Patches | Organised | Growing |
+| --- | --- | --- | --- | --- | --- |
+| known: Life, HighLife, Life against HighLife, soup 19, Vote, Anneal, Day and Night | 7 | 0 | 2 | 3 | 2 |
+| soups of 2 species: 150 rule sets drawn as `latticelife autorun` draws them, under the draw and under the standoff | 300 | 5 | 282 | 5 | 8 |
+| soups of 3 species, the same | 300 | 4 | 287 | 2 | 7 |
+| soups of 5 species, the same | 300 | 1 | 282 | 12 | 5 |
+| one species: 1,200 draws from all 262,144 rules, each count in the birth set and in the survival set with chance one half (1,196 different rules) | 1,196 | 42 | 1,108 | 26 | 20 |
+| one species, near majority: 300 draws of a rule born and surviving at or above a threshold, with up to two counts changed (172 different rules, of the 2,056 there are) | 172 | 73 | 82 | 17 | 0 |
+| all | 2,275 | 125 | 2,043 | 65 | 42 |
+
+- **Growing is rare, and patches are the rule.** Nine worlds in ten are patches. 42 grow: 20
+  of the 1,196 one-species rules (one in sixty) and 20 of the 900 soups (16 of the 450 rule
+  sets under one tie-break or the other, 4 under both).
+- **A soup that grows is mostly one species left alone.** A species holds ground if it has
+  one cell in twenty at the end. Two or more do in 552 of the 900 soups, and nearly all of
+  those are patches. Of the 20 growing soups, 9 have one species left and one has none, and
+  those have the large areas (up to 450 cells); the 10 where two or more hold ground have
+  areas of 18 to 60 cells.
+- **Near-majority rules mostly freeze or die.** None of the 172 drawn grows: 73 die out or
+  fill the grid, 82 are patches, and 17 organise and stop (in 13 of them nothing changes
+  again), as Vote does. Anneal and Day and Night, whose domains keep growing, are both in
+  that family (each is a threshold rule with two counts changed) and were not among the
+  draws: growing is as rare there as anywhere.
+- **Eight of the 20 growing rules are ordered in stripes**, found against the masks of rows
+  and columns, and 12 in the live cells themselves.
+- **The two worlds of steps 2 to 4**: Life against HighLife has an area of 7.5 cells, where
+  step 3 read about 6 off the spread of its live fraction between starts. Soup 19 under the
+  standoff is ordered in rows over about 50 cells and is not growing; step 4 did not look
+  for that.
+
+**The contests** (`contests.py`; 312 worlds, 12 minutes). A rule that grows alone is not yet
+a competition, so each of the 29 one-species rules that grew (the 2 known, the 20 of the
+even draw, and 7 that were the last species of a soup) got a rival: a second species with
+the same rule. In this lab a species counts only its own kind, so the two meet in two ways
+only: a cell holds one of them at a time, and where both would be born into the same empty
+cell the tie-break settles it. Each contest was run from a full start (every cell live,
+half of them each species) and from a half-full one, under the draw and under the standoff,
+on the screen's grid. The two species **keep apart** if their counts in a block go against
+each other (a correlation of -0.5 or under over the blocks of 32); they hold **territories**
+if they keep apart and one of them has an area of 16 cells or more.
+
+| A rule against a copy of itself, 29 rules | Both dead | Mixed in patches | Organised, not apart | Standing territories | Growing territories |
+| --- | --- | --- | --- | --- | --- |
+| full start, the draw | 2 | 25 | 0 | 1 | 1 |
+| full start, the standoff | 3 | 22 | 0 | 1 | 3 |
+| half-full start, the draw | 2 | 24 | 2 | 0 | 1 |
+| half-full start, the standoff | 3 | 22 | 0 | 0 | 4 |
+
+- **A rival usually undoes the organisation.** In 93 of the 116 contests both species hold
+  ground in patches, with nothing left of the domains the rule made alone. Anneal and Day
+  and Night die against their own copy, from both starts and under both tie-breaks: each
+  species needs a majority of its own kind around a cell, and its rival is in the way.
+- **Four rules of the 29 hold growing territories against their copy**: B2378/S25678 from
+  both starts under both tie-breaks; B015/S1 and B237/S025678 from both starts under the
+  standoff; B2/S0 from the half-full start under the standoff (from the full one its
+  territories form and stand).
+- **The standoff makes territories where the draw mixes.** Seven of the nine contests with
+  growing territories are under the standoff. B015/S1 and B237/S025678 are the same two
+  worlds under both tie-breaks until a cell is contested: left empty, the species sort
+  themselves apart; drawn for, they stay mixed. Step 2's registered test found that the
+  tie-break changes a world only where contests are common. Here it decides what kind of
+  world it is.
+- **Different rules do not share a grid in territories.** The twelve strongest rules against
+  each other, two at a time (132 contests): one species is left in 45, they mix in patches
+  in 77, both die in 5, something is organised without their keeping apart in 4, and one
+  pair of the 66 holds growing territories (B013/S1 against B015/S1, under the standoff).
+  The four rules above against each other (12 contests): one is left, every time.
+  Territories are a thing between species with the same rule.
+- **Territories take more than two species.** The four rules as three species and as five,
+  all with the one rule, from a full start (16 contests): B2378/S25678 holds growing
+  territories with three and with five under both tie-breaks, and all five species keep
+  ground (5% to 14% of the grid each); so does B237/S025678, more weakly under the draw;
+  B2/S0's territories stand with three and grow with five; B015/S1's do not survive a third
+  species (all die under the standoff, and mix under the draw). With n species sharing the
+  grid out, one species' count in a block goes against another's as -1 / (n - 1), and that
+  is what B2378/S25678 gives: -0.50 with three and -0.25 with five.
+- **The species need not be the same, but they must be close.** B2378/S25678 against each
+  of the 18 rules one count away from it, from a full start (36 contests). A rival with one
+  count more takes the grid, whichever count it is (all nine, under both tie-breaks). A
+  rival with one count fewer loses the grid if the count is a low one (birth on 2 or 3,
+  survival on 2 or 5), and holds territories beside it if the count is a high one: birth
+  on 7 or 8, or survival on 6, 7 or 8, under the draw, and all of those but survival on 6
+  under the standoff. Without birth on 8, or without survival on 8, the two stay level to
+  generation 512 (0.21 to 0.29 of the grid each); with the others the fuller rule gains
+  slowly, so those territories are a slow takeover.
+
+**The candidates again** (`confirm.py`). The screen and the contests each read a world
+once on a small grid, and a world picked out of thousands for its reading has a reading that
+flatters it. So the picks were run again where the reading did not pick them: 38 worlds on a
+grid of side 1,024 for 2,048 generations from a fresh start (12001), read at generations 64
+to 2,048 through blocks of 4 to 128. The picks are the seven known worlds; the ten
+one-species rules with the largest areas in the screen, and the rules of the contests below;
+the four soups with the largest areas in which two or more species hold ground, and the four
+in which one is left; the four rules whose own contest held growing territories, each under
+both tie-breaks; the one pair of different rules that did; and five copies of B2378/S25678.
+A known world, a rule alone, a contest or a pair whose first start kept growing was run from
+two more starts (56 runs in all).
+
+The larger grid needs two more words than the screen had. A world **keeps growing** only if
+the field that grows keeps its share of the grid. If that share moves by a fifth of the grid
+or more, or its smaller side halves, one kind of ground is **taking over**: the growth is
+real, and it ends when that ground has the grid. A world where it has is **taken over**.
+
+| World | Kind, tie-break, start | Starts | Called | Field | Area at generations 64 / 256 / 1,024 / 2,048 | Power of time | Clock x2 / x4 / x8 | Share of the grid |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Life | known, half | 1 | organised | live | 14 / 18 / 24 / 24 | -0.08 | 0.33 / 0.37 / 0.38 | 0.11 → 0.03 |
+| HighLife | known, half | 1 | patches | live | 12 / 18 / 22 / 5 | -1.08 | 0.31 / 0.34 / 0.34 | 0.14 → 0.02 |
+| Life against HighLife | known, standoff, half | 1 | patches | species 1 | 14 / 14 / 8 / 5 | -0.80 | 0.28 / 0.23 / 0.15 | 0.06 → 0.03 |
+| soup 19 | known, standoff, half | 1 | organised | rows | 80 / 94 / 97 / 96 | -0.00 | 0.40 / 0.41 / 0.41 | 0.49 → 0.50 |
+| Vote | known, half | 1 | organised | live | 33 / 33 / 33 / 33 | 0.00 | 0.28 / 0.28 / 0.28 | 0.50 → 0.50 |
+| Anneal | known, half | 3 | keeps growing | live | 160 / 540 / 1,770 / 3,142 | 0.84 | 0.77 / 0.97 / 1.25 | 0.50 → 0.48 |
+| Day and Night | known, half | 3 | keeps growing | live | 97 / 662 / 1,831 / 2,864 | 0.66 | 0.88 / 1.03 / 1.40 | 0.50 → 0.52 |
+| B01245/S235 | alone, half | 1 | taking over | live | 211 / 684 / 1,572 / 2,153 | 0.47 | 0.73 / 0.90 / 1.06 | 0.30 → 0.02 |
+| B0124578/S0134 | alone, half | 1 | taken over | live | 187 / 351 / – / – | – | – | 0.20 → 0.00 |
+| B013/S1 | alone, quarter | 1 | dead | live | 44 / – / – / – | – | – | 0.01 → 0.00 |
+| B456/S0124678 | alone, half | 1 | taking over | live | 10 / 194 / 5,606 / 4,534 | 0.65 | 1.41 / 4.21 / 8.36 | 0.93 → 0.06 |
+| B012457/S14 | alone, half | 3 | keeps growing | live | 66 / 512 / 1,645 / 2,805 | 0.80 | 0.90 / 1.03 / 1.52 | 0.50 → 0.53 |
+| B012358/S0125 | alone, half | 1 | taking over | live | 150 / 536 / 1,411 / 2,531 | 0.79 | 0.78 / 0.93 / 1.10 | 0.64 → 0.92 |
+| B027/S2 | alone, sixth | 1 | taken over | live | 70 / 121 / – / – | – | – | 0.10 → 0.01 |
+| B012348/S01246 | alone, half | 1 | taking over | live | 311 / 850 / 2,075 / 2,432 | 0.44 | 0.73 / 0.94 / 1.10 | 0.32 → 0.03 |
+| B015/S1 | alone, quarter | 1 | organised | live | 21 / 21 / 21 / 21 | 0.00 | 0.28 / 0.28 / 0.28 | 0.36 → 0.36 |
+| B138/S123 | alone, quarter | 1 | organised | rows | 22 / 207 / 480 / 502 | 0.18 | 0.86 / 1.15 / 2.18 | 0.42 → 0.49 |
+| B2378/S25678 | alone, half | 1 | taken over | live | 5 / 77 / 4 / 4 | -2.46 | 0.48 / 0.04 / 0.08 | 0.51 → 0.96 |
+| B2/S0 | alone, sixth | 1 | patches | live | 2 / 2 / 2 / 3 | 0.07 | – / – / – | 0.22 → 0.22 |
+| B237/S025678 | alone, half | 1 | taken over | live | 5 / 83 / 5 / 5 | -2.25 | 0.51 / 0.03 / 0.08 | 0.51 → 0.95 |
+| soup 5 50092 | soup, shared, standoff, half | 1 | keeps growing | species 3 | 23 / 58 / 114 / 195 | 0.64 | 0.54 / 0.66 / 0.77 | 0.08 → 0.09 |
+| soup 3 30145 | soup, shared, draw, half | 1 | keeps growing | species 3 | 13 / 45 / 160 / 183 | 0.45 | 0.60 / 0.96 / 1.66 | 0.07 → 0.24 |
+| soup 5 50149 | soup, shared, standoff, half | 1 | keeps growing | species 4 | 15 / 42 / 95 / 192 | 0.71 | 0.52 / 0.77 / 1.06 | 0.05 → 0.04 |
+| soup 3 30046 | soup, shared, standoff, half | 1 | organised | species 3 | 13 / 29 / 52 / 54 | 0.18 | 0.42 / 0.49 / 0.55 | 0.10 → 0.11 |
+| soup 2 20032 | soup, one left, standoff, half | 1 | keeps growing | live | 199 / 681 / 2,278 / 3,780 | 0.78 | 0.77 / 1.00 / 1.25 | 0.47 → 0.51 |
+| soup 3 30044 | soup, one left, standoff, half | 1 | keeps growing | live | 37 / 337 / 1,300 / 2,079 | 0.79 | 0.89 / 1.12 / 1.79 | 0.41 → 0.57 |
+| soup 2 20093 | soup, one left, draw, half | 1 | taking over | species 1 | 139 / 336 / 836 / 816 | 0.28 | 0.56 / 0.83 / 1.02 | 0.67 → 0.99 |
+| soup 2 20092 | soup, one left, draw, half | 1 | organised | columns | 23 / 285 / 595 / 658 | 0.21 | 0.82 / 1.12 / 2.09 | 0.42 → 0.49 |
+| B2378/S25678 | against its copy, draw, full | 3 | keeps growing | species 2 | 22 / 104 / 877 / 3,008 | 1.80 | 0.85 / 1.78 / 3.74 | 0.25 → 0.40 |
+| B2378/S25678 | against its copy, standoff, full | 3 | keeps growing | species 1 | 46 / 169 / 1,199 / 2,449 | 1.32 | 0.84 / 1.73 / 3.09 | 0.23 → 0.42 |
+| B015/S1 | against its copy, draw, full | 1 | patches | columns | 1 / 1 / 1 / 1 | 0.03 | – / – / – | 0.94 → 0.94 |
+| B015/S1 | against its copy, standoff, full | 3 | keeps growing | species 1 | 77 / 174 / 447 / 736 | 0.68 | 0.68 / 0.91 / 1.11 | 0.22 → 0.20 |
+| B237/S025678 | against its copy, draw, full | 1 | patches | species 1 | 2 / 3 / 3 / 3 | 0.05 | – / – / – | 0.27 → 0.27 |
+| B237/S025678 | against its copy, standoff, full | 3 | keeps growing | species 1 | 21 / 67 / 294 / 672 | 1.16 | 0.71 / 1.05 / 1.74 | 0.24 → 0.26 |
+| B2/S0 | against its copy, draw, half | 1 | patches | species 1 | 7 / 10 / 11 / 13 | 0.34 | 0.28 / 0.26 / 0.29 | 0.13 → 0.13 |
+| B2/S0 | against its copy, standoff, half | 3 | keeps growing | species 2 | 15 / 45 / 147 / 224 | 0.73 | 0.65 / 0.94 / 1.39 | 0.12 → 0.11 |
+| B013/S1 against B015/S1 | two rules, standoff, full | 3 | keeps growing | species 1 | 47 / 119 / 328 / 455 | 0.61 | 0.62 / 0.79 / 0.98 | 0.26 → 0.26 |
+| 5 copies of B2378/S25678 | five copies, standoff, full | 1 | keeps growing | species 3 | 55 / 184 / 593 / 1,478 | 1.14 | 0.72 / 1.20 / 1.89 | 0.09 → 0.13 |
+
+The area is the correlation area at blocks of 128, the mean of the starts. The power of time
+is over the last three readings. The clock is the area at twice the block and two, four or
+eight times later, over four times the area: 1 where a zoom-out by two goes with that wait. A
+rule alone that grew as the last species of a soup starts from the share of the grid it had
+there (a quarter or a sixth), and the soups start as they did in the screen.
+
+- **Most of the screen's strong growers are takeovers.** Of the 13 one-species rules, one
+  keeps growing with its two kinds of ground level (B012457/S14). Four are taking the grid
+  over and four have: among those, B2378/S25678 and B237/S025678, whose dense ground holds
+  95% of the cells by generation 1,024. Two have set (B138/S123 in stripes that go together
+  over about 500 cells, B015/S1 at 21), and two leave patches or nothing. A takeover is
+  organised over a growing distance while it lasts, and no longer.
+- **Growth with the grounds level looks the same wherever it turns up.** Anneal, Day and
+  Night, B012457/S14 and soup 20032 all reach 2,800 to 3,800 cells by generation 2,048, and
+  in all four a zoom-out by two goes with waiting four times as long: 0.97, 1.03, 1.03 and
+  1.00. The powers of time in the table (0.66 to 0.84) are floors: by the end a block of
+  128 is no longer much larger than a domain, and the area is still rising with the block.
+  The clock compares like with like and does not have that fault.
+- **A soup can set that balance up by accident.** In soup 20032 one species dies within the
+  first generations, and what it leaves is the survivor (B013/S1) with its two kinds of
+  ground level, which then grow as Anneal's do. The same rule alone, from the quarter of the
+  grid it had in the soup, goes uniform within 128 generations. So the soup is run as the
+  soup, and the species that dies is part of the start.
+- **The soups in which species share the grid.** Three of the four still grow at generation
+  2,048, with areas of 180 to 195 cells where the worlds above have thousands, and each is
+  its own case: in 50092 two of the five species are left and both spread slowly; in 30145
+  one species (B3/S234) is spreading through the other two, its share up from 0.07 to 0.24;
+  in 50149 two species sit in a still pattern while two others organise. None is a world of
+  territories.
+- **Territories hold up under the standoff, and only there for three of the four rules.**
+  All four rules keep growing territories against their copy under the standoff, on a grid
+  sixteen times the contests' and from three fresh starts each, and so does the pair of
+  different rules. Under the draw only B2378/S25678 does: the other three are patches (areas
+  of 1 to 13 cells). Where there are territories the species keep apart as cleanly as the
+  measure can say (-0.94 to -1.00), and in B015/S1, B2/S0 and the pair each species' share
+  of the grid stays where it was at generation 64, to within two cells in a hundred.
+- **The clock is not the same in every world of territories.** A zoom-out by two goes with
+  waiting four times as long in B237/S025678 (1.05) and B2/S0 (0.94), as in the one-species
+  worlds; with between four and eight times in B015/S1 (0.91 at four, 1.11 at eight); and
+  with eight times in the pair (0.98).
+- **B2378/S25678 against its copy does two things at once.** Its two species sort into
+  territories within a few hundred generations. Then each fills in its own territory with
+  the dense ground the rule makes when it is alone, and the live cells go from just under
+  half of the grid to 0.76 (the draw) and 0.88 (the standoff) by generation 2,048. The area
+  counts both, which is why it grows faster than the first power of time there and why its
+  clock falls between two and four. Five copies do the same, and all five species still
+  hold 12% to 16% of the grid at generation 2,048.
+- **Life has a longer reach than the screen saw.** Its 24 cells are still rising with the
+  block at blocks of 128 (as about the 0.6 power) and are not growing in time. Life against
+  HighLife levels at 5 cells: the two worlds of steps 2 to 4 stay what step 4 said they
+  were, apart from soup 19's rows, which go together over about 96 cells from generation
+  256 on.
+
+**The longer look** (`long.py`). Generation 2,048 cannot say what is left of B2378/S25678's
+territories once the filling-in is over: territories that go on growing, or a map that has
+set. So Anneal, the four contests with the largest territories and the world of five copies
+were run to generation 16,384, on a grid of side 512 so that a run costs twice a confirm run
+and not eight times, from one start each, read through blocks of up to 64.
+
+- **The territories go on growing until the grid runs out.** In B2378/S25678 against its
+  copy the filling-in is over by about generation 4,096 (live cells 0.91 of the grid), and
+  the area at blocks of 64 goes on rising: 1,150, 1,880, 2,370 and 2,970 cells at
+  generations 2,048 to 16,384 under the standoff, and 1,770 to 3,240 under the draw. A block
+  of 64 has 4,096 cells, so by the end most blocks lie inside one territory, and the grid
+  holds a handful of them. B237/S025678 does the same later (it fills in between
+  generations 2,048 and 16,384), and B015/S1 without any filling-in: its live cells stay
+  between 0.445 and 0.452 of the grid for the whole run.
+- **Anneal does the same thing on this grid.** Its area rises to generation 4,096 and then
+  levels near 2,900 as one of its two grounds takes the grid (live cells 0.53 to 0.94), which
+  is what running out of grid looks like in this measure.
+- **As the territories grow, the species stop being level.** On this grid, by generation
+  16,384, one of B2378/S25678's two species holds 0.59 of the cells and the other 0.37
+  (under both tie-breaks), one of B015/S1's has fallen from 0.22 to 0.10, and of the five
+  copies one is down to 0.03. With fewer and larger territories a species can lose its last
+  one. Whether that is the grid's size or the world's own law is not something one start on
+  one grid can say.
+
+**What the search shows.**
+
+1. **A world organised over a growing distance is rare, and most of what looks like one is
+   a takeover.** About one rule set in fifty grows on the small grid (42 of 2,275). Of the
+   13 strongest one-species rules, the large grid leaves one that keeps growing.
+2. **What keeps growth going is balance:** two or more kinds of ground none of which can
+   take the grid. Three one-species rules have it here (Anneal, Day and Night and
+   B012457/S14), and a soup can fall into it.
+3. **Competition can supply the balance.** Species with one rule between them are level by
+   construction. Whether they then sort into territories depends on the rule (four of the
+   29 that grow alone) and on the tie-break: left empty, a contested cell is a border.
+   B2378/S25678 is the sturdiest: both tie-breaks, both starts, two, three and five species,
+   and rivals a count away from it.
+4. **A rival is otherwise no help.** It undoes the domains of most rules that grow alone,
+   and Anneal and Day and Night die of it.
+5. **The lab's soups, as drawn, do not hold such a world.** Rule sets with a few counts each
+   give patches nineteen times in twenty; where a soup grows it is mostly one species left;
+   and the few that grow with species sharing the grid are small and each its own case.
+6. **The clock that goes with a zoom-out belongs to the world.** Four times the wait for a
+   block twice the size where the grounds are level, so the square of the block; up to
+   eight times in two worlds of territories whose species keep their shares; and none at all
+   in a world of patches. Step 4 slowed the clock by the block. No world here that keeps
+   growing runs on that clock, so a zoom-out of one of them has to choose its clock, and
+   `zoom.py` already takes one per block.
+
+**What it does not show.** Nothing here is registered. The screen read each world once, on
+one grid, and a world its thresholds missed is missed: a slow grower under 16 cells at
+generation 512, or one that needs another start than a half-full mix. The large-grid runs
+stop at generation 2,048 and the longer ones are one start each on a grid that runs out. The
+powers of time are floors, for the reason given above. That a takeover ends where it does
+whatever the size of the grid is an inference from one size. And nothing here says why
+B2378/S25678's species keep apart, or why four rules do it and 25 do not.
+
+**Gate:** none, as nothing was registered. What it gives is the candidate worlds and the
+question for decision D9.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -718,6 +1036,10 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4, the first look, 48 runs read through blocks | up to 1.0 million | up to 1,024 | 30 minutes with its analysis | here, two cores |
 | step 4, the registered test, 22 runs read through blocks | up to 4.2 million | up to 1,024 | 47 minutes with its analysis | here, two cores |
 | step 3b, sides 1024, 2048 and 4096, 512 runs | up to 16.8 million | 1,000 | 2 hours 11 minutes on sixteen cores of a pod, $2.49 | a pod |
+| step 4b, the screen, 2,407 worlds read through blocks | 65,536 | 512 | 59 minutes | here, two cores |
+| step 4b, the contests, 312 worlds | 65,536 | 512 | 12 minutes | here, two cores |
+| step 4b, the candidates again, 56 runs | 1.0 million | 2,048 | about 1 hour 50 minutes, with pauses while another job had the machine | here, two cores |
+| step 4b, the longer look, 6 runs | 262,144 | 16,384 | 18 minutes | here, two cores |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -886,21 +1208,37 @@ What each one gives:
 - **D3. Where a probabilistic coarse rule lives.** Done as recommended: plain tables of what
   came next, in lattice-lab (`examples/scale-up-closure/zoom.py`). No closed form has shown
   up that would call for Kepler, apart from the one number that is the same at every block.
-- **D8. Where the ladder goes next** (new, 2026-11-24). Three ways on from step 4, cheapest
-  first: (a) richer symbols for the pair, since the first look says they carry much further;
-  (b) a search of the lab's rule sets for a world where something is organised over a
-  growing distance, read off how the spread of a block's count grows with the block, which
-  is the world this ladder is for; (c) step 5, the reversible variants, where nothing can
-  die out and the zoomed-out world cannot freeze. I recommend (b) first: it is a few hours
-  on this machine, and it decides whether (a) and (c) are worth their cost on these two
-  worlds or on a better one.
+- **D8. Where the ladder goes next.** Done (2026-11-24). Of three ways on from step 4 you
+  chose the search of the lab's rule sets for a world where something is organised over a
+  growing distance. It is step 4b. The other two stay open: richer symbols for the pair,
+  which the first look says carry much further, and step 5, the reversible variants, where
+  nothing can die out and the zoomed-out world cannot freeze.
+- **D9. What to take up the ladder, and on which clock** (new, 2026-11-24). The search gives
+  the ladder the kind of world step 4 asked for, in three forms. Anneal alone: one species,
+  two kinds of ground that stay level, known from the literature. B015/S1 against its copy
+  under the standoff: two species whose shares and whose live cells stay put while their
+  territories grow, so one thing is happening and it is the plainest world found.
+  B2378/S25678 against its copy: the sturdiest, with either tie-break and with two, three or
+  five species, but it fills in while it sorts. Three ways on, cheapest first:
+  (a) a first look at one or two of them with step 4's instrument, with who leads a block as
+  the symbol and a coarse rule learned at one block and tried at the next, under the clocks
+  the areas point to (the block, its square, its cube); a few hours on this machine, and
+  then a registered test of what it shows, as in step 4;
+  (b) put the search's own findings on the record first, with a registered test on fresh
+  starts: that territories keep growing under the standoff and not under the draw, the
+  clocks, and what becomes of the species' balance on a larger grid; a pod like step 3b's
+  would do it for a few dollars;
+  (c) leave the search here and take up D8's other two.
+  I recommend (a), with B015/S1 against its copy first and B2378/S25678 beside it, and (b)'s
+  claims folded into the registered test that follows: the first look decides which of them
+  are worth registering, and the instrument needs only its clock set.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
 - **D7. The remainder at side 2048.** Done (step 3b). You chose to close it before step 4;
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
-- **D6. The branches.** Eight, none merged and none with a pull request yet:
+- **D6. The branches.** Nine, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -913,7 +1251,9 @@ What each one gives:
   - lattice-lab `scale-up-step-3`, on top of `scale-up-step-2`: the registered scale-up test,
     both parts and both runs, and step 3b;
   - lattice-lab `scale-up-step-4`, on top of `scale-up-step-3`: the zoom-out instrument, its
-    first look and its registered test.
+    first look and its registered test;
+  - lattice-lab `scale-up-search`, on top of `scale-up-step-4`: the search of step 4b. It
+    registers nothing, so it adds no study to the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
