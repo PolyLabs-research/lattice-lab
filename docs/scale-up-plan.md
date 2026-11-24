@@ -20,7 +20,9 @@ sets for a world organised over a growing distance, which those two are not
 most of what grows alone is one kind of ground taking the whole grid, and that one rule in
 six sorts into growing territories when it meets a copy of itself: which rules has little to
 do with what they do alone and much to do with how few of its own kind a cell needs to be
-born. Step 5 is not built. The decisions that are yours are at the end.
+born. A registered test of that on 600 rules no run had used held on all ten predictions
+(`examples/scale-up-territories`). Step 5 is not built. The decisions that are yours are at
+the end.
 
 ## What the ladder is for
 
@@ -1106,7 +1108,7 @@ reading, not a test. Fresh rules would test both.
 **Gate:** none, as nothing was registered. What it gives is the candidate worlds and the
 question for decision D9.
 
-### Step 4c: which rules hold territories (registered 2026-11-24)
+### Step 4c: which rules hold territories (registered and run 2026-11-24: all ten held)
 
 Step 4b read two cuts off its own runs: territories against a copy go with how few of its
 own kind a cell needs to be born, and, among the rules that need two or three, with whether
@@ -1157,6 +1159,40 @@ had been tried on none. You chose to put both on the record before the ladder go
   any run and are all large enough.
 - **Gate:** the verdict, whichever way it goes.
 
+**The run** (2026-11-24: 3,968 runs in 1 hour 32 minutes on two cores, with pauses while
+another job had the machine). **All ten predictions held.** The ledger verifies, and 24
+records computed again from scratch came out byte for byte.
+
+| | On the fresh rules | The screen gave | Bound |
+| --- | --- | --- | --- |
+| R1, all the rules | 106 of 600 hold territories: 17.7% | 16.9% | 11% to 24% |
+| B1, born on none | 14 of 292: 4.8% | 4.7% | at most 10% |
+| B2, on two or three | 72 of 117: 61.5% | 54.8% | at least 40% |
+| B3, on four or more | 0 of 43 | 1.2% | at most 8% |
+| B4, two or three over one | 61.5% against 13.5%: 0.48 higher | 0.40 | at least 0.20 |
+| B5, one over none | 13.5% (20 of 148) against 4.8%: 0.09 higher | 0.10 | at least 0.03 |
+| L1, cannot last over can | 82.4% (84 of 102) against 52.5% (135 of 257): 0.30 higher | 0.29 | at least 0.10 |
+| L2, needs its own kind and lives | 84 of 85: 98.8% | 93.6% | at least 70% |
+| K1, the standoff only, of one tie-break only | 35 of 41: 85.4% | 85.6% | at least two in three |
+| A1, organises alone | 1 of 21 holds: 4.8% | 6.5% | at most 35% |
+
+- **Both cuts hold on rules they were not read from**, from a start they were not read
+  from, and at very nearly the screen's numbers. The second cut, which had been tried on no
+  rule it was not read from, gives a difference of 0.30 where the screen gave 0.29.
+- **A rule that needs its own kind to be born and to last, and lives, holds territories.**
+  Of the 102 such rules, 17 die in every contest, and 84 of the other 85 hold territories.
+  Among all 359 rules that need two or three for a birth, 219 do.
+- **The rest is as the screen had it.** Territories in 17.7% of the rules: 65 under both
+  tie-breaks, 35 under the standoff only, 6 under the draw only. 101 of the 106 rules that
+  hold them are patches alone, and of the 8 that grow alone, one holds them.
+- **What this does not settle.** The test is of the counts: which rules, how often. The
+  reasons step 4b gave for the cuts (a species born among its rival's cells unsorts the
+  grid; a straggler that can last keeps the mix mixed) are still a reading of the tables.
+  It is one grid size and 512 generations, by the screen's own judge of what a territory
+  is. And what the territories grow into has been followed on a large grid for six rules.
+
+**Gate: passed.**
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1196,6 +1232,8 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4b, the longer look, 6 runs | 262,144 | 16,384 | 18 minutes | here, two cores |
 | step 4b, every rule against its copy, 4,784 worlds | 65,536 | 512 | 1 hour 45 minutes | here, two cores |
 | step 4b, its six sturdiest rules on the large grid, 18 runs | 1.0 million | 2,048 | 37 minutes, with pauses while another job had the machine | here, two cores |
+| step 4c, the sizing look, 1,000 runs | 65,536 | 512 | 24 minutes, with pauses | here, two cores |
+| step 4c, the registered test, 3,968 runs | 65,536 | 512 | 1 hour 32 minutes, with pauses | here, two cores |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -1389,7 +1427,9 @@ What each one gives:
   (c) leave the search here and take up D8's other two.
   I recommend (a) and then (b). (a) is small, it settles "why" as far as counts can, and it
   is the last thing owed on the question you asked. (b) is what the ladder is for.
-  You chose (a): it is step 4c, registered on 2026-11-24. (b) stays open.
+  You chose (a): it is step 4c, registered and run on 2026-11-24, and all ten predictions
+  held. (b) is what is left of this decision: the first look up the ladder at
+  B245678/S3678 and B23467/S4568 against their copies.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -1410,10 +1450,11 @@ What each one gives:
     both parts and both runs, and step 3b;
   - lattice-lab `scale-up-step-4`, on top of `scale-up-step-3`: the zoom-out instrument, its
     first look and its registered test;
-  - lattice-lab `scale-up-search`, on top of `scale-up-step-4`: the search of step 4b. It
-    registers nothing, so it adds no study to the census dashboards' table.
+  - lattice-lab `scale-up-search`, on top of `scale-up-step-4`: the search of step 4b, which
+    registers nothing, and the registered test of step 4c, which adds one study and ten
+    predictions to the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 41
-  studies and 1,817 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 42
+  studies and 1,827 predictions.

@@ -445,5 +445,51 @@ def test_the_ledger_holds_the_registration():
         assert question["body"]["sha256"] == S.question()["sha256"]
 
 
+def test_the_registered_run_found_that_both_cuts_hold_on_fresh_rules():
+    """The run of 2026-11-24: all ten predictions held. On 600 rules no run had used, from a
+    start no run had used, territories against a copy go with how few of its own kind a cell
+    needs to be born, and with whether it can last on one or two, at nearly the numbers the
+    screen gave."""
+    path = LAB / "ledger.jsonl"
+    if not path.exists() or Ledger(path).entries[-1]["kind"] != "verdict":
+        pytest.skip("not run yet")
+    ledger = Ledger(path)
+    assert [e["kind"] for e in ledger.entries[-3:]] == ["run_started", "observations", "verdict"]
+    verdict = ledger.entries[-1]["body"]
+    assert verdict["verdict"] == dict.fromkeys("ABKLR", "holds")
+    assert set(verdict["outcomes"].values()) == {"holds"} and len(verdict["outcomes"]) == 10
+    rows = ledger.entries[-2]["body"]["rows"]
+    assert verdict["missing"] == 0 and len(rows) == 3968
+    assert {T.key(row) for row in rows} == set(S.jobs())
+    code = ledger.entries[-3]["body"]["provenance"]["lattice_lab"]
+    assert code["dirty"] is False and ledger.entries[0]["body"]["sha256"] == S.question()["sha256"]
+    numbers = {label: found["value"] for label, found in verdict["quantities"].items()}
+    assert numbers == {"R1": 0.1767, "B1": 0.0479, "B2": 0.6154, "B3": 0.0, "B4": 0.4803,
+                       "B5": 0.0872, "L1": 0.2982, "L2": 0.9882, "K1": 0.8537,
+                       "A1": 0.0476}  # fmt: skip
+    # each number is on the right side of its bound, and near what the screen gave
+    for claim in S.predictions():
+        value, (screen, _) = numbers[claim["label"]], S.SCREEN[claim["quantity"]]
+        assert claim["at_least"] is None or value >= claim["at_least"]
+        assert claim["at_most"] is None or value <= claim["at_most"]
+        assert abs(value - screen) < 0.09, claim["label"]
+    counts = verdict["quantities"]
+    assert (counts["R1"]["have"], counts["R1"]["of"]) == (106, 600)
+    assert (counts["B1"]["have"], counts["B2"]["have"], counts["B3"]["have"]) == (14, 72, 0)
+    assert counts["L1"]["shares"] == [0.8235, 0.5253] and counts["L1"]["of"] == 102
+    assert (counts["L2"]["have"], counts["L2"]["of"]) == (84, 85)
+    assert (counts["K1"]["have"], counts["K1"]["of"]) == (35, 41)
+    assert (counts["A1"]["have"], counts["A1"]["of"]) == (1, 21)
+    found = verdict["measured"]
+    assert found["holds"] == {"both": 65, "standoff only": 35, "draw only": 6, "neither": 494}
+    assert found["growing"] == 87 and found["grow alone"] == {"of": 8, "have": 1, "share": 0.125}
+    assert found["holders, patches alone"] == {"of": 106, "have": 101, "share": 0.9528}
+    second = verdict["measured for the second cut"]
+    assert second["rules"] == 359 and second["needs its own kind and dies in every contest"] == 17
+    # the judge gives the ledger's verdict again from the records
+    again = S.decide(rows, S.predictions())
+    assert all(verdict[name] == again[name] for name in again)
+
+
 def test_verify_can_rerun_the_studys_records():
     assert load(LAB).rerun is not None
