@@ -258,6 +258,14 @@ class Table:
         np.add.at(counts, (np.searchsorted(rows, keys // self.q), keys % self.q), tally)
         return Table(self.q, rows, counts)
 
+    def plus(self, other: Table) -> Table:
+        """The two tables' tallies together."""
+        rows = np.union1d(self.rows, other.rows)
+        counts = np.zeros((rows.size, self.q), dtype=np.int64)
+        counts[np.searchsorted(rows, self.rows)] += self.counts
+        counts[np.searchsorted(rows, other.rows)] += other.counts
+        return Table(self.q, rows, counts)
+
     def after(self, view: np.ndarray) -> np.ndarray:
         """The tallies after each view in `view` (zeros for a view never seen): shape
         view.shape + (q,)."""
@@ -287,6 +295,10 @@ class CoarseRule:
             for kind in KINDS:
                 tables[kind] = tables[kind].add(codes(kind, own, around, self.q), after)
         return CoarseRule(self.q, tables)
+
+    def plus(self, other: CoarseRule) -> CoarseRule:
+        """The rule learned from both rules' runs."""
+        return CoarseRule(self.q, {k: self.tables[k].plus(other.tables[k]) for k in KINDS})
 
     def chances(self, kind: str, own: np.ndarray, around: np.ndarray) -> np.ndarray:
         """For every supercell the chance of each symbol next, as a table of `kind` gives it:
@@ -324,6 +336,48 @@ class CoarseRule:
             given = np.take_along_axis(chance, after[..., None].astype(np.int64), axis=-1)
             bits += float(-np.log2(given).sum())
         return {"transitions": seen, "right": right, "bits": bits}
+
+
+def horizons(steps: int) -> list[int]:
+    """The coarse generations ahead at which a run-on is read: 1, 2, 4, ... and the last."""
+    out, h = [], 1
+    while h < steps:
+        out.append(h)
+        h *= 2
+    return [*out, steps]
+
+
+def follow(
+    rule: CoarseRule,
+    kind: str,
+    symbols: np.ndarray,
+    first: int,
+    rng: np.random.Generator,
+    draws: int = 2,
+) -> dict:
+    """The coarse rule run on by itself from coarse generation `first` of a zoomed-out run, by
+    its likeliest symbol and by `draws` draws. At each horizon: the share of supercells whose
+    symbol is odd (moved, in an alphabet that ends in it), in the fine world, in the
+    likeliest-symbol run and on average in the drawn ones; the share of supercells where the
+    likeliest-symbol run differs from the fine world; and the share where the fine world
+    differs from where it started."""
+    truth = symbols[first:]
+    steps = truth.shape[0] - 1
+    marks = set(horizons(steps))
+    likely = truth[0]
+    drawn = [truth[0]] * draws
+    out: dict = {"horizon": [], "fine": [], "likely": [], "drawn": [], "differ": [], "drifted": []}
+    for h in range(1, steps + 1):
+        likely = rule.step(kind, likely)
+        drawn = [rule.step(kind, grid, rng) for grid in drawn]
+        if h in marks:
+            out["horizon"].append(h)
+            out["fine"].append(float((truth[h] % 2).mean()))
+            out["likely"].append(float((likely % 2).mean()))
+            out["drawn"].append(float(np.mean([(grid % 2).mean() for grid in drawn])))
+            out["differ"].append(float((likely != truth[h]).mean()))
+            out["drifted"].append(float((truth[0] != truth[h]).mean()))
+    return out
 
 
 def unstable(history: History) -> int:

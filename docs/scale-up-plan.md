@@ -526,15 +526,120 @@ What it says:
 constants to within 0.3% for the live fraction and for the species balance, and 0.8% for the
 mixing: those are the widest ends of the 99% intervals above.
 
-### Step 4: closure for the competitive world
+### Step 4: closure for the competitive world (started 2026-11-24)
 
-- **What:** propose coarse rules on the leading species of each block and measure the closure
-  error against block size and time. The honest baseline is a coarse rule that knows nothing,
-  so the score is closure error against that.
-- **Needs:** the closure test for many-state cells, and a comparison in distribution for coarse
-  rules that are probabilistic (D3).
-- **Gate:** a registered test of the best coarse rule at a block size and a torus it was not
-  fitted on.
+**The instrument** (`examples/scale-up-closure/zoom.py`; in lattice-lab until it has earned a
+place in LatticeLife, as step 0's did). A fine world is run once and read through b x b blocks
+every b generations: the clock is the block. That is not a convenience. These rules move
+information one cell a generation at most, so in b generations nothing from beyond a block's
+eight neighbours can reach it, and what a block does next is a function of the fine cells of
+its 3 x 3 neighbourhood. A coarse rule replaces those 9 b² cells by nine symbols, and its
+errors are what that loses.
+
+- **What a supercell records:** the leading species of its block (this plan's first idea),
+  whether the block *moved* (any of its cells differs from one coarse generation before),
+  whether it holds a live cell, or a pair of these.
+- **A coarse rule** is a table learned from zoomed-out runs: for each thing a supercell and
+  its neighbours can look like, how often the supercell was each thing next. It can look at
+  nothing, at the supercell alone, at how many of its neighbours are each symbol, or at its
+  neighbours in place. It is tried on starts it was not learned from, and scored two ways: how
+  often its likeliest symbol came, and its surprise (the bits it would take to be told what
+  came, given the chances it gave).
+
+Two known answers, both tested on LatticeLife's own engine:
+
+- **Stillness is stable.** In a world that is a function of its grid (several species under
+  the standoff), a block whose 3 x 3 neighbourhood did not change over the last coarse
+  generation does not change over the next: the same cells give the same cells. So no block
+  may move out of stillness, and with the clock four blocks long some must be able to.
+- **A world that is its own zoom-out.** With every neighbour b steps away, and a start that is
+  uniform on each block, the zoomed-out run is the same rules on the small grid, cell for
+  cell, and the table learned from it is LatticeLife's update rule, learned back.
+
+**A first look** (`look.py`, exploratory, 2026-11-24: 48 fine runs and their analysis in half
+an hour on two cores). The three worlds of step 3, sixteen fresh starts each, eight to learn
+from and eight to try on: the pair on side 1024 for 1,024 generations, soup 19 on side 512
+for 512 generations under the standoff and under the draw. Blocks of 4, 8, 16 and 32.
+
+1. **Who leads a block says little, and what it says is frozen.** In the pair the leader of a
+   block stays the leader: a rule that knows only the block is wrong 13 times in a thousand
+   at block 4 and 50 at block 32, and no view of the neighbours improves on that. The leader
+   map is heading for one species everywhere as blocks grow: nobody leads 72% of the blocks
+   of 4 at the end (most are empty), and Life leads 63% of the blocks of 32.
+2. **What is left to describe is where things still move, and movement has an exact law.**
+   No block moved out of stillness in either standoff world, at any block, on any start.
+   Under the draw one did, as it may.
+3. **In the pair, movement follows the same rule early and late, if the rule looks at the
+   neighbours.** The chance that a block of 4 moves in the next coarse generation, after
+   generation 256:
+
+   | Moving neighbours | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+   | a still block | 0 | 0.008 | 0.08 | 0.18 | 0.24 | 0.31 | 0.38 | 0.45 | 0.52 |
+   | a moving block | 0.22 | 0.46 | 0.63 | 0.76 | 0.81 | 0.87 | 0.91 | 0.94 | 0.96 |
+
+   Movement spreads from moving neighbours and dies without them. The table learned up to
+   generation 256, when 15% to 29% of the blocks are moving, serves after it, when 1% to 5%
+   are: it has 0.4% more surprise there than the table learned there (0.7% at blocks 8 and
+   16). A rule that knows the block alone does not carry over: 65%, 56% and 51% more. Its
+   chances have to change as movement thins out; the rule with neighbours has no need to.
+   The agreement is not perfect: late chances are 5% to 15% higher than early ones, and an
+   isolated moving block keeps moving more often late (0.22) than early (0.16).
+4. **The neighbours sharpen the odds; they do not change the best guess.** The likeliest
+   next symbol is always "as it is", whatever the neighbours are doing: neighbour counts
+   remove under half a percent of the errors. They remove 38% of the surprise at block 4,
+   28% at block 8, 18% at 16 and 10% at 32. Where the neighbours are adds little to how many
+   there are: another one or two hundredths of the surprise.
+5. **One number is the same at every block.** A still block with exactly one moving neighbour
+   starts moving with a chance of 0.0081, 0.0076, 0.0078 and 0.0086 at blocks 4, 8, 16 and
+   32, with the clock at the block. Every other chance in the table changes with the block.
+   Something that travels at a steady speed would do this: with the clock at the block, how
+   far it gets is the same share of a block at every scale.
+6. **Run by itself, the coarse rule keeps up for a while and then loses the thread.** Started
+   from the zoomed-out world at generation 128 and run by drawing from its own table, the rule
+   with neighbour counts has 0.86, 1.09, 1.22 and 1.11 of the fine world's moving blocks eight
+   coarse generations on (blocks 4 to 32). By generation 1,024 its movement has died at
+   blocks 4 and 8 (the fine world still has 0.9% and 1.7% of blocks moving), while at block
+   32 it ends about where the fine world does. A rule that knows the block alone cannot let
+   movement die at all: it settles at 10% of the blocks of 4 moving, 12 times the fine
+   world's. A richer symbol carries further: with who leads as well as whether it moved, the
+   rule at block 4 still has 0.61 of the fine world's movement 64 coarse generations on,
+   where the single bit has 0.03. Which blocks will have changed, as opposed to how many, no
+   rule foretells better than "none": the likeliest-symbol run is the start, frozen.
+7. **The soups.** Under the standoff the soup is not frozen: 8% of its blocks of 4 still move
+   at generation 512. But its movers are isolated things that keep going by themselves (a
+   moving block with no moving neighbour keeps moving with a chance of 0.97), so neighbours
+   remove only 15% of the surprise at block 4 and nothing at block 16. Under the draw there
+   is nothing to learn: every block of 8 or more moves in every coarse generation, and one
+   species leads every block.
+
+What this says about the ladder. Zoomed out, these worlds are a map of where things still
+move, with one exact law and, for the pair, a simple rule that is nearly the same at every
+time. It is not the same at every scale, apart from the one number, so the pair has no rule
+that "stops changing from rung to rung". And the simple rule is not the whole story: real
+movement dies out more slowly than the rule allows, because some movers last and the single
+bit does not say which.
+
+**The registered gate** (`examples/scale-up-closure/study.py`): whether what the first look
+saw of the moving bit holds on a torus twice as wide (side 2048), from sixteen fresh starts,
+and at a block twice as large (64) as any it used. 45 predictions in six families:
+
+| Family | What is predicted |
+| --- | --- |
+| S, stillness (10) | no block moves out of stillness, at blocks 4 to 64 in the pair and 4 to 32 in the soup under the standoff; read with the clock four blocks long, some do |
+| N, the neighbours' share (10) | after generation 256 neighbour counts remove the share of the surprise the first look found, within 0.02 (at block 64, between 0.02 and 0.08, by the trend), and under 2% of the errors |
+| T, one rule at every time (6) | at blocks 4, 8 and 16 the rule with neighbour counts learned early has at most 2% more surprise late than the rule learned late; the rule that knows the block alone has at least 30% more |
+| X, another torus (4) | the first look's rule, learned on side 1024, has at most 0.2% more surprise on side 2048 than the rule learned there |
+| E, one number at every scale (5) | a still block with exactly one moving neighbour moves next with a chance between 0.006 and 0.011 at blocks 4 to 32, and between 0.005 and 0.012 at block 64 |
+| H, the horizon (10) | run on by itself from generation 128: eight coarse generations on, the rule with neighbour counts has within 30% of the fine world's movement at every block; at the end the rule that knows the block alone has at least 2.5 times it, and at blocks 4 and 8 the rule with neighbour counts has under a tenth of it |
+
+The records hold tallies, not grids, and every number in the verdict is recomputed from them.
+
+- **Needs still:** a comparison of whole runs in distribution, beyond the share of blocks
+  moving; richer symbols (who leads and whether it moved follows the fine world's movement
+  much further in this first look); and a world where something is organised over a growing
+  distance, which neither of these is.
+- **Gate:** the registered test above.
 
 ### Step 5: reversible variants
 
