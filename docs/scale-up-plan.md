@@ -21,8 +21,14 @@ most of what grows alone is one kind of ground taking the whole grid, and that o
 six sorts into growing territories when it meets a copy of itself: which rules has little to
 do with what they do alone and much to do with how few of its own kind a cell needs to be
 born. A registered test of that on 600 rules no run had used held on all ten predictions
-(`examples/scale-up-territories`). Step 5 is not built. The decisions that are yours are at
-the end.
+(`examples/scale-up-territories`). A first look at two of those worlds zoomed out
+(`examples/scale-up-closure-territories`, exploratory) found what step 4's worlds lacked, a
+coarse description that works: who leads each block, with a table of what blocks with as
+many rival neighbours did next, runs the world on without its cells and says where most of
+its territories will be three thousand generations later. The table is nearly the same in
+two worlds whose rules share nothing, and it still changes from rung to rung, by less at
+each rung on the clock these worlds keep. Step 5 is not built. The decisions that are yours
+are at the end.
 
 ## What the ladder is for
 
@@ -1193,6 +1199,193 @@ records computed again from scratch came out byte for byte.
 
 **Gate: passed.**
 
+### Step 4d: a world of territories, zoomed out (first look, exploratory, 2026-11-25)
+
+Step 4 zoomed out two worlds of patches and found maps of where things still move, with no
+rule that is the same from one block size to the next. Steps 4b and 4c found worlds of another
+kind: two species with one rule between them, which sort into territories that keep growing.
+You chose a first look at two of them with step 4's instrument (decision D9, option b).
+`examples/scale-up-closure-territories/look.py` is that look. Nothing in it is registered.
+
+- **The two worlds.** Each is a rule against a copy of itself under the standoff, so the
+  world is a function of its grid, from a full start (every cell live, half of them each
+  species):
+  - *still*, B245678/S3678: each species fills its ground and stops (98% of the grid is live
+    by the end), and nothing moves but the walls;
+  - *busy*, B23467/S4568: the grounds stay busy inside, with 71% of the grid live.
+- **What is run.** A wrapped grid of side 1,024 for 4,096 generations, from eight fresh
+  starts each (15001 to 15008): 16 runs, read through blocks of 4, 8, 16 and 32. Coarse rules
+  are learned from four of the starts and tried on the other four. The reading begins at
+  generation 64, when the sorting-out is over.
+- **What a block is read as.** Who leads it: the species with more cells in the block. A
+  second reading adds whether the block is contested (the rival holds a tenth or more of its
+  live cells).
+- **Two clocks.** Step 4 slowed the clock by the block, since nothing travels faster than a
+  cell a generation. Step 4b found that these worlds keep another time: through blocks twice
+  the size they are the same picture four times later, not twice. So every block is read on
+  both: the *block clock* (one coarse generation is 4, 8, 16 and 32 fine ones at blocks of 4
+  to 32) and the *square clock* (4, 16, 64 and 256: the square of the block, over four so
+  that the two agree at blocks of 4).
+
+**What it found.** For the reading by leader, with a rule that looks at how many of a
+block's eight neighbours each species leads, unless it says otherwise.
+
+1. **Who leads a block changes by a rule, and the rule is in the neighbours.** In step 4's
+   pair the leader was frozen and the neighbours said nothing about it. Here a block of 4
+   has a new leader four generations on with these chances:
+
+   | Neighbours the rival leads | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+   | the still world | 0.0000 | 0.0000 | 0.002 | 0.037 | 0.17 | 0.37 | 0.47 | 0.42 | 0.59 |
+   | the busy world | 0.0000 | 0.0000 | 0.0004 | 0.022 | 0.15 | 0.37 | 0.44 | 0.37 | 0.56 |
+
+   A block changes hands by being surrounded. Few blocks do in any one coarse generation (10
+   in a thousand in the still world, 7 in the busy one), so the likeliest next leader is
+   nearly always the present one, and knowing the neighbours removes 2% of the errors. What
+   it removes is surprise: 44% of it at blocks of 4 in both worlds, and 40%, 35% and 23% at
+   blocks of 8, 16 and 32 on the square clock (still; 42%, 37% and 26% busy). Where the
+   neighbours are adds little to how many there are: under one point of the surprise at
+   blocks of 4 and 8, two to four at 16 and 32.
+2. **It is the same rule early and late, where the blocks are small beside the
+   territories.** The rule learned before generation 1,024, tried after it, has 0.24% more
+   surprise than the rule learned there at blocks of 4, in both worlds; about 1% at blocks of
+   8, 2.4% to 3.0% at blocks of 16, and 5% to 8% at blocks of 32 on the block clock. On the
+   square clock blocks of 32 have too few early transitions to say.
+3. **From one rung to the next the rule changes: less on the square clock, and less at each
+   rung.** This is the ladder's fixed-point question, and step 4 found no sign of one. Here
+   the rule learned at blocks of half the size, from as many transitions as the rung's own
+   rule, has this much more surprise than the rung's own:
+
+   | | at blocks of 8 | at 16 | at 32 |
+   | --- | --- | --- | --- |
+   | still, block clock | 16.4% | 11.2% | 7.9% |
+   | still, square clock | 8.9% | 3.8% | 3.4% |
+   | still, square clock, at matched ages | 9.0% | 2.6% | – |
+   | busy, block clock | 10.2% | 10.1% | 6.9% |
+   | busy, square clock | 6.7% | 4.5% | 2.4% |
+   | busy, square clock, at matched ages | 5.8% | 2.4% | – |
+
+   "At matched ages" compares the rungs as the square clock says they should be compared:
+   blocks of 4 over generations 64 to 256, blocks of 8 over 256 to 1,024, blocks of 16 over
+   1,024 to 4,096. The run is too short to do that for blocks of 32. The surprise is a
+   forgiving measure: on the block clock the chances are out by a factor of two and more at
+   every rung, and that costs 7% to 16%. So the chances themselves say it more plainly. A
+   block with five of its neighbours under the rival changes hands with a chance of:
+
+   | | blocks of 4 | 8 | 16 | 32 |
+   | --- | --- | --- | --- | --- |
+   | still, block clock | 0.37 | 0.16 | 0.063 | 0.026 |
+   | still, square clock | 0.37 | 0.24 | 0.16 | 0.13 |
+   | still, square clock, at matched ages | 0.31 | 0.24 | 0.20 | – |
+   | busy, block clock | 0.37 | 0.18 | 0.072 | 0.030 |
+   | busy, square clock | 0.37 | 0.25 | 0.17 | 0.14 |
+   | busy, square clock, at matched ages | 0.30 | 0.26 | 0.22 | – |
+
+   On the block clock a block twice the size changes hands under half as often, rung after
+   rung, and nothing settles: that clock is too fast for these worlds. On the square clock
+   the chances fall by a third at the first rung and by a fifth at the last, and at matched
+   ages the surprise gap of the second rung is under half that of the first. That is not a
+   fixed point. It is what coming to one would look like, and it is also what three rungs of
+   something else could look like: step 4's failed band at block 64 was drawn from a trend
+   no longer than this.
+4. **The two worlds follow nearly the same coarse rule.** Cell by cell they share nothing:
+   different rules, one still inside its grounds and one with two cells in five changing.
+   The rule learned in one world, tried in the other, has this much more surprise than the
+   rule learned there (square clock; the two directions):
+
+   | | blocks of 4 | 8 | 16 | 32 |
+   | --- | --- | --- | --- | --- |
+   | the still world's rule in the busy world | 1.9% | 0.4% | 0.1% | −0.7% |
+   | the busy world's rule in the still world | 1.6% | 0.4% | 0.2% | 0.3% |
+
+   Blocks of 32 have too few transitions for the last figure to mean more than "near
+   nothing". On the block clock it is 0.3% at blocks of 8 and 0.2% to 0.3% at 16. So from
+   blocks of 8 a world's rule is nearer the other world's than it is to its own at another
+   time (1% to 3%) or at the next rung (2% to 16%). The chances say the same. At blocks of
+   16 on the square clock, a block with 4, 5 or 6 neighbours under the rival changes hands
+   with chances of 0.070, 0.161 and 0.243 in the still world and 0.071, 0.170 and 0.249 in
+   the busy one. On the block clock the chances are further apart, by up to a quarter, the
+   busy world's blocks the quicker to change. Read with the contested mark, which looks
+   inside the block, the worlds are further apart: 2.4% to 2.8% at blocks of 4 and still
+   1.1% to 1.7% at 16 on the square clock.
+
+   This is the row "classes" of the table at the top of this plan: different fine rules that
+   land on the same coarse rule. Two worlds chosen for being sturdy are not a class, and two
+   worlds whose walls happened to move at the same pace would look like this.
+5. **Run on by itself, the coarse rule keeps the world, and says where most of its
+   territories will be.** From the zoomed-out world at generation 1,024 the rule is run on
+   to generation 4,096 by drawing every block's next leader from its table, with no fine
+   cells under it. On the square clock, at the end:
+
+   | | Coarse generations run | Walls, the rule's world over the real one | Blocks whose leader is not the real world's: the rule's world | the start, had nothing moved | two runs of the rule, one against the other |
+   | --- | --- | --- | --- | --- | --- |
+   | still, blocks of 4 | 768 | 0.75 | 12.1% | 21.4% | 6.0% |
+   | still, 8 | 192 | 0.86 | 9.6% | 21.2% | 8.2% |
+   | still, 16 | 48 | 0.95 | 10.5% | 21.0% | 11.8% |
+   | still, 32 | 12 | 1.02 | 18.4% | 19.5% | 20.9% |
+   | busy, 4 | 768 | 0.88 | 7.2% | 20.9% | 4.8% |
+   | busy, 8 | 192 | 0.94 | 6.9% | 20.6% | 7.8% |
+   | busy, 16 | 48 | 1.01 | 9.4% | 20.3% | 10.5% |
+   | busy, 32 | 12 | 1.00 | 16.9% | 19.6% | 18.0% |
+
+   - **It is the same kind of world.** The share of neighbouring blocks under different
+     leaders (the walls) about halves in the real world over those 3,072 generations, and
+     at blocks of 16 and 32 the rule's world ends within about 5% of it. At blocks of 4 the
+     rule loses walls too fast: it ends with 75% of them in the still world and 88% in the
+     busy one.
+   - **And much of the same world.** A fifth of the blocks change leader in those
+     generations. The rule's world has the real world's leader in all but 7% to 12% of the
+     blocks at blocks of 4 to 16: it about halves the error of supposing nothing moved in
+     the still world, and cuts it to a third at blocks of 4 and 8 in the busy one. In step
+     4's pair no rule foretold which blocks would change better than "none". At blocks of
+     32 the rule does little better than that here: a block of 32 is a third to a sixth of
+     a territory across, and the run is twelve coarse generations.
+   - **It errs like its own dice.** At blocks of 16 and 32, and at 8 in the busy world, the
+     real world is no further from a run of the rule than a second run of the rule is,
+     drawn afresh from the same start. At blocks of 8 in the still world it is a sixth
+     further. At blocks of 4 it is twice as far (half as far again in the busy world),
+     which is the walls again.
+   - **Not at once.** At first the rule's world is further from the real one than the start
+     is: it cannot say which wall blocks will change, and draws. It overtakes "nothing
+     moved" between 128 and 1,024 generations on at blocks of 4 to 16, later the larger the
+     block, when what matters is which territories go and which walls straighten.
+   - **The square clock runs on better than the block clock** at every block above 4: 12.1%,
+     15.3% and 23.8% of blocks amiss at blocks of 8, 16 and 32 in the still world on the
+     block clock, against 9.6%, 10.5% and 18.4%.
+   - **The pictures** (`pictures.py`, a page at
+     `~/lattice-lab-runs/closure-territories/pictures/index.html`) show the real world and
+     the rule's world side by side at generation 4,096 for one start, through blocks of 4,
+     8 and 16. Most of the territories are the same territories, in the same places.
+6. **The contested mark does not earn its place.** A rule that also knows whether a block
+   is contested is surer of itself: two of its runs differ in 3% to 7% of the blocks at
+   blocks of 4 to 16, where the plain rule's differ in 5% to 12%. It is nearer the real
+   world at blocks of 16 and 32 (8.3% and 12.1% of blocks amiss in the still world against
+   10.5% and 18.4%), little or no nearer at 4 and 8 in the still world, further at 4 and 8
+   in the busy one (9.5% against 7.2% at blocks of 4), and it loses walls faster at every
+   block. In step 4's pair a richer symbol carried much further. Here who leads is most of
+   what there is to know.
+
+**What step 4d shows.** These worlds have what step 4's lacked: a coarse description that
+works. Who leads each block, and a table of what blocks with as many rival neighbours did
+next, is enough to run the world on without its cells for three thousand generations, and
+to say where most of its territories will be. The table is nearly the same in two worlds
+whose fine rules have nothing in common. It is not the same from rung to rung on either
+clock, but on the clock these worlds keep (the square of the block) the difference shrinks
+from each rung to the next. Whether it goes to nothing is what another rung would say.
+
+**What it does not show.** Nothing here is registered, and I looked at the numbers before
+deciding what to say about them. It is one grid size, four starts to learn from and four to
+try on, and two worlds picked for being the sturdiest of their kinds, both under the
+standoff and both from a full start. Blocks of 32 are thin: 61,440 transitions on the square
+clock, and territories only three to six blocks across. "At matched ages" is two
+comparisons. "The same rule in both worlds" is a surprise within half a percent and chances
+within about 5%, on one clock, in one pair of worlds. And why the rule works where it does
+(walls that move by how they curve, at a pace that belongs to the world) is my reading of
+the tables, not something this look tested.
+
+**Gate:** none, as nothing was registered. What it gives is the claims for a registered
+test, which is decision D10.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1234,6 +1427,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4b, its six sturdiest rules on the large grid, 18 runs | 1.0 million | 2,048 | 37 minutes, with pauses while another job had the machine | here, two cores |
 | step 4c, the sizing look, 1,000 runs | 65,536 | 512 | 24 minutes, with pauses | here, two cores |
 | step 4c, the registered test, 3,968 runs | 65,536 | 512 | 1 hour 32 minutes, with pauses | here, two cores |
+| step 4d, the first look, 16 runs read through blocks | 1.0 million | 4,096 | 1 hour 22 minutes for the runs, and 25 minutes for their analysis | here, two cores |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -1428,15 +1622,36 @@ What each one gives:
   I recommend (a) and then (b). (a) is small, it settles "why" as far as counts can, and it
   is the last thing owed on the question you asked. (b) is what the ladder is for.
   You chose (a): it is step 4c, registered and run on 2026-11-24, and all ten predictions
-  held. (b) is what is left of this decision: the first look up the ladder at
-  B245678/S3678 and B23467/S4568 against their copies.
+  held. You then chose (b): it is step 4d, the first look, done on 2026-11-25. What it
+  leaves is decision D10.
+- **D10. What to put on the record from the first look up the ladder** (2026-11-25). Step
+  4d is a look: I read its numbers before saying what they showed. Three ways on, cheapest
+  first:
+  (a) a registered test at the look's own size (side 1,024 to generation 4,096), on fresh
+  starts, of the four things it saw: run on by itself the rule keeps the real world's walls
+  and most of its leaders; it is the same rule early and late at small blocks; the gap
+  between rungs is smaller on the square clock than on the block clock; and each world's
+  rule serves in the other. With them, three worlds that have never been zoomed out, to ask
+  whether a rule learned in the still world serves there as well. That is the claim most
+  likely to fail and the one that would mean most: it may hold only up to the pace of each
+  world's walls, and the test should be able to tell that from not holding at all. About
+  four hours here;
+  (b) another rung: side 2,048 to generation 16,384, so that blocks of 32 are read at
+  matched ages with as many blocks as blocks of 16 have here. That is what says whether the
+  square clock leads to a rule that stops changing. About 45 core-hours: a pod for $3 to
+  $5, to be agreed before any launch, or a day and more here;
+  (c) leave the ladder here and take up D8's other two.
+  I recommend (a), and then (b) if (a) holds. (a) is cheap and puts at risk the two
+  findings I did not expect, that the rule knows where the territories will be and that two
+  worlds share it. (b) costs money and is worth it only if the rule it would extend is
+  real.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
 - **D7. The remainder at side 2048.** Done (step 3b). You chose to close it before step 4;
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
-- **D6. The branches.** Nine, none merged and none with a pull request yet:
+- **D6. The branches.** Ten, none merged and none with a pull request yet:
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -1452,7 +1667,9 @@ What each one gives:
     first look and its registered test;
   - lattice-lab `scale-up-search`, on top of `scale-up-step-4`: the search of step 4b, which
     registers nothing, and the registered test of step 4c, which adds one study and ten
-    predictions to the census dashboards' table.
+    predictions to the census dashboards' table;
+  - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
+    of territories zoomed out (step 4d), which registers nothing.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
