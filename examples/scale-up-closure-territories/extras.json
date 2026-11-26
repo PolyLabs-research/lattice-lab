@@ -1,0 +1,471 @@
+{
+ "still": {
+  "rule": "B245678/S3678",
+  "blocks": {
+   "8": {
+    "walls": {
+     "1024": 0.0903,
+     "256": 0.1674,
+     "4096": 0.0455,
+     "64": 0.2938
+    },
+    "walls thin as time to the power": 0.494,
+    "pace by its walls": {
+     "1024": 1.0,
+     "4096": 1.0
+    },
+    "the still world's rule serves best at a tick of": 16,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": -8e-05,
+    "more surprise as it is": -8e-05,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0001,
+     0.0008,
+     0.0145,
+     0.1079,
+     0.2435,
+     0.3103,
+     0.3574,
+     0.5472
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0008,
+     0.0145,
+     0.1079,
+     0.2435,
+     0.3103,
+     0.3574,
+     0.5472
+    ],
+    "run on, registered": {
+     "its own rule": 0.41262,
+     "the still world's rule, as it is": null
+    }
+   },
+   "16": {
+    "walls": {
+     "1024": 0.1732,
+     "256": 0.2983,
+     "4096": 0.0893,
+     "64": 0.4125
+    },
+    "walls thin as time to the power": 0.478,
+    "pace by its walls": {
+     "1024": 1.0,
+     "4096": 1.0
+    },
+    "the still world's rule serves best at a tick of": 64,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": -0.00013,
+    "more surprise as it is": -0.00013,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0002,
+     0.0013,
+     0.0097,
+     0.071,
+     0.1639,
+     0.2385,
+     0.3145,
+     0.4957
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0002,
+     0.0013,
+     0.0097,
+     0.071,
+     0.1639,
+     0.2385,
+     0.3145,
+     0.4957
+    ],
+    "run on, registered": {
+     "its own rule": 0.5427,
+     "the still world's rule, as it is": null
+    }
+   }
+  }
+ },
+ "busy": {
+  "rule": "B23467/S4568",
+  "blocks": {
+   "8": {
+    "walls": {
+     "1024": 0.086,
+     "256": 0.1621,
+     "4096": 0.0438,
+     "64": 0.283
+    },
+    "walls thin as time to the power": 0.486,
+    "pace by its walls": {
+     "1024": 1.103,
+     "4096": 1.079
+    },
+    "the still world's rule serves best at a tick of": 16,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": 0.00455,
+    "more surprise as it is": 0.00455,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0,
+     0.0004,
+     0.0108,
+     0.1088,
+     0.2595,
+     0.3225,
+     0.3504,
+     0.5747
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0008,
+     0.0145,
+     0.1079,
+     0.2435,
+     0.3103,
+     0.3574,
+     0.5472
+    ],
+    "run on, registered": {
+     "its own rule": 0.36357,
+     "the still world's rule, as it is": null
+    }
+   },
+   "16": {
+    "walls": {
+     "1024": 0.1651,
+     "256": 0.2901,
+     "4096": 0.0861,
+     "64": 0.4151
+    },
+    "walls thin as time to the power": 0.47,
+    "pace by its walls": {
+     "1024": 1.101,
+     "4096": 1.076
+    },
+    "the still world's rule serves best at a tick of": 64,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": 0.00233,
+    "more surprise as it is": 0.00233,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0002,
+     0.001,
+     0.0068,
+     0.068,
+     0.176,
+     0.264,
+     0.3439,
+     0.5605
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0002,
+     0.0013,
+     0.0097,
+     0.071,
+     0.1639,
+     0.2385,
+     0.3145,
+     0.4957
+    ],
+    "run on, registered": {
+     "its own rule": 0.52527,
+     "the still world's rule, as it is": null
+    }
+   }
+  }
+ },
+ "near": {
+  "rule": "B24678/S34678",
+  "blocks": {
+   "8": {
+    "walls": {
+     "1024": 0.1044,
+     "256": 0.1871,
+     "4096": 0.0542,
+     "64": 0.3121
+    },
+    "walls thin as time to the power": 0.473,
+    "pace by its walls": {
+     "1024": 0.748,
+     "4096": 0.706
+    },
+    "the still world's rule serves best at a tick of": 16,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": 0.00602,
+    "more surprise as it is": 0.00602,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0001,
+     0.0021,
+     0.0218,
+     0.1152,
+     0.2263,
+     0.2685,
+     0.2819,
+     0.441
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0008,
+     0.0145,
+     0.1079,
+     0.2435,
+     0.3103,
+     0.3574,
+     0.5472
+    ],
+    "run on, registered": {
+     "its own rule": 0.58349,
+     "the still world's rule, as it is": 0.54629
+    }
+   },
+   "16": {
+    "walls": {
+     "1024": 0.1969,
+     "256": 0.3219,
+     "4096": 0.1049,
+     "64": 0.4264
+    },
+    "walls thin as time to the power": 0.454,
+    "pace by its walls": {
+     "1024": 0.773,
+     "4096": 0.724
+    },
+    "the still world's rule serves best at a tick of": 64,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": 0.00513,
+    "more surprise as it is": 0.00513,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0004,
+     0.0027,
+     0.0149,
+     0.0756,
+     0.1479,
+     0.2017,
+     0.2588,
+     0.3902
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0002,
+     0.0013,
+     0.0097,
+     0.071,
+     0.1639,
+     0.2385,
+     0.3145,
+     0.4957
+    ],
+    "run on, registered": {
+     "its own rule": 0.70003,
+     "the still world's rule, as it is": 0.65379
+    }
+   }
+  }
+ },
+ "another": {
+  "rule": "B3568/S124678",
+  "blocks": {
+   "8": {
+    "walls": {
+     "1024": 0.12,
+     "256": 0.2218,
+     "4096": 0.0634,
+     "64": 0.3677
+    },
+    "walls thin as time to the power": 0.461,
+    "pace by its walls": {
+     "1024": 0.567,
+     "4096": 0.516
+    },
+    "the still world's rule serves best at a tick of": 8,
+    "which is this share of its own tick": 0.5,
+    "more surprise there": 0.00501,
+    "more surprise as it is": 0.01826,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0003,
+     0.0022,
+     0.0154,
+     0.085,
+     0.1645,
+     0.197,
+     0.2265,
+     0.3468
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0009,
+     0.0113,
+     0.0763,
+     0.1636,
+     0.1875,
+     0.2055,
+     0.3292
+    ],
+    "run on, registered": {
+     "its own rule": 0.60829,
+     "the still world's rule, as it is": 0.75204
+    },
+    "run on, at its best pace": {
+     "the still world's rule for a tick of": 8,
+     "run on with a tick of": 16,
+     "amiss over changed": 0.5693,
+     "walls kept": 0.8445,
+     "amiss over two runs": 1.1461
+    }
+   },
+   "16": {
+    "walls": {
+     "1024": 0.225,
+     "256": 0.3605,
+     "4096": 0.1226,
+     "64": 0.4468
+    },
+    "walls thin as time to the power": 0.438,
+    "pace by its walls": {
+     "1024": 0.592,
+     "4096": 0.53
+    },
+    "the still world's rule serves best at a tick of": 32,
+    "which is this share of its own tick": 0.5,
+    "more surprise there": 0.00518,
+    "more surprise as it is": 0.02497,
+    "changes hands, at its own tick": [
+     0.0,
+     0.0006,
+     0.0031,
+     0.012,
+     0.0541,
+     0.105,
+     0.1544,
+     0.1896,
+     0.3032
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0002,
+     0.0014,
+     0.0082,
+     0.0493,
+     0.1011,
+     0.1375,
+     0.175,
+     0.2771
+    ],
+    "run on, registered": {
+     "its own rule": 0.80371,
+     "the still world's rule, as it is": 0.84404
+    },
+    "run on, at its best pace": {
+     "the still world's rule for a tick of": 32,
+     "run on with a tick of": 64,
+     "amiss over changed": 0.6967,
+     "walls kept": 0.9237,
+     "amiss over two runs": 0.8695
+    }
+   }
+  }
+ },
+ "sparse": {
+  "rule": "B2/S0",
+  "blocks": {
+   "8": {
+    "walls": {
+     "1024": 0.2237,
+     "256": 0.3074,
+     "4096": 0.1549,
+     "64": 0.3975
+    },
+    "walls thin as time to the power": 0.265,
+    "pace by its walls": {
+     "1024": 0.163,
+     "4096": 0.086
+    },
+    "the still world's rule serves best at a tick of": 16,
+    "which is this share of its own tick": 1.0,
+    "more surprise there": 0.59878,
+    "more surprise as it is": 0.59878,
+    "changes hands, at its own tick": [
+     0.0068,
+     0.053,
+     0.1206,
+     0.1984,
+     0.2877,
+     0.3751,
+     0.4632,
+     0.5367,
+     0.6159
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0008,
+     0.0145,
+     0.1079,
+     0.2435,
+     0.3103,
+     0.3574,
+     0.5472
+    ],
+    "run on, registered": {
+     "its own rule": 0.91078,
+     "the still world's rule, as it is": 0.8006
+    }
+   },
+   "16": {
+    "walls": {
+     "1024": 0.269,
+     "256": 0.3683,
+     "4096": 0.1844,
+     "64": 0.4506
+    },
+    "walls thin as time to the power": 0.273,
+    "pace by its walls": {
+     "1024": 0.414,
+     "4096": 0.234
+    },
+    "the still world's rule serves best at a tick of": 128,
+    "which is this share of its own tick": 2.0,
+    "more surprise there": 0.53837,
+    "more surprise as it is": 0.56787,
+    "changes hands, at its own tick": [
+     0.0097,
+     0.0441,
+     0.0986,
+     0.1679,
+     0.2538,
+     0.3369,
+     0.4264,
+     0.5085,
+     0.6047
+    ],
+    "the still world, at that tick": [
+     0.0,
+     0.0001,
+     0.0011,
+     0.0115,
+     0.1051,
+     0.279,
+     0.4116,
+     0.5477,
+     0.7603
+    ],
+    "run on, registered": {
+     "its own rule": 1.04331,
+     "the still world's rule, as it is": 0.81441
+    }
+   }
+  }
+ }
+}

@@ -31,6 +31,7 @@ def _load(name: str, path: Path):
 
 LOOK = _load("scale_up_closure_territories_look", LAB / "look.py")
 STUDY = _load("scale_up_closure_territories_study", LAB / "study.py")
+EXTRAS = _load("scale_up_closure_territories_extras", LAB / "extras.py")
 LADDER = STUDY.ladder
 ZOOM = LADDER.zoom
 
@@ -517,3 +518,127 @@ def test_the_registration():
     if verdicts:  # run: nothing missing, and every claim judged one of three ways
         assert verdicts[0]["missing"] == []
         assert set(verdicts[0]["outcomes"].values()) <= {"holds", "fails", "not tested"}
+
+
+# --- what the run found --------------------------------------------------------------------------
+
+
+def _verdict():
+    ledger = LAB / "ledger.jsonl"
+    if not ledger.exists():
+        pytest.skip("not registered yet")
+    entries = [json.loads(line) for line in ledger.read_text().splitlines()]
+    verdicts = [e["body"] for e in entries if e["kind"] == "verdict"]
+    if not verdicts:
+        pytest.skip("not run yet")
+    return verdicts[0]
+
+
+def test_the_registered_run_found_what_the_plan_says():
+    verdict = _verdict()
+    claims = {c["label"]: c for c in STUDY.claims()}
+    outcomes, measured = verdict["outcomes"], verdict["measured"]
+    tally = {word: sum(o == word for o in outcomes.values())
+             for word in ("holds", "fails", "not tested")}  # fmt: skip
+    assert tally == {"holds": 73, "fails": 8, "not tested": 8}
+    families = {family: "fails" if family in "CU" else "holds" for family in "BCNRTUXZ"}
+    assert verdict["verdict"] == families
+    # everything about the first look's two worlds held, and everything about the control
+    for label, c in claims.items():
+        if c["world"] in (*STUDY.SEEN, STUDY.CONTROL):
+            assert outcomes[label] == "holds", label
+    assert sum(c["world"] in STUDY.SEEN for c in claims.values()) == 58
+    # the first look's rules on fresh starts: as good as rules learned from them
+    assert all(abs(measured[label]["value"]) < 0.0005 for label in claims if label[0] == "X")
+    # the eight that failed: one by a hair, three that are the pace, four that are the edge
+    failed = {label for label, o in outcomes.items() if o == "fails"}
+    assert failed == {
+        "C near, block 16: where",
+        "U another, block 8: as it is", "U another, block 16: as it is",
+        "U another, block 8: run on",
+        "U sparse, block 8: as it is", "U sparse, block 8: at some pace",
+        "U sparse, block 16: as it is", "U sparse, block 16: at some pace",
+    }  # fmt: skip
+    assert 0.7 < measured["C near, block 16: where"]["value"] < 0.7001
+    # the eight not tested: run-ons through blocks too large for the world's territories
+    untested = {label for label, o in outcomes.items() if o == "not tested"}
+    assert all(claims[label]["needs"]["block"] is not None for label in untested)
+    assert {claims[label]["world"] for label in untested} == {"another", "sparse"}
+    worlds = verdict["worlds"]
+    assert worlds["sparse"]["blocks small beside its territories"] == []
+    assert worlds["another"]["blocks small beside its territories"] == [4, 8]
+    assert all(worlds[w]["keeps growing"] for w in (*STUDY.SEEN, *STUDY.UNSEEN))
+    assert worlds[STUDY.CONTROL]["has set"] and not worlds[STUDY.CONTROL]["keeps growing"]
+    # the near relative: the still world's rule as it is, and its own tick is its best
+    for block in (8, 16):
+        assert measured[f"U near, block {block}: as it is"]["value"] < 0.0065
+        assert measured[f"U near, block {block}: at some pace"]["tick"] == LADDER.square(block)
+        # the other still world: at half the tick, at both blocks
+        assert measured[f"U another, block {block}: at some pace"]["tick"] == (
+            LADDER.square(block) // 2)  # fmt: skip
+        assert measured[f"U another, block {block}: at some pace"]["value"] < 0.006
+        assert 0.015 < measured[f"U another, block {block}: as it is"]["value"] < 0.03
+        # the sparse world: at no pace
+        assert measured[f"U sparse, block {block}: at some pace"]["value"] > 0.5
+        # the control: three times as surprised, and wrecked when run on
+        assert measured[f"Z block {block}: as it is"]["value"] > 1.9
+        assert measured[f"Z block {block}: run on"]["value"] > 0.39
+    # the sparse world's blocks change hands in proportion, not by being surrounded
+    sparse, still = (worlds[w]["changes hands"]["8 16"] for w in ("sparse", "still"))
+    assert sparse[1] > 0.05 and sparse[2] > 0.1 and still[1] < 0.0001 and still[2] < 0.001
+    steps = [b - a for a, b in zip(sparse[1:6], sparse[2:7], strict=True)]
+    assert max(steps) < 1.4 * min(steps)  # near enough a straight line from 1 to 6
+
+
+def test_the_verdict_is_what_the_records_give():
+    """Judged again here from the records in the repository: the ledger's verdict, to the
+    last figure."""
+    verdict = _verdict()
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    assert len(rows) == 152 and sum(r["kind"] == "start" for r in rows) == 44
+    again = STUDY.decide(rows, STUDY.claims())
+    for part in ("verdict", "outcomes", "measured", "missing", "worlds"):
+        assert again[part] == verdict[part], part
+
+
+def test_a_worlds_pace_read_off_its_walls():
+    def rows(walls_by_world):
+        return [{"kind": "start", "world": w, "seed": 1,
+                 "walls": {"8": {"1024": at, "4096": end}}}
+                for w, (at, end) in walls_by_world.items()]  # fmt: skip
+
+    made = rows({"still": (0.08, 0.04), "another": (0.08 / 0.5**0.5, 0.04 / 0.5**0.5),
+                 "sparse": (0.2, 0.2 * 4**-0.25)})  # fmt: skip
+    assert math.isclose(EXTRAS.growth(made, "still", 8), 0.5)
+    assert math.isclose(EXTRAS.growth(made, "sparse", 8), 0.25)
+    pace = EXTRAS.paces(made, "another", 8)
+    assert set(pace) == {"1024", "4096"} and all(math.isclose(v, 0.5) for v in pace.values())
+    assert EXTRAS.paces(made, "still", 8) == {"1024": 1.0, "4096": 1.0}
+    assert EXTRAS.walls(made, "another", 8)["4096"] == 0.04 / 0.5**0.5
+
+
+def test_the_pace_read_two_ways_agrees():
+    path = LAB / "extras.json"
+    if not path.exists():
+        pytest.skip("the extras have not been run")
+    found = json.loads(path.read_text())
+    assert set(found) == {*STUDY.SEEN, *STUDY.UNSEEN}
+    for block in ("8", "16"):
+        told = {w: found[w]["blocks"][block] for w in found}
+        # four worlds thin their walls as about the square root of the time, the sparse one not
+        for w in ("still", "busy", "near", "another"):
+            assert 0.43 < told[w]["walls thin as time to the power"] < 0.5, (w, block)
+        assert told["sparse"]["walls thin as time to the power"] < 0.3
+        # the pace a world's walls give, beside the tick at which the still world's rule serves
+        wanted = {"busy": (1.0, 1.15, 1.0), "near": (0.68, 0.8, 1.0),
+                  "another": (0.5, 0.6, 0.5)}  # fmt: skip
+        for w, (low, high, share) in wanted.items():
+            assert all(low < v < high for v in told[w]["pace by its walls"].values()), (w, block)
+            assert told[w]["which is this share of its own tick"] == share
+        # the still world's rule at half its pace runs the other still world on: better than
+        # as it is, and no worse than that world's own rule
+        ran = told["another"]["run on, at its best pace"]
+        registered = told["another"]["run on, registered"]
+        assert ran["amiss over changed"] < registered["the still world's rule, as it is"] - 0.1
+        assert ran["amiss over changed"] < registered["its own rule"]
+        assert "run on, at its best pace" not in told["near"]

@@ -27,8 +27,12 @@ coarse description that works: who leads each block, with a table of what blocks
 many rival neighbours did next, runs the world on without its cells and says where most of
 its territories will be three thousand generations later. The table is nearly the same in
 two worlds whose rules share nothing, and it still changes from rung to rung, by less at
-each rung on the clock these worlds keep. Step 5 is not built. The decisions that are yours
-are at the end.
+each rung on the clock these worlds keep. A registered test of that, with three worlds no
+run had zoomed out and a control (the same folder's `study.py`, 89 predictions), held on
+73: everything the first look saw of its two worlds, on fresh starts; the control, where
+the rule must not serve; and of the three unseen worlds one follows the still world's rule
+as it is, one at half the pace, and one, a sparse world that grows on another clock, not at
+all. Step 5 is not built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -1386,7 +1390,7 @@ the tables, not something this look tested.
 **Gate:** none, as nothing was registered. What it gives is the claims for a registered
 test, which is decision D10.
 
-### Step 4e: the zoom-out of territories, registered (registered 2026-11-26)
+### Step 4e: the zoom-out of territories, registered (registered and run 2026-11-26: 73 of 89 held)
 
 Step 4d read its findings off the runs they describe. You chose to put them on the record
 (decision D10, option a): `examples/scale-up-closure-territories/study.py`, registered on
@@ -1485,6 +1489,132 @@ has an edge, and the test says where.
 
 **Gate:** the verdict, whichever way it goes.
 
+**The run** (2026-11-26, on a rented pod, because two other jobs had this machine's spare
+cores: 44 fine runs and 108 run-ons in 51 minutes on 22 workers, $0.96 of the $3.36 agreed).
+**73 of the 89 predictions held, 8 failed and 8 were not tested.** The ledger verifies. Six
+run-ons computed again on this machine came out byte for byte, and so did the records of
+five fine runs recomputed here from scratch.
+
+| Family | Held | Result |
+| --- | --- | --- |
+| N, surrounded | 6 of 6 | the neighbours remove 0.44 and 0.40 of the surprise at blocks of 4 and 8 in the still world, 0.44 and 0.41 in the busy one; a block of 4 with five rival neighbours changes hands with a chance of 0.372 in both (the first look: 0.371) |
+| T, one rule at every time | 6 of 6 | the early rule has 0.23%, 1.0% and 2.2% more surprise late at blocks of 4, 8, 16 (still); 0.25%, 0.9% and 2.6% (busy) |
+| R, rungs and clocks | 14 of 14 | the rule from the rung below is nearer on the square clock by 7.6 and 7.2 points (still), 3.5 and 6.0 (busy); its gap at blocks of 16 is 0.42 and 0.68 of its gap at 8, and still 3.7% and 4.4%; at matched ages 0.29 and 0.59; a block of 4 changes hands 2.27 and 2.04 times as often as a block of 8 with the clock at the block, 1.53 and 1.43 times with the clock at its square |
+| X, fresh starts | 4 of 4 | the first look's rule is within 0.03% of a rule learned from the fresh starts, in both worlds at both blocks |
+| B, the other world | 10 of 10 | the still world's rule in the busy world: 1.7%, 0.46%, 0.23% more surprise at blocks of 4, 8, 16; the busy world's in the still: 1.6%, 0.43%, 0.14%; the two worlds' chances of changing hands within 6% at blocks of 8 and 10% at 16; the still world's rule runs the busy world on nearly as well as the busy world's own (amiss over changed 0.37 and 0.56, against 0.36 and 0.53) |
+| C, run on by itself | 21 of 27; 1 failed, 5 not tested | amiss over changed at blocks of 4, 8, 16: 0.52, 0.41, 0.54 (still), 0.38, 0.36, 0.53 (busy); walls kept at 16: 0.97, 0.99; at blocks of 4 the rule loses walls too fast (0.75, 0.83 of them); it errs like its own dice (1.15 and 0.94 times what two runs differ by in the still world, 0.98 and 0.85 in the busy); the square clock runs on better than the block clock (0.67 to 0.77 of its blocks amiss). In the near world its own rule gives 0.58 at blocks of 8 and **0.70003 at blocks of 16, against at most 0.70: failed**; walls 0.92. In the other still world 0.61 at blocks of 8; blocks of 16 are too large for its territories and were not tested. In the sparse world no block fits, and nothing was tested |
+| U, worlds never zoomed out | 8 of 18; 7 failed, 3 not tested | see below |
+| Z, the control | 4 of 4 | the control set, as it should (its walls stay where they were, 0.1% of blocks change leader). The still world's rule has 199% and 207% more surprise there than the control's own, and run on it ends with 42% and 40% of the blocks under another leader |
+
+**The three worlds never zoomed out** gave three different answers, and they are the three I
+wrote down before the run.
+
+| World | The still world's rule, as it is | At its best tick | Run on, as it is | Its own rule, run on |
+| --- | --- | --- | --- | --- |
+| near, B24678/S34678 | 0.60%, 0.51% more surprise (blocks of 8, 16): **holds** | its own tick: **holds** | 0.55, 0.65 of the blocks that changed are amiss: **holds** | 0.58 holds; 0.70003 fails |
+| another, B3568/S124678 | 1.8%, 2.5%: **fails** | half its tick, at both blocks: 0.50%, 0.52%: **holds** | 0.75 at blocks of 8: **fails**; blocks of 16 not tested | 0.61 holds; blocks of 16 not tested |
+| sparse, B2/S0 | 60%, 57%: **fails** | 60%, 54%: **fails** | not tested (0.80, 0.81) | not tested (0.91, 1.04) |
+
+- **The near relative follows the still world's rule as it is.** The rule read off the first
+  look's still world, with nothing fitted to this world, runs it on for 3,072 generations
+  as well as the near world's own rule does, and a little better (it was learned from twice
+  the runs).
+- **The other still world follows it at half the pace.** As it is, the still world's rule is
+  1.8% to 2.5% worse there, and run on it moves the walls too fast. The still world's rule
+  for half the tick is within 0.5% at both blocks, and the half is the same half at both.
+  Its own rule runs it on (0.61 at blocks of 8).
+- **The sparse world is not of this kind.** No pace brings the still world's rule within
+  54% of its own. Its blocks do not change hands by being surrounded: with the clock at its
+  square a block of 8 changes hands with a chance of 0.05, 0.12, 0.20, 0.29, 0.38 with 1 to
+  5 neighbours under its rival, very nearly in proportion, where the still world has
+  0.00005, 0.001, 0.015, 0.11, 0.24. Read by who leads a block it has no clean territories
+  at any block: over a fifth of neighbouring blocks have different leaders at blocks of 8,
+  and more at 4 (too few cells in a block to say who leads) and at 16 and 32 (territories too
+  small). So its run-ons were not tested, by the rule fixed beforehand; what they measured
+  is that its own rule does no better than supposing nothing moved (0.91 and 1.04). Its
+  walls thin, but as the 0.27th power of time, where the other four worlds have 0.44 to
+  0.49: it grows on another clock.
+- **The control is outside, and the test can tell.** In the world that has set, the still
+  world's rule is three times as surprised as the control's own and wrecks the world when
+  run on. On the larger grid it does not serve there at any tick (62% more at its best,
+  where the small sizing look had 5% at blocks of 16).
+
+**The pace, read two ways** (`extras.py`, exploratory: read from the registered records
+after the verdict, and one small thing run here). If territories grow as the square root
+of the time, a world whose walls move at a share p of the still world's pace has the still
+world's walls divided by the square root of p, at any generation. So a world's pace can be
+read off how far its territories have got, with no coarse rule in it, and set beside the
+tick at which the still world's rule serves it best.
+
+| World | Its walls thin as time to the power | Pace by its walls (generation 1,024 and 4,096) | The still world's rule serves best at |
+| --- | --- | --- | --- |
+| still | 0.48 to 0.49 | 1 | its own tick |
+| busy | 0.47 to 0.49 | 1.10, 1.08 | its own tick |
+| near | 0.45 to 0.47 | 0.75 to 0.77, 0.71 to 0.72 | its own tick |
+| another | 0.44 to 0.46 | 0.57 to 0.59, 0.52 to 0.53 | half its tick, at both blocks |
+| sparse | 0.27 | (no meaning: another clock) | none |
+
+The two readings agree: the world whose walls say half the pace is the one the rule serves
+at half the tick, and the one whose walls say three quarters is nearer the whole tick than
+the half. And the still world's rule for half the tick, run on in the other still world in
+that world's own time, ends with 0.57 of the changed blocks amiss at blocks of 8: better
+than as it is (0.75, the registered failure) and no worse than that world's own rule
+(0.61). At blocks of 16, where its territories are too small for the registered test, 0.70
+against 0.84 as it is and 0.80 for its own. None of this was registered.
+
+**The failures.** Eight, of three kinds.
+
+- *One by a hair, and mine.* The near world's own rule at blocks of 16 ends with 0.70003
+  of the changed blocks amiss, against a bound I drew at 0.70. The near world at blocks of
+  16 is at the edge of what the test reads at all (its walls are 0.197 of neighbouring
+  pairs where the limit is 0.2). The claim failed as registered. What it measured is a rule
+  that gets three blocks in ten right that "nothing moved" gets wrong, where the first
+  look's worlds get nearly five in ten.
+- *Three that say the pace belongs to the world.* In the other still world the rule as it
+  is fails at both blocks and its run-on fails at blocks of 8, while the rule at half the
+  tick holds at both. The claim "as it is" was the one I thought least likely to hold
+  there, and the test was built to tell this from the next kind.
+- *Four that find the edge.* The sparse world, as it is and at every pace, at both blocks.
+
+**Not tested**, eight, all by the rule that a run-on is read only through blocks small
+beside the territories: the other still world at blocks of 16, and the sparse world at
+every block.
+
+**What step 4e shows.**
+
+1. **What the first look saw of its two worlds is so.** All 58 claims about them held on
+   fresh starts, most at the first look's own figure to two places. The first look's
+   tables, tried unchanged on starts they had not seen, are as good as tables learned from
+   those starts.
+2. **A coarse rule stands in for a world of this kind.** Who leads each block, and what
+   blocks with as many rival neighbours did next, runs such a world on without its cells
+   for three thousand generations, keeps its walls, and has the right leader in about half
+   to two thirds of the blocks that change. It is now a registered result for two worlds,
+   and holds for the two still worlds that had never been zoomed out at the block where
+   the test could read them.
+3. **It is one rule with a pace, for worlds whose grounds fill, and it has an edge.** Of
+   three worlds whose cells share nothing with the still world's, one follows its rule as
+   it is, one at half the pace, and one not at all. The one that does not is the one that
+   is a different kind of world by every other reading too: sparse, without clean
+   territories, on another clock. This is the "classes" row of the table at the top of this
+   plan with something in it: a class of at least four fine rules, a number that places
+   each in it (its pace), and a rule outside it.
+4. **The ladder still has no fixed point**, and the test agrees with the first look about
+   where it stands: from one rung to the next the rule changes on both clocks, by less on
+   the square clock and by less at the second rung than the first, and at blocks of 16 the
+   rule from blocks of 8 is still 4% short.
+
+**What it does not show.** Five worlds and a control, all under the standoff, on one grid
+size. "At another pace" was tried on a grid of ticks a factor of two apart, so a pace is
+known to within about that. The class is four worlds: two it was read from, one near
+relative, and one stranger at half the pace. One stranger is not many. That the sparse
+world is outside is a finding about this reading of it (who leads a block): a reading that
+suits a sparse world might find a rule there. And the fixed-point question is where the
+first look left it, with one registered sample more.
+
+**Gate: passed** in the sense the plan gives it, with eight failures on the record: one
+mine, three that are the pace, four that are the edge.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1527,6 +1657,9 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4c, the sizing look, 1,000 runs | 65,536 | 512 | 24 minutes, with pauses | here, two cores |
 | step 4c, the registered test, 3,968 runs | 65,536 | 512 | 1 hour 32 minutes, with pauses | here, two cores |
 | step 4d, the first look, 16 runs read through blocks | 1.0 million | 4,096 | 1 hour 22 minutes for the runs, and 25 minutes for their analysis | here, two cores |
+| step 4e, the sizing look: the first look's runs through the study's measures eight ways, and two control runs | up to 1.0 million | 4,096 | 21 minutes of one core, spread over 75 while two other jobs had the machine | here, one core |
+| step 4e, the registered test, 44 runs read through blocks and 108 run-ons | 1.0 million | 4,096 | 51 minutes on 22 workers of a pod with 32 vCPUs, $0.96; a run takes 16 minutes there beside 21 others, the sparse world's 30 | a pod |
+| step 4e, the extras: four runs again for their leaders | 1.0 million | 4,096 | 15 minutes | here, two cores |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -1744,13 +1877,36 @@ What each one gives:
   findings I did not expect, that the rule knows where the territories will be and that two
   worlds share it. (b) costs money and is worth it only if the rule it would extend is
   real.
+  You chose (a): it is step 4e, registered and run on 2026-11-26, and 73 of its 89
+  predictions held. When the run was due two other jobs had this machine's spare cores,
+  and asked where it should go you chose a pod: $0.96 of the $3.36 agreed.
+- **D11. Where next, now that the rule is on the record** (2026-11-26). Step 4e leaves two
+  open ends, and either can be taken up first.
+  (a) **How wide is the class?** One stranger follows the still world's rule at half the
+  pace, and its pace read off its walls says the same half. That is one world. A registered
+  test over many (the rules of step 4c that hold territories and whose grounds fill, twenty
+  or so) would say whether "one rule and a pace" is a law of these worlds or a pair of
+  coincidences, with a prediction that can fail for each: the pace its walls give is the
+  tick at which the still world's rule serves. About 160 runs: a pod for about $3, to be
+  agreed before any launch.
+  (b) **Does the ladder come to a fixed point?** Another rung: side 2,048 to generation
+  16,384, so that blocks of 32 are read at matched ages. Each such run is sixteen of this
+  step's, so sixteen of them are about 70 pod-hours of work: a pod for $5 to $6.
+  (c) The sparse world: a reading that suits a world with a quarter of its cells live,
+  to see whether it has a coarse rule of its own. No runs to speak of, and no promise.
+  (d) Leave the ladder here and take up D8's other two.
+  I recommend (a), then (b). (a) is the cheaper, and it is the finding of this step that
+  rests on least: four worlds. If it holds over twenty, the ladder has found what it was
+  built to find, a law of the large scale that many fine rules share, and (b) then asks
+  whether that law is also the same at every scale.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
 - **D7. The remainder at side 2048.** Done (step 3b). You chose to close it before step 4;
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
-- **D6. The branches.** Ten, none merged and none with a pull request yet:
+- **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
+  holds two steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -1768,9 +1924,10 @@ What each one gives:
     registers nothing, and the registered test of step 4c, which adds one study and ten
     predictions to the census dashboards' table;
   - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
-    of territories zoomed out (step 4d), which registers nothing.
+    of territories zoomed out (step 4d), which registers nothing, and its registered test
+    (step 4e), which adds one study and 89 predictions to the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 42
-  studies and 1,827 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 43
+  studies and 1,916 predictions.
