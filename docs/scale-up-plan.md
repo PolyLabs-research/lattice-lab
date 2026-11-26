@@ -1386,6 +1386,105 @@ the tables, not something this look tested.
 **Gate:** none, as nothing was registered. What it gives is the claims for a registered
 test, which is decision D10.
 
+### Step 4e: the zoom-out of territories, registered (registered 2026-11-26)
+
+Step 4d read its findings off the runs they describe. You chose to put them on the record
+(decision D10, option a): `examples/scale-up-closure-territories/study.py`, registered on
+2026-11-26 with 89 predictions before any of its runs was made.
+
+- **What is run.** Six worlds, each a rule against a copy of itself under the standoff on a
+  wrapped grid of side 1,024 for 4,096 generations, from starts no run has used (16001 on;
+  no two worlds share one). Coarse rules are learned from half of a world's starts and
+  tried on the other half.
+
+  | World | Rule | Starts | What it is here for |
+  | --- | --- | --- | --- |
+  | still | B245678/S3678 | 8 | the first look's two worlds, again |
+  | busy | B23467/S4568 | 8 | |
+  | near | B24678/S34678 | 8 | never zoomed out: a near relative of the still world's rule |
+  | another | B3568/S124678 | 8 | never zoomed out: a still world whose rule shares little with it |
+  | sparse | B2/S0 | 8 | never zoomed out: a quarter of the grid live, busy, territories under the standoff only; from a half-full start, the one it was seen to hold them from |
+  | set | B2578/S135678 | 4 | the control: its territories set after generation 512 and stop |
+
+  The three unseen worlds were chosen from what the search knew of them by its own measure
+  (the correlation area on side 1,024): that they keep growing. None had been read by who
+  leads a block, and no coarse rule had been learned from one.
+- **The measures** (`ladder.py`) are the first look's, made so that everything but a run-on
+  can be worked out again from the records. A record holds tallies, not grids: for every
+  [leader of a block][neighbours under species 1][neighbours under species 2], how often
+  the block had each leader one tick later, apart over three stretches of the run (64 to
+  256, 256 to 1,024, 1,024 to 4,096) and at every tick a block is read at. A rule is a
+  tally, a rule is scored on another tally, and the chance of changing hands is read off
+  one. The tallies give the first look's own tables to the last count.
+- **The reference rules** (`reference.json`) are the first look's: the tables all eight
+  runs of each of its worlds give. They are fixed in the registration and tried,
+  unchanged, on fresh starts and in worlds they have not seen.
+- **Sizing first** (`sizing.py`, exploratory). The first look's sixteen runs were put
+  through the study's own measures with the starts dealt six ways (which four to learn
+  from), and twice more with a rule from four starts set against fresh rules from two. That
+  says how far each number moves when nothing changes but the starts, and every bound was
+  drawn outside it. Every claim of the first look's worlds held on all eight of those, as
+  it must: they are the runs the claims were read from.
+- **The control taught the test something before it was registered.** The sizing look ran
+  the control once, small (side 512, two starts). Its leaders stop: after generation 1,024
+  one block in a thousand has another leader 3,072 generations on. The still world's rule
+  is 93% to 191% worse there than the control's own on the square clock, and run on it
+  takes 37% to 40% of the blocks away from where they stay. But at the shortest tick it is
+  kept at, where blocks change hands least, the still world's rule comes within 5% at
+  blocks of 16: a world that has stopped looks like a world slowed right down. So "serves
+  at another pace" cannot by itself tell one rule from a stopped world, and the test asks
+  three things of each unseen world, not one: that it keeps growing, that the still world's
+  rule serves, and that the still world's rule, run on, keeps it.
+- **Not tested is not failed**, in three ways, all fixed beforehand. A claim about a world
+  that keeps growing is not tested where the world does not (its walls at blocks of 16
+  fall by under a fifth after generation 1,024, or under a twentieth of its blocks change
+  leader). The control's claims are not tested unless the control has set. And a run-on is
+  read only through blocks small beside a world's territories (five blocks across or more
+  when the rule is started): through blocks of 32 the first look's rule did little better
+  than supposing nothing moved, and a world with smaller territories would be in that
+  place at blocks of 16.
+
+**The predictions**, 89 in eight families. Surprise is as before; "amiss over changed" is
+the share of blocks whose leader is not the real world's at generation 4,096 after a rule
+has been run on by itself from generation 1,024, over the share that changed leader
+meanwhile (1 is no better than supposing nothing moved).
+
+| Family | What is predicted | The first look's runs gave | Bound |
+| --- | --- | --- | --- |
+| N, surrounded (6) | in the still and the busy world the neighbours remove this share of the surprise at blocks of 4 and 8 | 0.44; 0.40 to 0.42 | at least 0.35 |
+| | a block of 4 with five neighbours under its rival changes hands with this chance | 0.371 in both | 0.32 to 0.42 |
+| T, one rule at every time (6) | the rule learned before generation 1,024 has this much more surprise after it, at blocks of 4, 8, 16 | 0.2% to 0.3%; 0.9% to 1.1%; 1.9% to 3.4% | at most 0.6%, 2%, 5% |
+| R, rungs and clocks (14) | the rule from blocks half the size is nearer the rung's own on the square clock than on the block clock, at blocks of 8 and 16 | by 3 to 8 points | nearer |
+| | on the square clock its gap at blocks of 16 over its gap at blocks of 8 | 0.39 to 0.63 | under 1 |
+| | and its gap at blocks of 16 is still | 3.4% to 4.2% | at least 1.5% |
+| | at matched ages, the second gap over the first | 0.25 to 0.50 | at most 0.65 |
+| | the chance of changing hands at blocks of 4 over that at blocks of 8, five rival neighbours | 2.28, 2.07 with the clock at the block; 1.53, 1.45 at its square | 1.8 to 2.9; 1.2 to 1.75 |
+| X, fresh starts (4) | the first look's rule for a world has this much more surprise on fresh starts of it than a rule learned from them, at blocks of 8 and 16 | −0.4% to 0.05% with half the data | at most 0.3%, 0.5% |
+| B, the other world (10) | the first look's rule for one world, in the other, at blocks of 4, 8, 16 | 1.6% to 1.8%; 0.4% to 0.5%; −0.2% to 0.3% | at most 2.5%, 0.8%, 0.8% |
+| | the two worlds' chances of changing hands at 4, 5 and 6 rival neighbours, at blocks of 8 and 16 | within 5% and 7% (4% to 9% from half the starts) | within 12% |
+| | the still world's rule run on in the busy world: amiss over changed, at blocks of 8 and 16 | 0.35 to 0.38; 0.45 to 0.57 | at most 0.70 |
+| C, run on by itself (27) | a world's own rule: amiss over changed at blocks of 4, 8, 16 in the still and the busy world, and at 8 and 16 in the three unseen worlds | still 0.50 to 0.59, 0.41 to 0.43, 0.53 to 0.54; busy 0.31 to 0.39, 0.30 to 0.36, 0.45 to 0.48 | at most 0.70 |
+| | the walls it keeps over the world's, at blocks of 16, in all five | 0.96 to 0.99; 0.99 to 1.03 | 0.85 to 1.12 |
+| | at blocks of 4 it loses walls too fast (still, busy) | 0.72 to 0.81; 0.83 to 0.89 | at most 0.93 |
+| | amiss over what two runs of the rule differ by, at blocks of 8 and 16 (still, busy) | 1.07 to 1.24, 0.84 to 0.94; 0.94 to 1.09, 0.83 to 0.92 | at most 1.4 |
+| | amiss on the square clock over amiss on the block clock, at 8 and 16 (still, busy) | 0.70 to 0.83; 0.54 to 0.76 | under 1 |
+| U, worlds never zoomed out (18) | in each of the three, at blocks of 8 and 16: the still world's rule has this much more surprise than the world's own | not run | at most 1% |
+| | the same at the best of the ticks the rule is kept at | not run | at most 1% |
+| | the still world's rule run on there: amiss over changed | not run | at most 0.70 |
+| Z, the control (4) | in the world that has set, the still world's rule has this much more surprise, at blocks of 8 and 16 | 191%, 93% (side 512) | at least 25% |
+| | run on there, blocks amiss less blocks that changed | 0.40, 0.37 | at least 0.10 |
+
+What I expect, written before the run: the first look's two worlds to hold (they are a
+second sample of what the claims were read from, and the sizing says how far a sample
+moves); the near relative to follow the still world's rule as it is; the other still world
+to follow it at least at some pace; and the sparse world to be the one that tells. Its
+territories exist only because a contested cell stays empty, a quarter of its cells are
+live, and its grounds never settle. If the still world's rule runs that world on, one
+coarse rule covers worlds whose cells have nothing in common, and if it does not the class
+has an edge, and the test says where.
+
+**Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
