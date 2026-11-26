@@ -1,0 +1,1802 @@
+{
+ "splits": {
+  "as the first look": [
+   15001,
+   15002,
+   15003,
+   15004
+  ],
+  "exchanged": [
+   15005,
+   15006,
+   15007,
+   15008
+  ],
+  "odd": [
+   15001,
+   15003,
+   15005,
+   15007
+  ],
+  "even": [
+   15002,
+   15004,
+   15006,
+   15008
+  ],
+  "outer": [
+   15001,
+   15002,
+   15007,
+   15008
+  ],
+  "inner": [
+   15003,
+   15004,
+   15005,
+   15006
+  ]
+ },
+ "fresh": {
+  "rule from 1-4, learn 5-6, try 7-8": [
+   [
+    15001,
+    15002,
+    15003,
+    15004
+   ],
+   [
+    15005,
+    15006
+   ],
+   [
+    15007,
+    15008
+   ]
+  ],
+  "rule from 5-8, learn 1-2, try 3-4": [
+   [
+    15005,
+    15006,
+    15007,
+    15008
+   ],
+   [
+    15001,
+    15002
+   ],
+   [
+    15003,
+    15004
+   ]
+  ]
+ },
+ "what the bounds were drawn from": {
+  "N still, block 4: the neighbours": {
+   "bound": {
+    "at_least": 0.35,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.44065,
+    0.44032,
+    0.44057,
+    0.44043,
+    0.44037,
+    0.4416
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.44409,
+    0.44073
+   ]
+  },
+  "N still, block 8: the neighbours": {
+   "bound": {
+    "at_least": 0.35,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.40274,
+    0.40258,
+    0.4026,
+    0.40279,
+    0.40262,
+    0.40433
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.40793,
+    0.40327
+   ]
+  },
+  "N still: surrounded": {
+   "bound": {
+    "at_least": 0.32,
+    "at_most": 0.42
+   },
+   "the first look's starts dealt six ways": [
+    0.37141,
+    0.37141,
+    0.37141,
+    0.37141,
+    0.37141,
+    0.37141
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.37141,
+    0.37141
+   ]
+  },
+  "T still, block 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.006
+   },
+   "the first look's starts dealt six ways": [
+    0.00244,
+    0.00245,
+    0.00241,
+    0.00244,
+    0.00234,
+    0.00253
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00216,
+    0.00237
+   ]
+  },
+  "T still, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.02
+   },
+   "the first look's starts dealt six ways": [
+    0.00998,
+    0.01057,
+    0.01009,
+    0.01058,
+    0.01018,
+    0.01011
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00857,
+    0.0111
+   ]
+  },
+  "T still, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.05
+   },
+   "the first look's starts dealt six ways": [
+    0.02419,
+    0.02399,
+    0.02474,
+    0.02332,
+    0.0232,
+    0.02189
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.01854,
+    0.02438
+   ]
+  },
+  "R still, block 8: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.0
+   },
+   "the first look's starts dealt six ways": [
+    -0.07547,
+    -0.07548,
+    -0.07577,
+    -0.07517,
+    -0.07621,
+    -0.07464
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.07523,
+    -0.07702
+   ]
+  },
+  "R still, block 16: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.0
+   },
+   "the first look's starts dealt six ways": [
+    -0.07564,
+    -0.07265,
+    -0.07586,
+    -0.07274,
+    -0.07345,
+    -0.07436
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.07922,
+    -0.07259
+   ]
+  },
+  "R still: the gap shrinks": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.43471,
+    0.39122,
+    0.41259,
+    0.40354,
+    0.41326,
+    0.41852
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.40033,
+    0.4339
+   ]
+  },
+  "R still: no fixed point yet": {
+   "bound": {
+    "at_least": 0.015,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.03818,
+    0.03395,
+    0.036,
+    0.03527,
+    0.03655,
+    0.03606
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.03475,
+    0.03787
+   ]
+  },
+  "R still: at matched ages": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.65
+   },
+   "the first look's starts dealt six ways": [
+    0.29405,
+    0.27517,
+    0.27764,
+    0.29215,
+    0.27662,
+    0.26771
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.2468,
+    0.28754
+   ]
+  },
+  "R still: changing hands, block clock": {
+   "bound": {
+    "at_least": 1.8,
+    "at_most": 2.9
+   },
+   "the first look's starts dealt six ways": [
+    2.27675,
+    2.27675,
+    2.27675,
+    2.27675,
+    2.27675,
+    2.27675
+   ],
+   "a rule from four starts, fresh rules from two": [
+    2.28435,
+    2.26926
+   ]
+  },
+  "R still: changing hands, square clock": {
+   "bound": {
+    "at_least": 1.2,
+    "at_most": 1.75
+   },
+   "the first look's starts dealt six ways": [
+    1.52694,
+    1.52694,
+    1.52694,
+    1.52694,
+    1.52694,
+    1.52694
+   ],
+   "a rule from four starts, fresh rules from two": [
+    1.53099,
+    1.52293
+   ]
+  },
+  "X still, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.003
+   },
+   "the first look's starts dealt six ways": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.00037,
+    -0.00013
+   ]
+  },
+  "X still, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.005
+   },
+   "the first look's starts dealt six ways": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.00441,
+    0.00047
+   ]
+  },
+  "N busy, block 4: the neighbours": {
+   "bound": {
+    "at_least": 0.35,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.44105,
+    0.44008,
+    0.4394,
+    0.44108,
+    0.44007,
+    0.44049
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.44192,
+    0.44059
+   ]
+  },
+  "N busy, block 8: the neighbours": {
+   "bound": {
+    "at_least": 0.35,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.41737,
+    0.4163,
+    0.41551,
+    0.41705,
+    0.41514,
+    0.4177
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.41975,
+    0.41612
+   ]
+  },
+  "N busy: surrounded": {
+   "bound": {
+    "at_least": 0.32,
+    "at_most": 0.42
+   },
+   "the first look's starts dealt six ways": [
+    0.37134,
+    0.37134,
+    0.37134,
+    0.37134,
+    0.37134,
+    0.37134
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.37049,
+    0.37219
+   ]
+  },
+  "T busy, block 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.006
+   },
+   "the first look's starts dealt six ways": [
+    0.00241,
+    0.00259,
+    0.00246,
+    0.00252,
+    0.0025,
+    0.00257
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00236,
+    0.00225
+   ]
+  },
+  "T busy, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.02
+   },
+   "the first look's starts dealt six ways": [
+    0.00866,
+    0.01024,
+    0.00952,
+    0.00951,
+    0.00953,
+    0.00947
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00926,
+    0.00911
+   ]
+  },
+  "T busy, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.05
+   },
+   "the first look's starts dealt six ways": [
+    0.02554,
+    0.03233,
+    0.02353,
+    0.03368,
+    0.02879,
+    0.02935
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.03278,
+    0.03059
+   ]
+  },
+  "R busy, block 8: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.0
+   },
+   "the first look's starts dealt six ways": [
+    -0.03617,
+    -0.03286,
+    -0.03418,
+    -0.03481,
+    -0.03537,
+    -0.03374
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.03551,
+    -0.03459
+   ]
+  },
+  "R busy, block 16: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.0
+   },
+   "the first look's starts dealt six ways": [
+    -0.05728,
+    -0.05579,
+    -0.05475,
+    -0.05605,
+    -0.05682,
+    -0.05673
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.05474,
+    -0.06102
+   ]
+  },
+  "R busy: the gap shrinks": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.62926,
+    0.58521,
+    0.62996,
+    0.61426,
+    0.59644,
+    0.62212
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.6248,
+    0.61913
+   ]
+  },
+  "R busy: no fixed point yet": {
+   "bound": {
+    "at_least": 0.015,
+    "at_most": null
+   },
+   "the first look's starts dealt six ways": [
+    0.04152,
+    0.03741,
+    0.04058,
+    0.04011,
+    0.03827,
+    0.04078
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.04193,
+    0.03974
+   ]
+  },
+  "R busy: at matched ages": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.65
+   },
+   "the first look's starts dealt six ways": [
+    0.43291,
+    0.48111,
+    0.43874,
+    0.48081,
+    0.42041,
+    0.49711
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.46779,
+    0.45313
+   ]
+  },
+  "R busy: changing hands, block clock": {
+   "bound": {
+    "at_least": 1.8,
+    "at_most": 2.9
+   },
+   "the first look's starts dealt six ways": [
+    2.07004,
+    2.07004,
+    2.07004,
+    2.07004,
+    2.07004,
+    2.07004
+   ],
+   "a rule from four starts, fresh rules from two": [
+    2.09248,
+    2.04752
+   ]
+  },
+  "R busy: changing hands, square clock": {
+   "bound": {
+    "at_least": 1.2,
+    "at_most": 1.75
+   },
+   "the first look's starts dealt six ways": [
+    1.45249,
+    1.45249,
+    1.45249,
+    1.45249,
+    1.45249,
+    1.45249
+   ],
+   "a rule from four starts, fresh rules from two": [
+    1.46316,
+    1.44167
+   ]
+  },
+  "X busy, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.003
+   },
+   "the first look's starts dealt six ways": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.00011,
+    -0.00018
+   ]
+  },
+  "X busy, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.005
+   },
+   "the first look's starts dealt six ways": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.00123,
+    -0.00041
+   ]
+  },
+  "B the still world's rule in the busy world, block 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.025
+   },
+   "the first look's starts dealt six ways": [
+    0.01848,
+    0.01687,
+    0.0165,
+    0.01743,
+    0.01796,
+    0.01662
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.01809,
+    0.017
+   ]
+  },
+  "B the still world's rule in the busy world, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.008
+   },
+   "the first look's starts dealt six ways": [
+    0.00435,
+    0.00438,
+    0.00426,
+    0.0044,
+    0.00431,
+    0.00444
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00431,
+    0.00416
+   ]
+  },
+  "B the still world's rule in the busy world, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.008
+   },
+   "the first look's starts dealt six ways": [
+    0.00115,
+    0.00111,
+    0.0016,
+    0.00347,
+    0.00124,
+    0.00195
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00026,
+    0.00096
+   ]
+  },
+  "B the busy world's rule in the still world, block 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.025
+   },
+   "the first look's starts dealt six ways": [
+    0.01639,
+    0.01623,
+    0.01661,
+    0.01605,
+    0.01591,
+    0.01662
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.01644,
+    0.01638
+   ]
+  },
+  "B the busy world's rule in the still world, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.008
+   },
+   "the first look's starts dealt six ways": [
+    0.00432,
+    0.00444,
+    0.00457,
+    0.00442,
+    0.00444,
+    0.0043
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.00411,
+    0.00428
+   ]
+  },
+  "B the busy world's rule in the still world, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.008
+   },
+   "the first look's starts dealt six ways": [
+    0.00187,
+    0.00065,
+    0.00206,
+    -0.00047,
+    0.00216,
+    0.00117
+   ],
+   "a rule from four starts, fresh rules from two": [
+    -0.00197,
+    0.00142
+   ]
+  },
+  "B the two worlds' chances, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.12
+   },
+   "the first look's starts dealt six ways": [
+    0.04859,
+    0.04859,
+    0.04859,
+    0.04859,
+    0.04859,
+    0.04859
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.04193,
+    0.05535
+   ]
+  },
+  "B the still world's rule runs the busy world on, block 8": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.36924,
+    0.36229,
+    0.37011,
+    0.35209,
+    0.37806,
+    0.34987
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.34758,
+    0.35817
+   ]
+  },
+  "B the two worlds' chances, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.12
+   },
+   "the first look's starts dealt six ways": [
+    0.06928,
+    0.06928,
+    0.06928,
+    0.06928,
+    0.06928,
+    0.06928
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.04974,
+    0.08889
+   ]
+  },
+  "B the still world's rule runs the busy world on, block 16": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.50647,
+    0.53603,
+    0.52968,
+    0.4957,
+    0.56863,
+    0.48459
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.45089,
+    0.55807
+   ]
+  },
+  "C still, block 4: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.53497,
+    0.52835,
+    0.54945,
+    0.51719,
+    0.53587,
+    0.5527
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.59052,
+    0.50204
+   ]
+  },
+  "C still, block 8: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.41854,
+    0.40695,
+    0.43335,
+    0.40581,
+    0.42616,
+    0.40634
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.41997,
+    0.41646
+   ]
+  },
+  "C still, block 16: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.54146,
+    0.52544,
+    0.53893,
+    0.54114,
+    0.53486,
+    0.54177
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.54371,
+    0.54438
+   ]
+  },
+  "C still: walls": {
+   "bound": {
+    "at_least": 0.85,
+    "at_most": 1.12
+   },
+   "the first look's starts dealt six ways": [
+    0.95748,
+    0.99017,
+    0.96599,
+    0.97094,
+    0.96992,
+    0.97721
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.95715,
+    0.97523
+   ]
+  },
+  "C busy, block 4: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.34516,
+    0.38512,
+    0.35104,
+    0.37565,
+    0.39349,
+    0.34703
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.31425,
+    0.37517
+   ]
+  },
+  "C busy, block 8: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.34039,
+    0.35396,
+    0.34044,
+    0.35593,
+    0.35906,
+    0.32399
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.30338,
+    0.36322
+   ]
+  },
+  "C busy, block 16: where": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.7
+   },
+   "the first look's starts dealt six ways": [
+    0.46105,
+    0.46751,
+    0.46452,
+    0.47237,
+    0.48181,
+    0.44535
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.47278,
+    0.47677
+   ]
+  },
+  "C busy: walls": {
+   "bound": {
+    "at_least": 0.85,
+    "at_most": 1.12
+   },
+   "the first look's starts dealt six ways": [
+    0.99039,
+    1.01089,
+    1.00108,
+    0.98991,
+    0.99894,
+    1.00552
+   ],
+   "a rule from four starts, fresh rules from two": [
+    1.01377,
+    1.03338
+   ]
+  },
+  "C still: too fast at blocks of 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.93
+   },
+   "the first look's starts dealt six ways": [
+    0.76852,
+    0.8052,
+    0.76723,
+    0.79239,
+    0.78412,
+    0.76083
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.71939,
+    0.81241
+   ]
+  },
+  "C still, block 8: its own dice": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.4
+   },
+   "the first look's starts dealt six ways": [
+    1.11789,
+    1.0974,
+    1.17362,
+    1.07236,
+    1.14886,
+    1.08675
+   ],
+   "a rule from four starts, fresh rules from two": [
+    1.24347,
+    1.22436
+   ]
+  },
+  "C still, block 8: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.73726,
+    0.70899,
+    0.73664,
+    0.72468,
+    0.72254,
+    0.70427
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.71536,
+    0.72992
+   ]
+  },
+  "C still, block 16: its own dice": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.4
+   },
+   "the first look's starts dealt six ways": [
+    0.90958,
+    0.84129,
+    0.8957,
+    0.89709,
+    0.8788,
+    0.88092
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.93705,
+    0.87121
+   ]
+  },
+  "C still, block 16: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.73732,
+    0.75251,
+    0.76432,
+    0.77225,
+    0.77787,
+    0.74848
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.75166,
+    0.83409
+   ]
+  },
+  "C busy: too fast at blocks of 4": {
+   "bound": {
+    "at_least": null,
+    "at_most": 0.93
+   },
+   "the first look's starts dealt six ways": [
+    0.86205,
+    0.83624,
+    0.83186,
+    0.86244,
+    0.83663,
+    0.84713
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.89238,
+    0.86348
+   ]
+  },
+  "C busy, block 8: its own dice": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.4
+   },
+   "the first look's starts dealt six ways": [
+    0.98396,
+    0.99939,
+    1.02932,
+    0.9836,
+    0.98107,
+    1.002
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.94355,
+    1.08659
+   ]
+  },
+  "C busy, block 8: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.65244,
+    0.62684,
+    0.63291,
+    0.66067,
+    0.63718,
+    0.64184
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.64741,
+    0.58276
+   ]
+  },
+  "C busy, block 16: its own dice": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.4
+   },
+   "the first look's starts dealt six ways": [
+    0.88818,
+    0.8262,
+    0.88083,
+    0.8346,
+    0.878,
+    0.84781
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.92051,
+    0.88838
+   ]
+  },
+  "C busy, block 16: the clock": {
+   "bound": {
+    "at_least": null,
+    "at_most": 1.0
+   },
+   "the first look's starts dealt six ways": [
+    0.67503,
+    0.60535,
+    0.66778,
+    0.63333,
+    0.62515,
+    0.67164
+   ],
+   "a rule from four starts, fresh rules from two": [
+    0.75591,
+    0.54054
+   ]
+  }
+ },
+ "run-ons by trial start": {
+  "by start: still, block 4: amiss over changed": {
+   "as the first look": [
+    0.5742,
+    0.5081,
+    0.5283,
+    0.5289
+   ],
+   "exchanged": [
+    0.5175,
+    0.5984,
+    0.4395,
+    0.5568
+   ],
+   "odd": [
+    0.6134,
+    0.5384,
+    0.5143,
+    0.5282
+   ],
+   "even": [
+    0.5083,
+    0.4225,
+    0.594,
+    0.5444
+   ],
+   "outer": [
+    0.4419,
+    0.552,
+    0.6161,
+    0.5342
+   ],
+   "inner": [
+    0.5091,
+    0.5982,
+    0.5503,
+    0.5502
+   ]
+  },
+  "by start: still, block 4: walls kept": {
+   "as the first look": [
+    0.7617,
+    0.7802,
+    0.7693,
+    0.7636
+   ],
+   "exchanged": [
+    0.8046,
+    0.7727,
+    0.854,
+    0.7941
+   ],
+   "odd": [
+    0.7542,
+    0.7873,
+    0.7708,
+    0.757
+   ],
+   "even": [
+    0.8156,
+    0.853,
+    0.7584,
+    0.7463
+   ],
+   "outer": [
+    0.8445,
+    0.7838,
+    0.75,
+    0.7626
+   ],
+   "inner": [
+    0.8024,
+    0.7637,
+    0.7399,
+    0.7353
+   ]
+  },
+  "by start: still, block 8: amiss over changed": {
+   "as the first look": [
+    0.4613,
+    0.3845,
+    0.383,
+    0.4452
+   ],
+   "exchanged": [
+    0.3618,
+    0.4242,
+    0.3705,
+    0.4734
+   ],
+   "odd": [
+    0.4253,
+    0.4815,
+    0.3907,
+    0.4394
+   ],
+   "even": [
+    0.3569,
+    0.3983,
+    0.4627,
+    0.4044
+   ],
+   "outer": [
+    0.3972,
+    0.4577,
+    0.4519,
+    0.3998
+   ],
+   "inner": [
+    0.3635,
+    0.4318,
+    0.385,
+    0.4435
+   ]
+  },
+  "by start: still, block 8: walls kept": {
+   "as the first look": [
+    0.8633,
+    0.9203,
+    0.9052,
+    0.8572
+   ],
+   "exchanged": [
+    0.932,
+    0.8861,
+    0.936,
+    0.8667
+   ],
+   "odd": [
+    0.8826,
+    0.8648,
+    0.9256,
+    0.8566
+   ],
+   "even": [
+    0.9393,
+    0.9192,
+    0.8727,
+    0.8959
+   ],
+   "outer": [
+    0.932,
+    0.8673,
+    0.8844,
+    0.911
+   ],
+   "inner": [
+    0.9294,
+    0.8826,
+    0.9038,
+    0.8498
+   ]
+  },
+  "by start: still, block 16: amiss over changed": {
+   "as the first look": [
+    0.5953,
+    0.483,
+    0.5639,
+    0.5238
+   ],
+   "exchanged": [
+    0.5368,
+    0.5383,
+    0.4661,
+    0.5627
+   ],
+   "odd": [
+    0.5694,
+    0.5737,
+    0.4898,
+    0.5238
+   ],
+   "even": [
+    0.5296,
+    0.5017,
+    0.5772,
+    0.5554
+   ],
+   "outer": [
+    0.4902,
+    0.5725,
+    0.5795,
+    0.4989
+   ],
+   "inner": [
+    0.5356,
+    0.5327,
+    0.5699,
+    0.5298
+   ]
+  },
+  "by start: still, block 16: walls kept": {
+   "as the first look": [
+    0.9255,
+    0.9809,
+    0.9932,
+    0.9344
+   ],
+   "exchanged": [
+    1.0247,
+    0.9565,
+    0.9835,
+    1.0
+   ],
+   "odd": [
+    0.9758,
+    1.0026,
+    0.959,
+    0.9235
+   ],
+   "even": [
+    1.0329,
+    0.9519,
+    0.9231,
+    0.9824
+   ],
+   "outer": [
+    0.989,
+    0.9922,
+    0.9231,
+    0.9809
+   ],
+   "inner": [
+    1.0329,
+    0.9614,
+    0.9851,
+    0.9317
+   ]
+  },
+  "by start: still, block 32: amiss over changed": {
+   "as the first look": [
+    0.8756,
+    0.7653,
+    0.8526,
+    0.841
+   ],
+   "exchanged": [
+    0.9289,
+    0.8027,
+    0.8119,
+    0.8564
+   ],
+   "odd": [
+    0.8349,
+    0.9026,
+    0.801,
+    0.8718
+   ],
+   "even": [
+    0.8985,
+    0.7661,
+    0.8571,
+    0.8684
+   ],
+   "outer": [
+    0.8394,
+    0.8564,
+    0.7926,
+    0.7704
+   ],
+   "inner": [
+    0.9695,
+    0.8119,
+    0.8579,
+    0.8615
+   ]
+  },
+  "by start: still, block 32: walls kept": {
+   "as the first look": [
+    0.905,
+    1.0056,
+    0.9725,
+    0.9306
+   ],
+   "exchanged": [
+    1.1145,
+    1.0345,
+    1.0289,
+    0.9947
+   ],
+   "odd": [
+    1.0493,
+    1.016,
+    1.0449,
+    0.9422
+   ],
+   "even": [
+    1.1201,
+    1.0405,
+    0.925,
+    1.0275
+   ],
+   "outer": [
+    1.0173,
+    1.0,
+    0.93,
+    1.0618
+   ],
+   "inner": [
+    1.1089,
+    1.0394,
+    0.9725,
+    0.9422
+   ]
+  },
+  "by start: busy, block 4: amiss over changed": {
+   "as the first look": [
+    0.4407,
+    0.3357,
+    0.2904,
+    0.3186
+   ],
+   "exchanged": [
+    0.3926,
+    0.3859,
+    0.3908,
+    0.3707
+   ],
+   "odd": [
+    0.3831,
+    0.3708,
+    0.3303,
+    0.3213
+   ],
+   "even": [
+    0.3942,
+    0.3881,
+    0.4249,
+    0.2936
+   ],
+   "outer": [
+    0.3946,
+    0.3856,
+    0.4369,
+    0.3602
+   ],
+   "inner": [
+    0.394,
+    0.3742,
+    0.2842,
+    0.3313
+   ]
+  },
+  "by start: busy, block 4: walls kept": {
+   "as the first look": [
+    0.8283,
+    0.8401,
+    0.9061,
+    0.8818
+   ],
+   "exchanged": [
+    0.8483,
+    0.7824,
+    0.8846,
+    0.8268
+   ],
+   "odd": [
+    0.767,
+    0.8377,
+    0.845,
+    0.8752
+   ],
+   "even": [
+    0.8548,
+    0.8769,
+    0.8283,
+    0.8981
+   ],
+   "outer": [
+    0.8683,
+    0.8336,
+    0.827,
+    0.8164
+   ],
+   "inner": [
+    0.837,
+    0.781,
+    0.8965,
+    0.8806
+   ]
+  },
+  "by start: busy, block 8: amiss over changed": {
+   "as the first look": [
+    0.4101,
+    0.3399,
+    0.3091,
+    0.3071
+   ],
+   "exchanged": [
+    0.3306,
+    0.3658,
+    0.3699,
+    0.3494
+   ],
+   "odd": [
+    0.3549,
+    0.3533,
+    0.3388,
+    0.316
+   ],
+   "even": [
+    0.3452,
+    0.3743,
+    0.3979,
+    0.3063
+   ],
+   "outer": [
+    0.3764,
+    0.3575,
+    0.381,
+    0.3236
+   ],
+   "inner": [
+    0.3317,
+    0.3625,
+    0.3075,
+    0.2931
+   ]
+  },
+  "by start: busy, block 8: walls kept": {
+   "as the first look": [
+    0.9196,
+    0.8654,
+    0.9733,
+    0.9409
+   ],
+   "exchanged": [
+    0.9485,
+    0.8401,
+    0.9077,
+    0.9437
+   ],
+   "odd": [
+    0.8373,
+    0.932,
+    0.8945,
+    0.9476
+   ],
+   "even": [
+    0.9458,
+    0.9063,
+    0.9405,
+    0.9716
+   ],
+   "outer": [
+    0.9017,
+    0.9224,
+    0.9444,
+    0.8952
+   ],
+   "inner": [
+    0.9531,
+    0.8373,
+    0.9733,
+    0.9624
+   ]
+  },
+  "by start: busy, block 16: amiss over changed": {
+   "as the first look": [
+    0.4943,
+    0.4599,
+    0.3465,
+    0.5374
+   ],
+   "exchanged": [
+    0.4599,
+    0.3958,
+    0.546,
+    0.4762
+   ],
+   "odd": [
+    0.3936,
+    0.4628,
+    0.4646,
+    0.5385
+   ],
+   "even": [
+    0.4658,
+    0.5436,
+    0.5095,
+    0.3713
+   ],
+   "outer": [
+    0.5276,
+    0.447,
+    0.4956,
+    0.4587
+   ],
+   "inner": [
+    0.4375,
+    0.4047,
+    0.3676,
+    0.5658
+   ]
+  },
+  "by start: busy, block 16: walls kept": {
+   "as the first look": [
+    0.9293,
+    0.9819,
+    1.026,
+    1.0315
+   ],
+   "exchanged": [
+    0.9784,
+    1.0179,
+    1.0346,
+    1.014
+   ],
+   "odd": [
+    1.009,
+    1.0028,
+    0.9669,
+    1.0233
+   ],
+   "even": [
+    0.9811,
+    1.0402,
+    0.9266,
+    1.0191
+   ],
+   "outer": [
+    1.0651,
+    1.014,
+    0.9348,
+    0.9819
+   ],
+   "inner": [
+    0.9811,
+    1.0239,
+    0.9983,
+    1.0192
+   ]
+  },
+  "by start: busy, block 32: amiss over changed": {
+   "as the first look": [
+    0.9794,
+    0.7767,
+    0.5754,
+    0.7644
+   ],
+   "exchanged": [
+    1.02,
+    0.5981,
+    0.8209,
+    0.7761
+   ],
+   "odd": [
+    0.5502,
+    0.7662,
+    0.7621,
+    0.7644
+   ],
+   "even": [
+    0.995,
+    0.8259,
+    0.9691,
+    0.6089
+   ],
+   "outer": [
+    0.7612,
+    0.7413,
+    0.9588,
+    0.7476
+   ],
+   "inner": [
+    0.965,
+    0.5837,
+    0.5978,
+    0.8044
+   ]
+  },
+  "by start: busy, block 32: walls kept": {
+   "as the first look": [
+    0.8478,
+    0.908,
+    1.0221,
+    1.1017
+   ],
+   "exchanged": [
+    1.0391,
+    0.9356,
+    0.9943,
+    0.9885
+   ],
+   "odd": [
+    0.9049,
+    0.9483,
+    0.8344,
+    1.0791
+   ],
+   "even": [
+    1.0168,
+    1.0113,
+    0.8098,
+    1.0221
+   ],
+   "outer": [
+    0.9859,
+    0.9655,
+    0.8315,
+    0.9141
+   ],
+   "inner": [
+    1.0335,
+    0.9233,
+    1.0147,
+    1.1073
+   ]
+  }
+ },
+ "the control": {
+  "side": 512,
+  "starts": [
+   15101,
+   15102
+  ],
+  "live": {
+   "64": 0.658802,
+   "256": 0.942036,
+   "1024": 0.949486,
+   "4096": 0.949566
+  },
+  "walls": {
+   "4": {
+    "64": 0.333099,
+    "256": 0.150238,
+    "1024": 0.145355,
+    "4096": 0.145172
+   },
+   "8": {
+    "64": 0.397827,
+    "256": 0.263184,
+    "1024": 0.257568,
+    "4096": 0.258301
+   },
+   "16": {
+    "64": 0.430664,
+    "256": 0.385254,
+    "1024": 0.386719,
+    "4096": 0.387695
+   },
+   "32": {
+    "64": 0.453125,
+    "256": 0.474609,
+    "1024": 0.472656,
+    "4096": 0.472656
+   }
+  },
+  "blocks": {
+   "8": {
+    "changed leader per thousand, a coarse generation, after generation 1,024": 1.0372,
+    "the still world's rule, by tick": {
+     "8": 1.0975,
+     "16": 1.9075,
+     "32": 3.3478,
+     "64": 6.2415
+    },
+    "run on: amiss at the end": 0.404297,
+    "run on: changed meanwhile": 0.000977,
+    "run on: walls, world and rule": [
+     0.258301,
+     0.048584
+    ]
+   },
+   "16": {
+    "changed leader per thousand, a coarse generation, after generation 1,024": 0.8756,
+    "the still world's rule, by tick": {
+     "16": 0.0481,
+     "32": 0.3575,
+     "64": 0.9306,
+     "128": 2.1211,
+     "256": 4.6857
+    },
+    "run on: amiss at the end": 0.370117,
+    "run on: changed meanwhile": 0.000977,
+    "run on: walls, world and rule": [
+     0.387695,
+     0.103516
+    ]
+   }
+  }
+ }
+}
