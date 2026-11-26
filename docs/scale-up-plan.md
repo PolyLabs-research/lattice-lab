@@ -1697,6 +1697,72 @@ registered on 2026-11-26 with 128 predictions before any of its runs was made.
 
 **Gate:** the verdict, whichever way it goes.
 
+### Step 4g: one more rung (registered 2026-11-26)
+
+The ladder looks for a rule that stops changing from rung to rung. Steps 4d and 4e found the
+rule still changing at blocks of 16, by less at each rung on the square clock. You chose to
+read one rung more after the class (decision D11, option b):
+`examples/scale-up-rung/study.py`, registered on 2026-11-26 with 22 predictions before any
+of its runs was made.
+
+- **What is run.** The still world and the busy world, each against its copy under the
+  standoff from a full start, on a wrapped grid of side 2,048 for 16,384 generations, from
+  eight fresh starts each (18001 on): twice as wide and four times as long as before, which
+  is what blocks of 32 need to be read at the age that matches them. Each such run is
+  sixteen of step 4e's. 16 fine runs and 48 run-ons.
+- **Every rung at its matched age.** Blocks of 4 over generations 64 to 256, of 8 over 256
+  to 1,024, of 16 over 1,024 to 4,096, of 32 over 4,096 to 16,384, each on the square
+  clock: 48 coarse generations at every rung.
+- **The ladder's own test**, which no step has run until now. The plan's last move is to
+  "repeat with the coarse rule as the new fine rule". Here the rule learned at one rung is
+  used, unchanged, as the rule of the rung above and run on by itself there, beside the
+  rung's own rule.
+- **Sizing** (`sizing.py`, exploratory; it ran nothing). The first three rungs can be read
+  at matched ages from the first look's kept runs:
+
+  | | blocks of 4 | 8 | 16 | 32 |
+  | --- | --- | --- | --- | --- |
+  | still: walls when its age starts | 0.178 | 0.167 | 0.175 | 0.170 |
+  | still: the rule from the rung below, more surprise | – | 8.7% | 2.6% | ? |
+  | still: chance of changing hands, five rival neighbours | 0.310 | 0.238 | 0.200 | ? |
+  | still: run on, amiss over changed, its own rule | – | 0.62 | 0.53 | ? |
+  | still: the same with the rule from the rung below | – | 0.72 | 0.62 | ? |
+  | busy: walls when its age starts | 0.163 | 0.164 | 0.162 | 0.166 |
+  | busy: the rule from the rung below, more surprise | – | 5.7% | 2.5% | ? |
+  | busy: chance of changing hands, five rival neighbours | 0.296 | 0.257 | 0.224 | ? |
+  | busy: run on, amiss over changed, its own rule | – | 0.51 | 0.50 | ? |
+  | busy: the same with the rule from the rung below | – | 0.54 | 0.53 | ? |
+
+  Two things stand out before the new rung is run. At matched ages the two worlds have as
+  many walls at every rung, to within 5%: through blocks twice the size, four times later,
+  they are the same picture. And the ladder's own move already works at the rungs that
+  exist: the rule from blocks half the size runs a world on with 5% to 18% more blocks
+  amiss than the rung's own rule.
+
+**The predictions**, 22 in six families.
+
+| Family | What is predicted | Bound |
+| --- | --- | --- |
+| S, the same picture (2) | at the start of each rung's matched age (blocks of 8, 16, 32) a world has as many walls | within 10% |
+| X, another grid (2) | the rule step 4e learned at blocks of 16 on side 1,024 serves on side 2,048 | at most 0.5% more surprise |
+| G, the gap (4) | at blocks of 16 the rule from blocks of 8 is as far from the rung's own as before | 1.5% to 4.5% |
+| | at blocks of 32 the rule from blocks of 16 is nearer than that | smaller |
+| H, the chances level off (2) | a block of 32 with five rival neighbours changes hands this often beside a block of 16 | at least 0.80 times |
+| C, the new rung (4) | at blocks of 32 a world's own rule, run on from generation 4,096 to 16,384, is amiss in this share of the blocks that changed leader; and keeps this share of the walls | at most 0.70; 0.80 to 1.15 |
+| L, the ladder's own test (8) | the rule from the rung below, used as the rule at blocks of 16 and of 32 and run on there: amiss over changed; and over what the rung's own rule gets amiss | at most 0.75; at most 1.30 times |
+
+- **Not tested:** a run-on through blocks too large for the world's territories when it
+  starts (over a fifth of neighbouring blocks under different leaders), as in step 4e.
+- **What I expect, written before the run.** S and X to hold: they are the scaling these
+  worlds have shown at every step. The gap at blocks of 16 to come out where it was. At
+  blocks of 32 I expect it smaller, about 1% in the still world and between 1% and 2% in
+  the busy one if the fall goes on as it began, but that is two steps drawn into a third,
+  which is the mistake step 4 made, so the claim registered is only "smaller". The
+  ladder's own test I expect to hold at both rungs. What the run cannot do is show a fixed
+  point reached: at best it shows the rule changing by a third less again.
+
+**Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that

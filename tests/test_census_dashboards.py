@@ -106,7 +106,7 @@ def test_summary_counts(data):
 
 def test_every_study_and_prediction(data):
     studies, preds = data["studies"], data["predictions"]
-    assert len(studies) == 43 and len(preds) == sum(s["predictions"] for s in studies) == 2041
+    assert len(studies) == 44 and len(preds) == sum(s["predictions"] for s in studies) == 2063
     vocabulary = {"held", "failed", "not tested", "incomplete", "not applicable", "reported",
                   "pending", "no verdict"}  # fmt: skip
     assert {p["outcome"] for p in preds} <= vocabulary
