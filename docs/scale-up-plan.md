@@ -32,7 +32,13 @@ run had zoomed out and a control (the same folder's `study.py`, 89 predictions),
 73: everything the first look saw of its two worlds, on fresh starts; the control, where
 the rule must not serve; and of the three unseen worlds one follows the still world's rule
 as it is, one at half the pace, and one, a sparse world that grows on another clock, not at
-all. Step 5 is not built. The decisions that are yours are at the end.
+all. A registered test of how wide that class is (`examples/scale-up-class`, 128
+predictions, 54 held) refuted the simple account of it: 29 of 38 worlds no run had zoomed
+out keep the same clock, but the still world's rule serves only the ten that have more
+than half their grid live, about a quarter of the rules of a random draw that grow
+territories; run on at the pace a world's walls give, it carries nineteen. A test of one
+more rung (`examples/scale-up-rung`) is registered. Step 5 is not built. The decisions that
+are yours are at the end.
 
 ## What the ladder is for
 
@@ -1615,7 +1621,7 @@ first look left it, with one registered sample more.
 **Gate: passed** in the sense the plan gives it, with eight failures on the record: one
 mine, three that are the pace, four that are the edge.
 
-### Step 4f: how wide is the class (registered 2026-11-26)
+### Step 4f: how wide is the class (registered and run 2026-11-26: 54 of 128 held)
 
 Step 4e left "one rule with a pace" resting on four worlds and a stranger. You chose to ask
 how wide the class is (decision D11, option a): `examples/scale-up-class/study.py`,
@@ -1696,6 +1702,147 @@ registered on 2026-11-26 with 128 predictions before any of its runs was made.
   one off it that it does. It was read off five worlds.
 
 **Gate:** the verdict, whichever way it goes.
+
+**The run** (2026-11-26, on a rented pod: 160 fine runs and 456 run-ons in 81 minutes, $1.99;
+getting there cost another $1.23, told under the costs below). **54 of the 128 predictions
+held, 55 failed and 19 were not tested.** The ledger verifies; six records computed again on
+this machine came out byte for byte, and so did the records of six fine runs recomputed here
+from scratch.
+
+| Family | Held | Failed | Not tested |
+| --- | --- | --- | --- |
+| A, its clock says whether the rule serves | 17 | 20 | 1 |
+| F, a filling world keeps the square-root clock or has set | 8 | 3 | 0 |
+| P, the pace two ways | 8 | 21 | 9 |
+| K, run on at its walls' pace | 19 | 10 | 9 |
+| R, the ranks | 0 | 1 | 0 |
+| X, the anchor | 2 | 0 | 0 |
+
+The claim I most wanted the answer to is refuted, and in the direction that matters: **a
+world can keep the class's clock and not follow its rule.** The 38 worlds, by what they
+did (live is the share of the grid live at the end; the clock is the power of time its walls
+thin by; "more surprise" is the still world's rule at its best pace beside the world's own;
+the last two columns are a rule run on by itself from generation 1,024, blocks amiss over
+blocks that changed):
+
+*Served: on the square-root clock, and the still world's rule within 1% (10 worlds).*
+
+| World | Live | Clock | More surprise | Pace by its walls | The still world's rule at that pace, run on | Its own rule, run on |
+| --- | --- | --- | --- | --- | --- | --- |
+| B2357/S015678 | 0.98 | 0.51 | 0.5% | 0.87 | 0.50 | 0.40 |
+| B24578/S034678 | 0.98 | 0.45 | 0.9% | 0.60 | 0.53 | 0.65 |
+| B3568/S24678 | 0.97 | 0.46 | 0.8% | 0.84 | 0.40 | 0.42 |
+| B23456/S34678 | 0.95 | 0.46 | 0.2% | 0.40 | 0.83 | 0.69 |
+| B23456/S4678 | 0.95 | 0.51 | 0.5% | 1.19 | 0.43 | 0.31 |
+| B345678/S03467 | 0.74 | 0.47 | 0.2% | 0.72 | 0.50 | 0.50 |
+| B34567/S012457 | 0.69 | 0.50 | 0.2% | 0.86 | 0.38 | 0.38 |
+| B356/S2456 | 0.62 | 0.46 | 0.8% | 0.69 | 0.58 | 0.66 |
+| B345/S02457 | 0.61 | 0.47 | 0.3% | 1.02 | 0.39 | 0.40 |
+| B34568/S247 | 0.56 | 0.50 | 0.5% | 1.08 | 0.40 | 0.48 |
+
+*Near: on the clock, within 2% (4 worlds).*
+
+| World | Live | Clock | More surprise | Pace by its walls | The still world's rule at that pace, run on | Its own rule, run on |
+| --- | --- | --- | --- | --- | --- | --- |
+| B24567/S0135678 | 0.99 | 0.47 | 1.4% | 0.79 | 0.46 | 0.29 |
+| B2348/S25678 | 0.97 | 0.54 | 1.2% | 0.79 | 0.38 | 0.27 |
+| B2456/S35 | 0.54 | 0.44 | 1.7% | 0.79 | 0.49 | 0.65 |
+| B234678/S1578 | 0.52 | 0.47 | 1.7% | 0.54 | 0.57 | 0.77 |
+
+*Not served: on the clock all the same (15 worlds).*
+
+| World | Live | Clock | More surprise | Pace by its walls | The still world's rule at that pace, run on | Its own rule, run on |
+| --- | --- | --- | --- | --- | --- | --- |
+| B234567/S01247 | 0.61 | 0.46 | 6.9% | 0.24 | 0.84 | 1.14 |
+| B13458/S358 | 0.53 | 0.44 | 12% | 0.61 | 0.59 | 0.83 |
+| B24678/S1348 | 0.51 | 0.42 | 13% | 0.28 | 0.70 | 1.05 |
+| B238/S1356 | 0.47 | 0.41 | 14% | 0.28 | 0.75 | 1.10 |
+| B3468/S2378 | 0.47 | 0.43 | 3.8% | 0.56 | 0.50 | 0.73 |
+| B2378/S1348 | 0.47 | 0.42 | 16% | 0.27 | 0.82 | 1.09 |
+| B1234/S48 | 0.46 | 0.40 | 16% | 0.25 | 0.83 | 1.11 |
+| B38/S013467 | 0.44 | 0.46 | 5.3% | 0.49 | 0.63 | 0.86 |
+| B2478/S1467 | 0.42 | 0.41 | 20% | 0.35 | 0.78 | 1.04 |
+| B2367/S3 | 0.41 | 0.46 | 4.7% | 0.69 | 0.47 | 0.78 |
+| B2458/S578 | 0.38 | 0.47 | 4.9% | 0.72 | 0.46 | 0.68 |
+| B358/S02378 | 0.35 | 0.44 | 21% | 0.28 | 0.71 | 1.04 |
+| B2568/S05 | 0.29 | 0.41 | 29% | 0.35 | 0.71 | 0.99 |
+| B25/S078 | 0.27 | 0.41 | 38% | 0.33 | 0.69 | 0.95 |
+| B25/S678 | 0.25 | 0.42 | 26% | 0.43 | 0.72 | 0.92 |
+
+*Off the clock (9 worlds): five have set, four thin their walls more slowly.*
+
+| World | Live | Clock | More surprise |
+| --- | --- | --- | --- |
+| B358/S035678 | 0.99 | 0.27 | 9.1% |
+| B2356/S025678 | 0.98 | 0.26 | 4.8% |
+| B0145678/S045678 | 0.97 | 0.00 | 36% |
+| B347/S0125678 | 0.97 | 0.14 | 16% |
+| B024578/S014567 | 0.90 | 0.00 | 23% |
+| B038/S034578 | 0.77 | 0.03 | 16% |
+| B05678/S45678 | 0.75 | 0.00 | 28% |
+| B02347/S034578 | 0.64 | 0.03 | 56% |
+| B01458/S68 | 0.36 | 0.36 | 42% |
+
+**What step 4f shows.**
+
+1. **The clock is common; the rule is not.** 29 of the 38 worlds thin their walls as the
+   0.40th to 0.54th power of time, the still world's clock. The still world's rule serves
+   10 of those within 1% and 4 more within 2%. The other 15 it does not serve, by 4% to
+   38%. So the square-root clock does not mark the class, and claim A failed for 20 worlds.
+   Its other half held: no world off the clock is served (eight not by 9% to 56%; the
+   ninth, B2356/S025678, by 4.8%, which fails a bound of 5% by a hair).
+2. **What marks the class is how full the world is.** Every world the rule serves has more
+   than half its grid live (0.56 to 0.98), and every world on the clock that it misses by
+   more than 2% has 0.61 or less, all but two 0.51 or less. Over the 29, the fuller the world
+   the nearer the rule (rank correlation −0.82 between the share live and the extra
+   surprise). The edge runs at about half the grid, where I had guessed it somewhere
+   between three and five tenths. Weighted by how many rules each band stands for, the
+   class is 23% of the rules of an even draw that grow territories against their copy.
+3. **Run on, the still world's rule reaches further than it serves.** At the pace a world's
+   walls give, it keeps 19 of the 29 worlds on the clock (amiss in at most 0.70 of the
+   blocks that changed): 9 of the 10 it serves, all 4 it nearly serves, and 6 of the 15 it
+   does not. In those 15 the world's own rule, which is the better table one step ahead,
+   is the worse rule to run: it ends little or no nearer the world than supposing nothing
+   moved (0.68 to 1.14, seven of them over 1), where the still world's rule at their pace
+   ends at 0.46 to 0.84. Over all 29 the still world's rule beats the world's own in
+   23. A table that is best one step ahead is not the table that carries the territories:
+   in a thin, busy world a block's leader flickers, the world's own table learns the
+   flicker, and the flicker is not where the walls go.
+4. **The pace is loose, and it is not the rule's pace.** Inside the class the pace by the
+   rule is within a factor of 1.5 of the pace by the walls in 8 worlds of 10, and the two
+   rank together only weakly (0.33). Outside it the rule's best pace means nothing, which
+   is why claims P and R failed as registered: I drew them over every world on the clock,
+   taking the clock for the class. The half-pace world of step 4e, whose two paces agreed
+   to 5%, was a good case and not the rule. The walls' pace is still good enough to choose
+   the table to run on.
+5. **A world that fills can keep another clock.** Three of the eleven filling worlds thin
+   their walls as the 0.14th to 0.27th power of time (claim F failed for them), and none
+   of the three is served. All three let a cell with no neighbour of its own kind survive,
+   but so do four of the other eight, so that explains nothing by itself. One filling world
+   has set, as the control of step 4e did. The other seven are on the clock.
+6. **The anchor held:** the first look's rule is within 0.2% of a rule learned from the
+   still world's fresh starts here.
+
+**Against what I wrote before the run.** The anchor held, as expected. "Most of the eleven
+filling worlds to keep the square-root clock and be served": seven keep it and five are
+served, so no. "One or two to have set": one. "If any falls between it will be
+B0145678/S045678": it set; the three that fell between are others. "Most worlds of the two
+upper busy bands to be served": five of fourteen, and three of the top band's four have
+set. "I do not know about the band from three to five tenths, which is where I expect the
+edge": none of its ten is served, and the edge is above it. "The three under three tenths
+outside": yes, though they keep the clock, which B2/S0 did not. I was right about where the
+uncertainty was and wrong about most of what I thought I knew.
+
+**What it does not show.** One block size (8) for every claim, one grid size, four starts a
+world. "Served" is a bound I chose (1%); the worlds do not fall into two heaps but run from
+0.2% to 56%, and four sit just over the line. At blocks of 16 the fifteen the rule misses
+are mostly a tenth to a third nearer (3.3% to 26%), and two of the four just over the line
+are inside it (0.5% and 0.8%); so some worlds may join at larger blocks, and this run
+cannot say. The share of 23% rests on 27 worlds for 76 rules. And the reason given in point
+3 is a reading of the numbers, not something tested.
+
+**Gate: passed** in the sense the plan gives it: the verdict is in, and it refutes the
+claim it was built to test.
 
 ### Step 4g: one more rung (registered 2026-11-26)
 
@@ -1808,6 +1955,8 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4e, the sizing look: the first look's runs through the study's measures eight ways, and two control runs | up to 1.0 million | 4,096 | 21 minutes of one core, spread over 75 while two other jobs had the machine | here, one core |
 | step 4e, the registered test, 44 runs read through blocks and 108 run-ons | 1.0 million | 4,096 | 51 minutes on 22 workers of a pod with 32 vCPUs, $0.96; a run takes 16 minutes there beside 21 others, the sparse world's 30 | a pod |
 | step 4e, the extras: four runs again for their leaders | 1.0 million | 4,096 | 15 minutes | here, two cores |
+| step 4f, the class test, 160 runs read through blocks and 456 run-ons | 1.0 million | 4,096 | 81 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $1.99; a run takes 8 to 19 minutes there | a pod |
+| step 4f, getting that pod: one that landed on a small host, deleted after 54 minutes, and five refused within minutes | | | $1.02 and $0.21 | pods |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -1822,6 +1971,20 @@ cores. RunPod's 16- and 32-vCPU pods were out of stock for minutes at a time tha
 and four requests were refused (nothing was created) before one was taken; the launcher now
 watches the stock and takes the first acceptable size
 (`examples/scale-up-sizes-large/pod/`).
+
+**One pod type, hosts of very different sizes** (2026-11-26). The pod type used until now
+(compute-optimised, 32 vCPUs) is served both by a 64-core host and by a 16-core one, and the
+launcher's speed check, which times one idle loop, cannot tell them apart. Step 4e's run
+got the large host and took 16 minutes a run. Step 4f's first pod got the small one, where
+30 runs side by side took 45 minutes each: it could not have finished inside its four
+hours, and you had it replaced. Five more pods of that type landed on small or overloaded
+hosts and were refused in turn, by a check added for the purpose
+(`examples/scale-up-sizes-large/pod/launch2.sh`: the host's cores to a socket, before
+anything is run). A type with twice the memory, which the small hosts cannot hold, got the
+large host at the first try, at $1.47 an hour against $1.12. My estimates were also wrong by
+themselves: I guessed a run's cost on a busy pod where step 4e's own log would have told me
+(224 ns a cell there, 276 for the busy world), and the next rung's runs are five hours and
+not the three and a half I quoted.
 
 No step needs a faster engine. If one is wanted later it must reproduce the one update rule
 cell for cell, with a test that says so.
@@ -2047,7 +2210,9 @@ What each one gives:
   rests on least: four worlds. If it holds over twenty, the ladder has found what it was
   built to find, a law of the large scale that many fine rules share, and (b) then asks
   whether that law is also the same at every scale.
-  You chose (a) and then (b). (a) is step 4f, registered on 2026-11-26.
+  You chose (a) and then (b). (a) is step 4f, registered and run on 2026-11-26: 54 of its
+  128 predictions held, and the claim it was built to test (a world's clock says whether
+  the rule serves it) failed for 20 worlds. (b) is step 4g, registered the same day.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -2055,7 +2220,7 @@ What each one gives:
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
 - **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
-  holds two steps):
+  holds four steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -2073,10 +2238,11 @@ What each one gives:
     registers nothing, and the registered test of step 4c, which adds one study and ten
     predictions to the census dashboards' table;
   - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
-    of territories zoomed out (step 4d), which registers nothing, and its registered test
-    (step 4e), which adds one study and 89 predictions to the census dashboards' table.
+    of territories zoomed out (step 4d), which registers nothing; its registered test
+    (step 4e, 89 predictions); the class test (step 4f, 128); and the next rung (step 4g,
+    22). Three studies and 239 predictions more in the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 43
-  studies and 1,916 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 45
+  studies and 2,066 predictions.

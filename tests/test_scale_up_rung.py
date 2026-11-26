@@ -241,3 +241,28 @@ def test_the_registration():
         assert STUDY.sha(LAB / name) == digest, name
     assert question["runs"] == 16 + 48 and question["side"] == 2048
     assert question["generations"] == 16384
+
+
+# --- what the run found --------------------------------------------------------------------------
+
+
+def _verdict():
+    ledger = LAB / "ledger.jsonl"
+    if not ledger.exists():
+        pytest.skip("not registered yet")
+    entries = [json.loads(line) for line in ledger.read_text().splitlines()]
+    verdicts = [e["body"] for e in entries if e["kind"] == "verdict"]
+    if not verdicts:
+        pytest.skip("not run yet")
+    return verdicts[0]
+
+
+def test_the_verdict_is_what_the_records_give():
+    """Judged again here from the records in the repository: the ledger's verdict, to the
+    last figure."""
+    verdict = _verdict()
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    again = STUDY.decide(rows, STUDY.claims())
+    assert again["missing"] == [] and set(again) == set(verdict) - {"question", "cites"}
+    for part in again:
+        assert again[part] == verdict[part], part

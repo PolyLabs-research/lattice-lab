@@ -383,3 +383,94 @@ def test_the_registration():
         assert STUDY.sha(files.get(name, LAB / name)) == digest, name
     assert question["runs"] == 160 + 456 and len(question["worlds"]) == 38
     assert question["side"] == 1024 and question["generations"] == 4096
+
+
+# --- what the run found --------------------------------------------------------------------------
+
+
+def _verdict():
+    ledger = LAB / "ledger.jsonl"
+    if not ledger.exists():
+        pytest.skip("not registered yet")
+    entries = [json.loads(line) for line in ledger.read_text().splitlines()]
+    verdicts = [e["body"] for e in entries if e["kind"] == "verdict"]
+    if not verdicts:
+        pytest.skip("not run yet")
+    return verdicts[0]
+
+
+def test_the_verdict_is_what_the_records_give():
+    """Judged again here from the records in the repository: the ledger's verdict, to the
+    last figure."""
+    verdict = _verdict()
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    again = STUDY.decide(rows, STUDY.claims())
+    assert again["missing"] == [] and set(again) == set(verdict) - {"question", "cites"}
+    for part in again:
+        assert again[part] == verdict[part], part
+
+
+def test_the_registered_run_found_what_the_plan_says():
+    verdict = _verdict()
+    assert verdict["missing"] == []
+    counts = verdict["counts"]
+    assert counts == {"A": {"holds": 17, "fails": 20, "not tested": 1},
+                      "F": {"holds": 8, "fails": 3},
+                      "K": {"holds": 19, "fails": 10, "not tested": 9},
+                      "P": {"holds": 8, "fails": 21, "not tested": 9},
+                      "R": {"fails": 1}, "X": {"holds": 2}}  # fmt: skip
+    words = list(verdict["outcomes"].values())
+    assert (words.count("holds"), words.count("fails"), words.count("not tested")) == (54, 55, 19)
+    worlds = {w: t for w, t in verdict["worlds"].items() if w != STILL}
+    assert len(worlds) == 38 and all(t["two species hold ground"] for t in worlds.values())
+
+    def power(t):
+        return t["walls thin as time to the power"]["8"]
+
+    def run_on(t, whose):
+        return t["run on, amiss over changed"][f"{whose}, blocks of 8"]
+
+    # the clock is common: 29 worlds thin their walls as about the square root of the time
+    clock = {w: t for w, t in worlds.items() if power(t) >= STUDY.SQUARE_ROOT}
+    assert len(clock) == 29 and max(power(t) for t in clock.values()) < 0.55
+    assert sum(power(t) <= STUDY.HAS_SET for t in worlds.values()) == 5  # five have set
+    # the rule is not: it serves ten of them within 1%, four more within 2%, and misses fifteen
+    served = {w for w, t in clock.items() if t["least"]["8"] <= 0.01}
+    near = {w for w, t in clock.items() if 0.01 < t["least"]["8"] <= 0.02}
+    missed = set(clock) - served - near
+    assert (len(served), len(near), len(missed)) == (10, 4, 15)
+    assert min(clock[w]["least"]["8"] for w in missed) > 0.035
+    assert verdict["how wide"]["served"] == 10
+    assert verdict["how wide"]["served, by the sample weighted"] == 0.231
+    # no world off the clock is served
+    assert all(t["least"]["8"] > 0.045 for w, t in worlds.items() if w not in clock)
+    # what marks the class is how full the world is
+    assert min(clock[w]["live at the end"] for w in served) > 0.55
+    assert max(clock[w]["live at the end"] for w in missed) < 0.62
+    assert sum(clock[w]["live at the end"] > 0.52 for w in missed) == 2
+    lives = [t["live at the end"] for t in clock.values()]
+    least = [t["least"]["8"] for t in clock.values()]
+    assert STUDY.rank_correlation(lives, least) < -0.8
+    # run on at its walls' pace, the still world's rule keeps 19 of the 29, and beats the
+    # world's own rule in 23; in the fifteen it misses the world's own rule does not run
+    assert all(t["a block of 8 fits"] for t in clock.values())
+    kept = {w for w, t in clock.items() if run_on(t, STUDY.AT_PACE) <= STUDY.WHERE}
+    assert len(kept) == 19 and len(kept & served) == 9 and near <= kept
+    assert len(kept & missed) == 6
+    assert sum(run_on(t, STUDY.OWN) <= STUDY.WHERE for t in clock.values()) == 14
+    assert sum(run_on(t, STUDY.AT_PACE) < run_on(t, STUDY.OWN) for t in clock.values()) == 23
+    assert sum(run_on(clock[w], STUDY.OWN) > 1 for w in missed) == 7
+    # the pace two ways: loosely inside the class, not outside it
+    apart = {w: max(t["pace by the rule"]["8"] / t["pace by its walls"],
+                    t["pace by its walls"] / t["pace by the rule"]["8"])
+             for w, t in clock.items()}  # fmt: skip
+    assert sum(apart[w] <= STUDY.PACE_AGREES for w in served) == 8
+    assert verdict["measured"]["R the faster by its walls is the faster by the rule"]["value"] < 0
+    # three filling worlds keep a slower clock, one has set, seven are on the clock
+    fills = {w: power(t) for w, t in worlds.items() if t["band"] == "fills"}
+    between = {w for w, pw in fills.items() if STUDY.HAS_SET < pw < STUDY.SQUARE_ROOT}
+    assert between == {"B2356/S025678", "B347/S0125678", "B358/S035678"}
+    assert sum(pw >= STUDY.SQUARE_ROOT for pw in fills.values()) == 7
+    # the anchor
+    assert all(abs(verdict["measured"][f"X the still world, block {b}"]["value"]) < 0.002
+               for b in (8, 16))  # fmt: skip
