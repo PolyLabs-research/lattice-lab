@@ -1,0 +1,282 @@
+{
+ "what the bounds were drawn from": {
+  "A, the clock": {
+   "square root": 0.4,
+   "another clock": 0.33,
+   "serves": 0.01,
+   "does not": 0.05,
+   "drawn from": "the powers of step 4e's worlds: four at 0.46 to 0.49 that the still world's rule serves within 0.7% at some pace, one at 0.27 that it does not serve within 59%, and the control at 0 that it does not serve within 119%. The least and the most of one start are 0.40 and 0.55 for the four, 0.21 and 0.31 for the fifth; this study reads four starts a world."
+  },
+  "F, a filling world's clock": {
+   "has set": 0.1,
+   "square root": 0.4,
+   "drawn from": "the filling worlds step 4e ran: the still world, its near relative and the other still world thin their walls as the 0.46th to 0.49th power of time, and the control, which fills as they do, as the 0.00th. That is four worlds. A fifth that the search followed on a large grid by another measure (B03458/S035678) started late and had not come to a steady clock by generation 2,048; it has not been read this way, and it is the kind of world that could fall between."
+  },
+  "P, the pace two ways": {
+   "within a factor of": 1.5,
+   "drawn from": "the still world's rule at this study's eleven paces, at blocks of 16, in the busy, the near and the other still world: the pace by the rule is 0.95, 1.28 and 1.05 of the pace by the walls. Blocks of 8 could not be read at these paces from runs that exist."
+  },
+  "K, run on at its walls' pace": {
+   "at most": 0.7,
+   "drawn from": "step 4e's run-ons at blocks of 8 with the still world's rule: 0.37 in the busy world and 0.55 in the near one as it is (their paces by their walls are 1.09 and 0.73), 0.75 in the other still world as it is and 0.57 at half its pace (0.54 by its walls); each world's own rule gives 0.36, 0.58 and 0.61."
+  },
+  "X, the anchor": {
+   "at most": {
+    "8": 0.003,
+    "16": 0.005
+   },
+   "drawn from": "step 4e's own anchor: the first look's rule was within 0.03% of a rule learned from fresh starts, against bounds of 0.3% and 0.5%."
+  },
+  "what a claim stands on": {
+   "two species hold ground": 0.8,
+   "a block fits": 0.2,
+   "a pace within reach": [
+    0.2,
+    5.0
+   ],
+   "drawn from": "in step 4e's worlds the larger species has 0.52 to 0.55 of the live cells at the end, 0.64 at most in one start; a block of 8 fits where at most a fifth of neighbouring blocks differ at generation 1,024, as in step 4e (0.09 to 0.12 in the four worlds served, 0.22 in the sparse one, 0.26 in the control). The paces a rule is kept at run from a quarter to four times the still world's, so a pace by the walls under 0.2 or over 5 is one no rule here is near."
+  }
+ },
+ "step 4e's worlds": {
+  "still": {
+   "rule": "B245678/S3678",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": 0.494,
+    "least and most of one start": [
+     0.447,
+     0.528
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.643,
+   "walls at blocks of 8, generation 1,024": 0.0903,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 0.01997,
+    "1.0": -8e-05,
+    "2.0": 0.02687,
+    "4.0": 0.13796
+   },
+   "least of those": -8e-05,
+   "pace by its walls": 1.0,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.09153,
+    "0.5": 0.02736,
+    "0.75": 0.00516,
+    "1.0": -0.00013,
+    "1.25": 0.0038,
+    "1.5": 0.01306,
+    "1.75": 0.02769,
+    "2.0": 0.04505,
+    "2.5": 0.0868,
+    "3.0": 0.13247,
+    "4.0": 0.27749
+   },
+   "pace by the rule, blocks of 16": 0.987,
+   "the two paces apart by a factor of": 1.013,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": 0.41262,
+    "the still world's rule, as it is": null,
+    "the still world's rule, at half its pace": null
+   }
+  },
+  "busy": {
+   "rule": "B23467/S4568",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": 0.486,
+    "least and most of one start": [
+     0.419,
+     0.534
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.618,
+   "walls at blocks of 8, generation 1,024": 0.086,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 0.01963,
+    "1.0": 0.00455,
+    "2.0": 0.03433,
+    "4.0": 0.14463
+   },
+   "least of those": 0.00455,
+   "pace by its walls": 1.091,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.09876,
+    "0.5": 0.03299,
+    "0.75": 0.0092,
+    "1.0": 0.00233,
+    "1.25": 0.00462,
+    "1.5": 0.01388,
+    "1.75": 0.02721,
+    "2.0": 0.0435,
+    "2.5": 0.08361,
+    "3.0": 0.12837,
+    "4.0": 0.26713
+   },
+   "pace by the rule, blocks of 16": 1.035,
+   "the two paces apart by a factor of": 1.054,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": 0.36357,
+    "the still world's rule, as it is": 0.37371,
+    "the still world's rule, at half its pace": null
+   }
+  },
+  "near": {
+   "rule": "B24678/S34678",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": 0.474,
+    "least and most of one start": [
+     0.403,
+     0.551
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.554,
+   "walls at blocks of 8, generation 1,024": 0.1044,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 0.02963,
+    "1.0": 0.00602,
+    "2.0": 0.03083,
+    "4.0": 0.14235
+   },
+   "least of those": 0.00602,
+   "pace by its walls": 0.727,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.08663,
+    "0.5": 0.02742,
+    "0.75": 0.00805,
+    "1.0": 0.00513,
+    "1.25": 0.01126,
+    "1.5": 0.02292,
+    "1.75": 0.03932,
+    "2.0": 0.05715,
+    "2.5": 0.10114,
+    "3.0": 0.14904,
+    "4.0": 0.30858
+   },
+   "pace by the rule, blocks of 16": 0.928,
+   "the two paces apart by a factor of": 1.277,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": 0.58349,
+    "the still world's rule, as it is": 0.54629,
+    "the still world's rule, at half its pace": null
+   }
+  },
+  "another": {
+   "rule": "B3568/S124678",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": 0.46,
+    "least and most of one start": [
+     0.442,
+     0.483
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.529,
+   "walls at blocks of 8, generation 1,024": 0.12,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 0.00501,
+    "1.0": 0.01826,
+    "2.0": 0.09737,
+    "4.0": 0.30032
+   },
+   "least of those": 0.00501,
+   "pace by its walls": 0.541,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.03614,
+    "0.5": 0.00518,
+    "0.75": 0.00797,
+    "1.0": 0.02497,
+    "1.25": 0.05054,
+    "1.5": 0.07811,
+    "1.75": 0.11387,
+    "2.0": 0.14887,
+    "2.5": 0.22578,
+    "3.0": 0.30541,
+    "4.0": 0.55255
+   },
+   "pace by the rule, blocks of 16": 0.569,
+   "the two paces apart by a factor of": 1.052,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": 0.60829,
+    "the still world's rule, as it is": 0.75204,
+    "the still world's rule, at half its pace": 0.5693
+   }
+  },
+  "sparse": {
+   "rule": "B2/S0",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": 0.266,
+    "least and most of one start": [
+     0.211,
+     0.312
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.574,
+   "walls at blocks of 8, generation 1,024": 0.2237,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 0.64522,
+    "1.0": 0.59878,
+    "2.0": 0.6724,
+    "4.0": 0.77916
+   },
+   "least of those": 0.59878,
+   "pace by its walls": 0.119,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.7317,
+    "0.5": 0.64079,
+    "0.75": 0.58503,
+    "1.0": 0.56787,
+    "1.25": 0.55936,
+    "1.5": 0.53836,
+    "1.75": 0.54041,
+    "2.0": 0.53837,
+    "2.5": 0.53323,
+    "3.0": 0.53242,
+    "4.0": 0.71977
+   },
+   "pace by the rule, blocks of 16": 2.743,
+   "the two paces apart by a factor of": 23.125,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": 0.91078,
+    "the still world's rule, as it is": 0.8006,
+    "the still world's rule, at half its pace": null
+   }
+  },
+  "set": {
+   "rule": "B2578/S135678",
+   "walls thin as time to the power, blocks of 8": {
+    "the mean over its starts": -0.001,
+    "least and most of one start": [
+     -0.001,
+     0.0
+    ]
+   },
+   "larger species' share of the live, most of one start": 0.517,
+   "walls at blocks of 8, generation 1,024": 0.2629,
+   "more surprise than its own rule at blocks of 8, by pace (step 4e's paces)": {
+    "0.5": 1.19575,
+    "1.0": 1.9945,
+    "2.0": 3.42651,
+    "4.0": 6.25359
+   },
+   "least of those": 1.19575,
+   "pace by its walls": 0.059,
+   "more surprise at blocks of 16, by pace (this study's paces)": {
+    "0.25": 0.62098,
+    "0.5": 1.09799,
+    "0.75": 1.56198,
+    "1.0": 2.06548,
+    "1.25": 2.55418,
+    "1.5": 2.92339,
+    "1.75": 3.4053,
+    "2.0": 3.84447,
+    "2.5": 5.11418,
+    "3.0": 5.99298,
+    "4.0": 8.12165
+   },
+   "pace by the rule, blocks of 16": 0.25,
+   "the two paces apart by a factor of": 4.207,
+   "run on at blocks of 8, amiss over changed": {
+    "its own rule": null,
+    "the still world's rule, as it is": null,
+    "the still world's rule, at half its pace": null
+   }
+  }
+ }
+}

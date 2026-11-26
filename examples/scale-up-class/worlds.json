@@ -1,0 +1,278 @@
+{
+ "what": "the worlds of the registered test, chosen by study.select from the registered records of examples/scale-up-territories: every rule that grew territories against its copy under the standoff from a full start and filled the grid (nine tenths or more of it live at the end), and of the 600 rules of the even draw a share of those that did not, band by band of how much was live, the first drawn first. `first` is the first of a world's four starts",
+ "of the even draw's rules that grow territories, each band stands for": {
+  "0.3 to 0.5": 30,
+  "0.5 to 0.7": 38,
+  "0.0 to 0.3": 3,
+  "0.7 to 0.9": 5,
+  "fills": 4
+ },
+ "worlds": [
+  {
+   "rule": "B23456/S4678",
+   "drawn": 1454,
+   "live": 0.9137,
+   "band": "fills",
+   "first": 17001
+  },
+  {
+   "rule": "B3568/S24678",
+   "drawn": 1509,
+   "live": 0.93,
+   "band": "fills",
+   "first": 17021
+  },
+  {
+   "rule": "B24567/S0135678",
+   "drawn": 1612,
+   "live": 0.9782,
+   "band": "fills",
+   "first": 17041
+  },
+  {
+   "rule": "B0145678/S045678",
+   "drawn": 1656,
+   "live": 0.9682,
+   "band": "fills",
+   "first": 17061
+  },
+  {
+   "rule": "B23456/S34678",
+   "drawn": 1818,
+   "live": 0.9193,
+   "band": "fills",
+   "first": 17081
+  },
+  {
+   "rule": "B2348/S25678",
+   "drawn": 1828,
+   "live": 0.9217,
+   "band": "fills",
+   "first": 17101
+  },
+  {
+   "rule": "B347/S0125678",
+   "drawn": 1968,
+   "live": 0.9523,
+   "band": "fills",
+   "first": 17121
+  },
+  {
+   "rule": "B2356/S025678",
+   "drawn": 2055,
+   "live": 0.9612,
+   "band": "fills",
+   "first": 17141
+  },
+  {
+   "rule": "B24578/S034678",
+   "drawn": 2208,
+   "live": 0.9537,
+   "band": "fills",
+   "first": 17161
+  },
+  {
+   "rule": "B2357/S015678",
+   "drawn": 2311,
+   "live": 0.9534,
+   "band": "fills",
+   "first": 17181
+  },
+  {
+   "rule": "B358/S035678",
+   "drawn": 2573,
+   "live": 0.9728,
+   "band": "fills",
+   "first": 17201
+  },
+  {
+   "rule": "B25/S678",
+   "drawn": 1316,
+   "live": 0.2459,
+   "band": "0.0 to 0.3",
+   "first": 17221
+  },
+  {
+   "rule": "B2568/S05",
+   "drawn": 1339,
+   "live": 0.2955,
+   "band": "0.0 to 0.3",
+   "first": 17241
+  },
+  {
+   "rule": "B25/S078",
+   "drawn": 1762,
+   "live": 0.2738,
+   "band": "0.0 to 0.3",
+   "first": 17261
+  },
+  {
+   "rule": "B2378/S1348",
+   "drawn": 1206,
+   "live": 0.4788,
+   "band": "0.3 to 0.5",
+   "first": 17281
+  },
+  {
+   "rule": "B2458/S578",
+   "drawn": 1212,
+   "live": 0.373,
+   "band": "0.3 to 0.5",
+   "first": 17301
+  },
+  {
+   "rule": "B2367/S3",
+   "drawn": 1233,
+   "live": 0.4093,
+   "band": "0.3 to 0.5",
+   "first": 17321
+  },
+  {
+   "rule": "B3468/S2378",
+   "drawn": 1238,
+   "live": 0.4669,
+   "band": "0.3 to 0.5",
+   "first": 17341
+  },
+  {
+   "rule": "B01458/S68",
+   "drawn": 1258,
+   "live": 0.3581,
+   "band": "0.3 to 0.5",
+   "first": 17361
+  },
+  {
+   "rule": "B38/S013467",
+   "drawn": 1317,
+   "live": 0.4396,
+   "band": "0.3 to 0.5",
+   "first": 17381
+  },
+  {
+   "rule": "B1234/S48",
+   "drawn": 1318,
+   "live": 0.4477,
+   "band": "0.3 to 0.5",
+   "first": 17401
+  },
+  {
+   "rule": "B238/S1356",
+   "drawn": 1324,
+   "live": 0.4762,
+   "band": "0.3 to 0.5",
+   "first": 17421
+  },
+  {
+   "rule": "B2478/S1467",
+   "drawn": 1429,
+   "live": 0.4207,
+   "band": "0.3 to 0.5",
+   "first": 17441
+  },
+  {
+   "rule": "B358/S02378",
+   "drawn": 1438,
+   "live": 0.3434,
+   "band": "0.3 to 0.5",
+   "first": 17461
+  },
+  {
+   "rule": "B02347/S034578",
+   "drawn": 1229,
+   "live": 0.642,
+   "band": "0.5 to 0.7",
+   "first": 17481
+  },
+  {
+   "rule": "B34568/S247",
+   "drawn": 1240,
+   "live": 0.5622,
+   "band": "0.5 to 0.7",
+   "first": 17501
+  },
+  {
+   "rule": "B34567/S012457",
+   "drawn": 1249,
+   "live": 0.6952,
+   "band": "0.5 to 0.7",
+   "first": 17521
+  },
+  {
+   "rule": "B13458/S358",
+   "drawn": 1270,
+   "live": 0.5258,
+   "band": "0.5 to 0.7",
+   "first": 17541
+  },
+  {
+   "rule": "B234678/S1578",
+   "drawn": 1274,
+   "live": 0.5096,
+   "band": "0.5 to 0.7",
+   "first": 17561
+  },
+  {
+   "rule": "B2456/S35",
+   "drawn": 1275,
+   "live": 0.5352,
+   "band": "0.5 to 0.7",
+   "first": 17581
+  },
+  {
+   "rule": "B234567/S01247",
+   "drawn": 1290,
+   "live": 0.6068,
+   "band": "0.5 to 0.7",
+   "first": 17601
+  },
+  {
+   "rule": "B24678/S1348",
+   "drawn": 1303,
+   "live": 0.5123,
+   "band": "0.5 to 0.7",
+   "first": 17621
+  },
+  {
+   "rule": "B356/S2456",
+   "drawn": 1311,
+   "live": 0.6212,
+   "band": "0.5 to 0.7",
+   "first": 17641
+  },
+  {
+   "rule": "B345/S02457",
+   "drawn": 1334,
+   "live": 0.6149,
+   "band": "0.5 to 0.7",
+   "first": 17661
+  },
+  {
+   "rule": "B024578/S014567",
+   "drawn": 1328,
+   "live": 0.8678,
+   "band": "0.7 to 0.9",
+   "first": 17681
+  },
+  {
+   "rule": "B038/S034578",
+   "drawn": 1384,
+   "live": 0.732,
+   "band": "0.7 to 0.9",
+   "first": 17701
+  },
+  {
+   "rule": "B05678/S45678",
+   "drawn": 1417,
+   "live": 0.7146,
+   "band": "0.7 to 0.9",
+   "first": 17721
+  },
+  {
+   "rule": "B345678/S03467",
+   "drawn": 1427,
+   "live": 0.7413,
+   "band": "0.7 to 0.9",
+   "first": 17741
+  }
+ ]
+}

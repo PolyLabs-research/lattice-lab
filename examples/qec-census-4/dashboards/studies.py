@@ -35,7 +35,7 @@ AREAS = {
                        "settling-time-local"],
     "Scaling up": ["scale-up-linear", "scale-up-tie-break", "scale-up-sizes",
                    "scale-up-sizes-large", "scale-up-gap", "scale-up-closure",
-                   "scale-up-territories", "scale-up-closure-territories"],
+                   "scale-up-territories", "scale-up-closure-territories", "scale-up-class"],
 }  # fmt: skip
 CODE_AREAS = ("Code census", "Code distances")
 WORDS = {"pass": "held", "hold": "held", "holds": "held", "supported": "held",
@@ -424,7 +424,7 @@ READERS = {
     "scale-up-tie-break": scale_up_tie_break, "scale-up-sizes": scale_up_sizes,
     "scale-up-sizes-large": scale_up_sizes, "scale-up-gap": scale_up_sizes,
     "scale-up-closure": scale_up_sizes, "scale-up-territories": scale_up_sizes,
-    "scale-up-closure-territories": scale_up_sizes,
+    "scale-up-closure-territories": scale_up_sizes, "scale-up-class": scale_up_sizes,
     "qec-bb": qec_bb,
     "qec-distance": qec_distance, "qec-distance-2": qec_distance_2,
     "qec-open-distance": parts, "qec-census-2": parts, "qec-census-2b": parts,

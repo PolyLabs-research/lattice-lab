@@ -1615,6 +1615,88 @@ first look left it, with one registered sample more.
 **Gate: passed** in the sense the plan gives it, with eight failures on the record: one
 mine, three that are the pace, four that are the edge.
 
+### Step 4f: how wide is the class (registered 2026-11-26)
+
+Step 4e left "one rule with a pace" resting on four worlds and a stranger. You chose to ask
+how wide the class is (decision D11, option a): `examples/scale-up-class/study.py`,
+registered on 2026-11-26 with 128 predictions before any of its runs was made.
+
+- **The worlds are not the ones I said.** I spoke of twenty worlds that fill their grid.
+  Step 4c's runs do not hold twenty. Of its 842 rules, 207 grew territories against their
+  copy under the standoff from a full start, and by how much of the grid was live at the
+  end of that run they are mostly busy worlds, not filling ones:
+
+  | Share of the grid live | under 0.3 | 0.3 to 0.5 | 0.5 to 0.7 | 0.7 to 0.9 | 0.9 or more (fills) |
+  | --- | --- | --- | --- | --- | --- |
+  | of the 207 | 8 | 76 | 100 | 12 | 11 |
+  | of the 80 among the 600 rules of the even draw | 3 | 30 | 38 | 5 | 4 |
+
+  So the test takes all 11 that fill and, from the even draw, 27 of the 76 that do not:
+  all 3 under three tenths, the first ten drawn in each of the two middle bands, the first
+  four of the top one. 38 worlds, none of them run on a large grid or zoomed out before.
+  That asks more than I promised, at the same cost: how wide the class is among the worlds
+  that fill, and where it ends among the far more numerous worlds that do not.
+- **What is run.** Each world against its copy under the standoff from a full start, on side
+  1,024 for 4,096 generations, from four fresh starts (two to learn its own rule from, two
+  to try on; 17001 on). The still world is run again from eight, read so that its rule can
+  be learned at eleven paces, a quarter to four times the square clock's (blocks of 8 are
+  read every four generations for that). Its rule here is the one every world is tried
+  with. 160 fine runs and 456 run-ons.
+- **What is read of each world** (the measures are step 4e's).
+  - *Its clock:* the power of time by which its walls thin between generations 1,024 and
+    4,096, at blocks of 8.
+  - *Whether the still world's rule serves it:* the least, over the eleven paces, of how
+    much more surprise that rule has on the world's trial starts than the world's own.
+  - *Its pace, two ways:* by its walls (the square of the still world's walls over its own,
+    which owes nothing to any coarse rule), and by the rule (the pace at which the still
+    world's rule serves it best).
+  - *Run on:* the still world's rule for the pace the world's walls give, run on by itself
+    from generation 1,024 in the world's own time.
+- **Sizing** (`sizing.py`, exploratory; it ran nothing). The six worlds of step 4e through
+  these measures, from its registered records:
+
+  | World | Walls thin as time to the power | The still world's rule at its best pace | Pace by its walls | Pace by the rule (blocks of 16) | Run on at blocks of 8 |
+  | --- | --- | --- | --- | --- | --- |
+  | still | 0.49 | (itself) | 1 | 0.99 | – |
+  | busy | 0.49 | 0.5% more surprise | 1.09 | 1.04 | 0.37 as it is |
+  | near | 0.47 | 0.6% | 0.73 | 0.93 | 0.55 as it is |
+  | another | 0.46 | 0.5% | 0.54 | 0.57 | 0.57 at half its pace; 0.75 as it is |
+  | sparse | 0.27 | 60% | – | – | – |
+  | the control (set) | 0.00 | 120% | – | – | – |
+
+  One start's power is 0.40 to 0.55 in the first four and 0.21 to 0.31 in the sparse world.
+  The two paces are within a factor of 1.05 of each other in two worlds and 1.28 in the
+  near one, which is how loosely the pace claim is drawn.
+
+**The predictions**, 128 in six families.
+
+| Family | What is predicted | Bound |
+| --- | --- | --- |
+| A, its clock says (38) | for each world: if its walls thin as the 0.40th power of time or more, the still world's rule serves it at some pace; if as the 0.33rd or less, it does not | at most 1% more surprise; at least 5% more |
+| F, a filling world's clock (11) | each world that fills keeps the square-root clock or has set | its power is 0.40 or more, or 0.10 or less |
+| P, the pace two ways (38) | for each world on the square-root clock: the pace by the rule and the pace by its walls agree | within a factor of 1.5 |
+| K, run on at its walls' pace (38) | for each such world: the still world's rule for that pace, run on by itself, keeps it | amiss in at most 0.70 of the blocks that changed leader |
+| R, the ranks (1) | over those worlds, the faster by its walls is the faster by the rule | rank correlation at least 0.5 |
+| X, the anchor (2) | the first look's rule serves on the still world's fresh starts here | at most 0.3% and 0.5% more surprise |
+
+- **Not tested**, fixed beforehand: any claim about a world in which one species has all
+  but taken the grid (the larger has over 0.8 of the live cells); A where the clock is
+  between the two powers; P and K off the square-root clock, or at a pace the eleven do
+  not come near (under 0.2 or over 5); K where blocks of 8 are too large for the world's
+  territories; R over fewer than eight worlds.
+- **What I expect, written before the run.** The anchor to hold. Most of the eleven filling
+  worlds to keep the square-root clock and be served; one or two to have set, as step 4e's
+  control did; and if any falls between it will be B0145678/S045678, born on no neighbours
+  and holding territories under the standoff only. Most worlds of the two upper busy bands
+  to be served, as the first look's busy world is. I do not know about the band from three
+  to five tenths, which is where I expect the edge to run. The three under three tenths I
+  expect outside, like B2/S0, though two of them hold territories under both tie-breaks and
+  B2/S0 does not, so that is a guess. Family A is the claim I most want the answer to, and
+  it can fail either way: a world on the square-root clock that the rule does not serve, or
+  one off it that it does. It was read off five worlds.
+
+**Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1899,6 +1981,7 @@ What each one gives:
   rests on least: four worlds. If it holds over twenty, the ladder has found what it was
   built to find, a law of the large scale that many fine rules share, and (b) then asks
   whether that law is also the same at every scale.
+  You chose (a) and then (b). (a) is step 4f, registered on 2026-11-26.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
