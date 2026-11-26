@@ -17,7 +17,7 @@ on each world's four trial starts.
 This needs the block leaders of those eight runs (`study.fine`), which the registered records
 do not hold. They were brought home from the pod; `--leaders` names the folder they are in
 (by default the cache `study.fine` keeps). A run whose leaders are not there is made again,
-about three hours of one core each.
+about an hour and forty minutes of one core each.
 
 The summary goes to back.json.
 """

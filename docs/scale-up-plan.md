@@ -1920,11 +1920,11 @@ of its runs was made.
 $4.01). **All 22 predictions held.** The ledger verifies and the verdict, judged again from
 the records, is the ledger's to the last figure. On this machine, 63 of the 64 records were
 computed again from the block leaders the pod kept and came out byte for byte (the leaders of
-one run, the busy world from start 18102, were not home before the pod was deleted); and the
-first 1,024 generations of one fine run, made again from its start, gave the pod's leaders
-at every block size, reading for reading. A whole fine run takes three hours of one core
-here; one (the busy world from start 18105) is being made again beside other work and is
-not in yet.
+one run, the busy world from start 18102, were not home before the pod was deleted). And one
+whole fine run, the busy world from start 18105, was made again here from its start, in 1
+hour 39 minutes of one core: it gave the pod's leaders at every reading of every block size
+and the pod's record of the run, byte for byte, and the run-on the verifier asks for first,
+computed again from those leaders, is the pod's too.
 
 | Family | Held | Failed | Not tested |
 | --- | --- | --- | --- |
@@ -2103,7 +2103,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4e, the extras: four runs again for their leaders | 1.0 million | 4,096 | 15 minutes | here, two cores |
 | step 4f, the class test, 160 runs read through blocks and 456 run-ons | 1.0 million | 4,096 | 81 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $1.99; a run takes 8 to 19 minutes there | a pod |
 | step 4f, getting that pod: one that landed on a small host, deleted after 54 minutes, and five refused within minutes | | | $1.02 and $0.21 | pods |
-| step 4g, the next rung, 16 runs read through blocks and 48 run-ons | 4.2 million | 16,384 | 3 hours 35 minutes on 16 workers of a pod with 32 vCPUs, $4.01; a run takes 2 hours 45 minutes to 3 hours 25 minutes there beside fifteen others, about three hours of one core here | a pod |
+| step 4g, the next rung, 16 runs read through blocks and 48 run-ons | 4.2 million | 16,384 | 3 hours 35 minutes on 16 workers of a pod with 32 vCPUs, $4.01; a run takes 2 hours 45 minutes to 3 hours 25 minutes there beside fifteen others, and 1 hour 39 minutes of one core here | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The

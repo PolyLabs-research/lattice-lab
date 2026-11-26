@@ -306,9 +306,9 @@ running then zooming out matches zooming out then running.
   a wall, with three or four rival neighbours, changes hands, which falls by half and by a
   quarter at every rung. By that pattern a rule that has stopped changing is three or more
   rungs up, and a rung costs sixteen times the last. The ledger verifies; 63 of the 64
-  records computed again here from the leaders the pod kept, and the first 1,024 generations
-  of one fine run made again from its start, match the pod's byte for byte. Where next is
-  decision D12 of the plan.
+  records computed again here from the leaders the pod kept, and one whole fine run made
+  again here from its start, match the pod's byte for byte. Where next is decision D12 of
+  the plan.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their
