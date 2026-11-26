@@ -36,9 +36,15 @@ all. A registered test of how wide that class is (`examples/scale-up-class`, 128
 predictions, 54 held) refuted the simple account of it: 29 of 38 worlds no run had zoomed
 out keep the same clock, but the still world's rule serves only the ten that have more
 than half their grid live, about a quarter of the rules of a random draw that grow
-territories; run on at the pace a world's walls give, it carries nineteen. A test of one
-more rung (`examples/scale-up-rung`) is registered. Step 5 is not built. The decisions that
-are yours are at the end.
+territories; run on at the pace a world's walls give, it carries nineteen. A registered
+test of one more rung (`examples/scale-up-rung`, side 2,048 to generation 16,384, blocks of
+32) held on all 22 predictions: the fourth rung is the same picture as the three below, the
+rule of each rung runs the rung above nearly as well as its own, and the rule changes less
+again, by 1.4% and 1.6% where it was 2.8% and 3.0% a rung below. It has not stopped
+changing, and the same records say the end is further off than that gap suggests: what
+still moves is how often a block on a wall changes hands, and by the pattern so far three
+more rungs would be needed to come near. Step 5 is not built. The decisions that are yours
+are at the end.
 
 ## What the ladder is for
 
@@ -1844,7 +1850,7 @@ cannot say. The share of 23% rests on 27 worlds for 76 rules. And the reason giv
 **Gate: passed** in the sense the plan gives it: the verdict is in, and it refutes the
 claim it was built to test.
 
-### Step 4g: one more rung (registered 2026-11-26)
+### Step 4g: one more rung (registered and run 2026-11-26: all 22 held)
 
 The ladder looks for a rule that stops changing from rung to rung. Steps 4d and 4e found the
 rule still changing at blocks of 16, by less at each rung on the square clock. You chose to
@@ -1910,6 +1916,146 @@ of its runs was made.
 
 **Gate:** the verdict, whichever way it goes.
 
+**The run** (2026-11-26, on a rented pod: 16 fine runs and 48 run-ons in 3 hours 35 minutes,
+$4.01). **All 22 predictions held.** The ledger verifies and the verdict, judged again from
+the records, is the ledger's to the last figure. On this machine, 63 of the 64 records were
+computed again from the block leaders the pod kept and came out byte for byte (the leaders of
+one run, the busy world from start 18102, were not home before the pod was deleted); and the
+first 1,024 generations of one fine run, made again from its start, gave the pod's leaders
+at every block size, reading for reading. A whole fine run takes three hours of one core
+here; one (the busy world from start 18105) is being made again beside other work and is
+not in yet.
+
+| Family | Held | Failed | Not tested |
+| --- | --- | --- | --- |
+| S, the same picture | 2 | 0 | 0 |
+| X, another grid | 2 | 0 | 0 |
+| G, the gap | 4 | 0 | 0 |
+| H, the chances level off | 2 | 0 | 0 |
+| C, the new rung | 4 | 0 | 0 |
+| L, the ladder's own test | 8 | 0 | 0 |
+
+The ladder as the run read it, on fresh starts and a grid twice as wide (the first three
+rungs repeat the sizing table above; the fourth is new):
+
+| | blocks of 4 | 8 | 16 | 32 |
+| --- | --- | --- | --- | --- |
+| matched age, generations | 64 to 256 | 256 to 1,024 | 1,024 to 4,096 | 4,096 to 16,384 |
+| still: walls when its age starts, and ends | 0.178, 0.092 | 0.166, 0.091 | 0.173, 0.092 | 0.178, 0.093 |
+| still: the rule from the rung below, more surprise | – | 8.6% | 2.8% | 1.4% |
+| still: chance of changing hands, five rival neighbours | 0.310 | 0.239 | 0.204 | 0.182 |
+| still: run on, amiss over changed, its own rule | – | 0.60 | 0.54 | 0.51 |
+| still: the same with the rule from the rung below | – | 0.73 | 0.61 | 0.55 |
+| still: walls kept, its own rule | – | 0.86 | 0.90 | 0.92 |
+| busy: walls when its age starts, and ends | 0.162, 0.088 | 0.163, 0.085 | 0.164, 0.086 | 0.168, 0.084 |
+| busy: the rule from the rung below, more surprise | – | 5.6% | 3.0% | 1.6% |
+| busy: chance of changing hands, five rival neighbours | 0.296 | 0.259 | 0.226 | 0.209 |
+| busy: run on, amiss over changed, its own rule | – | 0.53 | 0.46 | 0.39 |
+| busy: the same with the rule from the rung below | – | 0.55 | 0.53 | 0.41 |
+| busy: walls kept, its own rule | – | 0.89 | 0.94 | 1.00 |
+
+Against their bounds (the still world first, then the busy one):
+
+- **S:** the walls at the start of each rung's age are within 6.8% and 2.9% of each other
+  (bound 10%).
+- **X:** step 4e's rule, learned on side 1,024, has 0.05% and 0.10% more surprise on side
+  2,048 than the rule learned there (bound 0.5%).
+- **G:** at blocks of 16 the rule from blocks of 8 has 2.8% and 3.0% more surprise (bounds
+  1.5% to 4.5%); at blocks of 32 the rule from blocks of 16 has 1.4% and 1.6%, smaller by 1.4
+  and 1.5 points.
+- **H:** a block of 32 with five rival neighbours changes hands 0.89 and 0.92 times as often
+  as a block of 16 (at least 0.80).
+- **C:** at blocks of 32 the world's own rule, run on from generation 4,096 to 16,384, is
+  amiss in 0.51 and 0.39 of the blocks that changed leader (at most 0.70) and keeps 0.92 and
+  1.00 of the walls (0.80 to 1.15).
+- **L:** the rule from the rung below, run on as the rule of the rung above, is amiss in 0.61
+  and 0.53 of the changed blocks at blocks of 16, and in 0.55 and 0.41 at blocks of 32 (at
+  most 0.75): 1.13 and 1.15 times as many as the rung's own rule, then 1.08 and 1.06 times
+  (at most 1.30).
+
+**What step 4g shows.**
+
+1. **The fourth rung is the same picture as the three below it.** At the start of its
+   matched age a world has as many walls at every rung, and over each age, which is four
+   times the time, they fall to 0.50 to 0.55 of what they were: the square-root clock
+   again. Through blocks eight times the size and 64 times later, it is the same world to
+   look at.
+2. **The rule changes less again.** The rule from the rung below has 8.6%, 2.8% and 1.4%
+   more surprise than the rung's own in the still world, and 5.6%, 3.0% and 1.6% in the busy
+   one. At the last step the gap halved in both (0.49 and 0.51 of the one before). Start by
+   start it is as firm as a difference can be: every trial start's gap at blocks of 32 (1.0%
+   to 1.6%, 1.2% to 1.9%) is under every start's at blocks of 16 (2.6% to 2.9%, 2.9% to
+   3.2%).
+3. **The ladder's own move works at every rung.** The plan's last step, "repeat with the
+   coarse rule as the new fine rule", had not been run before. A rule learned from blocks
+   half the size, used unchanged, runs the world on and ends amiss in 6% to 15% more blocks
+   than the rung's own rule at blocks of 16 and 32. (At blocks of 8, which no claim covered:
+   21% and 4% more.)
+4. **The higher the rung, the better the rule says where the territories will be.** A
+   rung's own rule, run on by itself over the rung's age, is amiss in 0.60, 0.54 and 0.51 of
+   the blocks that changed leader in the still world and in 0.53, 0.46 and 0.39 in the busy
+   one, and keeps more of the walls each time (0.86 to 0.92, 0.89 to 1.00).
+5. **A wider grid changes nothing:** the rule of side 1,024 is the rule of side 2,048 to a
+   tenth of a percent.
+
+**What the same records show beside the claims** (`extras.py`, exploratory: read after the
+verdict, nothing registered, nothing run; `extras.json`). I looked because "the gap halves"
+reads as "nearly there", and wanted to know whether it is. It is not.
+
+- **The gaps do not add up; they compound.** Were the gap a plain distance, a rule from two
+  rungs down would be as far off as the two steps between. It is twice as far: at
+  blocks of 32 the rule from blocks of 8 has 8.3% and 9.2% more surprise, where the two
+  steps between sum to 4.2% and 4.6%; and the rule from blocks of 4 has 36% and 27%, where
+  the three steps sum to 12.8% and 10.2%. What adds is the square root of the gap, as it
+  would if the gap were the square of a distance and the rule moved the same way at every
+  rung: (√2.8 + √1.4)² is 8.0 where 8.3 was measured, (√3.0 + √1.6)² is 8.9 where 9.2 was,
+  and the four other pairs come within a tenth as well. So a gap that halves is a step that
+  shortens by three tenths, not by half: as square roots of the gap in percent the steps
+  are 2.9, 1.7 and 1.2 in the still world and 2.4, 1.7 and 1.2 in the busy one, each 0.57
+  to 0.74 of the one before.
+- **What moves is how often a block on a wall changes hands.** Blocks with three or four
+  of their eight neighbours under the rival are a fifth of all blocks, and they carry 77%
+  to all of the gap at every rung. Their chance of changing hands falls by the same share at
+  each rung: at three rival neighbours by half (0.042, 0.015, 0.0076, 0.0038 in the still
+  world; 0.024, 0.012, 0.0053, 0.0024 in the busy one), at four by a quarter to a third
+  (0.162, 0.104, 0.076, 0.058; 0.140, 0.105, 0.076, 0.055). The more rival neighbours, the
+  less the chance still falls: at five by about a tenth at the last rung (the 0.89 and 0.92
+  of claim H), at six by 6% and 1%. Beyond six there are too few blocks of 32 to say (one
+  with seven rival neighbours was seen about 500 times in a world). So the table is
+  settling from the top down.
+- **The two worlds' rules stay as near each other as they were, and no nearer.** At blocks
+  of 8, 16 and 32 the busy world's rule has 0.4%, 0.4% and 0.6% more surprise in the still
+  world than its own, and the still world's 0.4%, 0.3% and 0.2% in the busy one. At blocks
+  of 32 the difference between the worlds is a seventh to two fifths of the difference
+  between rungs.
+- **Blocks of 32 are few.** A start has 4,096 of them. On the mean of four trial starts the
+  ladder's own test held with room; in single starts the rule from below is amiss in 0.94
+  to 1.23 times as many blocks as the rung's own in the still world and 0.91 to 1.19 in the
+  busy one, so in some starts it does the better of the two.
+
+**Against what I wrote before the run.** S and X held, as expected, and the gap at blocks of
+16 came out where it was (2.8% and 3.0%; 2.6% and 2.5% to 3.4% before). At blocks of 32 I
+expected about 1% in the still world and between 1% and 2% in the busy one: 1.4% and 1.6%.
+The ladder's own test held at both rungs. "At best it shows the rule changing by a third
+less again": the gap halved, and the step it is the square of shortened by three tenths.
+
+**What it does not show.** A rule that has stopped changing. One new rung, two worlds, both
+inside the class of step 4f, four trial starts each. If the steps go on shortening as they
+have, by about three tenths a rung, they add up to an end: a rule the ladder is climbing
+towards. But from blocks of 32 that end is then still about as far as blocks of 32 are from
+blocks of 8 (some 8% more surprise), it takes three more rungs to come within about 1% of
+it, and each rung costs sixteen times the one before. That is two or three steps drawn into
+many, which is the mistake step 4 made, so it is a guess and I registered nothing on it.
+Where the chances at three and four rival neighbours stop falling, this run cannot say: they
+were still falling by the same share at the last rung. And why it is the blocks on a wall
+that keep changing I have not tested. One reading is that a wall wavers, and its wavering
+is a smaller share of a larger block; a correction that fell as one over the square root of
+the block would shorten each step by three tenths, as here. Another rung alone would not
+tell that from other slow approaches.
+
+**Gate: passed.** The verdict is in: every prediction held, and the rule has not stopped
+changing. What to do about that is decision D12.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -1957,6 +2103,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4e, the extras: four runs again for their leaders | 1.0 million | 4,096 | 15 minutes | here, two cores |
 | step 4f, the class test, 160 runs read through blocks and 456 run-ons | 1.0 million | 4,096 | 81 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $1.99; a run takes 8 to 19 minutes there | a pod |
 | step 4f, getting that pod: one that landed on a small host, deleted after 54 minutes, and five refused within minutes | | | $1.02 and $0.21 | pods |
+| step 4g, the next rung, 16 runs read through blocks and 48 run-ons | 4.2 million | 16,384 | 3 hours 35 minutes on 16 workers of a pod with 32 vCPUs, $4.01; a run takes 2 hours 45 minutes to 3 hours 25 minutes there beside fifteen others, about three hours of one core here | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -1983,8 +2130,9 @@ hosts and were refused in turn, by a check added for the purpose
 anything is run). A type with twice the memory, which the small hosts cannot hold, got the
 large host at the first try, at $1.47 an hour against $1.12. My estimates were also wrong by
 themselves: I guessed a run's cost on a busy pod where step 4e's own log would have told me
-(224 ns a cell there, 276 for the busy world), and the next rung's runs are five hours and
-not the three and a half I quoted.
+(224 ns a cell there, 276 for the busy world). The next rung's pod, of the first type, got
+the large host and ran sixteen runs side by side in the three and a half hours first
+quoted; a timing I took while it ran said five, and was wrong the other way.
 
 No step needs a faster engine. If one is wanted later it must reproduce the one update rule
 cell for cell, with a test that says so.
@@ -2212,7 +2360,43 @@ What each one gives:
   whether that law is also the same at every scale.
   You chose (a) and then (b). (a) is step 4f, registered and run on 2026-11-26: 54 of its
   128 predictions held, and the claim it was built to test (a world's clock says whether
-  the rule serves it) failed for 20 worlds. (b) is step 4g, registered the same day.
+  the rule serves it) failed for 20 worlds. (b) is step 4g, registered and run the same
+  day: all 22 predictions held, and the rule has not stopped changing. The pods cost $3.22
+  for (a), across the three launches you agreed, and $4.01 of the $6.72 agreed for (b).
+- **D12. Where next, now that one more rung is read** (2026-11-26). Step 4g answers (b) as
+  far as one rung can. The ladder's own move works, and the rule changes less at each
+  rung; but it is still changing, the same way each time, and what changes is how often a
+  block on a wall changes hands. Four ways on, cheapest first:
+  (a) **Look for a reading whose rule does stop changing.** If much of what a block on a
+  wall does is the wall wavering back and forth across the block's middle, then a symbol
+  that also carries who led the block one tick before would hold that, and the rest of the
+  table may already be the same at every rung. A first number says the symbol does leave
+  that out (`examples/scale-up-rung/back.py`, exploratory, from the kept leaders of the
+  trial starts): at every rung 18% to 29% of the blocks that go over to the rival had come
+  from it one tick before, and with four rival neighbours a block that has just come over
+  goes back with chance 0.25 to 0.32 where one that has held goes over with 0.04 to 0.09.
+  Among blocks that have held, the chance at five and at six rival neighbours is the same at
+  every rung to within a sixth, where the table as it is falls by three to four tenths at
+  five. At three and four it still falls with the rung, so a block's past is not the whole
+  of it. The leaders of fifteen of this step's sixteen runs are kept here at all four rungs,
+  so the look is a re-reading: no runs, a few hours of one core, registering nothing. If it
+  finds a rule that holds from rung to rung, a registered test of it on fresh starts
+  follows, at step 4e's size (about $1 on a pod, to be agreed first).
+  (b) **Put on the record how the rule changes with the rung.** What the extras read off
+  was read after the verdict. A registered test on fresh starts, and on the ten worlds of
+  step 4f that the rule serves, of three things: the gap sits at blocks with three or four
+  rival neighbours, their chances fall by a fixed share a rung, and the steps add as
+  distances. Side 1,024 to generation 4,096, so three rungs: about 100 runs of 16 minutes, a
+  pod for about $2, to be agreed before any launch.
+  (c) **Climb one more rung:** side 4,096 to generation 65,536, blocks of 64. Sixteen times
+  this step: about 800 core-hours, $60 or so on pods over a day or two. By the pattern it
+  would show the gap halved once more, to about 0.7%, and not a rule that has stopped.
+  (d) **Leave the ladder here:** bring the ten branches home, and take up D8's other two
+  (richer symbols for the pair; step 5, the reversible variants).
+  I recommend (a). It costs nothing, it goes at exactly what this rung found still moving,
+  the first number says there is something to find, and it is the one way on that could
+  show a rule that stops changing at sizes within reach, where climbing can only show a
+  slower approach to one. I do not recommend (c).
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.

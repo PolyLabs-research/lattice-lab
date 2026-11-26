@@ -1,0 +1,512 @@
+{
+ "still": {
+  "the rule of each lower rung, more surprise": {
+   "8": {
+    "4": 0.08579
+   },
+   "16": {
+    "4": 0.22152,
+    "8": 0.02775
+   },
+   "32": {
+    "4": 0.36431,
+    "8": 0.08313,
+    "16": 0.01362
+   },
+   "each step's gap over the one before": [
+    0.323,
+    0.491
+   ]
+  },
+  "the other world's rule, more surprise": {
+   "4": 0.01898,
+   "8": 0.0043,
+   "16": 0.00382,
+   "32": 0.00579
+  },
+  "the least and the most of one trial start": {
+   "8": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0841,
+     0.0865
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.5791,
+      0.6123
+     ],
+     "the rung below's": [
+      0.7086,
+      0.7425
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     1.1983,
+     1.2252
+    ],
+    "run on, walls kept, its own": [
+     0.8525,
+     0.8675
+    ]
+   },
+   "16": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0255,
+     0.0292
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.5208,
+      0.5598
+     ],
+     "the rung below's": [
+      0.6043,
+      0.6325
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     1.0795,
+     1.1748
+    ],
+    "run on, walls kept, its own": [
+     0.877,
+     0.9248
+    ]
+   },
+   "32": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0105,
+     0.016
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.4709,
+      0.5451
+     ],
+     "the rung below's": [
+      0.4841,
+      0.6392
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     0.9403,
+     1.2345
+    ],
+    "run on, walls kept, its own": [
+     0.9087,
+     0.9441
+    ]
+   }
+  },
+  "changing hands, by rival neighbours": {
+   "4": {
+    "chance": [
+     0.0,
+     0.0002,
+     0.0054,
+     0.0421,
+     0.1617,
+     0.3097,
+     0.4171,
+     0.4198,
+     0.5823
+    ]
+   },
+   "8": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0009,
+     0.0154,
+     0.1041,
+     0.2391,
+     0.3443,
+     0.3126,
+     0.511
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.366,
+     0.644,
+     0.772,
+     0.825,
+     0.745,
+     0.878
+    ]
+   },
+   "16": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0003,
+     0.0076,
+     0.0764,
+     0.2041,
+     0.3018,
+     0.2946,
+     0.4926
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.495,
+     0.734,
+     0.854,
+     0.877,
+     0.943,
+     0.964
+    ]
+   },
+   "32": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0001,
+     0.0038,
+     0.058,
+     0.1817,
+     0.2839,
+     0.2717,
+     0.4545
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.501,
+     0.759,
+     0.89,
+     0.941,
+     0.922,
+     0.923
+    ]
+   }
+  },
+  "where the gap is": {
+   "8": {
+    "share of the extra surprise, by rival neighbours": [
+     0.0,
+     0.004,
+     0.059,
+     0.363,
+     0.408,
+     0.133,
+     0.015,
+     0.004,
+     0.001
+    ],
+    "share of it at blocks with no leader": 0.013,
+    "share of the blocks, by rival neighbours": [
+     0.5481,
+     0.1322,
+     0.099,
+     0.1312,
+     0.0705,
+     0.0158,
+     0.0015,
+     0.0003,
+     0.0001
+    ]
+   },
+   "16": {
+    "share of the extra surprise, by rival neighbours": [
+     0.0,
+     0.001,
+     0.028,
+     0.326,
+     0.493,
+     0.136,
+     0.019,
+     -0.009,
+     0.001
+    ],
+    "share of it at blocks with no leader": 0.004,
+    "share of the blocks, by rival neighbours": [
+     0.534,
+     0.134,
+     0.101,
+     0.138,
+     0.0747,
+     0.0158,
+     0.0018,
+     0.0004,
+     0.0001
+    ]
+   },
+   "32": {
+    "share of the extra surprise, by rival neighbours": [
+     -0.0,
+     -0.011,
+     0.031,
+     0.353,
+     0.502,
+     0.133,
+     -0.015,
+     -0.0,
+     0.002
+    ],
+    "share of it at blocks with no leader": 0.004,
+    "share of the blocks, by rival neighbours": [
+     0.5162,
+     0.1367,
+     0.1036,
+     0.1473,
+     0.0778,
+     0.0163,
+     0.0016,
+     0.0003,
+     0.0001
+    ]
+   }
+  }
+ },
+ "busy": {
+  "the rule of each lower rung, more surprise": {
+   "8": {
+    "4": 0.05602
+   },
+   "16": {
+    "4": 0.15902,
+    "8": 0.03032
+   },
+   "32": {
+    "4": 0.27315,
+    "8": 0.09235,
+    "16": 0.01551
+   },
+   "each step's gap over the one before": [
+    0.541,
+    0.512
+   ]
+  },
+  "the other world's rule, more surprise": {
+   "4": 0.01844,
+   "8": 0.00439,
+   "16": 0.00329,
+   "32": 0.00206
+  },
+  "the least and the most of one trial start": {
+   "8": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0551,
+     0.0566
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.4854,
+      0.5445
+     ],
+     "the rung below's": [
+      0.5249,
+      0.5729
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     1.0108,
+     1.0813
+    ],
+    "run on, walls kept, its own": [
+     0.8771,
+     0.9028
+    ]
+   },
+   "16": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0288,
+     0.0321
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.4214,
+      0.4833
+     ],
+     "the rung below's": [
+      0.494,
+      0.6007
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     1.0614,
+     1.2429
+    ],
+    "run on, walls kept, its own": [
+     0.9332,
+     0.9454
+    ]
+   },
+   "32": {
+    "gap: the rule from the rung below, more surprise": [
+     0.0124,
+     0.019
+    ],
+    "run on, amiss over changed": {
+     "its own": [
+      0.3298,
+      0.4453
+     ],
+     "the rung below's": [
+      0.3007,
+      0.4611
+     ]
+    },
+    "amiss, the rule from below over the rung's own": [
+     0.9117,
+     1.1851
+    ],
+    "run on, walls kept, its own": [
+     0.9169,
+     1.0563
+    ]
+   }
+  },
+  "changing hands, by rival neighbours": {
+   "4": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0013,
+     0.0239,
+     0.1395,
+     0.296,
+     0.4177,
+     0.3786,
+     0.575
+    ]
+   },
+   "8": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0004,
+     0.0116,
+     0.1048,
+     0.2587,
+     0.3667,
+     0.3315,
+     0.559
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.486,
+     0.751,
+     0.874,
+     0.878,
+     0.875,
+     0.972
+    ]
+   },
+   "16": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0001,
+     0.0053,
+     0.0758,
+     0.2264,
+     0.3412,
+     0.3103,
+     0.5386
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.452,
+     0.724,
+     0.875,
+     0.93,
+     0.936,
+     0.964
+    ]
+   },
+   "32": {
+    "chance": [
+     0.0,
+     0.0,
+     0.0,
+     0.0024,
+     0.0548,
+     0.2088,
+     0.3363,
+     0.3228,
+     0.5323
+    ],
+    "over the rung below, from three rival neighbours up": [
+     0.449,
+     0.722,
+     0.922,
+     0.986,
+     1.04,
+     0.988
+    ]
+   }
+  },
+  "where the gap is": {
+   "8": {
+    "share of the extra surprise, by rival neighbours": [
+     0.001,
+     0.001,
+     0.013,
+     0.252,
+     0.529,
+     0.15,
+     0.016,
+     0.003,
+     0.0
+    ],
+    "share of it at blocks with no leader": 0.034,
+    "share of the blocks, by rival neighbours": [
+     0.565,
+     0.1271,
+     0.0932,
+     0.1301,
+     0.0681,
+     0.0132,
+     0.0012,
+     0.0002,
+     0.0001
+    ]
+   },
+   "16": {
+    "share of the extra surprise, by rival neighbours": [
+     -0.0,
+     -0.001,
+     0.011,
+     0.284,
+     0.563,
+     0.127,
+     0.007,
+     0.002,
+     0.001
+    ],
+    "share of it at blocks with no leader": 0.005,
+    "share of the blocks, by rival neighbours": [
+     0.5533,
+     0.129,
+     0.0947,
+     0.136,
+     0.0718,
+     0.0132,
+     0.0012,
+     0.0002,
+     0.0001
+    ]
+   },
+   "32": {
+    "share of the extra surprise, by rival neighbours": [
+     -0.0,
+     0.001,
+     -0.02,
+     0.277,
+     0.734,
+     0.037,
+     0.023,
+     -0.005,
+     0.002
+    ],
+    "share of it at blocks with no leader": -0.049,
+    "share of the blocks, by rival neighbours": [
+     0.5593,
+     0.1261,
+     0.0938,
+     0.1348,
+     0.0708,
+     0.0132,
+     0.0015,
+     0.0003,
+     0.0001
+    ]
+   }
+  }
+ }
+}

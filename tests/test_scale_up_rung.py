@@ -266,3 +266,137 @@ def test_the_verdict_is_what_the_records_give():
     assert again["missing"] == [] and set(again) == set(verdict) - {"question", "cites"}
     for part in again:
         assert again[part] == verdict[part], part
+
+
+def test_the_registered_run_found_what_the_plan_says():
+    verdict = _verdict()
+    assert verdict["missing"] == [] and len(verdict["outcomes"]) == 22
+    assert set(verdict["outcomes"].values()) == {"holds"}
+    assert verdict["verdict"] == {family: "holds" for family in "CGHLSX"}
+    measured = {label: found["value"] for label, found in verdict["measured"].items()}
+    still, busy = (verdict["worlds"][w]["rungs"] for w in ("still", "busy"))
+    rungs = ("8", "16", "32")
+    # the same picture at every rung: as many walls when its age starts, about half when it ends
+    for world in (still, busy):
+        for block in ("4", *rungs):
+            first, last = world[block]["walls at its start and its end"]
+            assert 0.16 < first < 0.18 and 0.50 < last / first < 0.55
+        assert all(world[block]["a block fits"] for block in rungs)
+    assert measured["S still: the same picture at matched ages"] < 0.07
+    assert measured["S busy: the same picture at matched ages"] < 0.03
+    # a wider grid changes nothing
+    assert max(measured[f"X {w}: another grid"] for w in ("still", "busy")) < 0.001
+    # the rule changes less again, and the gap about halved at the last step
+    gap = "gap: the rule from the rung below, more surprise"
+    assert [round(100 * still[b][gap], 1) for b in rungs] == [8.6, 2.8, 1.4]
+    assert [round(100 * busy[b][gap], 1) for b in rungs] == [5.6, 3.0, 1.6]
+    for world in (still, busy):
+        assert 0.45 < world["32"][gap] / world["16"][gap] < 0.55
+    assert measured["H still: the chances level off"] == pytest.approx(0.89, abs=0.005)
+    assert measured["H busy: the chances level off"] == pytest.approx(0.92, abs=0.005)
+    # the higher the rung, the better its own rule says where the territories will be
+    where, kept = "run on, amiss over changed", "run on, walls kept"
+    assert [round(still[b][where][STUDY.OWN], 2) for b in rungs] == [0.60, 0.54, 0.51]
+    assert [round(busy[b][where][STUDY.OWN], 2) for b in rungs] == [0.53, 0.46, 0.39]
+    assert [round(still[b][kept][STUDY.OWN], 2) for b in rungs] == [0.86, 0.90, 0.92]
+    assert [round(busy[b][kept][STUDY.OWN], 2) for b in rungs] == [0.89, 0.94, 1.00]
+    # the ladder's own test: the rule from the rung below, run on as the rule of the rung above
+    assert [round(still[b][where][STUDY.BELOW], 2) for b in rungs] == [0.73, 0.61, 0.55]
+    assert [round(busy[b][where][STUDY.BELOW], 2) for b in rungs] == [0.55, 0.53, 0.41]
+    more = [measured[f"L {w}, block {b}: nearly as well as the rung's own"]
+            for w in ("still", "busy") for b in (16, 32)]  # fmt: skip
+    assert 1.055 < min(more) and max(more) < 1.155  # 6% to 15% more blocks amiss
+
+
+def test_what_the_records_show_beside_the_claims():
+    """extras.json is what extras.py reads from the registered records, and it says what the
+    plan says it does. Exploratory: none of this was registered."""
+    _verdict()
+    extras = _load("scale_up_rung_extras", LAB / "extras.py")
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    m = STUDY.Measures(rows, STUDY.design())
+    found = json.loads((LAB / "extras.json").read_text())
+    assert set(found) == {"still", "busy"}
+    for world, other in (("still", "busy"), ("busy", "still")):
+        told = found[world]
+        gaps = told["the rule of each lower rung, more surprise"]
+        assert gaps == extras.gaps(m, world)
+        assert told["the other world's rule, more surprise"] == extras.across(m, world, other)
+        assert told["the least and the most of one trial start"] == extras.starts(m, world)
+        assert told["changing hands, by rival neighbours"] == extras.chances(m, world)
+        assert told["where the gap is"] == extras.where(m, world)
+        # the registered gaps are in it
+        for block in (8, 16, 32):
+            assert gaps[str(block)][str(block // 2)] == STUDY.number(m.gap(world, block))
+        # the gaps compound: from two rungs down, twice the sum of the two steps between
+        step = {block: gaps[str(block)][str(block // 2)] for block in (8, 16, 32)}
+        assert 1.9 < gaps["32"]["8"] / (step[16] + step[32]) < 2.1
+        assert gaps["32"]["4"] / (step[8] + step[16] + step[32]) > 2.6
+        # what adds is the square root, as for the square of a distance along one line
+        for block, lower in ((16, 4), (32, 8), (32, 4)):
+            between = [b for b in (8, 16, 32) if lower < b <= block]
+            line = sum(step[b] ** 0.5 for b in between) ** 2
+            assert gaps[str(block)][str(lower)] == pytest.approx(line, rel=0.10)
+        # so a gap that halves is a step that shortens by three tenths
+        shorter = [(step[b] / step[b // 2]) ** 0.5 for b in (16, 32)]
+        assert all(0.56 < ratio < 0.75 for ratio in shorter)
+        # the gap sits at blocks with three or four rival neighbours, a fifth of all blocks
+        for block in ("8", "16", "32"):
+            at = told["where the gap is"][block]
+            assert sum(at["share of the extra surprise, by rival neighbours"][3:5]) > 0.76
+            assert 0.19 < sum(at["share of the blocks, by rival neighbours"][3:5]) < 0.23
+            # and their chance of changing hands falls by half, and by a quarter to a third
+            fall = told["changing hands, by rival neighbours"][block][
+                "over the rung below, from three rival neighbours up"]  # fmt: skip
+            assert fall[0] < 0.51 and 0.64 < fall[1] < 0.76
+        # the two worlds' rules stay as near each other as they were
+        across = told["the other world's rule, more surprise"]
+        assert all(0.0019 < across[block] < 0.006 for block in ("8", "16", "32"))
+        # start by start: the gap at blocks of 32 is under the gap at blocks of 16 in every one
+        each = told["the least and the most of one trial start"]
+        g = "gap: the rule from the rung below, more surprise"
+        assert each["32"][g][1] < each["16"][g][0]
+        # blocks of 32 are few: in some starts the rule from below does the better of the two
+        least, most = each["32"]["amiss, the rule from below over the rung's own"]
+        assert least < 1 < most < STUDY.BELOW_OVER_OWN
+
+
+def test_a_first_number_for_what_the_symbol_leaves_out():
+    """back.json, which decision D12 of the plan quotes. Exploratory, and read from the block
+    leaders of the trial starts, which the records do not hold: so it is pinned here and not
+    computed again."""
+    path = LAB / "back.json"
+    if not path.exists():
+        pytest.skip("not read yet")
+    back = _load("scale_up_rung_back", LAB / "back.py")
+    found = json.loads(path.read_text())
+    rungs = ("4", "8", "16", "32")
+    chance = "chance of going over to the rival at the next tick, by rival neighbours"
+    share = ("of the blocks that went over to the rival, the share that had come from it one "
+             "tick before")  # fmt: skip
+    assert set(found) == {"still", "busy"}
+    for world in found:
+        assert tuple(found[world]) == rungs
+        held = {b: found[world][b][chance][back.HELD] for b in rungs}
+        came = {b: found[world][b][chance][back.CAME] for b in rungs}
+        for b in rungs:
+            # about a quarter of the blocks that go over had come from the rival a tick before
+            assert 0.17 < found[world][b][share] < 0.30
+            # on a wall, a block that has just come over goes back far more often than one
+            # that has held goes over
+            assert came[b][3] > 7 * held[b][3] and came[b][4] > 3 * held[b][4]
+            assert 0.25 < came[b][4] < 0.33 and 0.04 < held[b][4] < 0.09
+        # among blocks that have held, the chance at five and six is the same at every rung
+        # to within a sixth; at three it still about halves from rung to rung
+        for near in (5, 6):
+            values = [held[b][near] for b in rungs]
+            assert max(values) / min(values) - 1 < 1 / 6
+        three = [held[b][3] for b in rungs]
+        assert all(after < 0.7 * before for before, after in zip(three, three[1:], strict=False))
+    # the table as it is falls by three to four tenths at five rival neighbours, blocks 4 to 32
+    verdict = _verdict()
+    for world in found:
+        told = verdict["worlds"][world]["rungs"]
+        fall = 1 - (told["32"]["changes hands, by rival neighbours"][5]
+                    / told["4"]["changes hands, by rival neighbours"][5])  # fmt: skip
+        assert 0.29 < fall < 0.42

@@ -1,0 +1,414 @@
+{
+ "still": {
+  "4": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2888,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     7104092,
+     1631783,
+     1231267,
+     1380762,
+     670684,
+     162748,
+     20536,
+     3687,
+     1183
+    ],
+    "just come over from the rival": [
+     1189,
+     2326,
+     13452,
+     57090,
+     85027,
+     32909,
+     3360,
+     270,
+     54
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0001,
+     0.0021,
+     0.0193,
+     0.0859,
+     0.1829,
+     0.2843,
+     0.3087,
+     0.4624
+    ],
+    "just come over from the rival": [
+     0.0101,
+     0.0387,
+     0.074,
+     0.1575,
+     0.2782,
+     0.4411,
+     0.5887,
+     0.6444,
+     null
+    ]
+   }
+  },
+  "8": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2682,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     6795899,
+     1617048,
+     1198268,
+     1554495,
+     776528,
+     167837,
+     16819,
+     3126,
+     1179
+    ],
+    "just come over from the rival": [
+     890,
+     1175,
+     8316,
+     46957,
+     76776,
+     20541,
+     1020,
+     45,
+     3
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0004,
+     0.0095,
+     0.0726,
+     0.1851,
+     0.3044,
+     0.2866,
+     0.503
+    ],
+    "just come over from the rival": [
+     0.0022,
+     0.0111,
+     0.0457,
+     0.1373,
+     0.2904,
+     0.4962,
+     0.6814,
+     null,
+     null
+    ]
+   }
+  },
+  "16": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2487,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     1656452,
+     409723,
+     305922,
+     411693,
+     211631,
+     44285,
+     5000,
+     992,
+     368
+    ],
+    "just come over from the rival": [
+     277,
+     307,
+     2032,
+     10259,
+     16148,
+     3139,
+     98,
+     4,
+     0
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0001,
+     0.0047,
+     0.057,
+     0.1753,
+     0.289,
+     0.2883,
+     0.4891
+    ],
+    "just come over from the rival": [
+     0.0,
+     0.0,
+     0.0182,
+     0.1086,
+     0.3046,
+     0.5416,
+     null,
+     null,
+     null
+    ]
+   }
+  },
+  "32": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2109,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     400318,
+     104654,
+     78470,
+     110420,
+     56217,
+     11797,
+     1098,
+     223,
+     94
+    ],
+    "just come over from the rival": [
+     56,
+     78,
+     473,
+     2368,
+     3181,
+     447,
+     7,
+     1,
+     0
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0,
+     0.0023,
+     0.0445,
+     0.1656,
+     0.2823,
+     0.2735,
+     null
+    ],
+    "just come over from the rival": [
+     null,
+     null,
+     0.0085,
+     0.0819,
+     0.2773,
+     0.6286,
+     null,
+     null,
+     null
+    ]
+   }
+  }
+ },
+ "busy": {
+  "4": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2499,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     7304493,
+     1574188,
+     1150107,
+     1455954,
+     667615,
+     128901,
+     11163,
+     2224,
+     852
+    ],
+    "just come over from the rival": [
+     788,
+     952,
+     7426,
+     39956,
+     61540,
+     15116,
+     662,
+     30,
+     2
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0003,
+     0.0088,
+     0.0647,
+     0.173,
+     0.2913,
+     0.2801,
+     0.5622
+    ],
+    "just come over from the rival": [
+     0.0,
+     0.0116,
+     0.0358,
+     0.1092,
+     0.2531,
+     0.4602,
+     0.7054,
+     null,
+     null
+    ]
+   }
+  },
+  "8": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.285,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     7006073,
+     1554153,
+     1127072,
+     1544093,
+     751321,
+     142009,
+     13832,
+     2588,
+     997
+    ],
+    "just come over from the rival": [
+     879,
+     1013,
+     7389,
+     42121,
+     70721,
+     14024,
+     481,
+     20,
+     1
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0001,
+     0.0059,
+     0.066,
+     0.1966,
+     0.3237,
+     0.3153,
+     0.5396
+    ],
+    "just come over from the rival": [
+     0.0,
+     0.0089,
+     0.0275,
+     0.128,
+     0.3226,
+     0.5775,
+     0.8025,
+     null,
+     null
+    ]
+   }
+  },
+  "16": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.2482,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     1715615,
+     394257,
+     286884,
+     406151,
+     203929,
+     37425,
+     3444,
+     674,
+     262
+    ],
+    "just come over from the rival": [
+     205,
+     250,
+     1746,
+     9753,
+     14716,
+     2106,
+     47,
+     2,
+     0
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0,
+     0.0028,
+     0.0535,
+     0.1997,
+     0.338,
+     0.2908,
+     0.542
+    ],
+    "just come over from the rival": [
+     0.0,
+     0.004,
+     0.0149,
+     0.0926,
+     0.3173,
+     0.6178,
+     null,
+     null,
+     null
+    ]
+   }
+  },
+  "32": {
+   "of the blocks that went over to the rival, the share that had come from it one tick before": 0.1759,
+   "blocks, by rival neighbours": {
+    "held since the tick before": [
+     433862,
+     96236,
+     70843,
+     100835,
+     51251,
+     9653,
+     1033,
+     195,
+     97
+    ],
+    "just come over from the rival": [
+     72,
+     84,
+     488,
+     2223,
+     2742,
+     254,
+     4,
+     0,
+     0
+    ]
+   },
+   "chance of going over to the rival at the next tick, by rival neighbours": {
+    "held since the tick before": [
+     0.0,
+     0.0,
+     0.0,
+     0.0014,
+     0.0433,
+     0.1953,
+     0.3359,
+     0.3128,
+     null
+    ],
+    "just come over from the rival": [
+     null,
+     null,
+     0.002,
+     0.0517,
+     0.2604,
+     0.6732,
+     null,
+     null,
+     null
+    ]
+   }
+  }
+ }
+}
