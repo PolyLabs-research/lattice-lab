@@ -1,0 +1,6229 @@
+{
+ "what": "the worlds of step 4j beside the still world at every block and tick (look.py, exploratory): for each world the reading of the still world whose rule is nearest it at its walls' tick, at half that and at twice it; the rung of that block at the world's own tick (its walls' tick over the nearest reading's pace); whether a noise adds to either; the rules run on; and the reading nearest by three things read off leaders alone. `more surprise` is on the starts a world is tried on, beside the world's own rule at the same tick",
+ "the still world's readings": {
+  "2 at 1": {
+   "pace": 1.0,
+   "transitions": 201326592,
+   "blocks that change hands in a tick": 0.08479,
+   "changes undone at the next tick": 0.36204,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.12847,
+   "changes of hands to or from no leader": 0.8393
+  },
+  "2 at 2": {
+   "pace": 2.0,
+   "transitions": 100663296,
+   "blocks that change hands in a tick": 0.09342,
+   "changes undone at the next tick": 0.31095,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.17891,
+   "changes of hands to or from no leader": 0.7903
+  },
+  "2 at 3": {
+   "pace": 3.0,
+   "transitions": 58720256,
+   "blocks that change hands in a tick": 0.0994,
+   "changes undone at the next tick": 0.31257,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.21471,
+   "changes of hands to or from no leader": 0.7448
+  },
+  "2 at 4": {
+   "pace": 4.0,
+   "transitions": 37748736,
+   "blocks that change hands in a tick": 0.09817,
+   "changes undone at the next tick": 0.29882,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.2421,
+   "changes of hands to or from no leader": 0.7159
+  },
+  "4 at 4": {
+   "pace": 1.0,
+   "transitions": 100663296,
+   "blocks that change hands in a tick": 0.02836,
+   "changes undone at the next tick": 0.26709,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01887,
+   "changes of hands to or from no leader": 0.4657
+  },
+  "4 at 8": {
+   "pace": 2.0,
+   "transitions": 50331648,
+   "blocks that change hands in a tick": 0.03607,
+   "changes undone at the next tick": 0.26401,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02836,
+   "changes of hands to or from no leader": 0.3784
+  },
+  "4 at 12": {
+   "pace": 3.0,
+   "transitions": 29360128,
+   "blocks that change hands in a tick": 0.03956,
+   "changes undone at the next tick": 0.25761,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.03814,
+   "changes of hands to or from no leader": 0.332
+  },
+  "4 at 16": {
+   "pace": 4.0,
+   "transitions": 18874368,
+   "blocks that change hands in a tick": 0.04094,
+   "changes undone at the next tick": 0.25236,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.04925,
+   "changes of hands to or from no leader": 0.3023
+  },
+  "8 at 8": {
+   "pace": 0.5,
+   "transitions": 50331648,
+   "blocks that change hands in a tick": 0.01109,
+   "changes undone at the next tick": 0.25543,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00407,
+   "changes of hands to or from no leader": 0.2379
+  },
+  "8 at 16": {
+   "pace": 1.0,
+   "transitions": 25165824,
+   "blocks that change hands in a tick": 0.01527,
+   "changes undone at the next tick": 0.25637,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00524,
+   "changes of hands to or from no leader": 0.174
+  },
+  "8 at 24": {
+   "pace": 1.5,
+   "transitions": 16777216,
+   "blocks that change hands in a tick": 0.01849,
+   "changes undone at the next tick": 0.24827,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00636,
+   "changes of hands to or from no leader": 0.1454
+  },
+  "8 at 32": {
+   "pace": 2.0,
+   "transitions": 12582912,
+   "blocks that change hands in a tick": 0.02142,
+   "changes undone at the next tick": 0.24108,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00759,
+   "changes of hands to or from no leader": 0.1258
+  },
+  "8 at 40": {
+   "pace": 2.5,
+   "transitions": 9437184,
+   "blocks that change hands in a tick": 0.02378,
+   "changes undone at the next tick": 0.231,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00909,
+   "changes of hands to or from no leader": 0.1134
+  },
+  "8 at 48": {
+   "pace": 3.0,
+   "transitions": 7340032,
+   "blocks that change hands in a tick": 0.02502,
+   "changes undone at the next tick": 0.22617,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0105,
+   "changes of hands to or from no leader": 0.1026
+  },
+  "8 at 56": {
+   "pace": 3.5,
+   "transitions": 5767168,
+   "blocks that change hands in a tick": 0.02632,
+   "changes undone at the next tick": 0.22161,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01249,
+   "changes of hands to or from no leader": 0.0978
+  },
+  "8 at 64": {
+   "pace": 4.0,
+   "transitions": 4718592,
+   "blocks that change hands in a tick": 0.02715,
+   "changes undone at the next tick": 0.21696,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01478,
+   "changes of hands to or from no leader": 0.0895
+  },
+  "16 at 16": {
+   "pace": 0.25,
+   "transitions": 25165824,
+   "blocks that change hands in a tick": 0.00546,
+   "changes undone at the next tick": 0.26335,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00145,
+   "changes of hands to or from no leader": 0.1198
+  },
+  "16 at 32": {
+   "pace": 0.5,
+   "transitions": 12582912,
+   "blocks that change hands in a tick": 0.00771,
+   "changes undone at the next tick": 0.26076,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00165,
+   "changes of hands to or from no leader": 0.0845
+  },
+  "16 at 48": {
+   "pace": 0.75,
+   "transitions": 8388608,
+   "blocks that change hands in a tick": 0.00951,
+   "changes undone at the next tick": 0.25232,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0018,
+   "changes of hands to or from no leader": 0.0694
+  },
+  "16 at 64": {
+   "pace": 1.0,
+   "transitions": 6291456,
+   "blocks that change hands in a tick": 0.01103,
+   "changes undone at the next tick": 0.24026,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00194,
+   "changes of hands to or from no leader": 0.0573
+  },
+  "16 at 80": {
+   "pace": 1.25,
+   "transitions": 4980736,
+   "blocks that change hands in a tick": 0.01258,
+   "changes undone at the next tick": 0.23211,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00207,
+   "changes of hands to or from no leader": 0.0511
+  },
+  "16 at 96": {
+   "pace": 1.5,
+   "transitions": 4194304,
+   "blocks that change hands in a tick": 0.01383,
+   "changes undone at the next tick": 0.2178,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00227,
+   "changes of hands to or from no leader": 0.0481
+  },
+  "16 at 112": {
+   "pace": 1.75,
+   "transitions": 3538944,
+   "blocks that change hands in a tick": 0.01526,
+   "changes undone at the next tick": 0.21268,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00251,
+   "changes of hands to or from no leader": 0.0421
+  },
+  "16 at 128": {
+   "pace": 2.0,
+   "transitions": 3145728,
+   "blocks that change hands in a tick": 0.01639,
+   "changes undone at the next tick": 0.20046,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00273,
+   "changes of hands to or from no leader": 0.0386
+  },
+  "16 at 144": {
+   "pace": 2.25,
+   "transitions": 2752512,
+   "blocks that change hands in a tick": 0.01779,
+   "changes undone at the next tick": 0.19505,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00318,
+   "changes of hands to or from no leader": 0.0354
+  },
+  "16 at 160": {
+   "pace": 2.5,
+   "transitions": 2359296,
+   "blocks that change hands in a tick": 0.01874,
+   "changes undone at the next tick": 0.18899,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00322,
+   "changes of hands to or from no leader": 0.0357
+  },
+  "16 at 176": {
+   "pace": 2.75,
+   "transitions": 2097152,
+   "blocks that change hands in a tick": 0.01923,
+   "changes undone at the next tick": 0.18421,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0036,
+   "changes of hands to or from no leader": 0.0322
+  },
+  "16 at 192": {
+   "pace": 3.0,
+   "transitions": 1835008,
+   "blocks that change hands in a tick": 0.01983,
+   "changes undone at the next tick": 0.17661,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00365,
+   "changes of hands to or from no leader": 0.0295
+  },
+  "16 at 208": {
+   "pace": 3.25,
+   "transitions": 1572864,
+   "blocks that change hands in a tick": 0.02067,
+   "changes undone at the next tick": 0.17112,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00419,
+   "changes of hands to or from no leader": 0.029
+  },
+  "16 at 224": {
+   "pace": 3.5,
+   "transitions": 1441792,
+   "blocks that change hands in a tick": 0.02115,
+   "changes undone at the next tick": 0.17081,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00504,
+   "changes of hands to or from no leader": 0.029
+  },
+  "16 at 240": {
+   "pace": 3.75,
+   "transitions": 1310720,
+   "blocks that change hands in a tick": 0.02157,
+   "changes undone at the next tick": 0.16872,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00506,
+   "changes of hands to or from no leader": 0.0294
+  },
+  "16 at 256": {
+   "pace": 4.0,
+   "transitions": 1179648,
+   "blocks that change hands in a tick": 0.02213,
+   "changes undone at the next tick": 0.16653,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00572,
+   "changes of hands to or from no leader": 0.0269
+  },
+  "32 at 32": {
+   "pace": 0.125,
+   "transitions": 12582912,
+   "blocks that change hands in a tick": 0.00275,
+   "changes undone at the next tick": 0.26599,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00056,
+   "changes of hands to or from no leader": 0.0572
+  },
+  "32 at 64": {
+   "pace": 0.25,
+   "transitions": 6291456,
+   "blocks that change hands in a tick": 0.00396,
+   "changes undone at the next tick": 0.26117,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00059,
+   "changes of hands to or from no leader": 0.0432
+  },
+  "32 at 96": {
+   "pace": 0.375,
+   "transitions": 4194304,
+   "blocks that change hands in a tick": 0.00492,
+   "changes undone at the next tick": 0.25334,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00059,
+   "changes of hands to or from no leader": 0.0325
+  },
+  "32 at 128": {
+   "pace": 0.5,
+   "transitions": 3145728,
+   "blocks that change hands in a tick": 0.00576,
+   "changes undone at the next tick": 0.23941,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00063,
+   "changes of hands to or from no leader": 0.0303
+  },
+  "32 at 160": {
+   "pace": 0.625,
+   "transitions": 2490368,
+   "blocks that change hands in a tick": 0.00654,
+   "changes undone at the next tick": 0.22965,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00063,
+   "changes of hands to or from no leader": 0.0223
+  },
+  "32 at 192": {
+   "pace": 0.75,
+   "transitions": 2097152,
+   "blocks that change hands in a tick": 0.00729,
+   "changes undone at the next tick": 0.22094,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00064,
+   "changes of hands to or from no leader": 0.0231
+  },
+  "32 at 224": {
+   "pace": 0.875,
+   "transitions": 1769472,
+   "blocks that change hands in a tick": 0.00803,
+   "changes undone at the next tick": 0.2144,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00071,
+   "changes of hands to or from no leader": 0.02
+  },
+  "32 at 256": {
+   "pace": 1.0,
+   "transitions": 1572864,
+   "blocks that change hands in a tick": 0.00869,
+   "changes undone at the next tick": 0.20476,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0007,
+   "changes of hands to or from no leader": 0.0214
+  },
+  "32 at 288": {
+   "pace": 1.125,
+   "transitions": 1376256,
+   "blocks that change hands in a tick": 0.00936,
+   "changes undone at the next tick": 0.19366,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00075,
+   "changes of hands to or from no leader": 0.0165
+  },
+  "32 at 320": {
+   "pace": 1.25,
+   "transitions": 1245184,
+   "blocks that change hands in a tick": 0.00988,
+   "changes undone at the next tick": 0.18275,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00072,
+   "changes of hands to or from no leader": 0.015
+  },
+  "32 at 352": {
+   "pace": 1.375,
+   "transitions": 1114112,
+   "blocks that change hands in a tick": 0.01063,
+   "changes undone at the next tick": 0.17732,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0008,
+   "changes of hands to or from no leader": 0.0137
+  },
+  "32 at 384": {
+   "pace": 1.5,
+   "transitions": 1048576,
+   "blocks that change hands in a tick": 0.01119,
+   "changes undone at the next tick": 0.17375,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.001,
+   "changes of hands to or from no leader": 0.0144
+  },
+  "32 at 416": {
+   "pace": 1.625,
+   "transitions": 950272,
+   "blocks that change hands in a tick": 0.01185,
+   "changes undone at the next tick": 0.1663,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00093,
+   "changes of hands to or from no leader": 0.0117
+  },
+  "32 at 448": {
+   "pace": 1.75,
+   "transitions": 884736,
+   "blocks that change hands in a tick": 0.0125,
+   "changes undone at the next tick": 0.16421,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00096,
+   "changes of hands to or from no leader": 0.0146
+  },
+  "32 at 480": {
+   "pace": 1.875,
+   "transitions": 819200,
+   "blocks that change hands in a tick": 0.01316,
+   "changes undone at the next tick": 0.15923,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00098,
+   "changes of hands to or from no leader": 0.0101
+  },
+  "32 at 512": {
+   "pace": 2.0,
+   "transitions": 786432,
+   "blocks that change hands in a tick": 0.01364,
+   "changes undone at the next tick": 0.14947,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00109,
+   "changes of hands to or from no leader": 0.0118
+  },
+  "32 at 544": {
+   "pace": 2.125,
+   "transitions": 720896,
+   "blocks that change hands in a tick": 0.01439,
+   "changes undone at the next tick": 0.14537,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00107,
+   "changes of hands to or from no leader": 0.0091
+  },
+  "32 at 576": {
+   "pace": 2.25,
+   "transitions": 688128,
+   "blocks that change hands in a tick": 0.015,
+   "changes undone at the next tick": 0.14347,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00114,
+   "changes of hands to or from no leader": 0.011
+  },
+  "32 at 608": {
+   "pace": 2.375,
+   "transitions": 622592,
+   "blocks that change hands in a tick": 0.01552,
+   "changes undone at the next tick": 0.13713,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00118,
+   "changes of hands to or from no leader": 0.0087
+  },
+  "32 at 640": {
+   "pace": 2.5,
+   "transitions": 589824,
+   "blocks that change hands in a tick": 0.01586,
+   "changes undone at the next tick": 0.13345,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00135,
+   "changes of hands to or from no leader": 0.0109
+  },
+  "32 at 672": {
+   "pace": 2.625,
+   "transitions": 557056,
+   "blocks that change hands in a tick": 0.0161,
+   "changes undone at the next tick": 0.1295,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0013,
+   "changes of hands to or from no leader": 0.0091
+  },
+  "32 at 704": {
+   "pace": 2.75,
+   "transitions": 524288,
+   "blocks that change hands in a tick": 0.0164,
+   "changes undone at the next tick": 0.12976,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00154,
+   "changes of hands to or from no leader": 0.0101
+  },
+  "32 at 736": {
+   "pace": 2.875,
+   "transitions": 491520,
+   "blocks that change hands in a tick": 0.01675,
+   "changes undone at the next tick": 0.12379,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00148,
+   "changes of hands to or from no leader": 0.0092
+  },
+  "32 at 768": {
+   "pace": 3.0,
+   "transitions": 458752,
+   "blocks that change hands in a tick": 0.01712,
+   "changes undone at the next tick": 0.1295,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00145,
+   "changes of hands to or from no leader": 0.0088
+  },
+  "32 at 800": {
+   "pace": 3.125,
+   "transitions": 425984,
+   "blocks that change hands in a tick": 0.01738,
+   "changes undone at the next tick": 0.12162,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00156,
+   "changes of hands to or from no leader": 0.0097
+  },
+  "32 at 832": {
+   "pace": 3.25,
+   "transitions": 393216,
+   "blocks that change hands in a tick": 0.01806,
+   "changes undone at the next tick": 0.12822,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00157,
+   "changes of hands to or from no leader": 0.0115
+  },
+  "32 at 864": {
+   "pace": 3.375,
+   "transitions": 360448,
+   "blocks that change hands in a tick": 0.01821,
+   "changes undone at the next tick": 0.11442,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00168,
+   "changes of hands to or from no leader": 0.0059
+  },
+  "32 at 896": {
+   "pace": 3.5,
+   "transitions": 360448,
+   "blocks that change hands in a tick": 0.01818,
+   "changes undone at the next tick": 0.11493,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00174,
+   "changes of hands to or from no leader": 0.0079
+  },
+  "32 at 928": {
+   "pace": 3.625,
+   "transitions": 327680,
+   "blocks that change hands in a tick": 0.01878,
+   "changes undone at the next tick": 0.11516,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00191,
+   "changes of hands to or from no leader": 0.0096
+  },
+  "32 at 960": {
+   "pace": 3.75,
+   "transitions": 327680,
+   "blocks that change hands in a tick": 0.0187,
+   "changes undone at the next tick": 0.10956,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00169,
+   "changes of hands to or from no leader": 0.009
+  },
+  "32 at 992": {
+   "pace": 3.875,
+   "transitions": 294912,
+   "blocks that change hands in a tick": 0.01934,
+   "changes undone at the next tick": 0.11507,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00218,
+   "changes of hands to or from no leader": 0.0075
+  },
+  "32 at 1024": {
+   "pace": 4.0,
+   "transitions": 294912,
+   "blocks that change hands in a tick": 0.01937,
+   "changes undone at the next tick": 0.11194,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00185,
+   "changes of hands to or from no leader": 0.0077
+  }
+ },
+ "worlds within a bar, by group as [within, of]": {
+  "the look's reading, at its walls' tick, as it is": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     0,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     0,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     4,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     0,
+     5
+    ]
+   }
+  },
+  "the look's reading, at its walls' tick, with how long in view": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     4,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     0,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     4,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     0,
+     5
+    ]
+   }
+  },
+  "the nearest reading, at its walls' tick, as it is": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     1,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     4,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     4,
+     5
+    ]
+   }
+  },
+  "the nearest reading, at its walls' tick, with how long in view": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     2,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     4,
+     5
+    ]
+   }
+  },
+  "the nearest reading with a noise, as it is": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     2,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     4,
+     4
+    ],
+    "missed": [
+     6,
+     10
+    ],
+    "just missed": [
+     5,
+     5
+    ]
+   }
+  },
+  "the nearest reading with a noise, with how long in view": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     2,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     1,
+     10
+    ],
+    "just missed": [
+     5,
+     5
+    ]
+   }
+  },
+  "the rung at its own tick, as it is": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     1,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     4,
+     5
+    ]
+   }
+  },
+  "the rung at its own tick, with how long in view": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     1,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     4,
+     5
+    ]
+   }
+  },
+  "the rung at its own tick with a noise, as it is": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     3,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     3,
+     4
+    ],
+    "missed": [
+     7,
+     10
+    ],
+    "just missed": [
+     5,
+     5
+    ]
+   }
+  },
+  "the rung at its own tick with a noise, with how long in view": {
+   "within 2.5%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     0,
+     10
+    ],
+    "just missed": [
+     2,
+     5
+    ]
+   },
+   "within 4.0%": {
+    "served": [
+     10,
+     10
+    ],
+    "nearly served": [
+     2,
+     4
+    ],
+    "missed": [
+     1,
+     10
+    ],
+    "just missed": [
+     4,
+     5
+    ]
+   }
+  }
+ },
+ "does the nearest reading move with the tick, by group as [block kept, and the tick the right way, of]": {
+  "at half its walls' tick": {
+   "the still world": [
+    1,
+    1,
+    1
+   ],
+   "served": [
+    10,
+    9,
+    10
+   ],
+   "nearly served": [
+    4,
+    2,
+    4
+   ],
+   "missed": [
+    8,
+    2,
+    10
+   ],
+   "just missed": [
+    4,
+    4,
+    5
+   ]
+  },
+  "at twice its walls' tick": {
+   "the still world": [
+    1,
+    1,
+    1
+   ],
+   "served": [
+    10,
+    10,
+    10
+   ],
+   "nearly served": [
+    2,
+    2,
+    4
+   ],
+   "missed": [
+    9,
+    7,
+    10
+   ],
+   "just missed": [
+    5,
+    5,
+    5
+   ]
+  }
+ },
+ "placed by its leaders alone, by group as [same reading, same block, of]": {
+  "served": [
+   4,
+   7,
+   10
+  ],
+  "nearly served": [
+   0,
+   1,
+   4
+  ],
+  "missed": [
+   0,
+   7,
+   10
+  ],
+  "just missed": [
+   4,
+   5,
+   5
+  ]
+ },
+ "worlds": {
+  "B245678/S3678": {
+   "group": "the still world",
+   "walls' tick": 16,
+   "blocks that change hands in a tick": 0.01523,
+   "changes undone at the next tick": 0.25677,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00539,
+   "changes of hands to or from no leader": 0.1782,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": -0.0002,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0007,
+      "beside its own with endless data": -0.0002
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0156,
+     "beside its own with endless data": -0.0076,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0156,
+      "beside its own with endless data": -0.0076
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": -0.0002,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0007,
+      "beside its own with endless data": -0.0002
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0156,
+     "beside its own with endless data": -0.0076,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0156,
+      "beside its own with endless data": -0.0076
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": -0.0002
+    },
+    "with how long in view": {
+     "more surprise": -0.0156,
+     "beside its own with endless data": -0.0076
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 8,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": -0.0004,
+     "beside its own with endless data": 0.0
+    },
+    "with how long in view": {
+     "more surprise": -0.006,
+     "beside its own with endless data": 0.0008
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 32,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": 0.0004
+    },
+    "with how long in view": {
+     "more surprise": -0.017,
+     "beside its own with endless data": 0.0016
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 16,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": -0.0002,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0007,
+      "beside its own with endless data": -0.0002
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0156,
+     "beside its own with endless data": -0.0076,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0156,
+      "beside its own with endless data": -0.0076
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.0164,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": -0.0007,
+     "beside its own with endless data": -0.0002
+    },
+    "with how long in view": {
+     "more surprise": -0.0156,
+     "beside its own with endless data": -0.0076
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6369,
+     "walls kept": 0.8728
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.6336,
+     "walls kept": 0.8743
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6259,
+     "walls kept": 0.8665
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.6327,
+     "walls kept": 0.8655
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.6338,
+     "walls kept": 0.867
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4559,
+     "walls kept": 1.0136
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4674,
+     "walls kept": 1.0144
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4456,
+     "walls kept": 1.0099
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4581,
+     "walls kept": 1.0094
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4558,
+     "walls kept": 1.0111
+    }
+   }
+  },
+  "B23456/S4678": {
+   "group": "served",
+   "walls' tick": 16,
+   "blocks that change hands in a tick": 0.01252,
+   "changes undone at the next tick": 0.24224,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00229,
+   "changes of hands to or from no leader": 0.2162,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0089,
+     "beside its own with endless data": 0.0094,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0089,
+      "beside its own with endless data": 0.0094
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0021,
+     "beside its own with endless data": 0.0051,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0021,
+      "beside its own with endless data": 0.0051
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0089,
+     "beside its own with endless data": 0.0094,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0089,
+      "beside its own with endless data": 0.0094
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0021,
+     "beside its own with endless data": 0.0051,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0021,
+      "beside its own with endless data": 0.0051
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0089,
+     "beside its own with endless data": 0.0094
+    },
+    "with how long in view": {
+     "more surprise": -0.0021,
+     "beside its own with endless data": 0.0051
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 8,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.005,
+     "beside its own with endless data": 0.0055
+    },
+    "with how long in view": {
+     "more surprise": -0.0008,
+     "beside its own with endless data": 0.0087
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 32,
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0101,
+     "beside its own with endless data": 0.0113
+    },
+    "with how long in view": {
+     "more surprise": 0.0079,
+     "beside its own with endless data": 0.0219
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 16,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0089,
+     "beside its own with endless data": 0.0094,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0089,
+      "beside its own with endless data": 0.0094
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0021,
+     "beside its own with endless data": 0.0051,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0021,
+      "beside its own with endless data": 0.0051
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.064,
+    "block": 16,
+    "tick": 80,
+    "pace": 1.25,
+    "as it is": {
+     "more surprise": 0.0264,
+     "beside its own with endless data": 0.0269
+    },
+    "with how long in view": {
+     "more surprise": 0.0413,
+     "beside its own with endless data": 0.0489
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5445,
+     "walls kept": 0.8916
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.5536,
+     "walls kept": 0.8826
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.4932,
+     "walls kept": 0.9109
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.5481,
+     "walls kept": 0.8882
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.4997,
+     "walls kept": 0.9031
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4199,
+     "walls kept": 1.0535
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4254,
+     "walls kept": 1.0498
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4022,
+     "walls kept": 1.0435
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.421,
+     "walls kept": 1.0483
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4119,
+     "walls kept": 1.0417
+    }
+   }
+  },
+  "B3568/S24678": {
+   "group": "served",
+   "walls' tick": 16,
+   "blocks that change hands in a tick": 0.01416,
+   "changes undone at the next tick": 0.25943,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00429,
+   "changes of hands to or from no leader": 0.1923,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0012,
+     "beside its own with endless data": 0.0021,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0012,
+      "beside its own with endless data": 0.0021
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": -0.0004,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0121,
+      "beside its own with endless data": -0.0004
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0012,
+     "beside its own with endless data": 0.0021,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0012,
+      "beside its own with endless data": 0.0021
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": -0.0004,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0121,
+      "beside its own with endless data": -0.0004
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0012,
+     "beside its own with endless data": 0.0021
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": -0.0004
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 8,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0004,
+     "beside its own with endless data": 0.0008
+    },
+    "with how long in view": {
+     "more surprise": -0.0084,
+     "beside its own with endless data": -0.0032
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 32,
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": -0.0009,
+     "beside its own with endless data": -0.0004
+    },
+    "with how long in view": {
+     "more surprise": -0.0169,
+     "beside its own with endless data": -0.0048
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 16,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0012,
+     "beside its own with endless data": 0.0021,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0012,
+      "beside its own with endless data": 0.0021
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": -0.0004,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0121,
+      "beside its own with endless data": -0.0004
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1243,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0012,
+     "beside its own with endless data": 0.0021
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": -0.0004
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6326,
+     "walls kept": 0.8434
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.6418,
+     "walls kept": 0.8418
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6017,
+     "walls kept": 0.8761
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.6416,
+     "walls kept": 0.8386
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.6153,
+     "walls kept": 0.8713
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.425,
+     "walls kept": 0.9822
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4315,
+     "walls kept": 0.9888
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4202,
+     "walls kept": 1.0248
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4253,
+     "walls kept": 0.9786
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4213,
+     "walls kept": 1.0282
+    }
+   }
+  },
+  "B24567/S0135678": {
+   "group": "nearly served",
+   "walls' tick": 22,
+   "blocks that change hands in a tick": 0.0106,
+   "changes undone at the next tick": 0.20267,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00121,
+   "changes of hands to or from no leader": 0.2192,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0304,
+     "beside its own with endless data": 0.031,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0304,
+      "beside its own with endless data": 0.031
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.001,
+     "beside its own with endless data": 0.0082,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.001,
+      "beside its own with endless data": 0.0082
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0176,
+     "beside its own with endless data": 0.0183,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0176,
+      "beside its own with endless data": 0.0183
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0211,
+     "beside its own with endless data": 0.0285,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0211,
+      "beside its own with endless data": 0.0285
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0176,
+     "beside its own with endless data": 0.0183
+    },
+    "with how long in view": {
+     "more surprise": 0.0211,
+     "beside its own with endless data": 0.0285
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0248,
+     "beside its own with endless data": 0.0253
+    },
+    "with how long in view": {
+     "more surprise": 0.007,
+     "beside its own with endless data": 0.0158
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 44,
+    "block": 16,
+    "tick": 112,
+    "pace": 1.75,
+    "as it is": {
+     "more surprise": 0.0212,
+     "beside its own with endless data": 0.0226
+    },
+    "with how long in view": {
+     "more surprise": 0.023,
+     "beside its own with endless data": 0.0338
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 44,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0302,
+     "beside its own with endless data": 0.0317,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0302,
+      "beside its own with endless data": 0.0317
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0442,
+     "beside its own with endless data": 0.0552,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0442,
+      "beside its own with endless data": 0.0552
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1451,
+    "block": 32,
+    "tick": 384,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0955,
+     "beside its own with endless data": 0.0962
+    },
+    "with how long in view": {
+     "more surprise": 0.3559,
+     "beside its own with endless data": 0.3656
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.521,
+     "walls kept": 0.8856
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.4812,
+     "walls kept": 1.056
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.4379,
+     "walls kept": 0.9213
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.4726,
+     "walls kept": 1.1522
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.39,
+     "walls kept": 0.9968
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4226,
+     "walls kept": 1.0565
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5535,
+     "walls kept": 1.2829
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4014,
+     "walls kept": 1.0499
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5673,
+     "walls kept": 1.3074
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.387,
+     "walls kept": 1.0561
+    }
+   }
+  },
+  "B23456/S34678": {
+   "group": "served",
+   "walls' tick": 44,
+   "blocks that change hands in a tick": 0.01383,
+   "changes undone at the next tick": 0.25005,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00379,
+   "changes of hands to or from no leader": 0.1874,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0002,
+     "beside its own with endless data": 0.0012,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0002,
+      "beside its own with endless data": 0.0012
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0149,
+     "beside its own with endless data": -0.0001,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0149,
+      "beside its own with endless data": -0.0001
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0002,
+     "beside its own with endless data": 0.0012,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0002,
+      "beside its own with endless data": 0.0012
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0149,
+     "beside its own with endless data": -0.0001,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0149,
+      "beside its own with endless data": -0.0001
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0002,
+     "beside its own with endless data": 0.0012
+    },
+    "with how long in view": {
+     "more surprise": -0.0149,
+     "beside its own with endless data": -0.0001
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 22,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0003,
+     "beside its own with endless data": 0.0009
+    },
+    "with how long in view": {
+     "more surprise": -0.0091,
+     "beside its own with endless data": 0.0007
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 88,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0008,
+     "beside its own with endless data": 0.002
+    },
+    "with how long in view": {
+     "more surprise": -0.0107,
+     "beside its own with endless data": 0.008
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 44,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0002,
+     "beside its own with endless data": 0.0012,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0002,
+      "beside its own with endless data": 0.0012
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0149,
+     "beside its own with endless data": -0.0001,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0149,
+      "beside its own with endless data": -0.0001
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1348,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0131,
+     "beside its own with endless data": 0.0141
+    },
+    "with how long in view": {
+     "more surprise": 0.0047,
+     "beside its own with endless data": 0.0198
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6109,
+     "walls kept": 0.8625
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.6231,
+     "walls kept": 0.8514
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.5718,
+     "walls kept": 0.8797
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.6058,
+     "walls kept": 0.8565
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.571,
+     "walls kept": 0.8772
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.436,
+     "walls kept": 1.0134
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4496,
+     "walls kept": 1.0145
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4311,
+     "walls kept": 1.0183
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4379,
+     "walls kept": 1.0204
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4302,
+     "walls kept": 1.0225
+    }
+   }
+  },
+  "B2348/S25678": {
+   "group": "nearly served",
+   "walls' tick": 26,
+   "blocks that change hands in a tick": 0.01055,
+   "changes undone at the next tick": 0.20901,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.0007,
+   "changes of hands to or from no leader": 0.2384,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.037,
+     "beside its own with endless data": 0.0378,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.037,
+      "beside its own with endless data": 0.0378
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0223,
+     "beside its own with endless data": 0.0312,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0223,
+      "beside its own with endless data": 0.0312
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0272,
+     "beside its own with endless data": 0.0279,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0272,
+      "beside its own with endless data": 0.0279
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0495,
+     "beside its own with endless data": 0.0586,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0495,
+      "beside its own with endless data": 0.0586
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0272,
+     "beside its own with endless data": 0.0279
+    },
+    "with how long in view": {
+     "more surprise": 0.0495,
+     "beside its own with endless data": 0.0586
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0289,
+     "beside its own with endless data": 0.0294
+    },
+    "with how long in view": {
+     "more surprise": 0.0119,
+     "beside its own with endless data": 0.0188
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 52,
+    "block": 16,
+    "tick": 128,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0339,
+     "beside its own with endless data": 0.0348
+    },
+    "with how long in view": {
+     "more surprise": 0.0496,
+     "beside its own with endless data": 0.0668
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 52,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0462,
+     "beside its own with endless data": 0.0471,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0462,
+      "beside its own with endless data": 0.0471
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0832,
+     "beside its own with endless data": 0.1009,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0832,
+      "beside its own with endless data": 0.1009
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.0876,
+    "block": 32,
+    "tick": 320,
+    "pace": 1.25,
+    "as it is": {
+     "more surprise": 0.1015,
+     "beside its own with endless data": 0.1023
+    },
+    "with how long in view": {
+     "more surprise": 0.2789,
+     "beside its own with endless data": 0.29
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5275,
+     "walls kept": 0.8987
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.4892,
+     "walls kept": 1.0832
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.4169,
+     "walls kept": 0.9414
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.4693,
+     "walls kept": 1.1907
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.3708,
+     "walls kept": 1.015
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4159,
+     "walls kept": 1.0831
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5505,
+     "walls kept": 1.3043
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.38,
+     "walls kept": 1.0603
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5674,
+     "walls kept": 1.3334
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.3677,
+     "walls kept": 1.0668
+    }
+   }
+  },
+  "B24578/S034678": {
+   "group": "served",
+   "walls' tick": 26,
+   "blocks that change hands in a tick": 0.01984,
+   "changes undone at the next tick": 0.28189,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01134,
+   "changes of hands to or from no leader": 0.133,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0135,
+     "beside its own with endless data": 0.0141,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0093,
+      "beside its own with endless data": 0.0098
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0001,
+     "beside its own with endless data": 0.0086,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": -0.0028,
+      "beside its own with endless data": 0.0057
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0064,
+     "beside its own with endless data": 0.0069,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0041,
+      "beside its own with endless data": 0.0047
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0066,
+     "beside its own with endless data": 0.0151,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0015,
+      "beside its own with endless data": 0.01
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0064,
+     "beside its own with endless data": 0.0069
+    },
+    "with how long in view": {
+     "more surprise": 0.0066,
+     "beside its own with endless data": 0.0151
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0084,
+     "beside its own with endless data": 0.0087
+    },
+    "with how long in view": {
+     "more surprise": 0.0175,
+     "beside its own with endless data": 0.0257
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 52,
+    "block": 8,
+    "tick": 40,
+    "pace": 2.5,
+    "as it is": {
+     "more surprise": 0.0102,
+     "beside its own with endless data": 0.0113
+    },
+    "with how long in view": {
+     "more surprise": 0.0006,
+     "beside its own with endless data": 0.0118
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 18,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0052,
+     "beside its own with endless data": 0.0058,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0032,
+      "beside its own with endless data": 0.0038
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0023,
+     "beside its own with endless data": 0.0079,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": -0.0004,
+      "beside its own with endless data": 0.0052
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1899,
+    "block": 8,
+    "tick": 48,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0487,
+     "beside its own with endless data": 0.0493
+    },
+    "with how long in view": {
+     "more surprise": 0.0834,
+     "beside its own with endless data": 0.0926
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6254,
+     "walls kept": 0.8402
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7014,
+     "walls kept": 0.7724
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.7137,
+     "walls kept": 0.8136
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.7683,
+     "walls kept": 0.7304
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.7942,
+     "walls kept": 0.7568
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4823,
+     "walls kept": 1.0096
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4923,
+     "walls kept": 0.8944
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.5121,
+     "walls kept": 0.9818
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5002,
+     "walls kept": 0.8925
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5257,
+     "walls kept": 0.9618
+    }
+   }
+  },
+  "B2357/S015678": {
+   "group": "served",
+   "walls' tick": 22,
+   "blocks that change hands in a tick": 0.01345,
+   "changes undone at the next tick": 0.25297,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00198,
+   "changes of hands to or from no leader": 0.1947,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0041,
+     "beside its own with endless data": 0.0062,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0041,
+      "beside its own with endless data": 0.0062
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0089,
+     "beside its own with endless data": 0.0071,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0089,
+      "beside its own with endless data": 0.0071
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0041,
+     "beside its own with endless data": 0.0062,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0041,
+      "beside its own with endless data": 0.0062
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0089,
+     "beside its own with endless data": 0.0071,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0089,
+      "beside its own with endless data": 0.0071
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0041,
+     "beside its own with endless data": 0.0062
+    },
+    "with how long in view": {
+     "more surprise": -0.0089,
+     "beside its own with endless data": 0.0071
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0026,
+     "beside its own with endless data": 0.0034
+    },
+    "with how long in view": {
+     "more surprise": -0.0049,
+     "beside its own with endless data": 0.0095
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 44,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0077,
+     "beside its own with endless data": 0.0087
+    },
+    "with how long in view": {
+     "more surprise": -0.0121,
+     "beside its own with endless data": 0.0016
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 22,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0041,
+     "beside its own with endless data": 0.0062,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0041,
+      "beside its own with endless data": 0.0062
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0089,
+     "beside its own with endless data": 0.0071,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0089,
+      "beside its own with endless data": 0.0071
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.0674,
+    "block": 16,
+    "tick": 80,
+    "pace": 1.25,
+    "as it is": {
+     "more surprise": 0.0246,
+     "beside its own with endless data": 0.0267
+    },
+    "with how long in view": {
+     "more surprise": 0.0497,
+     "beside its own with endless data": 0.0666
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.4816,
+     "walls kept": 0.9103
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.4907,
+     "walls kept": 0.909
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.4629,
+     "walls kept": 0.899
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.4951,
+     "walls kept": 0.9054
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.4574,
+     "walls kept": 0.8979
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.3949,
+     "walls kept": 1.0676
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.3962,
+     "walls kept": 1.0701
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.3717,
+     "walls kept": 1.0317
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.3992,
+     "walls kept": 1.066
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.3777,
+     "walls kept": 1.0305
+    }
+   }
+  },
+  "B25/S678": {
+   "group": "missed",
+   "walls' tick": 40,
+   "blocks that change hands in a tick": 0.06165,
+   "changes undone at the next tick": 0.32825,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.1296,
+   "changes of hands to or from no leader": 0.1834,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.4214,
+     "beside its own with endless data": 0.4222,
+     "with a noise": {
+      "e": 0.275,
+      "more surprise": 0.094,
+      "beside its own with endless data": 0.0946
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.8769,
+     "beside its own with endless data": 0.8911,
+     "with a noise": {
+      "e": 0.205,
+      "more surprise": 0.3133,
+      "beside its own with endless data": 0.3232
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.203,
+     "beside its own with endless data": 0.2037,
+     "with a noise": {
+      "e": 0.195,
+      "more surprise": 0.0473,
+      "beside its own with endless data": 0.0479
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.3294,
+     "beside its own with endless data": 0.3394,
+     "with a noise": {
+      "e": 0.185,
+      "more surprise": 0.1648,
+      "beside its own with endless data": 0.1736
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.203,
+     "beside its own with endless data": 0.2037
+    },
+    "with how long in view": {
+     "more surprise": 0.3294,
+     "beside its own with endless data": 0.3394
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 20,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1336,
+     "beside its own with endless data": 0.1338
+    },
+    "with how long in view": {
+     "more surprise": 0.2477,
+     "beside its own with endless data": 0.2521
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 80,
+    "block": 2,
+    "tick": 4,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.2439,
+     "beside its own with endless data": 0.2443
+    },
+    "with how long in view": {
+     "more surprise": 0.2418,
+     "beside its own with endless data": 0.2534
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 14,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1267,
+     "beside its own with endless data": 0.1268,
+     "with a noise": {
+      "e": 0.125,
+      "more surprise": 0.0263,
+      "beside its own with endless data": 0.0264
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1434,
+     "beside its own with endless data": 0.1457,
+     "with a noise": {
+      "e": 0.09,
+      "more surprise": 0.0531,
+      "beside its own with endless data": 0.0552
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1926,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3193,
+     "beside its own with endless data": 0.3201
+    },
+    "with how long in view": {
+     "more surprise": 0.3692,
+     "beside its own with endless data": 0.3796
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6733,
+     "walls kept": 0.7849
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7235,
+     "walls kept": 0.6567
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8006,
+     "walls kept": 0.8875
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8386,
+     "walls kept": 0.5503
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9326,
+     "walls kept": 0.658
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6751,
+     "walls kept": 0.8707
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6772,
+     "walls kept": 0.707
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7517,
+     "walls kept": 0.9771
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6942,
+     "walls kept": 0.6627
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7952,
+     "walls kept": 0.8218
+    }
+   }
+  },
+  "B2568/S05": {
+   "group": "missed",
+   "walls' tick": 46,
+   "blocks that change hands in a tick": 0.06695,
+   "changes undone at the next tick": 0.33529,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.13937,
+   "changes of hands to or from no leader": 0.1689,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.4809,
+     "beside its own with endless data": 0.4815,
+     "with a noise": {
+      "e": 0.305,
+      "more surprise": 0.0955,
+      "beside its own with endless data": 0.0959
+     }
+    },
+    "with how long in view": {
+     "more surprise": 1.0847,
+     "beside its own with endless data": 1.0966,
+     "with a noise": {
+      "e": 0.23,
+      "more surprise": 0.3937,
+      "beside its own with endless data": 0.4017
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 2,
+    "tick": 4,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.2401,
+     "beside its own with endless data": 0.2406,
+     "with a noise": {
+      "e": 0.34,
+      "more surprise": 0.141,
+      "beside its own with endless data": 0.1415
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2552,
+     "beside its own with endless data": 0.2624,
+     "with a noise": {
+      "e": 0.325,
+      "more surprise": 0.1568,
+      "beside its own with endless data": 0.1634
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.2519,
+     "beside its own with endless data": 0.2523
+    },
+    "with how long in view": {
+     "more surprise": 0.4548,
+     "beside its own with endless data": 0.4631
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 24,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1743,
+     "beside its own with endless data": 0.1745
+    },
+    "with how long in view": {
+     "more surprise": 0.3433,
+     "beside its own with endless data": 0.3473
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 92,
+    "block": 2,
+    "tick": 4,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.272,
+     "beside its own with endless data": 0.2728
+    },
+    "with how long in view": {
+     "more surprise": 0.2716,
+     "beside its own with endless data": 0.2867
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2841,
+     "beside its own with endless data": 0.2842,
+     "with a noise": {
+      "e": 0.18,
+      "more surprise": 0.2043,
+      "beside its own with endless data": 0.2044
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.33,
+     "beside its own with endless data": 0.3325,
+     "with a noise": {
+      "e": 0.165,
+      "more surprise": 0.2442,
+      "beside its own with endless data": 0.2464
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.151,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3479,
+     "beside its own with endless data": 0.3484
+    },
+    "with how long in view": {
+     "more surprise": 0.4202,
+     "beside its own with endless data": 0.4283
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.697,
+     "walls kept": 0.799
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.8209,
+     "walls kept": 0.8984
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8049,
+     "walls kept": 0.9362
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 1.0543,
+     "walls kept": 0.6302
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9777,
+     "walls kept": 0.6397
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.7167,
+     "walls kept": 0.8842
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.7968,
+     "walls kept": 0.9295
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7856,
+     "walls kept": 1.0273
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.891,
+     "walls kept": 0.7465
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.8039,
+     "walls kept": 0.8258
+    }
+   }
+  },
+  "B25/S078": {
+   "group": "missed",
+   "walls' tick": 46,
+   "blocks that change hands in a tick": 0.08187,
+   "changes undone at the next tick": 0.34236,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.17196,
+   "changes of hands to or from no leader": 0.1705,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.6203,
+     "beside its own with endless data": 0.6209,
+     "with a noise": {
+      "e": 0.375,
+      "more surprise": 0.1349,
+      "beside its own with endless data": 0.1352
+     }
+    },
+    "with how long in view": {
+     "more surprise": 1.7327,
+     "beside its own with endless data": 1.749,
+     "with a noise": {
+      "e": 0.295,
+      "more surprise": 0.7627,
+      "beside its own with endless data": 0.7732
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 2,
+    "tick": 4,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.259,
+     "beside its own with endless data": 0.2594,
+     "with a noise": {
+      "e": 0.435,
+      "more surprise": 0.1132,
+      "beside its own with endless data": 0.1136
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2838,
+     "beside its own with endless data": 0.2915,
+     "with a noise": {
+      "e": 0.425,
+      "more surprise": 0.1389,
+      "beside its own with endless data": 0.1457
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.3598,
+     "beside its own with endless data": 0.3602
+    },
+    "with how long in view": {
+     "more surprise": 0.8096,
+     "beside its own with endless data": 0.8204
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 24,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.2557,
+     "beside its own with endless data": 0.256
+    },
+    "with how long in view": {
+     "more surprise": 0.561,
+     "beside its own with endless data": 0.5642
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 92,
+    "block": 2,
+    "tick": 4,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.3264,
+     "beside its own with endless data": 0.3271
+    },
+    "with how long in view": {
+     "more surprise": 0.3458,
+     "beside its own with endless data": 0.3549
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2868,
+     "beside its own with endless data": 0.2869,
+     "with a noise": {
+      "e": 0.24,
+      "more surprise": 0.1685,
+      "beside its own with endless data": 0.1686
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.3664,
+     "beside its own with endless data": 0.3691,
+     "with a noise": {
+      "e": 0.22,
+      "more surprise": 0.2431,
+      "beside its own with endless data": 0.2456
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.097,
+    "block": 2,
+    "tick": 2,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.3439,
+     "beside its own with endless data": 0.3443
+    },
+    "with how long in view": {
+     "more surprise": 0.5271,
+     "beside its own with endless data": 0.5362
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.7324,
+     "walls kept": 0.6919
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.8237,
+     "walls kept": 0.7856
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8499,
+     "walls kept": 0.9727
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 1.0083,
+     "walls kept": 0.5668
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 1.0049,
+     "walls kept": 0.6242
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.7468,
+     "walls kept": 0.774
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.8059,
+     "walls kept": 0.8081
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.8189,
+     "walls kept": 1.022
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.8954,
+     "walls kept": 0.6671
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.8493,
+     "walls kept": 0.7827
+    }
+   }
+  },
+  "B2378/S1348": {
+   "group": "missed",
+   "walls' tick": 68,
+   "blocks that change hands in a tick": 0.0507,
+   "changes undone at the next tick": 0.32845,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.08423,
+   "changes of hands to or from no leader": 0.1269,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2878,
+     "beside its own with endless data": 0.2882,
+     "with a noise": {
+      "e": 0.2,
+      "more surprise": 0.0514,
+      "beside its own with endless data": 0.0518
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.4536,
+     "beside its own with endless data": 0.4625,
+     "with a noise": {
+      "e": 0.14,
+      "more surprise": 0.1168,
+      "beside its own with endless data": 0.1236
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1333,
+     "beside its own with endless data": 0.1337,
+     "with a noise": {
+      "e": 0.145,
+      "more surprise": 0.0309,
+      "beside its own with endless data": 0.0313
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1866,
+     "beside its own with endless data": 0.1939,
+     "with a noise": {
+      "e": 0.125,
+      "more surprise": 0.0785,
+      "beside its own with endless data": 0.0852
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1333,
+     "beside its own with endless data": 0.1337
+    },
+    "with how long in view": {
+     "more surprise": 0.1866,
+     "beside its own with endless data": 0.1939
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 34,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0982,
+     "beside its own with endless data": 0.0984
+    },
+    "with how long in view": {
+     "more surprise": 0.1642,
+     "beside its own with endless data": 0.1702
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 136,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1874,
+     "beside its own with endless data": 0.1881
+    },
+    "with how long in view": {
+     "more surprise": 0.2668,
+     "beside its own with endless data": 0.2769
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 34,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1113,
+     "beside its own with endless data": 0.1115,
+     "with a noise": {
+      "e": 0.11,
+      "more surprise": 0.0285,
+      "beside its own with endless data": 0.0287
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1219,
+     "beside its own with endless data": 0.1277,
+     "with a noise": {
+      "e": 0.08,
+      "more surprise": 0.0465,
+      "beside its own with endless data": 0.0519
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.3666,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1469,
+     "beside its own with endless data": 0.1474
+    },
+    "with how long in view": {
+     "more surprise": 0.2259,
+     "beside its own with endless data": 0.2334
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6706,
+     "walls kept": 0.7812
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7929,
+     "walls kept": 0.6853
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8411,
+     "walls kept": 0.8127
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8759,
+     "walls kept": 0.6165
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9469,
+     "walls kept": 0.6834
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6534,
+     "walls kept": 0.8993
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6869,
+     "walls kept": 0.772
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7585,
+     "walls kept": 0.9246
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.7085,
+     "walls kept": 0.7465
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7911,
+     "walls kept": 0.8442
+    }
+   }
+  },
+  "B2458/S578": {
+   "group": "just missed",
+   "walls' tick": 22,
+   "blocks that change hands in a tick": 0.02994,
+   "changes undone at the next tick": 0.30517,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02835,
+   "changes of hands to or from no leader": 0.2164,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0799,
+     "beside its own with endless data": 0.0806,
+     "with a noise": {
+      "e": 0.05,
+      "more surprise": 0.045,
+      "beside its own with endless data": 0.0456
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0504,
+     "beside its own with endless data": 0.0597,
+     "with a noise": {
+      "e": 0.03,
+      "more surprise": 0.0235,
+      "beside its own with endless data": 0.0325
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0203,
+     "beside its own with endless data": 0.0209,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.019,
+      "beside its own with endless data": 0.0196
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0182,
+     "beside its own with endless data": 0.0272,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0167,
+      "beside its own with endless data": 0.0257
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0203,
+     "beside its own with endless data": 0.0209
+    },
+    "with how long in view": {
+     "more surprise": 0.0182,
+     "beside its own with endless data": 0.0272
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0209,
+     "beside its own with endless data": 0.0213
+    },
+    "with how long in view": {
+     "more surprise": 0.0172,
+     "beside its own with endless data": 0.023
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 44,
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0208,
+     "beside its own with endless data": 0.0218
+    },
+    "with how long in view": {
+     "more surprise": 0.0091,
+     "beside its own with endless data": 0.0245
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0209,
+     "beside its own with endless data": 0.0213,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0188,
+      "beside its own with endless data": 0.0191
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0172,
+     "beside its own with endless data": 0.023,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0155,
+      "beside its own with endless data": 0.0213
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1362,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0203,
+     "beside its own with endless data": 0.0209
+    },
+    "with how long in view": {
+     "more surprise": 0.0182,
+     "beside its own with endless data": 0.0272
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5317,
+     "walls kept": 0.8906
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7108,
+     "walls kept": 0.7854
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6814,
+     "walls kept": 0.8361
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8234,
+     "walls kept": 0.7204
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.827,
+     "walls kept": 0.735
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4702,
+     "walls kept": 1.0171
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5417,
+     "walls kept": 0.8808
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.5201,
+     "walls kept": 0.9884
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5542,
+     "walls kept": 0.8761
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5452,
+     "walls kept": 0.9419
+    }
+   }
+  },
+  "B2367/S3": {
+   "group": "just missed",
+   "walls' tick": 22,
+   "blocks that change hands in a tick": 0.03064,
+   "changes undone at the next tick": 0.32126,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02621,
+   "changes of hands to or from no leader": 0.1985,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0763,
+     "beside its own with endless data": 0.0768,
+     "with a noise": {
+      "e": 0.055,
+      "more surprise": 0.0398,
+      "beside its own with endless data": 0.0403
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0483,
+     "beside its own with endless data": 0.0548,
+     "with a noise": {
+      "e": 0.025,
+      "more surprise": 0.0189,
+      "beside its own with endless data": 0.0251
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0253,
+     "beside its own with endless data": 0.0258,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0236,
+      "beside its own with endless data": 0.0241
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0228,
+     "beside its own with endless data": 0.0291,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0215,
+      "beside its own with endless data": 0.0277
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0253,
+     "beside its own with endless data": 0.0258
+    },
+    "with how long in view": {
+     "more surprise": 0.0228,
+     "beside its own with endless data": 0.0291
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0262,
+     "beside its own with endless data": 0.0265
+    },
+    "with how long in view": {
+     "more surprise": 0.0261,
+     "beside its own with endless data": 0.031
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 44,
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0245,
+     "beside its own with endless data": 0.0254
+    },
+    "with how long in view": {
+     "more surprise": 0.0141,
+     "beside its own with endless data": 0.0267
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0262,
+     "beside its own with endless data": 0.0265,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0232,
+      "beside its own with endless data": 0.0235
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0261,
+     "beside its own with endless data": 0.031,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0243,
+      "beside its own with endless data": 0.0292
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1543,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0253,
+     "beside its own with endless data": 0.0258
+    },
+    "with how long in view": {
+     "more surprise": 0.0228,
+     "beside its own with endless data": 0.0291
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.57,
+     "walls kept": 0.854
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.768,
+     "walls kept": 0.7455
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.7568,
+     "walls kept": 0.7757
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8935,
+     "walls kept": 0.6683
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9079,
+     "walls kept": 0.6725
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4896,
+     "walls kept": 1.0002
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5895,
+     "walls kept": 0.8455
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.548,
+     "walls kept": 0.9705
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6121,
+     "walls kept": 0.8292
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5742,
+     "walls kept": 0.9195
+    }
+   }
+  },
+  "B3468/S2378": {
+   "group": "just missed",
+   "walls' tick": 28,
+   "blocks that change hands in a tick": 0.02831,
+   "changes undone at the next tick": 0.3218,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02357,
+   "changes of hands to or from no leader": 0.1809,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0673,
+     "beside its own with endless data": 0.0679,
+     "with a noise": {
+      "e": 0.045,
+      "more surprise": 0.0372,
+      "beside its own with endless data": 0.0377
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0402,
+     "beside its own with endless data": 0.0484,
+     "with a noise": {
+      "e": 0.025,
+      "more surprise": 0.0184,
+      "beside its own with endless data": 0.0265
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0282,
+     "beside its own with endless data": 0.0288,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0275,
+      "beside its own with endless data": 0.028
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0266,
+     "beside its own with endless data": 0.0347,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0264,
+      "beside its own with endless data": 0.0345
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0282,
+     "beside its own with endless data": 0.0288
+    },
+    "with how long in view": {
+     "more surprise": 0.0266,
+     "beside its own with endless data": 0.0347
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 14,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0295,
+     "beside its own with endless data": 0.0298
+    },
+    "with how long in view": {
+     "more surprise": 0.0329,
+     "beside its own with endless data": 0.0385
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 56,
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0255,
+     "beside its own with endless data": 0.0264
+    },
+    "with how long in view": {
+     "more surprise": 0.0118,
+     "beside its own with endless data": 0.0263
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 14,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0295,
+     "beside its own with endless data": 0.0298,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.028,
+      "beside its own with endless data": 0.0282
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0329,
+     "beside its own with endless data": 0.0385,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0324,
+      "beside its own with endless data": 0.038
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1675,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0425,
+     "beside its own with endless data": 0.043
+    },
+    "with how long in view": {
+     "more surprise": 0.0325,
+     "beside its own with endless data": 0.0407
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5212,
+     "walls kept": 0.9027
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7321,
+     "walls kept": 0.7793
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.7107,
+     "walls kept": 0.8234
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.9011,
+     "walls kept": 0.6794
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.8969,
+     "walls kept": 0.6826
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4472,
+     "walls kept": 1.0425
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5428,
+     "walls kept": 0.8921
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4973,
+     "walls kept": 0.9978
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5893,
+     "walls kept": 0.8499
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5162,
+     "walls kept": 0.9526
+    }
+   }
+  },
+  "B38/S013467": {
+   "group": "just missed",
+   "walls' tick": 36,
+   "blocks that change hands in a tick": 0.02935,
+   "changes undone at the next tick": 0.30886,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02828,
+   "changes of hands to or from no leader": 0.1951,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0778,
+     "beside its own with endless data": 0.0784,
+     "with a noise": {
+      "e": 0.055,
+      "more surprise": 0.0385,
+      "beside its own with endless data": 0.039
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0678,
+     "beside its own with endless data": 0.0765,
+     "with a noise": {
+      "e": 0.03,
+      "more surprise": 0.0312,
+      "beside its own with endless data": 0.0397
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.028,
+     "beside its own with endless data": 0.0286,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0255,
+      "beside its own with endless data": 0.0261
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.036,
+     "beside its own with endless data": 0.0445,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0332,
+      "beside its own with endless data": 0.0417
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.028,
+     "beside its own with endless data": 0.0286
+    },
+    "with how long in view": {
+     "more surprise": 0.036,
+     "beside its own with endless data": 0.0445
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 18,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0275,
+     "beside its own with endless data": 0.0277
+    },
+    "with how long in view": {
+     "more surprise": 0.0314,
+     "beside its own with endless data": 0.0369
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 72,
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0281,
+     "beside its own with endless data": 0.0294
+    },
+    "with how long in view": {
+     "more surprise": 0.0229,
+     "beside its own with endless data": 0.038
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 18,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0275,
+     "beside its own with endless data": 0.0277,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0245,
+      "beside its own with endless data": 0.0247
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0314,
+     "beside its own with endless data": 0.0369,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0292,
+      "beside its own with endless data": 0.0347
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1495,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.028,
+     "beside its own with endless data": 0.0286
+    },
+    "with how long in view": {
+     "more surprise": 0.036,
+     "beside its own with endless data": 0.0445
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5834,
+     "walls kept": 0.868
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7459,
+     "walls kept": 0.7597
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.736,
+     "walls kept": 0.8239
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.9078,
+     "walls kept": 0.6607
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.8894,
+     "walls kept": 0.7004
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.5063,
+     "walls kept": 1.015
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5797,
+     "walls kept": 0.8706
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.5694,
+     "walls kept": 0.9937
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6289,
+     "walls kept": 0.8251
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5847,
+     "walls kept": 0.934
+    }
+   }
+  },
+  "B1234/S48": {
+   "group": "missed",
+   "walls' tick": 70,
+   "blocks that change hands in a tick": 0.05027,
+   "changes undone at the next tick": 0.33017,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.07959,
+   "changes of hands to or from no leader": 0.1307,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2795,
+     "beside its own with endless data": 0.2802,
+     "with a noise": {
+      "e": 0.195,
+      "more surprise": 0.0516,
+      "beside its own with endless data": 0.0521
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.4932,
+     "beside its own with endless data": 0.5024,
+     "with a noise": {
+      "e": 0.135,
+      "more surprise": 0.1414,
+      "beside its own with endless data": 0.1485
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1294,
+     "beside its own with endless data": 0.13,
+     "with a noise": {
+      "e": 0.135,
+      "more surprise": 0.0313,
+      "beside its own with endless data": 0.0318
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2042,
+     "beside its own with endless data": 0.2117,
+     "with a noise": {
+      "e": 0.115,
+      "more surprise": 0.0973,
+      "beside its own with endless data": 0.1041
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1294,
+     "beside its own with endless data": 0.13
+    },
+    "with how long in view": {
+     "more surprise": 0.2042,
+     "beside its own with endless data": 0.2117
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 36,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0996,
+     "beside its own with endless data": 0.0999
+    },
+    "with how long in view": {
+     "more surprise": 0.1845,
+     "beside its own with endless data": 0.1898
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 140,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1831,
+     "beside its own with endless data": 0.1845
+    },
+    "with how long in view": {
+     "more surprise": 0.2748,
+     "beside its own with endless data": 0.2985
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 36,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1128,
+     "beside its own with endless data": 0.1131,
+     "with a noise": {
+      "e": 0.11,
+      "more surprise": 0.029,
+      "beside its own with endless data": 0.0293
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1259,
+     "beside its own with endless data": 0.1309,
+     "with a noise": {
+      "e": 0.08,
+      "more surprise": 0.0498,
+      "beside its own with endless data": 0.0545
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.339,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.147,
+     "beside its own with endless data": 0.1476
+    },
+    "with how long in view": {
+     "more surprise": 0.2294,
+     "beside its own with endless data": 0.237
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6873,
+     "walls kept": 0.7799
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.8272,
+     "walls kept": 0.6788
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8792,
+     "walls kept": 0.7938
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.9234,
+     "walls kept": 0.6081
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 1.009,
+     "walls kept": 0.6465
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6494,
+     "walls kept": 0.8866
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.7093,
+     "walls kept": 0.7664
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7735,
+     "walls kept": 0.9294
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.7267,
+     "walls kept": 0.7406
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.8137,
+     "walls kept": 0.8458
+    }
+   }
+  },
+  "B238/S1356": {
+   "group": "missed",
+   "walls' tick": 64,
+   "blocks that change hands in a tick": 0.04872,
+   "changes undone at the next tick": 0.32537,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.07782,
+   "changes of hands to or from no leader": 0.1264,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2631,
+     "beside its own with endless data": 0.2636,
+     "with a noise": {
+      "e": 0.185,
+      "more surprise": 0.0492,
+      "beside its own with endless data": 0.0496
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.3911,
+     "beside its own with endless data": 0.4037,
+     "with a noise": {
+      "e": 0.13,
+      "more surprise": 0.087,
+      "beside its own with endless data": 0.0969
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1172,
+     "beside its own with endless data": 0.1177,
+     "with a noise": {
+      "e": 0.125,
+      "more surprise": 0.0294,
+      "beside its own with endless data": 0.0299
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1476,
+     "beside its own with endless data": 0.158,
+     "with a noise": {
+      "e": 0.11,
+      "more surprise": 0.055,
+      "beside its own with endless data": 0.0646
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1172,
+     "beside its own with endless data": 0.1177
+    },
+    "with how long in view": {
+     "more surprise": 0.1476,
+     "beside its own with endless data": 0.158
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 32,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0887,
+     "beside its own with endless data": 0.089
+    },
+    "with how long in view": {
+     "more surprise": 0.1385,
+     "beside its own with endless data": 0.1445
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 128,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1649,
+     "beside its own with endless data": 0.1655
+    },
+    "with how long in view": {
+     "more surprise": 0.2368,
+     "beside its own with endless data": 0.2521
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 32,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1005,
+     "beside its own with endless data": 0.1008,
+     "with a noise": {
+      "e": 0.095,
+      "more surprise": 0.0292,
+      "beside its own with endless data": 0.0295
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1079,
+     "beside its own with endless data": 0.1137,
+     "with a noise": {
+      "e": 0.07,
+      "more surprise": 0.0433,
+      "beside its own with endless data": 0.0487
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.3184,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1314,
+     "beside its own with endless data": 0.1318
+    },
+    "with how long in view": {
+     "more surprise": 0.1839,
+     "beside its own with endless data": 0.1946
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6731,
+     "walls kept": 0.8202
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.775,
+     "walls kept": 0.7204
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8549,
+     "walls kept": 0.8066
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8664,
+     "walls kept": 0.6289
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.976,
+     "walls kept": 0.6806
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6391,
+     "walls kept": 0.9415
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6788,
+     "walls kept": 0.8144
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7538,
+     "walls kept": 0.943
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6943,
+     "walls kept": 0.772
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7929,
+     "walls kept": 0.8722
+    }
+   }
+  },
+  "B2478/S1467": {
+   "group": "missed",
+   "walls' tick": 48,
+   "blocks that change hands in a tick": 0.05551,
+   "changes undone at the next tick": 0.32581,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.10238,
+   "changes of hands to or from no leader": 0.1308,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3546,
+     "beside its own with endless data": 0.3551,
+     "with a noise": {
+      "e": 0.24,
+      "more surprise": 0.06,
+      "beside its own with endless data": 0.0604
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.6943,
+     "beside its own with endless data": 0.7069,
+     "with a noise": {
+      "e": 0.175,
+      "more surprise": 0.2069,
+      "beside its own with endless data": 0.2158
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1767,
+     "beside its own with endless data": 0.1772,
+     "with a noise": {
+      "e": 0.185,
+      "more surprise": 0.0333,
+      "beside its own with endless data": 0.0337
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2953,
+     "beside its own with endless data": 0.3049,
+     "with a noise": {
+      "e": 0.16,
+      "more surprise": 0.1422,
+      "beside its own with endless data": 0.1507
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1767,
+     "beside its own with endless data": 0.1772
+    },
+    "with how long in view": {
+     "more surprise": 0.2953,
+     "beside its own with endless data": 0.3049
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 24,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1267,
+     "beside its own with endless data": 0.127
+    },
+    "with how long in view": {
+     "more surprise": 0.2433,
+     "beside its own with endless data": 0.2476
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 96,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.2654,
+     "beside its own with endless data": 0.2663
+    },
+    "with how long in view": {
+     "more surprise": 0.4529,
+     "beside its own with endless data": 0.4711
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 24,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.143,
+     "beside its own with endless data": 0.1433,
+     "with a noise": {
+      "e": 0.135,
+      "more surprise": 0.0294,
+      "beside its own with endless data": 0.0296
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1613,
+     "beside its own with endless data": 0.1653,
+     "with a noise": {
+      "e": 0.105,
+      "more surprise": 0.0563,
+      "beside its own with endless data": 0.06
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.2841,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3555,
+     "beside its own with endless data": 0.356
+    },
+    "with how long in view": {
+     "more surprise": 0.4017,
+     "beside its own with endless data": 0.4121
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6814,
+     "walls kept": 0.8135
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7551,
+     "walls kept": 0.7059
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8254,
+     "walls kept": 0.875
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8402,
+     "walls kept": 0.6249
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9175,
+     "walls kept": 0.7293
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6886,
+     "walls kept": 0.9211
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6964,
+     "walls kept": 0.8017
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7696,
+     "walls kept": 0.9705
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.7043,
+     "walls kept": 0.7695
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.8059,
+     "walls kept": 0.8842
+    }
+   }
+  },
+  "B358/S02378": {
+   "group": "missed",
+   "walls' tick": 60,
+   "blocks that change hands in a tick": 0.0541,
+   "changes undone at the next tick": 0.33169,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.08999,
+   "changes of hands to or from no leader": 0.164,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3391,
+     "beside its own with endless data": 0.3397,
+     "with a noise": {
+      "e": 0.205,
+      "more surprise": 0.1088,
+      "beside its own with endless data": 0.1093
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.9818,
+     "beside its own with endless data": 0.9955,
+     "with a noise": {
+      "e": 0.14,
+      "more surprise": 0.6308,
+      "beside its own with endless data": 0.642
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1595,
+     "beside its own with endless data": 0.16,
+     "with a noise": {
+      "e": 0.145,
+      "more surprise": 0.0581,
+      "beside its own with endless data": 0.0586
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.5772,
+     "beside its own with endless data": 0.5881,
+     "with a noise": {
+      "e": 0.125,
+      "more surprise": 0.4682,
+      "beside its own with endless data": 0.4783
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1595,
+     "beside its own with endless data": 0.16
+    },
+    "with how long in view": {
+     "more surprise": 0.5772,
+     "beside its own with endless data": 0.5881
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 30,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1216,
+     "beside its own with endless data": 0.1218
+    },
+    "with how long in view": {
+     "more surprise": 0.5699,
+     "beside its own with endless data": 0.5743
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 120,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.2304,
+     "beside its own with endless data": 0.2312
+    },
+    "with how long in view": {
+     "more surprise": 0.5908,
+     "beside its own with endless data": 0.6148
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 30,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1316,
+     "beside its own with endless data": 0.1318,
+     "with a noise": {
+      "e": 0.11,
+      "more surprise": 0.0502,
+      "beside its own with endless data": 0.0504
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2397,
+     "beside its own with endless data": 0.2431,
+     "with a noise": {
+      "e": 0.08,
+      "more surprise": 0.1657,
+      "beside its own with endless data": 0.1689
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.3349,
+    "block": 2,
+    "tick": 1,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.3322,
+     "beside its own with endless data": 0.3328
+    },
+    "with how long in view": {
+     "more surprise": 0.454,
+     "beside its own with endless data": 0.4641
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6769,
+     "walls kept": 0.7991
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7547,
+     "walls kept": 0.7143
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8449,
+     "walls kept": 0.8581
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8576,
+     "walls kept": 0.624
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9328,
+     "walls kept": 0.7165
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6616,
+     "walls kept": 0.9071
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6777,
+     "walls kept": 0.7965
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7568,
+     "walls kept": 0.9562
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6976,
+     "walls kept": 0.76
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7887,
+     "walls kept": 0.8719
+    }
+   }
+  },
+  "B34568/S247": {
+   "group": "served",
+   "walls' tick": 18,
+   "blocks that change hands in a tick": 0.01932,
+   "changes undone at the next tick": 0.30702,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00681,
+   "changes of hands to or from no leader": 0.2218,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0111,
+     "beside its own with endless data": 0.0119,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0111,
+      "beside its own with endless data": 0.0119
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0013,
+     "beside its own with endless data": 0.0075,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0013,
+      "beside its own with endless data": 0.0075
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0045,
+     "beside its own with endless data": 0.0053,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0045,
+      "beside its own with endless data": 0.0053
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0027,
+     "beside its own with endless data": 0.0115,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0027,
+      "beside its own with endless data": 0.0115
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0045,
+     "beside its own with endless data": 0.0053
+    },
+    "with how long in view": {
+     "more surprise": 0.0027,
+     "beside its own with endless data": 0.0115
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 8,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0068,
+     "beside its own with endless data": 0.0074
+    },
+    "with how long in view": {
+     "more surprise": 0.0219,
+     "beside its own with endless data": 0.0293
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 36,
+    "block": 8,
+    "tick": 40,
+    "pace": 2.5,
+    "as it is": {
+     "more surprise": 0.0028,
+     "beside its own with endless data": 0.0036
+    },
+    "with how long in view": {
+     "more surprise": -0.0057,
+     "beside its own with endless data": 0.0084
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0052,
+     "beside its own with endless data": 0.0057,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0052,
+      "beside its own with endless data": 0.0057
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0015,
+     "beside its own with endless data": 0.0087,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0015,
+      "beside its own with endless data": 0.0087
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1311,
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0045,
+     "beside its own with endless data": 0.0053
+    },
+    "with how long in view": {
+     "more surprise": 0.0027,
+     "beside its own with endless data": 0.0115
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5406,
+     "walls kept": 0.867
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.6034,
+     "walls kept": 0.7805
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6114,
+     "walls kept": 0.7905
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.67,
+     "walls kept": 0.7317
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.7261,
+     "walls kept": 0.7238
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4395,
+     "walls kept": 1.0362
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4316,
+     "walls kept": 0.911
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4263,
+     "walls kept": 0.9934
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4461,
+     "walls kept": 0.8962
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4296,
+     "walls kept": 0.9713
+    }
+   }
+  },
+  "B34567/S012457": {
+   "group": "served",
+   "walls' tick": 24,
+   "blocks that change hands in a tick": 0.01579,
+   "changes undone at the next tick": 0.27674,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00436,
+   "changes of hands to or from no leader": 0.2192,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0054,
+     "beside its own with endless data": 0.0061,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0054,
+      "beside its own with endless data": 0.0061
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0009,
+     "beside its own with endless data": 0.0118,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0009,
+      "beside its own with endless data": 0.0118
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0054,
+     "beside its own with endless data": 0.0061,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0054,
+      "beside its own with endless data": 0.0061
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0009,
+     "beside its own with endless data": 0.0118,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0009,
+      "beside its own with endless data": 0.0118
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0054,
+     "beside its own with endless data": 0.0061
+    },
+    "with how long in view": {
+     "more surprise": 0.0009,
+     "beside its own with endless data": 0.0118
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0068,
+     "beside its own with endless data": 0.0074
+    },
+    "with how long in view": {
+     "more surprise": 0.0141,
+     "beside its own with endless data": 0.0213
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 48,
+    "block": 8,
+    "tick": 40,
+    "pace": 2.5,
+    "as it is": {
+     "more surprise": 0.0055,
+     "beside its own with endless data": 0.007
+    },
+    "with how long in view": {
+     "more surprise": -0.0078,
+     "beside its own with endless data": 0.0152
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 24,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0054,
+     "beside its own with endless data": 0.0061,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0054,
+      "beside its own with endless data": 0.0061
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0009,
+     "beside its own with endless data": 0.0118,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0009,
+      "beside its own with endless data": 0.0118
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1174,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0054,
+     "beside its own with endless data": 0.0061
+    },
+    "with how long in view": {
+     "more surprise": 0.0009,
+     "beside its own with endless data": 0.0118
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.4698,
+     "walls kept": 0.9573
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.4721,
+     "walls kept": 0.9535
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.4782,
+     "walls kept": 0.8972
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.4716,
+     "walls kept": 0.9512
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.4849,
+     "walls kept": 0.8989
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4433,
+     "walls kept": 1.1324
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4488,
+     "walls kept": 1.129
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4083,
+     "walls kept": 1.0556
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4466,
+     "walls kept": 1.1325
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4032,
+     "walls kept": 1.0543
+    }
+   }
+  },
+  "B13458/S358": {
+   "group": "missed",
+   "walls' tick": 24,
+   "blocks that change hands in a tick": 0.03963,
+   "changes undone at the next tick": 0.31567,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.05258,
+   "changes of hands to or from no leader": 0.1437,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.1714,
+     "beside its own with endless data": 0.1719,
+     "with a noise": {
+      "e": 0.125,
+      "more surprise": 0.0424,
+      "beside its own with endless data": 0.0428
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.2038,
+     "beside its own with endless data": 0.2102,
+     "with a noise": {
+      "e": 0.08,
+      "more surprise": 0.0461,
+      "beside its own with endless data": 0.0517
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0685,
+     "beside its own with endless data": 0.0689,
+     "with a noise": {
+      "e": 0.07,
+      "more surprise": 0.03,
+      "beside its own with endless data": 0.0304
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0789,
+     "beside its own with endless data": 0.0847,
+     "with a noise": {
+      "e": 0.06,
+      "more surprise": 0.0373,
+      "beside its own with endless data": 0.0429
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0685,
+     "beside its own with endless data": 0.0689
+    },
+    "with how long in view": {
+     "more surprise": 0.0789,
+     "beside its own with endless data": 0.0847
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0609,
+     "beside its own with endless data": 0.0612
+    },
+    "with how long in view": {
+     "more surprise": 0.0699,
+     "beside its own with endless data": 0.0759
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 48,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.0944,
+     "beside its own with endless data": 0.095
+    },
+    "with how long in view": {
+     "more surprise": 0.1105,
+     "beside its own with endless data": 0.1233
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 12,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0609,
+     "beside its own with endless data": 0.0612,
+     "with a noise": {
+      "e": 0.055,
+      "more surprise": 0.0297,
+      "beside its own with endless data": 0.03
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0699,
+     "beside its own with endless data": 0.0759,
+     "with a noise": {
+      "e": 0.04,
+      "more surprise": 0.0393,
+      "beside its own with endless data": 0.0452
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1359,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.0996,
+     "beside its own with endless data": 0.1
+    },
+    "with how long in view": {
+     "more surprise": 0.132,
+     "beside its own with endless data": 0.1381
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6583,
+     "walls kept": 0.8137
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.799,
+     "walls kept": 0.7167
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8389,
+     "walls kept": 0.7881
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.9317,
+     "walls kept": 0.641
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9714,
+     "walls kept": 0.6822
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.5964,
+     "walls kept": 0.9342
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6722,
+     "walls kept": 0.8053
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7044,
+     "walls kept": 0.9421
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.7125,
+     "walls kept": 0.7661
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7257,
+     "walls kept": 0.8724
+    }
+   }
+  },
+  "B234678/S1578": {
+   "group": "nearly served",
+   "walls' tick": 32,
+   "blocks that change hands in a tick": 0.02245,
+   "changes undone at the next tick": 0.30609,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01145,
+   "changes of hands to or from no leader": 0.2081,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0268,
+     "beside its own with endless data": 0.0273,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0214,
+      "beside its own with endless data": 0.0219
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0047,
+     "beside its own with endless data": 0.0132,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.002,
+      "beside its own with endless data": 0.0104
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0142,
+     "beside its own with endless data": 0.0147,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0113,
+      "beside its own with endless data": 0.0118
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0099,
+     "beside its own with endless data": 0.0184,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0052,
+      "beside its own with endless data": 0.0137
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0142,
+     "beside its own with endless data": 0.0147
+    },
+    "with how long in view": {
+     "more surprise": 0.0099,
+     "beside its own with endless data": 0.0184
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 16,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0135,
+     "beside its own with endless data": 0.014
+    },
+    "with how long in view": {
+     "more surprise": 0.021,
+     "beside its own with endless data": 0.0256
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 64,
+    "block": 8,
+    "tick": 48,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0149,
+     "beside its own with endless data": 0.0156
+    },
+    "with how long in view": {
+     "more surprise": 0.0114,
+     "beside its own with endless data": 0.0245
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 22,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0157,
+     "beside its own with endless data": 0.0163,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0118,
+      "beside its own with endless data": 0.0125
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0112,
+     "beside its own with endless data": 0.0244,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0075,
+      "beside its own with endless data": 0.0206
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1922,
+    "block": 8,
+    "tick": 48,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0401,
+     "beside its own with endless data": 0.0406
+    },
+    "with how long in view": {
+     "more surprise": 0.0819,
+     "beside its own with endless data": 0.091
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.503,
+     "walls kept": 0.8902
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.5509,
+     "walls kept": 0.8
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6202,
+     "walls kept": 0.8101
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.6151,
+     "walls kept": 0.7533
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.686,
+     "walls kept": 0.7541
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4327,
+     "walls kept": 1.0611
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4171,
+     "walls kept": 0.9268
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4311,
+     "walls kept": 1.0151
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.426,
+     "walls kept": 0.9217
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4478,
+     "walls kept": 0.9861
+    }
+   }
+  },
+  "B2456/S35": {
+   "group": "nearly served",
+   "walls' tick": 20,
+   "blocks that change hands in a tick": 0.02407,
+   "changes undone at the next tick": 0.30741,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.01463,
+   "changes of hands to or from no leader": 0.1909,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0355,
+     "beside its own with endless data": 0.0361,
+     "with a noise": {
+      "e": 0.02,
+      "more surprise": 0.0243,
+      "beside its own with endless data": 0.0249
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0124,
+     "beside its own with endless data": 0.0203,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0057,
+      "beside its own with endless data": 0.0135
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.019,
+     "beside its own with endless data": 0.0195,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0136,
+      "beside its own with endless data": 0.0142
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0338,
+     "beside its own with endless data": 0.0419,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0221,
+      "beside its own with endless data": 0.03
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.019,
+     "beside its own with endless data": 0.0195
+    },
+    "with how long in view": {
+     "more surprise": 0.0338,
+     "beside its own with endless data": 0.0419
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 10,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0174,
+     "beside its own with endless data": 0.0177
+    },
+    "with how long in view": {
+     "more surprise": 0.0245,
+     "beside its own with endless data": 0.0306
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 40,
+    "block": 8,
+    "tick": 48,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0217,
+     "beside its own with endless data": 0.0226
+    },
+    "with how long in view": {
+     "more surprise": 0.0275,
+     "beside its own with endless data": 0.0412
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 10,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0174,
+     "beside its own with endless data": 0.0177,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0115,
+      "beside its own with endless data": 0.0119
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0245,
+     "beside its own with endless data": 0.0306,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0197,
+      "beside its own with endless data": 0.0258
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1929,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0344,
+     "beside its own with endless data": 0.035
+    },
+    "with how long in view": {
+     "more surprise": 0.0272,
+     "beside its own with endless data": 0.0352
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5663,
+     "walls kept": 0.8654
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.679,
+     "walls kept": 0.7394
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6942,
+     "walls kept": 0.8058
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8151,
+     "walls kept": 0.6683
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.854,
+     "walls kept": 0.7044
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.457,
+     "walls kept": 1.0195
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5153,
+     "walls kept": 0.8344
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.488,
+     "walls kept": 0.9855
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.5243,
+     "walls kept": 0.8122
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5134,
+     "walls kept": 0.9519
+    }
+   }
+  },
+  "B234567/S01247": {
+   "group": "just missed",
+   "walls' tick": 80,
+   "blocks that change hands in a tick": 0.03061,
+   "changes undone at the next tick": 0.31553,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.02998,
+   "changes of hands to or from no leader": 0.1377,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0881,
+     "beside its own with endless data": 0.0886,
+     "with a noise": {
+      "e": 0.065,
+      "more surprise": 0.0359,
+      "beside its own with endless data": 0.0363
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0657,
+     "beside its own with endless data": 0.0821,
+     "with a noise": {
+      "e": 0.04,
+      "more surprise": 0.0216,
+      "beside its own with endless data": 0.0374
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.041,
+     "beside its own with endless data": 0.0414,
+     "with a noise": {
+      "e": 0.015,
+      "more surprise": 0.0361,
+      "beside its own with endless data": 0.0365
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0439,
+     "beside its own with endless data": 0.06,
+     "with a noise": {
+      "e": 0.015,
+      "more surprise": 0.0385,
+      "beside its own with endless data": 0.0545
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.041,
+     "beside its own with endless data": 0.0414
+    },
+    "with how long in view": {
+     "more surprise": 0.0439,
+     "beside its own with endless data": 0.06
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 40,
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0429,
+     "beside its own with endless data": 0.0431
+    },
+    "with how long in view": {
+     "more surprise": 0.0972,
+     "beside its own with endless data": 0.102
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 160,
+    "block": 4,
+    "tick": 12,
+    "pace": 3.0,
+    "as it is": {
+     "more surprise": 0.0426,
+     "beside its own with endless data": 0.0433
+    },
+    "with how long in view": {
+     "more surprise": 0.0295,
+     "beside its own with endless data": 0.0396
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 40,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0435,
+     "beside its own with endless data": 0.0436,
+     "with a noise": {
+      "e": 0.015,
+      "more surprise": 0.0376,
+      "beside its own with endless data": 0.0378
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0484,
+     "beside its own with endless data": 0.0529,
+     "with a noise": {
+      "e": 0.01,
+      "more surprise": 0.0434,
+      "beside its own with endless data": 0.0479
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1435,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.041,
+     "beside its own with endless data": 0.0414
+    },
+    "with how long in view": {
+     "more surprise": 0.0439,
+     "beside its own with endless data": 0.06
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5571,
+     "walls kept": 0.8746
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.732,
+     "walls kept": 0.7532
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.722,
+     "walls kept": 0.8045
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.8752,
+     "walls kept": 0.6688
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.8834,
+     "walls kept": 0.6877
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.51,
+     "walls kept": 1.0236
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.5712,
+     "walls kept": 0.8732
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.5606,
+     "walls kept": 0.9685
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.6252,
+     "walls kept": 0.8229
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.5996,
+     "walls kept": 0.9213
+    }
+   }
+  },
+  "B24678/S1348": {
+   "group": "missed",
+   "walls' tick": 56,
+   "blocks that change hands in a tick": 0.0461,
+   "changes undone at the next tick": 0.32354,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.06957,
+   "changes of hands to or from no leader": 0.1258,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.2364,
+     "beside its own with endless data": 0.2369,
+     "with a noise": {
+      "e": 0.165,
+      "more surprise": 0.045,
+      "beside its own with endless data": 0.0454
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.3398,
+     "beside its own with endless data": 0.3498,
+     "with a noise": {
+      "e": 0.115,
+      "more surprise": 0.0813,
+      "beside its own with endless data": 0.0893
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1073,
+     "beside its own with endless data": 0.1077,
+     "with a noise": {
+      "e": 0.11,
+      "more surprise": 0.0327,
+      "beside its own with endless data": 0.0331
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1439,
+     "beside its own with endless data": 0.1524,
+     "with a noise": {
+      "e": 0.095,
+      "more surprise": 0.0654,
+      "beside its own with endless data": 0.0733
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.1073,
+     "beside its own with endless data": 0.1077
+    },
+    "with how long in view": {
+     "more surprise": 0.1439,
+     "beside its own with endless data": 0.1524
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 28,
+    "block": 4,
+    "tick": 8,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0886,
+     "beside its own with endless data": 0.0889
+    },
+    "with how long in view": {
+     "more surprise": 0.1464,
+     "beside its own with endless data": 0.152
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 112,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1471,
+     "beside its own with endless data": 0.1476
+    },
+    "with how long in view": {
+     "more surprise": 0.1997,
+     "beside its own with endless data": 0.2109
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 28,
+    "block": 4,
+    "tick": 4,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0923,
+     "beside its own with endless data": 0.0925,
+     "with a noise": {
+      "e": 0.085,
+      "more surprise": 0.031,
+      "beside its own with endless data": 0.0312
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.1047,
+     "beside its own with endless data": 0.1101,
+     "with a noise": {
+      "e": 0.06,
+      "more surprise": 0.0479,
+      "beside its own with endless data": 0.0531
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.2551,
+    "block": 4,
+    "tick": 16,
+    "pace": 4.0,
+    "as it is": {
+     "more surprise": 0.1318,
+     "beside its own with endless data": 0.1323
+    },
+    "with how long in view": {
+     "more surprise": 0.1975,
+     "beside its own with endless data": 0.2064
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.6636,
+     "walls kept": 0.7944
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.7888,
+     "walls kept": 0.6959
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.8337,
+     "walls kept": 0.7866
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.9085,
+     "walls kept": 0.6055
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.9573,
+     "walls kept": 0.6487
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.6162,
+     "walls kept": 0.9159
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.6796,
+     "walls kept": 0.7796
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.7334,
+     "walls kept": 0.934
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.7135,
+     "walls kept": 0.7449
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.7743,
+     "walls kept": 0.8451
+    }
+   }
+  },
+  "B356/S2456": {
+   "group": "served",
+   "walls' tick": 26,
+   "blocks that change hands in a tick": 0.02023,
+   "changes undone at the next tick": 0.30708,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00886,
+   "changes of hands to or from no leader": 0.1947,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0146,
+     "beside its own with endless data": 0.015,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0131,
+      "beside its own with endless data": 0.0136
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0024,
+     "beside its own with endless data": 0.0065,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": -0.0028,
+      "beside its own with endless data": 0.0062
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0052,
+     "beside its own with endless data": 0.0056,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0049,
+      "beside its own with endless data": 0.0054
+     }
+    },
+    "with how long in view": {
+     "more surprise": 0.0017,
+     "beside its own with endless data": 0.0106,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0007,
+      "beside its own with endless data": 0.0096
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 24,
+    "pace": 1.5,
+    "as it is": {
+     "more surprise": 0.0052,
+     "beside its own with endless data": 0.0056
+    },
+    "with how long in view": {
+     "more surprise": 0.0017,
+     "beside its own with endless data": 0.0106
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0065,
+     "beside its own with endless data": 0.0069
+    },
+    "with how long in view": {
+     "more surprise": 0.0186,
+     "beside its own with endless data": 0.0264
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 52,
+    "block": 8,
+    "tick": 40,
+    "pace": 2.5,
+    "as it is": {
+     "more surprise": 0.0046,
+     "beside its own with endless data": 0.0053
+    },
+    "with how long in view": {
+     "more surprise": -0.0009,
+     "beside its own with endless data": 0.0166
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 18,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.007,
+     "beside its own with endless data": 0.0075,
+     "with a noise": {
+      "e": 0.005,
+      "more surprise": 0.0059,
+      "beside its own with endless data": 0.0064
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0019,
+     "beside its own with endless data": 0.006,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0019,
+      "beside its own with endless data": 0.006
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.169,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0089,
+     "beside its own with endless data": 0.0093
+    },
+    "with how long in view": {
+     "more surprise": 0.0184,
+     "beside its own with endless data": 0.0275
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5704,
+     "walls kept": 0.8621
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.628,
+     "walls kept": 0.7798
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.6508,
+     "walls kept": 0.7966
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.7052,
+     "walls kept": 0.7346
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.7522,
+     "walls kept": 0.7459
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4652,
+     "walls kept": 1.0164
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4728,
+     "walls kept": 0.8974
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4698,
+     "walls kept": 0.9774
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4681,
+     "walls kept": 0.9018
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4827,
+     "walls kept": 0.9606
+    }
+   }
+  },
+  "B345/S02457": {
+   "group": "served",
+   "walls' tick": 18,
+   "blocks that change hands in a tick": 0.01688,
+   "changes undone at the next tick": 0.29632,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00474,
+   "changes of hands to or from no leader": 0.2304,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0042,
+     "beside its own with endless data": 0.0048,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0042,
+      "beside its own with endless data": 0.0048
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0033,
+     "beside its own with endless data": 0.0057,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0033,
+      "beside its own with endless data": 0.0057
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0042,
+     "beside its own with endless data": 0.0048,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0042,
+      "beside its own with endless data": 0.0048
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0033,
+     "beside its own with endless data": 0.0057,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0033,
+      "beside its own with endless data": 0.0057
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0042,
+     "beside its own with endless data": 0.0048
+    },
+    "with how long in view": {
+     "more surprise": -0.0033,
+     "beside its own with endless data": 0.0057
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 8,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0077,
+     "beside its own with endless data": 0.008
+    },
+    "with how long in view": {
+     "more surprise": 0.0003,
+     "beside its own with endless data": 0.0051
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 36,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.0033,
+     "beside its own with endless data": 0.0043
+    },
+    "with how long in view": {
+     "more surprise": -0.0052,
+     "beside its own with endless data": 0.0084
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 18,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0042,
+     "beside its own with endless data": 0.0048,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0042,
+      "beside its own with endless data": 0.0048
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0033,
+     "beside its own with endless data": 0.0057,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0033,
+      "beside its own with endless data": 0.0057
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1172,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0042,
+     "beside its own with endless data": 0.0048
+    },
+    "with how long in view": {
+     "more surprise": -0.0033,
+     "beside its own with endless data": 0.0057
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5729,
+     "walls kept": 0.8806
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.5729,
+     "walls kept": 0.8874
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.5869,
+     "walls kept": 0.8459
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.5608,
+     "walls kept": 0.8817
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.5965,
+     "walls kept": 0.8453
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4562,
+     "walls kept": 1.0282
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4585,
+     "walls kept": 1.0361
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.4356,
+     "walls kept": 1.0049
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4615,
+     "walls kept": 1.031
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.4392,
+     "walls kept": 1.01
+    }
+   }
+  },
+  "B345678/S03467": {
+   "group": "served",
+   "walls' tick": 26,
+   "blocks that change hands in a tick": 0.01419,
+   "changes undone at the next tick": 0.27099,
+   "a lead 8 ticks old beside a flat wall changes hands": 0.00306,
+   "changes of hands to or from no leader": 0.2182,
+   "the look's reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0029,
+     "beside its own with endless data": 0.0037,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0029,
+      "beside its own with endless data": 0.0037
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0074,
+     "beside its own with endless data": 0.0032,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0074,
+      "beside its own with endless data": 0.0032
+     }
+    }
+   },
+   "the nearest reading": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0029,
+     "beside its own with endless data": 0.0037,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0029,
+      "beside its own with endless data": 0.0037
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0074,
+     "beside its own with endless data": 0.0032,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0074,
+      "beside its own with endless data": 0.0032
+     }
+    }
+   },
+   "the nearest of the blocks step 4g read": {
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0029,
+     "beside its own with endless data": 0.0037
+    },
+    "with how long in view": {
+     "more surprise": -0.0074,
+     "beside its own with endless data": 0.0032
+    }
+   },
+   "at half its walls' tick": {
+    "read at": 12,
+    "block": 8,
+    "tick": 8,
+    "pace": 0.5,
+    "as it is": {
+     "more surprise": 0.0011,
+     "beside its own with endless data": 0.0015
+    },
+    "with how long in view": {
+     "more surprise": -0.0048,
+     "beside its own with endless data": 0.0033
+    }
+   },
+   "at twice its walls' tick": {
+    "read at": 52,
+    "block": 8,
+    "tick": 32,
+    "pace": 2.0,
+    "as it is": {
+     "more surprise": 0.005,
+     "beside its own with endless data": 0.0062
+    },
+    "with how long in view": {
+     "more surprise": -0.0051,
+     "beside its own with endless data": 0.013
+    }
+   },
+   "the rung at its own tick": {
+    "read at": 26,
+    "block": 8,
+    "tick": 16,
+    "pace": 1.0,
+    "as it is": {
+     "more surprise": 0.0029,
+     "beside its own with endless data": 0.0037,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": 0.0029,
+      "beside its own with endless data": 0.0037
+     }
+    },
+    "with how long in view": {
+     "more surprise": -0.0074,
+     "beside its own with endless data": 0.0032,
+     "with a noise": {
+      "e": 0.0,
+      "more surprise": -0.0074,
+      "beside its own with endless data": 0.0032
+     }
+    }
+   },
+   "the reading nearest by what its leaders alone say": {
+    "apart": 0.1849,
+    "block": 16,
+    "tick": 112,
+    "pace": 1.75,
+    "as it is": {
+     "more surprise": 0.0359,
+     "beside its own with endless data": 0.0367
+    },
+    "with how long in view": {
+     "more surprise": 0.0717,
+     "beside its own with endless data": 0.0832
+    }
+   },
+   "run on": {
+    "the look's reading, as it is": {
+     "amiss over changed": 0.5381,
+     "walls kept": 0.8775
+    },
+    "the nearest reading, as it is": {
+     "amiss over changed": 0.536,
+     "walls kept": 0.8892
+    },
+    "its own rule, as it is": {
+     "amiss over changed": 0.5091,
+     "walls kept": 0.8723
+    },
+    "the rung, at its own tick, as it is": {
+     "amiss over changed": 0.5385,
+     "walls kept": 0.8885
+    },
+    "its own rule, at its own tick, as it is": {
+     "amiss over changed": 0.5167,
+     "walls kept": 0.8593
+    },
+    "the look's reading, with how long in view": {
+     "amiss over changed": 0.4125,
+     "walls kept": 1.0484
+    },
+    "the nearest reading, with how long in view": {
+     "amiss over changed": 0.4156,
+     "walls kept": 1.0547
+    },
+    "its own rule, with how long in view": {
+     "amiss over changed": 0.3907,
+     "walls kept": 1.0134
+    },
+    "the rung, at its own tick, with how long in view": {
+     "amiss over changed": 0.4141,
+     "walls kept": 1.0445
+    },
+    "its own rule, at its own tick, with how long in view": {
+     "amiss over changed": 0.3886,
+     "walls kept": 1.0128
+    }
+   }
+  }
+ }
+}

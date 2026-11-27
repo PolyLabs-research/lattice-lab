@@ -60,9 +60,14 @@ more, and not what I recommended the test for: one tick ahead the rule that reme
 serves the ten worlds the plain rule serves and, by the registered measure, the four it
 nearly served (two or three of them once the yardstick is allowed for); run on, it runs
 nineteen of the 29. It does nothing for the ten worlds the plain rule missed, where a
-block changes hands whatever its past. Read after the verdict, those look like the still
-world's rule with one or two numbers more, which is decision D15. Step 5 is not built.
-The decisions that are yours are at the end.
+block changes hands whatever its past. A look at what the worlds outside the class are
+(`examples/scale-up-family`, exploratory) set each beside the still world's own rule at
+every block and tick its kept runs give. The five worlds the rule just missed are the
+still world read through blocks of 4, to within 2% to 4%, and that likeness moves with
+the tick a world is read at, as it should: near the class, the rule changes from world to
+world the way it changes from rung to rung of one world. The ten missed are not the still
+world at any block down to 2. And run on, the look's one calm rule still ends nearest
+every world. Step 5 is not built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -2865,6 +2870,159 @@ not read here.
 
 **Gate: passed.** The verdict is in: 222 of 223. What it gives is decision D15.
 
+### Step 4k: every world beside the still world at another block and tick (first look, exploratory, 2026-11-27)
+
+Step 4j left ten worlds the look's rule misses whatever is kept in view, five it just
+misses, and a reading made after its verdict: two numbers fitted to a world brought the
+rule most of the way. You chose to look at what those numbers are (decision D15, option
+a). `examples/scale-up-family/look.py` is that look. Nothing in it is registered.
+
+- **I did not do it the way I said.** D15 spoke of fitting a pace and a noise to each
+  world. Before fitting anything I tried the still world's rule from another rung of the
+  ladder, which step 4i's records already hold, and it did about as well as a fitted
+  number. So the family tried here has no fitted number in it: it is the still world's own
+  rule at every block and tick its kept runs give. Every member of that family is a thing
+  that was measured, and "which member is this world?" can be checked another way
+  (point 2 below), which a fitted number cannot.
+- **What is read.** Of the still world: the leaders step 4g kept of its eight runs on side
+  2,048, through blocks of 4, 8, 16 and 32, each over its matched age and at every tick
+  those leaders allow up to four matched ticks (60 readings); and blocks of 2, which no
+  step had read (4 readings). Of the 29 worlds and the still world of step 4j: the leaders
+  its registered run kept of all 120 runs, read through blocks of 8 at the walls' tick
+  step 4j gave each world, at half of it and at twice it.
+- **Four short runs were made, where I had said none.** Blocks of 2 needed the first 64
+  generations of four of step 4g's runs of the still world made again, since nothing kept
+  holds them: under two minutes of one core. The look had pointed below blocks of 4, and
+  without them I could have said nothing of the ten worlds missed. Nothing else was run,
+  and nothing was spent.
+- **How a world is placed.** A reading of the still world is a rule. A world's nearest
+  reading is the one whose plain rule has least surprise on the two starts the world
+  learns from. How near it is, is that rule's surprise on the two starts the world is
+  tried on, beside the world's own rule learned at the same tick: step 4j's measure.
+  Nothing is fitted but the choice among the 64.
+- **Checked on the way.** At blocks of 8 and 16 and their matched ticks the readings are
+  the look's rules of step 4h, count for count.
+
+**What it found.**
+
+1. **The five worlds just missed are much nearer the still world through blocks of 4 than
+   through blocks of 8.** Each world at its walls' tick, as step 4j read it:
+
+   | Step 4f found them | Nearest reading of the still world | That rule beside the world's own, more surprise: as it is; with how long | The look's reading of step 4j (blocks of 8 at 16 generations): the same |
+   | --- | --- | --- | --- |
+   | served (10) | blocks of 8, at 16 generations (seven) and at 24 (three) | 0.0% to 0.9%; −1.5% to 0.7% | 0.0% to 1.5%; −1.5% to 0.1% |
+   | nearly served (4) | blocks of 8, at 8 generations (the two that are full) and at 24 and 32 (the two half full) | 1.4% to 2.7%; 1.0% to 5.0% | 2.7% to 3.7%; 0.1% to 2.2% |
+   | just missed (5) | blocks of 4 at 8 generations, all five | 2.0% to 4.1%; 1.8% to 4.4% | 6.7% to 8.8%; 4.0% to 6.8% |
+   | missed (10) | blocks of 4 at 8 (seven) and at 12 (one); blocks of 2 at 4 (the two thinnest) | 6.9% to 26%; 7.9% to 58% | 17% to 62%; 20% to 173% |
+
+   For the five just missed the gap falls to between a quarter and a half of what it was.
+   It does not close: one of the five is inside step 4j's bar of 2.5% as it is and two with
+   how long in view; four of the five are inside 4% either way. Over all 29, the nearest
+   reading's
+   plain rule is within 2.5% of 14 worlds and within 4% of 18, where the look's is within
+   them of 10 and 14. In the nearly served the look's reading is the nearer one once how
+   long is in view: there the tick that suits the plain rule is making up for the mix of
+   young and old leads, which is step 4j's point 2 again.
+
+   The five, one by one (run-ons are blocks amiss over blocks changed, as in step 4j):
+
+   | World | Its walls' tick | Nearest reading | That rule, more surprise: as it is; with how long | At half its walls' tick: nearest reading; that rule as it is | Run on, as it is: the look's rule; the nearest reading's; its own | Run on, with how long: the same three |
+   | --- | --- | --- | --- | --- | --- | --- |
+   | B3468/S2378 | 28 | blocks of 4 at 8 | +2.8%; +2.7% | blocks of 4 at 4; +2.9% | 0.52; 0.73; 0.71 | 0.45; 0.54; 0.50 |
+   | B2367/S3 | 22 | blocks of 4 at 8 | +2.5%; +2.3% | blocks of 4 at 4; +2.6% | 0.57; 0.77; 0.76 | 0.49; 0.59; 0.55 |
+   | B2458/S578 | 22 | blocks of 4 at 8 | +2.0%; +1.8% | blocks of 4 at 4; +2.1% | 0.53; 0.71; 0.68 | 0.47; 0.54; 0.52 |
+   | B38/S013467 | 36 | blocks of 4 at 8 | +2.8%; +3.6% | blocks of 4 at 4; +2.8% | 0.58; 0.75; 0.74 | 0.51; 0.58; 0.57 |
+   | B234567/S01247 | 80 | blocks of 4 at 8 | +4.1%; +4.4% | blocks of 8 at 24; +4.3% | 0.56; 0.73; 0.72 | 0.51; 0.57; 0.56 |
+
+2. **The likeness moves with the tick, as it must if it is real.** If a world at its walls'
+   tick is the still world at some block and tick, then read at half its walls' tick it
+   should be the still world at the same block and a shorter tick, and at twice it a
+   longer one. Read at half its walls' tick, 27 of the 30 worlds keep the block of their
+   nearest reading, and at twice it 27. Of the twenty that are not missed, 19 keep it at
+   half and 16 of those take a shorter tick; 18 keep it at twice and all 18 take a longer
+   one. Four of the five just missed go from blocks of 4 at 8 generations to blocks of 4
+   at 4, which is the still world's blocks of 4 at their matched tick: the bottom rung of
+   the ladder of steps 4e to 4i. At twice their walls' tick all five go to blocks of 4 at
+   12, not 16: the tick moves the right way and by less than the whole factor.
+3. **So a world near the class is a rung of the still world's own ladder, at a tick of
+   its own.** Each world was read once more at its walls' tick over the pace of its
+   nearest reading, and the rung of that block tried there (its matched reading). In the
+   five just missed, at half their walls' tick, the rung of blocks of 4 is within 2.1% to
+   4.3% of the world's own rule (1.7% to 4.8% with how long). In the three busier worlds
+   served, at two thirds of their walls' tick, the look's own rung is within 0.5% to 0.7%
+   where it was 1.1% to 1.5%; in the two nearly served that are half full, 1.6% and 1.7%
+   where it was 2.7% and 3.5%. The two nearly served that are full go the other way, and
+   are not helped: their nearest reading is slower than a rung, and at twice their walls'
+   tick the rung is no nearer than before (3.0% and 4.6%, where it was 3.0% and 3.7%).
+
+   That is the change steps 4e to 4i followed up the ladder, met again across worlds. In
+   the still world the rule changes from rung to rung in one way: the smaller the block,
+   the more often a block beside a wall changes hands (an old lead beside a flat wall:
+   0.07% of the time at blocks of 32, 0.19% at 16, 0.52% at 8, 1.9% at 4, 13% at 2). The
+   worlds near the class differ from the still world in that same way. A world then has
+   three numbers where step 4j gave it one: a clock for its walls, a tick for its blocks,
+   and a block size. The still world's are 1, 1 and 1 by definition.
+4. **The ten worlds missed are not the still world at any block.** Their nearest readings
+   lie at the edge of what was read, and are 7% to 26% away. Blocks of 2 do not rescue
+   them, and the tables say why. The still world's small blocks change hands through
+   ties: of all its changes of hands, 17% are to or from no leader at blocks of 8, 47% at
+   blocks of 4 and 84% at blocks of 2. In the ten missed, at blocks of 8, it is 13% to
+   18%. A thin world's block goes straight from one species to the other, and a small
+   block of a full world cannot do that.
+
+   A noise does describe most of what is left, as it is: with a chance of taking a
+   neighbour's leader fitted on top (0.055 to 0.135), the rung of blocks of 4 at a missed
+   world's own tick is within 2.6% to 3.1% of seven of the ten, where without it the rung
+   is 6% to 14% off. With how long in view the same seven are at 3.9% to 5.6%, and the
+   other three are far off (5% to 20% as it is, 17% to 24% with how long). So the plain
+   table of most missed worlds is nearly the still world's blocks of 4 with a noise, and
+   what their blocks' past says is not.
+5. **Run on, none of this helps: the calm rule still ends nearest the world.** In the five
+   just missed, the nearest reading's rule runs the world as the world's own rule does: it
+   ends amiss in 1.01 to 1.04 as many blocks (1.02 to 1.09 with how long), which is what
+   it should do if it is that world's rule. And both end further from the world than the
+   look's rule for blocks of 8, which is 7% to 9% from the world one tick ahead: the look's
+   rule ends amiss in 0.71 to 0.78 as many blocks as the nearest reading's (0.82 to 0.89
+   with how long), and keeps the world's walls where the nearest reading's loses more than
+   a tenth of them (1.00 to 1.04 against 0.85 to 0.89, with how long). Read at the world's
+   own, shorter tick, plain rules do worse still (0.82 to 0.91 of the blocks that changed). It
+   is the same in the ten missed: the look's rule 0.66 to 0.73, the nearest reading's 0.72
+   to 0.83, the world's own 0.80 to 0.88. This is step 4f's third point once more, and now
+   with a rule that is the world's own by another road. What a world's blocks do beyond the
+   look's rule is real, and a table can learn it; it is of no use for saying where the
+   territories will be.
+6. **A world's leaders alone do not place it.** Three things that need no rule (how often
+   blocks change hands in a tick, how often a change is undone at the next, how often an
+   old lead beside a flat wall changes hands) were set beside the same three in every
+   reading of the still world. Of the 19 worlds not missed they find the nearest reading
+   of 8 and the right block of 13. A rule's table has to be scored to place a world.
+
+**What step 4k shows.** The five worlds the rule just missed are not missed for want of a
+memory or of a noise. They are the still world read through a smaller block: its rung of
+blocks of 4, to within 2% to 4%, at a tick half their walls' tick. So the way the coarse
+rule changes from world to world, near the class, is the way it changes from rung to rung
+of one world, and a world there needs a block size as well as a clock. The ten missed are
+another matter: no block of the still world is like them, because their blocks change
+hands directly and often, and that part of what they do can be described by a noise and
+cannot be put to use. And for running a world on, the look's one calm rule at the walls'
+tick is still the best there is in all 29.
+
+**What it does not show.** Nothing here is registered, and the worlds are the ones whose
+verdict I had just read. I tried things in an order: a tick of the world's own with the
+look's rule and a noise (it did not serve), the still world's rule between rungs by
+drawing a line through three of them (it did not reach the missed), and then the 64
+readings, which I tell. That flatters. "Within 2% to 4%" is not "served": by step 4j's bar
+one of the five is in. The readings are a coarse set, since the blocks double from rung to
+rung and blocks of 4 were kept at four ticks only; a block of 5 or 6 might be nearer still,
+and was not read. Blocks of 2 are four runs on one grid. The likeness to a rung was shown
+by reading the worlds at other ticks, not through other blocks, which is the test that
+matters and needs runs that keep more than leaders. The noise is one shape, tried because
+it was the first I thought of. And point 5 scores a rule by where each block ends, which
+favours a calm rule over a true one: a rule that flickers as the world does is marked down
+for its flicker. The walls a rule keeps do not have that fault, and they say the same.
+
+**Gate:** none, as nothing was registered. What it gives is decision D16.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -2918,6 +3076,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4i, the registered test, 32 runs read through blocks and 2,560 run-ons of coarse rules | 1.0 million | 4,096 | 1 hour 52 minutes, 2 hours 52 minutes of one core in all; a run takes five to six minutes of one core | here, one core and at times two |
 | step 4j, the sizing look: 30 runs read every two generations and 120 rules run on sixteen times each | 1.0 million | 5,120 | 19 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $0.47; a run takes 11 to 17 minutes there beside 29 others, and seven of one core here | a pod |
 | step 4j, the registered test, 120 runs read every two generations and 240 rules run on sixteen times each | 1.0 million | 5,120 | 62 minutes on 30 workers of a pod of the same kind, $1.52 | a pod |
+| step 4k, the look: the still world at 64 blocks and ticks (four runs of 64 generations made for blocks of 2), 30 worlds read at four ticks each, and 4,800 run-ons of coarse rules | 4.2 million for the four runs | 64 | 2 minutes for the still world's readings and 6 for the worlds | here, one core |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -3309,6 +3468,38 @@ What each one gives:
   I recommend (a). It is free, it goes at exactly what this step found, and it says
   whether (b) is worth paying for: if a missed world's table is the still world's with a
   noise, larger blocks are a way to shrink the noise and not another law.
+  You chose (a): it is step 4k, a look, done on 2026-11-27. It did not fit the two numbers
+  I had named. It found a family with no fitted number in it, the still world's own rule
+  at every block and tick, in which the five just missed sit at blocks of 4. The ten
+  missed are in no such family. It made four runs of 64 generations where I had said none,
+  and cost nothing.
+- **D16. Where next, now that the worlds near the class look like a rung of the ladder**
+  (2026-11-27). Step 4k says a world just outside the class differs from the still world
+  by a block size: at blocks of 8 it is the still world's blocks of 4, to within 2% to 4%.
+  That was shown by reading worlds at other ticks. It has not been shown the way that
+  matters, by reading a world through another block. Four ways on, cheapest first:
+  (a) **The still world between the rungs: a look.** Blocks of 4 and 8 are a factor of two
+  apart, and the five just missed may sit between them. The still world read through
+  blocks of 5, 6 and 7 on a grid those divide, over each block's matched age, would say
+  whether one of them is within the bar. Short runs of one world here (an hour or so of
+  one core, when this machine is free), registering nothing.
+  (b) **Change the ruler: a registered test.** If a just-missed world at blocks of 8 is
+  the still world at blocks of 4, then through blocks of 16 it should be the still
+  world at blocks of 8: the look's rule should serve it there, at a tick half its walls'
+  tick, where at blocks of 8 that rule is 7% to 9% off. That is a prediction with every
+  number written down beforehand, and it can fail. It needs the five just missed and a
+  few worlds served run again and read through blocks of 8 and 16, four times as long as
+  step 4j's runs: a pod for about $4, to be agreed first.
+  (c) **What the ten missed are.** Their blocks change hands directly and often, which no
+  block of the still world does. A look at their cells: how level the two species are in
+  a block that changes hands, and whether the margin of a block's lead is the thing to
+  read where the leader alone is not. It needs runs that keep more than leaders: a pod
+  for about $1, or this machine when it is free.
+  (d) **Leave the ladder here:** bring the ten branches home, and take up D8's other two.
+  I recommend (b). It is the one test of the idea this look arrived at, it is cheap as
+  these things go, and whichever way it comes out it settles whether "a clock and a
+  ruler" is the law of the class or a likeness between two tables. (a) would sharpen the
+  numbers (b) uses and is free, so it could go first if you would rather.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -3316,7 +3507,7 @@ What each one gives:
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
 - **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
-  holds seven steps):
+  holds eight steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -3337,8 +3528,10 @@ What each one gives:
     of territories zoomed out (step 4d), which registers nothing; its registered test
     (step 4e, 89 predictions); the class test (step 4f, 128); the next rung (step 4g, 22);
     the look at a rule that remembers (step 4h), which registers nothing; its registered
-    test (step 4i, 74); and the class again with that rule (step 4j, 223). Five studies and
-    536 predictions more in the census dashboards' table.
+    test (step 4i, 74); the class again with that rule (step 4j, 223); and the look at
+    every world beside the still world at another block and tick (step 4k), which
+    registers nothing. Five studies and 536 predictions more in the census dashboards'
+    table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
