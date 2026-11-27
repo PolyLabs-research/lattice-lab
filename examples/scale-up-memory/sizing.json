@@ -1,0 +1,964 @@
+{
+ "what the bounds were drawn from": {
+  "A, a block's past": {
+   "a young lead over an old one, at least": 4.0,
+   "surprise removed, at least": 0.04,
+   "drawn from": "the look (side 2,048): with four rival neighbours a block of 8 that has had its leader one tick changes hands 6.2 and 7.0 times as often as one that has had it 16 ticks or more (still, busy), a block of 16 7.9 and 8.1 times; how long, up to 8 ticks, removes 7% to 11% of the plain rule's surprise at blocks of 4 to 16. Step 4d's runs on side 1,024 give the same: 6.2 and 7.0, 7.9 and 8.1; 7% to 11%."
+  },
+  "B, the top of the table": {
+   "an old lead at five, blocks of 16 within this of 8": 0.1,
+   "the rule as it is at five, blocks of 16 over 8, at most": 0.93,
+   "the mix alone, within this of the rule as it is": 0.05,
+   "drawn from": "the look: a lead of 16 ticks or more at five rival neighbours changes hands 0.96 and 1.00 times as often at blocks of 16 as at blocks of 8, where the rule as it is gives 0.85 and 0.87. On side 1,024: 0.93 and 0.97, 0.84 and 0.87; and the rule as it is at blocks of 8, made from its own mix of young and old leads and the chances of blocks of 16, comes out at 0.99 of what it is in both worlds. The still world's old leads do fall a little: this is the bound most likely to be missed."
+  },
+  "C, along the walls": {
+   "an old lead at three, blocks of 16 over 8, at most": 0.6,
+   "a lead of one tick at three, at most": 0.9,
+   "an old lead at four, at most": 0.92,
+   "the share of the fall at three that is the mix, at most": 0.3,
+   "the remembering rule's gap at blocks of 8, at least": 0.04,
+   "that gap over the plain rule's, at least": 0.6,
+   "drawn from": "the look: at three rival neighbours an old lead changes hands 0.38 and 0.32 times as often at blocks of 16 as at 8, a lead of one tick 0.75 and 0.67 times; an old lead at four 0.75 and 0.80 times. On side 1,024: 0.38 and 0.40, 0.77 and 0.71, 0.76 and 0.80; a fifth of the plain rule's fall at three is the mix; and the remembering rule from blocks of 4 has 6.4% to 6.6% and 5.2% to 5.4% more surprise at blocks of 8, which is 0.75 and 0.92 to 0.96 of what the plain rule has."
+  },
+  "D, run on": {
+   "blocks amiss, with how long over as it is, at most": {
+    "8": 0.9,
+    "16": 0.96
+   },
+   "the walls the plain rule keeps, at most": {
+    "8": 0.95,
+    "16": 0.98
+   },
+   "the walls the remembering rule keeps": [
+    0.95,
+    1.14
+   ],
+   "going back, within this of the world": 0.06,
+   "going back, the plain rule over the world, at most": 0.6,
+   "drawn from": "the look: 0.73 and 0.77 of the plain rule's blocks amiss at blocks of 8, 0.80 and 0.89 at 16; walls kept 0.86 and 0.89 by the plain rule at blocks of 8, 0.89 and 0.93 at 16, and 1.01 to 1.07 by the remembering one; going back in 0.26 and 0.27 of changes of hands in the world at blocks of 8, 0.25 and 0.24 at 16, within 0.03 of that in the remembering rule's world and 0.3 to 0.45 of it in the plain rule's. On side 1,024, from four trial starts each way: 0.72 and 0.77 to 0.78, 0.82 and 0.90 to 0.91; plain walls 0.84 to 0.90 at blocks of 8 and 0.88 to 0.94 at 16, where one way and the other differ by up to 0.04; remembering walls 1.00 to 1.07; going back within 0.01 to 0.03. The walls at blocks of 16 are what moves most between one choice of starts and another, so their bounds are the widest."
+  },
+  "E, the ladder's own test": {
+   "the remembering rule from below over the rung's own, at most": {
+    "8": 1.22,
+    "16": 1.1
+   },
+   "what the plain rule from below pays more, at least": {
+    "8": 0.02,
+    "16": 0.04
+   },
+   "over the rung's own plain rule, at most": 0.97,
+   "drawn from": "the look: the remembering rule from the rung below ends amiss in 1.14 and 1.03 times as many blocks as the rung's own at blocks of 8, 1.03 and 0.98 at 16; the plain rule from below in 1.20 and 1.09, 1.15 and 1.13. On side 1,024: 1.13 to 1.14 and 1.03, 1.02 and 0.97 to 1.00; the plain rule pays 0.05 to 0.07 more at blocks of 8 and 0.14 to 0.19 more at 16; and the remembering rule from blocks of 8 ends with 0.84 and 0.87 to 0.91 of the blocks the rung's own plain rule gets amiss at blocks of 16."
+  },
+  "R, the look's rules": {
+   "one tick ahead, more surprise, at most": 0.005,
+   "run on, blocks amiss over this run's own": [
+    0.93,
+    1.07
+   ],
+   "drawn from": "the look's rules tried on step 4d's runs, which the look never saw: as it is they have 0.03% to 0.3% less surprise than the rule learned from four of those starts, and with how long in view 0.5% to 2.8% less, having learned from far more; run on, they end amiss in 0.98 to 1.01 times as many blocks. Step 4g's rule of side 1,024 served on side 2,048 within 0.1%."
+  },
+  "X, the anchor": {
+   "the plain gap at blocks of 16": [
+    0.015,
+    0.045
+   ],
+   "the plain rule's own run-on, amiss over changed, at most": 0.7,
+   "drawn from": "step 4g's registered bounds for the same two numbers, which held there (2.8% and 3.0%; 0.54 and 0.46). On side 1,024 here: 2.3% to 2.7%; 0.47 to 0.54."
+  },
+  "what a claim stands on": {
+   "blocks behind a chance, at least": 200,
+   "a block fits": 0.2,
+   "drawn from": "steps 4e and 4g: a run-on is read only where at most a fifth of neighbouring blocks differ when the rule is started (0.16 to 0.18 at every rung at its matched age). The fewest blocks behind a chance any claim compares were 318 in step 4d's eight starts; the registered run has sixteen."
+  }
+ },
+ "step 4d's runs through the study's measures": {
+  "A still, block 8: a young lead changes hands far more often": {
+   "at least": 4.0,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 6.24596,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 6.24596,
+    "would": "holds"
+   }
+  },
+  "A still, block 16: a young lead changes hands far more often": {
+   "at least": 4.0,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 7.92721,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 7.92721,
+    "would": "holds"
+   }
+  },
+  "A still, block 4: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.06715,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.0662,
+    "would": "holds"
+   }
+  },
+  "A still, block 8: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.09559,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.09267,
+    "would": "holds"
+   }
+  },
+  "A still, block 16: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.09417,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.0939,
+    "would": "holds"
+   }
+  },
+  "B still: an old lead at five is the same at both rungs": {
+   "at least": 0.9,
+   "at most": 1.1,
+   "the first four to learn from": {
+    "value": 0.93215,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.93215,
+    "would": "holds"
+   }
+  },
+  "B still: the rule as it is falls at five": {
+   "at least": null,
+   "at most": 0.93,
+   "the first four to learn from": {
+    "value": 0.83798,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.83798,
+    "would": "holds"
+   }
+  },
+  "B still: and the fall is the mix": {
+   "at least": 0.95,
+   "at most": 1.05,
+   "the first four to learn from": {
+    "value": 0.98785,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.98785,
+    "would": "holds"
+   }
+  },
+  "C still: an old lead at three still falls": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.37549,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.37549,
+    "would": "holds"
+   }
+  },
+  "C still: a young lead at three still falls": {
+   "at least": null,
+   "at most": 0.9,
+   "the first four to learn from": {
+    "value": 0.76523,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.76523,
+    "would": "holds"
+   }
+  },
+  "C still: an old lead at four still falls": {
+   "at least": null,
+   "at most": 0.92,
+   "the first four to learn from": {
+    "value": 0.76117,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.76117,
+    "would": "holds"
+   }
+  },
+  "C still: at three the fall is not the mix": {
+   "at least": null,
+   "at most": 0.3,
+   "the first four to learn from": {
+    "value": 0.20116,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.20116,
+    "would": "holds"
+   }
+  },
+  "C still: one tick ahead the remembering rule still changes": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.06552,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.06384,
+    "would": "holds"
+   }
+  },
+  "C still: nearly as much as the plain rule": {
+   "at least": 0.6,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.75193,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.74892,
+    "would": "holds"
+   }
+  },
+  "D still, block 8: fewer blocks amiss": {
+   "at least": null,
+   "at most": 0.9,
+   "the first four to learn from": {
+    "value": 0.72335,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.72071,
+    "would": "holds"
+   }
+  },
+  "D still, block 8: the plain rule loses walls": {
+   "at least": null,
+   "at most": 0.95,
+   "the first four to learn from": {
+    "value": 0.84233,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.85083,
+    "would": "holds"
+   }
+  },
+  "D still, block 8: the remembering rule keeps them": {
+   "at least": 0.95,
+   "at most": 1.14,
+   "the first four to learn from": {
+    "value": 1.00494,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.99987,
+    "would": "holds"
+   }
+  },
+  "D still, block 8: it goes back as often as the world": {
+   "at least": -0.06,
+   "at most": 0.06,
+   "the first four to learn from": {
+    "value": 0.01504,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.01237,
+    "would": "holds"
+   }
+  },
+  "D still, block 8: the plain rule does not": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.44321,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.43791,
+    "would": "holds"
+   }
+  },
+  "D still, block 16: fewer blocks amiss": {
+   "at least": null,
+   "at most": 0.96,
+   "the first four to learn from": {
+    "value": 0.82254,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.8226,
+    "would": "holds"
+   }
+  },
+  "D still, block 16: the plain rule loses walls": {
+   "at least": null,
+   "at most": 0.98,
+   "the first four to learn from": {
+    "value": 0.88452,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.92708,
+    "would": "holds"
+   }
+  },
+  "D still, block 16: the remembering rule keeps them": {
+   "at least": 0.95,
+   "at most": 1.14,
+   "the first four to learn from": {
+    "value": 1.02235,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.04137,
+    "would": "holds"
+   }
+  },
+  "D still, block 16: it goes back as often as the world": {
+   "at least": -0.06,
+   "at most": 0.06,
+   "the first four to learn from": {
+    "value": 0.01054,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.02428,
+    "would": "holds"
+   }
+  },
+  "D still, block 16: the plain rule does not": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.30167,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.30634,
+    "would": "holds"
+   }
+  },
+  "E still, block 8: the remembering rule from below runs it on": {
+   "at least": null,
+   "at most": 1.22,
+   "the first four to learn from": {
+    "value": 1.12641,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.14002,
+    "would": "holds"
+   }
+  },
+  "E still, block 8: where the plain rule from below pays more": {
+   "at least": 0.02,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.07113,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.05992,
+    "would": "holds"
+   }
+  },
+  "E still, block 16: the remembering rule from below runs it on": {
+   "at least": null,
+   "at most": 1.1,
+   "the first four to learn from": {
+    "value": 1.02008,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.01662,
+    "would": "holds"
+   }
+  },
+  "E still, block 16: where the plain rule from below pays more": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.14888,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.13848,
+    "would": "holds"
+   }
+  },
+  "E still: and it beats the rung's own plain rule": {
+   "at least": null,
+   "at most": 0.97,
+   "the first four to learn from": {
+    "value": 0.83906,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.83627,
+    "would": "holds"
+   }
+  },
+  "R still, block 8: the look's rule as it is serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00034,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00026,
+    "would": "holds"
+   }
+  },
+  "R still, block 8: the look's rule with how long in view serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00471,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00582,
+    "would": "holds"
+   }
+  },
+  "R still, block 8: and runs the world on": {
+   "at least": 0.93,
+   "at most": 1.07,
+   "the first four to learn from": {
+    "value": 1.007,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.00864,
+    "would": "holds"
+   }
+  },
+  "R still, block 16: the look's rule as it is serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00226,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00149,
+    "would": "holds"
+   }
+  },
+  "R still, block 16: the look's rule with how long in view serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.01861,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.01663,
+    "would": "holds"
+   }
+  },
+  "R still, block 16: and runs the world on": {
+   "at least": 0.93,
+   "at most": 1.07,
+   "the first four to learn from": {
+    "value": 0.98,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.98947,
+    "would": "holds"
+   }
+  },
+  "X still: the plain gap at blocks of 16": {
+   "at least": 0.015,
+   "at most": 0.045,
+   "the first four to learn from": {
+    "value": 0.02562,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.02346,
+    "would": "holds"
+   }
+  },
+  "X still: the plain rule's own run-on at blocks of 16": {
+   "at least": null,
+   "at most": 0.7,
+   "the first four to learn from": {
+    "value": 0.51962,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.54,
+    "would": "holds"
+   }
+  },
+  "A busy, block 8: a young lead changes hands far more often": {
+   "at least": 4.0,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 6.95273,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 6.95273,
+    "would": "holds"
+   }
+  },
+  "A busy, block 16: a young lead changes hands far more often": {
+   "at least": 4.0,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 8.11245,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 8.11245,
+    "would": "holds"
+   }
+  },
+  "A busy, block 4: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.07387,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.07047,
+    "would": "holds"
+   }
+  },
+  "A busy, block 8: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.10638,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.10395,
+    "would": "holds"
+   }
+  },
+  "A busy, block 16: its past removes surprise": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.09475,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.0888,
+    "would": "holds"
+   }
+  },
+  "B busy: an old lead at five is the same at both rungs": {
+   "at least": 0.9,
+   "at most": 1.1,
+   "the first four to learn from": {
+    "value": 0.9728,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.9728,
+    "would": "holds"
+   }
+  },
+  "B busy: the rule as it is falls at five": {
+   "at least": null,
+   "at most": 0.93,
+   "the first four to learn from": {
+    "value": 0.87247,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.87247,
+    "would": "holds"
+   }
+  },
+  "B busy: and the fall is the mix": {
+   "at least": 0.95,
+   "at most": 1.05,
+   "the first four to learn from": {
+    "value": 0.98835,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.98835,
+    "would": "holds"
+   }
+  },
+  "C busy: an old lead at three still falls": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.39744,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.39744,
+    "would": "holds"
+   }
+  },
+  "C busy: a young lead at three still falls": {
+   "at least": null,
+   "at most": 0.9,
+   "the first four to learn from": {
+    "value": 0.70855,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.70855,
+    "would": "holds"
+   }
+  },
+  "C busy: an old lead at four still falls": {
+   "at least": null,
+   "at most": 0.92,
+   "the first four to learn from": {
+    "value": 0.79751,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.79751,
+    "would": "holds"
+   }
+  },
+  "C busy: at three the fall is not the mix": {
+   "at least": null,
+   "at most": 0.3,
+   "the first four to learn from": {
+    "value": 0.18092,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.18092,
+    "would": "holds"
+   }
+  },
+  "C busy: one tick ahead the remembering rule still changes": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.05428,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.05233,
+    "would": "holds"
+   }
+  },
+  "C busy: nearly as much as the plain rule": {
+   "at least": 0.6,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.9579,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.92198,
+    "would": "holds"
+   }
+  },
+  "D busy, block 8: fewer blocks amiss": {
+   "at least": null,
+   "at most": 0.9,
+   "the first four to learn from": {
+    "value": 0.78437,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.7738,
+    "would": "holds"
+   }
+  },
+  "D busy, block 8: the plain rule loses walls": {
+   "at least": null,
+   "at most": 0.95,
+   "the first four to learn from": {
+    "value": 0.86631,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.89706,
+    "would": "holds"
+   }
+  },
+  "D busy, block 8: the remembering rule keeps them": {
+   "at least": 0.95,
+   "at most": 1.14,
+   "the first four to learn from": {
+    "value": 1.03942,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.0469,
+    "would": "holds"
+   }
+  },
+  "D busy, block 8: it goes back as often as the world": {
+   "at least": -0.06,
+   "at most": 0.06,
+   "the first four to learn from": {
+    "value": 0.01332,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.01449,
+    "would": "holds"
+   }
+  },
+  "D busy, block 8: the plain rule does not": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.43564,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.43232,
+    "would": "holds"
+   }
+  },
+  "D busy, block 16: fewer blocks amiss": {
+   "at least": null,
+   "at most": 0.96,
+   "the first four to learn from": {
+    "value": 0.90715,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.89709,
+    "would": "holds"
+   }
+  },
+  "D busy, block 16: the plain rule loses walls": {
+   "at least": null,
+   "at most": 0.98,
+   "the first four to learn from": {
+    "value": 0.93214,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.93891,
+    "would": "holds"
+   }
+  },
+  "D busy, block 16: the remembering rule keeps them": {
+   "at least": 0.95,
+   "at most": 1.14,
+   "the first four to learn from": {
+    "value": 1.04297,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.07301,
+    "would": "holds"
+   }
+  },
+  "D busy, block 16: it goes back as often as the world": {
+   "at least": -0.06,
+   "at most": 0.06,
+   "the first four to learn from": {
+    "value": 0.01672,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.03197,
+    "would": "holds"
+   }
+  },
+  "D busy, block 16: the plain rule does not": {
+   "at least": null,
+   "at most": 0.6,
+   "the first four to learn from": {
+    "value": 0.30447,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.32357,
+    "would": "holds"
+   }
+  },
+  "E busy, block 8: the remembering rule from below runs it on": {
+   "at least": null,
+   "at most": 1.22,
+   "the first four to learn from": {
+    "value": 1.03491,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.03047,
+    "would": "holds"
+   }
+  },
+  "E busy, block 8: where the plain rule from below pays more": {
+   "at least": 0.02,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.05232,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.06367,
+    "would": "holds"
+   }
+  },
+  "E busy, block 16: the remembering rule from below runs it on": {
+   "at least": null,
+   "at most": 1.1,
+   "the first four to learn from": {
+    "value": 0.99956,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.96724,
+    "would": "holds"
+   }
+  },
+  "E busy, block 16: where the plain rule from below pays more": {
+   "at least": 0.04,
+   "at most": null,
+   "the first four to learn from": {
+    "value": 0.14787,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.19269,
+    "would": "holds"
+   }
+  },
+  "E busy: and it beats the rung's own plain rule": {
+   "at least": null,
+   "at most": 0.97,
+   "the first four to learn from": {
+    "value": 0.90675,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.8677,
+    "would": "holds"
+   }
+  },
+  "R busy, block 8: the look's rule as it is serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00037,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00044,
+    "would": "holds"
+   }
+  },
+  "R busy, block 8: the look's rule with how long in view serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00529,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00591,
+    "would": "holds"
+   }
+  },
+  "R busy, block 8: and runs the world on": {
+   "at least": 0.93,
+   "at most": 1.07,
+   "the first four to learn from": {
+    "value": 1.00061,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 1.00557,
+    "would": "holds"
+   }
+  },
+  "R busy, block 16: the look's rule as it is serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.00181,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.00327,
+    "would": "holds"
+   }
+  },
+  "R busy, block 16: the look's rule with how long in view serves": {
+   "at least": null,
+   "at most": 0.005,
+   "the first four to learn from": {
+    "value": -0.02062,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": -0.02788,
+    "would": "holds"
+   }
+  },
+  "R busy, block 16: and runs the world on": {
+   "at least": 0.93,
+   "at most": 1.07,
+   "the first four to learn from": {
+    "value": 0.99305,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.9836,
+    "would": "holds"
+   }
+  },
+  "X busy: the plain gap at blocks of 16": {
+   "at least": 0.015,
+   "at most": 0.045,
+   "the first four to learn from": {
+    "value": 0.02453,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.02731,
+    "would": "holds"
+   }
+  },
+  "X busy: the plain rule's own run-on at blocks of 16": {
+   "at least": null,
+   "at most": 0.7,
+   "the first four to learn from": {
+    "value": 0.46806,
+    "would": "holds"
+   },
+   "the last four to learn from": {
+    "value": 0.46545,
+    "would": "holds"
+   }
+  }
+ }
+}

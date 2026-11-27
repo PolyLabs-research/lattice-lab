@@ -326,6 +326,12 @@ running then zooming out matches zooming out then running.
   along the walls, by about half for each doubling of the block whatever a block's past, so
   the gap between rungs is a quarter less at most. All of it read off runs I had seen: the
   registered test of it is decision D13 of the plan.
+- **Step 4i, the rule that remembers, is registered** (2026-11-27,
+  `examples/scale-up-memory/study.py`, 74 predictions): the two worlds from sixteen fresh
+  starts each on a 1,024 grid to generation 4,096, blocks of 4, 8 and 16 at their matched
+  ages, with the look's own rules written down beforehand and tried unchanged. Its sizing
+  put step 4d's kept runs of that size, which the look never used, through every claim:
+  all 74 would hold there.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their

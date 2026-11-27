@@ -49,7 +49,9 @@ though the worlds have none: how long a block has had its leader says what it do
 With that in view the rule runs the world on better and keeps its walls, the rule of one
 rung runs the rung above as well as that rung's own at blocks of 16 and 32, and the top of
 the table is the same at every rung; one tick ahead the table still changes along the
-walls. Step 5 is not built. The decisions that are yours are at the end.
+walls. A registered test of that on fresh starts, at step 4e's size, is registered (the same
+folder's `study.py`, 74 predictions). Step 5 is not built. The decisions that are yours are
+at the end.
 
 ## What the ladder is for
 
@@ -2279,6 +2281,80 @@ the neighbours are, which step 4d found adds little to how many.
 
 **Gate:** none, as nothing was registered. What it gives is decision D13.
 
+### Step 4i: the rule that remembers, registered (registered 2026-11-27)
+
+Step 4h was read off runs I had seen, with the readings chosen after the first numbers. You
+chose to put it on the record (decision D13, option a):
+`examples/scale-up-memory/study.py`, registered on 2026-11-27 with 74 predictions before any
+of its runs was made.
+
+- **What is run.** The still world and the busy world, each against its copy under the
+  standoff from a full start, on a wrapped grid of side 1,024 for 4,096 generations, from
+  sixteen fresh starts each (19001 on): eight to learn from and eight to try on. Blocks of
+  4, 8 and 16, each at its matched age on the square clock. That is step 4e's size, and
+  blocks of 32, where the look's last word came from, are out of its reach. 32 fine runs and
+  160 rules run on, sixteen times each.
+- **Sixteen starts a world, where I had told you eight.** At this size blocks of 16 are
+  4,096 to a start, as blocks of 32 were in step 4g, and in the sizing the walls a rule
+  keeps at blocks of 16 moved by 0.04 between one choice of four trial starts and another.
+  Eight trial starts steady that. It costs nothing but two more hours of this machine.
+- **Two rules.** As it is; and with how long a block has had its leader in view, up to 8
+  ticks, which was the look's best reading and is the only one registered.
+- **The look's own rules** (`reference.json`): the tables the look learned on side 2,048,
+  written down before the run and tried here unchanged, one tick ahead and run on.
+- **Sizing** (`sizing.py`, exploratory; it ran no world). Step 4d kept the leaders of its
+  sixteen runs at this very size (starts 15001 to 15008), which the look never used. Put
+  through the study's own measures, with four starts to learn from and four to try on, both
+  ways round, they give the look's numbers again: a young lead changes hands 6.2 to 8.1
+  times as often as an old one at four rival neighbours; an old lead at five is 0.93 and
+  0.97 as likely to change hands at blocks of 16 as at 8, where the plain rule gives 0.84
+  and 0.87; run on, the remembering rule ends with 0.72 to 0.78 of the plain rule's blocks
+  amiss at blocks of 8 and 0.82 to 0.91 at 16; and the remembering rule from blocks of 8
+  runs blocks of 16 at 0.97 to 1.02 of their own, where the plain rule from below pays 14%
+  to 19% more. All 74 claims would hold on those runs, both ways round. So the look has
+  already been repeated once, on runs I had seen; the registered run asks it of fresh ones.
+
+**The predictions**, 74 in seven families (each for both worlds).
+
+| Family | What is predicted | Bound |
+| --- | --- | --- |
+| A, a block's past (10) | with four rival neighbours, a block that has had its leader one tick changes hands this many times as often as one that has had it 16 or more, at blocks of 8 and 16 | at least 4 |
+| | how long removes this share of the plain rule's surprise, at blocks of 4, 8 and 16 | at least 4% |
+| B, the top of the table (6) | an old lead at five rival neighbours is as likely to change hands at blocks of 16 as at 8 | within 10% |
+| | while the rule as it is falls | to 0.93 or less |
+| | and the plain rule at blocks of 8, made from its own mix of young and old leads and the chances of blocks of 16, is what it is | within 5% |
+| C, along the walls (12) | at three rival neighbours the chance falls from blocks of 8 to 16: an old lead; a lead of one tick | to 0.6 or less; 0.9 or less |
+| | an old lead at four falls | to 0.92 or less |
+| | of the plain rule's fall at three, the share that is the mix | at most 30% |
+| | one tick ahead the remembering rule from blocks of 4 has more surprise at blocks of 8 than the one learned there; and beside the plain rule's gap | at least 4%; at least 0.6 of it |
+| D, run on (20) | blocks amiss, the remembering rule over the plain one, at blocks of 8; 16 | at most 0.90; 0.96 |
+| | the walls the plain rule keeps, at blocks of 8; 16 | at most 0.95; 0.98 |
+| | the walls the remembering rule keeps | 0.95 to 1.14 |
+| | going back, the remembering rule's world beside the real one; the plain rule's over the real one | within 0.06; at most 0.6 |
+| E, the ladder's own test (10) | blocks amiss, the remembering rule from the rung below over the rung's own, at blocks of 8; 16 | at most 1.22; 1.10 |
+| | the plain rule from below pays more than that by | at least 0.02; 0.04 |
+| | the remembering rule from blocks of 8, run on at 16, over the rung's own plain rule | at most 0.97 |
+| R, the look's rules (12) | the look's rule of side 2,048, as it is and with how long, one tick ahead at blocks of 8 and 16 | at most 0.5% more surprise |
+| | and run on, blocks amiss over those of the rule learned here | 0.93 to 1.07 |
+| X, the anchor (4) | the plain gap at blocks of 16; the plain rule's own run-on there | 1.5% to 4.5%; at most 0.70 |
+
+- **Not tested**, fixed beforehand: a claim about a chance where fewer than 200 blocks
+  stand behind a chance it compares; a run-on through blocks too large for the world's
+  territories when it starts (over a fifth of neighbouring blocks under different leaders),
+  as in steps 4e and 4g.
+- **What I expect, written before the run.** Nearly all of it to hold: two sets of seen
+  runs on two grids agree, and the bounds stand clear of where they put each number. If
+  something fails I expect it to be one of four, by a little. The
+  still world's old leads at five rival neighbours do fall a little from blocks of 8 to 16
+  (0.93 and 0.96 in the two sets), and "within 10%" could be missed. The walls at blocks of
+  16 are the noisiest thing here. The busy world gains least from remembering at blocks of
+  16 (0.89 to 0.91 of the plain rule's blocks amiss, against a bound of 0.96). And its
+  remembering rule goes back a little more often than the world does (by 0.02 to 0.03,
+  against 0.06). A failure of family E or R would be news: it would mean the ladder's own
+  test coming out even was a property of the runs I had seen.
+
+**Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -2651,6 +2727,8 @@ What each one gives:
   I recommend (a). It costs nothing but an afternoon of one core, it tests on fresh starts
   what I have only read off runs I had seen, and (b) and (c) are worth their price only if
   it holds.
+  You chose (a): it is step 4i, registered on 2026-11-27 with 74 predictions, from sixteen
+  starts a world where I had said eight (step 4i says why).
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -2658,7 +2736,7 @@ What each one gives:
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
 - **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
-  holds five steps):
+  holds six steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -2678,10 +2756,11 @@ What each one gives:
   - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
     of territories zoomed out (step 4d), which registers nothing; its registered test
     (step 4e, 89 predictions); the class test (step 4f, 128); the next rung (step 4g, 22);
-    and the look at a rule that remembers (step 4h), which registers nothing. Three studies
-    and 239 predictions more in the census dashboards' table.
+    the look at a rule that remembers (step 4h), which registers nothing; and its
+    registered test (step 4i, 74). Four studies and 313 predictions more in the census
+    dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 45
-  studies and 2,066 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 46
+  studies and 2,140 predictions.
