@@ -55,11 +55,14 @@ remembering rule ran the world on with an eighth to a quarter fewer blocks amiss
 without losing walls, and learned at blocks of 8 it ran blocks of 16 within 5% of their own rule,
 where the plain rule from below is 14% to 15% worse. A registered test of whether that rule
 carries more of the class than the plain one did (`examples/scale-up-class-memory`, 223
-predictions, each world read on its own clock) is registered and not yet run. Its sizing
-look says what I did not expect: the rule that remembers does not reach the worlds the
-plain rule missed, where a block changes hands whatever its past, and it carries the
-worlds the plain rule served, better. Step 5 is not built. The decisions that are yours
-are at the end.
+predictions, each world read on a clock of its own) held on 222. It carries a little
+more, and not what I recommended the test for: one tick ahead the rule that remembers
+serves the ten worlds the plain rule serves and, by the registered measure, the four it
+nearly served (two or three of them once the yardstick is allowed for); run on, it runs
+nineteen of the 29. It does nothing for the ten worlds the plain rule missed, where a
+block changes hands whatever its past. Read after the verdict, those look like the still
+world's rule with one or two numbers more, which is decision D15. Step 5 is not built.
+The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -2468,7 +2471,7 @@ world's (bound 0.06).
 
 **Gate: passed.** The rule that remembers is on the record. Where next is decision D14.
 
-### Step 4j: the class again, with the rule that remembers (registered 2026-11-27)
+### Step 4j: the class again, with the rule that remembers (registered and run 2026-11-27: 222 of 223 held)
 
 Step 4f found the still world's rule serving ten of the 29 worlds that keep its clock, and I
 read its failures in the thinner ones as a table that learns the flicker of a block's
@@ -2640,6 +2643,228 @@ before any of its runs was made.
 
 **Gate:** the verdict, whichever way it goes.
 
+**The run** (2026-11-27, on a rented pod: 120 fine runs and 240 rules run on sixteen times
+each, in 62 minutes, $1.52). **222 of the 223 predictions held and one failed. None was left
+untested.** The ledger verifies; the verdict, judged again from the records, is the
+ledger's to the last figure; and eight records computed again came out byte for byte. The
+pod's kept runs came home for 119 of the 120. The one that did not (B2456/S35 from start
+20464) was made again here from its start, in twelve minutes of a core that another job
+was sharing, and its two records are the pod's byte for byte. With the twelve runs of the
+sizing look made both here and on the pod, that is thirteen runs the same on both
+machines.
+
+| Family | Held | Failed | Not tested |
+| --- | --- | --- | --- |
+| X, the anchor | 4 | 0 | 0 |
+| S, the same picture on its own clock | 29 | 0 | 0 |
+| T, its tick is the pace step 4f read | 29 | 0 | 0 |
+| K, the look's plain rule keeps it | 29 | 0 | 0 |
+| P, a block's past | 20 | 0 | 0 |
+| O, one tick ahead | 40 | 0 | 0 |
+| J, the five just missed | 10 | 0 | 0 |
+| D, run on where served | 29 | 1 | 0 |
+| W, run on where missed | 10 | 0 | 0 |
+| B, the better rule to run | 20 | 0 | 0 |
+| G, over all 29 | 2 | 0 | 0 |
+
+The 30 worlds, by what step 4f found of them. "More surprise" is the look's rule beside the
+world's own, one tick ahead; the run-ons are blocks amiss over blocks that changed leader.
+
+*The still world, and the ten served in step 4f (within 1%).*
+
+| World | Live | Its tick | Step 4f's rule missed it by | How long removes | The look's rule, more surprise: as it is; with how long | Run on, its own rules: plain; remembering | Run on, the look's rules: plain; remembering | The look's remembering rule over its plain one |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| still | 0.98 | 16 | (itself) | 8.2% | −0.1%; −1.6% | 0.63; 0.46 | 0.63; 0.45 | 0.72 |
+| B23456/S34678 | 0.95 | 44 | 0.2% | 8.8% | 0.0%; −1.5% | 0.57; 0.43 | 0.60; 0.44 | 0.73 |
+| B345678/S03467 | 0.74 | 26 | 0.2% | 10.2% | +0.3%; −0.8% | 0.51; 0.39 | 0.53; 0.42 | 0.78 |
+| B34567/S012457 | 0.69 | 24 | 0.2% | 9.1% | +0.5%; 0.0% | 0.47; 0.40 | 0.47; 0.45 | **0.94** |
+| B345/S02457 | 0.61 | 18 | 0.3% | 10.8% | +0.4%; −0.4% | 0.60; 0.44 | 0.57; 0.46 | 0.80 |
+| B23456/S4678 | 0.95 | 16 | 0.5% | 9.7% | +0.9%; −0.3% | 0.49; 0.41 | 0.55; 0.42 | 0.77 |
+| B2357/S015678 | 0.98 | 22 | 0.5% | 9.4% | +0.4%; −0.9% | 0.46; 0.37 | 0.50; 0.40 | 0.81 |
+| B34568/S247 | 0.56 | 18 | 0.5% | 10.5% | +1.1%; −0.2% | 0.61; 0.42 | 0.54; 0.44 | 0.82 |
+| B356/S2456 | 0.62 | 26 | 0.8% | 9.2% | +1.5%; −0.3% | 0.65; 0.47 | 0.57; 0.47 | 0.82 |
+| B3568/S24678 | 0.97 | 16 | 0.8% | 9.9% | +0.1%; −1.3% | 0.60; 0.42 | 0.64; 0.43 | 0.67 |
+| B24578/S034678 | 0.98 | 26 | 0.9% | 7.7% | +1.4%; 0.0% | 0.72; 0.50 | 0.63; 0.48 | 0.76 |
+
+*Nearly served in step 4f (within 2%): 4 worlds. Nothing but S, T and K was claimed of them.*
+
+| World | Live | Its tick | Step 4f's rule missed it by | How long removes | The look's rule, more surprise: as it is; with how long | Run on, its own rules: plain; remembering | Run on, the look's rules: plain; remembering | The look's remembering rule over its plain one |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| B2348/S25678 | 0.97 | 26 | 1.2% | 8.5% | +3.7%; +2.2% | 0.41; 0.38 | 0.52; 0.41 | 0.80 |
+| B24567/S0135678 | 0.99 | 22 | 1.4% | 5.6% | +3.0%; −0.2% | 0.43; 0.41 | 0.52; 0.42 | 0.82 |
+| B2456/S35 | 0.54 | 20 | 1.7% | 7.9% | +3.5%; +1.1% | 0.69; 0.49 | 0.57; 0.47 | 0.82 |
+| B234678/S1578 | 0.52 | 32 | 1.7% | 8.5% | +2.7%; +0.4% | 0.61; 0.43 | 0.51; 0.43 | 0.85 |
+
+*Just missed in step 4f: 5 worlds. Claimed: neither of the look's rules serves them.*
+
+| World | Live | Its tick | Step 4f's rule missed it by | How long removes | The look's rule, more surprise: as it is; with how long | Run on, its own rules: plain; remembering | Run on, the look's rules: plain; remembering | The look's remembering rule over its plain one |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| B3468/S2378 | 0.47 | 28 | 3.8% | 6.6% | +6.7%; +3.6% | 0.70; 0.49 | 0.54; 0.45 | 0.84 |
+| B2367/S3 | 0.41 | 22 | 4.7% | 6.2% | +7.6%; +4.4% | 0.75; 0.55 | 0.57; 0.49 | 0.85 |
+| B2458/S578 | 0.38 | 22 | 4.9% | 5.1% | +8.0%; +4.8% | 0.69; 0.52 | 0.53; 0.47 | 0.88 |
+| B38/S013467 | 0.44 | 36 | 5.3% | 5.5% | +7.8%; +6.2% | 0.73; 0.56 | 0.58; 0.50 | 0.87 |
+| B234567/S01247 | 0.61 | 80 | 6.9% | 5.5% | +8.8%; +6.3% | 0.72; 0.56 | 0.57; 0.51 | 0.89 |
+
+*Missed in step 4f: 10 worlds.*
+
+| World | Live | Its tick | Step 4f's rule missed it by | How long removes | The look's rule, more surprise: as it is; with how long | Run on, its own rules: plain; remembering | Run on, the look's rules: plain; remembering | The look's remembering rule over its plain one |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| B13458/S358 | 0.53 | 24 | 12% | 3.0% | +17%; +18% | 0.83; 0.70 | 0.65; 0.59 | 0.90 |
+| B24678/S1348 | 0.51 | 56 | 13% | 2.5% | +24%; +30% | 0.84; 0.74 | 0.67; 0.62 | 0.93 |
+| B238/S1356 | 0.47 | 64 | 14% | 2.0% | +26%; +35% | 0.84; 0.75 | 0.67; 0.65 | 0.97 |
+| B2378/S1348 | 0.47 | 68 | 16% | 2.0% | +29%; +40% | 0.85; 0.76 | 0.68; 0.65 | 0.97 |
+| B1234/S48 | 0.46 | 70 | 16% | 2.1% | +28%; +43% | 0.89; 0.78 | 0.70; 0.66 | 0.95 |
+| B2478/S1467 | 0.42 | 48 | 20% | 1.3% | +35%; +60% | 0.84; 0.78 | 0.69; 0.69 | 1.00 |
+| B358/S02378 | 0.35 | 60 | 21% | 2.1% | +33%; +83% | 0.84; 0.76 | 0.68; 0.66 | 0.98 |
+| B25/S678 | 0.25 | 40 | 26% | 0.6% | +42%; +75% | 0.80; 0.76 | 0.66; 0.68 | 1.02 |
+| B2568/S05 | 0.29 | 46 | 29% | 0.7% | +48%; +92% | 0.80; 0.78 | 0.69; 0.72 | 1.04 |
+| B25/S078 | 0.27 | 46 | 38% | 0.5% | +61%; +144% | 0.85; 0.83 | 0.73; 0.74 | 1.02 |
+
+Every world against the same bars, as the registration said the verdict would count them:
+
+| Bar | Served (10) | Nearly served (4) | Just missed (5) | Missed (10) | All 29 |
+| --- | --- | --- | --- | --- | --- |
+| one tick ahead, the look's rule as it is serves (within 2.5%) | 10 | 0 | 0 | 0 | 10 |
+| one tick ahead, the look's rule with how long in view serves | 10 | 4 | 0 | 0 | 14 |
+| a block's past matters (how long removes 6% or more) | 10 | 3 | 2 | 0 | 15 |
+| run on, the look's plain rule keeps it (0.80 or less) | 10 | 4 | 5 | 10 | 29 |
+| run on, the look's remembering rule runs it (0.55 or less) | 10 | 4 | 5 | 0 | 19 |
+| run on, remembering gains (0.85 or less of the plain rule's blocks amiss) | 9 | 4 | 1 | 0 | 14 |
+| run on, the look's remembering rule does as the world's own (0.90 to 1.12) | 10 | 4 | 3 | 1 | 18 |
+
+**What step 4j shows.**
+
+1. **The rule that remembers carries the class a little further, and stops where the sizing
+   said it would.** One tick ahead, on a world's own clock, the look's plain rule serves the
+   ten worlds step 4f's rule served and no other (0.0% to 1.5%; the four nearly served are
+   at 2.7% to 3.7%). With how long in view it serves fourteen: the four nearly served come
+   in (−0.2%, +0.4%, +1.1% and +2.2%). It serves none of the five just missed (+3.6% to
+   +6.3%, where the plain rule is at +6.7% to +8.8%), and in the ten missed it is further
+   off than the plain rule, by 1 to 83 points. The claims J and O that say so all held.
+   So the answer to the question of decision D14 is: four worlds more, at the edge, and
+   not the thin worlds I recommended the step for.
+2. **Those four rest partly on the yardstick, and the count is twelve to fourteen.** The
+   registration measured the look's rule beside a world's own rule learned from two
+   starts. A rule with more in view has more to learn, so that yardstick flatters the
+   look's remembering rule: in the still world itself it comes out 1.6% *better* than the
+   still world's own. Read after the verdict (`extras.py`, exploratory), with each world's
+   own rule told as it would be with endless data, the four are at +0.5%, +1.2%, +1.8% and
+   +3.1%: three inside the bar, so thirteen. That correction still leaves the still world
+   at −0.8%, and allowing for that as well one more is on the line (2.6%). The plain rule
+   serves ten either way. And the bar is a bar: at 4% the plain rule serves the fourteen
+   too. What does not depend on any of this: with how long in view the look's rule is
+   nearer than as it is in all nine worlds between (by 0.7 to 2.6 points with the
+   correction), level with it within a point in the ten served, and further off in every
+   one of the ten missed.
+3. **Run on, the look's remembering rule runs nineteen of the 29.** It ends amiss in at
+   most 0.55 of the blocks that changed leader in the ten served (0.40 to 0.48), the four
+   nearly served (0.41 to 0.47) and the five just missed (0.45 to 0.51); in the ten missed
+   it is at 0.59 to 0.74. In the fourteen it does as the world's own remembering rule does
+   (0.94 to 1.11 of its blocks amiss), and in the five just missed better than it (0.89 to
+   0.92). Beside its plain rule it ends amiss in 0.67 to 0.85 as many blocks in thirteen
+   of the fourteen, 0.84 to 0.89 in the five just missed, and 0.90 to 1.04 in the ten
+   missed.
+4. **How much a block's past matters is a slope across the worlds, not two heaps.** How
+   long removes 7.7% to 10.8% of the plain rule's surprise in the ten served (the still
+   world: 8.2%), 5.6% to 8.5% in the four nearly served, 5.1% to 6.6% in the five just
+   missed and 0.5% to 3.0% in the ten missed. Over the 29, the further step 4f's rule was
+   from a world, the less its blocks' past matters (rank correlation −0.94), and the less
+   the past matters, the less remembering gains (−0.86). Step 4f's groups, drawn from one
+   tick ahead with no past in view, say where a block's past matters.
+5. **On its own clock every world is the same picture, and the look's plain rule keeps
+   all 29.** Ticks run from 16 generations to 80. Over its window every world keeps 0.49
+   to 0.59 of its walls (the still world 0.55), and the pace its tick gives is within 0.77
+   to 1.19 of the pace step 4f read off its walls. Run on, the look's plain rule ends
+   amiss in 0.47 to 0.73 of the blocks that changed leader in every world, the slow ones
+   included: the three that step 4f's rule ran worst at their walls' pace (0.82 to 0.84
+   there, over a longer stretch) are at 0.57 to 0.70. And in the ten missed the look's
+   rules are again the better rules to run than the world's own: 0.78 to 0.85 of its
+   blocks amiss as it is, 0.83 to 0.92 with how long.
+6. **The one failure.** In B34567/S012457, a world served that I had not sized, the look's
+   remembering rule ends amiss in 0.94 as many blocks as its plain one, against a bound of
+   0.85. The remembering rule is not worse there than elsewhere (0.45); the plain one is
+   better (0.47, the best plain run-on of the ten). It is also the world whose tick came
+   out furthest from step 4f's pace: 24 generations where that pace says 19, and its
+   claim T held by a hair (0.773 against 0.769). The world with the shortest tick beside
+   step 4f's pace, B3568/S24678, gains most (0.67). A rule that counts in ticks is as good
+   as the tick it is given. That is a reading of two worlds, not something tested.
+7. **The anchor held.** Read this way the still world's tick is 16 generations, how long
+   removes 8.2%, and the look's remembering rule ends amiss in 0.72 of its plain rule's
+   blocks and 0.99 of the blocks of the remembering rule learned from these starts. Step
+   4i had 0.73 and 1.00, and 9.5% removed with four times the starts to learn from.
+
+**Read after the verdict** (`extras.py`, `extras.json`; exploratory, chosen after seeing
+the numbers).
+
+- **What marks the worlds where a block's past matters is how its blocks change hands,
+  more than how full it is.** Three things a world could be told by, each set against how
+  far step 4f's rule missed it, over the 29:
+
+  | | Served | Nearly served | Just missed | Missed | Rank correlation with how far step 4f's rule missed |
+  | --- | --- | --- | --- | --- | --- |
+  | the share of its grid live | 0.56 to 0.98 | 0.52 to 0.99 | 0.38 to 0.61 | 0.25 to 0.53 | −0.82 |
+  | the chance that a lead 16 ticks old beside a nearly flat wall (three rival neighbours) changes hands | 0.2% to 0.9% | 0.1% to 1.2% | 2.1% to 2.7% | 4.8% to 17% | +0.92 |
+  | at four rival neighbours, a lead one tick old over a lead 16 ticks old | 5.0 to 7.4 | 4.6 to 6.7 | 3.4 to 4.1 | 1.5 to 2.7 | −0.94 |
+
+  How full a world is orders the groups and overlaps between all of them. The other two
+  keep the groups apart, but for the nearly served, which lie inside the served.
+- **The worlds near the class are in it up to one more number, and the worlds missed
+  come most of the way with two.** The look's plain rule with a number fitted on the
+  starts a world learns from, scored on the starts it is tried on, as the world's own
+  rule is:
+
+  | The look's plain rule | Served | Nearly served | Just missed | Missed | Within 2.5% |
+  | --- | --- | --- | --- | --- | --- |
+  | as it is | 0.0% to 1.5% | 2.7% to 3.7% | 6.7% to 8.8% | 17% to 61% | 10 of 29 |
+  | taken k times in a tick (k fitted: 0.8 to 1.4; 0.7 to 1.6; 1.9 to 2.0; 2.4 to 4.4) | −0.1% to 0.5% | 0.4% to 2.1% | 1.6% to 2.6% | 7.4% to 36% | 18 |
+  | with a chance e of taking a neighbour's leader (e: 0 to 0.01; 0 to 0.02; 0.045 to 0.065; 0.125 to 0.375) | 0.0% to 1.3% | 2.1% to 3.7% | 3.6% to 4.5% | 4.2% to 13% | 12 |
+  | both | −0.1% to 0.5% | 0.4% to 2.1% | 1.1% to 1.7% | 2.2% to 11% | 20 |
+
+  In the five just missed a block changes hands about twice in a tick of its walls for
+  every once the still world's rule would have it: read so, four of the five are within
+  the bar. In the ten missed that is not enough, and what serves better is a chance of a
+  block simply taking a neighbour's leader, whatever its past: with both numbers six of
+  the ten are within 4%, and the four thinnest are 6% to 11% off. The best value of that
+  chance is nought in the still world and in eight of the ten served, and 0.01 at most in
+  the other two. These are fits: two numbers and three families tried, on runs I had
+  seen, one tick ahead only.
+
+**Against what I wrote before the run.** "The twelve sized worlds to do again what they
+did": they did; every claim of theirs held. "The five served to be like the five I sized":
+four were, and B34567/S012457 was not, in the one claim that failed. The two I named as
+nearest a bound, B24578/S034678 and B3568/S24678, were at 1.4% and 0.1% where I said 1.1%
+to 1.9%. "The five missed like the five I sized, and not near any bound": yes. "The five
+just missed … 5% to 15% … with how long in view from two points nearer to a few further":
+6.7% to 8.8%, and 1.6 to 3.2 points nearer; none served; the nearest was B3468/S2378, as I
+said it would be (3.6% against 2.5%). "The three nearly served … it may not": it did, by
+the registered measure, in all four; point 2 says how far to trust that. The one of them
+I had sized, where I said +0.7% "should come out nearer +1.7%", came out at −0.2%: the
+other way. "Their ticks
+should be between 60 and 75": B1234/S48's is 70 and B234567/S01247's is 80, the longest a
+run allows. One reading longer and nothing could have been said of that world. I had cut
+the run's length too fine. And against the reason I gave for this step in decision D14:
+I expected the remembering rule to carry the thin worlds. The sizing said it would not,
+and the run agrees; what it carries beyond the ten is at the other end, the worlds the
+plain rule nearly served.
+
+**What it does not show.** One block size, one grid size, four starts a world, and one
+rule from one world. The clock is a choice: a tick read off the walls at one share of
+them, and B34567/S012457 says the remembering rule's gain leans on it. "Serves" is a bar
+I chose after sizing twelve of these worlds, and point 2 shows what moves with it. Two
+things changed at once from step 4f, the clock and the rule; the plain rule was carried
+along on the new clock so that what remembering adds is read on one clock, but step 4f's
+numbers and these are not like for like (another clock, another stretch). Why a thin
+world's blocks change hands whatever their past is not tested: the two fitted numbers
+describe it and do not explain it. A quick number against one explanation, that it is a
+flicker within the tick (`held.py`, on the sizing's kept runs): read as who led a block
+for most of the tick just ended, the sized worlds give nearly the same tables (the look's
+plain rule is 15% to 55% from the five missed, for 17% to 66% at an instant, and in
+B25/S078 an old lead beside a flat wall still changes hands 14% of the time, for 18%).
+Larger blocks, which step 4f found a tenth to a third nearer in the worlds missed, were
+not read here.
+
+**Gate: passed.** The verdict is in: 222 of 223. What it gives is decision D15.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -2692,6 +2917,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4i, the sizing: step 4d's kept runs through the study's measures, both ways round | 1.0 million | 4,096 | 2 minutes 20 seconds | here, one core |
 | step 4i, the registered test, 32 runs read through blocks and 2,560 run-ons of coarse rules | 1.0 million | 4,096 | 1 hour 52 minutes, 2 hours 52 minutes of one core in all; a run takes five to six minutes of one core | here, one core and at times two |
 | step 4j, the sizing look: 30 runs read every two generations and 120 rules run on sixteen times each | 1.0 million | 5,120 | 19 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $0.47; a run takes 11 to 17 minutes there beside 29 others, and seven of one core here | a pod |
+| step 4j, the registered test, 120 runs read every two generations and 240 rules run on sixteen times each | 1.0 million | 5,120 | 62 minutes on 30 workers of a pod of the same kind, $1.52 | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -3049,10 +3275,40 @@ What each one gives:
   worlds that keep the clock and the still world (the other nine have no clock to be read
   on, as step 4j says). Its sizing look went against the reason I gave for recommending
   it: the rule that remembers does not reach the worlds the plain rule missed, and it
-  carries the worlds the plain rule served, better. That is what is registered. It costs
-  more than the $2 I quoted, which you agreed to before either launch: a pod for the
-  sizing ($0.47), this machine being taken, and a pod for the registered run (at most
-  $3.70).
+  carries the worlds the plain rule served, better. That is what was registered, and 222
+  of the 223 predictions held; the run adds that it does carry the four worlds the plain
+  rule nearly served, more or less. You agreed to two pods before either was launched,
+  this machine being taken: $0.47 for the sizing and $1.52 for the registered run, $1.99
+  of the $5.18 agreed.
+- **D15. Where next, now that the rule that remembers has been tried on the class**
+  (2026-11-27). Step 4j says three things. The remembering rule is the common rule of the
+  worlds the plain rule served and, more or less, of the four it nearly served. It helps
+  in the five just missed without serving them. And the ten missed are missed for a
+  reason no memory touches: their blocks change hands whatever their past. Read after the
+  verdict, the worlds outside look like the still world's rule with one or two numbers
+  more: a block changing hands about twice in a tick of its walls (the five just missed),
+  and a chance of simply taking a neighbour's leader (the ten missed). Four ways on,
+  cheapest first:
+  (a) **One rule, a clock and two numbers: a look.** Is a world's table the still world's
+  with a pace within the tick and a noise, does that hold with a block's past in view,
+  and which rule then runs a world on best: the one with the noise, which is nearer one
+  tick ahead, or the one without it, as step 4f's reading and this step's claim B
+  suggest? The registered records hold every world's tallies, and the leaders of all 120
+  runs are kept here, so it is a re-reading: no runs, no cost, registering nothing. It
+  would also ask whether the second number is one a world's walls could give
+  beforehand, as they give the tick. If it finds a family that serves, a registered test
+  on fresh starts of the 29 follows (the size of this step: a pod for about $2, to be
+  agreed first).
+  (b) **Larger blocks for the worlds missed.** Step 4f found them a tenth to a third nearer
+  at blocks of 16. On a world's own clock that needs runs up to four times as long (a
+  slow world's window at blocks of 16 ends near generation 18,000): the ten worlds, about
+  $4 on a pod, to be agreed first.
+  (c) **Blocks of 32 on the record** for the still and the busy world (the old D14 b):
+  about $4.
+  (d) **Leave the ladder here:** bring the ten branches home, and take up D8's other two.
+  I recommend (a). It is free, it goes at exactly what this step found, and it says
+  whether (b) is worth paying for: if a missed world's table is the still world's with a
+  noise, larger blocks are a way to shrink the noise and not another law.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.

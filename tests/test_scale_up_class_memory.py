@@ -596,3 +596,273 @@ def test_the_registration():
     assert question["generations"] == 5120 and question["run_ons_of_a_rule_from_a_start"] == 16
     assert len(question["worlds"]) == 30
     assert sum(w["in_the_sizing_look"] for w in question["worlds"].values()) == 12
+
+
+# --- what the run found --------------------------------------------------------------------------
+
+
+def _verdict():
+    ledger = LAB / "ledger.jsonl"
+    if not ledger.exists():
+        pytest.skip("not registered yet")
+    entries = [json.loads(line) for line in ledger.read_text().splitlines()]
+    verdicts = [e["body"] for e in entries if e["kind"] == "verdict"]
+    if not verdicts:
+        pytest.skip("not run yet")
+    return verdicts[0]
+
+
+def test_the_verdict_is_what_the_records_give():
+    """Judged again here from the records in the repository: the ledger's verdict, to the
+    last figure."""
+    verdict = _verdict()
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    assert Counter(r["kind"] for r in rows) == {"start": 120, "tally": 120, "ahead": 240}
+    again = STUDY.decide(rows, STUDY.claims())
+    assert again["missing"] == [] and set(again) == set(verdict) - {"question", "cites"}
+    for part in again:
+        assert again[part] == verdict[part], part
+
+
+def test_the_registered_run_found_what_the_plan_says():
+    verdict = _verdict()
+    assert verdict["missing"] == [] and len(verdict["outcomes"]) == 223
+    assert Counter(verdict["outcomes"].values()) == {"holds": 222, "fails": 1}
+    failed = [label for label, word in verdict["outcomes"].items() if word != "holds"]
+    assert failed == ["D B34567/S012457: remembering gains"]
+    held = {"X": 4, "S": 29, "T": 29, "K": 29, "P": 20, "O": 40, "J": 10, "W": 10, "B": 20, "G": 2}
+    wanted = {family: {"holds": n} for family, n in held.items()}
+    assert verdict["counts"] == {"D": {"holds": 29, "fails": 1}, **wanted}
+    measured = {label: found["value"] for label, found in verdict["measured"].items()}
+    # the anchor, the gradient and the one failure
+    assert measured["X the still world's tick"] == 16
+    assert round(measured["X the still world's past matters"], 3) == 0.082
+    assert round(measured["X the look's remembering rule runs the still world better"], 2) == 0.72
+    assert round(measured["X and as well as the still world's own"], 2) == 0.99
+    assert (
+        round(
+            measured["G the more the old rule missed a world, the less its blocks' past matters"], 2
+        )
+        == -0.94
+    )
+    assert round(measured["G the more a block's past matters, the more remembering gains"], 2) == (
+        -0.86)  # fmt: skip
+    assert round(measured["D B34567/S012457: remembering gains"], 2) == 0.94
+    assert round(measured["T B34567/S012457: its tick is the pace step 4f read"], 3) == 0.773
+    # what the plan tells of each group of worlds
+    chosen, told = STUDY.worlds(), verdict["worlds"]
+    groups = (SERVED, NEAR, JUST, FAR)
+
+    def spans(read, places=3):
+        out = []
+        for group in groups:
+            values = [read(told[w]) for w in chosen if chosen[w]["group"] == group]
+            out.append((round(min(values), places), round(max(values), places)))
+        return out
+
+    def ran(reading, whose):
+        return lambda t: t["run on"][f"{reading}, {whose}"]["amiss over changed"]
+
+    assert spans(lambda t: t["tick"], 0) == [(16, 44), (20, 32), (22, 80), (24, 70)]
+    assert spans(lambda t: t["share of the plain rule's surprise that how long removes"]) == [
+        (0.077, 0.108), (0.056, 0.085), (0.051, 0.066), (0.005, 0.03)]  # fmt: skip
+    assert spans(lambda t: t["the look's rule, more surprise"][PLAIN]) == [
+        (0.0, 0.015), (0.027, 0.037), (0.067, 0.088), (0.171, 0.613)]  # fmt: skip
+    assert spans(lambda t: t["the look's rule, more surprise"][HOW]) == [
+        (-0.015, 0.0), (-0.002, 0.022), (0.036, 0.063), (0.184, 1.441)]  # fmt: skip
+    assert spans(ran(PLAIN, LOOKS), 2) == [(0.47, 0.64), (0.51, 0.57), (0.53, 0.58), (0.65, 0.73)]
+    assert spans(ran(HOW, LOOKS), 2) == [(0.40, 0.48), (0.41, 0.47), (0.45, 0.51), (0.59, 0.74)]
+    gain = "blocks amiss, the look's remembering rule over its plain one"
+    assert spans(lambda t: t[gain], 2) == [
+        (0.67, 0.94), (0.80, 0.85), (0.84, 0.89), (0.90, 1.04)]  # fmt: skip
+    assert spans(lambda t: ran(HOW, LOOKS)(t) / ran(HOW, OWN)(t), 2) == [
+        (0.94, 1.11), (0.96, 1.09), (0.89, 0.92), (0.83, 0.92)]  # fmt: skip
+    assert spans(lambda t: ran(PLAIN, LOOKS)(t) / ran(PLAIN, OWN)(t), 2) == [
+        (0.87, 1.12), (0.83, 1.26), (0.76, 0.79), (0.78, 0.85)]  # fmt: skip
+    walls = "walls at the start and the end of its window"
+    assert spans(lambda t: t[walls][1] / t[walls][0], 2) == [
+        (0.49, 0.55), (0.50, 0.52), (0.52, 0.54), (0.54, 0.59)]  # fmt: skip
+    for world in chosen:
+        assert told[world]["stands"] and 0.5 <= told[world][
+            "the larger species' share of the live"] <= 0.57, world  # fmt: skip
+    # every world against the same bars
+    met = verdict["worlds met a bar, of those with the number, by group"]
+    counted = {bar: [by[group][0] for group in groups] for bar, by in met.items()}
+    assert all(by[group][1] == size for by in met.values()
+               for group, size in zip(groups, (10, 4, 5, 10), strict=True))  # fmt: skip
+    assert counted == {
+        "a block's past matters": [10, 3, 2, 0],
+        "one tick ahead, the look's rule as it is serves": [10, 0, 0, 0],
+        "one tick ahead, the look's rule with how long in view serves": [10, 4, 0, 0],
+        "run on, the look's plain rule keeps it": [10, 4, 5, 10],
+        "run on, the look's remembering rule runs it": [10, 4, 5, 0],
+        "run on, remembering gains": [9, 4, 1, 0],
+        "run on, the look's remembering rule does as the world's own": [10, 4, 3, 1],
+    }
+
+
+def test_what_was_read_after_the_verdict():
+    """extras.json is what extras.py reads off the ledger and the records, and says what the
+    plan quotes from it."""
+    verdict = _verdict()
+    kept = json.loads((LAB / "extras.json").read_text())
+    chosen = STUDY.worlds()
+    again = EXTRAS.summary(verdict, chosen)
+    for part in again:
+        assert kept[part] == json.loads(json.dumps(again[part])), part
+    rows = [json.loads(line) for line in (LAB / "records.jsonl").read_text().splitlines()]
+    plan, lent = STUDY.design(), STUDY.looks_rule()
+    more = kept["one more number"]["worlds"]
+    assert more == EXTRAS.one_more_number(rows, plan, chosen, lent) and len(more) == 30
+    beside = kept["the yardstick"]["worlds"]
+    assert beside == EXTRAS.with_endless_data(rows, plan, chosen, lent)
+    # what marks the worlds: how full a world is, less than how its blocks change hands
+    ranks = {name: found["rank correlation"] for name, found in kept["rank correlations"].items()}
+    assert ranks[f"{EXTRAS.FULL}, against {EXTRAS.MISSED}"] == -0.819
+    assert ranks[f"{EXTRAS.FLICKER}, against {EXTRAS.MISSED}"] == 0.92
+    assert ranks[f"{EXTRAS.YOUNG}, against {EXTRAS.MISSED}"] == -0.944
+    apart = kept["do they tell served from missed"]
+    assert apart[EXTRAS.FLICKER]["range by group"] == {
+        SERVED: [0.0016, 0.0091], NEAR: [0.0006, 0.0122], JUST: [0.0205, 0.0267],
+        FAR: [0.0484, 0.1701]}  # fmt: skip
+
+    # one more number: how many worlds each family brings within the study's bar, and 4%
+    def within(family, bar):
+        return sum(found[family]["more surprise"] <= bar for world, found in more.items()
+                   if world != STILL)  # fmt: skip
+
+    assert sum(found["the look's rule as it is"] <= 0.025 for world, found in more.items()
+               if world != STILL) == 10  # fmt: skip
+    assert [within(family, 0.025) for family in (EXTRAS.TAKEN, EXTRAS.NEIGHBOUR, EXTRAS.BOTH)] == [
+        18, 12, 20]  # fmt: skip
+    assert within(EXTRAS.BOTH, 0.04) == 25
+    assert more[STILL][EXTRAS.BOTH]["fitted"] == [1.0, 0.0]
+    just = [found[EXTRAS.TAKEN]["fitted"][0] for found in more.values() if found["group"] == JUST]
+    assert min(just) == 1.9 and max(just) == 2.0
+    # the yardstick: with a world's own rule told as with endless data, thirteen served
+    served = kept["the yardstick"]
+    assert served["served, as registered"][HOW][NEAR] == [4, 4]
+    assert served["served, beside its own with endless data"][HOW][NEAR] == [3, 4]
+    assert served["served, beside its own with endless data"][PLAIN][NEAR] == [0, 4]
+    assert beside[STILL][HOW] == {"as registered": -0.0158,
+                                  "beside its own with endless data": -0.0078}  # fmt: skip
+    # and who held a block for most of a tick, in the sizing's worlds
+    held = json.loads((LAB / "held.json").read_text())["worlds"]
+    flat = "an old lead beside a flat wall changes hands"
+    assert len(held) == 12 and held["B25/S078"][HELD.AT][flat] == 0.1843
+    assert held["B25/S078"][HELD.MOST][flat] == 0.1449
+
+
+# --- read after the verdict (exploratory) --------------------------------------------------------
+
+EXTRAS = _load("scale_up_class_memory_extras", LAB / "extras.py")
+
+
+def test_one_more_number_on_made_up_tallies():
+    around = EXTRAS.neighbours()
+    assert around.shape == (3, 9, 9, 3)
+    # three neighbours under species 1 and five under species 2: nobody, 3/8, 5/8
+    assert np.allclose(around[1, 3, 5], [0, 3 / 8, 5 / 8]) and np.allclose(around[0], around[2])
+    assert np.allclose(around[2, 2, 2], [4 / 8, 2 / 8, 2 / 8])
+    views = np.add.outer(np.arange(9), np.arange(9)) <= 8
+    assert np.allclose(around.sum(axis=-1)[1][views], 1) and not around[1][~views].any()
+    # a rule taken once is itself; taken twice, a block keeps its leader with the square of
+    # the chance, and what is left goes where it went before
+    rng = np.random.default_rng(7)
+    base = rng.random((3, 9, 9, 3)) + 0.05
+    base /= base.sum(axis=-1, keepdims=True)
+    assert np.allclose(EXTRAS.taken(base, 1.0), base)
+    twice = EXTRAS.taken(base, 2.0)
+    assert np.allclose(twice.sum(axis=-1), 1) and np.allclose(
+        twice[1, :, :, 1], base[1, :, :, 1] ** 2
+    )
+    assert np.allclose(twice[1, :, :, 0] / twice[1, :, :, 2], base[1, :, :, 0] / base[1, :, :, 2])
+    # the bits of a tally under a table
+    tally = np.zeros((3, 9, 9, 3))
+    tally[1, 4, 4] = [0, 30, 10]
+    table = np.full((3, 9, 9, 3), 1 / 3)
+    table[1, 4, 4] = [0.0, 0.5, 0.5]
+    assert EXTRAS.bits(table, tally) == pytest.approx(1.0)
+    # a made-up world that is the look's rule with a chance of 0.2 of taking a neighbour's
+    # leader: the fit finds the 0.2, and with it the look's rule is the world's own
+    lent = np.zeros((16, 3, 9, 9, 3), dtype=np.int64)
+    goes = (0, 1000, 3000, 10000, 100000, 250000, 500000, 800000, 950000)  # in a million
+    for near in range(9):  # a block seldom changes hands until rivals are half its neighbours
+        stays = 1000000 - goes[near]
+        lent[0, 1, 8 - near, near] = [0, stays, goes[near]]
+        lent[0, 2, near, 8 - near] = [0, goes[near], stays]
+    rule = STUDY.look.PLAIN.chances(STUDY.look.PLAIN.of(lent))[0]
+    mixed = 0.8 * rule + 0.2 * around
+    seen = np.zeros((16, 3, 9, 9, 3), dtype=np.int64)
+    for near in range(9):
+        seen[0, 1, 8 - near, near] = np.round(400000 * mixed[1, 8 - near, near])
+        seen[0, 2, near, 8 - near] = np.round(400000 * mixed[2, near, 8 - near])
+    rows = _records("rough", {1: seen, 2: seen}) + _records("smooth", {1: lent, 2: lent})
+    plan = {w: {"learn": [1], "try": [2]} for w in ("rough", "smooth")}
+    chosen = {w: {"group": FAR} for w in plan}
+    found = EXTRAS.one_more_number(rows, plan, chosen, lent)
+    rough, smooth = found["rough"], found["smooth"]
+    assert rough["the look's rule as it is"] > 0.05
+    assert rough[EXTRAS.NEIGHBOUR]["fitted"] == [0.2]
+    assert rough[EXTRAS.NEIGHBOUR]["more surprise"] == pytest.approx(0.0, abs=1e-4)
+    assert rough[EXTRAS.TAKEN]["more surprise"] > rough[EXTRAS.NEIGHBOUR]["more surprise"] + 0.001
+    assert rough[EXTRAS.BOTH]["fitted"] == [1.0, 0.2]
+    assert smooth[EXTRAS.NEIGHBOUR]["fitted"] == [0.0] and smooth[EXTRAS.TAKEN]["fitted"] == [1.0]
+    assert smooth["the look's rule as it is"] == pytest.approx(0.0, abs=1e-4)
+    # a world with no tallies is left out
+    assert EXTRAS.one_more_number(_records("slow", {}, reach=1400), {
+        "slow": {"learn": [1], "try": [2]}}, {"slow": {"group": FAR}}, lent) == {}  # fmt: skip
+
+
+def test_what_marks_a_world_on_made_up_verdicts():
+    def told(group, live, old, young, removed, gain):
+        return {"tick": 16, "stands": True, "group": group, "live at generation 4,096": live,
+                EXTRAS.TABLE: {EXTRAS.OLD: [old, 0.05, 0.2], EXTRAS.NEW: [0.1, young, 0.5]},
+                "share of the plain rule's surprise that how long removes": removed,
+                "the look's rule, more surprise": {PLAIN: 0.01, HOW: 0.0},
+                "blocks amiss, the look's remembering rule over its plain one": gain}  # fmt: skip
+
+    verdict = {"worlds": {
+        STILL: told("the still world", 0.98, 0.004, 0.32, 0.086, 0.73),
+        "a": told(SERVED, 0.6, 0.004, 0.35, 0.10, 0.75),
+        "b": told(SERVED, 0.9, 0.006, 0.30, 0.08, 0.80),
+        "c": told(FAR, 0.7, 0.10, 0.10, 0.01, 1.0),
+        "d": told(FAR, 0.3, 0.20, 0.06, 0.00, 1.02),
+        "e": {"tick": None, "stands": False},
+    }}  # fmt: skip
+    missed = (0.002, 0.004, 0.2, 0.3, 0.1)
+    chosen = {w: {STUDY.MISSED: m} for w, m in zip("abcde", missed, strict=True)}
+    found = EXTRAS.summary(verdict, chosen)
+    assert set(found["worlds"]) == set("abcd") and found["the still world"][EXTRAS.FULL] == 0.98
+    assert (
+        found["worlds"]["a"][EXTRAS.YOUNG] == 7.0 and found["worlds"]["d"][EXTRAS.FLICKER] == 0.20
+    )
+    apart = found["do they tell served from missed"]
+    # how full a world is does not tell these four apart (0.6 and 0.9 against 0.7 and 0.3)
+    assert apart[EXTRAS.FULL]["served and missed stand clear"] is False
+    assert apart[EXTRAS.FLICKER]["served and missed stand clear"] is True
+    assert apart[EXTRAS.FLICKER]["range by group"][FAR] == [0.10, 0.20]
+    ranks = found["rank correlations"]
+    assert ranks[f"{EXTRAS.FLICKER}, against {EXTRAS.MISSED}"] == {
+        "worlds": 4, "rank correlation": 1.0}  # fmt: skip
+    assert ranks[f"{EXTRAS.FLICKER}, against {EXTRAS.REMOVED}"]["rank correlation"] == -1.0
+
+
+HELD = _load("scale_up_class_memory_held", LAB / "held.py")
+
+
+def test_who_held_a_block_for_most_of_a_tick():
+    tick = 8  # four readings to a tick
+    leaders = np.zeros((64 * 4 + 1, 1, 3), dtype=np.int8)
+    leaders[:, 0, 0] = 1  # the first block is species 1's throughout
+    for reading in range(1, leaders.shape[0]):
+        # the second is species 2's for three readings of four, and 1's at the tick's end;
+        # the third is each one's for two of the four
+        leaders[reading, 0, 1] = (2, 2, 2, 1)[(reading - 1) % 4]
+        leaders[reading, 0, 2] = (1, 1, 2, 2)[(reading - 1) % 4]
+    at, most = HELD.instant(leaders, tick), HELD.held_most(leaders, tick)
+    assert at.shape == most.shape == (65, 1, 3) and np.array_equal(most[0], leaders[0])
+    assert (most[:, 0, 0] == 1).all() and (at[:, 0, 0] == 1).all()
+    # read at an instant the second block is species 1's; it was 2's for most of every tick
+    assert (at[1:, 0, 1] == 1).all() and (most[1:, 0, 1] == 2).all()
+    assert (most[1:, 0, 2] == 2).all()  # a tie goes to whoever leads at the end of the tick

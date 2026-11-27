@@ -1,0 +1,293 @@
+{
+ "what": "the sizing look's worlds read two ways (held.py, exploratory): who leads a block at an instant, once a tick, and who led it for most of the tick just ended; one way round, the first half of a world's starts to learn from",
+ "worlds": {
+  "B245678/S3678": {
+   "group": "the still world",
+   "tick": 16,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0858,
+    "the look's rule as it is, more surprise": -0.0013,
+    "the look's rule with how long in view, more surprise": -0.0166,
+    "an old lead beside a flat wall changes hands": 0.004,
+    "run on, its own rule as it is": 0.5831,
+    "run on, the look's rule as it is": 0.6063,
+    "run on, its own rule with how long in view": 0.4313,
+    "run on, the look's rule with how long in view": 0.4372
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0654,
+    "the look's rule as it is, more surprise": 0.0277,
+    "the look's rule with how long in view, more surprise": 0.0167,
+    "an old lead beside a flat wall changes hands": 0.0032,
+    "run on, its own rule as it is": 0.5453,
+    "run on, the look's rule as it is": 0.6089,
+    "run on, its own rule with how long in view": 0.4378,
+    "run on, the look's rule with how long in view": 0.4306
+   }
+  },
+  "B345/S02457": {
+   "group": "served",
+   "tick": 18,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.1071,
+    "the look's rule as it is, more surprise": 0.0052,
+    "the look's rule with how long in view, more surprise": -0.0046,
+    "an old lead beside a flat wall changes hands": 0.0038,
+    "run on, its own rule as it is": 0.5468,
+    "run on, the look's rule as it is": 0.5383,
+    "run on, its own rule with how long in view": 0.4108,
+    "run on, the look's rule with how long in view": 0.4179
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0652,
+    "the look's rule as it is, more surprise": 0.0311,
+    "the look's rule with how long in view, more surprise": 0.0151,
+    "an old lead beside a flat wall changes hands": 0.0024,
+    "run on, its own rule as it is": 0.4749,
+    "run on, the look's rule as it is": 0.5251,
+    "run on, its own rule with how long in view": 0.3944,
+    "run on, the look's rule with how long in view": 0.4164
+   }
+  },
+  "B23456/S34678": {
+   "group": "served",
+   "tick": 44,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0828,
+    "the look's rule as it is, more surprise": 0.0008,
+    "the look's rule with how long in view, more surprise": -0.0207,
+    "an old lead beside a flat wall changes hands": 0.0026,
+    "run on, its own rule as it is": 0.6364,
+    "run on, the look's rule as it is": 0.6898,
+    "run on, its own rule with how long in view": 0.4846,
+    "run on, the look's rule with how long in view": 0.4994
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0521,
+    "the look's rule as it is, more surprise": 0.0412,
+    "the look's rule with how long in view, more surprise": 0.0103,
+    "an old lead beside a flat wall changes hands": 0.0021,
+    "run on, its own rule as it is": 0.5869,
+    "run on, the look's rule as it is": 0.6984,
+    "run on, its own rule with how long in view": 0.4904,
+    "run on, the look's rule with how long in view": 0.4994
+   }
+  },
+  "B34568/S247": {
+   "group": "served",
+   "tick": 16,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.1022,
+    "the look's rule as it is, more surprise": 0.0068,
+    "the look's rule with how long in view, more surprise": -0.0143,
+    "an old lead beside a flat wall changes hands": 0.0046,
+    "run on, its own rule as it is": 0.6353,
+    "run on, the look's rule as it is": 0.5287,
+    "run on, its own rule with how long in view": 0.3951,
+    "run on, the look's rule with how long in view": 0.4277
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0722,
+    "the look's rule as it is, more surprise": 0.0216,
+    "the look's rule with how long in view, more surprise": 0.007,
+    "an old lead beside a flat wall changes hands": 0.0031,
+    "run on, its own rule as it is": 0.5504,
+    "run on, the look's rule as it is": 0.5309,
+    "run on, its own rule with how long in view": 0.4125,
+    "run on, the look's rule with how long in view": 0.4343
+   }
+  },
+  "B356/S2456": {
+   "group": "served",
+   "tick": 26,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0801,
+    "the look's rule as it is, more surprise": 0.0142,
+    "the look's rule with how long in view, more surprise": -0.0184,
+    "an old lead beside a flat wall changes hands": 0.0072,
+    "run on, its own rule as it is": 0.6098,
+    "run on, the look's rule as it is": 0.569,
+    "run on, its own rule with how long in view": 0.4455,
+    "run on, the look's rule with how long in view": 0.4245
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0609,
+    "the look's rule as it is, more surprise": 0.0278,
+    "the look's rule with how long in view, more surprise": 0.0188,
+    "an old lead beside a flat wall changes hands": 0.0048,
+    "run on, its own rule as it is": 0.5551,
+    "run on, the look's rule as it is": 0.5449,
+    "run on, its own rule with how long in view": 0.4423,
+    "run on, the look's rule with how long in view": 0.437
+   }
+  },
+  "B23456/S4678": {
+   "group": "served",
+   "tick": 16,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0781,
+    "the look's rule as it is, more surprise": 0.0088,
+    "the look's rule with how long in view, more surprise": -0.0163,
+    "an old lead beside a flat wall changes hands": 0.0018,
+    "run on, its own rule as it is": 0.4894,
+    "run on, the look's rule as it is": 0.5263,
+    "run on, its own rule with how long in view": 0.3959,
+    "run on, the look's rule with how long in view": 0.4233
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0399,
+    "the look's rule as it is, more surprise": 0.0477,
+    "the look's rule with how long in view, more surprise": 0.0009,
+    "an old lead beside a flat wall changes hands": 0.0014,
+    "run on, its own rule as it is": 0.4676,
+    "run on, the look's rule as it is": 0.5181,
+    "run on, its own rule with how long in view": 0.3887,
+    "run on, the look's rule with how long in view": 0.4321
+   }
+  },
+  "B24567/S0135678": {
+   "group": "nearly served",
+   "tick": 22,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0692,
+    "the look's rule as it is, more surprise": 0.0297,
+    "the look's rule with how long in view, more surprise": 0.0055,
+    "an old lead beside a flat wall changes hands": 0.001,
+    "run on, its own rule as it is": 0.4081,
+    "run on, the look's rule as it is": 0.4712,
+    "run on, its own rule with how long in view": 0.3781,
+    "run on, the look's rule with how long in view": 0.388
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0272,
+    "the look's rule as it is, more surprise": 0.0798,
+    "the look's rule with how long in view, more surprise": 0.0268,
+    "an old lead beside a flat wall changes hands": 0.0007,
+    "run on, its own rule as it is": 0.4035,
+    "run on, the look's rule as it is": 0.4771,
+    "run on, its own rule with how long in view": 0.3983,
+    "run on, the look's rule with how long in view": 0.4012
+   }
+  },
+  "B13458/S358": {
+   "group": "missed",
+   "tick": 24,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0266,
+    "the look's rule as it is, more surprise": 0.1714,
+    "the look's rule with how long in view, more surprise": 0.1914,
+    "an old lead beside a flat wall changes hands": 0.0485,
+    "run on, its own rule as it is": 0.8939,
+    "run on, the look's rule as it is": 0.6397,
+    "run on, its own rule with how long in view": 0.7321,
+    "run on, the look's rule with how long in view": 0.5811
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0187,
+    "the look's rule as it is, more surprise": 0.1469,
+    "the look's rule with how long in view, more surprise": 0.1903,
+    "an old lead beside a flat wall changes hands": 0.0382,
+    "run on, its own rule as it is": 0.8368,
+    "run on, the look's rule as it is": 0.658,
+    "run on, its own rule with how long in view": 0.7178,
+    "run on, the look's rule with how long in view": 0.6006
+   }
+  },
+  "B2478/S1467": {
+   "group": "missed",
+   "tick": 48,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0098,
+    "the look's rule as it is, more surprise": 0.3566,
+    "the look's rule with how long in view, more surprise": 0.5631,
+    "an old lead beside a flat wall changes hands": 0.1042,
+    "run on, its own rule as it is": 0.8086,
+    "run on, the look's rule as it is": 0.6469,
+    "run on, its own rule with how long in view": 0.7621,
+    "run on, the look's rule with how long in view": 0.6435
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0094,
+    "the look's rule as it is, more surprise": 0.3008,
+    "the look's rule with how long in view, more surprise": 0.5039,
+    "an old lead beside a flat wall changes hands": 0.0793,
+    "run on, its own rule as it is": 0.8226,
+    "run on, the look's rule as it is": 0.6449,
+    "run on, its own rule with how long in view": 0.7716,
+    "run on, the look's rule with how long in view": 0.6478
+   }
+  },
+  "B25/S078": {
+   "group": "missed",
+   "tick": 54,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0025,
+    "the look's rule as it is, more surprise": 0.6564,
+    "the look's rule with how long in view, more surprise": 1.5397,
+    "an old lead beside a flat wall changes hands": 0.1843,
+    "run on, its own rule as it is": 0.8427,
+    "run on, the look's rule as it is": 0.7157,
+    "run on, its own rule with how long in view": 0.8173,
+    "run on, the look's rule with how long in view": 0.7522
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0015,
+    "the look's rule as it is, more surprise": 0.5509,
+    "the look's rule with how long in view, more surprise": 1.1864,
+    "an old lead beside a flat wall changes hands": 0.1449,
+    "run on, its own rule as it is": 0.7993,
+    "run on, the look's rule as it is": 0.7303,
+    "run on, its own rule with how long in view": 0.8065,
+    "run on, the look's rule with how long in view": 0.7739
+   }
+  },
+  "B24678/S1348": {
+   "group": "missed",
+   "tick": 60,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0177,
+    "the look's rule as it is, more surprise": 0.2467,
+    "the look's rule with how long in view, more surprise": 0.3202,
+    "an old lead beside a flat wall changes hands": 0.07,
+    "run on, its own rule as it is": 0.8736,
+    "run on, the look's rule as it is": 0.6942,
+    "run on, its own rule with how long in view": 0.7694,
+    "run on, the look's rule with how long in view": 0.6439
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0129,
+    "the look's rule as it is, more surprise": 0.2054,
+    "the look's rule with how long in view, more surprise": 0.3007,
+    "an old lead beside a flat wall changes hands": 0.054,
+    "run on, its own rule as it is": 0.8444,
+    "run on, the look's rule as it is": 0.6883,
+    "run on, its own rule with how long in view": 0.7725,
+    "run on, the look's rule with how long in view": 0.6523
+   }
+  },
+  "B25/S678": {
+   "group": "missed",
+   "tick": 40,
+   "at an instant": {
+    "share of the plain rule's surprise that how long removes": 0.0006,
+    "the look's rule as it is, more surprise": 0.4175,
+    "the look's rule with how long in view, more surprise": 0.6983,
+    "an old lead beside a flat wall changes hands": 0.1259,
+    "run on, its own rule as it is": 0.8013,
+    "run on, the look's rule as it is": 0.6699,
+    "run on, its own rule with how long in view": 0.7524,
+    "run on, the look's rule with how long in view": 0.6944
+   },
+   "held for most of the tick": {
+    "share of the plain rule's surprise that how long removes": 0.0018,
+    "the look's rule as it is, more surprise": 0.3525,
+    "the look's rule with how long in view, more surprise": 0.5461,
+    "an old lead beside a flat wall changes hands": 0.0956,
+    "run on, its own rule as it is": 0.7739,
+    "run on, the look's rule as it is": 0.6686,
+    "run on, its own rule with how long in view": 0.7424,
+    "run on, the look's rule with how long in view": 0.6945
+   }
+  }
+ }
+}
