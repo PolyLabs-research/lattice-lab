@@ -43,8 +43,13 @@ rule of each rung runs the rung above nearly as well as its own, and the rule ch
 again, by 1.4% and 1.6% where it was 2.8% and 3.0% a rung below. It has not stopped
 changing, and the same records say the end is further off than that gap suggests: what
 still moves is how often a block on a wall changes hands, and by the pattern so far three
-more rungs would be needed to come near. Step 5 is not built. The decisions that are yours
-are at the end.
+more rungs would be needed to come near. A first look at a rule that also sees a block's
+past (`examples/scale-up-memory`, exploratory) found that the coarse rule has a memory
+though the worlds have none: how long a block has had its leader says what it does next.
+With that in view the rule runs the world on better and keeps its walls, the rule of one
+rung runs the rung above as well as that rung's own at blocks of 16 and 32, and the top of
+the table is the same at every rung; one tick ahead the table still changes along the
+walls. Step 5 is not built. The decisions that are yours are at the end.
 
 ## What the ladder is for
 
@@ -2056,6 +2061,224 @@ tell that from other slow approaches.
 **Gate: passed.** The verdict is in: every prediction held, and the rule has not stopped
 changing. What to do about that is decision D12.
 
+### Step 4h: a rule that remembers (first look, exploratory, 2026-11-27)
+
+Step 4g left a rule that still changes from rung to rung, and a first number that said the
+symbol leaves something out: who led a block a tick ago. You chose to look at the reading
+that carries it (decision D12, option a). `examples/scale-up-memory/look.py` is that look.
+Nothing in it is registered, and no world was run for it.
+
+- **What is read.** The block leaders of step 4g's sixteen runs, every rung at its matched
+  age, as there. Fifteen had come home from the pod. The sixteenth (the busy world from
+  start 18102) was made again here in 1 hour 38 minutes of one core, and its record is the
+  pod's byte for byte: with it, all 64 records of step 4g have been computed again on this
+  machine.
+- **A symbol that remembers.** The rule is asked the same question of a block, with more
+  in view. *As it is:* the block's leader, and how many of its eight neighbours each
+  species leads. *With its leader one tick before:* the same, and who led the block a tick
+  ago (the reading D12 named). *With how long it has had its leader:* the same, and for how
+  many ticks running the block has had its present leader, counted up to a cap (4 or 8
+  ticks for a rule, 16 for the tables below). A matched age runs from 16 ticks of a rung's
+  clock to 64 at every rung, so "how long" means the same thing at each.
+- **Checked against the registered run on the way.** With nothing of the past in view
+  every tally is step 4g's record, count for count, and every run-on is step 4g's run-on,
+  figure for figure. The look stops if either is not so.
+- **Little data at the top.** A grid of side 2,048 has 4,096 blocks of 32. A rule with
+  more in view has more to learn, and at blocks of 32 what it has not yet learned from four
+  starts costs it as much surprise as the differences this look is after. So one tick ahead
+  every rule is scored twice, having learned from all its starts and from half of them, and
+  told as it would be with endless data; and every way of choosing four of a world's eight
+  starts to learn from is taken (70 of them), with the spread between them. Step 4g's own
+  way, kept beside it, flatters the rule from the rung below a little at blocks of 32 (1.4%
+  and 1.6% where this gives 1.5% and 1.8%), and far more for a rule with more in view.
+  Run-ons do not have the trouble: a rule that learned from half its starts ends amiss in
+  0.98 to 1.01 times as many blocks as one that learned from all four.
+
+**What it found.**
+
+1. **How long a block has had its leader says a great deal about what it does next.** The
+   chance that a block of 16 has another leader one tick on, by how many of its neighbours
+   its rival leads:
+
+   | Ticks the block has had its leader | still: 3 rival neighbours | 4 | 5 | busy: 3 | 4 | 5 |
+   | --- | --- | --- | --- | --- | --- | --- |
+   | 1 | 0.114 | 0.306 | 0.551 | 0.097 | 0.327 | 0.627 |
+   | 2 | 0.053 | 0.197 | 0.442 | 0.036 | 0.200 | 0.505 |
+   | 3 or 4 | 0.025 | 0.135 | 0.392 | 0.017 | 0.128 | 0.438 |
+   | 5 to 8 | 0.011 | 0.086 | 0.308 | 0.0059 | 0.075 | 0.319 |
+   | 9 to 15 | 0.0040 | 0.054 | 0.187 | 0.0021 | 0.046 | 0.197 |
+   | 16 and more | 0.0015 | 0.039 | 0.157 | 0.0008 | 0.041 | 0.190 |
+   | whatever its past (the rule as it is) | 0.0076 | 0.076 | 0.204 | 0.0053 | 0.076 | 0.226 |
+
+   The rule as it is has one number where the world has a ladder of them. A block that
+   came over one tick ago, with four rival neighbours, goes again with a chance of 0.31;
+   one that has held for sixteen ticks, with 0.04. Counted in surprise the gain is modest,
+   because blocks that have just changed hands are few (one or two in a hundred): who led
+   the block one tick before removes 5% to 8% of the plain rule's surprise, and how long it
+   has had its leader 6% to 11%, in both worlds. What the symbol hides is where the wall
+   inside the block is. A block that has just changed hands has it near its middle.
+2. **With the past in view, the top of the table is the same at every rung. The bottom is
+   not.** The chance of another leader one tick on, rung by rung:
+
+   | | blocks of 4 | 8 | 16 | 32 |
+   | --- | --- | --- | --- | --- |
+   | still, 5 rival neighbours: the rule as it is | 0.310 | 0.239 | 0.204 | 0.182 |
+   | still, 5: the same, were only the mix of young and old leads to change | 0.321 | 0.246 | 0.207 | 0.182 |
+   | still, 5: a lead of 16 ticks or more | 0.182 | 0.164 | 0.157 | 0.156 |
+   | still, 4: the rule as it is | 0.162 | 0.104 | 0.076 | 0.058 |
+   | still, 4: a lead of 16 ticks or more | 0.080 | 0.051 | 0.039 | 0.033 |
+   | still, 3: the rule as it is | 0.042 | 0.015 | 0.0076 | 0.0038 |
+   | still, 3: a lead of one tick | 0.210 | 0.152 | 0.114 | 0.079 |
+   | still, 3: a lead of 16 ticks or more | 0.016 | 0.0040 | 0.0015 | 0.0006 |
+   | busy, 5 rival neighbours: the rule as it is | 0.296 | 0.259 | 0.226 | 0.209 |
+   | busy, 5: the same, were only the mix of young and old leads to change | 0.300 | 0.264 | 0.230 | 0.209 |
+   | busy, 5: a lead of 16 ticks or more | 0.203 | 0.190 | 0.190 | 0.190 |
+   | busy, 4: the rule as it is | 0.140 | 0.105 | 0.076 | 0.055 |
+   | busy, 4: a lead of 16 ticks or more | 0.072 | 0.051 | 0.041 | 0.035 |
+   | busy, 3: the rule as it is | 0.024 | 0.012 | 0.0053 | 0.0024 |
+   | busy, 3: a lead of one tick | 0.173 | 0.144 | 0.097 | 0.051 |
+   | busy, 3: a lead of 16 ticks or more | 0.0075 | 0.0025 | 0.0008 | 0.0003 |
+
+   At five rival neighbours the plain rule's chance falls by three to four tenths up the
+   ladder, which is what step 4g's claim H was about. A block with an old lead does nothing
+   of the kind: in the busy world it is 0.190 at blocks of 8, 16 and 32. What changes is
+   the mix. The higher the rung, the fewer blocks have just changed hands: 2.3% of the
+   still world's blocks of 4 have had their leader one tick, and 0.9% of its blocks of 32.
+   The second row of each world is the rule as it is with the top rung's chance for each
+   span of time and each rung's own mix: it falls as the plain rule does, a little more.
+   So at five the whole of the plain rule's fall is the mix, and at six most of it. At four
+   the mix is a third to two fifths of the fall, and at three about a tenth: there a
+   block's chance itself falls at every rung, by a sixth to a half for a lead one tick old
+   and by more than half for an old one. For an old lead at four the steps halve (0.080,
+   0.051, 0.039, 0.033 and 0.072, 0.051, 0.041, 0.035), as they would on the way to a
+   chance of about 0.03.
+3. **So one tick ahead the rule that remembers still changes from rung to rung, a little
+   less.** The rule learned one rung down has this much more surprise than the rung's own,
+   with endless data (and the spread between choices of starts):
+
+   | | at blocks of 8 | 16 | 32 |
+   | --- | --- | --- | --- |
+   | still: the rule as it is | 8.6% | 2.8% | 1.5% ± 0.2 |
+   | still: with its leader one tick before | 8.0% | 2.6% | 1.2% ± 0.3 |
+   | still: with how long, up to 4 ticks | 7.3% | 2.3% | 1.1% ± 0.5 |
+   | still: with how long, up to 8 ticks | 7.0% | 2.1% ± 0.4 | 0.6% ± 0.9 |
+   | busy: the rule as it is | 5.6% | 3.0% | 1.8% ± 0.2 |
+   | busy: with its leader one tick before | 5.8% | 2.7% | 1.3% ± 0.3 |
+   | busy: with how long, up to 4 ticks | 5.8% | 2.5% | 0.8% ± 0.5 |
+   | busy: with how long, up to 8 ticks | 5.7% | 2.2% ± 0.3 | −0.4% ± 1.1 |
+
+   Where no spread is given it is 0.1 or less. At blocks of 8 and 16 the data are ample and
+   the answer is plain: with the most in view the gap is a quarter less at blocks of 16
+   (a third less counted in bits), a fifth less at blocks of 8 in the still world, and no
+   less there in the busy one. At blocks of 32 the spread is as wide as the differences,
+   and for the rule with most in view wider than the gap: these runs cannot say.
+4. **Run on, the rule that remembers is the better rule, most of all at the lower rungs.**
+   Each rule run on by itself over a rung's matched age, sixteen runs from each of four
+   trial starts. Blocks whose leader is not the real world's at the end, over blocks that
+   changed leader meanwhile; and the walls kept:
+
+   | | blocks of 8 | 16 | 32 |
+   | --- | --- | --- | --- |
+   | still, blocks amiss: the rule as it is | 0.60 | 0.54 | 0.51 |
+   | still, blocks amiss: with its leader one tick before | 0.50 | 0.46 | 0.47 |
+   | still, blocks amiss: with how long, up to 8 ticks | 0.44 | 0.43 | 0.47 |
+   | busy, blocks amiss: the rule as it is | 0.51 | 0.46 | 0.38 |
+   | busy, blocks amiss: with its leader one tick before | 0.42 | 0.41 | 0.37 |
+   | busy, blocks amiss: with how long, up to 8 ticks | 0.40 | 0.41 | 0.39 |
+   | still, walls kept: the rule as it is | 0.86 | 0.89 | 0.93 |
+   | still, walls kept: with its leader one tick before | 0.94 | 0.97 | 0.99 |
+   | still, walls kept: with how long, up to 8 ticks | 1.01 | 1.03 | 1.04 |
+   | busy, walls kept: the rule as it is | 0.89 | 0.93 | 1.00 |
+   | busy, walls kept: with its leader one tick before | 0.98 | 1.02 | 1.06 |
+   | busy, walls kept: with how long, up to 8 ticks | 1.04 | 1.07 | 1.10 |
+
+   - **Fewer blocks amiss.** With how long in view the rule ends with the wrong leader in
+     0.73 and 0.77 of the plain rule's blocks at blocks of 8 (still, busy), in 0.80 and
+     0.89 at blocks of 16, and in 0.91 and 1.02 at blocks of 32. At blocks of 8 and 16 that
+     is so in every start (0.72 to 0.90). At blocks of 32 it is so in every start of the
+     still world, and in the busy world there is no gain.
+   - **The walls.** The plain rule's world coarsens too fast: it ends with 86% to 93% of
+     the walls in the still world, and with 89% and 93% at blocks of 8 and 16 in the busy
+     one. The rule that remembers keeps them in the still world (within 4%). In the busy
+     world it keeps 4% to 10% too many, and at blocks of 32, where the plain rule had
+     them right, that is a loss.
+   - **It wavers as the world does.** In the real world a sixth to a quarter of all
+     changes of hands are a block going back to the leader it had two ticks before (0.26,
+     0.25, 0.21 at blocks of 8, 16, 32 in the still world; 0.27, 0.24, 0.17 in the busy
+     one). In the plain rule's world it is 0.11, 0.07 and 0.05 in the still world and 0.12,
+     0.08 and 0.05 in the busy one. In the remembering rule's: 0.27, 0.26, 0.23 and 0.28,
+     0.27, 0.21.
+5. **And by the ladder's own test it is nearly the same rule at every rung.** The rule
+   from the rung below run on as the rule of the rung above: its blocks amiss over those of
+   the rung's own rule (and the least and the most of one start):
+
+   | | at blocks of 8 | 16 | 32 |
+   | --- | --- | --- | --- |
+   | still: the rule as it is | 1.20 (1.20 to 1.21) | 1.15 (1.13 to 1.17) | 1.12 (1.08 to 1.15) |
+   | still: with its leader one tick before | 1.20 (1.19 to 1.20) | 1.11 (1.10 to 1.13) | 1.06 (1.01 to 1.10) |
+   | still: with how long, up to 8 ticks | 1.14 (1.12 to 1.14) | 1.03 (1.02 to 1.04) | 0.99 (0.96 to 1.04) |
+   | busy: the rule as it is | 1.09 (1.08 to 1.09) | 1.13 (1.12 to 1.14) | 1.10 (1.06 to 1.15) |
+   | busy: with its leader one tick before | 1.09 (1.07 to 1.10) | 1.05 (1.03 to 1.08) | 1.01 (0.98 to 1.06) |
+   | busy: with how long, up to 8 ticks | 1.03 (1.02 to 1.04) | 0.98 (0.97 to 0.99) | 0.97 (0.92 to 1.04) |
+
+   The plain rule from the rung below pays 9% to 20%. With how long in view it pays 14%
+   and 3% at blocks of 8, and within 3% of nothing at blocks of 16 and 32 in both worlds.
+   That is the plan's last move, "repeat with the coarse rule as the new fine rule", coming
+   out even: the rule of blocks of 16 is as good a rule for blocks of 32 as their own. And
+   the remembering rule from the rung below runs a rung on better than that rung's own
+   plain rule (in the busy world at blocks of 32, as well as). It does so although it
+   still changes hands a third more often than the rung's own at blocks of 32, and two
+   fifths more often at 16 (item 2). What the rule from below has too much of is wavering
+   along walls, and a rule that remembers takes most of a waver back at the next tick,
+   where the plain rule leaves it standing as a dent in the wall.
+6. **The two worlds are a little further apart with a past in view, and each still runs
+   the other.** One tick ahead, the other world's rule has 0.4%, 0.3% to 0.4% and 0.2% to
+   0.3% more surprise than a world's own at blocks of 8, 16 and 32 as it is, which is what
+   steps 4d and 4g found; with how long in view (up to 4 ticks) 0.7% to 0.8% at blocks of
+   8 and 0.5% to 0.8% at 16. Run on, the busy world's remembering rule ends the still world
+   with 0.96 to 0.98 of the blocks its own gets amiss, and the still world's ends the busy
+   one with 1.04 to 1.06.
+7. **The bottom rung has ties.** At blocks of 4, three in ten of all changes of hands in
+   the still world leave the block with no leader, the two species having as many cells;
+   at blocks of 8, 16 and 32 it is 9%, 3% and 1% (the busy world: 37%, 13%, 4%, 1%). That
+   is part of why the first step up the ladder has always been the largest.
+
+`pictures.py` draws item 2 as a page of charts (the chance against how long a block has had
+its leader, a line for each rung; `~/lattice-lab-runs/memory/pictures/index.html`): at five
+rival neighbours the four lines lie on one another, at three they stand a factor of two
+apart.
+
+**What step 4h shows.** The coarse rule of these worlds has a memory, though the worlds
+have none. What a cell does next depends on the grid now and on nothing before it. But who
+leads a block does not say where the wall inside it is, and the block's past does. A rule
+that keeps that in view runs the world on better at blocks of 8 and 16, no longer loses
+walls, and passes the ladder's own test at blocks of 16 and 32 with nothing to pay. It does not
+make the table the same at every rung one tick ahead. The table settles from the top: where
+a block is all but surrounded, its chance is already the same at every rung once its past
+is in view, and what step 4g read there as the rule changing was the mix of young and old
+leads. Along a wall it is not the same at any age of the lead, and goes on falling by
+about half for each doubling of the block.
+
+**What it does not show.** Nothing here is registered. I chose the readings after seeing
+the first numbers and tried half a dozen (one I dropped: who led the block two ticks
+before, which how long does better with less to learn), and I tell the best of them: that
+flatters. The runs are step 4g's, which I had read; two worlds, both inside the class of
+step 4f. One-tick comparisons at blocks of 32 cannot be made for a rule with much in view
+(item 3), and the correction for endless data is rough. The look checks it with a rule
+that learned from one start: at blocks of 16 and 32 a rule sheds 1.3 to 1.8 times as much
+surprise going from one start to two as from two to four, where the law the correction
+rests on says twice (in one case of the sixteen, 2.25). So what a rule lacks falls more
+slowly than the correction supposes, and the figures of item 3 still flatter the rule from
+below at the top. The run-ons rest on four trial starts a world. In the busy world at
+blocks of 32 the remembering rule is no better than the plain one and keeps a tenth too
+many walls. Why a block along a wall changes hands half as often at twice the size is not
+tested. The reading I would test is that a wall wavers by a width of its own, which is a
+smaller share of a larger block; step 4g's sums (each step three tenths shorter) fit that.
+And one kind of reading was tried, a block's own past: not its neighbours' pasts, nor where
+the neighbours are, which step 4d found adds little to how many.
+
+**Gate:** none, as nothing was registered. What it gives is decision D13.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -2104,6 +2327,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4f, the class test, 160 runs read through blocks and 456 run-ons | 1.0 million | 4,096 | 81 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $1.99; a run takes 8 to 19 minutes there | a pod |
 | step 4f, getting that pod: one that landed on a small host, deleted after 54 minutes, and five refused within minutes | | | $1.02 and $0.21 | pods |
 | step 4g, the next rung, 16 runs read through blocks and 48 run-ons | 4.2 million | 16,384 | 3 hours 35 minutes on 16 workers of a pod with 32 vCPUs, $4.01; a run takes 2 hours 45 minutes to 3 hours 25 minutes there beside fifteen others, and 1 hour 39 minutes of one core here | a pod |
+| step 4h, the look: step 4g's block leaders read again, and 4,608 run-ons of coarse rules | | | 5 minutes; and 1 hour 38 minutes to make again the leaders of the one run that had not come home | here, one core |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -2397,6 +2621,36 @@ What each one gives:
   the first number says there is something to find, and it is the one way on that could
   show a rule that stops changing at sizes within reach, where climbing can only show a
   slower approach to one. I do not recommend (c).
+  You chose (a): it is step 4h, a look, done on 2026-11-27. It found the reading in part.
+  Run on, the rule that remembers is the same rule at blocks of 16 and 32; one tick ahead
+  it is not.
+- **D13. What to do with a rule that remembers** (2026-11-27). Step 4h is a look, read off
+  runs I had seen. It says a block's past belongs in the symbol: with it the rule runs the
+  world on better, and by the ladder's own test it is the same rule at blocks of 16 and 32.
+  It also says where the table still changes one tick ahead, along the walls, and that the
+  rest of what step 4g saw changing was a mix. Four ways on, cheapest first:
+  (a) **Put the look on the record at step 4e's size.** A registered test on fresh starts
+  of the two worlds, side 1,024 to generation 4,096, so blocks of 4, 8 and 16 at their
+  matched ages. Its claims would be the look's, where that size reaches: that the rule
+  which knows how long runs the world on with fewer blocks amiss and keeps the walls; that
+  it goes back as often as the world does; that the rule from blocks of 8 then runs blocks
+  of 16 within a few percent of their own; that for an old lead the chance at five rival
+  neighbours is the same at blocks of 8 and 16 and the plain rule's fall there is the mix;
+  and that at three it still falls by half. Sixteen runs of ten minutes: under three hours
+  of one core here, or a pod for about $1.
+  (b) **The same with blocks of 32,** which is where the ladder's own test came out even:
+  side 2,048 to generation 16,384 again, sixteen fresh runs, a pod for about $4, to be
+  agreed before any launch.
+  (c) **The class again, with the rule that remembers.** Step 4f found the still world's
+  plain rule serving ten of 29 worlds and, run on at a world's own pace, carrying nineteen.
+  Whether a rule that takes back a waver carries more of them is a registered test over
+  those worlds: 152 runs, a pod for about $2, to be agreed before any launch.
+  (d) **Leave the ladder here,** bring the ten branches home, and take up D8's other two.
+  Step 5's reversible rules are rules with one tick of memory by construction; this look
+  says the zoomed-out world wants one whether its cells have it or not.
+  I recommend (a). It costs nothing but an afternoon of one core, it tests on fresh starts
+  what I have only read off runs I had seen, and (b) and (c) are worth their price only if
+  it holds.
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -2404,7 +2658,7 @@ What each one gives:
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
 - **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
-  holds four steps):
+  holds five steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -2423,8 +2677,9 @@ What each one gives:
     predictions to the census dashboards' table;
   - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
     of territories zoomed out (step 4d), which registers nothing; its registered test
-    (step 4e, 89 predictions); the class test (step 4f, 128); and the next rung (step 4g,
-    22). Three studies and 239 predictions more in the census dashboards' table.
+    (step 4e, 89 predictions); the class test (step 4f, 128); the next rung (step 4g, 22);
+    and the look at a rule that remembers (step 4h), which registers nothing. Three studies
+    and 239 predictions more in the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies

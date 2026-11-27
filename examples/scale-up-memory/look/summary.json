@@ -1,0 +1,4845 @@
+{
+ "what": "step 4g's sixteen runs read again with a block's past in view; exploratory",
+ "worlds": {
+  "still": {
+   "one tick ahead": {
+    "4": {
+     "transitions tried on": 12582912,
+     "the registered choice, bits a block": {
+      "nothing": 1.056039,
+      "the block alone": 0.183509,
+      "its neighbours": 0.122569
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.122963,
+        "spread": 0.0002
+       },
+       "bits a block, with endless data": {
+        "mean": 0.122953,
+        "spread": 0.0002
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 2.1e-05,
+        "from two starts to four": 9e-06,
+        "the first over the second": 2.24
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.117263,
+        "spread": 0.000182
+       },
+       "bits a block, with endless data": {
+        "mean": 0.117226,
+        "spread": 0.000183
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.046354,
+        "spread": 0.000125
+       },
+       "the same, with endless data": {
+        "mean": 0.046582,
+        "spread": 0.000129
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 6.9e-05,
+        "from two starts to four": 3.7e-05,
+        "the first over the second": 1.86
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.114938,
+        "spread": 0.000181
+       },
+       "bits a block, with endless data": {
+        "mean": 0.114873,
+        "spread": 0.000183
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.065262,
+        "spread": 0.000168
+       },
+       "the same, with endless data": {
+        "mean": 0.065719,
+        "spread": 0.000172
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000135,
+        "from two starts to four": 6.5e-05,
+        "the first over the second": 2.08
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.114191,
+        "spread": 0.000194
+       },
+       "bits a block, with endless data": {
+        "mean": 0.114009,
+        "spread": 0.000204
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.07134,
+        "spread": 0.000272
+       },
+       "the same, with endless data": {
+        "mean": 0.072744,
+        "spread": 0.000392
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000348,
+        "from two starts to four": 0.000181,
+        "the first over the second": 1.92
+       }
+      }
+     }
+    },
+    "8": {
+     "transitions tried on": 12582912,
+     "the registered choice, bits a block": {
+      "nothing": 1.013717,
+      "the block alone": 0.113608,
+      "its neighbours": 0.07223
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.0723,
+        "spread": 0.000221
+       },
+       "bits a block, with endless data": {
+        "mean": 0.072293,
+        "spread": 0.000221
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 1.3e-05,
+        "from two starts to four": 7e-06,
+        "the first over the second": 1.79
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.067981,
+        "spread": 0.000223
+       },
+       "bits a block, with endless data": {
+        "mean": 0.067958,
+        "spread": 0.000223
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.05974,
+        "spread": 0.000466
+       },
+       "the same, with endless data": {
+        "mean": 0.059964,
+        "spread": 0.00047
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 3.6e-05,
+        "from two starts to four": 2.3e-05,
+        "the first over the second": 1.6
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.065958,
+        "spread": 0.000218
+       },
+       "bits a block, with endless data": {
+        "mean": 0.065917,
+        "spread": 0.000217
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.087727,
+        "spread": 0.000438
+       },
+       "the same, with endless data": {
+        "mean": 0.088198,
+        "spread": 0.000457
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 7.2e-05,
+        "from two starts to four": 4e-05,
+        "the first over the second": 1.79
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.065276,
+        "spread": 0.00021
+       },
+       "bits a block, with endless data": {
+        "mean": 0.065164,
+        "spread": 0.000207
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.097147,
+        "spread": 0.000401
+       },
+       "the same, with endless data": {
+        "mean": 0.098615,
+        "spread": 0.000535
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000196,
+        "from two starts to four": 0.000112,
+        "the first over the second": 1.74
+       }
+      }
+     }
+    },
+    "16": {
+     "transitions tried on": 3145728,
+     "the registered choice, bits a block": {
+      "nothing": 1.003602,
+      "the block alone": 0.08781,
+      "its neighbours": 0.054213
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.054273,
+        "spread": 0.000243
+       },
+       "bits a block, with endless data": {
+        "mean": 0.054247,
+        "spread": 0.000242
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 3.5e-05,
+        "from two starts to four": 2.6e-05,
+        "the first over the second": 1.36
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.050559,
+        "spread": 0.000219
+       },
+       "bits a block, with endless data": {
+        "mean": 0.050504,
+        "spread": 0.000217
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.068436,
+        "spread": 0.0006
+       },
+       "the same, with endless data": {
+        "mean": 0.068993,
+        "spread": 0.000653
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 6.9e-05,
+        "from two starts to four": 5.4e-05,
+        "the first over the second": 1.27
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.04894,
+        "spread": 0.000226
+       },
+       "bits a block, with endless data": {
+        "mean": 0.048836,
+        "spread": 0.000231
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.098264,
+        "spread": 0.001299
+       },
+       "the same, with endless data": {
+        "mean": 0.099741,
+        "spread": 0.001452
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.00017,
+        "from two starts to four": 0.000104,
+        "the first over the second": 1.64
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.048595,
+        "spread": 0.000277
+       },
+       "bits a block, with endless data": {
+        "mean": 0.048268,
+        "spread": 0.000305
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.104625,
+        "spread": 0.002389
+       },
+       "the same, with endless data": {
+        "mean": 0.110217,
+        "spread": 0.003089
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000548,
+        "from two starts to four": 0.000326,
+        "the first over the second": 1.68
+       }
+      }
+     }
+    },
+    "32": {
+     "transitions tried on": 786432,
+     "the registered choice, bits a block": {
+      "nothing": 1.000899,
+      "the block alone": 0.072621,
+      "its neighbours": 0.044304
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.043722,
+        "spread": 0.000946
+       },
+       "bits a block, with endless data": {
+        "mean": 0.043668,
+        "spread": 0.000955
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000121,
+        "from two starts to four": 5.4e-05,
+        "the first over the second": 2.25
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.040823,
+        "spread": 0.000848
+       },
+       "bits a block, with endless data": {
+        "mean": 0.040678,
+        "spread": 0.00086
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.066275,
+        "spread": 0.001982
+       },
+       "the same, with endless data": {
+        "mean": 0.06845,
+        "spread": 0.002326
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000233,
+        "from two starts to four": 0.000145,
+        "the first over the second": 1.6
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.03981,
+        "spread": 0.000776
+       },
+       "bits a block, with endless data": {
+        "mean": 0.039466,
+        "spread": 0.000777
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.089415,
+        "spread": 0.003802
+       },
+       "the same, with endless data": {
+        "mean": 0.096175,
+        "spread": 0.004613
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000492,
+        "from two starts to four": 0.000344,
+        "the first over the second": 1.43
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.04008,
+        "spread": 0.000838
+       },
+       "bits a block, with endless data": {
+        "mean": 0.039281,
+        "spread": 0.000817
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.083261,
+        "spread": 0.006192
+       },
+       "the same, with endless data": {
+        "mean": 0.100411,
+        "spread": 0.008473
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.001249,
+        "from two starts to four": 0.000799,
+        "the first over the second": 1.56
+       }
+      }
+     }
+    }
+   },
+   "changing hands, by a block's past": {
+    "4": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0002,
+       0.0054,
+       0.0421,
+       0.1617,
+       0.3097,
+       0.4171,
+       0.4198,
+       0.5823
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0001,
+       0.0037,
+       0.0316,
+       0.1258,
+       0.2499,
+       0.3601,
+       0.3849,
+       0.5664
+      ],
+      "led by its rival one tick before": [
+       0.0215,
+       0.0729,
+       0.1163,
+       0.2284,
+       0.3789,
+       0.5447,
+       0.6809,
+       0.7319,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0192,
+       0.066,
+       0.1054,
+       0.2104,
+       0.3596,
+       0.5278,
+       0.6655,
+       0.7366,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0034,
+       0.0163,
+       0.0416,
+       0.1208,
+       0.2512,
+       0.4201,
+       0.5803,
+       0.6304,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0002,
+       0.0035,
+       0.0197,
+       0.0756,
+       0.1889,
+       0.3491,
+       0.5006,
+       0.5706,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0006,
+       0.0078,
+       0.0452,
+       0.1421,
+       0.2906,
+       0.4394,
+       0.4483,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0001,
+       0.0032,
+       0.0269,
+       0.1053,
+       0.2168,
+       0.3343,
+       0.3829,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0012,
+       0.0158,
+       0.0795,
+       0.1819,
+       0.3048,
+       0.3566,
+       0.5553
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       14028609,
+       3322491,
+       2549045,
+       2969645,
+       1607079,
+       427909,
+       54802,
+       9043,
+       2588
+      ],
+      "led by the same one tick before": [
+       14025231,
+       3315486,
+       2506754,
+       2794817,
+       1360813,
+       335838,
+       44575,
+       8147,
+       2426
+      ],
+      "led by its rival one tick before": [
+       2516,
+       5010,
+       28442,
+       117506,
+       172221,
+       66898,
+       7260,
+       567,
+       91
+      ],
+      "has had its leader for 1 ticks": [
+       3378,
+       7005,
+       42291,
+       174828,
+       246266,
+       92071,
+       10227,
+       896,
+       162
+      ],
+      "has had its leader for 2 ticks": [
+       5047,
+       9091,
+       46002,
+       140366,
+       151040,
+       43963,
+       4160,
+       395,
+       56
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       19124,
+       28139,
+       105957,
+       235276,
+       186807,
+       43525,
+       3933,
+       333,
+       63
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       103605,
+       111334,
+       238595,
+       355234,
+       194759,
+       36122,
+       3102,
+       348,
+       64
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       674236,
+       381071,
+       419517,
+       437339,
+       174863,
+       32920,
+       4421,
+       747,
+       190
+      ],
+      "has had its leader for 16 and more ticks": [
+       13223219,
+       2785851,
+       1696683,
+       1626602,
+       653344,
+       179308,
+       28959,
+       6324,
+       2053
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.3006,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0231,
+      "2": 0.016,
+      "3 or 4": 0.025,
+      "5 to 8": 0.0418,
+      "9 to 15": 0.0851,
+      "16 and more": 0.809
+     }
+    },
+    "8": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0009,
+       0.0154,
+       0.1041,
+       0.2391,
+       0.3443,
+       0.3126,
+       0.511
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0005,
+       0.0108,
+       0.0808,
+       0.2018,
+       0.3187,
+       0.3037,
+       0.5091
+      ],
+      "led by its rival one tick before": [
+       0.0025,
+       0.0206,
+       0.0521,
+       0.1545,
+       0.322,
+       0.5248,
+       0.7183,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0024,
+       0.0207,
+       0.0508,
+       0.1517,
+       0.3178,
+       0.5209,
+       0.7195,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0,
+       0.0035,
+       0.0176,
+       0.0789,
+       0.2143,
+       0.4181,
+       0.6369,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0001,
+       0.0008,
+       0.0049,
+       0.0438,
+       0.1555,
+       0.3533,
+       0.5617,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0001,
+       0.0012,
+       0.0213,
+       0.1077,
+       0.2955,
+       0.4866,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0003,
+       0.01,
+       0.0748,
+       0.2099,
+       0.3163,
+       0.3476,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.004,
+       0.0514,
+       0.1638,
+       0.2994,
+       0.2958,
+       0.5075
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       13752551,
+       3341021,
+       2500935,
+       3310186,
+       1779058,
+       399008,
+       38910,
+       6821,
+       2540
+      ],
+      "led by the same one tick before": [
+       13750461,
+       3338273,
+       2481291,
+       3201802,
+       1604045,
+       352428,
+       36432,
+       6697,
+       2530
+      ],
+      "led by its rival one tick before": [
+       1984,
+       2579,
+       17990,
+       97997,
+       157889,
+       42159,
+       2187,
+       105,
+       10
+      ],
+      "has had its leader for 1 ticks": [
+       2090,
+       2748,
+       19644,
+       108384,
+       175013,
+       46580,
+       2478,
+       124,
+       10
+      ],
+      "has had its leader for 2 ticks": [
+       3027,
+       3425,
+       24343,
+       95996,
+       112666,
+       22467,
+       986,
+       51,
+       5
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       9999,
+       10878,
+       64522,
+       174884,
+       148473,
+       22898,
+       835,
+       28,
+       4
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       51207,
+       55521,
+       175713,
+       298022,
+       168533,
+       18738,
+       670,
+       39,
+       3
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       389978,
+       248899,
+       351873,
+       410751,
+       163609,
+       19205,
+       1587,
+       210,
+       39
+      ],
+      "has had its leader for 16 and more ticks": [
+       13296250,
+       3019550,
+       1864840,
+       2222149,
+       1010764,
+       269120,
+       32354,
+       6369,
+       2479
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.0947,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0142,
+      "2": 0.0105,
+      "3 or 4": 0.0172,
+      "5 to 8": 0.0306,
+      "9 to 15": 0.0631,
+      "16 and more": 0.8644
+     }
+    },
+    "16": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0003,
+       0.0076,
+       0.0764,
+       0.2041,
+       0.3018,
+       0.2946,
+       0.4926
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0001,
+       0.0049,
+       0.0585,
+       0.1792,
+       0.2917,
+       0.2904,
+       0.4901
+      ],
+      "led by its rival one tick before": [
+       0.0,
+       0.0069,
+       0.0225,
+       0.1144,
+       0.3073,
+       0.551,
+       0.7682,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0,
+       0.0068,
+       0.0223,
+       0.1137,
+       0.3056,
+       0.551,
+       0.7702,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0,
+       0.0022,
+       0.0051,
+       0.0534,
+       0.1967,
+       0.4419,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0,
+       0.0018,
+       0.0254,
+       0.135,
+       0.3918,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0,
+       0.0001,
+       0.0113,
+       0.0856,
+       0.3076,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.004,
+       0.0539,
+       0.1866,
+       0.245,
+       null,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0015,
+       0.0386,
+       0.1569,
+       0.2894,
+       0.2835,
+       0.4898
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       3343670,
+       854053,
+       637662,
+       870316,
+       470647,
+       99017,
+       11127,
+       2128,
+       812
+      ],
+      "led by the same one tick before": [
+       3343092,
+       853313,
+       633177,
+       848404,
+       436638,
+       92380,
+       10892,
+       2114,
+       808
+      ],
+      "led by its rival one tick before": [
+       573,
+       721,
+       4391,
+       21253,
+       32982,
+       6421,
+       233,
+       14,
+       2
+      ],
+      "has had its leader for 1 ticks": [
+       578,
+       740,
+       4485,
+       21912,
+       34009,
+       6637,
+       235,
+       14,
+       4
+      ],
+      "has had its leader for 2 ticks": [
+       835,
+       892,
+       5645,
+       20357,
+       22130,
+       3057,
+       76,
+       8,
+       0
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       2583,
+       2648,
+       15150,
+       38685,
+       30031,
+       3045,
+       62,
+       6,
+       1
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       11949,
+       13654,
+       42400,
+       69215,
+       36328,
+       2422,
+       68,
+       8,
+       0
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       89706,
+       60118,
+       85384,
+       100594,
+       39923,
+       3655,
+       502,
+       60,
+       23
+      ],
+      "has had its leader for 16 and more ticks": [
+       3238019,
+       776001,
+       484598,
+       619553,
+       308226,
+       80201,
+       10184,
+       2032,
+       784
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.0293,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0109,
+      "2": 0.0084,
+      "3 or 4": 0.0147,
+      "5 to 8": 0.028,
+      "9 to 15": 0.0604,
+      "16 and more": 0.8776
+     }
+    },
+    "32": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0001,
+       0.0038,
+       0.058,
+       0.1817,
+       0.2839,
+       0.2717,
+       0.4545
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0,
+       0.0022,
+       0.0449,
+       0.1661,
+       0.2811,
+       0.2691,
+       0.4545
+      ],
+      "led by its rival one tick before": [
+       null,
+       null,
+       0.0062,
+       0.0796,
+       0.2874,
+       0.6178,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       null,
+       null,
+       0.0062,
+       0.0793,
+       0.2874,
+       0.617,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       null,
+       0.0,
+       0.0014,
+       0.0316,
+       0.1722,
+       0.496,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0139,
+       0.116,
+       0.3529,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0048,
+       0.0661,
+       0.2749,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0012,
+       0.0358,
+       0.1632,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0006,
+       0.0326,
+       0.1562,
+       0.2811,
+       0.2664,
+       0.4563
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       817399,
+       217620,
+       161952,
+       225842,
+       121115,
+       25222,
+       2807,
+       552,
+       209
+      ],
+      "led by the same one tick before": [
+       817265,
+       217434,
+       160821,
+       220950,
+       114563,
+       24350,
+       2793,
+       550,
+       209
+      ],
+      "led by its rival one tick before": [
+       134,
+       186,
+       1124,
+       4848,
+       6462,
+       866,
+       13,
+       2,
+       0
+      ],
+      "has had its leader for 1 ticks": [
+       134,
+       186,
+       1131,
+       4892,
+       6552,
+       872,
+       14,
+       2,
+       0
+      ],
+      "has had its leader for 2 ticks": [
+       185,
+       207,
+       1434,
+       4683,
+       4332,
+       373,
+       5,
+       0,
+       0
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       552,
+       664,
+       3862,
+       9022,
+       6129,
+       357,
+       9,
+       2,
+       0
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       2606,
+       3480,
+       10769,
+       16627,
+       7776,
+       331,
+       16,
+       0,
+       0
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       22023,
+       15295,
+       21812,
+       24964,
+       9671,
+       907,
+       134,
+       15,
+       3
+      ],
+      "has had its leader for 16 and more ticks": [
+       791899,
+       197788,
+       122944,
+       165654,
+       86655,
+       22382,
+       2629,
+       533,
+       206
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.0109,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0088,
+      "2": 0.0071,
+      "3 or 4": 0.0131,
+      "5 to 8": 0.0265,
+      "9 to 15": 0.0603,
+      "16 and more": 0.8843
+     }
+    }
+   },
+   "the mix of young and old leads": {
+    "3": {
+     "4": {
+      "as it is": 0.0421,
+      "with this rung's mix and the top rung's chances": 0.0083
+     },
+     "8": {
+      "as it is": 0.0154,
+      "with this rung's mix and the top rung's chances": 0.0052
+     },
+     "16": {
+      "as it is": 0.0076,
+      "with this rung's mix and the top rung's chances": 0.0043
+     },
+     "32": {
+      "as it is": 0.0038,
+      "with this rung's mix and the top rung's chances": 0.0038
+     }
+    },
+    "4": {
+     "4": {
+      "as it is": 0.1617,
+      "with this rung's mix and the top rung's chances": 0.0989
+     },
+     "8": {
+      "as it is": 0.1041,
+      "with this rung's mix and the top rung's chances": 0.0769
+     },
+     "16": {
+      "as it is": 0.0764,
+      "with this rung's mix and the top rung's chances": 0.0657
+     },
+     "32": {
+      "as it is": 0.058,
+      "with this rung's mix and the top rung's chances": 0.058
+     }
+    },
+    "5": {
+     "4": {
+      "as it is": 0.3097,
+      "with this rung's mix and the top rung's chances": 0.3208
+     },
+     "8": {
+      "as it is": 0.2391,
+      "with this rung's mix and the top rung's chances": 0.2463
+     },
+     "16": {
+      "as it is": 0.2041,
+      "with this rung's mix and the top rung's chances": 0.2067
+     },
+     "32": {
+      "as it is": 0.1817,
+      "with this rung's mix and the top rung's chances": 0.1817
+     }
+    },
+    "6": {
+     "4": {
+      "as it is": 0.4171,
+      "with this rung's mix and the top rung's chances": 0.4046
+     },
+     "8": {
+      "as it is": 0.3443,
+      "with this rung's mix and the top rung's chances": 0.329
+     },
+     "16": {
+      "as it is": 0.3018,
+      "with this rung's mix and the top rung's chances": 0.2942
+     },
+     "32": {
+      "as it is": 0.2839,
+      "with this rung's mix and the top rung's chances": 0.2839
+     }
+    }
+   },
+   "between rungs": {
+    "8": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.08579,
+      "with endless data, extra bits a block": {
+       "mean": 0.006215,
+       "spread": 4.2e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.08597,
+       "spread": 0.000478
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.07896,
+      "with endless data, extra bits a block": {
+       "mean": 0.00541,
+       "spread": 4.4e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.079605,
+       "spread": 0.000538
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.07256,
+      "with endless data, extra bits a block": {
+       "mean": 0.004844,
+       "spread": 4.6e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.073478,
+       "spread": 0.000567
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.06757,
+      "with endless data, extra bits a block": {
+       "mean": 0.004529,
+       "spread": 5.9e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.069507,
+       "spread": 0.000789
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.02775,
+      "with endless data, extra bits a block": {
+       "mean": 0.001537,
+       "spread": 2.4e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.028331,
+       "spread": 0.000489
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.02483,
+      "with endless data, extra bits a block": {
+       "mean": 0.001309,
+       "spread": 3.2e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.025916,
+       "spread": 0.000687
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.02104,
+      "with endless data, extra bits a block": {
+       "mean": 0.001129,
+       "spread": 6.7e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.023132,
+       "spread": 0.001446
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.01611,
+      "with endless data, extra bits a block": {
+       "mean": 0.001023,
+       "spread": 0.000168
+      },
+      "with endless data, more surprise": {
+       "mean": 0.021202,
+       "spread": 0.003598
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.01362,
+      "with endless data, extra bits a block": {
+       "mean": 0.000651,
+       "spread": 7.4e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.014948,
+       "spread": 0.001935
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.0099,
+      "with endless data, extra bits a block": {
+       "mean": 0.000492,
+       "spread": 0.000107
+      },
+      "with endless data, more surprise": {
+       "mean": 0.012124,
+       "spread": 0.002763
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.00556,
+      "with endless data, extra bits a block": {
+       "mean": 0.000422,
+       "spread": 0.000184
+      },
+      "with endless data, more surprise": {
+       "mean": 0.01072,
+       "spread": 0.004723
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": -0.00955,
+      "with endless data, extra bits a block": {
+       "mean": 0.000222,
+       "spread": 0.000362
+      },
+      "with endless data, more surprise": {
+       "mean": 0.00575,
+       "spread": 0.009302
+      }
+     }
+    }
+   },
+   "run on": {
+    "8": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.6048,
+       "amiss, start by start": [
+        0.12444,
+        0.121445,
+        0.121776,
+        0.118506
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 0.8563,
+       "amiss over two runs of the rule": 1.018,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.01434
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.1137
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.728,
+       "amiss, start by start": [
+        0.149518,
+        0.147129,
+        0.146832,
+        0.141689
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 0.8609,
+       "amiss over two runs of the rule": 1.0756,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.02596
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.1723
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.2036,
+       "the least and the most of one start": [
+        1.1956,
+        1.2115
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.009,
+       "the least and the most of one start": [
+        1.0053,
+        1.0128
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.4968,
+       "amiss, start by start": [
+        0.101757,
+        0.099315,
+        0.100166,
+        0.098068
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 0.9412,
+       "amiss over two runs of the rule": 0.9155,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.01506
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.2738
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5942,
+       "amiss, start by start": [
+        0.122388,
+        0.118977,
+        0.119045,
+        0.117217
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 0.9571,
+       "amiss over two runs of the rule": 0.9312,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.02758
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.2791
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1961,
+       "the least and the most of one start": [
+        1.1885,
+        1.2027
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.8213,
+        "the least and the most of one start": [
+         0.8177,
+         0.8275
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8162,
+        "the least and the most of one start": [
+         0.8087,
+         0.8273
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0079,
+       "the least and the most of one start": [
+        1.0023,
+        1.0139
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.4415,
+       "amiss, start by start": [
+        0.09021,
+        0.087767,
+        0.089717,
+        0.087169
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 1.0078,
+       "amiss over two runs of the rule": 0.9374,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.01519
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.2742
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5012,
+       "amiss, start by start": [
+        0.102895,
+        0.100061,
+        0.100768,
+        0.099166
+       ],
+       "changed, start by start": [
+        0.200821,
+        0.202881,
+        0.200012,
+        0.200119
+       ],
+       "walls kept": 1.0382,
+       "amiss over two runs of the rule": 0.884,
+       "blocks that change hands in a tick": {
+        "the world": 0.01525,
+        "the rule's world": 0.02785
+       },
+       "of those, going back": {
+        "the world": 0.2589,
+        "the rule's world": 0.2659
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1353,
+       "the least and the most of one start": [
+        1.1232,
+        1.1406
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.7299,
+        "the least and the most of one start": [
+         0.7227,
+         0.7367
+        ]
+       },
+       "the rung below's": {
+        "together": 0.6885,
+        "the least and the most of one start": [
+         0.6801,
+         0.6999
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0019,
+       "the least and the most of one start": [
+        0.9941,
+        1.0147
+       ]
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.54,
+       "amiss, start by start": [
+        0.119049,
+        0.108517,
+        0.108517,
+        0.110592
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 0.8939,
+       "amiss over two runs of the rule": 0.9529,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.0105
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.0739
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.6225,
+       "amiss, start by start": [
+        0.134689,
+        0.12706,
+        0.124825,
+        0.128326
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 0.8594,
+       "amiss over two runs of the rule": 1.0229,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.01473
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.1112
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1527,
+       "the least and the most of one start": [
+        1.1314,
+        1.1709
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.999,
+       "the least and the most of one start": [
+        0.9855,
+        1.018
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.4574,
+       "amiss, start by start": [
+        0.101074,
+        0.092488,
+        0.092457,
+        0.092327
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 0.9728,
+       "amiss over two runs of the rule": 0.9119,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.01089
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.2551
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5085,
+       "amiss, start by start": [
+        0.111305,
+        0.104771,
+        0.102543,
+        0.101982
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 0.9437,
+       "amiss over two runs of the rule": 0.9212,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.01546
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.2709
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1117,
+       "the least and the most of one start": [
+        1.1012,
+        1.1328
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.847,
+        "the least and the most of one start": [
+         0.8348,
+         0.8523
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8169,
+        "the least and the most of one start": [
+         0.7947,
+         0.8264
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0051,
+       "the least and the most of one start": [
+        0.9932,
+        1.0133
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.4339,
+       "amiss, start by start": [
+        0.096333,
+        0.088604,
+        0.088768,
+        0.085217
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 1.0276,
+       "amiss over two runs of the rule": 0.9844,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.01087
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.2598
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.447,
+       "amiss, start by start": [
+        0.098644,
+        0.091858,
+        0.090485,
+        0.088756
+       ],
+       "changed, start by start": [
+        0.215332,
+        0.208496,
+        0.203003,
+        0.200317
+       ],
+       "walls kept": 1.0115,
+       "amiss over two runs of the rule": 0.9299,
+       "blocks that change hands in a tick": {
+        "the world": 0.01102,
+        "the rule's world": 0.01544
+       },
+       "of those, going back": {
+        "the world": 0.2451,
+        "the rule's world": 0.2698
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0301,
+       "the least and the most of one start": [
+        1.0193,
+        1.0415
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.8035,
+        "the least and the most of one start": [
+         0.7706,
+         0.818
+        ]
+       },
+       "the rung below's": {
+        "together": 0.7181,
+        "the least and the most of one start": [
+         0.6916,
+         0.7324
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0009,
+       "the least and the most of one start": [
+        0.9922,
+        1.0155
+       ]
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.5125,
+       "amiss, start by start": [
+        0.094406,
+        0.108429,
+        0.116562,
+        0.113312
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 0.9304,
+       "amiss over two runs of the rule": 0.9754,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.00837
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.0487
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5732,
+       "amiss, start by start": [
+        0.103073,
+        0.124481,
+        0.125641,
+        0.130707
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 0.891,
+       "amiss over two runs of the rule": 0.98,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.01091
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.0729
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1183,
+       "the least and the most of one start": [
+        1.0779,
+        1.1535
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9898,
+       "the least and the most of one start": [
+        0.9604,
+        1.0028
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.4677,
+       "amiss, start by start": [
+        0.08435,
+        0.100174,
+        0.10939,
+        0.100952
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 0.9941,
+       "amiss over two runs of the rule": 1.0022,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.00853
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.2241
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4956,
+       "amiss, start by start": [
+        0.089874,
+        0.107285,
+        0.109955,
+        0.111282
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 0.9644,
+       "amiss over two runs of the rule": 0.9664,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.01123
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.2542
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0596,
+       "the least and the most of one start": [
+        1.0052,
+        1.1023
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.9125,
+        "the least and the most of one start": [
+         0.8909,
+         0.9385
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8646,
+        "the least and the most of one start": [
+         0.8514,
+         0.8752
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9871,
+       "the least and the most of one start": [
+        0.9662,
+        1.0142
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.4677,
+       "amiss, start by start": [
+        0.085526,
+        0.101731,
+        0.108734,
+        0.098846
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 1.0407,
+       "amiss over two runs of the rule": 1.0693,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.00842
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.2284
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4634,
+       "amiss, start by start": [
+        0.082916,
+        0.100845,
+        0.104874,
+        0.102615
+       ],
+       "changed, start by start": [
+        0.214355,
+        0.213135,
+        0.205811,
+        0.210938
+       ],
+       "walls kept": 1.0206,
+       "amiss over two runs of the rule": 1.0354,
+       "blocks that change hands in a tick": {
+        "the world": 0.00876,
+        "the rule's world": 0.01104
+       },
+       "of those, going back": {
+        "the world": 0.2099,
+        "the rule's world": 0.2568
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 0.9909,
+       "the least and the most of one start": [
+        0.9645,
+        1.0381
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.9125,
+        "the least and the most of one start": [
+         0.8723,
+         0.9382
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8085,
+        "the least and the most of one start": [
+         0.7851,
+         0.8347
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9806,
+       "the least and the most of one start": [
+        0.9493,
+        1.0182
+       ]
+      }
+     }
+    }
+   },
+   "the other world's rule": {
+    "4": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.002312,
+       "spread": 2.1e-05
+      },
+      "more surprise": {
+       "mean": 0.018804,
+       "spread": 0.000158
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.00221,
+       "spread": 3e-05
+      },
+      "more surprise": {
+       "mean": 0.018855,
+       "spread": 0.000249
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.002175,
+       "spread": 3.9e-05
+      },
+      "more surprise": {
+       "mean": 0.018935,
+       "spread": 0.000335
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.002431,
+       "spread": 7.9e-05
+      },
+      "more surprise": {
+       "mean": 0.021323,
+       "spread": 0.000701
+      }
+     }
+    },
+    "8": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.00031,
+       "spread": 6e-06
+      },
+      "more surprise": {
+       "mean": 0.004284,
+       "spread": 8.4e-05
+      },
+      "run on, amiss over changed": 0.5959,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9853,
+       "the least and the most of one start": [
+        0.9823,
+        0.9883
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.000442,
+       "spread": 1.2e-05
+      },
+      "more surprise": {
+       "mean": 0.006504,
+       "spread": 0.000176
+      },
+      "run on, amiss over changed": 0.4765,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9593,
+       "the least and the most of one start": [
+        0.9561,
+        0.9635
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.000495,
+       "spread": 2e-05
+      },
+      "more surprise": {
+       "mean": 0.007507,
+       "spread": 0.000308
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.000549,
+       "spread": 4.5e-05
+      },
+      "more surprise": {
+       "mean": 0.00843,
+       "spread": 0.000682
+      },
+      "run on, amiss over changed": 0.4252,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9631,
+       "the least and the most of one start": [
+        0.957,
+        0.9735
+       ]
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.000194,
+       "spread": 1.5e-05
+      },
+      "more surprise": {
+       "mean": 0.003576,
+       "spread": 0.000275
+      },
+      "run on, amiss over changed": 0.5295,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9805,
+       "the least and the most of one start": [
+        0.9636,
+        1.0042
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.000219,
+       "spread": 2.4e-05
+      },
+      "more surprise": {
+       "mean": 0.004331,
+       "spread": 0.000484
+      },
+      "run on, amiss over changed": 0.4483,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.98,
+       "the least and the most of one start": [
+        0.9642,
+        0.9884
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.000387,
+       "spread": 5.2e-05
+      },
+      "more surprise": {
+       "mean": 0.007932,
+       "spread": 0.001084
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.000638,
+       "spread": 0.00015
+      },
+      "more surprise": {
+       "mean": 0.013239,
+       "spread": 0.003159
+      },
+      "run on, amiss over changed": 0.4261,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9819,
+       "the least and the most of one start": [
+        0.958,
+        0.9939
+       ]
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.000148,
+       "spread": 5.7e-05
+      },
+      "more surprise": {
+       "mean": 0.003384,
+       "spread": 0.001306
+      },
+      "run on, amiss over changed": 0.5031,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9816,
+       "the least and the most of one start": [
+        0.9473,
+        1.0001
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.000285,
+       "spread": 0.000127
+      },
+      "more surprise": {
+       "mean": 0.007029,
+       "spread": 0.003147
+      },
+      "run on, amiss over changed": 0.4522,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9669,
+       "the least and the most of one start": [
+        0.9394,
+        0.9921
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.000453,
+       "spread": 0.000227
+      },
+      "more surprise": {
+       "mean": 0.011531,
+       "spread": 0.00581
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.000634,
+       "spread": 0.000407
+      },
+      "more surprise": {
+       "mean": 0.016255,
+       "spread": 0.010509
+      },
+      "run on, amiss over changed": 0.4473,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 0.9564,
+       "the least and the most of one start": [
+        0.9154,
+        1.0079
+       ]
+      }
+     }
+    }
+   }
+  },
+  "busy": {
+   "one tick ahead": {
+    "4": {
+     "transitions tried on": 12582912,
+     "the registered choice, bits a block": {
+      "nothing": 1.05187,
+      "the block alone": 0.142737,
+      "its neighbours": 0.093322
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.09327,
+        "spread": 0.000121
+       },
+       "bits a block, with endless data": {
+        "mean": 0.093261,
+        "spread": 0.00012
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 1.9e-05,
+        "from two starts to four": 9e-06,
+        "the first over the second": 2.14
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.088705,
+        "spread": 0.000119
+       },
+       "bits a block, with endless data": {
+        "mean": 0.088674,
+        "spread": 0.000118
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.04894,
+        "spread": 0.000359
+       },
+       "the same, with endless data": {
+        "mean": 0.049183,
+        "spread": 0.000369
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 5.6e-05,
+        "from two starts to four": 3.1e-05,
+        "the first over the second": 1.8
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.086789,
+        "spread": 0.000107
+       },
+       "bits a block, with endless data": {
+        "mean": 0.086728,
+        "spread": 0.000109
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.069482,
+        "spread": 0.000462
+       },
+       "the same, with endless data": {
+        "mean": 0.070051,
+        "spread": 0.000496
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000101,
+        "from two starts to four": 6.1e-05,
+        "the first over the second": 1.65
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.086195,
+        "spread": 0.000107
+       },
+       "bits a block, with endless data": {
+        "mean": 0.086052,
+        "spread": 0.000112
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.07585,
+        "spread": 0.000464
+       },
+       "the same, with endless data": {
+        "mean": 0.077302,
+        "spread": 0.00056
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000263,
+        "from two starts to four": 0.000144,
+        "the first over the second": 1.83
+       }
+      }
+     }
+    },
+    "8": {
+     "transitions tried on": 12582912,
+     "the registered choice, bits a block": {
+      "nothing": 1.016467,
+      "the block alone": 0.107119,
+      "its neighbours": 0.066496
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.066523,
+        "spread": 0.000189
+       },
+       "bits a block, with endless data": {
+        "mean": 0.066516,
+        "spread": 0.000189
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 1.5e-05,
+        "from two starts to four": 7e-06,
+        "the first over the second": 2.08
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.06168,
+        "spread": 0.00017
+       },
+       "bits a block, with endless data": {
+        "mean": 0.061659,
+        "spread": 0.000169
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.072802,
+        "spread": 0.000453
+       },
+       "the same, with endless data": {
+        "mean": 0.07302,
+        "spread": 0.000471
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 4.7e-05,
+        "from two starts to four": 2.1e-05,
+        "the first over the second": 2.22
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.059779,
+        "spread": 0.000171
+       },
+       "bits a block, with endless data": {
+        "mean": 0.059744,
+        "spread": 0.000171
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.101366,
+        "spread": 0.000495
+       },
+       "the same, with endless data": {
+        "mean": 0.101806,
+        "spread": 0.000549
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 9.8e-05,
+        "from two starts to four": 3.6e-05,
+        "the first over the second": 2.76
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.059263,
+        "spread": 0.000167
+       },
+       "bits a block, with endless data": {
+        "mean": 0.059157,
+        "spread": 0.000165
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.109131,
+        "spread": 0.000316
+       },
+       "the same, with endless data": {
+        "mean": 0.110629,
+        "spread": 0.000428
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000267,
+        "from two starts to four": 0.000106,
+        "the first over the second": 2.52
+       }
+      }
+     }
+    },
+    "16": {
+     "transitions tried on": 3145728,
+     "the registered choice, bits a block": {
+      "nothing": 1.005006,
+      "the block alone": 0.082014,
+      "its neighbours": 0.049098
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.048572,
+        "spread": 0.000437
+       },
+       "bits a block, with endless data": {
+        "mean": 0.04855,
+        "spread": 0.000438
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 2.8e-05,
+        "from two starts to four": 2.2e-05,
+        "the first over the second": 1.28
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.044916,
+        "spread": 0.000367
+       },
+       "bits a block, with endless data": {
+        "mean": 0.044865,
+        "spread": 0.000366
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.075251,
+        "spread": 0.001152
+       },
+       "the same, with endless data": {
+        "mean": 0.075888,
+        "spread": 0.001178
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 7e-05,
+        "from two starts to four": 5.1e-05,
+        "the first over the second": 1.38
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.043632,
+        "spread": 0.000341
+       },
+       "bits a block, with endless data": {
+        "mean": 0.043534,
+        "spread": 0.000342
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.101678,
+        "spread": 0.001536
+       },
+       "the same, with endless data": {
+        "mean": 0.103304,
+        "spread": 0.001558
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000147,
+        "from two starts to four": 9.8e-05,
+        "the first over the second": 1.49
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.04351,
+        "spread": 0.00034
+       },
+       "bits a block, with endless data": {
+        "mean": 0.043256,
+        "spread": 0.000342
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.104194,
+        "spread": 0.002182
+       },
+       "the same, with endless data": {
+        "mean": 0.109031,
+        "spread": 0.002552
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000464,
+        "from two starts to four": 0.000254,
+        "the first over the second": 1.82
+       }
+      }
+     }
+    },
+    "32": {
+     "transitions tried on": 786432,
+     "the registered choice, bits a block": {
+      "nothing": 1.00117,
+      "the block alone": 0.065928,
+      "its neighbours": 0.037826
+     },
+     "every choice": {
+      "its neighbours": {
+       "bits a block": {
+        "mean": 0.037393,
+        "spread": 0.000803
+       },
+       "bits a block, with endless data": {
+        "mean": 0.037349,
+        "spread": 0.000799
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "the same, with endless data": {
+        "mean": 0.0,
+        "spread": 0.0
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 7.1e-05,
+        "from two starts to four": 4.5e-05,
+        "the first over the second": 1.59
+       }
+      },
+      "and its leader one tick before": {
+       "bits a block": {
+        "mean": 0.035289,
+        "spread": 0.000837
+       },
+       "bits a block, with endless data": {
+        "mean": 0.035193,
+        "spread": 0.000837
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.056316,
+        "spread": 0.003327
+       },
+       "the same, with endless data": {
+        "mean": 0.057763,
+        "spread": 0.003283
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000132,
+        "from two starts to four": 9.6e-05,
+        "the first over the second": 1.38
+       }
+      },
+      "and how long it has had its leader, up to 4 ticks": {
+       "bits a block": {
+        "mean": 0.034735,
+        "spread": 0.000864
+       },
+       "bits a block, with endless data": {
+        "mean": 0.034535,
+        "spread": 0.000862
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.07115,
+        "spread": 0.006084
+       },
+       "the same, with endless data": {
+        "mean": 0.075383,
+        "spread": 0.005946
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.00026,
+        "from two starts to four": 0.0002,
+        "the first over the second": 1.3
+       }
+      },
+      "and how long it has had its leader, up to 8 ticks": {
+       "bits a block": {
+        "mean": 0.035295,
+        "spread": 0.001027
+       },
+       "bits a block, with endless data": {
+        "mean": 0.034783,
+        "spread": 0.001016
+       },
+       "share of the plain rule's surprise removed": {
+        "mean": 0.056231,
+        "spread": 0.010649
+       },
+       "the same, with endless data": {
+        "mean": 0.068819,
+        "spread": 0.011143
+       },
+       "bits shed by learning from twice as much": {
+        "from one start to two": 0.000728,
+        "from two starts to four": 0.000513,
+        "the first over the second": 1.42
+       }
+      }
+     }
+    }
+   },
+   "changing hands, by a block's past": {
+    "4": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0013,
+       0.0239,
+       0.1395,
+       0.296,
+       0.4177,
+       0.3786,
+       0.575
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0008,
+       0.0172,
+       0.1081,
+       0.2465,
+       0.3839,
+       0.3665,
+       0.5729
+      ],
+      "led by its rival one tick before": [
+       0.0018,
+       0.0214,
+       0.0617,
+       0.1876,
+       0.3778,
+       0.6001,
+       0.8017,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0018,
+       0.0176,
+       0.0548,
+       0.1728,
+       0.3544,
+       0.5757,
+       0.7793,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0003,
+       0.0045,
+       0.0205,
+       0.0918,
+       0.2443,
+       0.4608,
+       0.6922,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0008,
+       0.0065,
+       0.054,
+       0.1802,
+       0.3971,
+       0.6095,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0001,
+       0.0016,
+       0.0282,
+       0.1313,
+       0.3365,
+       0.521,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0004,
+       0.0149,
+       0.095,
+       0.2378,
+       0.3574,
+       0.3909,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0001,
+       0.0075,
+       0.072,
+       0.2033,
+       0.3658,
+       0.3594,
+       0.5704
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       14472346,
+       3188029,
+       2358769,
+       3075288,
+       1549691,
+       314387,
+       26811,
+       4778,
+       1786
+      ],
+      "led by the same one tick before": [
+       14470150,
+       3185074,
+       2334780,
+       2942257,
+       1352355,
+       267063,
+       24514,
+       4671,
+       1777
+      ],
+      "led by its rival one tick before": [
+       1709,
+       2150,
+       15618,
+       81639,
+       123502,
+       30599,
+       1387,
+       52,
+       5
+      ],
+      "has had its leader for 1 ticks": [
+       2196,
+       2955,
+       23989,
+       133031,
+       197336,
+       47324,
+       2297,
+       107,
+       9
+      ],
+      "has had its leader for 2 ticks": [
+       3451,
+       3815,
+       30129,
+       114091,
+       118903,
+       20646,
+       718,
+       32,
+       4
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       11266,
+       14209,
+       79808,
+       199359,
+       147254,
+       19171,
+       589,
+       19,
+       0
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       66758,
+       77433,
+       204624,
+       316210,
+       153817,
+       14423,
+       501,
+       37,
+       2
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       558562,
+       310900,
+       367877,
+       407779,
+       142799,
+       16787,
+       1595,
+       243,
+       67
+      ],
+      "has had its leader for 16 and more ticks": [
+       13830113,
+       2778717,
+       1652342,
+       1904818,
+       789582,
+       196036,
+       21111,
+       4340,
+       1704
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.3688,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0164,
+      "2": 0.0117,
+      "3 or 4": 0.0189,
+      "5 to 8": 0.0334,
+      "9 to 15": 0.0723,
+      "16 and more": 0.8474
+     }
+    },
+    "8": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0004,
+       0.0116,
+       0.1048,
+       0.2587,
+       0.3667,
+       0.3315,
+       0.559
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0002,
+       0.0074,
+       0.0777,
+       0.2189,
+       0.3467,
+       0.3262,
+       0.5588
+      ],
+      "led by its rival one tick before": [
+       0.0,
+       0.0104,
+       0.0374,
+       0.1496,
+       0.363,
+       0.6192,
+       0.8431,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0,
+       0.01,
+       0.0352,
+       0.1441,
+       0.3546,
+       0.6123,
+       0.8395,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0,
+       0.001,
+       0.0074,
+       0.0668,
+       0.2297,
+       0.4884,
+       0.753,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0001,
+       0.0017,
+       0.0325,
+       0.1573,
+       0.4091,
+       0.5702,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0,
+       0.0003,
+       0.0143,
+       0.1042,
+       0.3334,
+       0.4955,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0063,
+       0.0671,
+       0.2288,
+       0.3285,
+       null,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0025,
+       0.0509,
+       0.1904,
+       0.3395,
+       0.3221,
+       0.5574
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       14238296,
+       3183642,
+       2341165,
+       3275570,
+       1712367,
+       331973,
+       30817,
+       5841,
+       2161
+      ],
+      "led by the same one tick before": [
+       14236276,
+       3181144,
+       2323361,
+       3174844,
+       1544938,
+       298426,
+       29565,
+       5788,
+       2160
+      ],
+      "led by its rival one tick before": [
+       1905,
+       2303,
+       15922,
+       87596,
+       144715,
+       29013,
+       1045,
+       44,
+       1
+      ],
+      "has had its leader for 1 ticks": [
+       2020,
+       2498,
+       17804,
+       100726,
+       167429,
+       33547,
+       1252,
+       53,
+       1
+      ],
+      "has had its leader for 2 ticks": [
+       2975,
+       3084,
+       23136,
+       90317,
+       100555,
+       13611,
+       336,
+       12,
+       0
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       9726,
+       10679,
+       64033,
+       167072,
+       128072,
+       12118,
+       228,
+       5,
+       0
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       52906,
+       61657,
+       177265,
+       286631,
+       141689,
+       9345,
+       224,
+       24,
+       4
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       419483,
+       255823,
+       334645,
+       391892,
+       140829,
+       12323,
+       1233,
+       152,
+       41
+      ],
+      "has had its leader for 16 and more ticks": [
+       13751186,
+       2849901,
+       1724282,
+       2238932,
+       1033793,
+       251029,
+       27544,
+       5595,
+       2115
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.1298,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.013,
+      "2": 0.0093,
+      "3 or 4": 0.0156,
+      "5 to 8": 0.029,
+      "9 to 15": 0.062,
+      "16 and more": 0.8711
+     }
+    },
+    "16": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0001,
+       0.0053,
+       0.0758,
+       0.2264,
+       0.3412,
+       0.3103,
+       0.5386
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0,
+       0.0029,
+       0.0568,
+       0.2036,
+       0.3347,
+       0.309,
+       0.5386
+      ],
+      "led by its rival one tick before": [
+       0.0,
+       0.0035,
+       0.0147,
+       0.098,
+       0.3287,
+       0.6298,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       0.0,
+       0.0034,
+       0.0142,
+       0.0974,
+       0.3265,
+       0.6269,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0,
+       0.0,
+       0.001,
+       0.036,
+       0.2004,
+       0.5049,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0,
+       0.0005,
+       0.0168,
+       0.1281,
+       0.4384,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0059,
+       0.075,
+       0.3193,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0021,
+       0.0463,
+       0.1974,
+       0.3015,
+       null,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0008,
+       0.0406,
+       0.1896,
+       0.3347,
+       0.3068,
+       0.5394
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       3503698,
+       803634,
+       588220,
+       854974,
+       445381,
+       82717,
+       7902,
+       1579,
+       557
+      ],
+      "led by the same one tick before": [
+       3503225,
+       803052,
+       584283,
+       834041,
+       413940,
+       78260,
+       7806,
+       1576,
+       557
+      ],
+      "led by its rival one tick before": [
+       464,
+       569,
+       3807,
+       20109,
+       29900,
+       4184,
+       90,
+       3,
+       0
+      ],
+      "has had its leader for 1 ticks": [
+       473,
+       582,
+       3937,
+       20933,
+       31441,
+       4457,
+       96,
+       3,
+       0
+      ],
+      "has had its leader for 2 ticks": [
+       696,
+       731,
+       5197,
+       19698,
+       19698,
+       1737,
+       27,
+       0,
+       0
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       2213,
+       2441,
+       14877,
+       38134,
+       25970,
+       1501,
+       29,
+       3,
+       0
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       12438,
+       14495,
+       42619,
+       68609,
+       30820,
+       1190,
+       47,
+       6,
+       0
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       103246,
+       62292,
+       82613,
+       100077,
+       34837,
+       2928,
+       388,
+       45,
+       12
+      ],
+      "has had its leader for 16 and more ticks": [
+       3384632,
+       723093,
+       438977,
+       607523,
+       302615,
+       70904,
+       7315,
+       1522,
+       545
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.0443,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0098,
+      "2": 0.0076,
+      "3 or 4": 0.0135,
+      "5 to 8": 0.0271,
+      "9 to 15": 0.0614,
+      "16 and more": 0.8805
+     }
+    },
+    "32": {
+     "chance": {
+      "as it is": [
+       0.0,
+       0.0,
+       0.0,
+       0.0024,
+       0.0548,
+       0.2088,
+       0.3363,
+       0.3228,
+       null
+      ],
+      "led by the same one tick before": [
+       0.0,
+       0.0,
+       0.0,
+       0.0013,
+       0.0431,
+       0.1964,
+       0.3357,
+       0.3236,
+       null
+      ],
+      "led by its rival one tick before": [
+       null,
+       null,
+       0.003,
+       0.0519,
+       0.2703,
+       0.6724,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 1 ticks": [
+       null,
+       null,
+       0.0029,
+       0.0514,
+       0.2706,
+       0.6717,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 2 ticks": [
+       0.0,
+       0.0,
+       0.0008,
+       0.0206,
+       0.1587,
+       null,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0072,
+       0.0949,
+       null,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0024,
+       0.0521,
+       null,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0007,
+       0.0299,
+       0.2069,
+       null,
+       null,
+       null
+      ],
+      "has had its leader for 16 and more ticks": [
+       0.0,
+       0.0,
+       0.0,
+       0.0003,
+       0.0348,
+       0.19,
+       0.339,
+       0.3264,
+       null
+      ]
+     },
+     "blocks": {
+      "as it is": [
+       877605,
+       198601,
+       147567,
+       213169,
+       112571,
+       20458,
+       2123,
+       412,
+       186
+      ],
+      "led by the same one tick before": [
+       877457,
+       198426,
+       146548,
+       208557,
+       106824,
+       19925,
+       2115,
+       411,
+       186
+      ],
+      "led by its rival one tick before": [
+       147,
+       174,
+       1013,
+       4551,
+       5653,
+       519,
+       8,
+       1,
+       0
+      ],
+      "has had its leader for 1 ticks": [
+       148,
+       175,
+       1019,
+       4612,
+       5747,
+       533,
+       8,
+       1,
+       0
+      ],
+      "has had its leader for 2 ticks": [
+       206,
+       223,
+       1318,
+       4521,
+       3870,
+       193,
+       4,
+       1,
+       0
+      ],
+      "has had its leader for 3 or 4 ticks": [
+       674,
+       665,
+       3790,
+       8785,
+       5491,
+       181,
+       5,
+       0,
+       0
+      ],
+      "has had its leader for 5 to 8 ticks": [
+       3375,
+       3861,
+       10673,
+       16085,
+       7166,
+       179,
+       16,
+       1,
+       0
+      ],
+      "has had its leader for 9 to 15 ticks": [
+       26724,
+       15823,
+       20374,
+       24137,
+       9125,
+       696,
+       102,
+       26,
+       3
+      ],
+      "has had its leader for 16 and more ticks": [
+       846478,
+       177854,
+       110393,
+       155029,
+       81172,
+       18676,
+       1988,
+       383,
+       183
+      ]
+     },
+     "of the blocks that changed hands, the share left with no leader": 0.0139,
+     "share of blocks, by how long they have had their leader": {
+      "1": 0.0078,
+      "2": 0.0066,
+      "3 or 4": 0.0125,
+      "5 to 8": 0.0263,
+      "9 to 15": 0.0617,
+      "16 and more": 0.8852
+     }
+    }
+   },
+   "the mix of young and old leads": {
+    "3": {
+     "4": {
+      "as it is": 0.0239,
+      "with this rung's mix and the top rung's chances": 0.004
+     },
+     "8": {
+      "as it is": 0.0116,
+      "with this rung's mix and the top rung's chances": 0.003
+     },
+     "16": {
+      "as it is": 0.0053,
+      "with this rung's mix and the top rung's chances": 0.0026
+     },
+     "32": {
+      "as it is": 0.0024,
+      "with this rung's mix and the top rung's chances": 0.0024
+     }
+    },
+    "4": {
+     "4": {
+      "as it is": 0.1395,
+      "with this rung's mix and the top rung's chances": 0.0813
+     },
+     "8": {
+      "as it is": 0.1048,
+      "with this rung's mix and the top rung's chances": 0.0707
+     },
+     "16": {
+      "as it is": 0.0758,
+      "with this rung's mix and the top rung's chances": 0.0613
+     },
+     "32": {
+      "as it is": 0.0548,
+      "with this rung's mix and the top rung's chances": 0.0548
+     }
+    },
+    "5": {
+     "4": {
+      "as it is": 0.296,
+      "with this rung's mix and the top rung's chances": 0.3005
+     },
+     "8": {
+      "as it is": 0.2587,
+      "with this rung's mix and the top rung's chances": 0.2636
+     },
+     "16": {
+      "as it is": 0.2264,
+      "with this rung's mix and the top rung's chances": 0.2295
+     },
+     "32": {
+      "as it is": 0.2088,
+      "with this rung's mix and the top rung's chances": 0.2088
+     }
+    },
+    "6": {
+     "4": {
+      "as it is": 0.4177,
+      "with this rung's mix and the top rung's chances": 0.3966
+     },
+     "8": {
+      "as it is": 0.3667,
+      "with this rung's mix and the top rung's chances": 0.3663
+     },
+     "16": {
+      "as it is": 0.3412,
+      "with this rung's mix and the top rung's chances": 0.3452
+     },
+     "32": {
+      "as it is": 0.3363,
+      "with this rung's mix and the top rung's chances": 0.3363
+     }
+    }
+   },
+   "between rungs": {
+    "8": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.05602,
+      "with endless data, extra bits a block": {
+       "mean": 0.003706,
+       "spread": 1.6e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.055709,
+       "spread": 0.000269
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.05821,
+      "with endless data, extra bits a block": {
+       "mean": 0.003582,
+       "spread": 1.4e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.05809,
+       "spread": 0.000269
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.05797,
+      "with endless data, extra bits a block": {
+       "mean": 0.003451,
+       "spread": 2e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.057757,
+       "spread": 0.00037
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.05553,
+      "with endless data, extra bits a block": {
+       "mean": 0.003342,
+       "spread": 3e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.056501,
+       "spread": 0.000507
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.03032,
+      "with endless data, extra bits a block": {
+       "mean": 0.00148,
+       "spread": 2.6e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.030481,
+       "spread": 0.000596
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.02719,
+      "with endless data, extra bits a block": {
+       "mean": 0.001232,
+       "spread": 2.9e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.02747,
+       "spread": 0.000639
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.02364,
+      "with endless data, extra bits a block": {
+       "mean": 0.001069,
+       "spread": 5.4e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.024554,
+       "spread": 0.001245
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.01826,
+      "with endless data, extra bits a block": {
+       "mean": 0.000934,
+       "spread": 0.000114
+      },
+      "with endless data, more surprise": {
+       "mean": 0.021596,
+       "spread": 0.002665
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "step 4g's way, the registered choice, more surprise": 0.01551,
+      "with endless data, extra bits a block": {
+       "mean": 0.000684,
+       "spread": 5.8e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.018327,
+       "spread": 0.001655
+      }
+     },
+     "and its leader one tick before": {
+      "step 4g's way, the registered choice, more surprise": 0.0093,
+      "with endless data, extra bits a block": {
+       "mean": 0.00047,
+       "spread": 8.5e-05
+      },
+      "with endless data, more surprise": {
+       "mean": 0.013401,
+       "spread": 0.002589
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "step 4g's way, the registered choice, more surprise": 0.00035,
+      "with endless data, extra bits a block": {
+       "mean": 0.000259,
+       "spread": 0.00018
+      },
+      "with endless data, more surprise": {
+       "mean": 0.007585,
+       "spread": 0.005274
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "step 4g's way, the registered choice, more surprise": -0.02074,
+      "with endless data, extra bits a block": {
+       "mean": -0.00014,
+       "spread": 0.000384
+      },
+      "with endless data, more surprise": {
+       "mean": -0.00376,
+       "spread": 0.010799
+      }
+     }
+    }
+   },
+   "run on": {
+    "8": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.5121,
+       "amiss, start by start": [
+        0.109345,
+        0.107826,
+        0.108484,
+        0.105344
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 0.892,
+       "amiss over two runs of the rule": 0.971,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.01369
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.1179
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5566,
+       "amiss, start by start": [
+        0.119735,
+        0.116589,
+        0.118037,
+        0.114024
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 0.9102,
+       "amiss over two runs of the rule": 0.998,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.02055
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.1628
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0867,
+       "the least and the most of one start": [
+        1.0813,
+        1.095
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0059,
+       "the least and the most of one start": [
+        1.0031,
+        1.0071
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.4212,
+       "amiss, start by start": [
+        0.089547,
+        0.087695,
+        0.08941,
+        0.087849
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 0.9822,
+       "amiss over two runs of the rule": 0.9011,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.01437
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.2885
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4583,
+       "amiss, start by start": [
+        0.098405,
+        0.095662,
+        0.097403,
+        0.094208
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 0.9964,
+       "amiss over two runs of the rule": 0.8967,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.0215
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.2606
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0879,
+       "the least and the most of one start": [
+        1.0724,
+        1.0989
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.8225,
+        "the least and the most of one start": [
+         0.8133,
+         0.8339
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8234,
+        "the least and the most of one start": [
+         0.8205,
+         0.8262
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0026,
+       "the least and the most of one start": [
+        0.9913,
+        1.0162
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.3964,
+       "amiss, start by start": [
+        0.083683,
+        0.082475,
+        0.084886,
+        0.08255
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 1.0417,
+       "amiss over two runs of the rule": 0.9697,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.01436
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.2833
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4095,
+       "amiss, start by start": [
+        0.087165,
+        0.084801,
+        0.088083,
+        0.08454
+       ],
+       "changed, start by start": [
+        0.207443,
+        0.207306,
+        0.214905,
+        0.211929
+       ],
+       "walls kept": 1.0587,
+       "amiss over two runs of the rule": 0.9029,
+       "blocks that change hands in a tick": {
+        "the world": 0.01434,
+        "the rule's world": 0.02147
+       },
+       "of those, going back": {
+        "the world": 0.271,
+        "the rule's world": 0.2496
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.033,
+       "the least and the most of one start": [
+        1.0241,
+        1.0416
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.774,
+        "the least and the most of one start": [
+         0.7649,
+         0.7836
+        ]
+       },
+       "the rung below's": {
+        "together": 0.7357,
+        "the least and the most of one start": [
+         0.7273,
+         0.7462
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 1.0015,
+       "the least and the most of one start": [
+        0.9932,
+        1.0126
+       ]
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.4643,
+       "amiss, start by start": [
+        0.107182,
+        0.098362,
+        0.101162,
+        0.09325
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 0.9343,
+       "amiss over two runs of the rule": 0.9128,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.00987
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.0761
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.5229,
+       "amiss, start by start": [
+        0.122673,
+        0.109684,
+        0.113953,
+        0.104111
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 0.8963,
+       "amiss over two runs of the rule": 0.9503,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.01409
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.1169
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.1262,
+       "the least and the most of one start": [
+        1.1151,
+        1.1445
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9903,
+       "the least and the most of one start": [
+        0.9665,
+        1.0252
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.4128,
+       "amiss, start by start": [
+        0.094757,
+        0.088123,
+        0.089996,
+        0.082645
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 1.0193,
+       "amiss over two runs of the rule": 0.9137,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.01019
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.2623
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4355,
+       "amiss, start by start": [
+        0.102097,
+        0.093185,
+        0.09494,
+        0.084869
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 0.9901,
+       "amiss over two runs of the rule": 0.8931,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.01476
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.2856
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.055,
+       "the least and the most of one start": [
+        1.0269,
+        1.0775
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.8889,
+        "the least and the most of one start": [
+         0.8841,
+         0.8959
+        ]
+       },
+       "the rung below's": {
+        "together": 0.8328,
+        "the least and the most of one start": [
+         0.8152,
+         0.8496
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9953,
+       "the least and the most of one start": [
+        0.9658,
+        1.0309
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.415,
+       "amiss, start by start": [
+        0.096599,
+        0.087772,
+        0.090843,
+        0.082234
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 1.0696,
+       "amiss over two runs of the rule": 1.0245,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.01022
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.2656
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4077,
+       "amiss, start by start": [
+        0.094963,
+        0.086491,
+        0.090096,
+        0.079597
+       ],
+       "changed, start by start": [
+        0.213684,
+        0.219299,
+        0.216309,
+        0.212036
+       ],
+       "walls kept": 1.0546,
+       "amiss over two runs of the rule": 0.9487,
+       "blocks that change hands in a tick": {
+        "the world": 0.01017,
+        "the rule's world": 0.0147
+       },
+       "of those, going back": {
+        "the world": 0.2415,
+        "the rule's world": 0.2811
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 0.9824,
+       "the least and the most of one start": [
+        0.9679,
+        0.9918
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.8937,
+        "the least and the most of one start": [
+         0.8819,
+         0.9013
+        ]
+       },
+       "the rung below's": {
+        "together": 0.7796,
+        "the least and the most of one start": [
+         0.7645,
+         0.7906
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9935,
+       "the least and the most of one start": [
+        0.976,
+        1.0156
+       ]
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "its own": {
+       "amiss over changed": 0.3772,
+       "amiss, start by start": [
+        0.085144,
+        0.070282,
+        0.094757,
+        0.07814
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 0.9971,
+       "amiss over two runs of the rule": 0.8348,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.00747
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.0457
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.4148,
+       "amiss, start by start": [
+        0.095612,
+        0.080872,
+        0.101486,
+        0.083038
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 0.9451,
+       "amiss over two runs of the rule": 0.8774,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.0099
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.0752
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0996,
+       "the least and the most of one start": [
+        1.0627,
+        1.1507
+       ]
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9887,
+       "the least and the most of one start": [
+        0.9826,
+        1.0002
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "its own": {
+       "amiss over changed": 0.3694,
+       "amiss, start by start": [
+        0.081833,
+        0.070496,
+        0.092392,
+        0.076813
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 1.0617,
+       "amiss over two runs of the rule": 0.9308,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.00761
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.203
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.3725,
+       "amiss, start by start": [
+        0.086945,
+        0.069427,
+        0.091965,
+        0.075836
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 1.0376,
+       "amiss over two runs of the rule": 0.8585,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.01025
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.2611
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 1.0082,
+       "the least and the most of one start": [
+        0.9848,
+        1.0625
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 0.9793,
+        "the least and the most of one start": [
+         0.9611,
+         1.003
+        ]
+       },
+       "the rung below's": {
+        "together": 0.898,
+        "the least and the most of one start": [
+         0.8585,
+         0.9133
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9843,
+       "the least and the most of one start": [
+        0.9716,
+        0.9888
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "its own": {
+       "amiss over changed": 0.3862,
+       "amiss, start by start": [
+        0.083221,
+        0.073029,
+        0.097565,
+        0.082291
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 1.0959,
+       "amiss over two runs of the rule": 1.0139,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.00766
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.2093
+       }
+      },
+      "the rung below's": {
+       "amiss over changed": 0.3742,
+       "amiss, start by start": [
+        0.086273,
+        0.069641,
+        0.094406,
+        0.075333
+       ],
+       "changed, start by start": [
+        0.229736,
+        0.209473,
+        0.220947,
+        0.210205
+       ],
+       "walls kept": 1.0843,
+       "amiss over two runs of the rule": 0.9602,
+       "blocks that change hands in a tick": {
+        "the world": 0.00779,
+        "the rule's world": 0.01027
+       },
+       "of those, going back": {
+        "the world": 0.1741,
+        "the rule's world": 0.2606
+       }
+      },
+      "blocks amiss, the rule from the rung below over the rung's own": {
+       "together": 0.9689,
+       "the least and the most of one start": [
+        0.9154,
+        1.0367
+       ]
+      },
+      "blocks amiss, over the rule as it is": {
+       "its own": {
+        "together": 1.0237,
+        "the least and the most of one start": [
+         0.9774,
+         1.0531
+        ]
+       },
+       "the rung below's": {
+        "together": 0.9021,
+        "the least and the most of one start": [
+         0.8611,
+         0.9302
+        ]
+       }
+      },
+      "blocks amiss, its own learned from half its starts over from all": {
+       "together": 0.9789,
+       "the least and the most of one start": [
+        0.9645,
+        1.0033
+       ]
+      }
+     }
+    }
+   },
+   "the other world's rule": {
+    "4": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.001734,
+       "spread": 1.6e-05
+      },
+      "more surprise": {
+       "mean": 0.018597,
+       "spread": 0.000187
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.001542,
+       "spread": 1.4e-05
+      },
+      "more surprise": {
+       "mean": 0.017386,
+       "spread": 0.000174
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.001518,
+       "spread": 2.2e-05
+      },
+      "more surprise": {
+       "mean": 0.017508,
+       "spread": 0.000263
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.001759,
+       "spread": 4.7e-05
+      },
+      "more surprise": {
+       "mean": 0.020436,
+       "spread": 0.000549
+      }
+     }
+    },
+    "8": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.000292,
+       "spread": 7e-06
+      },
+      "more surprise": {
+       "mean": 0.004392,
+       "spread": 0.000106
+      },
+      "run on, amiss over changed": 0.5283,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0316,
+       "the least and the most of one start": [
+        1.0208,
+        1.0369
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.000382,
+       "spread": 1e-05
+      },
+      "more surprise": {
+       "mean": 0.006194,
+       "spread": 0.000161
+      },
+      "run on, amiss over changed": 0.447,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0612,
+       "the least and the most of one start": [
+        1.0511,
+        1.0731
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.000389,
+       "spread": 1.4e-05
+      },
+      "more surprise": {
+       "mean": 0.006519,
+       "spread": 0.000235
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.000371,
+       "spread": 3.6e-05
+      },
+      "more surprise": {
+       "mean": 0.006264,
+       "spread": 0.000615
+      },
+      "run on, amiss over changed": 0.4183,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0554,
+       "the least and the most of one start": [
+        1.0476,
+        1.0702
+       ]
+      }
+     }
+    },
+    "16": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 0.000154,
+       "spread": 2e-05
+      },
+      "more surprise": {
+       "mean": 0.003176,
+       "spread": 0.000415
+      },
+      "run on, amiss over changed": 0.4712,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0148,
+       "the least and the most of one start": [
+        0.9894,
+        1.0477
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": 0.000186,
+       "spread": 2.7e-05
+      },
+      "more surprise": {
+       "mean": 0.004148,
+       "spread": 0.000602
+      },
+      "run on, amiss over changed": 0.4284,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0378,
+       "the least and the most of one start": [
+        1.0148,
+        1.0648
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": 0.000203,
+       "spread": 5.2e-05
+      },
+      "more surprise": {
+       "mean": 0.00467,
+       "spread": 0.001195
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": 0.000128,
+       "spread": 0.000108
+      },
+      "more surprise": {
+       "mean": 0.002965,
+       "spread": 0.002507
+      },
+      "run on, amiss over changed": 0.434,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0458,
+       "the least and the most of one start": [
+        1.0272,
+        1.0622
+       ]
+      }
+     }
+    },
+    "32": {
+     "its neighbours": {
+      "extra bits a block": {
+       "mean": 6.8e-05,
+       "spread": 3.6e-05
+      },
+      "more surprise": {
+       "mean": 0.001826,
+       "spread": 0.000977
+      },
+      "run on, amiss over changed": 0.3849,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0204,
+       "the least and the most of one start": [
+        0.9978,
+        1.0597
+       ]
+      }
+     },
+     "and its leader one tick before": {
+      "extra bits a block": {
+       "mean": -3.7e-05,
+       "spread": 8e-05
+      },
+      "more surprise": {
+       "mean": -0.001028,
+       "spread": 0.002237
+      },
+      "run on, amiss over changed": 0.3815,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0326,
+       "the least and the most of one start": [
+        1.0253,
+        1.0392
+       ]
+      }
+     },
+     "and how long it has had its leader, up to 4 ticks": {
+      "extra bits a block": {
+       "mean": -0.000203,
+       "spread": 0.000179
+      },
+      "more surprise": {
+       "mean": -0.005801,
+       "spread": 0.005045
+      }
+     },
+     "and how long it has had its leader, up to 8 ticks": {
+      "extra bits a block": {
+       "mean": -0.000665,
+       "spread": 0.000347
+      },
+      "more surprise": {
+       "mean": -0.018918,
+       "spread": 0.009483
+      },
+      "run on, amiss over changed": 0.402,
+      "run on, blocks amiss over the world's own rule's": {
+       "together": 1.0409,
+       "the least and the most of one start": [
+        1.0144,
+        1.0579
+       ]
+      }
+     }
+    }
+   }
+  }
+ }
+}
