@@ -2518,8 +2518,8 @@ before any of its runs was made.
 - **Sizing** (`sizing.py`, exploratory). Eleven of the 29 worlds and the still world, from
   starts step 4f had run, put through the study's own run and every measure of it, twice,
   the starts a world learns from and is tried on changing places. It needed thirty fine
-  runs, and this machine was taken by another job, as it will be for about a day. You
-  agreed to a pod for it: 19 minutes, $0.47. Twelve of the thirty runs had been made here
+  runs, and this machine was taken by another job for the rest of the day. You agreed to
+  a pod for it: 19 minutes, $0.47. Twelve of the thirty runs had been made here
   first, and the pod's are the same, entry for entry. Each number below is the mean of the
   two ways round.
 
