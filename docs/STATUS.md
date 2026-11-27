@@ -343,6 +343,17 @@ running then zooming out matches zooming out then running.
   unchanged. Blocks of 32 are out of this grid's reach, so what the look saw there stays
   a look. The ledger verifies, eight records computed again match, and so do three fine
   runs made again from their starts. Where next is decision D14 of the plan.
+- **Step 4j, the class again with the rule that remembers: registered, not yet run**
+  (2026-11-27, `examples/scale-up-class-memory/study.py`, 223 predictions). The still world
+  and the 29 worlds of step 4f that keep its clock, each read on a clock of its own (a tick
+  set by when its walls have thinned as far as the still world's, and a window of 48
+  ticks), with the look's rule for blocks of 8 tried unchanged in every one. A sizing look
+  on twelve of the worlds, from starts step 4f had run (a pod, $0.47), went against what I
+  expected when I recommended the step: where step 4f's rule missed a world, a block
+  changes hands whatever its past, how long it has had its leader removes under 3% of the
+  surprise, and the rule that remembers gains nothing; where it served a world, how long
+  removes 8% to 10% as in the still world, and the look's remembering rule runs the world
+  on as its own does. The registered run, 120 fresh runs on a pod, asks that of all 29.
 
 **A direction with an application** ([next-direction.md](next-direction.md)): the ring every
 result here lives in is the ring of bivariate bicycle quantum codes (IBM's gross code), and their

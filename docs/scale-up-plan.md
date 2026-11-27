@@ -53,8 +53,13 @@ walls. A registered test of that on fresh starts, at step 4e's size (the same fo
 `study.py`), held on all 74 predictions: the look's table came back entry by entry, the
 remembering rule ran the world on with an eighth to a quarter fewer blocks amiss and
 without losing walls, and learned at blocks of 8 it ran blocks of 16 within 5% of their own rule,
-where the plain rule from below is 14% to 15% worse. Step 5 is not built. The decisions
-that are yours are at the end.
+where the plain rule from below is 14% to 15% worse. A registered test of whether that rule
+carries more of the class than the plain one did (`examples/scale-up-class-memory`, 223
+predictions, each world read on its own clock) is registered and not yet run. Its sizing
+look says what I did not expect: the rule that remembers does not reach the worlds the
+plain rule missed, where a block changes hands whatever its past, and it carries the
+worlds the plain rule served, better. Step 5 is not built. The decisions that are yours
+are at the end.
 
 ## What the ladder is for
 
@@ -2463,6 +2468,178 @@ world's (bound 0.06).
 
 **Gate: passed.** The rule that remembers is on the record. Where next is decision D14.
 
+### Step 4j: the class again, with the rule that remembers (registered 2026-11-27)
+
+Step 4f found the still world's rule serving ten of the 29 worlds that keep its clock, and I
+read its failures in the thinner ones as a table that learns the flicker of a block's
+leader. Steps 4h and 4i then found a rule that takes a flicker back. You chose to ask the
+class question again with it (decision D14, option a):
+`examples/scale-up-class-memory/study.py`, registered on 2026-11-27 with 223 predictions
+before any of its runs was made.
+
+- **Each world on its own clock** (`clock.py`). A rule that remembers counts in ticks, so a
+  tick has to mean the same thing in every world. Step 4f read every world at the still
+  world's tick and slowed the rule to the world. Here the world is read at its own pace and
+  the rule stays as it is. A world's tick is a sixteenth of the generation at which its
+  walls, through blocks of 8, have thinned to what the still world's are when its matched
+  age begins (0.1655 of neighbouring blocks under different leaders, at generation 256).
+  The world is then read and run on from 16 of its ticks to 64, as the still world is from
+  generation 256 to 1,024: 48 ticks in every world, and "how long a block has had its
+  leader" is the same question in each.
+- **One rule, written down beforehand.** The look's rule for blocks of 8
+  (`examples/scale-up-memory/reference.json`, learned in the still world on side 2,048), as
+  it is and with how long in view. It is tried unchanged in every world: one tick ahead
+  beside the world's own rule, and run on by itself beside the world's own two rules.
+- **The worlds** (`worlds.json`): the still world, and the 29 of step 4f's 38 that kept its
+  clock. I had spoken of all 38 and of 152 runs. The other nine are left out: five have set
+  and have no walls moving, and four thin their walls too slowly to be the same picture at
+  any tick. The 29 are grouped by what step 4f found, since that is what the question is
+  about: the 10 the still world's rule served within 1%, the 4 it nearly served (within
+  2%), the 5 it just missed (by 3.8% to 6.9%), and the 10 it missed by more (12% to 38%).
+- **What is run.** Each world against its copy under the standoff from a full start, on a
+  wrapped grid of side 1,024 for 5,120 generations, read through blocks of 8 every two
+  generations, from four fresh starts (20001 on): two to read its tick from and to learn
+  its own rules, two to try on. The runs are that long because the slowest worlds, at a
+  quarter of the still world's pace, have windows that end past generation 4,000. 120 fine
+  runs, and 240 rules run on sixteen times each.
+- **What is read of each world.**
+  - *Its clock:* its tick; and how much of its walls is left at the end of its window of
+    what it had at the start.
+  - *One tick ahead:* how much of the surprise of its own plain rule goes when how long is
+    in view; and how much more surprise the look's rule has than its own, as it is and with
+    how long.
+  - *Run on:* four rules, each by itself over the world's window from each trial start:
+    the world's own and the look's, as it is and with how long. The measure is step 4e's:
+    blocks whose leader is not the real world's at the end, over blocks that changed leader
+    meanwhile, so a rule that supposes nothing moves scores 1.
+- **Sizing** (`sizing.py`, exploratory). Eleven of the 29 worlds and the still world, from
+  starts step 4f had run, put through the study's own run and every measure of it, twice,
+  the starts a world learns from and is tried on changing places. It needed thirty fine
+  runs, and this machine was taken by another job, as it will be for about a day. You
+  agreed to a pod for it: 19 minutes, $0.47. Twelve of the thirty runs had been made here
+  first, and the pod's are the same, entry for entry. Each number below is the mean of the
+  two ways round.
+
+  | World | In step 4f | Live | Its tick | How long removes | The look's rule, more surprise: as it is; with how long | Run on, its own rules: plain; remembering | Run on, the look's rules: plain; remembering | The look's remembering rule over its plain one |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | still | (itself) | 0.98 | 16 | 8.6% | −0.1%; −1.7% | 0.59; 0.43 | 0.59; 0.43 | 0.73 |
+  | B345/S02457 | served | 0.61 | 18 | 10.5% | +0.4%; −0.7% | 0.54; 0.40 | 0.52; 0.42 | 0.80 |
+  | B23456/S34678 | served | 0.95 | 44 | 8.5% | +0.1%; −1.8% | 0.61; 0.46 | 0.65; 0.47 | 0.72 |
+  | B34568/S247 | served | 0.56 | 16 | 10.4% | +0.7%; −1.2% | 0.66; 0.42 | 0.58; 0.43 | 0.73 |
+  | B356/S2456 | served | 0.62 | 26 | 8.0% | +1.5%; −1.7% | 0.62; 0.42 | 0.53; 0.42 | 0.79 |
+  | B23456/S4678 | served | 0.95 | 16 | 7.7% | +0.8%; −2.2% | 0.50; 0.40 | 0.55; 0.42 | 0.76 |
+  | B24567/S0135678 | nearly served | 0.99 | 22 | 6.9% | +3.1%; +0.7% | 0.44; 0.40 | 0.52; 0.41 | 0.80 |
+  | B13458/S358 | missed | 0.54 | 24 and 26 | 2.6% | +18%; +19% | 0.82; 0.69 | 0.63; 0.59 | 0.93 |
+  | B24678/S1348 | missed | 0.51 | 60 and 64 | 1.3% | +25%; +31% | 0.86; 0.76 | 0.66; 0.63 | 0.95 |
+  | B2478/S1467 | missed | 0.42 | 46 and 48 | 0.8% | +35%; +56% | 0.83; 0.76 | 0.66; 0.66 | 1.00 |
+  | B25/S078 | missed | 0.27 | 50 and 54 | 0.3% | +65%; +153% | 0.82; 0.81 | 0.72; 0.74 | 1.03 |
+  | B25/S678 | missed | 0.25 | 34 and 40 | 0.3% | +40%; +66% | 0.83; 0.78 | 0.69; 0.69 | 1.01 |
+
+  **It is not what I told you to expect.** I recommended this step because step 4f's
+  reading, a table that learns a flicker, said a rule that takes a flicker back should
+  carry the thin worlds. In the sized worlds it does not:
+  - *Where step 4f's rule served, a block's past matters as it does in the still world,
+    and the look's remembering rule is the world's own.* How long removes 7.7% to 10.5% of
+    the plain rule's surprise (the still world: 8.6%). Run on, the look's remembering rule
+    ends amiss in 0.72 to 0.80 of its plain rule's blocks, and in 0.98 to 1.06 of the
+    blocks of the remembering rule learned in that world. The plain rule is less at home:
+    beside a world's own plain rule the look's runs from 0.84 to 1.11. So inside the class
+    the remembering rule is the more nearly common one. That holds in the fullest world
+    and the thinnest alike (0.95 and 0.56 of the grid live), and at ticks from 16
+    generations to 44.
+  - *Where step 4f's rule missed, a block's past says next to nothing.* How long removes
+    0.3% to 2.6%. One tick ahead the look's rule is 18% to 65% from the world's own, and
+    further with how long in view, not nearer. Run on, remembering gains nothing in the
+    three thinnest (1.00 to 1.03) and a little in the two fullest (0.93 and 0.95).
+  - *Why.* In the worlds served a block with four rival neighbours that changed hands one
+    tick ago changes again 5.7 to 7.6 times as often as one that has held sixteen ticks.
+    In the worlds missed it is 1.4 to 2.5 times: there a block that has held sixteen ticks
+    beside a nearly flat wall still changes hands 5% to 18% of the time, where in the
+    worlds served it is 0.2% to 0.7%. Their blocks change hands three to six and a half
+    times as often as the look's rule would have them. That flicker is not a waver that a
+    memory takes back: it comes whatever the block's past.
+  - *Not how full a world is.* B34568/S247 and B13458/S358 have 0.56 and 0.54 of their
+    grid live. Step 4f's rule served the first and missed the second by 12%, and how long
+    removes 10.4% in the first and 2.6% in the second. Step 4f took how full a world is for
+    the mark of the class. These two say it is a likeness of the mark: what they differ in
+    is how often a block changes hands whatever its past (a lead sixteen ticks old with
+    three rival neighbours: 0.5% of the time in the first, 5.0% in the second).
+  - *Two things step 4f found, again on a world's own clock.* The look's plain rule keeps
+    every sized world when run on (0.50 to 0.72), the slow ones included: B23456/S34678,
+    which step 4f's rule ran at 0.83 at its walls' pace, is run over its own window at
+    0.65 by the plain rule and 0.47 by the remembering one. And in the worlds missed the
+    look's rules are the better rules to run than the world's own (0.76 to 0.88 of its
+    blocks amiss, as it is; 0.83 to 0.92 with how long).
+
+  All 99 claims the study makes of the sized worlds would hold on those runs, both ways
+  round. Nine of the twelve were sized with one start to learn from and one to try on; the
+  three that had two and two say what that changes (nearly a point more removed with two;
+  the look's remembering rule a point less well placed beside a world's own, one tick
+  ahead; the run-ons the same), and the bounds allow for it.
+
+**The predictions**, 223 in eleven families.
+
+| Family | What is predicted | Bound |
+| --- | --- | --- |
+| X, the anchor (4) | the still world's tick, read off its walls | 14 to 18 generations |
+| | how long removes this share of its plain rule's surprise | at least 6% |
+| | run on, the look's remembering rule over its plain one; and over the remembering rule learned here | at most 0.85; 0.93 to 1.07 |
+| S, the same picture (29) | for each world: of the walls it has at the start of its window, the share left at the end | 0.44 to 0.62 |
+| T, its tick (29) | for each world: the pace its tick gives beside the pace step 4f read off its walls | within a factor of 1.3 |
+| K, kept (29) | for each world: the look's plain rule, run on on the world's own clock | amiss in at most 0.80 of the blocks that changed leader |
+| P, a block's past (20) | in each of the ten worlds served: how long removes this share of the plain rule's surprise | at least 6% |
+| | in each of the ten missed | at most 5% |
+| O, one tick ahead (40) | in each world served: the look's rule beside the world's own, as it is; with how long | at most 2.5% more surprise |
+| | in each world missed: the look's plain rule | at least 5% more |
+| | and with how long in view it is no nearer | the difference is not below zero |
+| J, the five just missed (10) | in each: the look's rule, as it is; with how long | at least 2.5% more surprise |
+| D, run on where served (30) | the look's remembering rule over its plain one | at most 0.85 |
+| | the look's remembering rule | amiss in at most 0.55 of the blocks that changed leader |
+| | and beside the world's own remembering rule | 0.90 to 1.12 |
+| W, run on where missed (10) | the look's remembering rule over its plain one | at least 0.88 |
+| B, the better rule to run (20) | in each world missed: the look's plain rule over the world's own plain rule | at most 0.95 |
+| | the look's remembering rule over the world's own remembering rule | at most 0.97 |
+| G, over all 29 (2) | rank correlation between how far step 4f's rule missed a world and the share how long removes | −0.5 or below |
+| | and between that share and the look's remembering rule over its plain one | −0.5 or below |
+
+- **Every world against the same bars.** Nothing but S, T and K is claimed of the four
+  worlds nearly served, and nothing of how the five just missed run on. So that "how many
+  worlds does each rule serve" is not something I choose after the run, the verdict says
+  of every world where it stands against each bar above, and counts them by group.
+- **Not tested**, fixed beforehand: a claim about a world whose walls give it no tick
+  whose window ends inside the run (a tick of over 80 generations); or in which the larger
+  species has over 0.8 of the live cells at generation 4,096; a rank correlation over
+  fewer than eight worlds.
+- **What I expect, written before the run.** The twelve sized worlds to do again on fresh
+  starts what they did. Of the eighteen I have not seen:
+  - *The five served.* To be like the five I sized. The nearest thing to a bound is the
+    look's plain rule one tick ahead: B24578/S034678 and B3568/S24678, which step 4f had
+    at 0.9% and 0.8%, would be at 1.1% to 1.9% by what the sized worlds did, against 2.5%.
+  - *The five missed.* To be like the five I sized, and not near any bound: step 4f missed
+    all of them by more than the two fullest I sized.
+  - *The five just missed.* This is where the question could still turn, and I have seen
+    none of them. A world step 4f missed by 4% to 7% that the look's remembering rule
+    serves within 2.5% would be memory widening the class after all. By the sized worlds
+    the look's plain rule should be 5% to 15% from them here, and with how long in view
+    somewhere from two points nearer to a few further. If a claim J fails I expect it to
+    be B3468/S2378, the nearest of the five in step 4f (3.8%).
+  - *The three nearly served that I did not size.* I claim nothing. The one I sized is
+    served with how long in view (+0.7%) and not as it is (+3.1%), and run on it is in
+    the class by every bar. If the other three do the same, the remembering rule serves
+    fourteen worlds one tick ahead where the plain one serves ten: the class a little
+    wider on its quiet side, among worlds whose blocks change hands less often than the
+    still world's. With two starts to learn from, that +0.7% should come out nearer
+    +1.7%, so it may not.
+  - *Clocks.* B234567/S01247 and B1234/S48 are the slowest (0.24 and 0.25 of the still
+    world's pace in step 4f): their ticks should be between 60 and 75 generations, inside
+    the 80 a run allows, but not by much. K is where a slow world can fail: step 4f's rule
+    ran B234567/S01247, B1234/S48 and B2378/S1348 at 0.82 to 0.84 at their walls' pace.
+  - A failure of P, D or W in a world I have not seen would mean step 4f's groups do not
+    say where a block's past matters. A failure of G would mean there is no gradient, only
+    the two heaps I sized.
+
+**Gate:** the verdict, whichever way it goes.
+
 ### Step 5: reversible variants
 
 - **What:** the second-order form of a rule, next = F(now) + before (mod 2), as a wrapper that
@@ -2514,6 +2691,7 @@ Measured, on one core of this machine unless it says otherwise.
 | step 4h, the look: step 4g's block leaders read again, and 4,608 run-ons of coarse rules | | | 5 minutes; and 1 hour 38 minutes to make again the leaders of the one run that had not come home | here, one core |
 | step 4i, the sizing: step 4d's kept runs through the study's measures, both ways round | 1.0 million | 4,096 | 2 minutes 20 seconds | here, one core |
 | step 4i, the registered test, 32 runs read through blocks and 2,560 run-ons of coarse rules | 1.0 million | 4,096 | 1 hour 52 minutes, 2 hours 52 minutes of one core in all; a run takes five to six minutes of one core | here, one core and at times two |
+| step 4j, the sizing look: 30 runs read every two generations and 120 rules run on sixteen times each | 1.0 million | 5,120 | 19 minutes on 30 workers of a pod with 32 vCPUs and 128 GB, $0.47; a run takes 11 to 17 minutes there beside 29 others, and seven of one core here | a pod |
 
 A generation costs about 95 ns per cell for two species and 160 to 220 ns for five, and a
 little more per cell on the largest grids, which no longer fit the processor's cache. The
@@ -2867,6 +3045,14 @@ What each one gives:
   plain rule failed says the remembering one should do better, and that is a prediction
   that can fail. (b) confirms something I already expect; (c) is curiosity; (d) is always
   there.
+  You chose (a): it is step 4j, registered on 2026-11-27 with 223 predictions, over the 29
+  worlds that keep the clock and the still world (the other nine have no clock to be read
+  on, as step 4j says). Its sizing look went against the reason I gave for recommending
+  it: the rule that remembers does not reach the worlds the plain rule missed, and it
+  carries the worlds the plain rule served, better. That is what is registered. It costs
+  more than the $2 I quoted, which you agreed to before either launch: a pod for the
+  sizing ($0.47), this machine being taken, and a pod for the registered run (at most
+  $3.70).
 - **D4. When to move the instrument into LatticeLife.** Done: step 1.
 - **D5. The pod.** Done. You chose the pod over this machine; it cost $2.57 of the $6.72
   agreed.
@@ -2874,7 +3060,7 @@ What each one gives:
   the registered test held on all nine predictions, and the pod cost $2.49 of the $6.72
   agreed.
 - **D6. The branches.** Ten, none merged and none with a pull request yet (the tenth now
-  holds six steps):
+  holds seven steps):
   - lattice-lab `scale-up-linear`: step 0, the study, its tests and this plan;
   - lattice-lab `scale-up-step-1`, on top of it: the pin, the rerun hook and the gate;
   - LatticeLife `coarse-graining`: the zoom-out module;
@@ -2894,11 +3080,11 @@ What each one gives:
   - lattice-lab `scale-up-step-4d`, on top of `scale-up-search`: the first look at worlds
     of territories zoomed out (step 4d), which registers nothing; its registered test
     (step 4e, 89 predictions); the class test (step 4f, 128); the next rung (step 4g, 22);
-    the look at a rule that remembers (step 4h), which registers nothing; and its
-    registered test (step 4i, 74). Four studies and 313 predictions more in the census
-    dashboards' table.
+    the look at a rule that remembers (step 4h), which registers nothing; its registered
+    test (step 4i, 74); and the class again with that rule (step 4j, 223). Five studies and
+    536 predictions more in the census dashboards' table.
 
   Like the unmerged `ccr-effac3f1-udftpr` (the qec-parents study), these branches add their
   studies to the census dashboards' table, so they meet it on one line: the count of studies
-  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 46
-  studies and 2,140 predictions.
+  and predictions in `tests/test_census_dashboards.py`. With everything merged that line is 47
+  studies and 2,363 predictions.

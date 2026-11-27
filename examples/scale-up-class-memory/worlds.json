@@ -1,0 +1,272 @@
+{
+ "what": "the worlds of the registered test, chosen by study.select from the registered verdict of examples/scale-up-class (step 4f): the still world, and every one of step 4f's 38 worlds whose walls thinned there as a power of time of 0.40 or more, so kept the still world's clock (29). With what step 4f found of each: the share of its grid live at the end, the power, the pace it read off the walls, how much more surprise the still world's rule had there than the world's own at its best pace, and the group that puts the world in here (served: within 1%; nearly served: within 2%; just missed: under 10%; missed: more). `first` is the first of a world's four starts",
+ "worlds": [
+  {
+   "rule": "B245678/S3678",
+   "first": 20901,
+   "group": "the still world",
+   "live": 0.9796
+  },
+  {
+   "rule": "B23456/S4678",
+   "first": 20001,
+   "live": 0.9486,
+   "power in step 4f": 0.505,
+   "pace by its walls in step 4f": 1.19,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0048,
+   "group": "served"
+  },
+  {
+   "rule": "B3568/S24678",
+   "first": 20021,
+   "live": 0.9735,
+   "power in step 4f": 0.463,
+   "pace by its walls in step 4f": 0.842,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0083,
+   "group": "served"
+  },
+  {
+   "rule": "B24567/S0135678",
+   "first": 20041,
+   "live": 0.9903,
+   "power in step 4f": 0.47,
+   "pace by its walls in step 4f": 0.786,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0142,
+   "group": "nearly served"
+  },
+  {
+   "rule": "B23456/S34678",
+   "first": 20061,
+   "live": 0.9538,
+   "power in step 4f": 0.455,
+   "pace by its walls in step 4f": 0.396,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0019,
+   "group": "served"
+  },
+  {
+   "rule": "B2348/S25678",
+   "first": 20081,
+   "live": 0.9687,
+   "power in step 4f": 0.538,
+   "pace by its walls in step 4f": 0.79,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0119,
+   "group": "nearly served"
+  },
+  {
+   "rule": "B24578/S034678",
+   "first": 20101,
+   "live": 0.9802,
+   "power in step 4f": 0.452,
+   "pace by its walls in step 4f": 0.601,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0088,
+   "group": "served"
+  },
+  {
+   "rule": "B2357/S015678",
+   "first": 20121,
+   "live": 0.9833,
+   "power in step 4f": 0.505,
+   "pace by its walls in step 4f": 0.867,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.005,
+   "group": "served"
+  },
+  {
+   "rule": "B25/S678",
+   "first": 20141,
+   "live": 0.246,
+   "power in step 4f": 0.424,
+   "pace by its walls in step 4f": 0.431,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.2587,
+   "group": "missed"
+  },
+  {
+   "rule": "B2568/S05",
+   "first": 20161,
+   "live": 0.2929,
+   "power in step 4f": 0.411,
+   "pace by its walls in step 4f": 0.353,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.2905,
+   "group": "missed"
+  },
+  {
+   "rule": "B25/S078",
+   "first": 20181,
+   "live": 0.2704,
+   "power in step 4f": 0.414,
+   "pace by its walls in step 4f": 0.333,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.3808,
+   "group": "missed"
+  },
+  {
+   "rule": "B2378/S1348",
+   "first": 20201,
+   "live": 0.4662,
+   "power in step 4f": 0.418,
+   "pace by its walls in step 4f": 0.267,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.1575,
+   "group": "missed"
+  },
+  {
+   "rule": "B2458/S578",
+   "first": 20221,
+   "live": 0.3781,
+   "power in step 4f": 0.472,
+   "pace by its walls in step 4f": 0.72,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0487,
+   "group": "just missed"
+  },
+  {
+   "rule": "B2367/S3",
+   "first": 20241,
+   "live": 0.4115,
+   "power in step 4f": 0.459,
+   "pace by its walls in step 4f": 0.69,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0469,
+   "group": "just missed"
+  },
+  {
+   "rule": "B3468/S2378",
+   "first": 20261,
+   "live": 0.4711,
+   "power in step 4f": 0.427,
+   "pace by its walls in step 4f": 0.563,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0379,
+   "group": "just missed"
+  },
+  {
+   "rule": "B38/S013467",
+   "first": 20281,
+   "live": 0.437,
+   "power in step 4f": 0.459,
+   "pace by its walls in step 4f": 0.489,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0526,
+   "group": "just missed"
+  },
+  {
+   "rule": "B1234/S48",
+   "first": 20301,
+   "live": 0.4607,
+   "power in step 4f": 0.404,
+   "pace by its walls in step 4f": 0.246,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.1604,
+   "group": "missed"
+  },
+  {
+   "rule": "B238/S1356",
+   "first": 20321,
+   "live": 0.4749,
+   "power in step 4f": 0.411,
+   "pace by its walls in step 4f": 0.275,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.1409,
+   "group": "missed"
+  },
+  {
+   "rule": "B2478/S1467",
+   "first": 20341,
+   "live": 0.4208,
+   "power in step 4f": 0.409,
+   "pace by its walls in step 4f": 0.355,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.2044,
+   "group": "missed"
+  },
+  {
+   "rule": "B358/S02378",
+   "first": 20361,
+   "live": 0.3532,
+   "power in step 4f": 0.444,
+   "pace by its walls in step 4f": 0.282,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.2061,
+   "group": "missed"
+  },
+  {
+   "rule": "B34568/S247",
+   "first": 20381,
+   "live": 0.5594,
+   "power in step 4f": 0.498,
+   "pace by its walls in step 4f": 1.079,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0051,
+   "group": "served"
+  },
+  {
+   "rule": "B34567/S012457",
+   "first": 20401,
+   "live": 0.6916,
+   "power in step 4f": 0.503,
+   "pace by its walls in step 4f": 0.862,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0025,
+   "group": "served"
+  },
+  {
+   "rule": "B13458/S358",
+   "first": 20421,
+   "live": 0.5343,
+   "power in step 4f": 0.436,
+   "pace by its walls in step 4f": 0.613,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.1153,
+   "group": "missed"
+  },
+  {
+   "rule": "B234678/S1578",
+   "first": 20441,
+   "live": 0.5155,
+   "power in step 4f": 0.468,
+   "pace by its walls in step 4f": 0.542,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0172,
+   "group": "nearly served"
+  },
+  {
+   "rule": "B2456/S35",
+   "first": 20461,
+   "live": 0.5364,
+   "power in step 4f": 0.436,
+   "pace by its walls in step 4f": 0.793,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0168,
+   "group": "nearly served"
+  },
+  {
+   "rule": "B234567/S01247",
+   "first": 20481,
+   "live": 0.6111,
+   "power in step 4f": 0.458,
+   "pace by its walls in step 4f": 0.239,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0689,
+   "group": "just missed"
+  },
+  {
+   "rule": "B24678/S1348",
+   "first": 20501,
+   "live": 0.5082,
+   "power in step 4f": 0.416,
+   "pace by its walls in step 4f": 0.275,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.1342,
+   "group": "missed"
+  },
+  {
+   "rule": "B356/S2456",
+   "first": 20521,
+   "live": 0.6203,
+   "power in step 4f": 0.459,
+   "pace by its walls in step 4f": 0.686,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0081,
+   "group": "served"
+  },
+  {
+   "rule": "B345/S02457",
+   "first": 20541,
+   "live": 0.6139,
+   "power in step 4f": 0.473,
+   "pace by its walls in step 4f": 1.019,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0034,
+   "group": "served"
+  },
+  {
+   "rule": "B345678/S03467",
+   "first": 20561,
+   "live": 0.7447,
+   "power in step 4f": 0.465,
+   "pace by its walls in step 4f": 0.724,
+   "the still world's rule in step 4f, more surprise at its best pace": 0.0022,
+   "group": "served"
+  }
+ ]
+}
