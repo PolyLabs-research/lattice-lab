@@ -393,3 +393,96 @@ def test_the_verdict_is_what_the_records_give():
     assert again["missing"] == [] and set(again) == set(verdict) - {"question", "cites"}
     for part in again:
         assert again[part] == verdict[part], part
+
+
+def test_the_registered_run_found_what_the_plan_says():
+    verdict = _verdict()
+    assert verdict["missing"] == [] and len(verdict["outcomes"]) == 74
+    assert set(verdict["outcomes"].values()) == {"holds"}
+    assert verdict["verdict"] == {family: "holds" for family in "ABCDERX"}
+    assert verdict["counts"] == {"A": {"holds": 10}, "B": {"holds": 6}, "C": {"holds": 12},
+                                 "D": {"holds": 20}, "E": {"holds": 10}, "R": {"holds": 12},
+                                 "X": {"holds": 4}}  # fmt: skip
+    measured = {label: found["value"] for label, found in verdict["measured"].items()}
+
+    def both(label: str, places: int = 2) -> list[float]:
+        """A claim's number in the still world and in the busy one."""
+        return [round(measured[label.format(w=w)], places) for w in ("still", "busy")]
+
+    # A: a block's past says what it does next
+    assert both("A {w}, block 8: a young lead changes hands far more often", 1) == [6.2, 6.9]
+    assert both("A {w}, block 16: a young lead changes hands far more often", 1) == [8.0, 8.2]
+    assert both("A {w}, block 4: its past removes surprise", 3) == [0.070, 0.074]
+    assert both("A {w}, block 8: its past removes surprise", 3) == [0.095, 0.106]
+    assert both("A {w}, block 16: its past removes surprise", 3) == [0.102, 0.102]
+    # B: the top of the table is the same, and the plain rule's fall there is the mix
+    assert both("B {w}: an old lead at five is the same at both rungs") == [0.95, 1.00]
+    assert both("B {w}: the rule as it is falls at five") == [0.85, 0.88]
+    assert both("B {w}: and the fall is the mix") == [0.99, 1.01]
+    # C: along the walls it still changes
+    assert both("C {w}: an old lead at three still falls") == [0.34, 0.37]
+    assert both("C {w}: a young lead at three still falls") == [0.78, 0.66]
+    assert both("C {w}: an old lead at four still falls") == [0.76, 0.80]
+    assert both("C {w}: at three the fall is not the mix") == [0.19, 0.14]
+    assert both("C {w}: one tick ahead the remembering rule still changes", 3) == [0.069, 0.052]
+    assert both("C {w}: nearly as much as the plain rule") == [0.78, 0.93]
+    # D: run on, the rule that remembers is the better rule
+    assert both("D {w}, block 8: fewer blocks amiss") == [0.73, 0.77]
+    assert both("D {w}, block 16: fewer blocks amiss") == [0.78, 0.88]
+    assert both("D {w}, block 8: the plain rule loses walls") == [0.86, 0.89]
+    assert both("D {w}, block 16: the plain rule loses walls") == [0.90, 0.93]
+    assert both("D {w}, block 8: the remembering rule keeps them") == [1.02, 1.04]
+    assert both("D {w}, block 16: the remembering rule keeps them") == [1.02, 1.05]
+    assert both("D {w}, block 8: it goes back as often as the world", 3) == [0.014, 0.012]
+    assert both("D {w}, block 16: it goes back as often as the world", 3) == [0.017, 0.015]
+    assert both("D {w}, block 8: the plain rule does not") == [0.44, 0.43]
+    assert both("D {w}, block 16: the plain rule does not") == [0.31, 0.30]
+    # E: the ladder's own test
+    assert both("E {w}, block 8: the remembering rule from below runs it on") == [1.14, 1.04]
+    assert both("E {w}, block 16: the remembering rule from below runs it on") == [1.05, 1.00]
+    assert both("E {w}, block 8: where the plain rule from below pays more") == [0.06, 0.04]
+    assert both("E {w}, block 16: where the plain rule from below pays more") == [0.10, 0.13]
+    assert both("E {w}: and it beats the rung's own plain rule") == [0.83, 0.88]
+    # R: the look's rules serve unchanged (they have less surprise, having learned from more)
+    for block in (8, 16):
+        for reading in (PLAIN, HOW):
+            still, busy = both(f"R {{w}}, block {block}: the look's rule {reading} serves", 4)
+            assert -0.013 < min(still, busy) and max(still, busy) < 0
+    assert both("R {w}, block 8: and runs the world on") == [1.00, 1.01]
+    assert both("R {w}, block 16: and runs the world on") == [1.02, 1.01]
+    # X: the anchor
+    assert both("X {w}: the plain gap at blocks of 16", 3) == [0.027, 0.026]
+    assert both("X {w}: the plain rule's own run-on at blocks of 16") == [0.56, 0.46]
+    # what the plan tells beside the claims
+    table = "chance of another leader one tick on, by rival neighbours"
+    new, old = (f"has had its leader for {span} ticks" for span in (STUDY.NEW, STUDY.OLD))
+    quoted = {"still": (0.31, 0.039, 0.165, 0.156), "busy": (0.33, 0.041, 0.190, 0.190)}
+    for world, (young, aged, at_8, at_16) in quoted.items():
+        rungs = verdict["worlds"][world]["rungs"]
+        assert round(rungs["16"][table][new][4], 2) == young
+        assert round(rungs["16"][table][old][4], 3) == aged
+        assert round(rungs["8"][table][old][5], 3) == at_8
+        assert round(rungs["16"][table][old][5], 3) == at_16
+        for block in ("8", "16"):
+            ran = rungs[block]["run on"]
+            world_back, how_back = ran[f"{HOW}, {OWN}"][
+                "going back, the world and the rule's world"
+            ]
+            plain_back = ran[f"{PLAIN}, {OWN}"]["going back, the world and the rule's world"][1]
+            assert 0.245 <= world_back <= 0.271 and 0.26 <= how_back <= 0.283
+            assert 0.075 <= plain_back < 0.12
+            # the plain rule from the rung below pays 9% to 20%
+            below = ran[f"{PLAIN}, {BELOW}"]["amiss over changed"]
+            own = ran[f"{PLAIN}, {OWN}"]["amiss over changed"]
+            assert 1.08 < below / own < 1.20
+    # the table is the look's, entry by entry
+    look = json.loads((LAB / "look" / "summary.json").read_text())["worlds"]
+    apart = []
+    for world in ("still", "busy"):
+        for block in ("8", "16"):
+            mine = verdict["worlds"][world]["rungs"][block][table]
+            theirs = look[world]["changing hands, by a block's past"][block]["chance"]
+            for name, row in mine.items():
+                seen = theirs["as it is" if name == "the rule as it is" else name]
+                apart += [abs(row[near] / seen[near] - 1) for near in (3, 4, 5)]
+    assert len(apart) == 84 and sum(a <= 0.10 for a in apart) == 81 and max(apart) <= 0.125
